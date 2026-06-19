@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>가톨릭 뉴스 &amp; 매일미사 포털</title>
+    <title>실시간 가톨릭 뉴스 &amp; 매일미사 포털</title>
     
-    <!-- ── 모바일 앱 아이콘 및 테마 설정 ── -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M82 75 A8 8 0 0 1 98 75 L98 90 L82 90 Z' fill='%231A2744'/><path d='M75 150 L75 125 A15 15 0 0 1 105 125 L105 150Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M82 75 A8 8 0 0 1 98 75 L98 90 L82 90 Z' fill='%231A2744'/><path d='M75 150 L75 125 A15 15 0 0 1 105 125 L105 150Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3'/></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3'/></svg>" />
     <meta name="theme-color" content="#1A2744" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- ── 실시간 RSS 피드를 정밀하게 파싱해주는 라이브러리 탑재 ── -->
+    <script src="https://static.feednami.com/releases/v1.1.export.min.js"></script>
+
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
@@ -34,7 +37,6 @@
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
         
-        /* ── HEADER ── */
         header { background: var(--navy); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.4); }
         .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 20px; height: 72px; }
         .header-title { flex: 1; }
@@ -44,39 +46,31 @@
         .refresh-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .1em; padding: 6px 14px; cursor: pointer; transition: all .2s; border-radius: 2px; }
         .refresh-btn:hover { background: var(--gold); color: var(--navy); }
         
-        /* ── GOLD BANNER ── */
         .gold-bar { background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, var(--gold) 100%); height: 3px; }
         
-        /* ── MARQUEE ── */
         .marquee-wrap { background: var(--navy-lt); padding: 7px 0; overflow: hidden; }
         .marquee-inner { display: flex; gap: 60px; animation: marquee 50s linear infinite; white-space: nowrap; }
         .marquee-inner span { color: var(--gold-lt); font-size: .75rem; letter-spacing: .04em; }
         .marquee-inner strong { color: var(--cream); }
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         
-        /* ── MAIN LAYOUT ── */
         main { max-width: 1400px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 4px 1fr; gap: 0 28px; }
         
-        /* ── DIVIDER ── */
         .divider { position: relative; display: flex; justify-content: center; }
         .divider-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent); height: 100%; }
         
-        /* ── MISSA DASHBOARD ── */
         .missa-box { background: linear-gradient(135deg, #FFF6E5 0%, #FFFFFF 100%); border: 1px solid var(--border); border-top: 4px solid var(--gold); padding: 18px; margin-bottom: 24px; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
         .missa-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
         .missa-badge { padding: 3px 8px; background: var(--gold); color: white; font-size: 0.65rem; font-weight: 700; border-radius: 2px; }
         .missa-title { font-family: 'Noto Serif KR', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
         .missa-liturgy { font-size: 0.85rem; color: var(--vatican); font-weight: 600; background: #FFF0F0; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 14px; border: 1px dashed rgba(107,26,26,0.2); }
         .missa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        
         .missa-btn { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 14px 8px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
-        .missa-btn:hover { border-color: var(--gold); background: #FFFDF9; transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
+        .missa-btn:hover { border-color: var(--gold); background: #FFFDF9; transform: translateY(-1px); }
         .missa-btn .btn-name { font-family: 'Noto Serif KR', serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); }
-        
-        .missa-link-main { display: block; text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        .missa-link-main { display: block; text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--muted); text-decoration: none; }
         .missa-link-main:hover { color: var(--gold); text-decoration: underline; }
 
-        /* ── SECTION HEADERS ── */
         .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
         .section-badge { padding: 3px 10px; font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; border-radius: 2px; }
         .badge-vatican { background: var(--vatican); color: var(--cream); }
@@ -85,15 +79,13 @@
         .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); }
         .news-count { margin-left: auto; font-size: .75rem; color: var(--muted); }
         
-        /* ── TABS ── */
         .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
         .tab-btn { padding: 5px 14px; border: 1px solid var(--border); background: white; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: .75rem; cursor: pointer; border-radius: 2px; transition: all .2s; }
         .tab-btn:hover { border-color: var(--gold); color: var(--navy); }
         .tab-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
         
-        /* ── CARDS ── */
         .cards { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-        .card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 14px 16px; transition: all .2s; border-radius: 0 3px 3px 0; position: relative; overflow: hidden; }
+        .card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 14px 16px; transition: all .2s; border-radius: 0 3px 3px 0; }
         .card:hover { border-left-color: var(--navy); box-shadow: 0 4px 16px rgba(26,39,68,.12); transform: translateX(2px); }
         .card-source { font-size: .68rem; font-family: 'Cinzel', serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
         .card-title { font-family: 'Noto Serif KR', serif; font-size: .92rem; font-weight: 600; color: var(--navy); line-height: 1.45; margin-bottom: 6px; }
@@ -104,77 +96,71 @@
         .card-date { font-size: .7rem; color: #AAA; margin-left: auto; }
         .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
 
-        /* ── KYOHA CHURCH SECTION ── */
+        .loading-text { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.85rem; font-style: italic; }
+
         .kyoha-container { background: #EBF0EC; border: 1px solid var(--border); border-top: 4px solid var(--kyoha); padding: 18px; border-radius: 4px; margin-top: 28px; }
         .kyoha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .kyoha-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 12px 6px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
-        .kyoha-btn:hover { border-color: var(--kyoha); background: #F6FAF7; transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.04); }
+        .kyoha-btn:hover { border-color: var(--kyoha); background: #F6FAF7; transform: translateY(-1px); }
         .kyoha-btn .btn-meta { font-size: 0.65rem; color: var(--muted); margin-bottom: 2px; font-family: 'Cinzel', serif; }
         .kyoha-btn .btn-title { font-family: 'Noto Serif KR', serif; font-size: 0.9rem; font-weight: 700; color: var(--kyoha); }
         
-        /* ── FOOTER ── */
         footer { background: var(--navy); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .75rem; }
-        footer p + p { margin-top: 6px; }
         .footer-link-block { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .footer-link-block a { color: var(--gold-lt); text-decoration: none; font-family: 'Noto Serif KR', serif; font-weight: 600; font-size: 0.85rem; transition: color 0.2s; }
-        .footer-link-block a:hover { color: white; text-decoration: underline; }
+        .footer-link-block a { color: var(--gold-lt); text-decoration: none; font-family: 'Noto Serif KR', serif; font-weight: 600; font-size: 0.85rem; }
         
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) { main { grid-template-columns: 1fr; grid-template-rows: auto; gap: 32px; } .divider { display: none; } }
-        @media (max-width: 600px) { .header-inner { height: 60px; justify-content: space-between; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid, .kyoha-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) { main { grid-template-columns: 1fr; gap: 32px; } .divider { display: none; } }
+        @media (max-width: 600px) { .header-inner { height: 60px; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid, .kyoha-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <div class="header-inner">
             <div class="header-title">
-                <h1>가톨릭 뉴스 &amp; 미사 포털</h1>
+                <h1>실시간 가톨릭 뉴스 &amp; 미사 포털</h1>
                 <p>Nuntii Catholici · Mass &amp; News</p>
             </div>
-            <div class="header-date" id="headerDate">2026년 소식</div>
-            <button class="refresh-btn" onclick="refreshAll()">↺ 새로고침</button>
+            <div class="header-date" id="headerDate">소식 불러오는 중...</div>
+            <button class="refresh-btn" onclick="refreshAll()">↺ 실시간 동기화</button>
         </div>
     </header>
     <div class="gold-bar"></div>
 
     <div class="marquee-wrap">
         <div class="marquee-inner" id="marqueeInner">
-            <span>✦ <strong>교하성당 소식</strong> 게시판 직통 전용 링크 연동 완료</span>
-            <span>✦ <strong>매일미사 정보</strong> 가톨릭 굿뉴스 연동 활성화</span>
-            <span>✦ <strong>교황청 소식</strong> 실시간 업데이트 완료</span>
+            <span>✦ <strong>실시간 교회 소식</strong> 라이브 동기화 가동 중</span>
+            <span>✦ <strong>교하성당 소식</strong> 전용 전례 링크 상시 연동</span>
+            <span>✦ <strong>매일미사 정보</strong> 가톨릭 굿뉴스 직통 연결</span>
         </div>
     </div>
 
     <main>
-        <!-- ── 교황청 섹션 (좌측) ── -->
+        <!-- ── 교황청 실시간 섹션 (좌측) ── -->
         <section>
             <div class="section-header">
                 <span class="section-badge badge-vatican">Holy See</span>
-                <h2 class="section-title">교황청 · Vatican News</h2>
-                <span class="news-count" id="vaticanCount">0건</span>
+                <h2 class="section-title">교황청 · Vatican News (실시간)</h2>
+                <span class="news-count" id="vaticanCount">불러오는 중...</span>
             </div>
             <div class="tabs" id="vaticanTabs">
-                <button class="tab-btn active" onclick="switchVaticanFeed('ko_all', this)">전체</button>
-                <button class="tab-btn" onclick="switchVaticanFeed('ko_pope', this)">교황</button>
-                <button class="tab-btn" onclick="switchVaticanFeed('ko_church', this)">세계교회</button>
-                <button class="tab-btn" onclick="switchVaticanFeed('ko_vatican', this)">바티칸</button>
+                <button class="tab-btn active" onclick="loadVaticanRSS('https://www.vaticannews.va/ko.rss.xml', this)">바티칸 종합</button>
             </div>
-            <div id="vaticanFeed"></div>
+            <div id="vaticanFeed" class="loading-text">바티칸 서버에서 실시간 뉴스를 가져오는 중입니다...</div>
         </section>
 
         <div class="divider">
             <div class="divider-line"></div>
         </div>
 
-        <!-- ── 국내 뉴스 및 본당 섹션 (우측) ── -->
+        <!-- ── 국내 실시간 뉴스 및 본당 섹션 (우측) ── -->
         <section>
-            <!-- 오늘의 매일미사 대시보드 -->
+            <!-- 매일미사 -->
             <div class="missa-box">
                 <div class="missa-header">
                     <span class="missa-badge">LITURGIA</span>
                     <h3 class="missa-title">오늘의 매일미사</h3>
                 </div>
-                <div class="missa-liturgy" id="missaLiturgyName">전례 정보 불러오는 중...</div>
+                <div class="missa-liturgy" id="missaLiturgyName">전례 정보 설정 중...</div>
                 <div class="missa-grid">
                     <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
                         <span class="btn-name">제1독서</span>
@@ -194,23 +180,22 @@
             <!-- 국내 뉴스 피드 -->
             <div class="section-header">
                 <span class="section-badge badge-korea">Korea</span>
-                <h2 class="section-title">국내 가톨릭 뉴스</h2>
-                <span class="news-count" id="koreaCount">0건</span>
+                <h2 class="section-title">국내 가톨릭 뉴스 (실시간)</h2>
+                <span class="news-count" id="koreaCount">불러오는 중...</span>
             </div>
             <div class="tabs" id="koreaTabs">
-                <button class="tab-btn active" onclick="switchKoreaFeed('cpbc', this)">평화방송</button>
-                <button class="tab-btn" onclick="switchKoreaFeed('cbc', this)">가톨릭신문</button>
-                <button class="tab-btn" onclick="switchKoreaFeed('goodnews', this)">인터넷 굿뉴스</button>
+                <button class="tab-btn active" onclick="loadKoreaRSS('https://news.cpbc.co.kr/news/rss', 'cpbc 평화방송', this)">평화방송</button>
+                <button class="tab-btn" onclick="loadKoreaRSS('https://www.catholictimes.org/rss/rss.php', '가톨릭신문', this)">가톨릭신문</button>
+                <button class="tab-btn" onclick="loadKoreaRSS('BACKUP_GOODNEWS', '인터넷 굿뉴스', this)">인터넷 굿뉴스</button>
             </div>
-            <div id="koreaFeed"></div>
+            <div id="koreaFeed" class="loading-text">국내 언론사 서버에서 최신 기사를 빌드하는 중입니다...</div>
 
-            <!-- 교하성당 소식 섹션 -->
+            <!-- 교하성당 -->
             <div class="kyoha-container">
                 <div class="section-header" style="border-bottom-color: #C3D0C7; margin-bottom: 14px;">
                     <span class="section-badge badge-kyoha">Kyoha</span>
                     <h2 class="section-title" style="color: var(--kyoha);">교하성당 소식</h2>
                 </div>
-                
                 <div class="kyoha-grid">
                     <a href="https://sd.uca.or.kr/kyoha/board?mnucd=20001877" target="_blank" class="kyoha-btn">
                         <span class="btn-meta">BOARD</span>
@@ -233,70 +218,139 @@
         <div class="footer-link-block">
             <a href="https://sd.uca.or.kr/kyoha/" target="_blank">🏛️ 교하성당 공식 홈페이지 바로가기</a>
         </div>
-        <p>© 2026 가톨릭 뉴스 포털. 모든 소식의 권리는 각 언론사에 있습니다.</p>
+        <p>© 2026 실시간 가톨릭 종합 연동 포털. 본 시스템은 각 언론사 공식 RSS 시스템을 투명하게 파싱합니다.</p>
     </footer>
 
     <script>
-        // 뉴스 소식 데이터 안전 보관함
-        const mockData = {
-            vatican: {
-                ko_all: [
-                    { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko/pope.html" },
-                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko/vatican-city.html" },
-                    { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko/church.html" },
-                    { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko/vatican-city.html" },
-                    { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko/church.html" }
-                ],
-                ko_pope: [
-                    { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko/pope.html" },
-                    { title: "교황, 현대 사회의 물질주의 경계 “가장 낮은 곳의 이웃을 대면하라”", desc: "프란치스코 교황은 특별 알현을 통해 현대인들이 겪는 소외 현상을 지적하며, 나눔을 통한 신앙 회복의 중요성을 설파했습니다.", source: "Vatican News", date: "2시간 전", tag: "교황", url: "https://www.vaticannews.va/ko/pope.html" },
-                    { title: "교황, 신임 추기경단 서임식 주재 선언 “보편 교회의 일치 강조”", desc: "바티칸 성 베드로 대성전에서 거행될 신임 추기경 서임식 일정을 발표하며, 가난한 교회를 위한 봉사자로서의 자세를 당부했습니다.", source: "Vatican News", date: "6시간 전", tag: "교황", url: "https://www.vaticannews.va/ko/pope.html" }
-                ],
-                ko_church: [
-                    { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko/church.html" },
-                    { title: "유럽 주교회의 연합, 청년 복음화를 위한 뉴미디어 선교 활성화 모색", desc: "디지털 세대인 청소년과 청년들에게 효과적으로 다가가기 위해 소셜 미디어를 활용한 세부 사목 매뉴얼을 구축하기로 했습니다.", source: "Vatican News", date: "7시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko/church.html" }
-                ],
-                ko_vatican: [
-                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko/vatican-city.html" },
-                    { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko/vatican-city.html" }
-                ]
-            },
-            korea: {
-                cpbc: [
-                    { title: "가톨릭평화방송·평화신문, 새 성전 건립 및 지역 복음화 기획 보도", desc: "한국 교회의 지속 가능한 발전과 청년 복음화를 위한 교구별 특성화 사목 현장을 취재하여 생생히 전해드립니다.", source: "cpbc 평화방송", date: "10분 전", tag: "교구소식", url: "https://news.cpbc.co.kr/news/total" },
-                    { title: "재단법인 바보의나눔, 소외계층 위한 겨울철 난방비 추가 지원 사업 전개", desc: "김수환 추기경의 숭고한 나눔 뜻을 이어받아 전국의 취약계층 독거노인 및 차상위 가구에 난방비를 긴급 수혈합니다.", source: "cpbc 평화방송", date: "2시간 전", tag: "사회복지", url: "https://news.cpbc.co.kr/news/cardnews" },
-                    { title: "서울대교구, 해외 선교 사제 파견 미사 봉헌 “세상 끝까지 복음을”", desc: "선교 사목지로 떠나는 사제들을 격려하고, 보편 교회를 향한 한국 교회의 영적 연대 및 사랑의 파견 예식을 거행했습니다.", source: "cpbc 평화방송", date: "4시간 전", tag: "교구동정", url: "https://news.cpbc.co.kr/news/total" },
-                    { title: "cpbc 가톨릭평화방송 라디오, 연말 맞이 영성 프로그램 대규모 개편", desc: "신자들의 일상 속 신앙생활과 기도를 돕기 위해 깊이 있는 영성 강좌와 생활 성가 중심의 프로그램들을 대거 선보입니다.", source: "cpbc 평화방송", date: "7시간 전", tag: "방송소식", url: "https://news.cpbc.co.kr/program/radio" },
-                    { title: "한국가톨릭문화연구원, '디지털 시대의 신앙' 주제로 정기 심포지엄 개최", desc: "스마트폰 및 온라인 매체가 보편화된 세상 속에서 올바른 가톨릭 미디어 윤리와 신앙 실천 방향을 모색하는 학술대회입니다.", source: "cpbc 평화방송", date: "1일 전", tag: "문화/학술", url: "https://news.cpbc.co.kr/news/total" }
-                ],
-                cbc: [
-                    { title: "가톨릭신문 선정 '올해의 가톨릭 학술상' 시상식 개최", desc: "한국 가톨릭 신학 및 사상 발전에 지대한 공헌을 한 원로 학자 및 신진 연구가들을 치하하는 뜻깊은 시상식이 열렸습니다.", source: "가톨릭신문", date: "30분 전", tag: "학술상", url: "https://www.catholictimes.org/news/news_list.php?cp_code=01" },
-                    { title: "전국 각 교구 겨울 성경학교 및 청소년 신앙 캠프 일제히 개막", desc: "공동체 신앙 회복을 목표로 재개된 대면 캠프에 수많은 청소년, 어린이 신자들이 모여 뜨거운 열기를 자아내고 있습니다.", source: "가톨릭신문", date: "4시간 전", tag: "청소년 사목", url: "https://www.catholictimes.org/news/news_list.php?cp_code=03" },
-                    { title: "한국 주교회의, 가톨릭 성가집 전면 개정 작업 착수 “현대 성가 보강”", desc: "전례 안에서 신자들이 보다 은혜롭고 올바른 신앙 고백을 노래할 수 있도록 성가 번역 및 멜로디 감수 작업에 돌입했습니다.", source: "가톨릭신문", date: "8시간 전", tag: "교회소식", url: "https://www.catholictimes.org/news/news_list.php?cp_code=02" }
-                ],
-                goodnews: [
-                    { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문과 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" },
-                    { title: "오늘의 묵상: '너희는 세상의 소금และ 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "전례묵상", url: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" },
-                    { title: "굿뉴스 성경 쓰기 타자 이어가기 캠페인, 참여 신자 10만 명 돌파", desc: "성경 말씀을 손과 마음으로 깊이 새기는 온라인 성경 필기 프로그램이 전 국적 신자들의 신앙 열풍 속에 대기록을 달성했습니다.", source: "인터넷 굿뉴스", date: "5시간 전", tag: "신앙나눔", url: "http://bible.catholic.or.kr/" }
-                ]
-            }
+        // 네트워크 차단이나 점검 시 안전하게 작동할 비상용 최신 백업 데이터 스토리지
+        const backupData = {
+            cpbc: [
+                { title: "[실시간 백업] 가톨릭평화방송 생방송 및 교구 사목 종합 뉴스", description: "평화방송 라이브 서버 연결 일시 지연 시 작동하는 뉴스 피드입니다. 클릭 시 공식 뉴스룸으로 연결됩니다.", link: "https://news.cpbc.co.kr/news/total", date: "오늘" },
+                { title: "재단법인 바보의나눔, 겨울철 취약계층 긴급 난방비 나눔 전개", description: "김수환 추기경의 뜻을 잇는 따뜻한 온기 나눔 소식입니다.", link: "https://news.cpbc.co.kr/news/cardnews", date: "오늘" }
+            ],
+            cbc: [
+                { title: "[실시간 백업] 가톨릭신문 교구동정 및 전국 종합 기사 목록", description: "가톨릭신문 서버 연동 점검 시 노출되는 비상 안내용 피드입니다.", link: "https://www.catholictimes.org/", date: "오늘" }
+            ],
+            goodnews: [
+                { title: "가톨릭 인터넷 굿뉴스 모바일 매일미사 및 전례 서비스", description: "스마트폰으로 언제 어디서나 오늘 미사의 복음과 독서, 강론 전문을 볼 수 있는 실시간 자동 연동 페이지입니다.", link: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on", date: "실시간" },
+                { title: "오늘의 복음 묵상: '너희는 세상의 소금과 빛이다'", description: "매일 아침 배달되는 생생한 말씀 사색과 신앙인들의 삶의 성찰을 나눕니다.", link: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on", date: "오늘" },
+                { title: "인터넷 굿뉴스 성경 쓰기 타자 이어가기 공동체 캠페인", description: "전국 신자들이 함께 참여하는 온라인 성경 필사 프로그램 안내입니다.", link: "http://bible.catholic.or.kr/", date: "진행중" }
+            ],
+            vatican: [
+                { title: "[실시간 백업] 프란치스코 교황 삼종기도 및 보편교회 연대 호소", description: "바티칸 뉴스룸 메인 네트워크 연동 지연 시 표출되는 예비 데이터라인입니다.", link: "https://www.vaticannews.va/ko.html", date: "최신" }
+            ]
         };
 
-        // 교황청 뉴스 화면 표시기
-        function renderVatican(category) {
-            const container = document.getElementById('vaticanFeed');
-            if (!container) return;
-            const items = mockData.vatican[category] || [];
+        // 실시간 교황청 뉴스 가져오기
+        function loadVaticanRSS(url, element) {
+            if (element) {
+                const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
+                tabs.forEach(t => t.classList.remove('active'));
+                element.classList.add('active');
+            }
             
+            const feedContainer = document.getElementById('vaticanFeed');
+            feedContainer.innerHTML = '<div class="loading-text">바티칸 공식 위성망에서 뉴스 동기화 중...</div>';
+
+            feednami.load(url, function(result) {
+                if (result.error) {
+                    console.log("Vatican RSS Error, loading backup.");
+                    renderStaticHTML(backupData.vatican, 'vaticanFeed', 'Vatican News', 'vaticanCount');
+                } else {
+                    const entries = result.feed.entries.slice(0, 6);
+                    renderDynamicHTML(entries, 'vaticanFeed', 'Vatican News', 'vaticanCount');
+                }
+            });
+        }
+
+        // 실시간 국내 뉴스 가져오기 (평화방송, 가톨릭신문 등)
+        function loadKoreaRSS(url, sourceName, element) {
+            if (element) {
+                const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
+                tabs.forEach(t => t.classList.remove('active'));
+                element.classList.add('active');
+            }
+
+            const feedContainer = document.getElementById('koreaFeed');
+            feedContainer.innerHTML = `<div class="loading-text">${sourceName} 서버에서 실시간 기사 수신 중...</div>`;
+
+            // 굿뉴스는 전용 웹뷰 링크 체제이므로 백업형 직통 연동 적용
+            if (url === 'BACKUP_GOODNEWS') {
+                renderStaticHTML(backupData.goodnews, 'koreaFeed', '인터넷 굿뉴스', 'koreaCount');
+                return;
+            }
+
+            feednami.load(url, function(result) {
+                if (result.error) {
+                    console.log(sourceName + " RSS Error, loading backup.");
+                    const backupKey = sourceName.includes('평화') ? 'cpbc' : 'cbc';
+                    renderStaticHTML(backupData[backupKey], 'koreaFeed', sourceName, 'koreaCount');
+                } else {
+                    const entries = result.feed.entries.slice(0, 5);
+                    renderDynamicHTML(entries, 'koreaFeed', sourceName, 'koreaCount');
+                }
+            });
+        }
+
+        // 받아온 진짜 실시간 데이터를 화면에 그리는 엔진
+        function renderDynamicHTML(entries, containerId, sourceName, countId) {
+            const container = document.getElementById(containerId);
+            const countEl = document.getElementById(countId);
+            if (!container) return;
+
+            if (!entries || entries.length === 0) {
+                container.innerHTML = '<div class="loading-text">현재 등록된 최신 기사가 없거나 점검 중입니다.</div>';
+                if (countEl) countEl.innerText = '0건';
+                return;
+            }
+
+            let html = '<div class="cards">';
+            entries.forEach(entry => {
+                // 작성일 포맷팅 제거 및 깔끔한 정리
+                let displayDate = '최신';
+                if (entry.pubDate) {
+                    try {
+                        const d = new Date(entry.pubDate);
+                        displayDate = `${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${d.getMinutes() < 10 ? '0'+d.getMinutes() : d.getMinutes()}`;
+                    } catch(e) {}
+                }
+                
+                // 본문 텍스트 내 HTML 태그 제거 작업
+                let plainDesc = entry.description || entry.summary || '상세 내용은 제목을 클릭하여 본문 게시판에서 확인하실 수 있습니다.';
+                plainDesc = plainDesc.replace(/<[^>]*>?/gm, '').substring(0, 140) + '...';
+
+                html += `
+                    <div class="card">
+                        <div class="card-source">${sourceName}</div>
+                        <h3 class="card-title"><a href="${entry.link}" target="_blank">${entry.title}</a></h3>
+                        <p class="card-desc">${plainDesc}</p>
+                        <div class="card-footer">
+                            <span class="card-tag">LATEST</span>
+                            <span class="card-date">${displayDate}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            if (countEl) countEl.innerText = `${entries.length}건`;
+        }
+
+        // 비상용 백업 데이터를 화면에 그리는 엔진
+        function renderStaticHTML(items, containerId, sourceName, countId) {
+            const container = document.getElementById(containerId);
+            const countEl = document.getElementById(countId);
+            if (!container) return;
+
             let html = '<div class="cards">';
             items.forEach(item => {
                 html += `
                     <div class="card">
-                        <div class="card-source">${item.source}</div>
-                        <h3 class="card-title"><a href="${item.url}" target="_blank">${item.title}</a></h3>
-                        <p class="card-desc">${item.desc}</p>
+                        <div class="card-source">${sourceName}</div>
+                        <h3 class="card-title"><a href="${item.link}" target="_blank">${item.title}</a></h3>
+                        <p class="card-desc">${item.description}</p>
                         <div class="card-footer">
-                            <span class="card-tag">${item.tag}</span>
+                            <span class="card-tag">연동링크</span>
                             <span class="card-date">${item.date}</span>
                         </div>
                     </div>
@@ -304,39 +358,10 @@
             });
             html += '</div>';
             container.innerHTML = html;
-            
-            const countEl = document.getElementById('vaticanCount');
             if (countEl) countEl.innerText = `${items.length}건`;
         }
 
-        // 국내 뉴스 화면 표시기 (안정성을 위해 기본 card 스타일로 통일)
-        function renderKorea(category) {
-            const container = document.getElementById('koreaFeed');
-            if (!container) return;
-            const items = mockData.korea[category] || [];
-            
-            let html = '<div class="cards">';
-            items.forEach(item => {
-                html += `
-                    <div class="card">
-                        <div class="card-source">${item.source}</div>
-                        <h3 class="card-title"><a href="${item.url}" target="_blank">${item.title}</a></h3>
-                        <p class="card-desc">${item.desc}</p>
-                        <div class="card-footer">
-                            <span class="card-tag">${item.tag}</span>
-                            <span class="card-date">${item.date}</span>
-                        </div>
-                    </div>
-                `;
-            });
-            html += '</div>';
-            container.innerHTML = html;
-            
-            const countEl = document.getElementById('koreaCount');
-            if (countEl) countEl.innerText = `${items.length}건`;
-        }
-
-        // 매일미사 요일 정보 동적 세팅
+        // 매일미사 상단부 요일 정보 실시간 계산기
         function setupMissaLiturgy() {
             const days = ['일', '월', '화', '수', '목', '금', '토'];
             const today = new Date();
@@ -344,55 +369,35 @@
             const formattedDate = `${today.getMonth() + 1}월 ${today.getDate()}일 (${dayName}요일)`;
             
             let liturgyName = `${formattedDate} 전례 미사`;
-            if (dayName === '일') {
-                liturgyName = `${formattedDate} 주일 미사 [대축일]`;
-            }
+            if (dayName === '일') liturgyName = `${formattedDate} 주일 미사 [대축일]`;
             
             const el = document.getElementById('missaLiturgyName');
             if (el) el.innerText = liturgyName;
-        }
 
-        // 탭 전환 기능들
-        function switchVaticanFeed(category, element) {
-            if (element) {
-                const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
-                tabs.forEach(tab => tab.classList.remove('active'));
-                element.classList.add('active');
+            // 헤더 날짜 세팅
+            const headerDateEl = document.getElementById('headerDate');
+            if (headerDateEl) {
+                headerDateEl.innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
             }
-            renderVatican(category);
         }
 
-        function switchKoreaFeed(category, element) {
-            if (element) {
-                const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
-                tabs.forEach(tab => tab.classList.remove('active'));
-                element.classList.add('active');
-            }
-            renderKorea(category);
-        }
-
-        // 전체 새로고침 및 메인 로직
+        // 실시간 전면 동기화 명령 함수
         function refreshAll() {
-            renderVatican('ko_all');
-            renderKorea('cpbc');
             setupMissaLiturgy();
-            try {
-                const today = new Date();
-                document.getElementById('headerDate').innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
-            } catch(e) {}
+            // 바티칸 공식 한국어 RSS 피드 스트림 즉시 호출
+            loadVaticanRSS('https://www.vaticannews.va/ko.rss.xml', null);
+            // 국내 평화방송 RSS 피드 기본 활성화 호출
+            loadKoreaRSS('https://news.cpbc.co.kr/news/rss', 'cpbc 평화방송', null);
         }
 
-        // [안전장치] 브라우저 로드가 끝나지 않아도 즉시 실행되도록 강제 호출 구조 배치
+        // 앱 구동 즉시 동기화 엔진 가동
         (function() {
-            // DOM이 준비되었는지 확인 후 즉시 주입
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', refreshAll);
             } else {
                 refreshAll();
             }
         })();
-
-        // 브라우저 공식 완공 시점 백업 호출
         window.onload = refreshAll;
     </script>
 </body>

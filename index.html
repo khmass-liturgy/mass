@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>가톨릭 뉴스 &amp; 매일미사 포털</title>
+    
+    <!-- ── 모바일 홈 화면 추가 시 앱 아이콘 설정 (천주교 성당/십자가 고해상도 SVG) ── -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-dasharray='4 2'/><path d='M90 35 L90 145 M55 65 L125 65' stroke='%23C9A84C' stroke-width='6' stroke-linecap='round'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M75 150 L75 130 Q90 120 105 130 L105 150' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-dasharray='4 2'/><path d='M90 35 L90 145 M55 65 L125 65' stroke='%23C9A84C' stroke-width='6' stroke-linecap='round'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M75 150 L75 130 Q90 120 105 130 L105 150' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
+    
+    <!-- 모바일 주소창 색상 설정 -->
+    <meta name="theme-color" content="#1A2744" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -26,7 +36,7 @@
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
         
-        /* ── 천주교 라틴 십자가 CSS 구현 (기기별 서체 왜곡 방지) ── */
+        /* ── 천주교 라틴 십자가 CSS 구현 ── */
         .catholic-cross {
             position: relative;
             width: 14px;
@@ -40,14 +50,12 @@
             background-color: currentColor;
             border-radius: 1px;
         }
-        /* 세로축 */
         .catholic-cross::before {
             left: 6px;
             top: 0;
             width: 2px;
             height: 24px;
         }
-        /* 가로축 (상단에서 1/3 지점) */
         .catholic-cross::after {
             left: 0;
             top: 7px;
@@ -55,7 +63,6 @@
             height: 2px;
         }
 
-        /* 작은 사이즈 십자가 (푸터용 등) */
         .catholic-cross.sm {
             width: 10px;
             height: 16px;
@@ -286,15 +293,15 @@
                 cpbc: [
                     { title: "가톨릭평화방송·평화신문, 새 성전 건립 및 지역 복음화 기획 보도", desc: "한국 교회의 지속 가능한 발전과 청년 복음화를 위한 교구별 특성화 사목 현장을 취재하여 생생히 전해드립니다.", source: "cpbc 평화방송", date: "10분 전", tag: "교구소식", url: "https://news.cpbc.co.kr/" },
                     { title: "재단법인 바보의나눔, 소외계층 위한 겨울철 난방비 추가 지원 사업 전개", desc: "김수환 추기경의 숭고한 나눔 뜻을 이어받아 전국의 취약계층 독거노인 및 차상위 가구에 난방비를 긴급 수혈합니다.", source: "cpbc 평화방송", date: "2시간 전", tag: "사회복지", url: "https://news.cpbc.co.kr/" },
-                    { title: "서울대교구, 해외 선교 사제 파견 미사 봉헌 “세상 끝까지 복음을”", desc: "선교 사목지로 떠나는 사제들을 격려하고, 보편 교회를 향한 한국 교회의 영적 연대와 사랑의 파견 예식을 거행했습니다.", source: "cpbc 평화방송", date: "4시간 전", tag: "교구동정", url: "https://news.cpbc.co.kr/" },
-                    { title: "cpbc 가톨릭평화방송 라디오, 가을맞이 영성 프로그램 대규모 개편", desc: "신자들의 일상 속 신앙생활และ 기도를 돕기 위해 깊이 있는 영성 강좌와 생활 성가 중심의 프로그램들을 대거 선보입니다.", source: "cpbc 평화방송", date: "7시간 전", tag: "방송소식", url: "https://news.cpbc.co.kr/" },
+                    { title: "서울대교구, 해외 선교 사제 파견 미사 봉헌 “세상 끝까지 복음을”", desc: "선교 사목지로 떠나는 사제들을 격려하고, 보편 교회를 향한 한국 교회의 영적 연대 및 사랑의 파견 예식을 거행했습니다.", source: "cpbc 평화방송", date: "4시간 전", tag: "교구동정", url: "https://news.cpbc.co.kr/" },
+                    { title: "cpbc 가톨릭평화방송 라디오, 가을맞이 영성 프로그램 대규모 개편", desc: "신자들의 일상 속 신앙생활과 기도를 돕기 위해 깊이 있는 영성 강좌와 생활 성가 중심의 프로그램들을 대거 선보입니다.", source: "cpbc 평화방송", date: "7시간 전", tag: "방송소식", url: "https://news.cpbc.co.kr/" },
                     { title: "한국가톨릭문화연구원, '디지털 시대의 신앙' 주제로 정기 심포지엄 개최", desc: "스마트폰 및 온라인 매체가 보편화된 세상 속에서 올바른 가톨릭 미디어 윤리와 신앙 실천 방향을 모색하는 학술대회입니다.", source: "cpbc 평화방송", date: "1일 전", tag: "문화/학술", url: "https://news.cpbc.co.kr/" }
                 ],
                 cbc: [
                     { title: "가톨릭신문 선정 '올해의 가톨릭 학술상' 시상식 개최", desc: "한국 가톨릭 신학 및 사상 발전에 지대한 공헌을 한 원로 학자 및 신진 연구가들을 치하하는 뜻깊은 시상식이 열렸습니다.", source: "가톨릭신문", date: "30분 전", tag: "학술상", url: "https://www.catholictimes.org/" },
                     { title: "전국 각 교구 겨울 성경학교 및 청소년 신앙 캠프 일제히 개막", desc: "공동체 신앙 회복을 목표로 재개된 대면 캠프에 수많은 청소년, 어린이 신자들이 모여 뜨거운 열기를 자아내고 있습니다.", source: "가톨릭신문", date: "4시간 전", tag: "청소년 사목", url: "https://www.catholictimes.org/" },
                     { title: "한국 주교회의, 가톨릭 성가집 전면 개정 작업 착수 “현대 성가 보강”", desc: "전례 안에서 신자들이 보다 은혜롭고 올바른 신앙 고백을 노래할 수 있도록 성가 번역 및 멜로디 감수 작업에 돌입했습니다.", source: "가톨릭신문", date: "8시간 전", tag: "교회소식", url: "https://www.catholictimes.org/" },
-                    { title: "[오피니언] 복잡한 세상 속, 그리스도인이 지켜야 할 침묵의 영성", desc: "소음และ 정보가 넘쳐나는 시대에 하루 10분, 주님 앞에 온전히 머무는 관상 기도의 가치를 조명하는 특별 사설입니다.", source: "가톨릭신문", date: "12시간 전", tag: "칼럼", url: "https://www.catholictimes.org/" },
+                    { title: "[오피니언] 복잡한 세상 속, 그리스도인이 지켜야 할 침묵의 영성", desc: "소음과 정보가 넘쳐나는 시대에 하루 10분, 주님 앞에 온전히 머무는 관상 기도의 가치를 조명하는 특별 사설입니다.", source: "가톨릭신문", date: "12시간 전", tag: "칼럼", url: "https://www.catholictimes.org/" },
                     { title: "가톨릭 노동청년회, 노동 현장 실태 조사 발표 “취약 노동자 권익 보호”", desc: "법 사각지대에 놓인 청년 아르바이트생 및 비정규직 노동자들의 환경 개선을 위한 가톨릭 사회 교리적 대안을 촉구했습니다.", source: "가톨릭신문", date: "2일 전", tag: "사회 교리", url: "https://www.catholictimes.org/" }
                 ],
                 goodnews: [

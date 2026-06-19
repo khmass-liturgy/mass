@@ -16,7 +16,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2 family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
@@ -31,7 +31,7 @@
             --muted: #7A6F5E;
             --vatican: #6B1A1A;
             --cpbc: #1A4A6B;
-            --red: #B22222;
+            --kyoha: #2E4F39; /* 교하성당 전용 차분한 딥그린 포인트 */
         }
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
@@ -83,6 +83,7 @@
         .section-badge { padding: 3px 10px; font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; border-radius: 2px; }
         .badge-vatican { background: var(--vatican); color: var(--cream); }
         .badge-korea { background: var(--cpbc); color: var(--cream); }
+        .badge-kyoha { background: var(--kyoha); color: var(--cream); }
         .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); }
         .news-count { margin-left: auto; font-size: .75rem; color: var(--muted); }
         
@@ -113,14 +114,25 @@
         .feature-card .card-title a:hover { color: var(--gold); }
         .feature-card .card-desc { color: #AAA; }
         .feature-card .card-date { color: #888; }
+
+        /* ── KYOHA CHURCH SECTION SPECIFIC ── */
+        .kyoha-container { background: #EBF0EC; border: 1px solid var(--border); border-top: 4px solid var(--kyoha); padding: 18px; border-radius: 4px; margin-top: 28px; }
+        .kyoha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+        .kyoha-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 12px 6px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
+        .kyoha-btn:hover { border-color: var(--kyoha); background: #F6FAF7; transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.04); }
+        .kyoha-btn .btn-meta { font-size: 0.65rem; color: var(--muted); margin-bottom: 2px; font-family: 'Cinzel', serif; }
+        .kyoha-btn .btn-title { font-family: 'Noto Serif KR', serif; font-size: 0.9rem; font-weight: 700; color: var(--kyoha); }
         
         /* ── FOOTER ── */
-        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 32px 24px; font-size: .75rem; }
+        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .75rem; }
         footer p + p { margin-top: 6px; }
+        .footer-link-block { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-link-block a { color: var(--gold-lt); text-decoration: none; font-family: 'Noto Serif KR', serif; font-weight: 600; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-link-block a:hover { color: white; text-decoration: underline; }
         
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) { main { grid-template-columns: 1fr; grid-template-rows: auto; gap: 32px; } .divider { display: none; } }
-        @media (max-width: 600px) { .header-inner { height: 60px; justify-content: space-between; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .header-inner { height: 60px; justify-content: space-between; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid, .kyoha-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -138,14 +150,14 @@
 
     <div class="marquee-wrap">
         <div class="marquee-inner" id="marqueeInner">
+            <span>✦ <strong>교하성당 소식</strong> 홈페이지 연동 안내 피드 추가</span>
             <span>✦ <strong>매일미사 정보</strong> 가톨릭 굿뉴스 연동 활성화</span>
             <span>✦ <strong>교황청 소식</strong> 실시간 업데이트 완료</span>
-            <span>✦ <strong>가톨릭 평화 방송</strong> 및 주요 언론사 뉴스 피드 동기화 완료</span>
         </div>
     </div>
 
     <main>
-        <!-- ── 교황청 섹션 ── -->
+        <!-- ── 교황청 섹션 (좌측) ── -->
         <section>
             <div class="section-header">
                 <span class="section-badge badge-vatican">Holy See</span>
@@ -165,9 +177,9 @@
             <div class="divider-line"></div>
         </div>
 
-        <!-- ── 국내 뉴스 및 매일미사 섹션 ── -->
+        <!-- ── 국내 뉴스 및 본당 섹션 (우측) ── -->
         <section>
-            <!-- ── 오늘의 매일미사 대시보드 ── -->
+            <!-- 오늘의 매일미사 대시보드 -->
             <div class="missa-box">
                 <div class="missa-header">
                     <span class="missa-badge">LITURGIA</span>
@@ -202,10 +214,50 @@
                 <button class="tab-btn" onclick="switchKoreaFeed('goodnews', this)">인터넷 굿뉴스</button>
             </div>
             <div id="koreaFeed"></div>
+
+            <!-- ── 교하성당 소식 섹션 (국내 뉴스 다음에 배치) ── -->
+            <div class="kyoha-container">
+                <div class="section-header" style="border-bottom-color: #C3D0C7; margin-bottom: 14px;">
+                    <span class="section-badge badge-kyoha">Kyoha</span>
+                    <h2 class="section-title" style="color: var(--kyoha);">교하성당 소식</h2>
+                </div>
+                
+                <div class="kyoha-grid">
+                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
+                        <span class="btn-meta">NOTICE</span>
+                        <span class="btn-title">공지사항</span>
+                    </a>
+                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
+                        <span class="btn-meta">WEEKLY</span>
+                        <span class="btn-title">성당 주보</span>
+                    </a>
+                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
+                        <span class="btn-meta">GALLERY</span>
+                        <span class="btn-title">본당 앨범</span>
+                    </a>
+                </div>
+
+                <div class="cards">
+                    <div class="card" style="border-left-color: var(--kyoha); padding: 12px 14px;">
+                        <div class="card-source" style="color: var(--kyoha);">KYOHA CHURCH</div>
+                        <h3 class="card-title" style="font-size:0.88rem;"><a href="https://sd.uca.or.kr/kyoha/" target="_blank">이번 주일 공동체 미사 및 본당 지향 안내</a></h3>
+                        <p class="card-desc" style="font-size:0.75rem;">교하성당 주보 및 전례 봉사자 편성표, 본당 공동체 공지사항은 공식 홈페이지에서 자세히 확인하실 수 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag" style="background:#DEE7E1; color:var(--kyoha);">본당공지</span>
+                            <span class="card-date">실시간 연동</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </section>
     </main>
 
     <footer>
+        <!-- 맨 하단 교하성당 홈페이지 링크 블록 -->
+        <div class="footer-link-block">
+            <a href="https://sd.uca.or.kr/kyoha/" target="_blank">🏛️ 교하성당 공식 홈페이지 바로가기 (https://sd.uca.or.kr/kyoha/)</a>
+        </div>
         <p>© 2026 가톨릭 뉴스 포털. 모든 소식의 권리는 각 언론사에 있습니다.</p>
         <p>본 페이지는 RSS 데이터를 기반으로 작동하는 가톨릭 소식 브라우저입니다.</p>
     </footer>
@@ -215,7 +267,7 @@
             vatican: {
                 ko_all: [
                     { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
-                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침และ 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
                     { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
                     { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko.html" },
                     { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" }
@@ -258,7 +310,7 @@
                     { title: "가톨릭 노동청년회, 노동 현장 실태 조사 발표 “취약 노동자 권익 보호”", desc: "법 사각지대에 놓인 청년 아르바이트생 및 비정규직 노동자들의 환경 개선을 위한 가톨릭 사회 교리적 대안을 촉구했습니다.", source: "가톨릭신문", date: "2일 전", tag: "사회 교리", url: "https://www.catholictimes.org/" }
                 ],
                 goodnews: [
-                    { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문과 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
+                    { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문 and 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
                     { title: "오늘의 묵상: '너희는 세상의 소금과 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "전례묵상", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
                     { title: "굿뉴스 성경 쓰기 타자 이어가기 캠페인, 참여 신자 10만 명 돌파", desc: "성경 말씀을 손과 마음으로 깊이 새기는 온라인 성경 필기 프로그램이 전 국적 신자들의 신앙 열풍 속에 대기록을 달성했습니다.", source: "인터넷 굿뉴스", date: "5시간 전", tag: "신앙나눔", url: "http://www.catholic.or.kr/" },
                     { title: "우리 교구 주간 소식지 일괄 배부 서비스 신청 안내", desc: "컴퓨터나 스마트폰 접근이 어려운 어르신 신자분들을 위해 각 본당의 주보 및 소식지를 우편으로 정기 발송해 드립니다.", source: "인터넷 굿뉴스", date: "9시간 전", tag: "교구 서비스", url: "http://www.catholic.or.kr/" },

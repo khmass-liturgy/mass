@@ -1,404 +1,361 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>실시간 가톨릭 뉴스 &amp; 매일미사 포털</title>
-    
-    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3'/></svg>" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3'/></svg>" />
-    <meta name="theme-color" content="#1A2744" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>가톨릭 뉴스 포털 — 교황청 & 국내외 소식</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --navy:#1A2744; --navy-lt:#243560;
+    --gold:#C9A84C; --gold-lt:#E2C97E;
+    --cream:#F5F0E8; --card:#FFFFFF;
+    --border:#DDD5C0; --text:#1A1A1A;
+    --muted:#7A6F5E; --vatican:#6B1A1A;
+    --cpbc:#1A4A6B;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- ── 실시간 RSS 피드를 정밀하게 파싱해주는 라이브러리 탑재 ── -->
-    <script src="https://static.feednami.com/releases/v1.1.export.min.js"></script>
+  header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
+  .cross-icon{color:var(--gold);font-size:28px;flex-shrink:0;}
+  .header-title{flex:1;}
+  .header-title h1{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);}
+  .header-title p{font-family:'Cinzel',serif;font-size:.62rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
+  .header-date{font-size:.78rem;color:var(--gold-lt);font-family:'Noto Serif KR',serif;text-align:right;}
+  .gold-bar{background:linear-gradient(90deg,var(--gold),var(--gold-lt) 50%,var(--gold));height:3px;}
 
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --navy: #1A2744;
-            --navy-lt: #243560;
-            --gold: #C9A84C;
-            --gold-lt: #E2C97E;
-            --cream: #F5F0E8;
-            --card: #FFFFFF;
-            --border: #DDD5C0;
-            --text: #1A1A1A;
-            --muted: #7A6F5E;
-            --vatican: #6B1A1A;
-            --cpbc: #1A4A6B;
-            --kyoha: #2E4F39;
-        }
-        html { scroll-behavior: smooth; }
-        body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
-        
-        header { background: var(--navy); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.4); }
-        .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 20px; height: 72px; }
-        .header-title { flex: 1; }
-        .header-title h1 { font-family: 'Noto Serif KR', serif; font-size: 1.25rem; font-weight: 700; color: var(--cream); letter-spacing: .02em; }
-        .header-title p { font-family: 'Cinzel', serif; font-size: .65rem; color: var(--gold); letter-spacing: .18em; text-transform: uppercase; margin-top: 1px; }
-        .header-date { font-size: .8rem; color: var(--gold-lt); font-family: 'Noto Serif KR', serif; text-align: right; }
-        .refresh-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .1em; padding: 6px 14px; cursor: pointer; transition: all .2s; border-radius: 2px; }
-        .refresh-btn:hover { background: var(--gold); color: var(--navy); }
-        
-        .gold-bar { background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, var(--gold) 100%); height: 3px; }
-        
-        .marquee-wrap { background: var(--navy-lt); padding: 7px 0; overflow: hidden; }
-        .marquee-inner { display: flex; gap: 60px; animation: marquee 50s linear infinite; white-space: nowrap; }
-        .marquee-inner span { color: var(--gold-lt); font-size: .75rem; letter-spacing: .04em; }
-        .marquee-inner strong { color: var(--cream); }
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        
-        main { max-width: 1400px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 4px 1fr; gap: 0 28px; }
-        
-        .divider { position: relative; display: flex; justify-content: center; }
-        .divider-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent); height: 100%; }
-        
-        .missa-box { background: linear-gradient(135deg, #FFF6E5 0%, #FFFFFF 100%); border: 1px solid var(--border); border-top: 4px solid var(--gold); padding: 18px; margin-bottom: 24px; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
-        .missa-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-        .missa-badge { padding: 3px 8px; background: var(--gold); color: white; font-size: 0.65rem; font-weight: 700; border-radius: 2px; }
-        .missa-title { font-family: 'Noto Serif KR', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
-        .missa-liturgy { font-size: 0.85rem; color: var(--vatican); font-weight: 600; background: #FFF0F0; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 14px; border: 1px dashed rgba(107,26,26,0.2); }
-        .missa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .missa-btn { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 14px 8px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
-        .missa-btn:hover { border-color: var(--gold); background: #FFFDF9; transform: translateY(-1px); }
-        .missa-btn .btn-name { font-family: 'Noto Serif KR', serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); }
-        .missa-link-main { display: block; text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--muted); text-decoration: none; }
-        .missa-link-main:hover { color: var(--gold); text-decoration: underline; }
+  .marquee-wrap{background:var(--navy-lt);padding:7px 0;overflow:hidden;}
+  .marquee-inner{display:flex;gap:60px;animation:marquee 40s linear infinite;white-space:nowrap;}
+  .marquee-inner span{color:var(--gold-lt);font-size:.74rem;letter-spacing:.03em;}
+  .marquee-inner strong{color:var(--cream);}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-        .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
-        .section-badge { padding: 3px 10px; font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; border-radius: 2px; }
-        .badge-vatican { background: var(--vatican); color: var(--cream); }
-        .badge-korea { background: var(--cpbc); color: var(--cream); }
-        .badge-kyoha { background: var(--kyoha); color: var(--cream); }
-        .section-title { font-family: 'Noto Serif KR', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); }
-        .news-count { margin-left: auto; font-size: .75rem; color: var(--muted); }
-        
-        .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
-        .tab-btn { padding: 5px 14px; border: 1px solid var(--border); background: white; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: .75rem; cursor: pointer; border-radius: 2px; transition: all .2s; }
-        .tab-btn:hover { border-color: var(--gold); color: var(--navy); }
-        .tab-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
-        
-        .cards { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-        .card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 14px 16px; transition: all .2s; border-radius: 0 3px 3px 0; }
-        .card:hover { border-left-color: var(--navy); box-shadow: 0 4px 16px rgba(26,39,68,.12); transform: translateX(2px); }
-        .card-source { font-size: .68rem; font-family: 'Cinzel', serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
-        .card-title { font-family: 'Noto Serif KR', serif; font-size: .92rem; font-weight: 600; color: var(--navy); line-height: 1.45; margin-bottom: 6px; }
-        .card-title a { color: inherit; text-decoration: none; }
-        .card-title a:hover { color: var(--vatican); text-decoration: underline; }
-        .card-desc { font-size: .78rem; color: var(--muted); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .card-footer { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
-        .card-date { font-size: .7rem; color: #AAA; margin-left: auto; }
-        .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
+  main{max-width:1200px;margin:0 auto;padding:32px 24px 60px;}
 
-        .loading-text { text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.85rem; font-style: italic; }
+  /* ── 매일미사 카드 ── */
+  .missa-section{margin-bottom:44px;}
+  .missa-card{
+    position:relative;
+    background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
+    border-radius:6px;
+    padding:30px 32px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    text-decoration:none;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .missa-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(26,39,68,.35);}
+  .missa-card::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 90% -10%, rgba(201,168,76,.18), transparent 50%),
+      radial-gradient(circle at -5% 110%, rgba(201,168,76,.12), transparent 50%);
+    pointer-events:none;
+  }
+  .missa-date-box{
+    flex-shrink:0;
+    width:92px; height:92px;
+    background:var(--gold);
+    border-radius:6px;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    color:var(--navy);
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    z-index:1;
+  }
+  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
+  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:2.1rem;font-weight:700;line-height:1;margin:2px 0;}
+  .missa-date-box .month{font-size:.68rem;font-weight:500;}
+  .missa-body{flex:1;z-index:1;min-width:0;}
+  .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
+  .missa-sub{font-size:.85rem;color:#B8C0D8;}
+  .missa-arrow{
+    flex-shrink:0; z-index:1;
+    width:42px; height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold);
+    font-size:1.1rem;
+    transition:background .2s, color .2s;
+  }
+  .missa-card:hover .missa-arrow{background:var(--gold);color:var(--navy);}
 
-        .kyoha-container { background: #EBF0EC; border: 1px solid var(--border); border-top: 4px solid var(--kyoha); padding: 18px; border-radius: 4px; margin-top: 28px; }
-        .kyoha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .kyoha-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 12px 6px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
-        .kyoha-btn:hover { border-color: var(--kyoha); background: #F6FAF7; transform: translateY(-1px); }
-        .kyoha-btn .btn-meta { font-size: 0.65rem; color: var(--muted); margin-bottom: 2px; font-family: 'Cinzel', serif; }
-        .kyoha-btn .btn-title { font-family: 'Noto Serif KR', serif; font-size: 0.9rem; font-weight: 700; color: var(--kyoha); }
-        
-        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 36px 24px; font-size: .75rem; }
-        .footer-link-block { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .footer-link-block a { color: var(--gold-lt); text-decoration: none; font-family: 'Noto Serif KR', serif; font-weight: 600; font-size: 0.85rem; }
-        
-        @media (max-width: 900px) { main { grid-template-columns: 1fr; gap: 32px; } .divider { display: none; } }
-        @media (max-width: 600px) { .header-inner { height: 60px; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid, .kyoha-grid { grid-template-columns: 1fr; } }
-    </style>
+  /* ── 섹션 타이틀 ── */
+  .group-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+  .group-badge{padding:3px 10px;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;}
+  .badge-vatican{background:var(--vatican);color:var(--cream);}
+  .badge-korea{background:var(--cpbc);color:var(--cream);}
+  .badge-world{background:#4A4A4A;color:var(--cream);}
+  .group-title{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
+
+  .link-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+    gap:14px;
+    margin-bottom:40px;
+  }
+
+  .link-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:4px solid var(--gold);
+    border-radius:0 4px 4px 0;
+    padding:18px 18px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:all .2s;
+    min-height:108px;
+  }
+  .link-card:hover{
+    border-left-color:var(--navy);
+    box-shadow:0 6px 20px rgba(26,39,68,.12);
+    transform:translateY(-2px);
+  }
+  .link-card .lc-top{display:flex;align-items:center;justify-content:space-between;}
+  .link-card .lc-icon{font-size:1.3rem;color:var(--gold);}
+  .link-card .lc-go{font-size:.85rem;color:#C8C0AE;transition:transform .2s, color .2s;}
+  .link-card:hover .lc-go{color:var(--navy);transform:translateX(3px);}
+  .link-card .lc-name{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:700;color:var(--navy);}
+  .link-card .lc-desc{font-size:.78rem;color:var(--muted);line-height:1.5;}
+  .link-card .lc-lang{
+    align-self:flex-start;
+    font-size:.62rem;
+    padding:2px 7px;
+    border-radius:2px;
+    background:#F0EBE0;
+    color:var(--muted);
+    margin-top:auto;
+  }
+
+  footer{background:var(--navy);color:var(--muted);text-align:center;padding:24px;font-size:.75rem;}
+  footer a{color:var(--gold);text-decoration:none;}
+  footer p+p{margin-top:6px;}
+  .footer-cross{font-size:1.5rem;color:var(--gold);display:block;margin-bottom:10px;}
+
+  @media (max-width:600px){
+    .header-inner{height:60px;}
+    .header-title h1{font-size:1rem;}
+    .header-date{display:none;}
+    .missa-card{flex-wrap:wrap;padding:22px;}
+    .missa-arrow{display:none;}
+    .link-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:380px){
+    .link-grid{grid-template-columns:1fr;}
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="header-title">
-                <h1>실시간 가톨릭 뉴스 &amp; 미사 포털</h1>
-                <p>Nuntii Catholici · Mass &amp; News</p>
-            </div>
-            <div class="header-date" id="headerDate">소식 불러오는 중...</div>
-            <button class="refresh-btn" onclick="refreshAll()">↺ 실시간 동기화</button>
-        </div>
-    </header>
-    <div class="gold-bar"></div>
 
-    <div class="marquee-wrap">
-        <div class="marquee-inner" id="marqueeInner">
-            <span>✦ <strong>실시간 교회 소식</strong> 라이브 동기화 가동 중</span>
-            <span>✦ <strong>교하성당 소식</strong> 전용 전례 링크 상시 연동</span>
-            <span>✦ <strong>매일미사 정보</strong> 가톨릭 굿뉴스 직통 연결</span>
-        </div>
+<header>
+  <div class="header-inner">
+    <div class="cross-icon">✝</div>
+    <div class="header-title">
+      <h1>가톨릭 뉴스 포털</h1>
+      <p>Nuntii Catholici · Vatican &amp; Korea</p>
     </div>
+    <div class="header-date" id="headerDate"></div>
+  </div>
+</header>
+<div class="gold-bar"></div>
 
-    <main>
-        <!-- ── 교황청 실시간 섹션 (좌측) ── -->
-        <section>
-            <div class="section-header">
-                <span class="section-badge badge-vatican">Holy See</span>
-                <h2 class="section-title">교황청 · Vatican News (실시간)</h2>
-                <span class="news-count" id="vaticanCount">불러오는 중...</span>
-            </div>
-            <div class="tabs" id="vaticanTabs">
-                <button class="tab-btn active" onclick="loadVaticanRSS('https://www.vaticannews.va/ko.rss.xml', this)">바티칸 종합</button>
-            </div>
-            <div id="vaticanFeed" class="loading-text">바티칸 서버에서 실시간 뉴스를 가져오는 중입니다...</div>
-        </section>
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 평화방송 · 가톨릭신문 · 굿뉴스</span>
+    <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 평화방송 · 가톨릭신문 · 굿뉴스</span>
+  </div>
+</div>
 
-        <div class="divider">
-            <div class="divider-line"></div>
-        </div>
+<main>
 
-        <!-- ── 국내 실시간 뉴스 및 본당 섹션 (우측) ── -->
-        <section>
-            <!-- 매일미사 -->
-            <div class="missa-box">
-                <div class="missa-header">
-                    <span class="missa-badge">LITURGIA</span>
-                    <h3 class="missa-title">오늘의 매일미사</h3>
-                </div>
-                <div class="missa-liturgy" id="missaLiturgyName">전례 정보 설정 중...</div>
-                <div class="missa-grid">
-                    <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-name">제1독서</span>
-                    </a>
-                    <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-name">화답송</span>
-                    </a>
-                    <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-name">오늘의 복음</span>
-                    </a>
-                </div>
-                <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-link-main">
-                    ☞ 전체 미사 전문 (입당송/기도문/영성체송) 보러가기
-                </a>
-            </div>
+  <!-- ── 오늘의 매일미사 카드 1장 ── -->
+  <section class="missa-section">
+    <a class="missa-card" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <div class="missa-date-box">
+        <span class="dow" id="missaDow">SUN</span>
+        <span class="day" id="missaDay">1</span>
+        <span class="month" id="missaMonth">1월</span>
+      </div>
+      <div class="missa-body">
+        <div class="missa-eyebrow">Daily Mass · 한국천주교주교회의</div>
+        <div class="missa-title">오늘의 매일미사 보기</div>
+        <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
+      </div>
+      <div class="missa-arrow">→</div>
+    </a>
+  </section>
 
-            <!-- 국내 뉴스 피드 -->
-            <div class="section-header">
-                <span class="section-badge badge-korea">Korea</span>
-                <h2 class="section-title">국내 가톨릭 뉴스 (실시간)</h2>
-                <span class="news-count" id="koreaCount">불러오는 중...</span>
-            </div>
-            <div class="tabs" id="koreaTabs">
-                <button class="tab-btn active" onclick="loadKoreaRSS('https://news.cpbc.co.kr/news/rss', 'cpbc 평화방송', this)">평화방송</button>
-                <button class="tab-btn" onclick="loadKoreaRSS('https://www.catholictimes.org/rss/rss.php', '가톨릭신문', this)">가톨릭신문</button>
-                <button class="tab-btn" onclick="loadKoreaRSS('BACKUP_GOODNEWS', '인터넷 굿뉴스', this)">인터넷 굿뉴스</button>
-            </div>
-            <div id="koreaFeed" class="loading-text">국내 언론사 서버에서 최신 기사를 빌드하는 중입니다...</div>
+  <!-- ── 교황청 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-vatican">Holy See</span>
+      <h2 class="group-title">교황청 소식</h2>
+    </div>
+    <div class="link-grid">
 
-            <!-- 교하성당 -->
-            <div class="kyoha-container">
-                <div class="section-header" style="border-bottom-color: #C3D0C7; margin-bottom: 14px;">
-                    <span class="section-badge badge-kyoha">Kyoha</span>
-                    <h2 class="section-title" style="color: var(--kyoha);">교하성당 소식</h2>
-                </div>
-                <div class="kyoha-grid">
-                    <a href="https://sd.uca.or.kr/kyoha/board?mnucd=20001877" target="_blank" class="kyoha-btn">
-                        <span class="btn-meta">BOARD</span>
-                        <span class="btn-title">공지사항</span>
-                    </a>
-                    <a href="https://sd.uca.or.kr/kyoha/jubo?mnucd=20001570" target="_blank" class="kyoha-btn">
-                        <span class="btn-meta">JUBO</span>
-                        <span class="btn-title">성당 주보</span>
-                    </a>
-                    <a href="https://sd.uca.or.kr/kyoha/gallery?mnucd=20001854" target="_blank" class="kyoha-btn">
-                        <span class="btn-meta">GALLERY</span>
-                        <span class="btn-title">본당 앨범</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+      <a class="link-card" href="https://www.vaticannews.va/ko.html" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">✝</span><span class="lc-go">→</span></div>
+        <div class="lc-name">Vatican News</div>
+        <div class="lc-desc">교황청 공식 뉴스 서비스</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-    <footer>
-        <div class="footer-link-block">
-            <a href="https://sd.uca.or.kr/kyoha/" target="_blank">🏛️ 교하성당 공식 홈페이지 바로가기</a>
-        </div>
-        <p>© 2026 실시간 가톨릭 종합 연동 포털. 본 시스템은 각 언론사 공식 RSS 시스템을 투명하게 파싱합니다.</p>
-    </footer>
+      <a class="link-card" href="https://www.vatican.va/content/vatican/ko.html" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
+        <div class="lc-name">교황청 홈페이지</div>
+        <div class="lc-desc">바티칸 공식 사이트 (vatican.va)</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-    <script>
-        // 네트워크 차단이나 점검 시 안전하게 작동할 비상용 최신 백업 데이터 스토리지
-        const backupData = {
-            cpbc: [
-                { title: "[실시간 백업] 가톨릭평화방송 생방송 및 교구 사목 종합 뉴스", description: "평화방송 라이브 서버 연결 일시 지연 시 작동하는 뉴스 피드입니다. 클릭 시 공식 뉴스룸으로 연결됩니다.", link: "https://news.cpbc.co.kr/news/total", date: "오늘" },
-                { title: "재단법인 바보의나눔, 겨울철 취약계층 긴급 난방비 나눔 전개", description: "김수환 추기경의 뜻을 잇는 따뜻한 온기 나눔 소식입니다.", link: "https://news.cpbc.co.kr/news/cardnews", date: "오늘" }
-            ],
-            cbc: [
-                { title: "[실시간 백업] 가톨릭신문 교구동정 및 전국 종합 기사 목록", description: "가톨릭신문 서버 연동 점검 시 노출되는 비상 안내용 피드입니다.", link: "https://www.catholictimes.org/", date: "오늘" }
-            ],
-            goodnews: [
-                { title: "가톨릭 인터넷 굿뉴스 모바일 매일미사 및 전례 서비스", description: "스마트폰으로 언제 어디서나 오늘 미사의 복음과 독서, 강론 전문을 볼 수 있는 실시간 자동 연동 페이지입니다.", link: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on", date: "실시간" },
-                { title: "오늘의 복음 묵상: '너희는 세상의 소금과 빛이다'", description: "매일 아침 배달되는 생생한 말씀 사색과 신앙인들의 삶의 성찰을 나눕니다.", link: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on", date: "오늘" },
-                { title: "인터넷 굿뉴스 성경 쓰기 타자 이어가기 공동체 캠페인", description: "전국 신자들이 함께 참여하는 온라인 성경 필사 프로그램 안내입니다.", link: "http://bible.catholic.or.kr/", date: "진행중" }
-            ],
-            vatican: [
-                { title: "[실시간 백업] 프란치스코 교황 삼종기도 및 보편교회 연대 호소", description: "바티칸 뉴스룸 메인 네트워크 연동 지연 시 표출되는 예비 데이터라인입니다.", link: "https://www.vaticannews.va/ko.html", date: "최신" }
-            ]
-        };
+      <a class="link-card" href="https://press.vatican.va/content/salastampa/it.html" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">교황청 공보실</div>
+        <div class="lc-desc">Holy See Press Office 공식 발표</div>
+        <span class="lc-lang">IT / EN</span>
+      </a>
 
-        // 실시간 교황청 뉴스 가져오기
-        function loadVaticanRSS(url, element) {
-            if (element) {
-                const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
-                tabs.forEach(t => t.classList.remove('active'));
-                element.classList.add('active');
-            }
-            
-            const feedContainer = document.getElementById('vaticanFeed');
-            feedContainer.innerHTML = '<div class="loading-text">바티칸 공식 위성망에서 뉴스 동기화 중...</div>';
+      <a class="link-card" href="https://www.vaticannews.va/en/pope.html" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">👤</span><span class="lc-go">→</span></div>
+        <div class="lc-name">교황 관련 소식</div>
+        <div class="lc-desc">교황 강론·일정·메시지 모음</div>
+        <span class="lc-lang">EN</span>
+      </a>
 
-            feednami.load(url, function(result) {
-                if (result.error) {
-                    console.log("Vatican RSS Error, loading backup.");
-                    renderStaticHTML(backupData.vatican, 'vaticanFeed', 'Vatican News', 'vaticanCount');
-                } else {
-                    const entries = result.feed.entries.slice(0, 6);
-                    renderDynamicHTML(entries, 'vaticanFeed', 'Vatican News', 'vaticanCount');
-                }
-            });
-        }
+    </div>
+  </section>
 
-        // 실시간 국내 뉴스 가져오기 (평화방송, 가톨릭신문 등)
-        function loadKoreaRSS(url, sourceName, element) {
-            if (element) {
-                const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
-                tabs.forEach(t => t.classList.remove('active'));
-                element.classList.add('active');
-            }
+  <!-- ── 국내 가톨릭 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-korea">Korea</span>
+      <h2 class="group-title">국내 가톨릭 뉴스</h2>
+    </div>
+    <div class="link-grid">
 
-            const feedContainer = document.getElementById('koreaFeed');
-            feedContainer.innerHTML = `<div class="loading-text">${sourceName} 서버에서 실시간 기사 수신 중...</div>`;
+      <a class="link-card" href="https://news.cpbc.co.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📡</span><span class="lc-go">→</span></div>
+        <div class="lc-name">cpbc 가톨릭평화방송</div>
+        <div class="lc-desc">가톨릭 라디오·방송 뉴스</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-            // 굿뉴스는 전용 웹뷰 링크 체제이므로 백업형 직통 연동 적용
-            if (url === 'BACKUP_GOODNEWS') {
-                renderStaticHTML(backupData.goodnews, 'koreaFeed', '인터넷 굿뉴스', 'koreaCount');
-                return;
-            }
+      <a class="link-card" href="https://www.catholictimes.org" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭신문</div>
+        <div class="lc-desc">국내 대표 가톨릭 신문</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-            feednami.load(url, function(result) {
-                if (result.error) {
-                    console.log(sourceName + " RSS Error, loading backup.");
-                    const backupKey = sourceName.includes('평화') ? 'cpbc' : 'cbc';
-                    renderStaticHTML(backupData[backupKey], 'koreaFeed', sourceName, 'koreaCount');
-                } else {
-                    const entries = result.feed.entries.slice(0, 5);
-                    renderDynamicHTML(entries, 'koreaFeed', sourceName, 'koreaCount');
-                }
-            });
-        }
+      <a class="link-card" href="https://www.cbck.or.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">⛪</span><span class="lc-go">→</span></div>
+        <div class="lc-name">한국천주교주교회의</div>
+        <div class="lc-desc">CBCK 공식 홈페이지</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-        // 받아온 진짜 실시간 데이터를 화면에 그리는 엔진
-        function renderDynamicHTML(entries, containerId, sourceName, countId) {
-            const container = document.getElementById(containerId);
-            const countEl = document.getElementById(countId);
-            if (!container) return;
+      <a class="link-card" href="https://maria.catholic.or.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">💬</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭굿뉴스</div>
+        <div class="lc-desc">서울대교구 운영 종합 포털</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-            if (!entries || entries.length === 0) {
-                container.innerHTML = '<div class="loading-text">현재 등록된 최신 기사가 없거나 점검 중입니다.</div>';
-                if (countEl) countEl.innerText = '0건';
-                return;
-            }
+      <a class="link-card" href="https://www.catholicpress.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🗞</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭언론인협의회</div>
+        <div class="lc-desc">가톨릭 언론 종합 소식</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-            let html = '<div class="cards">';
-            entries.forEach(entry => {
-                // 작성일 포맷팅 제거 및 깔끔한 정리
-                let displayDate = '최신';
-                if (entry.pubDate) {
-                    try {
-                        const d = new Date(entry.pubDate);
-                        displayDate = `${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${d.getMinutes() < 10 ? '0'+d.getMinutes() : d.getMinutes()}`;
-                    } catch(e) {}
-                }
-                
-                // 본문 텍스트 내 HTML 태그 제거 작업
-                let plainDesc = entry.description || entry.summary || '상세 내용은 제목을 클릭하여 본문 게시판에서 확인하실 수 있습니다.';
-                plainDesc = plainDesc.replace(/<[^>]*>?/gm, '').substring(0, 140) + '...';
+      <a class="link-card" href="https://www.koreadaily.com/cms/realtime/religion" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🌍</span><span class="lc-go">→</span></div>
+        <div class="lc-name">평화신문</div>
+        <div class="lc-desc">서울대교구 발행 주간지</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-                html += `
-                    <div class="card">
-                        <div class="card-source">${sourceName}</div>
-                        <h3 class="card-title"><a href="${entry.link}" target="_blank">${entry.title}</a></h3>
-                        <p class="card-desc">${plainDesc}</p>
-                        <div class="card-footer">
-                            <span class="card-tag">LATEST</span>
-                            <span class="card-date">${displayDate}</span>
-                        </div>
-                    </div>
-                `;
-            });
-            html += '</div>';
-            container.innerHTML = html;
-            if (countEl) countEl.innerText = `${entries.length}건`;
-        }
+    </div>
+  </section>
 
-        // 비상용 백업 데이터를 화면에 그리는 엔진
-        function renderStaticHTML(items, containerId, sourceName, countId) {
-            const container = document.getElementById(containerId);
-            const countEl = document.getElementById(countId);
-            if (!container) return;
+  <!-- ── 해외 가톨릭 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-world">World</span>
+      <h2 class="group-title">해외 가톨릭 뉴스</h2>
+    </div>
+    <div class="link-grid">
 
-            let html = '<div class="cards">';
-            items.forEach(item => {
-                html += `
-                    <div class="card">
-                        <div class="card-source">${sourceName}</div>
-                        <h3 class="card-title"><a href="${item.link}" target="_blank">${item.title}</a></h3>
-                        <p class="card-desc">${item.description}</p>
-                        <div class="card-footer">
-                            <span class="card-tag">연동링크</span>
-                            <span class="card-date">${item.date}</span>
-                        </div>
-                    </div>
-                `;
-            });
-            html += '</div>';
-            container.innerHTML = html;
-            if (countEl) countEl.innerText = `${items.length}건`;
-        }
+      <a class="link-card" href="https://www.catholicnewsagency.com" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🌐</span><span class="lc-go">→</span></div>
+        <div class="lc-name">Catholic News Agency</div>
+        <div class="lc-desc">CNA 국제 가톨릭 통신</div>
+        <span class="lc-lang">EN</span>
+      </a>
 
-        // 매일미사 상단부 요일 정보 실시간 계산기
-        function setupMissaLiturgy() {
-            const days = ['일', '월', '화', '수', '목', '금', '토'];
-            const today = new Date();
-            const dayName = days[today.getDay()];
-            const formattedDate = `${today.getMonth() + 1}월 ${today.getDate()}일 (${dayName}요일)`;
-            
-            let liturgyName = `${formattedDate} 전례 미사`;
-            if (dayName === '일') liturgyName = `${formattedDate} 주일 미사 [대축일]`;
-            
-            const el = document.getElementById('missaLiturgyName');
-            if (el) el.innerText = liturgyName;
+      <a class="link-card" href="https://osvnews.com" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📡</span><span class="lc-go">→</span></div>
+        <div class="lc-name">OSV News</div>
+        <div class="lc-desc">미국 가톨릭 뉴스 서비스</div>
+        <span class="lc-lang">EN</span>
+      </a>
 
-            // 헤더 날짜 세팅
-            const headerDateEl = document.getElementById('headerDate');
-            if (headerDateEl) {
-                headerDateEl.innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
-            }
-        }
+      <a class="link-card" href="https://www.ncronline.org" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
+        <div class="lc-name">National Catholic Reporter</div>
+        <div class="lc-desc">미국 독립 가톨릭 언론</div>
+        <span class="lc-lang">EN</span>
+      </a>
 
-        // 실시간 전면 동기화 명령 함수
-        function refreshAll() {
-            setupMissaLiturgy();
-            // 바티칸 공식 한국어 RSS 피드 스트림 즉시 호출
-            loadVaticanRSS('https://www.vaticannews.va/ko.rss.xml', null);
-            // 국내 평화방송 RSS 피드 기본 활성화 호출
-            loadKoreaRSS('https://news.cpbc.co.kr/news/rss', 'cpbc 평화방송', null);
-        }
+      <a class="link-card" href="https://www.americamagazine.org" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📘</span><span class="lc-go">→</span></div>
+        <div class="lc-name">America Magazine</div>
+        <div class="lc-desc">예수회 운영 가톨릭 매거진</div>
+        <span class="lc-lang">EN</span>
+      </a>
 
-        // 앱 구동 즉시 동기화 엔진 가동
-        (function() {
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', refreshAll);
-            } else {
-                refreshAll();
-            }
-        })();
-        window.onload = refreshAll;
-    </script>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-cross">✝</span>
+  <p>가톨릭 뉴스 포털 · <em>Nuntii Catholici</em></p>
+  <p>각 카드를 누르면 해당 사이트로 바로 이동합니다</p>
+  <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지</p>
+</footer>
+
+<script>
+function formatDate(){
+  return new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'});
+}
+document.getElementById('headerDate').textContent = formatDate();
+
+// 매일미사 카드 날짜 채우기
+(function(){
+  const now = new Date();
+  const dowNames = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  document.getElementById('missaDow').textContent = dowNames[now.getDay()];
+  document.getElementById('missaDay').textContent = now.getDate();
+  document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
+})();
+</script>
 </body>
 </html>

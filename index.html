@@ -22,7 +22,6 @@
             --vatican: #6B1A1A;
             --cpbc: #1A4A6B;
             --red: #B22222;
-            --purple: #4A1A6B;
         }
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
@@ -56,18 +55,20 @@
         .divider-line { width: 2px; background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent); height: 100%; }
         .divider-cross { position: sticky; top: 110px; width: 28px; height: 28px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 14px; font-weight: 700; flex-shrink: 0; box-shadow: 0 0 0 4px var(--cream); margin-left: -14px; }
         
-        /* ── MISSA DASHBOARD (NEW) ── */
+        /* ── MISSA DASHBOARD ── */
         .missa-box { background: linear-gradient(135deg, #FFF6E5 0%, #FFFFFF 100%); border: 1px solid var(--border); border-top: 4px solid var(--gold); padding: 18px; margin-bottom: 24px; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
         .missa-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
         .missa-badge { padding: 3px 8px; background: var(--gold); color: white; font-size: 0.65rem; font-weight: 700; border-radius: 2px; }
         .missa-title { font-family: 'Noto Serif KR', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
-        .missa-liturgy { font-size: 0.85rem; color: var(--vatican); font-weight: 600; background: #FFF0F0; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 12px; border: 1px dashed rgba(107,26,26,0.2); }
+        .missa-liturgy { font-size: 0.85rem; color: var(--vatican); font-weight: 600; background: #FFF0F0; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 14px; border: 1px dashed rgba(107,26,26,0.2); }
         .missa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .missa-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 10px 6px; border-radius: 4px; text-decoration: none; color: var(--text); transition: all 0.2s; text-align: center; }
+        
+        /* 밑의 글자를 제거하고 상단 텍스트 레이아웃을 깔끔하게 조정 */
+        .missa-btn { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 14px 8px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
         .missa-btn:hover { border-color: var(--gold); background: #FFFDF9; transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
-        .missa-btn .btn-label { font-size: 0.7rem; color: var(--muted); margin-bottom: 2px; font-weight: 500; }
-        .missa-btn .btn-name { font-family: 'Noto Serif KR', serif; font-size: 0.88rem; font-weight: 700; color: var(--navy); }
-        .missa-link-main { display: block; text-align: center; margin-top: 12px; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+        .missa-btn .btn-name { font-family: 'Noto Serif KR', serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+        
+        .missa-link-main { display: block; text-align: center; margin-top: 14px; font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
         .missa-link-main:hover { color: var(--gold); text-decoration: underline; }
 
         /* ── SECTION HEADERS ── */
@@ -163,7 +164,7 @@
 
         <!-- ── 국내 뉴스 및 매일미사 섹션 ── -->
         <section>
-            <!-- ── [신설] 오늘의 매일미사 대시보드 ── -->
+            <!-- ── 오늘의 매일미사 대시보드 ── -->
             <div class="missa-box">
                 <div class="missa-header">
                     <span class="missa-badge">LITURGIA</span>
@@ -172,16 +173,13 @@
                 <div class="missa-liturgy" id="missaLiturgyName">전례 정보 불러오는 중...</div>
                 <div class="missa-grid">
                     <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-label">제1독서</span>
-                        <span class="btn-name">말씀 확진</span>
+                        <span class="btn-name">제1독서</span>
                     </a>
                     <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-label">화답송</span>
-                        <span class="btn-name">시편 찬미</span>
+                        <span class="btn-name">화답송</span>
                     </a>
                     <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-btn">
-                        <span class="btn-label">오늘의 복음</span>
-                        <span class="btn-name">그리스도 말씀</span>
+                        <span class="btn-name">오늘의 복음</span>
                     </a>
                 </div>
                 <a href="https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" target="_blank" class="missa-link-main">
@@ -211,7 +209,6 @@
     </footer>
 
     <script>
-        // 뉴스 데이터베이스 및 정상화된 굿뉴스 링크 업데이트 완료
         const mockData = {
             vatican: {
                 ko_all: [
@@ -249,7 +246,7 @@
                     { title: "재단법인 바보의나눔, 소외계층 위한 겨울철 난방비 추가 지원 사업 전개", desc: "김수환 추기경의 숭고한 나눔 뜻을 이어받아 전국의 취약계층 독거노인 및 차상위 가구에 난방비를 긴급 수혈합니다.", source: "cpbc 평화방송", date: "2시간 전", tag: "사회복지", url: "https://news.cpbc.co.kr/" },
                     { title: "서울대교구, 해외 선교 사제 파견 미사 봉헌 “세상 끝까지 복음을”", desc: "선교 사목지로 떠나는 사제들을 격려하고, 보편 교회를 향한 한국 교회의 영적 연대와 사랑의 파견 예식을 거행했습니다.", source: "cpbc 평화방송", date: "4시간 전", tag: "교구동정", url: "https://news.cpbc.co.kr/" },
                     { title: "cpbc 가톨릭평화방송 라디오, 가을맞이 영성 프로그램 대규모 개편", desc: "신자들의 일상 속 신앙생활과 기도를 돕기 위해 깊이 있는 영성 강좌와 생활 성가 중심의 프로그램들을 대거 선보입니다.", source: "cpbc 평화방송", date: "7시간 전", tag: "방송소식", url: "https://news.cpbc.co.kr/" },
-                    { title: "한국가톨릭문화연구원, '디지털 시대의 신앙' 주제로 정기 심포지엄 개최", desc: "스마트폰 og 온라인 매체가 보편화된 세상 속에서 올바른 가톨릭 미디어 윤리와 신앙 실천 방향을 모색하는 학술대회입니다.", source: "cpbc 평화방송", date: "1일 전", tag: "문화/학술", url: "https://news.cpbc.co.kr/" }
+                    { title: "한국가톨릭문화연구원, '디지털 시대의 신앙' 주제로 정기 심포지엄 개최", desc: "스마트폰 및 온라인 매체가 보편화된 세상 속에서 올바른 가톨릭 미디어 윤리와 신앙 실천 방향을 모색하는 학술대회입니다.", source: "cpbc 평화방송", date: "1일 전", tag: "문화/학술", url: "https://news.cpbc.co.kr/" }
                 ],
                 cbc: [
                     { title: "가톨릭신문 선정 '올해의 가톨릭 학술상' 시상식 개최", desc: "한국 가톨릭 신학 및 사상 발전에 지대한 공헌을 한 원로 학자 및 신진 연구가들을 치하하는 뜻깊은 시상식이 열렸습니다.", source: "가톨릭신문", date: "30분 전", tag: "학술상", url: "https://www.catholictimes.org/" },
@@ -268,7 +265,6 @@
             }
         };
 
-        // 교황청 데이터 화면 출력 장치
         function renderVatican(category) {
             const container = document.getElementById('vaticanFeed');
             if(!container) return;
@@ -293,7 +289,6 @@
             if(countEl) countEl.innerText = `${items.length}건`;
         }
 
-        // 국내 가톨릭 데이터 화면 출력 장치
         function renderKorea(category) {
             const container = document.getElementById('koreaFeed');
             if(!container) return;
@@ -319,25 +314,21 @@
             if(countEl) countEl.innerText = `${items.length}건`;
         }
 
-        // 매일미사 요일별 전례명 동적 추출 보조 장치
         function setupMissaLiturgy() {
             const days = ['일', '월', '화', '수', '목', '금', '토'];
             const today = new Date();
             const dayName = days[today.getDay()];
             const formattedDate = `${today.getMonth() + 1}월 ${today.getDate()}일 (${dayName}요일)`;
             
-            let liturgyName = `${formattedDate} 연중 시기 미사`;
+            let liturgyName = `${formattedDate} 전례 미사`;
             if (dayName === '일') {
                 liturgyName = `${formattedDate} 주일 미사 [대축일]`;
-            } else if (dayName === '금') {
-                liturgyName = `${formattedDate} 연중 제10주간 금요일 [기념일]`;
             }
             
             const el = document.getElementById('missaLiturgyName');
             if(el) el.innerText = liturgyName;
         }
 
-        // 탭 스위칭용 기능구현 (딜레이 없이 즉시 작동)
         function switchVaticanFeed(category, element) {
             if(element) {
                 const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
@@ -362,10 +353,8 @@
             setupMissaLiturgy();
         }
 
-        // [즉시 로딩 구조] 브라우저가 이 스크립트를 읽는 즉시 본문을 강제 주입하여 빈 화면 증상 제거
         refreshAll();
 
-        // 상단 오늘 날짜 표시 보조 스크립트
         try {
             const today = new Date();
             document.getElementById('headerDate').innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });

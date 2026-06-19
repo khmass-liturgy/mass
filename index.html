@@ -83,7 +83,7 @@
         .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
         
         /* ── SKELETON ── */
-        .skeleton { animation: pulse 1.5s ease-in-out infinite; }
+        .skeleton { animation: pulse 1.5s ease-in-out infinite; width: 100%; }
         .skeleton-item { background: #E8E4DC; border-radius: 3px; margin-bottom: 12px; height: 80px; }
         .skeleton-item:nth-child(2) { height: 65px; opacity: .7; }
         .skeleton-item:nth-child(3) { height: 72px; opacity: .5; }
@@ -136,7 +136,6 @@
     </div>
 
     <main>
-        <!-- ── 교황청 섹션 ── -->
         <section>
             <div class="section-header">
                 <span class="section-badge badge-vatican">Holy See</span>
@@ -163,7 +162,6 @@
             <div class="divider-cross">✝</div>
         </div>
 
-        <!-- ── 국내 뉴스 섹션 ── -->
         <section>
             <div class="section-header">
                 <span class="section-badge badge-korea">Korea</span>
@@ -191,13 +189,15 @@
         <p>본 페이지는 RSS 데이터를 기반으로 작동하는 가톨릭 소식 브라우저입니다.</p>
     </footer>
 
-    <!-- ── 기능 구현 스크립트 추가 ── -->
     <script>
-        // 상단 날짜 표시
+        // 상단 오늘 날짜 주입
         const today = new Date();
-        document.getElementById('headerDate').innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
+        const dateElement = document.getElementById('headerDate');
+        if(dateElement) {
+            dateElement.innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
+        }
 
-        // 가짜/샘플 데이터베이스 (CORS 제한으로 직접 로딩이 안 될 때를 대비한 든든한 백업 데이터)
+        // 가짜/샘플 데이터베이스 구조
         const mockData = {
             vatican: {
                 ko_all: [
@@ -232,17 +232,20 @@
 
         // 교황청 피드 전환 함수
         function switchVaticanFeed(category, element) {
-            // 탭 활성화 변경
-            const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            element.classList.add('active');
+            if(element) {
+                const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                element.classList.add('active');
+            }
 
             const container = document.getElementById('vaticanFeed');
+            if(!container) return;
             container.innerHTML = `<div class="skeleton"><div class="skeleton-item"></div><div class="skeleton-item"></div></div>`;
 
             setTimeout(() => {
                 const items = mockData.vatican[category] || [];
-                document.getElementById('vaticanCount').innerText = `${items.length}건`;
+                const countEl = document.getElementById('vaticanCount');
+                if(countEl) countEl.innerText = `${items.length}건`;
                 
                 if(items.length === 0) {
                     container.innerHTML = `<div class="error-msg">소식을 불러올 수 없습니다. <a href="https://www.vaticannews.va/ko.html" target="_blank">공식 사이트 바로가기</a></div>`;
@@ -265,21 +268,25 @@
                 });
                 html += '</div>';
                 container.innerHTML = html;
-            }, 400);
+            }, 300);
         }
 
-        // 국내 가톨릭 뉴스 피드 전환 함수 (핵심 수정 영역)
+        // 국내 가톨릭 뉴스 피드 전환 함수
         function switchKoreaFeed(category, element) {
-            const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            element.classList.add('active');
+            if(element) {
+                const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                element.classList.add('active');
+            }
 
             const container = document.getElementById('koreaFeed');
+            if(!container) return;
             container.innerHTML = `<div class="skeleton"><div class="skeleton-item"></div><div class="skeleton-item"></div></div>`;
 
             setTimeout(() => {
                 const items = mockData.korea[category] || [];
-                document.getElementById('koreaCount').innerText = `${items.length}건`;
+                const countEl = document.getElementById('koreaCount');
+                if(countEl) countEl.innerText = `${items.length}건`;
                 
                 if(items.length === 0) {
                     container.innerHTML = `<div class="error-msg">소식을 불러올 수 없습니다. 아래 공식 링크를 이용해 주세요.</div>`;
@@ -288,7 +295,6 @@
 
                 let html = '<div class="cards">';
                 items.forEach((item, index) => {
-                    // 첫 번째 뉴스는 하이라이트 스타일(feature-card) 적용 가능
                     const isFirst = index === 0;
                     html += `
                         <div class="${isFirst ? 'feature-card' : 'card'}">
@@ -304,19 +310,21 @@
                 });
                 html += '</div>';
                 container.innerHTML = html;
-            }, 500);
+            }, 400);
         }
 
-        // 전체 새로고침 함수
+        // 전체 새로고침 실행기
         function refreshAll() {
-            switchVaticanFeed('ko_all', document.querySelector('#vaticanTabs .tab-btn:nth-child(1)'));
-            switchKoreaFeed('cpbc', document.querySelector('#koreaTabs .tab-btn:nth-child(1)'));
+            const firstVaticanTab = document.querySelector('#vaticanTabs .tab-btn');
+            const firstKoreaTab = document.querySelector('#koreaTabs .tab-btn');
+            switchVaticanFeed('ko_all', firstVaticanTab);
+            switchKoreaFeed('cpbc', firstKoreaTab);
         }
 
-        // 페이지 최초 로드 시 실행
-        window.onload = function() {
+        // 다른 플랫폼(티스토리/블로그 등)과의 스크립트 충돌 방지를 위한 이벤트 바인딩 방식 변경
+        document.addEventListener('DOMContentLoaded', function() {
             refreshAll();
-        };
+        });
     </script>
 </body>
 </html>

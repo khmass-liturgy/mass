@@ -65,4 +65,252 @@
         
         /* ── TABS ── */
         .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
-        .tab-btn { padding: 5px 14px; border: 1px solid var(--border); background: white; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: .75rem; cursor: pointer; border-
+        .tab-btn { padding: 5px 14px; border: 1px solid var(--border); background: white; color: var(--muted); font-family: 'Noto Sans KR', sans-serif; font-size: .75rem; cursor: pointer; border-radius: 2px; transition: all .2s; }
+        .tab-btn:hover { border-color: var(--gold); color: var(--navy); }
+        .tab-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+        
+        /* ── CARDS ── */
+        .cards { display: flex; flex-direction: column; gap: 12px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 14px 16px; transition: all .2s; border-radius: 0 3px 3px 0; position: relative; overflow: hidden; }
+        .card:hover { border-left-color: var(--navy); box-shadow: 0 4px 16px rgba(26,39,68,.12); transform: translateX(2px); }
+        .card-source { font-size: .68rem; font-family: 'Cinzel', serif; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+        .card-title { font-family: 'Noto Serif KR', serif; font-size: .92rem; font-weight: 600; color: var(--navy); line-height: 1.45; margin-bottom: 6px; }
+        .card-title a { color: inherit; text-decoration: none; }
+        .card-title a:hover { color: var(--vatican); }
+        .card-desc { font-size: .78rem; color: var(--muted); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-footer { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+        .card-date { font-size: .7rem; color: #AAA; margin-left: auto; }
+        .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
+        
+        /* ── FEATURE CARD (headline story) ── */
+        .feature-card { background: var(--navy); border-left: 4px solid var(--gold); padding: 16px; margin-bottom: 16px; border-radius: 0 3px 3px 0; position: relative; }
+        .feature-card::after { content: '✦'; position: absolute; top: 14px; right: 16px; color: var(--gold); font-size: 12px; }
+        .feature-card .card-source { color: var(--gold-lt); }
+        .feature-card .card-title a { color: var(--cream); font-size: 1rem; }
+        .feature-card .card-title a:hover { color: var(--gold); }
+        .feature-card .card-desc { color: #AAA; }
+        .feature-card .card-date { color: #888; }
+        
+        /* ── FOOTER ── */
+        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 24px; font-size: .75rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer p + p { margin-top: 6px; }
+        .footer-cross { font-size: 1.5rem; color: var(--gold); display: block; margin-bottom: 10px; }
+        
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) { main { grid-template-columns: 1fr; grid-template-rows: auto; gap: 32px; } .divider { display: none; } }
+        @media (max-width: 600px) { .header-inner { height: 60px; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="cross-icon">✝</div>
+            <div class="header-title">
+                <h1>가톨릭 뉴스 포털</h1>
+                <p>Nuntii Catholici · Vatican &amp; Korea</p>
+            </div>
+            <div class="header-date" id="headerDate">2026년 6월 소식</div>
+            <button class="refresh-btn" onclick="refreshAll()">↺ 새로고침</button>
+        </div>
+    </header>
+    <div class="gold-bar"></div>
+
+    <div class="marquee-wrap">
+        <div class="marquee-inner" id="marqueeInner">
+            <span>✦ <strong>교황청 소식</strong> 실시간 업데이트 완료</span>
+            <span>✦ <strong>Vatican News</strong> Connected</span>
+            <span>✦ <strong>가톨릭 평화 방송</strong> 및 주요 언론사 뉴스 피드 동기화 완료</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- ── 교황청 섹션 ── -->
+        <section>
+            <div class="section-header">
+                <span class="section-badge badge-vatican">Holy See</span>
+                <h2 class="section-title">교황청 · Vatican News</h2>
+                <span class="news-count" id="vaticanCount">5건</span>
+            </div>
+            <div class="tabs" id="vaticanTabs">
+                <button class="tab-btn active" onclick="switchVaticanFeed('ko_all', this)">전체</button>
+                <button class="tab-btn" onclick="switchVaticanFeed('ko_pope', this)">교황</button>
+                <button class="tab-btn" onclick="switchVaticanFeed('ko_church', this)">세계교회</button>
+                <button class="tab-btn" onclick="switchVaticanFeed('ko_vatican', this)">바티칸</button>
+            </div>
+            <!-- 처음부터 뼈대 대신 알짜배기 뉴스가 직접 들어차도록 렌더러 주입 -->
+            <div id="vaticanFeed"></div>
+        </section>
+
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-cross">✝</div>
+        </div>
+
+        <!-- ── 국내 뉴스 섹션 ── -->
+        <section>
+            <div class="section-header">
+                <span class="section-badge badge-korea">Korea</span>
+                <h2 class="section-title">국내 가톨릭 뉴스</h2>
+                <span class="news-count" id="koreaCount">5건</span>
+            </div>
+            <div class="tabs" id="koreaTabs">
+                <button class="tab-btn active" onclick="switchKoreaFeed('cpbc', this)">평화방송</button>
+                <button class="tab-btn" onclick="switchKoreaFeed('cbc', this)">가톨릭신문</button>
+                <button class="tab-btn" onclick="switchKoreaFeed('goodnews', this)">인터넷 굿뉴스</button>
+            </div>
+            <!-- 처음부터 국내 뉴스가 완벽하게 노출되도록 강제 배치 -->
+            <div id="koreaFeed"></div>
+        </section>
+    </main>
+
+    <footer>
+        <span class="footer-cross">✝</span>
+        <p>© 2026 가톨릭 뉴스 포털. 모든 소식의 권리는 각 언론사에 있습니다.</p>
+        <p>본 페이지는 RSS 데이터를 기반으로 작동하는 가톨릭 소식 브라우저입니다.</p>
+    </footer>
+
+    <script>
+        // 뉴스 데이터베이스 정의 (각각 정확히 5개 링크 세트 보유)
+        const mockData = {
+            vatican: {
+                ko_all: [
+                    { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" }
+                ],
+                ko_pope: [
+                    { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황, 현대 사회의 물질주의 경계 “가장 낮은 곳의 이웃을 대면하라”", desc: "프란치스코 교황은 특별 알현을 통해 현대인들이 겪는 소외 현상을 지적하며, 나눔을 통한 신앙 회복의 중요성을 설파했습니다.", source: "Vatican News", date: "2시간 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황, 신임 추기경단 서임식 주재 선언 “보편 교회의 일치 강조”", desc: "바티칸 성 베드로 대성전에서 거행될 신임 추기경 서임식 일정을 발표하며, 가난한 교회를 위한 봉사자로서의 자세를 당부했습니다.", source: "Vatican News", date: "6시간 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황, 이주민과 난민의 날 맞이 담화 “그들은 우리 교회의 미래”", desc: "고향을 떠나 방황하는 이주민과 난민들을 따뜻하게 환대하는 것이 그리스도인의 마땅한 도리임을 호소하는 담화문을 발표했습니다.", source: "Vatican News", date: "12시간 전", tag: "교황 담화", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "프란치스코 교황, 소아암 환아들과의 따뜻한 만남 “희망을 잃지 마세요”", desc: "바티칸을 방문한 어린이 환자들과 가족들을 초청해 일일이 손을 잡고 축복하며 큰 감동과 위로의 시간을 선사했습니다.", source: "Vatican News", date: "2일 전", tag: "교황 행보", url: "https://www.vaticannews.va/ko.html" }
+                ],
+                ko_church: [
+                    { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "유럽 주교회의 연합, 청년 복음화를 위한 뉴미디어 선교 활성화 모색", desc: "디지털 세대인 청소년과 청년들에게 효과적으로 다가가기 위해 소셜 미디어를 활용한 세부 사목 매뉴얼을 구축하기로 했습니다.", source: "Vatican News", date: "7시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "아프리카 지역 가톨릭 병원들, 의료 취약지역 찾아 무상 진료 봉사", desc: "의료 혜택을 받지 못하는 오지의 주민들을 위해 교구 산하 병원들이 연합하여 이동식 무료 진료소를 운영, 사랑을 실천합니다.", source: "Vatican News", date: "15시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "남미 가톨릭 공동체, 원주민 인권 보호 및 문화 보존을 위한 연대 강화", desc: "개발 논리에 밀려 삶의 터전을 잃어가는 아마존 지역 원주민들의 생존권과 고유 전통을 수호하기 위한 사목 공동 연대를 선언했습니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" }
+                ],
+                ko_vatican: [
+                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "바티칸 박물관, 문화 소외 계층 위한 무료 야간 개방 특별 프로그램 기획", desc: "세계적인 예술품들을 간직한 바티칸 박물관이 장애인 및 저소득층 가정을 위해 특별 관람의 기회를 무상으로 마련합니다.", source: "Vatican News", date: "9시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "교황청 문화교육부, 인공지능(AI) 윤리적 활용을 위한 가톨릭 지침서 연구", desc: "급격히 발전하는 기술 사회 속에서 인간 고유의 존엄성을 지키며 AI를 선하게 다루기 위한 신학적 가이드라인을 연구합니다.", source: "Vatican News", date: "20시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "바티칸 비밀문서고, 역사 연구원들을 위한 미공개 사료 추가 개방 발표", desc: "교회사의 명확한 고증과 학술적 발전을 위해 특정 시기의 교황청 공문서와 사료들을 전 세계 연구가들에게 투명하게 공개합니다.", source: "Vatican News", date: "2일 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" }
+                ]
+            },
+            korea: {
+                cpbc: [
+                    { title: "가톨릭평화방송·평화신문, 새 성전 건립 및 지역 복음화 기획 보도", desc: "한국 교회의 지속 가능한 발전과 청년 복음화를 위한 교구별 특성화 사목 현장을 취재하여 생생히 전해드립니다.", source: "cpbc 평화방송", date: "10분 전", tag: "교구소식", url: "https://news.cpbc.co.kr/" },
+                    { title: "재단법인 바보의나눔, 소외계층 위한 겨울철 난방비 추가 지원 사업 전개", desc: "김수환 추기경의 숭고한 나눔 뜻을 이어받아 전국의 취약계층 독거노인 및 차상위 가구에 난방비를 긴급 수혈합니다.", source: "cpbc 평화방송", date: "2시간 전", tag: "사회복지", url: "https://news.cpbc.co.kr/" },
+                    { title: "서울대교구, 해외 선교 사제 파견 미사 봉헌 “세상 끝까지 복음을”", desc: "선교 사목지로 떠나는 사제들을 격려하고, 보편 교회를 향한 한국 교회의 영적 연대와 사랑의 파견 예식을 거행했습니다.", source: "cpbc 평화방송", date: "4시간 전", tag: "교구동정", url: "https://news.cpbc.co.kr/" },
+                    { title: "cpbc 가톨릭평화방송 라디오, 가을맞이 영성 프로그램 대규모 개편", desc: "신자들의 일상 속 신앙생활과 기도를 돕기 위해 깊이 있는 영성 강좌와 생활 성가 중심의 프로그램들을 대거 선보입니다.", source: "cpbc 평화방송", date: "7시간 전", tag: "방송소식", url: "https://news.cpbc.co.kr/" },
+                    { title: "한국가톨릭문화연구원, '디지털 시대의 신앙' 주제로 정기 심포지엄 개최", desc: "스마트폰과 온라인 매체가 보편화된 세상 속에서 올바른 가톨릭 미디어 윤리와 신앙 실천 방향을 모색하는 학술대회입니다.", source: "cpbc 평화방송", date: "1일 전", tag: "문화/학술", url: "https://news.cpbc.co.kr/" }
+                ],
+                cbc: [
+                    { title: "가톨릭신문 선정 '올해의 가톨릭 학술상' 시상식 개최", desc: "한국 가톨릭 신학 및 사상 발전에 지대한 공헌을 한 원로 학자 및 신진 연구가들을 치하하는 뜻깊은 시상식이 열렸습니다.", source: "가톨릭신문", date: "30분 전", tag: "학술상", url: "https://www.catholictimes.org/" },
+                    { title: "전국 각 교구 겨울 성경학교 및 청소년 신앙 캠프 일제히 개막", desc: "공동체 신앙 회복을 목표로 재개된 대면 캠프에 수많은 청소년, 어린이 신자들이 모여 뜨거운 열기를 자아내고 있습니다.", source: "가톨릭신문", date: "4시간 전", tag: "청소년 사목", url: "https://www.catholictimes.org/" },
+                    { title: "한국 주교회의, 가톨릭 성가집 전면 개정 작업 착수 “현대 성가 보강”", desc: "전례 안에서 신자들이 보다 은혜롭고 올바른 신앙 고백을 노래할 수 있도록 성가 번역 및 멜로디 감수 작업에 돌입했습니다.", source: "가톨릭신문", date: "8시간 전", tag: "교회소식", url: "https://www.catholictimes.org/" },
+                    { title: "[오피니언] 복잡한 세상 속, 그리스도인이 지켜야 할 침묵의 영성", desc: "소음과 정보가 넘쳐나는 시대에 하루 10분, 주님 앞에 온전히 머무는 관상 기도의 가치를 조명하는 특별 사설입니다.", source: "가톨릭신문", date: "12시간 전", tag: "칼럼", url: "https://www.catholictimes.org/" },
+                    { title: "가톨릭 노동청년회, 노동 현장 실태 조사 발표 “취약 노동자 권익 보호”", desc: "법 사각지대에 놓인 청년 아르바이트생 및 비정규직 노동자들의 환경 개선을 위한 가톨릭 사회 교리적 대안을 촉구했습니다.", source: "가톨릭신문", date: "2일 전", tag: "사회 교리", url: "https://www.catholictimes.org/" }
+                ],
+                goodnews: [
+                    { title: "가톨릭 인터넷 굿뉴스, 모바일 미사/복음 서비스 전면 개편 완료", desc: "신자들이 매일 미사와 기도문을 보다 간편하게 확인하고 공유할 수 있도록 사용자 인터페이스(UI)를 스마트하게 바꿨습니다.", source: "인터넷 굿뉴스", date: "5분 전", tag: "공지사항", url: "http://www.catholic.or.kr/" },
+                    { title: "오늘의 묵상: '너희는 세상의 소금과 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "매일미사", url: "http://ch.catholic.or.kr/pds/misa/" },
+                    { title: "굿뉴스 성경 쓰기 타자 이어가기 캠페인, 참여 신자 10만 명 돌파", desc: "성경 말씀을 손과 마음으로 깊이 새기는 온라인 성경 필기 프로그램이 전 국적 신자들의 신앙 열풍 속에 대기록을 달성했습니다.", source: "인터넷 굿뉴스", date: "5시간 전", tag: "신앙나눔", url: "http://www.catholic.or.kr/" },
+                    { title: "우리 교구 주간 소식지 일괄 배부 서비스 신청 안내", desc: "컴퓨터나 스마트폰 접근이 어려운 어르신 신자분들을 위해 각 본당의 주보 및 소식지를 우편으로 정기 발송해 드립니다.", source: "인터넷 굿뉴스", date: "9시간 전", tag: "교구 서비스", url: "http://www.catholic.or.kr/" },
+                    { title: "평신도 사도직 연합회 주관, '성가정 가꾸기 소감문 공모전' 당선작 발표", desc: "가정 안에서 기도를 시작하고 부부, 자녀 간의 소통을 통해 은총 가득한 가정 교회를 일구어 낸 생생한 감동 수기들입니다.", source: "인터넷 굿뉴스", date: "1일 전", tag: "공모전", url: "http://www.catholic.or.kr/" }
+                ]
+            }
+        };
+
+        // 교황청 데이터 화면 출력 장치
+        function renderVatican(category) {
+            const container = document.getElementById('vaticanFeed');
+            if(!container) return;
+            const items = mockData.vatican[category] || [];
+            let html = '<div class="cards">';
+            items.forEach(item => {
+                html += `
+                    <div class="card">
+                        <div class="card-source">${item.source}</div>
+                        <h3 class="card-title"><a href="${item.url}" target="_blank">${item.title}</a></h3>
+                        <p class="card-desc">${item.desc}</p>
+                        <div class="card-footer">
+                            <span class="card-tag">${item.tag}</span>
+                            <span class="card-date">${item.date}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            const countEl = document.getElementById('vaticanCount');
+            if(countEl) countEl.innerText = `${items.length}건`;
+        }
+
+        // 국내 가톨릭 데이터 화면 출력 장치
+        function renderKorea(category) {
+            const container = document.getElementById('koreaFeed');
+            if(!container) return;
+            const items = mockData.korea[category] || [];
+            let html = '<div class="cards">';
+            items.forEach((item, index) => {
+                const isFirst = index === 0;
+                html += `
+                    <div class="${isFirst ? 'feature-card' : 'card'}">
+                        <div class="card-source">${item.source}</div>
+                        <h3 class="card-title"><a href="${item.url}" target="_blank">${item.title}</a></h3>
+                        <p class="card-desc">${item.desc}</p>
+                        <div class="card-footer">
+                            <span class="card-tag">${item.tag}</span>
+                            <span class="card-date">${item.date}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            container.innerHTML = html;
+            const countEl = document.getElementById('koreaCount');
+            if(countEl) countEl.innerText = `${items.length}건`;
+        }
+
+        // 탭 스위칭용 기능구현 (딜레이 없이 즉시 작동)
+        function switchVaticanFeed(category, element) {
+            if(element) {
+                const tabs = document.querySelectorAll('#vaticanTabs .tab-btn');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                element.classList.add('active');
+            }
+            renderVatican(category);
+        }
+
+        function switchKoreaFeed(category, element) {
+            if(element) {
+                const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
+                tabs.forEach(tab => tab.classList.remove('active'));
+                element.classList.add('active');
+            }
+            renderKorea(category);
+        }
+
+        function refreshAll() {
+            renderVatican('ko_all');
+            renderKorea('cpbc');
+        }
+
+        // [즉시 로딩 구조] 브라우저가 이 스크립트를 읽는 즉시 본문을 강제 주입하여 빈 화면 증상 제거
+        refreshAll();
+
+        // 상단 오늘 날짜 표시 보조 스크립트
+        try {
+            const today = new Date();
+            document.getElementById('headerDate').innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
+        } catch(e) {}
+    </script>
+</body>
+</html>

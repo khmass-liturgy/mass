@@ -103,15 +103,6 @@
         .card-footer { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
         .card-date { font-size: .7rem; color: #AAA; margin-left: auto; }
         .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
-        
-        /* ── FEATURE CARD ── */
-        .feature-card { background: var(--navy); border-left: 4px solid var(--gold); padding: 16px; margin-bottom: 4px; border-radius: 0 3px 3px 0; position: relative; }
-        .feature-card::after { content: '✦'; position: absolute; top: 14px; right: 16px; color: var(--gold); font-size: 12px; }
-        .feature-card .card-source { color: var(--gold-lt); }
-        .feature-card .card-title a { color: var(--cream); font-size: 1rem; }
-        .feature-card .card-title a:hover { color: var(--gold); text-decoration: underline; }
-        .feature-card .card-desc { color: #AAA; }
-        .feature-card .card-date { color: #888; }
 
         /* ── KYOHA CHURCH SECTION ── */
         .kyoha-container { background: #EBF0EC; border: 1px solid var(--border); border-top: 4px solid var(--kyoha); padding: 18px; border-radius: 4px; margin-top: 28px; }
@@ -285,7 +276,7 @@
                 ],
                 goodnews: [
                     { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문과 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" },
-                    { title: "오늘의 묵상: '너희는 세상의 소금과 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "전례묵상", url: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" },
+                    { title: "오늘의 묵상: '너희는 세상의 소금และ 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "전례묵상", url: "https://maria.catholic.or.kr/mobile/missa/missa_view.asp?today=on" },
                     { title: "굿뉴스 성경 쓰기 타자 이어가기 캠페인, 참여 신자 10만 명 돌파", desc: "성경 말씀을 손과 마음으로 깊이 새기는 온라인 성경 필기 프로그램이 전 국적 신자들의 신앙 열풍 속에 대기록을 달성했습니다.", source: "인터넷 굿뉴스", date: "5시간 전", tag: "신앙나눔", url: "http://bible.catholic.or.kr/" }
                 ]
             }
@@ -318,17 +309,16 @@
             if (countEl) countEl.innerText = `${items.length}건`;
         }
 
-        // 국내 뉴스 화면 표시기
+        // 국내 뉴스 화면 표시기 (안정성을 위해 기본 card 스타일로 통일)
         function renderKorea(category) {
             const container = document.getElementById('koreaFeed');
             if (!container) return;
             const items = mockData.korea[category] || [];
             
             let html = '<div class="cards">';
-            items.forEach((item, index) => {
-                const isFirst = (index === 0);
+            items.forEach(item => {
                 html += `
-                    <div class="${isFirst ? 'feature-card' : 'card'}">
+                    <div class="card">
                         <div class="card-source">${item.source}</div>
                         <h3 class="card-title"><a href="${item.url}" target="_blank">${item.title}</a></h3>
                         <p class="card-desc">${item.desc}</p>
@@ -372,7 +362,6 @@
             renderVatican(category);
         }
 
-        // 국내 피드 탭 전환 후 자동 렌더링
         function switchKoreaFeed(category, element) {
             if (element) {
                 const tabs = document.querySelectorAll('#koreaTabs .tab-btn');
@@ -382,24 +371,29 @@
             renderKorea(category);
         }
 
-        // 전체 새로고침 및 페이지 시작 시 구동할 메인 로직
+        // 전체 새로고침 및 메인 로직
         function refreshAll() {
             renderVatican('ko_all');
-            renderKorea('cpbc'); // 기본 평화방송 뉴스 출력 강제 지정
+            renderKorea('cpbc');
             setupMissaLiturgy();
-        }
-
-        // 브라우저 렌더링 즉시 실행
-        window.onload = function() {
-            refreshAll();
             try {
                 const today = new Date();
                 document.getElementById('headerDate').innerText = today.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' });
             } catch(e) {}
-        };
-        
-        // 백업용 즉시 실행
-        refreshAll();
+        }
+
+        // [안전장치] 브라우저 로드가 끝나지 않아도 즉시 실행되도록 강제 호출 구조 배치
+        (function() {
+            // DOM이 준비되었는지 확인 후 즉시 주입
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', refreshAll);
+            } else {
+                refreshAll();
+            }
+        })();
+
+        // 브라우저 공식 완공 시점 백업 호출
+        window.onload = refreshAll;
     </script>
 </body>
 </html>

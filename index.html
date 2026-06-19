@@ -16,7 +16,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2 family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
@@ -31,7 +31,7 @@
             --muted: #7A6F5E;
             --vatican: #6B1A1A;
             --cpbc: #1A4A6B;
-            --kyoha: #2E4F39; /* 교하성당 전용 차분한 딥그린 포인트 */
+            --kyoha: #2E4F39;
         }
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
@@ -150,7 +150,7 @@
 
     <div class="marquee-wrap">
         <div class="marquee-inner" id="marqueeInner">
-            <span>✦ <strong>교하성당 소식</strong> 홈페이지 연동 안내 피드 추가</span>
+            <span>✦ <strong>교하성당 소식</strong> 게시판 직통 전용 링크 연동 완료</span>
             <span>✦ <strong>매일미사 정보</strong> 가톨릭 굿뉴스 연동 활성화</span>
             <span>✦ <strong>교황청 소식</strong> 실시간 업데이트 완료</span>
         </div>
@@ -215,7 +215,7 @@
             </div>
             <div id="koreaFeed"></div>
 
-            <!-- ── 교하성당 소식 섹션 (국내 뉴스 다음에 배치) ── -->
+            <!-- ── 교하성당 소식 섹션 (상세 링크 연동) ── -->
             <div class="kyoha-container">
                 <div class="section-header" style="border-bottom-color: #C3D0C7; margin-bottom: 14px;">
                     <span class="section-badge badge-kyoha">Kyoha</span>
@@ -223,15 +223,15 @@
                 </div>
                 
                 <div class="kyoha-grid">
-                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
-                        <span class="btn-meta">NOTICE</span>
+                    <a href="https://sd.uca.or.kr/kyoha/board?mnucd=20001877" target="_blank" class="kyoha-btn">
+                        <span class="btn-meta">BOARD</span>
                         <span class="btn-title">공지사항</span>
                     </a>
-                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
-                        <span class="btn-meta">WEEKLY</span>
+                    <a href="https://sd.uca.or.kr/kyoha/jubo?mnucd=20001570" target="_blank" class="kyoha-btn">
+                        <span class="btn-meta">JUBO</span>
                         <span class="btn-title">성당 주보</span>
                     </a>
-                    <a href="https://sd.uca.or.kr/kyoha/" target="_blank" class="kyoha-btn">
+                    <a href="https://sd.uca.or.kr/kyoha/gallery?mnucd=20001854" target="_blank" class="kyoha-btn">
                         <span class="btn-meta">GALLERY</span>
                         <span class="btn-title">본당 앨범</span>
                     </a>
@@ -239,12 +239,14 @@
 
                 <div class="cards">
                     <div class="card" style="border-left-color: var(--kyoha); padding: 12px 14px;">
-                        <div class="card-source" style="color: var(--kyoha);">KYOHA CHURCH</div>
-                        <h3 class="card-title" style="font-size:0.88rem;"><a href="https://sd.uca.or.kr/kyoha/" target="_blank">이번 주일 공동체 미사 및 본당 지향 안내</a></h3>
-                        <p class="card-desc" style="font-size:0.75rem;">교하성당 주보 및 전례 봉사자 편성표, 본당 공동체 공지사항은 공식 홈페이지에서 자세히 확인하실 수 있습니다.</p>
+                        <div class="card-source" style="color: var(--kyoha);">KYOHA NEWS</div>
+                        <h3 class="card-title" style="font-size:0.88rem;">
+                            <a href="https://sd.uca.or.kr/kyoha/board?mnucd=20001877" target="_blank">본당 공지사항 바로가기</a>
+                        </h3>
+                        <p class="card-desc" style="font-size:0.75rem;">교하성당의 미사 시간 변경, 주요 전례 일정 및 행사 안내 사항은 상단 공지사항 게시판에서 실시간으로 확인할 수 있습니다.</p>
                         <div class="card-footer">
-                            <span class="card-tag" style="background:#DEE7E1; color:var(--kyoha);">본당공지</span>
-                            <span class="card-date">실시간 연동</span>
+                            <span class="card-tag" style="background:#DEE7E1; color:var(--kyoha);">공지</span>
+                            <span class="card-date">바로가기</span>
                         </div>
                     </div>
                 </div>
@@ -254,7 +256,6 @@
     </main>
 
     <footer>
-        <!-- 맨 하단 교하성당 홈페이지 링크 블록 -->
         <div class="footer-link-block">
             <a href="https://sd.uca.or.kr/kyoha/" target="_blank">🏛️ 교하성당 공식 홈페이지 바로가기 (https://sd.uca.or.kr/kyoha/)</a>
         </div>
@@ -310,7 +311,7 @@
                     { title: "가톨릭 노동청년회, 노동 현장 실태 조사 발표 “취약 노동자 권익 보호”", desc: "법 사각지대에 놓인 청년 아르바이트생 및 비정규직 노동자들의 환경 개선을 위한 가톨릭 사회 교리적 대안을 촉구했습니다.", source: "가톨릭신문", date: "2일 전", tag: "사회 교리", url: "https://www.catholictimes.org/" }
                 ],
                 goodnews: [
-                    { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문 and 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
+                    { title: "가톨릭 인터넷 굿뉴스, 모바일 매일미사 실시간 전례 서비스 제공", desc: "전국 어디서나 스마트폰을 통해 오늘의 미사 본문과 강론을 간편하게 확인할 수 있는 모바일 최적화 웹 페이지입니다.", source: "인터넷 굿뉴스", date: "실시간", tag: "매일미사", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
                     { title: "오늘의 묵상: '너희는 세상의 소금과 빛이다' (마태오 5,13-16)", desc: "세속의 논리에 물들지 않고 나보다 남을 먼저 배려하며 어두운 곳을 밝히는 빛의 삶에 대한 오늘의 복음 묵상 글입니다.", source: "인터넷 굿뉴스", date: "오늘 오전", tag: "전례묵상", url: "https://maria.catholic.or.kr/mobile/missa/missa.asp" },
                     { title: "굿뉴스 성경 쓰기 타자 이어가기 캠페인, 참여 신자 10만 명 돌파", desc: "성경 말씀을 손과 마음으로 깊이 새기는 온라인 성경 필기 프로그램이 전 국적 신자들의 신앙 열풍 속에 대기록을 달성했습니다.", source: "인터넷 굿뉴스", date: "5시간 전", tag: "신앙나눔", url: "http://www.catholic.or.kr/" },
                     { title: "우리 교구 주간 소식지 일괄 배부 서비스 신청 안내", desc: "컴퓨터나 스마트폰 접근이 어려운 어르신 신자분들을 위해 각 본당의 주보 및 소식지를 우편으로 정기 발송해 드립니다.", source: "인터넷 굿뉴스", date: "9시간 전", tag: "교구 서비스", url: "http://www.catholic.or.kr/" },

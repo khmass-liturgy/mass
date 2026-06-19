@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가톨릭 뉴스 — 교황청 & 국내외 소식</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1A2744;
+      --navy-lt: #243560;
+      --gold:    #C9A84C;
+      --gold-lt: #E2C97E;
+      --cream:   #F5F0E8;
+      --card:    #FFFFFF;
+      --border:  #DDD5C0;
+      --text:    #1A1A1A;
+      --muted:   #7A6F5E;
+      --vatican: #6B1A1A;
+      --cpbc:    #1A4A6B;
+      --red:     #B22222;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 72px;
+    }
+
+    .cross-icon {
+      color: var(--gold);
+      font-size: 28px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .header-title {
+      flex: 1;
+    }
+
+    .header-title h1 {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--cream);
+      letter-spacing: .02em;
+    }
+
+    .header-title p {
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      color: var(--gold);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .header-date {
+      font-size: .8rem;
+      color: var(--gold-lt);
+      font-family: 'Noto Serif KR', serif;
+      text-align: right;
+    }
+
+    .refresh-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: .7rem;
+      letter-spacing: .1em;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: all .2s;
+      border-radius: 2px;
+    }
+    .refresh-btn:hover { background: var(--gold); color: var(--navy); }
+
+    /* ── GOLD BANNER ── */
+    .gold-bar {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-lt) 50%, var(--gold) 100%);
+      height: 3px;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--navy-lt);
+      padding: 7px 0;
+      overflow: hidden;
+    }
+    .marquee-inner {
+      display: flex;
+      gap: 60px;
+      animation: marquee 50s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-inner span {
+      color: var(--gold-lt);
+      font-size: .75rem;
+      letter-spacing: .04em;
+    }
+    .marquee-inner strong { color: var(--cream); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+      display: grid;
+      grid-template-columns: 1fr 4px 1fr;
+      gap: 0 28px;
+    }
+
+    /* ── GOLD DIVIDER ── */
+    .divider {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .divider-line {
+      width: 2px;
+      background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+      height: 100%;
+    }
+    .divider-cross {
+      position: sticky;
+      top: 110px;
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px var(--cream);
+      margin-left: -14px;
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .section-badge {
+      padding: 3px 10px;
+      font-family: 'Cinzel', serif;
+      font-size: .6rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    .badge-vatican {
+      background: var(--vatican);
+      color: var(--cream);
+    }
+
+    .badge-korea {
+      background: var(--cpbc);
+      color: var(--cream);
+    }
+
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .news-count {
+      margin-left: auto;
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    /* ── TABS ── */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 5px 14px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--muted);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: .75rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all .2s;
+    }
+    .tab-btn:hover { border-color: var(--gold); color: var(--navy); }
+    .tab-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+    /* ── CARDS ── */
+    .cards { display: flex; flex-direction: column; gap: 12px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      padding: 14px 16px;
+      transition: all .2s;
+      border-radius: 0 3px 3px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      border-left-color: var(--navy);
+      box-shadow: 0 4px 16px rgba(26,39,68,.12);
+      transform: translateX(2px);
+    }
+
+    .card-source {
+      font-size: .68rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .card-title a:hover { color: var(--vatican); }
+
+    .card-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .card-date {
+      font-size: .7rem;
+      color: #AAA;
+      margin-left: auto;
+    }
+
+    .card-tag {
+      font-size: .65rem;
+      padding: 2px 7px;
+      border-radius: 2px;
+      background: #F0EBE0;
+      color: var(--muted);
+    }
+
+    /* ── SKELETON ── */
+    .skeleton { animation: pulse 1.5s ease-in-out infinite; }
+    .skeleton-item {
+      background: #E8E4DC;
+      border-radius: 3px;
+      margin-bottom: 12px;
+      height: 80px;
+    }
+    .skeleton-item:nth-child(2) { height: 65px; opacity: .7; }
+    .skeleton-item:nth-child(3) { height: 72px; opacity: .5; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+    /* ── FEATURE CARD (top story) ── */
+    .feature-card {
+      background: var(--navy);
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 0 3px 3px 0;
+      position: relative;
+    }
+
+    .feature-card::after {
+      content: '✦';
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .feature-card .card-source { color: var(--gold-lt); }
+
+    .feature-card .card-title a {
+      color: var(--cream);
+      font-size: 1rem;
+    }
+
+    .feature-card .card-title a:hover { color: var(--gold); }
+    .feature-card .card-desc { color: #AAA; }
+    .feature-card .card-date { color: #888; }
+
+    /* ── ERROR STATE ── */
+    .error-msg {
+      background: #FFF5F5;
+      border: 1px solid #FFCCCC;
+      border-left: 4px solid var(--red);
+      padding: 12px 16px;
+      font-size: .8rem;
+      color: #A00;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: var(--muted);
+      text-align: center;
+      padding: 24px;
+      font-size: .75rem;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+    footer p + p { margin-top: 6px; }
+
+    .footer-cross {
+      font-size: 1.5rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 32px;
+      }
+      .divider { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner { height: 60px; }
+      .header-title h1 { font-size: 1rem; }
+      .header-date { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div class="cross-icon">✝</div>
+    <div class="header-title">
+      <h1>가톨릭 뉴스 포털</h1>
+      <p>Nuntii Catholici · Vatican &amp; Korea</p>
+    </div>
+    <div class="header-date" id="headerDate"></div>
+    <button class="refresh-btn" onclick="refreshAll()">↺ 새로고침</button>
+  </div>
+</header>
+<div class="gold-bar"></div>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-wrap">
+  <div class="marquee-inner" id="marqueeInner">
+    <span>✦ <strong>교황청 소식</strong> 로딩 중...</span>
+    <span>✦ <strong>Vatican News</strong> Loading...</span>
+    <span>✦ <strong>가톨릭 평화 방송</strong> 연결 중...</span>
+    <span>✦ <strong>교황청 소식</strong> 로딩 중...</span>
+    <span>✦ <strong>Vatican News</strong> Loading...</span>
+    <span>✦ <strong>가톨릭 평화 방송</strong> 연결 중...</span>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <!-- ── LEFT: VATICAN ── -->
+  <section>
+    <div class="section-header">
+      <span class="section-badge badge-vatican">Holy See</span>
+      <h2 class="section-title">교황청 · Vatican News</h2>
+      <span class="news-count" id="vaticanCount"></span>
+    </div>
+
+    <div class="tabs" id="vaticanTabs">
+      <button class="tab-btn active" onclick="switchVaticanFeed('ko_all','전체')">전체</button>
+      <button class="tab-btn" onclick="switchVaticanFeed('ko_pope','교황')">교황</button>
+      <button class="tab-btn" onclick="switchVaticanFeed('ko_church','교회')">세계교회</button>
+      <button class="tab-btn" onclick="switchVaticanFeed('ko_vatican','바티칸')">바티칸</button>
+    </div>
+
+    <div id="vaticanFeed">
+      <div class="skeleton">
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIVIDER ── -->
+  <div class="divider">
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- ── RIGHT: KOREA ── -->
+  <section>
+    <div class="section-header">
+      <span class="section-badge badge-korea">Korea</span>
+      <h2 class="section-title">국내 가톨릭 뉴스</h2>
+      <span class="news-count" id="koreaCount"></span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchKoreaFeed('cpbc','가톨릭평화방송')">평화방송</button>
+      <button class="tab-btn" onclick="switchKoreaFeed('cbc','가톨릭신문')">가톨릭신문</button>
+      <button class="tab-btn" onclick="switchKoreaFeed('osv','OSV News')">해외(영문)</button>
+    </div>
+
+    <div id="koreaFeed">
+      <div class="skeleton">
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+        <div class="skeleton-item"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-cross">✝</span>
+  <p>가톨릭 뉴스 포털 · <em>Nuntii Catholici</em></p>
+  <p>
+    뉴스 출처: <a href="https://www.vaticannews.va/ko.html" target="_blank">Vatican News 한국어</a> ·
+    <a href="https://news.cpbc.co.kr" target="_blank">cpbc 가톨릭평화방송</a> ·
+    <a href="https://www.catholictimes.org" target="_blank">가톨릭신문</a>
+  </p>
+  <p style="margin-top:12px;color:#555;">
+    RSS 피드는 <a href="https://allorigins.win" target="_blank">AllOrigins</a> 프록시를 통해 수집됩니다 · GitHub Pages 호환
+  </p>
+</footer>
+
+<script>
+/* ── FEEDS CONFIG ── */
+const PROXY = 'https://api.allorigins.win/get?url=';
+
+const FEEDS = {
+  vatican: {
+    ko_all:     { url: 'https://www.vaticannews.va/ko.rss.xml',             label: 'Vatican News 한국어' },
+    ko_pope:    { url: 'https://www.vaticannews.va/ko/pope.rss.xml',        label: 'Vatican News — 교황' },
+    ko_church:  { url: 'https://www.vaticannews.va/ko/church.rss.xml',      label: 'Vatican News — 세계교회' },
+    ko_vatican: { url: 'https://www.vaticannews.va/ko/vatican-city.rss.xml',label: 'Vatican News — 바티칸' },
+  },
+  korea: {
+    cpbc: { url: 'https://news.cpbc.co.kr/rss/rssMain.xml',        label: 'cpbc 가톨릭평화방송' },
+    cbc:  { url: 'https://www.catholictimes.org/rss/allArticle.xml',label: '가톨릭신문' },
+    osv:  { url: 'https://osvnews.com/feed',                        label: 'OSV News' },
+  }
+};
+
+let currentVaticanKey = 'ko_all';
+let currentKoreaKey   = 'cpbc';
+
+/* ── DATE ── */
+function formatDate() {
+  return new Date().toLocaleDateString('ko-KR', {
+    year: 'numeric', month: 'long', day: 'numeric',
+    weekday: 'short'
+  });
+}
+document.getElementById('headerDate').textContent = formatDate();
+
+/* ── FETCH RSS ── */
+async function fetchRSS(feedUrl) {
+  const url = PROXY + encodeURIComponent(feedUrl);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('네트워크 오류: ' + res.status);
+  const data = await res.json();
+  if (!data.contents) throw new Error('내용을 가져올 수 없습니다');
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(data.contents, 'text/xml');
+  const items = Array.from(xml.querySelectorAll('item'));
+  return items.map(el => ({
+    title:   getText(el, 'title'),
+    link:    getText(el, 'link'),
+    desc:    stripHtml(getText(el, 'description')),
+    date:    getText(el, 'pubDate'),
+    cat:     getText(el, 'category'),
+  }));
+}
+
+function getText(el, tag) {
+  const node = el.querySelector(tag);
+  return node ? (node.textContent || '').trim() : '';
+}
+
+function stripHtml(s) {
+  return s.replace(/<[^>]+>/g, '').replace(/&[a-z]+;/gi, ' ').trim();
+}
+
+function relativeTime(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d)) return dateStr.slice(0, 16);
+  const diff = Date.now() - d.getTime();
+  const h = Math.floor(diff / 3600000);
+  if (h < 1)  return '방금 전';
+  if (h < 24) return `${h}시간 전`;
+  const day = Math.floor(h / 24);
+  if (day < 7) return `${day}일 전`;
+  return d.toLocaleDateString('ko-KR', { month: 'short', day: 'numeric' });
+}
+
+/* ── RENDER ── */
+function renderCards(items, sourceLabel, countId) {
+  if (!items.length) return '<div class="error-msg">표시할 뉴스가 없습니다.</div>';
+  const max = Math.min(items.length, 15);
+  document.getElementById(countId).textContent = `${max}개 기사`;
+
+  let html = '';
+
+  // Feature card (first item)
+  const f = items[0];
+  html += `
+  <div class="feature-card">
+    <div class="card-source">${sourceLabel}</div>
+    <div class="card-title"><a href="${f.link}" target="_blank" rel="noopener">${f.title}</a></div>
+    ${f.desc ? `<div class="card-desc">${f.desc.slice(0, 120)}…</div>` : ''}
+    <div class="card-footer">
+      ${f.cat ? `<span class="card-tag">${f.cat}</span>` : ''}
+      <span class="card-date">${relativeTime(f.date)}</span>
+    </div>
+  </div>
+  <div class="cards">`;
+
+  for (let i = 1; i < max; i++) {
+    const item = items[i];
+    html += `
+    <div class="card">
+      <div class="card-source">${sourceLabel}</div>
+      <div class="card-title"><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></div>
+      ${item.desc ? `<div class="card-desc">${item.desc.slice(0, 100)}…</div>` : ''}
+      <div class="card-footer">
+        ${item.cat ? `<span class="card-tag">${item.cat}</span>` : ''}
+        <span class="card-date">${relativeTime(item.date)}</span>
+      </div>
+    </div>`;
+  }
+  html += '</div>';
+  return html;
+}
+
+/* ── UPDATE MARQUEE ── */
+function updateMarquee(items, label) {
+  const inner = document.getElementById('marqueeInner');
+  const titles = items.slice(0, 6).map(i => `<span>✦ <strong>${label}</strong> ${i.title.slice(0, 50)}</span>`);
+  const doubled = [...titles, ...titles];
+  inner.innerHTML = doubled.join('');
+}
+
+/* ── LOAD FEEDS ── */
+async function loadVaticanFeed(key) {
+  const feed = FEEDS.vatican[key];
+  const el = document.getElementById('vaticanFeed');
+  el.innerHTML = '<div class="skeleton"><div class="skeleton-item"></div><div class="skeleton-item"></div><div class="skeleton-item"></div></div>';
+  try {
+    const items = await fetchRSS(feed.url);
+    el.innerHTML = renderCards(items, feed.label, 'vaticanCount');
+    updateMarquee(items, '교황청');
+  } catch (e) {
+    el.innerHTML = `<div class="error-msg">피드를 불러오지 못했습니다 (${e.message})<br>
+    직접 방문: <a href="https://www.vaticannews.va/ko.html" target="_blank">vaticannews.va/ko</a></div>`;
+    document.getElementById('vaticanCount').textContent = '';
+  }
+}
+
+async function loadKoreaFeed(key) {
+  const feed = FEEDS.korea[key];
+  const el = document.getElementById('koreaFeed');
+  el.innerHTML = '<div class="skeleton"><div class="skeleton-item"></div><div class="skeleton-item"></div><div class="skeleton-item"></div></div>';
+  try {
+    const items = await fetchRSS(feed.url);
+    el.innerHTML = renderCards(items, feed.label, 'koreaCount');
+  } catch (e) {
+    el.innerHTML = `<div class="error-msg">피드를 불러오지 못했습니다 (${e.message})<br>
+    직접 방문: <a href="https://news.cpbc.co.kr" target="_blank">news.cpbc.co.kr</a></div>`;
+    document.getElementById('koreaCount').textContent = '';
+  }
+}
+
+/* ── TAB SWITCHING ── */
+function switchVaticanFeed(key, label) {
+  currentVaticanKey = key;
+  document.querySelectorAll('#vaticanTabs .tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  loadVaticanFeed(key);
+}
+
+function switchKoreaFeed(key, label) {
+  currentKoreaKey = key;
+  const tabs = event.target.closest('.tabs');
+  tabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  loadKoreaFeed(key);
+}
+
+function refreshAll() {
+  loadVaticanFeed(currentVaticanKey);
+  loadKoreaFeed(currentKoreaKey);
+  document.getElementById('headerDate').textContent = formatDate();
+}
+
+/* ── INIT ── */
+loadVaticanFeed('ko_all');
+loadKoreaFeed('cpbc');
+</script>
+</body>
+</html>

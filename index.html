@@ -117,7 +117,7 @@
 
         /* ── KYOHA CHURCH SECTION SPECIFIC ── */
         .kyoha-container { background: #EBF0EC; border: 1px solid var(--border); border-top: 4px solid var(--kyoha); padding: 18px; border-radius: 4px; margin-top: 28px; }
-        .kyoha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+        .kyoha-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .kyoha-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); padding: 12px 6px; border-radius: 4px; text-decoration: none; transition: all 0.2s; text-align: center; }
         .kyoha-btn:hover { border-color: var(--kyoha); background: #F6FAF7; transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.04); }
         .kyoha-btn .btn-meta { font-size: 0.65rem; color: var(--muted); margin-bottom: 2px; font-family: 'Cinzel', serif; }
@@ -236,20 +236,6 @@
                         <span class="btn-title">본당 앨범</span>
                     </a>
                 </div>
-
-                <div class="cards">
-                    <div class="card" style="border-left-color: var(--kyoha); padding: 12px 14px;">
-                        <div class="card-source" style="color: var(--kyoha);">KYOHA NEWS</div>
-                        <h3 class="card-title" style="font-size:0.88rem;">
-                            <a href="https://sd.uca.or.kr/kyoha/board?mnucd=20001877" target="_blank">본당 공지사항 바로가기</a>
-                        </h3>
-                        <p class="card-desc" style="font-size:0.75rem;">교하성당의 미사 시간 변경, 주요 전례 일정 및 행사 안내 사항은 상단 공지사항 게시판에서 실시간으로 확인할 수 있습니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag" style="background:#DEE7E1; color:var(--kyoha);">공지</span>
-                            <span class="card-date">바로가기</span>
-                        </div>
-                    </div>
-                </div>
             </div>
             
         </section>
@@ -283,7 +269,7 @@
                 ko_church: [
                     { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
                     { title: "유럽 주교회의 연합, 청년 복음화를 위한 뉴미디어 선교 활성화 모색", desc: "디지털 세대인 청소년과 청년들에게 효과적으로 다가가기 위해 소셜 미디어를 활용한 세부 사목 매뉴얼을 구축하기로 했습니다.", source: "Vatican News", date: "7시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
-                    { title: "아프리카 지역 가톨릭 병원들, 의료 취약지역 찾아 무상 진료 봉사", desc: "의료 혜택을 받지 못하는 오지의 주민들을 위해 교구 산하 병원들이 연합하여 이동식 무료 진료소를 운영, 사랑을 실천합니다.", source: "Vatican News", date: "15시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "아프리카 지역 가톨릭 병원들, 의료 취약지역 찾아 무상 진료 봉사", desc: "의료 혜택을 받지 못하는 오지의 주민들을 위해 교구 산하 병원들이 연합하여 이동식 무료 진료소를 운영, 사랑 실천합니다.", source: "Vatican News", date: "15시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
                     { title: "남미 가톨릭 공동체, 원주민 인권 보호 및 문화 보존을 위한 연대 강화", desc: "개발 논리에 밀려 삶의 터전을 잃어가는 아마존 지역 원주민들의 생존권과 고유 전통을 수호하기 위한 사목 공동 연대를 선언했습니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
                     { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" }
                 ],

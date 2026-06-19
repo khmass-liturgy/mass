@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>가톨릭 뉴스 &amp; 매일미사 포털</title>
     
-    <!-- ── 모바일 홈 화면 추가 시 앱 아이콘 설정 (천주교 성당/십자가 고해상도 SVG) ── -->
-    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-dasharray='4 2'/><path d='M90 35 L90 145 M55 65 L125 65' stroke='%23C9A84C' stroke-width='6' stroke-linecap='round'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M75 150 L75 130 Q90 120 105 130 L105 150' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-dasharray='4 2'/><path d='M90 35 L90 145 M55 65 L125 65' stroke='%23C9A84C' stroke-width='6' stroke-linecap='round'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M75 150 L75 130 Q90 120 105 130 L105 150' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
+    <!-- ── 모바일 홈 화면 추가 시 앱 아이콘 설정 (성당 종탑 실루엣 고해상도 SVG) ── -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M82 75 A8 8 0 0 1 98 75 L98 90 L82 90 Z' fill='%231A2744'/><path d='M75 150 L75 125 A15 15 0 0 1 105 125 L105 150Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'><rect width='180' height='180' fill='%231A2744'/><circle cx='90' cy='90' r='75' fill='none' stroke='%23C9A84C' stroke-width='1.5' stroke-dasharray='4 3'/><path d='M90 35 L70 65 L110 65 Z' fill='%23C9A84C'/><rect x='75' y='65' width='30' height='45' fill='%23C9A84C'/><path d='M40 150 L65 110 L90 150 M90 150 L115 110 L140 150' fill='none' stroke='%23C9A84C' stroke-width='3' stroke-linejoin='round'/><path d='M82 75 A8 8 0 0 1 98 75 L98 90 L82 90 Z' fill='%231A2744'/><path d='M75 150 L75 125 A15 15 0 0 1 105 125 L105 150Z' fill='none' stroke='%23C9A84C' stroke-width='2'/></svg>" />
     
     <!-- 모바일 주소창 색상 설정 -->
     <meta name="theme-color" content="#1A2744" />
@@ -36,44 +36,9 @@
         html { scroll-behavior: smooth; }
         body { background: var(--cream); color: var(--text); font-family: 'Noto Sans KR', sans-serif; font-size: 15px; line-height: 1.7; min-height: 100vh; }
         
-        /* ── 천주교 라틴 십자가 CSS 구현 ── */
-        .catholic-cross {
-            position: relative;
-            width: 14px;
-            height: 24px;
-            display: inline-block;
-            flex-shrink: 0;
-        }
-        .catholic-cross::before, .catholic-cross::after {
-            content: '';
-            position: absolute;
-            background-color: currentColor;
-            border-radius: 1px;
-        }
-        .catholic-cross::before {
-            left: 6px;
-            top: 0;
-            width: 2px;
-            height: 24px;
-        }
-        .catholic-cross::after {
-            left: 0;
-            top: 7px;
-            width: 14px;
-            height: 2px;
-        }
-
-        .catholic-cross.sm {
-            width: 10px;
-            height: 16px;
-        }
-        .catholic-cross.sm::before { left: 4px; width: 2px; height: 16px; }
-        .catholic-cross.sm::after { left: 0; top: 5px; width: 10px; height: 2px; }
-        
         /* ── HEADER ── */
         header { background: var(--navy); padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.4); }
         .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 20px; height: 72px; }
-        .header-cross-wrap { color: var(--gold); display: flex; align-items: center; justify-content: center; }
         .header-title { flex: 1; }
         .header-title h1 { font-family: 'Noto Serif KR', serif; font-size: 1.25rem; font-weight: 700; color: var(--cream); letter-spacing: .02em; }
         .header-title p { font-family: 'Cinzel', serif; font-size: .65rem; color: var(--gold); letter-spacing: .18em; text-transform: uppercase; margin-top: 1px; }
@@ -94,10 +59,9 @@
         /* ── MAIN LAYOUT ── */
         main { max-width: 1400px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 1fr 4px 1fr; gap: 0 28px; }
         
-        /* ── GOLD DIVIDER ── */
+        /* ── SILENT DIVIDER ── */
         .divider { position: relative; display: flex; justify-content: center; }
-        .divider-line { width: 2px; background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent); height: 100%; }
-        .divider-cross { position: sticky; top: 110px; width: 32px; height: 32px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--navy); flex-shrink: 0; box-shadow: 0 0 0 4px var(--cream); margin-left: -16px; padding-bottom: 2px; }
+        .divider-line { width: 1px; background: linear-gradient(to bottom, transparent, var(--border) 10%, var(--border) 90%, transparent); height: 100%; }
         
         /* ── MISSA DASHBOARD ── */
         .missa-box { background: linear-gradient(135deg, #FFF6E5 0%, #FFFFFF 100%); border: 1px solid var(--border); border-top: 4px solid var(--gold); padding: 18px; margin-bottom: 24px; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
@@ -141,7 +105,7 @@
         .card-date { font-size: .7rem; color: #AAA; margin-left: auto; }
         .card-tag { font-size: .65rem; padding: 2px 7px; border-radius: 2px; background: #F0EBE0; color: var(--muted); }
         
-        /* ── FEATURE CARD (headline story) ── */
+        /* ── FEATURE CARD ── */
         .feature-card { background: var(--navy); border-left: 4px solid var(--gold); padding: 16px; margin-bottom: 16px; border-radius: 0 3px 3px 0; position: relative; }
         .feature-card::after { content: '✦'; position: absolute; top: 14px; right: 16px; color: var(--gold); font-size: 12px; }
         .feature-card .card-source { color: var(--gold-lt); }
@@ -151,22 +115,17 @@
         .feature-card .card-date { color: #888; }
         
         /* ── FOOTER ── */
-        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 24px; font-size: .75rem; }
-        footer a { color: var(--gold); text-decoration: none; }
+        footer { background: var(--navy); color: var(--muted); text-align: center; padding: 32px 24px; font-size: .75rem; }
         footer p + p { margin-top: 6px; }
-        .footer-cross-wrap { color: var(--gold); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
         
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) { main { grid-template-columns: 1fr; grid-template-rows: auto; gap: 32px; } .divider { display: none; } }
-        @media (max-width: 600px) { .header-inner { height: 60px; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .header-inner { height: 60px; justify-content: space-between; } .header-title h1 { font-size: 1rem; } .header-date { display: none; } .missa-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <div class="header-cross-wrap">
-                <div class="catholic-cross"></div>
-            </div>
             <div class="header-title">
                 <h1>가톨릭 뉴스 &amp; 미사 포털</h1>
                 <p>Nuntii Catholici · Mass &amp; News</p>
@@ -204,9 +163,6 @@
 
         <div class="divider">
             <div class="divider-line"></div>
-            <div class="divider-cross">
-                <div class="catholic-cross sm" style="color: var(--navy);"></div>
-            </div>
         </div>
 
         <!-- ── 국내 뉴스 및 매일미사 섹션 ── -->
@@ -250,9 +206,6 @@
     </main>
 
     <footer>
-        <div class="footer-cross-wrap">
-            <div class="catholic-cross sm"></div>
-        </div>
         <p>© 2026 가톨릭 뉴스 포털. 모든 소식의 권리는 각 언론사에 있습니다.</p>
         <p>본 페이지는 RSS 데이터를 기반으로 작동하는 가톨릭 소식 브라우저입니다.</p>
     </footer>
@@ -262,7 +215,7 @@
             vatican: {
                 ko_all: [
                     { title: "프란치스코 교황, 세계 평화와 소외된 이들을 위한 특별 기도 요청", desc: "교황은 주일 삼종기도를 통해 전 세계 갈등 지역의 종식과 치유를 선언하며, 신자들에게 기도를 통한 연대를 촉구했습니다.", source: "Vatican News", date: "방금 전", tag: "교황", url: "https://www.vaticannews.va/ko.html" },
-                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침과 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
+                    { title: "바티칸 시노드 사무처, 평신도의 역할 강화를 위한 가이드라인 발표", desc: "세계 주교 시노드를 앞두고 각 교구 교회의 평신도 참여율을 높이기 위한 세부 지침และ 본당 활성화 대책이 새롭게 제정되었습니다.", source: "Vatican News", date: "1시간 전", tag: "바티칸", url: "https://www.vaticannews.va/ko.html" },
                     { title: "아시아 가톨릭 교회, 기후 위기 극복 위한 환경 네트워크 출범", desc: "아시아 각국 주교회의 연합회는 기후변화에 적극 대응하기 위해 공동 자연 환경 네트워크를 결성하고 행동 선언을 발표했습니다.", source: "Vatican News", date: "3시간 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" },
                     { title: "교황청 복음화부, 전 세계 선교지를 위한 특별 기금 편성 및 지원 계획", desc: "가난하고 소외된 지역의 교회를 돕기 위해 교황청 복음화부는 긴급 복지 및 성전 건립 연대 기금을 전격 확대 편성했습니다.", source: "Vatican News", date: "5시간 전", tag: "교황청", url: "https://www.vaticannews.va/ko.html" },
                     { title: "가톨릭 청소년들을 위한 세계청년대회(WYD) 준비위원회 본격 가동", desc: "전 세계 청년 신앙인들의 대축제인 차기 대회를 앞두고, 교황청 평신도와 가정과 생명을 위한 부서가 세부 일정을 조율 중입니다.", source: "Vatican News", date: "1일 전", tag: "세계교회", url: "https://www.vaticannews.va/ko.html" }

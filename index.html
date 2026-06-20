@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>가톨릭 뉴스 포털 — 교황청 & 국내외 소식</title>
+<title>가톨릭 뉴스 포털 — 교황청 소식</title>
+
+<!-- ── 홈 화면 추가 시 아이콘 설정 (순수 SVG, 별도 파일 불필요) ── -->
+<link rel="manifest" href="manifest.json" />
+
+<!-- 브라우저 탭 파비콘 (SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231A2744'/%3E%3Crect x='44.25' y='18' width='11.5' height='62' fill='%23C9A84C'/%3E%3Crect x='21' y='34' width='58' height='11.5' fill='%23C9A84C'/%3E%3C/svg%3E" />
+
+<!-- iOS 홈 화면 추가 아이콘 (SVG) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' fill='%231A2744'/%3E%3Crect x='79.65' y='32.4' width='20.7' height='111.6' fill='%23C9A84C'/%3E%3Crect x='37.8' y='61.2' width='104.4' height='20.7' fill='%23C9A84C'/%3E%3C/svg%3E" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="가톨릭뉴스" />
+<meta name="theme-color" content="#1A2744" />
+<meta name="mobile-web-app-capable" content="yes" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -105,6 +121,9 @@
     gap:14px;
     margin-bottom:40px;
   }
+  .link-grid.single{
+    grid-template-columns:repeat(auto-fill, minmax(230px, 280px));
+  }
 
   .link-card{
     background:var(--card);
@@ -165,7 +184,7 @@
     <div class="cross-icon">✝</div>
     <div class="header-title">
       <h1>가톨릭 뉴스 포털</h1>
-      <p>Nuntii Catholici · Vatican &amp; Korea</p>
+      <p>Nuntii Catholici · Vatican News</p>
     </div>
     <div class="header-date" id="headerDate"></div>
   </div>
@@ -176,10 +195,10 @@
   <div class="marquee-inner">
     <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
     <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
-    <span>✦ <strong>국내 가톨릭</strong> 평화방송 · 가톨릭신문 · 굿뉴스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스</span>
     <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
     <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
-    <span>✦ <strong>국내 가톨릭</strong> 평화방송 · 가톨릭신문 · 굿뉴스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스</span>
   </div>
 </div>
 
@@ -208,34 +227,13 @@
       <span class="group-badge badge-vatican">Holy See</span>
       <h2 class="group-title">교황청 소식</h2>
     </div>
-    <div class="link-grid">
+    <div class="link-grid single">
 
       <a class="link-card" href="https://www.vaticannews.va/ko.html" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">✝</span><span class="lc-go">→</span></div>
         <div class="lc-name">Vatican News</div>
         <div class="lc-desc">교황청 공식 뉴스 서비스</div>
         <span class="lc-lang">한국어</span>
-      </a>
-
-      <a class="link-card" href="https://www.vatican.va/content/vatican/ko.html" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
-        <div class="lc-name">교황청 홈페이지</div>
-        <div class="lc-desc">바티칸 공식 사이트 (vatican.va)</div>
-        <span class="lc-lang">한국어</span>
-      </a>
-
-      <a class="link-card" href="https://press.vatican.va/content/salastampa/it.html" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
-        <div class="lc-name">교황청 공보실</div>
-        <div class="lc-desc">Holy See Press Office 공식 발표</div>
-        <span class="lc-lang">IT / EN</span>
-      </a>
-
-      <a class="link-card" href="https://www.vaticannews.va/en/pope.html" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">👤</span><span class="lc-go">→</span></div>
-        <div class="lc-name">교황 관련 소식</div>
-        <div class="lc-desc">교황 강론·일정·메시지 모음</div>
-        <span class="lc-lang">EN</span>
       </a>
 
     </div>
@@ -248,13 +246,6 @@
       <h2 class="group-title">국내 가톨릭 뉴스</h2>
     </div>
     <div class="link-grid">
-
-      <a class="link-card" href="https://news.cpbc.co.kr" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📡</span><span class="lc-go">→</span></div>
-        <div class="lc-name">cpbc 가톨릭평화방송</div>
-        <div class="lc-desc">가톨릭 라디오·방송 뉴스</div>
-        <span class="lc-lang">한국어</span>
-      </a>
 
       <a class="link-card" href="https://www.catholictimes.org" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
@@ -284,52 +275,6 @@
         <span class="lc-lang">한국어</span>
       </a>
 
-      <a class="link-card" href="https://www.koreadaily.com/cms/realtime/religion" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🌍</span><span class="lc-go">→</span></div>
-        <div class="lc-name">평화신문</div>
-        <div class="lc-desc">서울대교구 발행 주간지</div>
-        <span class="lc-lang">한국어</span>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ── 해외 가톨릭 ── -->
-  <section>
-    <div class="group-header">
-      <span class="group-badge badge-world">World</span>
-      <h2 class="group-title">해외 가톨릭 뉴스</h2>
-    </div>
-    <div class="link-grid">
-
-      <a class="link-card" href="https://www.catholicnewsagency.com" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🌐</span><span class="lc-go">→</span></div>
-        <div class="lc-name">Catholic News Agency</div>
-        <div class="lc-desc">CNA 국제 가톨릭 통신</div>
-        <span class="lc-lang">EN</span>
-      </a>
-
-      <a class="link-card" href="https://osvnews.com" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📡</span><span class="lc-go">→</span></div>
-        <div class="lc-name">OSV News</div>
-        <div class="lc-desc">미국 가톨릭 뉴스 서비스</div>
-        <span class="lc-lang">EN</span>
-      </a>
-
-      <a class="link-card" href="https://www.ncronline.org" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
-        <div class="lc-name">National Catholic Reporter</div>
-        <div class="lc-desc">미국 독립 가톨릭 언론</div>
-        <span class="lc-lang">EN</span>
-      </a>
-
-      <a class="link-card" href="https://www.americamagazine.org" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📘</span><span class="lc-go">→</span></div>
-        <div class="lc-name">America Magazine</div>
-        <div class="lc-desc">예수회 운영 가톨릭 매거진</div>
-        <span class="lc-lang">EN</span>
-      </a>
-
     </div>
   </section>
 
@@ -338,8 +283,8 @@
 <footer>
   <span class="footer-cross">✝</span>
   <p>가톨릭 뉴스 포털 · <em>Nuntii Catholici</em></p>
-  <p>각 카드를 누르면 해당 사이트로 바로 이동합니다</p>
-  <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지</p>
+  <p>뉴스 출처: <a href="https://www.vaticannews.va/ko.html" target="_blank">Vatican News 한국어</a> · <a href="https://www.catholictimes.org" target="_blank">가톨릭신문</a> 외</p>
+  <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지 · 홈 화면 추가 지원</p>
 </footer>
 
 <script>
@@ -355,6 +300,40 @@ document.getElementById('headerDate').textContent = formatDate();
   document.getElementById('missaDow').textContent = dowNames[now.getDay()];
   document.getElementById('missaDay').textContent = now.getDate();
   document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
+})();
+
+/* ── iOS 일부 버전은 apple-touch-icon에 SVG data URI를 못 읽음 →
+      캔버스로 PNG 변환해서 동적으로 교체 (외부 파일 없이 처리) ── */
+(function(){
+  function svgToPngDataUri(size, callback) {
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}">
+        <rect width="${size}" height="${size}" fill="#1A2744"/>
+        <rect x="${size*0.4425}" y="${size*0.18}" width="${size*0.115}" height="${size*0.62}" fill="#C9A84C"/>
+        <rect x="${size*0.21}" y="${size*0.34}" width="${size*0.58}" height="${size*0.115}" fill="#C9A84C"/>
+      </svg>`;
+    const img = new Image();
+    const blob = new Blob([svg], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    img.onload = function() {
+      const canvas = document.createElement('canvas');
+      canvas.width = size; canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, size, size);
+      URL.revokeObjectURL(url);
+      callback(canvas.toDataURL('image/png'));
+    };
+    img.src = url;
+  }
+
+  try {
+    svgToPngDataUri(180, function(pngDataUri) {
+      let link = document.querySelector("link[rel='apple-touch-icon']");
+      if (link) link.href = pngDataUri;
+    });
+  } catch (e) {
+    // 변환 실패 시 기존 SVG data URI 그대로 유지
+  }
 })();
 </script>
 </body>

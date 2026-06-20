@@ -31,7 +31,7 @@
     --cream:#F5F0E8; --card:#FFFFFF;
     --border:#DDD5C0; --text:#1A1A1A;
     --muted:#7A6F5E; --vatican:#6B1A1A;
-    --cpbc:#1A4A6B;
+    --cpbc:#1A4A6B; --kyoha:#3D6B3D;
   }
   html{scroll-behavior:smooth;}
   body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
@@ -111,6 +111,7 @@
   .group-badge{padding:3px 10px;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;}
   .badge-vatican{background:var(--vatican);color:var(--cream);}
   .badge-korea{background:var(--cpbc);color:var(--cream);}
+  .badge-kyoha{background:var(--kyoha);color:var(--cream);}
   .badge-world{background:#4A4A4A;color:var(--cream);}
   .group-title{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
 
@@ -191,9 +192,11 @@
 <div class="marquee-wrap">
   <div class="marquee-inner">
     <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교하성당</strong> 공지사항 · 주보 · 갤러리</span>
     <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
     <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스</span>
     <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교하성당</strong> 공지사항 · 주보 · 갤러리</span>
     <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
     <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스</span>
   </div>
@@ -216,6 +219,38 @@
       </div>
       <div class="missa-arrow">→</div>
     </a>
+  </section>
+
+  <!-- ── 교하성당 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-kyoha">Parish</span>
+      <h2 class="group-title">교하성당</h2>
+    </div>
+    <div class="link-grid">
+
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/board.aspx?mnucd=20001877" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📋</span><span class="lc-go">→</span></div>
+        <div class="lc-name">공지사항</div>
+        <div class="lc-desc">교하성당 공지 게시판</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/jubo.aspx?mnucd=20001570" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📄</span><span class="lc-go">→</span></div>
+        <div class="lc-name">주보안내</div>
+        <div class="lc-desc">매주 주보 보기</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/gallery.aspx?mnucd=20001854" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🖼</span><span class="lc-go">→</span></div>
+        <div class="lc-name">갤러리</div>
+        <div class="lc-desc">행사 사진 모음</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
   </section>
 
   <!-- ── 교황청 ── -->

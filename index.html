@@ -106,6 +106,40 @@
   }
   .missa-card:hover .missa-arrow{background:var(--gold);color:var(--navy);}
 
+  /* ── WYD 기도문 카드 ── */
+  .wyd-card{
+    background:linear-gradient(135deg,#2C1A44 0%,#1A2744 100%);
+    border-radius:6px;padding:28px 32px;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    position:relative;overflow:hidden;
+  }
+  .wyd-card::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 95% 5%,rgba(201,168,76,.15),transparent 45%),
+      radial-gradient(circle at 5% 95%,rgba(201,168,76,.10),transparent 45%);
+    pointer-events:none;
+  }
+  .wyd-header{margin-bottom:20px;position:relative;}
+  .wyd-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .wyd-title{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:6px;}
+  .wyd-theme{font-size:.82rem;color:var(--gold-lt);font-style:italic;}
+  .wyd-body{position:relative;color:#C8C8D8;font-size:.9rem;line-height:2;font-family:'Noto Serif KR',serif;}
+  .wyd-body p{margin-bottom:14px;}
+  .wyd-amen{font-family:'Noto Serif KR',serif;font-size:1.05rem;font-weight:700;color:var(--cream);text-align:center;margin:20px 0 !important;letter-spacing:.1em;}
+  .wyd-fiat{border-top:1px solid rgba(201,168,76,.25);padding-top:16px;font-size:.85rem;color:#A8A8C0;}
+  .wyd-fiat p{margin-bottom:8px !important;}
+  .wyd-leader{color:var(--gold);font-weight:700;margin-right:4px;}
+  .wyd-response{color:var(--cream);display:block;padding-left:1.2em;}
+  .wyd-link{
+    display:inline-block;margin-top:20px;
+    font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.12em;
+    color:var(--gold);text-decoration:none;
+    border:1px solid rgba(201,168,76,.4);padding:6px 16px;border-radius:2px;
+    transition:all .2s;position:relative;
+  }
+  .wyd-link:hover{background:var(--gold);color:var(--navy);}
+
   /* ── 섹션 타이틀 ── */
   .group-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border);}
   .group-badge{padding:3px 10px;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;}
@@ -219,6 +253,52 @@
       </div>
       <div class="missa-arrow">→</div>
     </a>
+  </section>
+
+  <!-- ── 2027 서울 세계청년대회 공식기도문 ── -->
+  <section class="missa-section">
+    <div class="wyd-card">
+      <div class="wyd-header">
+        <div class="wyd-eyebrow">WYD Seoul 2027 · 세계청년대회 공식기도문</div>
+        <div class="wyd-title">2027 서울 세계청년대회 공식기도문</div>
+        <div class="wyd-theme">"용기를 내어라. 내가 세상을 이겼다." (요한 16,33)</div>
+      </div>
+      <div class="wyd-body">
+        <p>젊은이를 사랑하시는 주님,<br>
+        저희를 주님의 무한한 사랑과 자비로 초대해 주심에 감사드립니다.</p>
+
+        <p>하느님 아버지,<br>
+        저희 자신을 당신께 맡겨 드리오니,<br>
+        온 세상 젊은이들이 교회의 품 안에서 위로받고<br>
+        친교와 일치의 기쁨을 누리게 하소서.</p>
+
+        <p>'이미 그리고 영원히' 세상을 이기신 그리스도님,<br>
+        "용기를 내어라." 하신 당신의 말씀 안에서<br>
+        온 세상 모든 이가 희망을 발견하고,<br>
+        사랑과 용서의 십자가가 세상에 대한 승리임을 깨닫게 하소서.</p>
+
+        <p>사랑의 불꽃이신 성령님,<br>
+        당신의 놀라운 손길로 이 땅에 복음의 씨앗을 심으셨으니,<br>
+        한국 순교 성인들의 믿음이 저희 가슴에도 타올라<br>
+        평화와 사랑과 진리의 복음을 살아가는 제자가 되게 하소서.</p>
+
+        <p>주님, 이 세계청년대회의 순례 여정을 통해<br>
+        저희 모두가 서로의 목소리를 경청하고 그 안에서 당신의 뜻을 찾으며,<br>
+        모든 하느님 백성이 함께 걷는 시노드 교회가 되게 하소서.</p>
+
+        <p class="wyd-amen">아멘</p>
+
+        <div class="wyd-fiat">
+          <p><span class="wyd-leader">○</span> 자비와 평화의 모후이시여,<br>
+          <span class="wyd-response">◎ 저희를 위하여 빌어 주소서.</span></p>
+          <p><span class="wyd-leader">○</span> 서울 세계청년대회의 주보성인들이여,<br>
+          <span class="wyd-response">◎ 모든 젊은이들을 위하여 빌어 주소서.</span></p>
+        </div>
+      </div>
+      <a class="wyd-link" href="https://wydseoul.org/introduction/prayer" target="_blank" rel="noopener">
+        공식 사이트에서 보기 →
+      </a>
+    </div>
   </section>
 
   <!-- ── 교하성당 ── -->

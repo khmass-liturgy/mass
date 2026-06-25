@@ -108,7 +108,7 @@
 
   /* ── WYD 기도문 카드 ── */
   .wyd-card{
-    background:linear-gradient(135deg,#2C1A44 0%,#1A2744 100%);
+    background:linear-gradient(135deg,#2E2250 0%,#1E3060 100%);
     border-radius:6px;padding:28px 32px;
     box-shadow:0 8px 30px rgba(26,39,68,.25);
     position:relative;overflow:hidden;
@@ -139,6 +139,24 @@
     transition:all .2s;position:relative;
   }
   .wyd-link:hover{background:var(--gold);color:var(--navy);}
+
+  /* ── 소기도문 박스 ── */
+  .small-prayer{
+    background:linear-gradient(135deg,#1E3060 0%,#2E2250 100%);
+    border-radius:6px;padding:20px 24px;
+    box-shadow:0 4px 16px rgba(26,39,68,.2);
+    position:relative;overflow:hidden;
+    margin-bottom:44px;
+  }
+  .small-prayer::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 90% 10%,rgba(201,168,76,.12),transparent 50%);
+    pointer-events:none;
+  }
+  .small-prayer .wyd-eyebrow{margin-bottom:6px;}
+  .small-prayer .wyd-title{font-size:1rem;margin-bottom:14px;}
+  .small-prayer .antiphon p{font-size:.85rem;margin-bottom:8px;}
+  .small-prayer .wyd-amen{font-size:.95rem;margin:14px 0 !important;}
 
   /* ── 교송(交誦) 형식 ── */
   .antiphon{margin-bottom:4px;}
@@ -350,6 +368,29 @@
       </a>
     </div>
   </section>
+
+  <!-- ── 예수성심성월 기도 ── -->
+  <div class="small-prayer">
+    <div class="wyd-eyebrow">6월 · 예수성심성월 기도</div>
+    <div class="wyd-title">예수 성심께 천하만민을 바치는 기도</div>
+    <div class="wyd-body" style="color:#7EB8F7;">
+      <div class="antiphon">
+        <p><span class="wyd-leader">○</span> 지극히 어지신 구세주 예수님,<br>&emsp;주님 앞에 꿇어 경배하오니 저희를 굽어살피소서.</p>
+        <p><span class="wyd-response2">●</span> 저희는 이미 주님의 백성이오니<br>&emsp;언제나 주님과 함께 살아가기를 바라나이다.</p>
+        <p><span class="wyd-leader">○</span> 저희가 이렇듯 다시 주님께 나아오는 것은<br>&emsp;자신의 죄를 용서받으려 함이 아니라,<br>&emsp;주님의 거룩한 이름을 공경하여 드리려 함이옵니다.</p>
+        <p><span class="wyd-response2">●</span> 주님께서는 평생토록 저희를 잊지 마시고<br>&emsp;주님의 뜨거우신 성심으로 사랑하시며<br>&emsp;저희의 사랑이 식어 버리지 않게 하소서.</p>
+        <p><span class="wyd-leader">○</span> 성모 마리아와 모든 성인을 저희의 보호자로 삼으시어<br>&emsp;죄악에서 멀리하게 하시고,<br>&emsp;주님을 거슬리는 일이 없도록 지켜 주소서.</p>
+        <p><span class="wyd-response2">●</span> 우리 주 그리스도를 통하여 비나이다.</p>
+      </div>
+      <p class="wyd-amen">◎ 아멘.</p>
+      <div class="antiphon">
+        <p><span class="wyd-leader">○</span> 자비로우신 예수님,</p>
+        <p><span class="wyd-response2">●</span> 저희에게 자비를 베푸소서.</p>
+        <p><span class="wyd-leader">○</span> 예수 성심이여,</p>
+        <p><span class="wyd-response2">●</span> 저희 마음을 주님의 성심을 닮게 하소서.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- ── 교하성당 ── -->
   <section>

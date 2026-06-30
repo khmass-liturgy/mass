@@ -1,1773 +1,702 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>교하성당 9-2구역 교적관리</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>가톨릭 뉴스 포털 — 교황청 소식</title>
+
+<!-- ── 홈 화면 추가 시 아이콘 설정 (교하성당 로고, PNG base64 내장 — 외부 파일 불필요) ── -->
+<link rel="manifest" href="manifest.json" />
+
+<!-- 브라우저 탭 파비콘 -->
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADi0lEQVR42u2WTWhcZRSGz/nud++dvzQmYzokTQ2d2qbIkCixhWJSCwlZtBapWt2kUqMBcRFwIXRhF4qoWCiIBYmhqNBF46IISdvEGoKUVJhgmtYUGuNo25hMMnUyk/m9c7+f40oXMkRHKQjmXR94OO/L+cGG5i64n2Jwn7UB+B8AeBkmQn0QAx5kDABAa9BECIAMGf65mIg04a8ZWs0QAtD6AEQgAq8Nbx8zl5K4ltcAEPCgYQACOQJcCaR/L2YAAATQ3GjO3RUnvxAMQdHf6MC28Oc4DIy4j+80LAuvzop7awQAoRrctZUFvMgNcAUJBZaJ2YIejaruNgMAyrZQ3qKiSy1h9vEboQ+HEsUSc0qwpQ57uuwHH7AXE4W7Cb2t3ggFva5QvySc019KpSoM2TDAEfD6RyvROX20kwtFz3Vwj83Of5M98al7ZRaPD5aGJ3NOSaezRESIlQCUhoAHordUtRcO7TUvT9OtBRq/JtN5dXlavd9nv9Vb/e7LntGoTOekbZZLdn2LEEAq9HswFqfFpNizix/r5pEwX1iRm/w4eZPOXEwGa7hQMDEjOh/jgEBUCYAAOId0jh7ajMeP1i4u5z22kc7Kz8fkd/MUaVK7m7nfy2Z+gKuzamaeXAkGq2wOqOhQU4i9ctB36lxqbkEDQGxJ9T9jN9ap5RR1tJo3fnQZg/d6fRMz7tiUgooyQERXQGQbDk0UY4uq/7DtuBSqYUDQ95SvygufDBen59Wrh0zDwEgTVvlQVWYRkWXhQoLiSXXqtcBno4XW7awjYpz9Wra3eF464M/kRF2tZyXpOI5yXFAasCKAJvTZcOMn3dPFAfDmbf1Or++rqZIrYTWjPjhXBKCHt4jn95vMQNNEhlTxslOaDAZ7H2FL95xUjgYuOOcnZZUP+k/n97WwEy8G7qyoye+F38cTaS0VrjMH5UMuCQzXsx2NVmxJWBxbw/adeOHAHr6akdsbMNzo29lYODuursWc5JpUukIAIkpF9bVocuY1IbgJu3dbflsOXhRPP8EHhuWl6OrtZf1mjxWswkwBzlySWlcC+EOu0KEg1ySvXM/vezQQi2fHp2XfQWs5pZ9tN2urDQBI5RTRPz84ZDBsj7CxKZUriCNPett2GAMj7tY6o2Gz7bpKSvpXF40xXMuKzjbbEXDhW6ck1OEO7wv7rZNDzuBIIZVDzhH+CoEbj9cG4L8P+A0qGbFtQ3mD0gAAAABJRU5ErkJggg==" />
+
+<!-- iOS 홈 화면 추가 아이콘 -->
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="교하성당" />
+<meta name="theme-color" content="#1A2744" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
 <style>
-:root {
-  --bg: #0f1117;
-  --surface: #1a1d27;
-  --surface2: #222636;
-  --border: #2e3250;
-  --accent: #4f7cff;
-  --accent2: #7c5cfc;
-  --gold: #c9a84c;
-  --text: #e8eaf0;
-  --text2: #8b90a8;
-  --red: #e05252;
-  --green: #3fb950;
-  --yellow: #e3a13a;
-  --radius: 10px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Pretendard', 'Noto Sans KR', -apple-system, sans-serif;
-  font-size: 14px;
-  min-height: 100vh;
-}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --navy:#1A2744; --navy-lt:#243560;
+    --gold:#C9A84C; --gold-lt:#E2C97E;
+    --cream:#F5F0E8; --card:#FFFFFF;
+    --border:#DDD5C0; --text:#1A1A1A;
+    --muted:#7A6F5E; --vatican:#6B1A1A;
+    --cpbc:#1A4A6B; --kyoha:#3D6B3D;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
 
-/* ── 헤더 ── */
-.header {
-  background: linear-gradient(135deg, #1a1d27 0%, #1e2140 100%);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.cross { color: var(--gold); font-size: 20px; }
-.header h1 { font-size: 15px; font-weight: 700; color: var(--text); }
-.header h1 span { color: var(--text2); font-weight: 400; font-size: 12px; display: block; }
+  header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
+  .header-title{flex:1;}
+  .header-title h1{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);}
+  .header-title p{font-family:'Cinzel',serif;font-size:.62rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
+  .header-date{font-size:.78rem;color:var(--gold-lt);font-family:'Noto Serif KR',serif;text-align:right;}
+  .gold-bar{background:linear-gradient(90deg,var(--gold),var(--gold-lt) 50%,var(--gold));height:3px;}
 
-/* ── Gist 저장 패널 ── */
-.gist-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  margin: 12px 12px 0;
-  overflow: hidden;
-}
-.gist-panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  cursor: pointer;
-  user-select: none;
-  background: var(--surface2);
-}
-.gist-panel-header .label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
-}
-.gist-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--text2);
-  flex-shrink: 0;
-}
-.gist-status-dot.connected { background: var(--green); box-shadow: 0 0 6px var(--green); }
-.gist-status-dot.error { background: var(--red); }
-.gist-status-dot.saving { background: var(--yellow); animation: pulse 0.8s infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-.gist-panel-body {
-  padding: 12px 14px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-}
-.gist-panel-body.open { display: flex; }
-.gist-row { display: flex; gap: 8px; flex-wrap: wrap; }
-.gist-input {
-  flex: 1;
-  min-width: 180px;
-  padding: 8px 10px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text);
-  font-size: 12px;
-  font-family: monospace;
-}
-.gist-input:focus { outline: none; border-color: var(--accent); }
-.gist-btn {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.15s;
-}
-.gist-btn:hover { opacity: 0.85; }
-.gist-btn.save { background: var(--green); color: #000; }
-.gist-btn.load { background: var(--accent); color: #fff; }
-.gist-btn.new-gist { background: var(--surface2); color: var(--text2); border: 1px solid var(--border); }
-.gist-msg {
-  font-size: 11px;
-  color: var(--text2);
-  padding: 2px 0;
-  min-height: 18px;
-}
-.gist-msg.ok { color: var(--green); }
-.gist-msg.err { color: var(--red); }
-.gist-hint {
-  font-size: 11px;
-  color: var(--text2);
-  line-height: 1.6;
-  background: var(--bg);
-  border-radius: 6px;
-  padding: 8px 10px;
-}
-.gist-hint a { color: var(--accent); text-decoration: none; }
+  .marquee-wrap{background:var(--navy-lt);padding:7px 0;overflow:hidden;}
+  .marquee-inner{display:flex;gap:60px;animation:marquee 40s linear infinite;white-space:nowrap;}
+  .marquee-inner span{color:var(--gold-lt);font-size:.74rem;letter-spacing:.03em;}
+  .marquee-inner strong{color:var(--cream);}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── 탭 ── */
-.tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border);
-  margin: 12px 12px 0;
-  gap: 2px;
-}
-.tab {
-  padding: 9px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text2);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.15s;
-  border-radius: 6px 6px 0 0;
-  background: none;
-  border-left: none; border-right: none; border-top: none;
-}
-.tab:hover { color: var(--text); background: var(--surface); }
-.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  main{max-width:1200px;margin:0 auto;padding:32px 24px 60px;}
 
-/* ── 필터바 ── */
-.filter-bar {
-  display: flex;
-  gap: 8px;
-  padding: 10px 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.filter-bar input, .filter-bar select {
-  padding: 7px 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text);
-  font-size: 12px;
-}
-.filter-bar input { flex: 1; min-width: 140px; }
-.filter-bar input:focus, .filter-bar select:focus { outline: none; border-color: var(--accent); }
-.btn-primary {
-  padding: 7px 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.15s;
-}
-.btn-primary:hover { opacity: 0.85; }
-.btn-secondary {
-  padding: 7px 12px;
-  background: var(--surface2);
-  color: var(--text2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.15s;
-}
-.btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+  /* ── 매일미사 카드 ── */
+  .missa-section{margin-bottom:44px;}
+  .missa-card{
+    position:relative;
+    background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
+    border-radius:6px;
+    padding:30px 32px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    text-decoration:none;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .missa-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(26,39,68,.35);}
+  .missa-card::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 90% -10%, rgba(201,168,76,.18), transparent 50%),
+      radial-gradient(circle at -5% 110%, rgba(201,168,76,.12), transparent 50%);
+    pointer-events:none;
+  }
+  .missa-date-box{
+    flex-shrink:0;
+    width:92px; height:92px;
+    background:var(--gold);
+    border-radius:6px;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    color:var(--navy);
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    z-index:1;
+  }
+  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
+  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:2.1rem;font-weight:700;line-height:1;margin:2px 0;}
+  .missa-date-box .month{font-size:.68rem;font-weight:500;}
+  .missa-body{flex:1;z-index:1;min-width:0;}
+  .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
+  .missa-sub{font-size:.85rem;color:#B8C0D8;}
+  .missa-arrow{
+    flex-shrink:0; z-index:1;
+    width:42px; height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold);
+    font-size:1.1rem;
+    transition:background .2s, color .2s;
+  }
+  .missa-card:hover .missa-arrow{background:var(--gold);color:var(--navy);}
 
-/* ── 신자 테이블 ── */
-.table-wrap {
-  overflow-x: auto;
-  margin: 0 12px;
-}
-.member-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-  min-width: 700px;
-}
-.member-table th {
-  background: var(--surface2);
-  color: var(--text2);
-  font-weight: 600;
-  padding: 8px 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.member-table td {
-  padding: 7px 10px;
-  border-bottom: 1px solid rgba(46,50,80,0.5);
-  vertical-align: middle;
-}
-.member-table tr:hover td { background: rgba(79,124,255,0.05); }
-.no-num { color: var(--text2); }
-.phone-link { color: var(--accent); text-decoration: none; }
-.phone-link:hover { text-decoration: underline; }
-.row-check {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--accent);
-  cursor: pointer;
-}
-.member-table tr.checked td { background: rgba(79,124,255,0.08); }
+  /* ── WYD 기도문 카드 ── */
+  .wyd-card{
+    background:linear-gradient(135deg,#2E2250 0%,#1E3060 100%);
+    border-radius:6px;padding:28px 32px;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    position:relative;overflow:hidden;
+  }
+  .wyd-card::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 95% 5%,rgba(201,168,76,.15),transparent 45%),
+      radial-gradient(circle at 5% 95%,rgba(201,168,76,.10),transparent 45%);
+    pointer-events:none;
+  }
+  .wyd-header{margin-bottom:20px;position:relative;}
+  .wyd-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .wyd-title{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);margin-bottom:6px;}
+  .wyd-theme{font-size:.82rem;color:var(--gold-lt);font-style:italic;}
+  .wyd-body{position:relative;color:#C8C8D8;font-size:.9rem;line-height:2;font-family:'Noto Serif KR',serif;}
+  .wyd-body p{margin-bottom:14px;}
+  .wyd-amen{font-family:'Noto Serif KR',serif;font-size:1.05rem;font-weight:700;color:var(--cream);text-align:center;margin:20px 0 !important;letter-spacing:.1em;}
+  .wyd-fiat{border-top:1px solid rgba(201,168,76,.25);padding-top:16px;font-size:.85rem;color:#A8A8C0;}
+  .wyd-fiat p{margin-bottom:8px !important;}
+  .wyd-leader{color:var(--gold);font-weight:700;margin-right:4px;}
+  .wyd-response{color:var(--cream);display:block;padding-left:1.2em;}
+  .wyd-link{
+    display:inline-block;margin-top:20px;
+    font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.12em;
+    color:var(--gold);text-decoration:none;
+    border:1px solid rgba(201,168,76,.4);padding:6px 16px;border-radius:2px;
+    transition:all .2s;position:relative;
+  }
+  .wyd-link:hover{background:var(--gold);color:var(--navy);}
 
-/* ── 반응 상태 배지 ── */
-.status-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.s-미발송 { background: rgba(139,144,168,0.15); color: var(--text2); }
-.s-발송완료 { background: rgba(79,124,255,0.15); color: var(--accent); }
-.s-활동중 { background: rgba(63,185,80,0.15); color: var(--green); }
-.s-이사 { background: rgba(224,82,82,0.15); color: var(--red); }
-.s-냉담 { background: rgba(201,168,76,0.15); color: var(--gold); }
-.s-무응답 { background: rgba(224,161,58,0.15); color: var(--yellow); }
-.s-전화연결 { background: rgba(124,92,252,0.15); color: var(--accent2); }
-.s-채팅방참여 { background: rgba(63,185,80,0.25); color: #5fd87a; }
-.status-select {
-  padding: 3px 6px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text);
-  font-size: 11px;
-  cursor: pointer;
-}
+  /* ── 접기/펼치기 기도문 ── */
+  .prayer-details{
+    background:linear-gradient(135deg,#2E2250 0%,#1E3060 100%);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+  }
+  .prayer-summary{
+    list-style:none;
+    cursor:pointer;
+    padding:20px 28px;
+    user-select:none;
+  }
+  .prayer-summary::-webkit-details-marker{display:none;}
+  .prayer-summary-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .prayer-arrow{
+    color:var(--gold);
+    font-size:.9rem;
+    flex-shrink:0;
+    transition:transform .3s;
+  }
+  .prayer-details[open] .prayer-arrow{
+    transform:rotate(180deg);
+  }
+  .prayer-body{
+    padding:0 28px 24px;
+    border-top:1px solid rgba(201,168,76,.2);
+  }
+  .prayer-details::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 95% 5%,rgba(201,168,76,.15),transparent 45%),
+      radial-gradient(circle at 5% 95%,rgba(201,168,76,.10),transparent 45%);
+    pointer-events:none;
+  }
 
-/* 비고 배지 */
-.bigo-badge {
-  display: inline-block;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-  background: rgba(201,168,76,0.15);
-  color: var(--gold);
-}
+  /* ── 소기도문 박스 ── */
+  .small-prayer{
+    background:linear-gradient(135deg,#1E3060 0%,#2E2250 100%);
+    border-radius:6px;padding:20px 24px;
+    box-shadow:0 4px 16px rgba(26,39,68,.2);
+    position:relative;overflow:hidden;
+    margin-bottom:44px;
+  }
+  .small-prayer::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 90% 10%,rgba(201,168,76,.12),transparent 50%);
+    pointer-events:none;
+  }
+  .small-prayer .wyd-eyebrow{margin-bottom:6px;}
+  .small-prayer .wyd-title{font-size:1rem;margin-bottom:14px;}
+  .small-prayer .antiphon p{font-size:.85rem;margin-bottom:8px;}
+  .small-prayer .wyd-amen{font-size:.95rem;margin:14px 0 !important;}
 
-/* ── 문자 탭 ── */
-.sms-templates {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 12px;
-}
-.sms-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.sms-card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  background: var(--surface2);
-}
-.sms-card-head .sms-title { font-weight: 700; font-size: 13px; }
-.sms-card-head .sms-purpose { font-size: 11px; color: var(--text2); margin-top: 2px; }
-.sms-card-body { padding: 12px 14px; }
-.sms-textarea {
-  width: 100%;
-  min-height: 100px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text);
-  font-size: 12px;
-  padding: 8px 10px;
-  resize: vertical;
-  font-family: inherit;
-  line-height: 1.6;
-}
-.sms-textarea:focus { outline: none; border-color: var(--accent); }
-.sms-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 14px;
-  border-top: 1px solid var(--border);
-  font-size: 11px;
-  color: var(--text2);
-}
+  /* ── 교송(交誦) 형식 ── */
+  .antiphon{margin-bottom:4px;}
+  .antiphon p{
+    margin-bottom:10px;
+    line-height:1.8;
+    font-family:'Noto Serif KR',serif;
+    font-size:.9rem;
+  }
+  .wyd-response2{
+    color:var(--cream);
+    font-weight:600;
+    margin-right:4px;
+  }
 
-/* 발송내역 카드 - 정사각형 박스 */
-.log-card {
-  aspect-ratio: 1 / 1;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color 0.15s, transform 0.1s;
-  display: flex;
-  flex-direction: column;
-}
-.log-card:hover { border-color: var(--accent); transform: translateY(-1px); }
-.log-card-head {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 10px 6px;
-  background: var(--surface2);
-}
-.log-date {
-  font-weight: 700;
-  font-size: 12px;
-  color: var(--accent);
-  white-space: nowrap;
-}
-.log-target-count {
-  font-size: 10px;
-  color: var(--text2);
-  background: var(--bg);
-  padding: 1px 7px;
-  border-radius: 20px;
-  align-self: flex-start;
-}
-.log-card-body {
-  padding: 8px 10px;
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-}
-.log-content {
-  font-size: 11px;
-  color: var(--text);
-  line-height: 1.5;
-  white-space: pre-wrap;
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
-.log-memo {
-  font-size: 10px;
-  color: var(--gold);
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid var(--border);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.log-targets {
-  font-size: 10px;
-  color: var(--text2);
-  margin-top: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.empty-state {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 40px 20px;
-  color: var(--text2);
-  font-size: 13px;
-}
+  /* ── 섹션 타이틀 ── */
+  .group-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border);}
+  .group-badge{padding:3px 10px;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border-radius:2px;}
+  .badge-vatican{background:var(--vatican);color:var(--cream);}
+  .badge-korea{background:var(--cpbc);color:var(--cream);}
+  .badge-kyoha{background:var(--kyoha);color:var(--cream);}
+  .badge-world{background:#4A4A4A;color:var(--cream);}
+  .group-title{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
 
-/* 대상신자 체크 리스트 */
-.target-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-}
-.target-item:hover { background: var(--surface2); }
-.target-item input { width: 16px; height: 16px; accent-color: var(--accent); }
-.target-item .t-name { font-weight: 600; }
-.target-item .t-sub { color: var(--text2); font-size: 11px; }
+  .link-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+    gap:14px;
+    margin-bottom:40px;
+  }
+  .link-grid.single{
+    grid-template-columns:repeat(auto-fill, minmax(230px, 280px));
+  }
 
-/* 가족관계 필터 칩 */
-.family-filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 8px;
-}
-.family-chip {
-  padding: 5px 11px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text2);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.15s;
-}
-.family-chip:hover { border-color: var(--accent); color: var(--text); }
-.family-chip:active { transform: scale(0.96); }
-.family-chip .chip-count { color: var(--text2); font-weight: 400; }
+  .link-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:4px solid var(--gold);
+    border-radius:0 4px 4px 0;
+    padding:12px 14px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    transition:all .2s;
+    min-height:76px;
+  }
+  .link-card:hover{
+    border-left-color:var(--navy);
+    box-shadow:0 6px 20px rgba(26,39,68,.12);
+    transform:translateY(-2px);
+  }
+  .link-card .lc-top{display:flex;align-items:center;justify-content:space-between;}
+  .link-card .lc-icon{font-size:1.1rem;color:var(--gold);}
+  .link-card .lc-go{font-size:.8rem;color:#C8C0AE;transition:transform .2s, color .2s;}
+  .link-card:hover .lc-go{color:var(--navy);transform:translateX(3px);}
+  .link-card .lc-name{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;color:var(--navy);}
+  .link-card .lc-desc{font-size:.73rem;color:var(--muted);line-height:1.4;}
+  .link-card .lc-lang{
+    align-self:flex-start;
+    font-size:.58rem;
+    padding:1px 6px;
+    border-radius:2px;
+    background:#F0EBE0;
+    color:var(--muted);
+    margin-top:auto;
+  }
 
-/* 문자 반응 테이블 */
-.sms-response-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-}
-.sms-response-table th {
-  background: var(--surface2);
-  color: var(--text2);
-  padding: 7px 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-.sms-response-table td {
-  padding: 6px 10px;
-  border-bottom: 1px solid rgba(46,50,80,0.5);
-}
-.sms-response-table tr:hover td { background: rgba(79,124,255,0.05); }
+  footer{background:var(--navy);color:var(--muted);text-align:center;padding:24px;font-size:.75rem;}
+  footer a{color:var(--gold);text-decoration:none;}
+  footer p+p{margin-top:6px;}
 
-/* ── 통계 ── */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 10px;
-  padding: 12px;
-}
-.stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 14px 12px;
-}
-.stat-card .num {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--text);
-  line-height: 1;
-}
-.stat-card .label {
-  font-size: 11px;
-  color: var(--text2);
-  margin-top: 4px;
-}
-.stat-card .sub {
-  font-size: 11px;
-  color: var(--text2);
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px solid var(--border);
-}
-
-/* 섹션 헤더 */
-.section-head {
-  padding: 8px 12px 4px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text2);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.count-chip {
-  background: var(--surface2);
-  color: var(--text2);
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  margin-left: 6px;
-}
-
-/* ── 모달 ── */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 200;
-  display: none;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0;
-}
-.modal-overlay.open { display: flex; }
-.modal {
-  background: var(--surface);
-  border-radius: 16px 16px 0 0;
-  width: 100%;
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 0 0 32px;
-}
-.modal-handle {
-  width: 36px; height: 4px;
-  background: var(--border);
-  border-radius: 2px;
-  margin: 12px auto 8px;
-}
-.modal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
-}
-.modal-head h2 { font-size: 16px; font-weight: 700; }
-.modal-close {
-  background: none;
-  border: none;
-  color: var(--text2);
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
-  padding: 4px;
-}
-.modal-body { padding: 16px; }
-.form-row { margin-bottom: 12px; }
-.form-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text2);
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.form-input, .form-select {
-  width: 100%;
-  padding: 9px 12px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  color: var(--text);
-  font-size: 13px;
-  font-family: inherit;
-}
-.form-input:focus, .form-select:focus { outline: none; border-color: var(--accent); }
-.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.modal-footer {
-  display: flex;
-  gap: 8px;
-  padding: 0 16px;
-  margin-top: 16px;
-}
-.btn-danger {
-  padding: 10px 16px;
-  background: rgba(224,82,82,0.1);
-  color: var(--red);
-  border: 1px solid rgba(224,82,82,0.3);
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.btn-full {
-  flex: 1;
-  padding: 10px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* ── 탭 패널 ── */
-.tab-panel { display: none; }
-.tab-panel.active { display: block; }
-
-/* ── 알림 토스트 ── */
-.toast {
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(60px);
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  z-index: 999;
-  transition: transform 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-.toast.show { transform: translateX(-50%) translateY(0); }
-
-/* 반응형 */
-@media (max-width: 480px) {
-  .gist-row { flex-direction: column; }
-  .filter-bar { gap: 6px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-}
+  @media (max-width:600px){
+    .header-inner{height:60px;}
+    .header-title h1{font-size:1rem;}
+    .header-date{display:none;}
+    .missa-card{flex-wrap:wrap;padding:22px;}
+    .missa-arrow{display:none;}
+    .link-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:380px){
+    .link-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
 
-<!-- 헤더 -->
-<div class="header">
-  <div class="header-title">
-    <span class="cross">✟</span>
-    <div>
-      <h1>교하성당 9-2구역 <span>교적관리 시스템 · 남성신자</span></h1>
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <h1>가톨릭 뉴스 포털</h1>
+      <p>Nuntii Catholici · Vatican News</p>
     </div>
+    <div class="header-date" id="headerDate"></div>
   </div>
-  <div id="headerSaveStatus" style="font-size:11px;color:var(--text2)">● 로컬</div>
-</div>
+</header>
+<div class="gold-bar"></div>
 
-<!-- Gist 저장 패널 -->
-<div class="gist-panel">
-  <div class="gist-panel-header" onclick="toggleGistPanel()">
-    <div class="label">
-      <div class="gist-status-dot" id="gistDot"></div>
-      💾 Gist 클라우드 저장소
-    </div>
-    <span id="gistPanelArrow" style="color:var(--text2);font-size:12px">▼</span>
-  </div>
-  <div class="gist-panel-body" id="gistPanelBody">
-    <div class="gist-row">
-      <input class="gist-input" id="gistToken" type="password"
-             placeholder="GitHub Token (ghp_...)"
-             autocomplete="off"
-             oninput="onTokenInput()">
-      <button class="gist-btn load" onclick="findAndLoadGist()" style="flex-shrink:0">🔍 연결</button>
-    </div>
-    <div id="gistFoundBox" style="display:none;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:12px;color:var(--text2)"></div>
-    <div class="gist-row" id="gistActionRow" style="display:none">
-      <button class="gist-btn save" onclick="saveToGist()">💾 저장</button>
-      <button class="gist-btn new-gist" onclick="newGist()">➕ 새 Gist로 저장</button>
-    </div>
-    <div class="gist-msg" id="gistMsg"></div>
-    <div class="gist-hint">
-      💡 <strong>사용 방법</strong>: GitHub Token 입력 → <strong>연결</strong> 버튼 → 기존 데이터 자동검색 후 저장/불러오기<br>
-      🔄 <strong>다른 기기에서도</strong> 같은 Token으로 연결하면 자동으로 같은 Gist를 찾습니다<br>
-      🔒 Token은 이 브라우저에만 저장되며 외부로 전송되지 않습니다<br>
-      <a href="https://github.com/settings/tokens/new?scopes=gist&description=9-2%EA%B5%AC%EC%97%AD%EA%B4%80%EB%A6%AC" target="_blank">▶ GitHub Token 발급하기 (gist 권한만 필요)</a>
-    </div>
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교하성당</strong> 공지사항 · 주보 · 갤러리</span>
+    <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스 · 마리아사랑넷</span>
+    <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
+    <span>✦ <strong>교하성당</strong> 공지사항 · 주보 · 갤러리</span>
+    <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
+    <span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스 · 마리아사랑넷</span>
   </div>
 </div>
 
-<!-- 탭 -->
-<div class="tabs">
-  <button class="tab active" onclick="switchTab('members', this)">👥 신자명단</button>
-  <button class="tab" onclick="switchTab('sms', this)">📨 문자관리</button>
-  <button class="tab" onclick="switchTab('stats', this)">📊 현황통계</button>
-</div>
+<main>
 
-<!-- ▶ 신자명단 탭 -->
-<div class="tab-panel active" id="tab-members">
-  <div class="filter-bar">
-    <input type="text" id="searchInput" placeholder="이름·세례명·전화번호 검색…" oninput="renderMembers()">
-    <select id="filterBigo" onchange="renderMembers()">
-      <option value="">전체 비고</option>
-      <option value="없음">비고없음</option>
-      <option value="전출">전출</option>
-      <option value="요양원">요양원</option>
-      <option value="연락처불명">연락처불명</option>
-      <option value="9-2구역장">9-2구역장</option>
-      <option value="9-2총무">9-2총무</option>
-      <option value="단톡방초대허가">단톡방초대허가</option>
-    </select>
-    <button class="btn-primary" onclick="openModal()">+ 신자추가</button>
-    <button class="btn-danger" id="btnBulkDelete" onclick="bulkDeleteMembers()" style="display:none;padding:7px 12px;font-size:12px">🗑 선택삭제 (<span id="bulkDeleteCount">0</span>)</button>
-    <button class="btn-secondary" onclick="exportJSON()">⬇ 내보내기</button>
-    <label class="btn-secondary" style="cursor:pointer">
-      ⬆ 가져오기
-      <input type="file" accept=".json" style="display:none" onchange="importJSON(event)">
-    </label>
-  </div>
-  <div style="padding:0 12px 6px;font-size:12px;color:var(--text2)">
-    총 <strong id="memberCount" style="color:var(--text)">0</strong>명
-  </div>
-  <div class="table-wrap">
-    <table class="member-table">
-      <thead>
-        <tr>
-          <th style="width:34px"><input type="checkbox" id="checkAllMembers" onchange="toggleAllMembers(this.checked)"></th>
-          <th>번호</th>
-          <th>가족관계</th>
-          <th>성명</th>
-          <th>세례명</th>
-          <th>휴대전화</th>
-          <th>생년월일</th>
-          <th>축일</th>
-          <th>동-호수</th>
-          <th>세대주</th>
-          <th>비고</th>
-        </tr>
-      </thead>
-      <tbody id="memberTableBody"></tbody>
-    </table>
-  </div>
-</div>
+  <!-- ── 오늘의 매일미사 카드 1장 ── -->
+  <section class="missa-section">
+    <a class="missa-card" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <div class="missa-date-box">
+        <span class="dow" id="missaDow">SUN</span>
+        <span class="day" id="missaDay">1</span>
+        <span class="month" id="missaMonth">1월</span>
+      </div>
+      <div class="missa-body">
+        <div class="missa-eyebrow">Daily Mass · 한국천주교주교회의</div>
+        <div class="missa-title">오늘의 매일미사 보기</div>
+        <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
+      </div>
+      <div class="missa-arrow">→</div>
+    </a>
+  </section>
 
-<!-- ▶ 문자관리 탭 (발송내역) -->
-<div class="tab-panel" id="tab-sms">
-  <div class="filter-bar">
-    <input type="text" id="smsSearchInput" placeholder="내용·메모 검색…" oninput="renderSMSLog()">
-    <button class="btn-primary" onclick="openSmsModal()">+ 발송내역 추가</button>
-  </div>
-  <div style="padding:0 12px 6px;font-size:12px;color:var(--text2)">
-    총 <strong id="smsLogCount" style="color:var(--text)">0</strong>건
-  </div>
-  <div class="sms-templates" id="smsTemplates"></div>
-</div>
+  <!-- ── 민족 화해와 일치를 위한 기도 ── -->
+  <section class="missa-section">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" style="margin-bottom:4px;">한국천주교주교회의 · 민화위 공식기도문</div>
+            <div class="wyd-title" style="margin-bottom:0;">민족의 화해와 일치를 위한 기도</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 사람을 당신의 모습대로 지어내신 주님,<br>&emsp;저희가 모두 주님을 닮게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 사랑으로 하나 되신 주님처럼<br>&emsp;저희가 서로 사랑하여 하나 되게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 평화를 바라시는 주님,<br>&emsp;이 나라 이 땅에<br>&emsp;잃어버린 평화를 되찾게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 한 핏줄 한 겨레이면서도 서로 헐뜯고 싸웠던<br>&emsp;저희 잘못을 깨우쳐 주소서.</p>
+            <p><span class="wyd-leader">○</span> 분단의 깊은 상처를 낫게 하시고<br>&emsp;서로 용서하는 화해의 은총을 내려 주소서.</p>
+            <p><span class="wyd-response2">●</span> 인류의 일치를 바라시는 주님,<br>&emsp;갈라져 사는 저희 겨레의 아픔을 어루만져 주소서.</p>
+            <p><span class="wyd-leader">○</span> 저희의 무관심을 깨닫게 하시어<br>&emsp;겨레의 일치를 위하여 열심히 일하고<br>&emsp;가진 바를 나누게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 서로 존중하고 사랑하며<br>&emsp;평화 통일을 이룩하게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 온 겨레가 주님을 믿어<br>&emsp;이 땅에 주님의 나라를 이루게 하소서.<br>&emsp;우리 주 그리스도를 통하여 비나이다.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 평화의 모후시여,</p>
+            <p><span class="wyd-response2">●</span> 저희를 위하여 빌어 주소서.</p>
+            <p><span class="wyd-leader">○</span> 한국의 모든 순교 성인이여,</p>
+            <p><span class="wyd-response2">●</span> 저희를 위하여 빌어 주소서.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
 
-<!-- ▶ 통계 탭 -->
-<div class="tab-panel" id="tab-stats">
-  <div class="section-head">핵심 현황</div>
-  <div class="stats-grid" id="statsGrid"></div>
-  <div class="section-head" style="margin-top:4px">문자 발송내역 현황</div>
-  <div class="stats-grid" id="smsStatsGrid"></div>
-  <div class="section-head" style="margin-top:4px">비고별 현황</div>
-  <div class="stats-grid" id="bigoStatsGrid"></div>
-</div>
+  <!-- ── 2027 서울 세계청년대회 공식기도문 ── -->
+  <section class="missa-section">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" style="margin-bottom:4px;">WYD Seoul 2027 · 세계청년대회 공식기도문</div>
+            <div class="wyd-title" style="margin-bottom:0;">2027 서울 세계청년대회 공식기도문</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-theme" style="margin-bottom:16px;">"용기를 내어라. 내가 세상을 이겼다." (요한 16,33)</div>
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <p>젊은이를 사랑하시는 주님,<br>
+          저희를 주님의 무한한 사랑과 자비로 초대해 주심에 감사드립니다.</p>
+          <p>하느님 아버지,<br>
+          저희 자신을 당신께 맡겨 드리오니,<br>
+          온 세상 젊은이들이 교회의 품 안에서 위로받고<br>
+          친교와 일치의 기쁨을 누리게 하소서.</p>
+          <p>'이미 그리고 영원히' 세상을 이기신 그리스도님,<br>
+          "용기를 내어라." 하신 당신의 말씀 안에서<br>
+          온 세상 모든 이가 희망을 발견하고,<br>
+          사랑과 용서의 십자가가 세상에 대한 승리임을 깨닫게 하소서.</p>
+          <p>사랑의 불꽃이신 성령님,<br>
+          당신의 놀라운 손길로 이 땅에 복음의 씨앗을 심으셨으니,<br>
+          한국 순교 성인들의 믿음이 저희 가슴에도 타올라<br>
+          평화와 사랑과 진리의 복음을 살아가는 제자가 되게 하소서.</p>
+          <p>주님, 이 세계청년대회의 순례 여정을 통해<br>
+          저희 모두가 서로의 목소리를 경청하고 그 안에서 당신의 뜻을 찾으며,<br>
+          모든 하느님 백성이 함께 걷는 시노드 교회가 되게 하소서.</p>
+          <p class="wyd-amen">아멘</p>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 자비와 평화의 모후이시여,</p>
+            <p><span class="wyd-response2">◎</span> 저희를 위하여 빌어 주소서.</p>
+            <p><span class="wyd-leader">○</span> 서울 세계청년대회의 주보성인들이여,</p>
+            <p><span class="wyd-response2">◎</span> 모든 젊은이들을 위하여 빌어 주소서.</p>
+          </div>
+        </div>
+        <a class="wyd-link" href="https://wydseoul.org/introduction/prayer" target="_blank" rel="noopener">
+          공식 사이트에서 보기 →
+        </a>
+      </div>
+    </details>
+  </section>
 
-<!-- 신자 편집 모달 -->
-<div class="modal-overlay" id="memberModal">
-  <div class="modal">
-    <div class="modal-handle"></div>
-    <div class="modal-head">
-      <h2 id="modalTitle">신자 정보 편집</h2>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+  <!-- ── 예수성심성월 기도 ── -->
+  <section class="missa-section">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" style="margin-bottom:4px;">6월 · 예수성심성월 기도</div>
+            <div class="wyd-title" style="margin-bottom:0;">예수 성심께 천하 만민을 바치는 기도</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 지극히 어지신 구세주 예수님,<br>&emsp;주님 앞에 꿇어 경배하오니<br>&emsp;저희를 굽어살피소서.</p>
+            <p><span class="wyd-response2">●</span> 저희는 이미 주님의 백성이오니<br>&emsp;언제나 주님과 함께 살아가기를 바라나이다.<br>&emsp;주님과 하나 되고자<br>&emsp;오늘 저희를 주님의 성심께 봉헌하나이다.</p>
+            <p><span class="wyd-leader">○</span> 주님을 일찍이 알아 모시지 못한 사람도 많고<br>&emsp;주님을 알고도 주님의 계명을 저버리고<br>&emsp;주님을 떠난 사람도 많사오니</p>
+            <p><span class="wyd-response2">●</span> 지극히 인자하신 예수님,<br>&emsp;이런 사람들도 다 불쌍히 여기시어<br>&emsp;주님의 성심께 이끌어 들이소서.</p>
+            <p><span class="wyd-leader">○</span> 주님께서는 목자이시니<br>&emsp;주님을 떠나지 않은 사람들을 보살피시고<br>&emsp;이미 주님을 떠난 사람들은<br>&emsp;다시 아버지 집으로 돌아오게 하시어<br>&emsp;굶어 죽는 일이 없게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 옹졸한 고집에 사로잡힌 사람들이나<br>&emsp;불목하여 갈린 사람들도 부르시어<br>&emsp;저희가 모두 같은 신앙을 고백하며<br>&emsp;한 우리에서 한 목자 밑에 살게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 주님, 거룩한 교회를 평화의 깃발로 세우시고<br>&emsp;모든 나라에 참된 평화를 주시어<br>&emsp;온 세상 어디서나 입을 모아<br>&emsp;저희를 구원하신 거룩하신 성심께<br>&emsp;영원히 찬미와 영광과 흠숭을 드리게 하소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 예수 성심,</p>
+            <p><span class="wyd-response2">●</span> 이 세상에 주님의 나라를 세우소서.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ── 찬미받으소서 기도문 ── -->
+  <section class="missa-section">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" style="margin-bottom:4px;">의정부교구 · Laudato Si'</div>
+            <div class="wyd-title" style="margin-bottom:0;">찬미받으소서 기도문</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 하늘과 땅과 그 안에 있는 만물의 창조주이신 하느님,<br>&emsp;하느님께서는 저희를 당신의 모상대로 창조하시어,<br>&emsp;모든 피조물의 동반자로 삼으시고, 복을 내리시어<br>&emsp;저희 모두가 함께 자라게 하셨나이다.</p>
+            <p><span class="wyd-response2">●</span> 저희 마음을 열어주시어<br>&emsp;하느님의 선물인 피조물을 돌보게 하시고,<br>&emsp;우리 공동의 집인 지구가 모든 피조물의 집이요,<br>&emsp;미래 세대가 살아갈 집임을 깨달아<br>&emsp;이 집을 보존하는 데 앞장서게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 저희에게 용기를 주시어, 기후 위기를 극복하기 위하여 연대하고<br>&emsp;공동선을 추구하는 구체적 노력을 기꺼이 받아들여<br>&emsp;참된 생태적 회개를 이루게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 지금 그 어느 때보다도<br>&emsp;저희 모두가 서로 연결되어 있음을 절감하여,<br>&emsp;지구의 울부짖음과 가난한 이들의 부르짖음에<br>&emsp;귀를 기울이게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 저희에게 생태적 감수성을 길러 주시어<br>&emsp;일상의 작은 노력들이 모여<br>&emsp;더 나은 세상을 만들어 감을 깨닫게 하소서.</p>
+            <p><span class="wyd-response2">●</span> 우리 공동의 집을 지키기 위한<br>&emsp;저희의 작은 실천들을 모아<br>&emsp;지구와 인류를 위한 희망의 씨앗이 되게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 온 피조물과 함께<br>&emsp;하느님을 찬미하고 감사드리며<br>&emsp;우리 주 그리스도를 통하여 비나이다.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ── 교하성당 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-kyoha">Parish</span>
+      <h2 class="group-title">교하성당</h2>
     </div>
-    <div class="modal-body">
-      <div class="form-row-2">
-        <div class="form-row">
-          <label class="form-label">가족관계</label>
-          <input class="form-input" id="f_family" placeholder="세대주, 배우자, 자(아들)…">
-        </div>
-        <div class="form-row">
-          <label class="form-label">비고</label>
-          <select class="form-select" id="f_bigo">
-            <option value="">없음</option>
-            <option value="전출">전출</option>
-            <option value="요양원">요양원</option>
-            <option value="연락처불명">연락처불명</option>
-            <option value="9-2구역장">9-2구역장</option>
-            <option value="9-2총무">9-2총무</option>
-            <option value="단톡방초대허가">단톡방초대허가</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row-2">
-        <div class="form-row">
-          <label class="form-label">성명 *</label>
-          <input class="form-input" id="f_name" placeholder="홍길동">
-        </div>
-        <div class="form-row">
-          <label class="form-label">세례명</label>
-          <input class="form-input" id="f_baptism" placeholder="요한">
-        </div>
-      </div>
-      <div class="form-row">
-        <label class="form-label">휴대전화</label>
-        <input class="form-input" id="f_phone" placeholder="010-0000-0000" type="tel">
-      </div>
-      <div class="form-row-2">
-        <div class="form-row">
-          <label class="form-label">생년월일</label>
-          <input class="form-input" id="f_birth" placeholder="YYYY-MM-DD">
-        </div>
-        <div class="form-row">
-          <label class="form-label">축일 (MM/DD)</label>
-          <input class="form-input" id="f_feast" placeholder="01/01">
-        </div>
-      </div>
-      <div class="form-row-2">
-        <div class="form-row">
-          <label class="form-label">동-호수</label>
-          <input class="form-input" id="f_unit" placeholder="914-1101">
-        </div>
-        <div class="form-row">
-          <label class="form-label">세대주</label>
-          <input class="form-input" id="f_head" placeholder="세대주 이름">
-        </div>
-      </div>
-      <div class="form-row">
-        <label class="form-label">세대주 연락처</label>
-        <input class="form-input" id="f_headPhone" placeholder="010-0000-0000">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-danger" id="btnDelete" onclick="deleteMember()" style="display:none">삭제</button>
-      <button class="btn-secondary" onclick="closeModal()">취소</button>
-      <button class="btn-full" onclick="saveMember()">저장</button>
-    </div>
-  </div>
-</div>
+    <div class="link-grid">
 
-<!-- 발송내역 편집 모달 -->
-<div class="modal-overlay" id="smsModal">
-  <div class="modal">
-    <div class="modal-handle"></div>
-    <div class="modal-head">
-      <h2 id="smsModalTitle">발송내역 추가</h2>
-      <button class="modal-close" onclick="closeSmsModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-row">
-        <label class="form-label">날짜 *</label>
-        <input class="form-input" id="sms_date" type="date">
-      </div>
-      <div class="form-row">
-        <label class="form-label">문자 내용</label>
-        <textarea class="form-input sms-textarea" id="sms_content" rows="6" placeholder="발송한 문자 내용을 입력하세요"></textarea>
-      </div>
-      <div class="form-row">
-        <label class="form-label">대상 신자 <span id="sms_target_count" style="color:var(--accent)"></span></label>
-        <input class="form-input" id="sms_target_search" placeholder="이름 검색…" oninput="renderSmsTargetList()" style="margin-bottom:8px">
-        <div id="smsFamilyFilters" class="family-filter-row"></div>
-        <div id="smsTargetList" style="max-height:220px;overflow-y:auto;background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:6px"></div>
-      </div>
-      <div class="form-row">
-        <label class="form-label">메모</label>
-        <input class="form-input" id="sms_memo" placeholder="비고, 특이사항 등">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-danger" id="smsBtnDelete" onclick="deleteSmsLog()" style="display:none">삭제</button>
-      <button class="btn-secondary" onclick="closeSmsModal()">취소</button>
-      <button class="btn-full" onclick="saveSmsLog()">저장</button>
-    </div>
-  </div>
-</div>
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/board.aspx?mnucd=20001877" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📋</span><span class="lc-go">→</span></div>
+        <div class="lc-name">공지사항</div>
+        <div class="lc-desc">교하성당 공지 게시판</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
-<div class="toast" id="toast"></div>
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/jubo.aspx?mnucd=20001570" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📄</span><span class="lc-go">→</span></div>
+        <div class="lc-name">주보안내</div>
+        <div class="lc-desc">매주 주보 보기</div>
+        <span class="lc-lang">한국어</span>
+      </a>
 
+      <a class="link-card" href="https://sd.uca.or.kr/kyoha/gallery.aspx?mnucd=20001854" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🖼</span><span class="lc-go">→</span></div>
+        <div class="lc-name">갤러리</div>
+        <div class="lc-desc">행사 사진 모음</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── 교황청 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-vatican">Holy See</span>
+      <h2 class="group-title">교황청 소식</h2>
+    </div>
+    <div class="link-grid single">
+
+      <a class="link-card" href="https://www.vaticannews.va/ko.html" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
+        <div class="lc-name">Vatican News</div>
+        <div class="lc-desc">교황청 공식 뉴스 서비스</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── 국내 가톨릭 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-korea">Korea</span>
+      <h2 class="group-title">국내 가톨릭 뉴스</h2>
+    </div>
+    <div class="link-grid">
+
+      <a class="link-card" href="https://www.catholictimes.org" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭신문</div>
+        <div class="lc-desc">국내 대표 가톨릭 신문</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://www.cbck.or.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">⛪</span><span class="lc-go">→</span></div>
+        <div class="lc-name">한국천주교주교회의</div>
+        <div class="lc-desc">CBCK 공식 홈페이지</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://maria.catholic.or.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">💬</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭굿뉴스</div>
+        <div class="lc-desc">서울대교구 운영 종합 포털</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://www.catholicpress.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🗞</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭언론인협의회</div>
+        <div class="lc-desc">가톨릭 언론 종합 소식</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://m.catholic.or.kr/web/sungga/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎵</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭 성가 검색</div>
+        <div class="lc-desc">번호·제목으로 검색, 악보·음원 제공 (굿뉴스)</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://m.catholic.or.kr/web/prayer/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🙏</span><span class="lc-go">→</span></div>
+        <div class="lc-name">주요기도문</div>
+        <div class="lc-desc">성호경·주님의 기도·묵주기도 등 주요 기도문 모음 (굿뉴스)</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://m.mariasarang.net/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">💒</span><span class="lc-go">→</span></div>
+        <div class="lc-name">마리아사랑넷</div>
+        <div class="lc-desc">성가 · 기도 · 성경 · 가톨릭 종합 모바일 포털</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://www.mariasarang.net/page/catholic.asp" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎶</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭 성가집</div>
+        <div class="lc-desc">전곡 MP3 듣기 · 악보(단성/혼성) PDF (마리아사랑넷)</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://ebook.cbck.or.kr/fileRoot/kr/c/b/cbck/DigitalAlbumRoot/171106000007/mobile/index.html#p=22" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
+        <div class="lc-name">로마 미사경본 총지침</div>
+        <div class="lc-desc">한국천주교주교회의 공식 전자책</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── 바오로딸 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge" style="background:#8B1A1A;color:var(--cream);">Pauline</span>
+      <h2 class="group-title">바오로딸</h2>
+    </div>
+    <div class="link-grid">
+
+      <a class="link-card" href="https://m.pauline.or.kr" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📚</span><span class="lc-go">→</span></div>
+        <div class="lc-name">바오로딸</div>
+        <div class="lc-desc">성경·영성·신앙 도서 및 콘텐츠</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://www.podbbang.com/channels/15677/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎧</span><span class="lc-go">→</span></div>
+        <div class="lc-name">책읽어주는 수녀</div>
+        <div class="lc-desc">바오로딸 수녀회 팟캐스트</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://contents.pauline.or.kr/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎬</span><span class="lc-go">→</span></div>
+        <div class="lc-name">바오로딸 콘텐츠</div>
+        <div class="lc-desc">영상·음원·전자책 신앙 콘텐츠</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── 유튜브 ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge" style="background:#CC0000;color:#fff;">YouTube</span>
+      <h2 class="group-title">유튜브</h2>
+    </div>
+    <div class="link-grid">
+
+      <a class="link-card" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📺</span><span class="lc-go">→</span></div>
+        <div class="lc-name">cpbc TV</div>
+        <div class="lc-desc">가톨릭평화방송 공식 유튜브</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@fspmusic?si=ceRKxp_sDfxc_CPW" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎵</span><span class="lc-go">→</span></div>
+        <div class="lc-name">바오로딸 음악채널</div>
+        <div class="lc-desc">바오로딸 수녀회 음악 유튜브</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@hymnscatholic?si=xE17s-e0foOyWiil" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
+        <div class="lc-name">성경듣기</div>
+        <div class="lc-desc">가톨릭 성경 낭독 유튜브</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@studybible?si=Um0Hw1BRQdZVSmVR" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">✏️</span><span class="lc-go">→</span></div>
+        <div class="lc-name">성경과외 해주는 신부</div>
+        <div class="lc-desc">알기 쉬운 성경 해설 유튜브</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@koreacatholictimes?si=-AiXmzyxecVY3WIo" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭신문 유튜브</div>
+        <div class="lc-desc">가톨릭신문 공식 유튜브 채널</div>
+        <span class="lc-lang">한국어</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>가톨릭 뉴스 포털 · <em>Nuntii Catholici</em></p>
+  <p>뉴스 출처: <a href="https://www.vaticannews.va/ko.html" target="_blank">Vatican News 한국어</a> · <a href="https://www.catholictimes.org" target="_blank">가톨릭신문</a> 외</p>
+  <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지 · 홈 화면 추가 지원</p>
+</footer>
 
 <script>
-// ════════════════════════════════════════
-// 데이터
-// ════════════════════════════════════════
-let nextSmsLogId = 1;
-
-const RAW_MEMBERS = [
-  [1,'세대주','김대익','세례자요한','010-4594-0667','1972-06-26','','914-1101','김대익','010-4594-0667',''],
-  [2,'','김동제','베드로클라베르','010-4544-0667','2004-09-13','09/09','914-1101','','',''],
-  [3,'','김동현','마리아크로난','','1999-04-28','','918-403','임미경','010-8366-9854',''],
-  [4,'세대주','손형탁','세라피노','010-3908-7284','1998-12-04','10/12','915-602','손형탁','010-3908-7284',''],
-  [5,'세대주','신의용','베네딕토','010-4550-8037','1963-03-15','','916-1304','신의용','010-4550-8037','연락처불명'],
-  [6,'','신재원','요한','','1995-12-14','','916-1304','','',''],
-  [7,'','신재현','마태오','','1998-04-30','','916-1304','','',''],
-  [8,'배우자','박건배','(비신자)','010-7197-0962','1962-11-19','','914-602','임춘자','010-5175-0962',''],
-  [9,'세대주','이상욱','사도요한','010-7662-1430','1999-05-22','','915-302','이상욱','010-7662-1430',''],
-  [10,'세대주','임만옥','요한','','1948-09-10','','914-301','임만옥','',''],
-  [11,'세대주','김유재','니체시오','010-3549-6997','1971-04-02','04/02','918-702','김유재','010-3549-6997',''],
-  [12,'세대주','강기원','바르톨로메오','010-9147-5550','1960-07-02','08/24','915-902','강기원','010-9147-5550',''],
-  [13,'','강동균','골룸바노','010-6349-5114','1985-11-23','','915-902','','',''],
-  [14,'배우자','구희선','프란치스코','010-9381-9232','1975-02-23','10/04','915-201','김태연','010-9341-9230','9-2구역장'],
-  [15,'부','김흥국','대건안드레아','010-8013-8206','1948-12-15','07/05','915-201','','',''],
-  [16,'','김호겸','안젤로','010-9455-6839','1988-02-26','04/12','917-303','이석희','010-8758-6839',''],
-  [17,'세대주','강호상','요한아데오','010-3270-0739','1971-03-08','','916-1303','강호상','010-3270-0739',''],
-  [18,'세대주','이용','요한','011-9962-0699','1945-02-18','','914-201','이용','011-9962-0699','연락처불명'],
-  [19,'','이도훈','안셀모','011-9962-0699','1981-04-21','','914-201','','',''],
-  [20,'','이시훈','야고보','011-9962-0699','1968-05-12','','914-201','','',''],
-  [21,'손자','이서현','하비에르','011-9962-0699','1999-12-02','','914-201','','',''],
-  [22,'세대주','이종협','제노비오','010-2366-5418','1970-12-24','12/24','915-1101','이종협','010-2366-5418',''],
-  [23,'자(아들)','이준수','레오','','2002-07-02','','915-1101','','',''],
-  [24,'배우자','최동명','미카엘','010-9150-8844','1971-07-29','','920-302','최소희','010-4223-6936','9-2총무'],
-  [25,'세대주','신유식','안토니오','','1951-05-10','','919-1503','신유식','',''],
-  [26,'','신동하','베드로','','1987-10-11','','919-1503','신유식','',''],
-  [27,'배우자','유호권','(비신자)','','1969-03-16','','919-902','강연주','010-2246-1711',''],
-  [28,'','유장환','안토니오','','1997-06-07','','919-902','','',''],
-  [29,'','유정환','다니엘','010-4067-3047','2000-01-19','07/21','919-902','','',''],
-  [30,'자(아들)','박영범','마르코','','1993-04-27','','921-1404','송근옥','010-2723-2652',''],
-  [31,'자(아들)','박영진','미카엘','','1997-08-23','','921-1404','','',''],
-  [32,'세대주','홍재용','세례자요한','','1948-06-23','','921-601','홍재용','',''],
-  [33,'','홍종권','사도요한','','1978-11-22','','921-601','홍재용','',''],
-  [34,'','홍종훈','요셉','','1977-03-04','','921-601','홍재용','',''],
-  [35,'세대주','이민종','대건안드레아','010-8765-8857','1974-07-16','','919-502','이민종','010-7760-2262',''],
-  [36,'','이규동','예로니모','010-8716-0590','2016-09-20','','919-502','','',''],
-  [37,'','이규성','베드로','010-7760-2262','2010-06-30','','919-502','','',''],
-  [38,'','이규연','대건안드레아','010-7760-2262','2004-07-05','','919-502','','',''],
-  [39,'','이규휘','프란치스코','010-7760-2262','2002-11-27','','919-502','','',''],
-  [40,'세대주','홍종탁','토마스','010-7483-3183','1985-06-23','07/03','919-203','홍종탁','010-7483-3183','전출'],
-  [41,'세대주','연수필','요셉','010-8765-8857','1961-06-08','','921-102','연수필','010-8765-8857',''],
-  [42,'자(아들)','연상준','아브라함','','1991-02-15','','921-102','','',''],
-  [43,'자(아들)','성준식','요한','','1976-04-08','','921-1403','오갑순','010-5110-1566',''],
-  [44,'세대주','성준석','미카엘','010-6237-7537','1958-03-10','','919-602','성준석','010-6237-7537',''],
-  [45,'세대주','김성대','사도 요한','010-3938-6150','1980-12-18','','924-203','김성대','010-3938-6150',''],
-  [46,'세대주','홍만표','엘리아','010-6246-4920','1958-06-03','','922-1501','홍만표','010-6246-4920',''],
-  [47,'자(아들)','홍재형','요셉','','1993-03-14','','922-1501','','',''],
-  [48,'세대주','최종성','베르나르도','','1979-07-09','08/20','922-604','최종성','',''],
-  [49,'세대주','유기표','베드로','010-5318-5587','1941-08-31','06/29','922-1101','유기표','010-5318-5587','요양원'],
-  [50,'세대주','김형근','파스칼','010-7197-1350','1981-05-17','05/17','923-804','김형근','010-7197-1350',''],
-  [51,'자(아들)','김지율','안드레아','010-7197-1350','2010-03-10','','923-804','김형근','010-7197-1350',''],
-  [52,'세대주','추교빈','베네딕토','010-6787-2992','1997-09-15','','923-302','추교빈','010-6787-2992',''],
-  [53,'세대주','김기혁','야고버','010-6311-9027','1975-07-23','','','김기혁','010-6311-9027','단톡방초대허가'],
-  [54,'세대주','김명동','요셉','010-8351-6284','1963-03-28','','923-1102','김명동','010-8351-6284',''],
-  [55,'','김무현','미카엘','010-3392-6283','1994-03-21','','923-1102','','',''],
-  [56,'자(아들)','이승표','렌시오','','1997-03-24','','924-1201','유미숙','010-9358-0537',''],
-  [57,'세대주','김병훈','율리아노','010-2044-1152','1961-01-07','','924-704','김병훈','010-2044-1152',''],
-  [58,'','김민석','빈첸시오','','1995-09-26','','924-704','','',''],
-  [59,'','김민성','엘리아','','1994-07-02','07/20','924-704','','',''],
-  [60,'세대주','김영복','말셀리노','010-7229-4000','1963-01-06','','923-201','김영복','010-7229-4000',''],
-  [61,'자(아들)','김요섭','요셉','010-9590-1997','1993-02-28','','923-201','','',''],
-  [62,'','김형섭','사도요한','010-7360-1997','1995-12-21','','923-201','','',''],
-  [63,'세대주','최우영','요셉','010-3740-4261','1954-12-05','','923-1101','최우영','010-3740-4261',''],
-  [64,'','최준석','베드로','010-3740-4261','1981-02-12','','923-1101','','',''],
-  [65,'자(아들)','박시환','요셉','','2012-03-15','','924-201','이지영','010-7720-2254',''],
-  [66,'세대주','한성수','알렉산델','010-5250-9124','1969-12-13','','922-1503','한성수','010-5250-9124',''],
-  [67,'부','한종석','베드로','','1942-12-20','','922-1503','','',''],
-  [68,'형(오빠)','한욱수','유스티노','','1971-04-13','','922-1503','','',''],
-  [69,'','한상후','요셉','','2008-01-27','','922-1503','','',''],
-  [70,'자(아들)','정창욱','디모테오','','1990-01-19','','922-501','김미옥','010-3266-8914',''],
-  [71,'자(아들)','정창원','모세','','1986-08-28','','922-501','김미옥','010-3266-8914',''],
-  [72,'세대주','홍모세','모세','010-2202-6424','1971-04-06','','924-1404','홍모세','010-2202-6424','전출'],
-  [73,'자(아들)','홍지온','사도요한','','2003-12-19','','924-1404','','',''],
-  [74,'세대주','백승훈','안드레아','010-9371-0359','1963-07-21','','922-1002','백승훈','010-9371-0359',''],
-  [75,'세대주','한형근','스테파노','010-3275-2399','1961-12-29','','922-1402','한형근','010-3275-2399',''],
-  [76,'세대주','이화식','알퐁소','010-2807-0174','1980-08-02','','920-1404','이화식','010-2807-0174',''],
-  [77,'녀(딸)','이리사','로사리아','010-2807-0174','2015-09-24','','922-1004','','',''],
-  [78,'자(아들)','박형빈','콜베','010-9958-2034','1977-08-15','09/17','924-602','권성원','010-9958-2034','']
-];
-
-// ── 앱 상태 ──
-let members = [];
-let smsLogs = []; // [{id, date, content, memo, targetIds:[memberId,...]}]
-let editingId = null;
-let editingSmsLogId = null;
-let nextId = 100;
-
-// ════════════════════════════════════════
-// 초기화
-// ════════════════════════════════════════
-function initFromRaw() {
-  members = RAW_MEMBERS.map(r => ({
-    id: r[0],
-    family: r[1], name: r[2], baptism: r[3],
-    phone: r[4], birth: r[5], feast: r[6],
-    unit: r[7], head: r[8], headPhone: r[9],
-    bigo: r[10]
-  }));
-  smsLogs = [];
-  nextSmsLogId = 1;
-  nextId = members.length + 1;
+function formatDate(){
+  return new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'});
 }
-
-function loadFromLocalStorage() {
-  try {
-    const saved = localStorage.getItem('9-2-gyogu-v3');
-    if (!saved) return false;
-    const data = JSON.parse(saved);
-    if (data.members) members = data.members;
-    if (data.smsLogs) smsLogs = data.smsLogs;
-    if (data.nextId) nextId = data.nextId;
-    if (data.nextSmsLogId) nextSmsLogId = data.nextSmsLogId;
-    return true;
-  } catch(e) { return false; }
-}
-
-function saveToLocalStorage() {
-  localStorage.setItem('9-2-gyogu-v3', JSON.stringify({ members, smsLogs, nextId, nextSmsLogId }));
-  document.getElementById('headerSaveStatus').textContent = '✓ 저장됨';
-}
-
-// ════════════════════════════════════════
-// Gist 저장/불러오기 (Token 자동검색 방식)
-// ════════════════════════════════════════
-const GIST_API = 'https://api.github.com/gists';
-const GIST_FILENAME = '9-2-gyogu-data.json';
-const GIST_DESC_KEY = '교하성당 9-2구역 교적관리'; // description 식별자
-let currentGistId = null; // 현재 세션의 Gist ID
-
-function setGistMsg(msg, type) {
-  const el = document.getElementById('gistMsg');
-  el.textContent = msg;
-  el.className = 'gist-msg' + (type ? ' '+type : '');
-}
-function setGistDot(state) {
-  const dot = document.getElementById('gistDot');
-  dot.className = 'gist-status-dot' + (state ? ' '+state : '');
-}
-function showActionRow(show) {
-  document.getElementById('gistActionRow').style.display = show ? 'flex' : 'none';
-}
-
-function onTokenInput() {
-  // 토큰 바꾸면 연결 초기화
-  currentGistId = null;
-  document.getElementById('gistFoundBox').style.display = 'none';
-  showActionRow(false);
-  setGistDot('');
-  setGistMsg('');
-}
-
-function getAppState() {
-  return {
-    savedAt: new Date().toISOString(),
-    version: '3.0',
-    members, smsLogs, nextId, nextSmsLogId
-  };
-}
-
-function applyAppState(state) {
-  if (state.members) members = state.members;
-  if (state.smsLogs) smsLogs = state.smsLogs;
-  if (state.nextId) nextId = state.nextId;
-  if (state.nextSmsLogId) nextSmsLogId = state.nextSmsLogId;
-  saveToLocalStorage();
-  renderAll();
-}
-
-function gistHeaders(token) {
-  return {
-    'Authorization': `token ${token}`,
-    'Accept': 'application/vnd.github+json',
-    'Content-Type': 'application/json'
-  };
-}
-
-// Token으로 내 Gist 목록 검색 → 9-2 데이터 파일 찾기
-async function findAndLoadGist() {
-  const token = document.getElementById('gistToken').value.trim();
-  if (!token) { setGistMsg('❌ GitHub Token을 입력하세요', 'err'); return; }
-
-  setGistDot('saving');
-  setGistMsg('Gist 검색 중…');
-  document.getElementById('gistFoundBox').style.display = 'none';
-  showActionRow(false);
-
-  try {
-    // 최대 2페이지(200개)까지 검색
-    let foundGist = null;
-    for (let page = 1; page <= 2; page++) {
-      const res = await fetch(`${GIST_API}?per_page=100&page=${page}`, {
-        headers: gistHeaders(token)
-      });
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.message || `HTTP ${res.status}`);
-      }
-      const list = await res.json();
-      if (!Array.isArray(list) || list.length === 0) break;
-      foundGist = list.find(g => g.files && g.files[GIST_FILENAME]);
-      if (foundGist) break;
-    }
-
-    if (foundGist) {
-      // 기존 Gist 발견 → 내용 불러오기
-      currentGistId = foundGist.id;
-      const detailRes = await fetch(`${GIST_API}/${currentGistId}`, {
-        headers: gistHeaders(token)
-      });
-      const detail = await detailRes.json();
-      const fileContent = detail.files[GIST_FILENAME]?.content;
-      if (!fileContent) throw new Error('파일 내용을 읽을 수 없습니다');
-
-      const state = JSON.parse(fileContent);
-      const savedAt = state.savedAt ? new Date(state.savedAt).toLocaleString('ko-KR') : '?';
-      const memberCount = state.members?.length || 0;
-
-      // 찾은 Gist 정보 표시
-      const box = document.getElementById('gistFoundBox');
-      box.style.display = 'block';
-      box.innerHTML = `
-        ✅ <strong style="color:var(--green)">기존 데이터 발견!</strong><br>
-        · 신자 수: <strong style="color:var(--text)">${memberCount}명</strong><br>
-        · 마지막 저장: <strong style="color:var(--text)">${savedAt}</strong><br>
-        · Gist ID: <span style="font-family:monospace;font-size:11px;color:var(--text2)">${currentGistId}</span>
-        <div style="margin-top:8px;display:flex;gap:8px">
-          <button class="gist-btn load" style="flex:1" onclick="doLoadGist(${JSON.stringify(state).replace(/"/g,'&quot;')})">📂 불러오기</button>
-        </div>`;
-
-      showActionRow(true);
-      setGistDot('connected');
-      setGistMsg(`연결됨 · 저장 버튼으로 최신 데이터 업데이트`, 'ok');
-      document.getElementById('headerSaveStatus').textContent = '☁ Gist 연결됨';
-
-    } else {
-      // Gist 없음 → 새로 만들기 안내
-      currentGistId = null;
-      const box = document.getElementById('gistFoundBox');
-      box.style.display = 'block';
-      box.innerHTML = `ℹ️ 저장된 데이터가 없습니다. <strong>저장</strong> 버튼으로 새로 만드세요.`;
-      showActionRow(true);
-      setGistDot('');
-      setGistMsg('처음 저장 시 새 Gist가 생성됩니다', 'ok');
-    }
-  } catch(e) {
-    setGistDot('error');
-    setGistMsg('❌ ' + e.message, 'err');
-    showActionRow(false);
-  }
-}
-
-function doLoadGist(state) {
-  const savedAt = state.savedAt ? new Date(state.savedAt).toLocaleString('ko-KR') : '?';
-  if (!confirm(`Gist 데이터를 불러오면 현재 데이터를 덮어씁니다.\n\n저장일시: ${savedAt}\n\n계속하시겠습니까?`)) return;
-  applyAppState(state);
-  setGistMsg(`✅ 불러오기 완료 · ${savedAt}`, 'ok');
-  document.getElementById('headerSaveStatus').textContent = '☁ Gist 동기화됨';
-  showToast('Gist에서 데이터를 불러왔습니다');
-  // 불러온 후 foundBox 갱신
-  document.getElementById('gistFoundBox').innerHTML =
-    `✅ <strong style="color:var(--green)">동기화 완료</strong> · ${savedAt}`;
-}
-
-async function saveToGist() {
-  const token = document.getElementById('gistToken').value.trim();
-  if (!token) { setGistMsg('❌ GitHub Token을 입력하세요', 'err'); return; }
-
-  setGistDot('saving');
-  setGistMsg('저장 중…');
-
-  const payload = {
-    description: GIST_DESC_KEY + ' - ' + new Date().toLocaleDateString('ko-KR'),
-    public: false,
-    files: { [GIST_FILENAME]: { content: JSON.stringify(getAppState(), null, 2) } }
-  };
-
-  try {
-    const url = currentGistId ? `${GIST_API}/${currentGistId}` : GIST_API;
-    const method = currentGistId ? 'PATCH' : 'POST';
-    const res = await fetch(url, {
-      method,
-      headers: gistHeaders(token),
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-    if (data.id) {
-      currentGistId = data.id;
-      const now = new Date().toLocaleString('ko-KR');
-      setGistDot('connected');
-      setGistMsg(`✅ 저장 완료 · ${now}`, 'ok');
-      document.getElementById('headerSaveStatus').textContent = '☁ Gist 저장됨';
-      document.getElementById('gistFoundBox').style.display = 'block';
-      document.getElementById('gistFoundBox').innerHTML =
-        `✅ <strong style="color:var(--green)">저장 완료</strong> · ${now}<br>
-         <span style="font-size:11px;color:var(--text2);font-family:monospace">${currentGistId}</span>`;
-      showActionRow(true);
-      showToast('Gist에 저장되었습니다');
-    } else {
-      throw new Error(data.message || '저장 실패');
-    }
-  } catch(e) {
-    setGistDot('error');
-    setGistMsg('❌ ' + e.message, 'err');
-  }
-}
-
-function newGist() {
-  if (!confirm('새 Gist를 만들면 기존 Gist와 연결이 끊깁니다.\n계속하시겠습니까?')) return;
-  currentGistId = null;
-  document.getElementById('gistFoundBox').style.display = 'none';
-  setGistDot('');
-  setGistMsg('새 Gist로 저장합니다. 저장 버튼을 누르세요.', 'ok');
-}
-
-function toggleGistPanel() {
-  const body = document.getElementById('gistPanelBody');
-  const arrow = document.getElementById('gistPanelArrow');
-  const open = body.classList.toggle('open');
-  arrow.textContent = open ? '▲' : '▼';
-}
-
-// 시작 시 토큰 저장 여부 확인 (선택적)
-function restoreGistId() {
-  // ID는 더 이상 저장하지 않음 - Token으로 자동 검색
-}
-
-// ════════════════════════════════════════
-// JSON 내보내기/가져오기
-// ════════════════════════════════════════
-function exportJSON() {
-  const data = { members, smsLogs, nextId, nextSmsLogId,
-    exportedAt: new Date().toISOString() };
-  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `9-2구역_${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
-  showToast('JSON 내보내기 완료');
-}
-
-function importJSON(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    try {
-      const data = JSON.parse(ev.target.result);
-      if (!confirm('가져오면 현재 데이터를 덮어씁니다. 계속하시겠습니까?')) return;
-      applyAppState(data);
-      showToast('JSON 가져오기 완료');
-    } catch(err) { alert('파일 형식이 올바르지 않습니다.'); }
-  };
-  reader.readAsText(file);
-  e.target.value = '';
-}
-
-// ════════════════════════════════════════
-// 렌더링 - 신자 명단
-// ════════════════════════════════════════
-let selectedMemberIds = [];
-
-function renderMembers() {
-  const q = (document.getElementById('searchInput').value||'').trim().toLowerCase();
-  const bigo = document.getElementById('filterBigo').value;
-
-  const filtered = members.filter(m => {
-    if (bigo) {
-      if (bigo === '없음' && m.bigo) return false;
-      if (bigo !== '없음' && m.bigo !== bigo) return false;
-    }
-    if (q) {
-      const hay = `${m.name}${m.baptism}${m.phone}${m.unit}`.toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
-
-  // 필터링되어 화면에 없는 선택값은 정리
-  const filteredIds = filtered.map(m => m.id);
-  selectedMemberIds = selectedMemberIds.filter(id => filteredIds.includes(id));
-
-  document.getElementById('memberCount').textContent = filtered.length;
-
-  const tbody = document.getElementById('memberTableBody');
-  tbody.innerHTML = filtered.map(m => {
-    const checked = selectedMemberIds.includes(m.id);
-    return `<tr class="${checked?'checked':''}" onclick="openModal(${m.id})" style="cursor:pointer">
-      <td onclick="event.stopPropagation()">
-        <input type="checkbox" class="row-check" ${checked?'checked':''} onchange="toggleMemberCheck(${m.id}, this.checked)">
-      </td>
-      <td class="no-num">${m.id}</td>
-      <td>${m.family||''}</td>
-      <td><strong>${m.name}</strong></td>
-      <td>${m.baptism||''}</td>
-      <td>${m.phone ? `<a class="phone-link" href="tel:${m.phone}" onclick="event.stopPropagation()">${m.phone}</a>` : '<span style="color:var(--text2)">—</span>'}</td>
-      <td style="color:var(--text2)">${m.birth||''}</td>
-      <td style="color:var(--gold)">${m.feast||''}</td>
-      <td>${m.unit||''}</td>
-      <td style="color:var(--text2)">${m.head||''}</td>
-      <td>${m.bigo ? `<span class="bigo-badge">${m.bigo}</span>` : ''}</td>
-    </tr>`;
-  }).join('');
-
-  updateBulkDeleteUI();
-  const allChecked = filtered.length > 0 && filtered.every(m => selectedMemberIds.includes(m.id));
-  document.getElementById('checkAllMembers').checked = allChecked;
-}
-
-function toggleMemberCheck(id, checked) {
-  if (checked) {
-    if (!selectedMemberIds.includes(id)) selectedMemberIds.push(id);
-  } else {
-    selectedMemberIds = selectedMemberIds.filter(x => x !== id);
-  }
-  renderMembers();
-}
-
-function toggleAllMembers(checked) {
-  const rows = document.querySelectorAll('#memberTableBody .row-check');
-  if (checked) {
-    rows.forEach(cb => {
-      const onchangeAttr = cb.getAttribute('onchange') || '';
-      const match = onchangeAttr.match(/toggleMemberCheck\((\d+)/);
-      if (match) {
-        const id = parseInt(match[1]);
-        if (!selectedMemberIds.includes(id)) selectedMemberIds.push(id);
-      }
-    });
-  } else {
-    rows.forEach(cb => {
-      const onchangeAttr = cb.getAttribute('onchange') || '';
-      const match = onchangeAttr.match(/toggleMemberCheck\((\d+)/);
-      if (match) {
-        const id = parseInt(match[1]);
-        selectedMemberIds = selectedMemberIds.filter(x => x !== id);
-      }
-    });
-  }
-  renderMembers();
-}
-
-function updateBulkDeleteUI() {
-  const btn = document.getElementById('btnBulkDelete');
-  const countEl = document.getElementById('bulkDeleteCount');
-  if (selectedMemberIds.length > 0) {
-    btn.style.display = 'inline-block';
-    countEl.textContent = selectedMemberIds.length;
-  } else {
-    btn.style.display = 'none';
-  }
-}
-
-function bulkDeleteMembers() {
-  if (selectedMemberIds.length === 0) return;
-  const names = members.filter(m => selectedMemberIds.includes(m.id)).map(m => m.name);
-  const preview = names.length <= 5 ? names.join(', ') : `${names.slice(0,5).join(', ')} 외 ${names.length-5}명`;
-  if (!confirm(`선택한 ${selectedMemberIds.length}명을 삭제하시겠습니까?\n\n${preview}`)) return;
-
-  members = members.filter(m => !selectedMemberIds.includes(m.id));
-  // 발송내역 대상 목록에서도 제거
-  smsLogs.forEach(log => {
-    if (log.targetIds) log.targetIds = log.targetIds.filter(id => !selectedMemberIds.includes(id));
-  });
-
-  const count = selectedMemberIds.length;
-  selectedMemberIds = [];
-  saveToLocalStorage();
-  renderMembers();
-  showToast(`${count}명이 삭제되었습니다`);
-}
-
-// ════════════════════════════════════════
-// 렌더링 - 문자 발송내역
-// ════════════════════════════════════════
-function renderSMSLog() {
-  renderSMS();
-}
-
-function renderSMS() {
-  const q = (document.getElementById('smsSearchInput')?.value||'').trim().toLowerCase();
-
-  let logs = [...smsLogs].sort((a,b) => (b.date||'').localeCompare(a.date||'') || b.id - a.id);
-
-  if (q) {
-    logs = logs.filter(log => {
-      const hay = `${log.content||''}${log.memo||''}`.toLowerCase();
-      return hay.includes(q);
-    });
-  }
-
-  document.getElementById('smsLogCount').textContent = logs.length;
-
-  const container = document.getElementById('smsTemplates');
-
-  if (logs.length === 0) {
-    container.innerHTML = `<div class="empty-state">아직 발송내역이 없습니다.<br>+ 발송내역 추가 버튼으로 기록을 시작하세요.</div>`;
-    return;
-  }
-
-  container.innerHTML = logs.map(log => {
-    const targetIds = log.targetIds || [];
-    const targetNames = targetIds
-      .map(id => members.find(m => m.id === id))
-      .filter(Boolean)
-      .map(m => m.name);
-
-    let targetLabel;
-    if (targetIds.length === 0) {
-      targetLabel = '대상 미지정';
-    } else if (targetNames.length <= 4) {
-      targetLabel = targetNames.join(', ');
-    } else {
-      targetLabel = `${targetNames.slice(0,4).join(', ')} 외 ${targetNames.length-4}명`;
-    }
-
-    return `<div class="log-card" onclick="openSmsModal(${log.id})">
-      <div class="log-card-head">
-        <span class="log-date">📅 ${log.date||'날짜 없음'}</span>
-        <span class="log-target-count">${targetIds.length}명</span>
-      </div>
-      <div class="log-card-body">
-        <div class="log-content">${escapeHtml(log.content||'(내용 없음)')}</div>
-        <div class="log-targets">👥 ${escapeHtml(targetLabel)}</div>
-        ${log.memo ? `<div class="log-memo">📝 ${escapeHtml(log.memo)}</div>` : ''}
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function escapeHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-// ════════════════════════════════════════
-// 렌더링 - 통계
-// ════════════════════════════════════════
-function renderStats() {
-  const total = members.length;
-  const hasPhone = members.filter(m => m.phone).length;
-  const noPhone = total - hasPhone;
-
-  const bigoCount = {};
-  members.forEach(m => { if(m.bigo) bigoCount[m.bigo] = (bigoCount[m.bigo]||0)+1; });
-
-  document.getElementById('statsGrid').innerHTML = `
-    <div class="stat-card"><div class="num">${total}</div><div class="label">전체 신자</div></div>
-    <div class="stat-card"><div class="num">${hasPhone}</div><div class="label">전화번호 있음</div></div>
-    <div class="stat-card"><div class="num" style="color:var(--red)">${noPhone}</div><div class="label">전화번호 없음</div></div>
-    <div class="stat-card"><div class="num" style="color:var(--gold)">${members.filter(m=>m.feast).length}</div><div class="label">축일 등록</div></div>
-  `;
-
-  // 발송내역 통계
-  const totalLogs = smsLogs.length;
-  const totalTargeted = smsLogs.reduce((sum, log) => sum + (log.targetIds?.length||0), 0);
-  const lastLog = [...smsLogs].sort((a,b)=> (b.date||'').localeCompare(a.date||''))[0];
-  const monthCount = {};
-  smsLogs.forEach(log => {
-    if (log.date) {
-      const ym = log.date.slice(0,7);
-      monthCount[ym] = (monthCount[ym]||0)+1;
-    }
-  });
-  const thisMonth = new Date().toISOString().slice(0,7);
-
-  document.getElementById('smsStatsGrid').innerHTML = `
-    <div class="stat-card"><div class="num">${totalLogs}</div><div class="label">총 발송내역</div></div>
-    <div class="stat-card"><div class="num" style="color:var(--accent)">${totalTargeted}</div><div class="label">누적 발송 대상(연인원)</div></div>
-    <div class="stat-card"><div class="num" style="font-size:18px;color:var(--gold)">${lastLog?lastLog.date:'—'}</div><div class="label">최근 발송일</div></div>
-    <div class="stat-card"><div class="num">${monthCount[thisMonth]||0}</div><div class="label">이번 달 발송건수</div></div>
-  `;
-
-
-  // 비고별 현황
-  const BIGO_LIST = ['전출','요양원','연락처불명','9-2구역장','9-2총무','단톡방초대허가'];
-  document.getElementById('bigoStatsGrid').innerHTML = BIGO_LIST.map(b => `
-    <div class="stat-card">
-      <div class="num">${bigoCount[b]||0}</div>
-      <div class="label">${b}</div>
-    </div>`).join('');
-}
-
-// ════════════════════════════════════════
-// 탭 전환
-// ════════════════════════════════════════
-function switchTab(name, btn) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tab-'+name).classList.add('active');
-  if(name==='sms') renderSMS();
-  if(name==='stats') renderStats();
-}
-
-// ════════════════════════════════════════
-// 모달 - 신자 추가/편집
-// ════════════════════════════════════════
-function openModal(id) {
-  editingId = id || null;
-  const modal = document.getElementById('memberModal');
-  const title = document.getElementById('modalTitle');
-  const btnDel = document.getElementById('btnDelete');
-
-  if (id) {
-    const m = members.find(x => x.id === id);
-    if (!m) return;
-    title.textContent = '신자 정보 편집';
-    btnDel.style.display = 'block';
-    document.getElementById('f_family').value = m.family||'';
-    document.getElementById('f_name').value = m.name||'';
-    document.getElementById('f_baptism').value = m.baptism||'';
-    document.getElementById('f_phone').value = m.phone||'';
-    document.getElementById('f_birth').value = m.birth||'';
-    document.getElementById('f_feast').value = m.feast||'';
-    document.getElementById('f_unit').value = m.unit||'';
-    document.getElementById('f_head').value = m.head||'';
-    document.getElementById('f_headPhone').value = m.headPhone||'';
-    document.getElementById('f_bigo').value = m.bigo||'';
-  } else {
-    title.textContent = '신자 추가';
-    btnDel.style.display = 'none';
-    ['f_family','f_name','f_baptism','f_phone','f_birth','f_feast','f_unit','f_head','f_headPhone'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
-    document.getElementById('f_bigo').value = '';
-  }
-  modal.classList.add('open');
-}
-
-function closeModal() {
-  document.getElementById('memberModal').classList.remove('open');
-  editingId = null;
-}
-
-function saveMember() {
-  const name = document.getElementById('f_name').value.trim();
-  if (!name) { alert('성명을 입력하세요'); return; }
-
-  const data = {
-    family: document.getElementById('f_family').value.trim(),
-    name,
-    baptism: document.getElementById('f_baptism').value.trim(),
-    phone: document.getElementById('f_phone').value.trim(),
-    birth: document.getElementById('f_birth').value.trim(),
-    feast: document.getElementById('f_feast').value.trim(),
-    unit: document.getElementById('f_unit').value.trim(),
-    head: document.getElementById('f_head').value.trim(),
-    headPhone: document.getElementById('f_headPhone').value.trim(),
-    bigo: document.getElementById('f_bigo').value
-  };
-
-  if (editingId) {
-    const idx = members.findIndex(m => m.id === editingId);
-    if (idx >= 0) members[idx] = {...members[idx], ...data};
-  } else {
-    const id = nextId++;
-    members.push({id, ...data});
-  }
-
-  saveToLocalStorage();
-  renderMembers();
-  closeModal();
-  showToast(editingId ? '신자 정보가 수정되었습니다' : '신자가 추가되었습니다');
-}
-
-function deleteMember() {
-  if (!editingId) return;
-  const m = members.find(x => x.id === editingId);
-  if (!confirm(`${m?.name} 신자를 삭제하시겠습니까?`)) return;
-  members = members.filter(x => x.id !== editingId);
-  // 발송내역의 대상 목록에서도 제거
-  smsLogs.forEach(log => {
-    if (log.targetIds) log.targetIds = log.targetIds.filter(id => id !== editingId);
-  });
-  saveToLocalStorage();
-  renderMembers();
-  closeModal();
-  showToast('삭제되었습니다');
-}
-
-// ════════════════════════════════════════
-// 모달 - 발송내역 추가/편집
-// ════════════════════════════════════════
-let smsModalSelectedIds = [];
-
-function openSmsModal(logId) {
-  editingSmsLogId = logId || null;
-  const modal = document.getElementById('smsModal');
-  const title = document.getElementById('smsModalTitle');
-  const btnDel = document.getElementById('smsBtnDelete');
-
-  document.getElementById('sms_target_search').value = '';
-
-  if (logId) {
-    const log = smsLogs.find(x => x.id === logId);
-    if (!log) return;
-    title.textContent = '발송내역 편집';
-    btnDel.style.display = 'block';
-    document.getElementById('sms_date').value = log.date || '';
-    document.getElementById('sms_content').value = log.content || '';
-    document.getElementById('sms_memo').value = log.memo || '';
-    smsModalSelectedIds = [...(log.targetIds||[])];
-  } else {
-    title.textContent = '발송내역 추가';
-    btnDel.style.display = 'none';
-    document.getElementById('sms_date').value = new Date().toISOString().slice(0,10);
-    document.getElementById('sms_content').value = '';
-    document.getElementById('sms_memo').value = '';
-    smsModalSelectedIds = [];
-  }
-
-  renderSmsTargetList();
-  modal.classList.add('open');
-}
-
-function closeSmsModal() {
-  document.getElementById('smsModal').classList.remove('open');
-  editingSmsLogId = null;
-  smsModalSelectedIds = [];
-}
-
-function renderSmsTargetList() {
-  const q = (document.getElementById('sms_target_search').value||'').trim().toLowerCase();
-  const list = document.getElementById('smsTargetList');
-
-  const filtered = members.filter(m => {
-    if (!q) return true;
-    return `${m.name}${m.baptism}${m.unit}`.toLowerCase().includes(q);
-  });
-
-  document.getElementById('sms_target_count').textContent =
-    smsModalSelectedIds.length > 0 ? `(${smsModalSelectedIds.length}명 선택됨)` : '';
-
-  renderFamilyFilterChips();
-
-  if (filtered.length === 0) {
-    list.innerHTML = `<div style="padding:12px;text-align:center;color:var(--text2);font-size:12px">검색 결과 없음</div>`;
-    return;
-  }
-
-  list.innerHTML = filtered.map(m => {
-    const checked = smsModalSelectedIds.includes(m.id);
-    return `<label class="target-item">
-      <input type="checkbox" ${checked?'checked':''} onchange="toggleSmsTarget(${m.id}, this.checked)">
-      <span class="t-name">${m.name}</span>
-      <span class="t-sub">${m.family||'자녀/기타'} · ${m.baptism||''} · ${m.unit||''}</span>
-    </label>`;
-  }).join('');
-}
-
-function normalizeFamilyLabel(family) {
-  if (!family) return '자녀/기타';
-  return family;
-}
-
-function renderFamilyFilterChips() {
-  const box = document.getElementById('smsFamilyFilters');
-
-  // 가족관계별 인원수 집계 (정규화된 라벨 기준)
-  const groups = {};
-  members.forEach(m => {
-    const label = normalizeFamilyLabel(m.family);
-    if (!groups[label]) groups[label] = [];
-    groups[label].push(m.id);
-  });
-
-  // 자주 쓰이는 순서로 정렬: 세대주, 배우자, 자녀/기타, 부, 그 외
-  const ORDER = ['세대주','배우자','자녀/기타','부'];
-  const labels = Object.keys(groups).sort((a,b) => {
-    const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
-    if (ia === -1 && ib === -1) return a.localeCompare(b);
-    if (ia === -1) return 1;
-    if (ib === -1) return -1;
-    return ia - ib;
-  });
-
-  const chips = labels.map(label => {
-    const ids = groups[label];
-    const allSelected = ids.every(id => smsModalSelectedIds.includes(id));
-    return `<button type="button" class="family-chip" style="${allSelected?'border-color:var(--accent);color:var(--accent);background:rgba(79,124,255,0.1)':''}"
-      onclick="selectByFamily('${label.replace(/'/g,"\\'")}')">
-      ${label} <span class="chip-count">${ids.length}</span>
-    </button>`;
-  }).join('');
-
-  const clearChip = `<button type="button" class="family-chip" onclick="clearSmsTargets()">전체해제</button>`;
-
-  box.innerHTML = chips + clearChip;
-}
-
-function selectByFamily(label) {
-  const ids = members.filter(m => normalizeFamilyLabel(m.family) === label).map(m => m.id);
-  ids.forEach(id => {
-    if (!smsModalSelectedIds.includes(id)) smsModalSelectedIds.push(id);
-  });
-  renderSmsTargetList();
-}
-
-function clearSmsTargets() {
-  smsModalSelectedIds = [];
-  renderSmsTargetList();
-}
-
-function toggleSmsTarget(memberId, checked) {
-  if (checked) {
-    if (!smsModalSelectedIds.includes(memberId)) smsModalSelectedIds.push(memberId);
-  } else {
-    smsModalSelectedIds = smsModalSelectedIds.filter(id => id !== memberId);
-  }
-  document.getElementById('sms_target_count').textContent =
-    smsModalSelectedIds.length > 0 ? `(${smsModalSelectedIds.length}명 선택됨)` : '';
-  renderFamilyFilterChips();
-}
-
-function saveSmsLog() {
-  const date = document.getElementById('sms_date').value;
-  if (!date) { alert('날짜를 입력하세요'); return; }
-
-  const data = {
-    date,
-    content: document.getElementById('sms_content').value.trim(),
-    memo: document.getElementById('sms_memo').value.trim(),
-    targetIds: [...smsModalSelectedIds]
-  };
-
-  if (editingSmsLogId) {
-    const idx = smsLogs.findIndex(l => l.id === editingSmsLogId);
-    if (idx >= 0) smsLogs[idx] = {...smsLogs[idx], ...data};
-  } else {
-    const id = nextSmsLogId++;
-    smsLogs.push({id, ...data});
-  }
-
-  saveToLocalStorage();
-  renderSMS();
-  closeSmsModal();
-  showToast(editingSmsLogId ? '발송내역이 수정되었습니다' : '발송내역이 추가되었습니다');
-}
-
-function deleteSmsLog() {
-  if (!editingSmsLogId) return;
-  if (!confirm('이 발송내역을 삭제하시겠습니까?')) return;
-  smsLogs = smsLogs.filter(l => l.id !== editingSmsLogId);
-  saveToLocalStorage();
-  renderSMS();
-  closeSmsModal();
-  showToast('삭제되었습니다');
-}
-
-// ════════════════════════════════════════
-// 토스트
-// ════════════════════════════════════════
-let toastTimer;
-function showToast(msg) {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), 2400);
-}
-
-// ════════════════════════════════════════
-// 전체 렌더
-// ════════════════════════════════════════
-function renderAll() {
-  renderMembers();
-}
-
-// ════════════════════════════════════════
-// 모달 바깥 클릭 닫기
-// ════════════════════════════════════════
-document.getElementById('memberModal').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeModal();
-});
-document.getElementById('smsModal').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeSmsModal();
-});
-
-// ════════════════════════════════════════
-// 앱 시작
-// ════════════════════════════════════════
-(function init() {
-  const loaded = loadFromLocalStorage();
-  if (!loaded) initFromRaw();
-  restoreGistId();
-  renderAll();
+document.getElementById('headerDate').textContent = formatDate();
+
+// 매일미사 카드 날짜 채우기
+(function(){
+  const now = new Date();
+  const dowNames = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  document.getElementById('missaDow').textContent = dowNames[now.getDay()];
+  document.getElementById('missaDay').textContent = now.getDate();
+  document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
 })();
 </script>
 </body>

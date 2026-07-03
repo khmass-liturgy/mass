@@ -328,6 +328,23 @@
     </a>
   </section>
 
+  <!-- ── 복되신 동정 마리아 신심미사 (매월 첫째 토요일에만 표시) ── -->
+  <section class="missa-section" id="marianCard" style="display:none;">
+    <a class="missa-card" id="marianCardLink" href="https://missa.cbck.or.kr/MariaHeartMass" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#3B2A5E 0%,#1E3060 100%);">
+      <div class="missa-date-box" style="background:var(--gold-lt);">
+        <span class="dow">SAT</span>
+        <span class="day">♥</span>
+        <span class="month">첫토</span>
+      </div>
+      <div class="missa-body">
+        <div class="missa-eyebrow">Missa Votiva · 성모 신심미사</div>
+        <div class="missa-title">복되신 동정 마리아 신심미사</div>
+        <div class="missa-sub">매월 첫째 토요일, 성모성심을 공경하는 신심미사입니다. 오늘의 미사 전례를 확인하세요</div>
+      </div>
+      <div class="missa-arrow">→</div>
+    </a>
+  </section>
+
   <!-- ── 민족 화해와 일치를 위한 기도 ── -->
   <section class="missa-section">
     <details class="prayer-details">
@@ -697,6 +714,19 @@ document.getElementById('headerDate').textContent = formatDate();
   document.getElementById('missaDow').textContent = dowNames[now.getDay()];
   document.getElementById('missaDay').textContent = now.getDate();
   document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
+})();
+
+// 매월 첫째 토요일에만 성모 신심미사 카드 표시
+(function(){
+  const now = new Date();
+  const isSaturday = now.getDay() === 6;
+  const isFirstWeek = now.getDate() <= 7;
+  if (isSaturday && isFirstWeek) {
+    document.getElementById('marianCard').style.display = '';
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth()+1).padStart(2,'0');
+    document.getElementById('marianCardLink').href = `https://missa.cbck.or.kr/MariaHeartMass?year=${yyyy}&month=${mm}`;
+  }
 })();
 </script>
 </body>

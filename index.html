@@ -106,6 +106,36 @@
   }
   .missa-card:hover .missa-arrow{background:var(--gold);color:var(--navy);}
 
+  /* ── 홈 화면에 추가 버튼 ── */
+  #a2hsBtn{
+    position:fixed; right:20px; bottom:24px; z-index:999;
+    display:none; align-items:center; gap:8px;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
+    color:var(--navy); border:none; border-radius:30px;
+    padding:12px 18px; font-family:'Noto Serif KR',serif; font-weight:700;
+    font-size:.85rem; box-shadow:0 6px 20px rgba(0,0,0,.35); cursor:pointer;
+    transition:transform .2s, box-shadow .2s;
+  }
+  #a2hsBtn:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.45);}
+  #a2hsBtn .a2hs-icon{font-size:1.05rem;}
+  #a2hsOverlay{
+    position:fixed; inset:0; z-index:1000; display:none;
+    align-items:flex-end; justify-content:center;
+    background:rgba(10,14,28,.6);
+  }
+  #a2hsSheet{
+    background:var(--navy-lt); color:var(--cream);
+    width:100%; max-width:480px; border-radius:16px 16px 0 0;
+    padding:24px 22px 30px; box-shadow:0 -10px 30px rgba(0,0,0,.4);
+    font-family:'Noto Sans KR',sans-serif;
+  }
+  #a2hsSheet h3{font-family:'Noto Serif KR',serif; color:var(--gold-lt); margin-bottom:14px; font-size:1.05rem;}
+  #a2hsSheet ol{padding-left:20px; line-height:1.9; font-size:.9rem;}
+  #a2hsSheet .a2hs-close{
+    display:block; margin:20px auto 0; background:none; border:1px solid var(--gold);
+    color:var(--gold); border-radius:20px; padding:8px 22px; font-size:.82rem; cursor:pointer;
+  }
+
   /* ── WYD 기도문 카드 ── */
   .wyd-card{
     background:linear-gradient(135deg,#2E2250 0%,#1E3060 100%);
@@ -701,6 +731,24 @@
   <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지 · 홈 화면 추가 지원</p>
 </footer>
 
+<!-- ── 홈 화면에 추가 버튼 ── -->
+<button id="a2hsBtn" type="button">
+  <span class="a2hs-icon">📲</span> 홈 화면에 추가
+</button>
+
+<!-- ── iOS 안내 시트 ── -->
+<div id="a2hsOverlay">
+  <div id="a2hsSheet">
+    <h3>홈 화면에 추가하기</h3>
+    <ol id="a2hsSteps">
+      <li>하단의 <strong>공유</strong> 버튼을 누르세요</li>
+      <li><strong>홈 화면에 추가</strong>를 선택하세요</li>
+      <li><strong>추가</strong>를 눌러 완료하세요</li>
+    </ol>
+    <button class="a2hs-close" type="button" onclick="document.getElementById('a2hsOverlay').style.display='none';">닫기</button>
+  </div>
+</div>
+
 <script>
 function formatDate(){
   return new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'});
@@ -727,6 +775,56 @@ document.getElementById('headerDate').textContent = formatDate();
     const mm = String(now.getMonth()+1).padStart(2,'0');
     document.getElementById('marianCardLink').href = `https://missa.cbck.or.kr/MariaHeartMass?year=${yyyy}&month=${mm}`;
   }
+})();
+
+// 홈 화면에 추가 버튼 로직
+(function(){
+  const btn = document.getElementById('a2hsBtn');
+  const overlay = document.getElementById('a2hsOverlay');
+  const steps = document.getElementById('a2hsSteps');
+
+  // 이미 홈 화면에서 실행 중(standalone)이면 버튼 숨김
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (isStandalone) return;
+
+  const ua = window.navigator.userAgent;
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  const isAndroid = /android/i.test(ua);
+
+  let deferredPrompt = null;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    btn.style.display = 'flex';
+  });
+
+  // iOS는 beforeinstallprompt 미지원 → 안내 버튼을 바로 노출
+  if (isIOS) {
+    btn.style.display = 'flex';
+  }
+
+  btn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if (outcome === 'accepted') btn.style.display = 'none';
+      return;
+    }
+    if (isIOS) {
+      steps.innerHTML = `
+        <li>하단(또는 상단)의 <strong>공유</strong> 버튼(⬆️)을 누르세요</li>
+        <li><strong>홈 화면에 추가</strong>를 선택하세요</li>
+        <li><strong>추가</strong>를 눌러 완료하세요</li>`;
+    } else {
+      steps.innerHTML = `
+        <li>브라우저 메뉴(⋮)를 여세요</li>
+        <li><strong>홈 화면에 추가</strong> 또는 <strong>앱 설치</strong>를 선택하세요</li>
+        <li>안내에 따라 완료하세요</li>`;
+    }
+    overlay.style.display = 'flex';
+  });
 })();
 </script>
 </body>

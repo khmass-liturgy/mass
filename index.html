@@ -459,8 +459,8 @@
     </details>
   </section>
 
-  <!-- ── 예수성심성월 기도 ── -->
-  <section class="missa-section">
+  <!-- ── 예수성심성월 기도 (6월에만 표시) ── -->
+  <section class="missa-section" id="sacredHeartSection" style="display:none;">
     <details class="prayer-details">
       <summary class="prayer-summary">
         <div class="prayer-summary-inner">
@@ -771,9 +771,14 @@ document.getElementById('headerDate').textContent = formatDate();
   const isFirstWeek = now.getDate() <= 7;
   if (isSaturday && isFirstWeek) {
     document.getElementById('marianCard').style.display = '';
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth()+1).padStart(2,'0');
-    document.getElementById('marianCardLink').href = `https://missa.cbck.or.kr/MariaHeartMass?year=${yyyy}&month=${mm}`;
+  }
+})();
+
+// 6월(예수성심성월)에만 예수 성심 기도 표시
+(function(){
+  const now = new Date();
+  if (now.getMonth() === 5) { // 0-indexed: 5 = 6월
+    document.getElementById('sacredHeartSection').style.display = '';
   }
 })();
 

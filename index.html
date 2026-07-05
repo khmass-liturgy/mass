@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>가톨릭 뉴스 포털 — 교황청 소식</title>
+<title>교하성당 가톨릭 뉴스 포털 — 교황청 소식</title>
 
 <!-- ── 홈 화면 추가 시 아이콘 설정 (교하성당 로고, PNG base64 내장 — 외부 파일 불필요) ── -->
 <link rel="manifest" href="manifest.json" />
@@ -78,18 +78,18 @@
   }
   .missa-date-box{
     flex-shrink:0;
-    width:92px; height:92px;
+    width:130px; height:130px;
     background:var(--gold);
-    border-radius:6px;
+    border-radius:8px;
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
     color:var(--navy);
     box-shadow:0 4px 14px rgba(0,0,0,.25);
     z-index:1;
   }
-  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
-  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:2.1rem;font-weight:700;line-height:1;margin:2px 0;}
-  .missa-date-box .month{font-size:.68rem;font-weight:500;}
+  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
+  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:4.2rem;font-weight:700;line-height:1;margin:4px 0;}
+  .missa-date-box .month{font-size:.95rem;font-weight:500;}
   .missa-body{flex:1;z-index:1;min-width:0;}
   .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
@@ -108,16 +108,16 @@
 
   /* ── 홈 화면에 추가 버튼 ── */
   #a2hsBtn{
-    position:fixed; right:20px; bottom:24px; z-index:999;
-    display:none; align-items:center; gap:8px;
+    margin:-6px 0 4px 56px;
+    display:none; align-items:center; gap:8px; width:fit-content;
     background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
     color:var(--navy); border:none; border-radius:30px;
-    padding:12px 18px; font-family:'Noto Serif KR',serif; font-weight:700;
-    font-size:.85rem; box-shadow:0 6px 20px rgba(0,0,0,.35); cursor:pointer;
+    padding:10px 16px; font-family:'Noto Serif KR',serif; font-weight:700;
+    font-size:.78rem; box-shadow:0 6px 18px rgba(0,0,0,.3); cursor:pointer;
     transition:transform .2s, box-shadow .2s;
   }
-  #a2hsBtn:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.45);}
-  #a2hsBtn .a2hs-icon{font-size:1.05rem;}
+  #a2hsBtn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.4);}
+  #a2hsBtn .a2hs-icon{font-size:1rem;}
   #a2hsOverlay{
     position:fixed; inset:0; z-index:1000; display:none;
     align-items:flex-end; justify-content:center;
@@ -307,6 +307,9 @@
     .missa-card{flex-wrap:wrap;padding:22px;}
     .missa-arrow{display:none;}
     .link-grid{grid-template-columns:1fr 1fr;}
+    .missa-date-box{width:110px;height:110px;}
+    .missa-date-box .day{font-size:3.4rem;}
+    #a2hsBtn{margin-left:24px;}
   }
   @media (max-width:380px){
     .link-grid{grid-template-columns:1fr;}
@@ -318,7 +321,7 @@
 <header>
   <div class="header-inner">
     <div class="header-title">
-      <h1>가톨릭 뉴스 포털</h1>
+      <h1>교하성당 가톨릭 뉴스 포털</h1>
       <p>Nuntii Catholici · Vatican News</p>
     </div>
     <div class="header-date" id="headerDate"></div>
@@ -357,6 +360,11 @@
       <div class="missa-arrow">→</div>
     </a>
   </section>
+
+  <!-- ── 홈 화면에 추가 버튼 (상단 날짜 밑에 배치) ── -->
+  <button id="a2hsBtn" type="button">
+    <span class="a2hs-icon">📲</span> 홈 화면에 추가
+  </button>
 
   <!-- ── 복되신 동정 마리아 신심미사 (매월 첫째 토요일에만 표시) ── -->
   <section class="missa-section" id="marianCard" style="display:none;">
@@ -731,12 +739,7 @@
   <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지 · 홈 화면 추가 지원</p>
 </footer>
 
-<!-- ── 홈 화면에 추가 버튼 ── -->
-<button id="a2hsBtn" type="button">
-  <span class="a2hs-icon">📲</span> 홈 화면에 추가
-</button>
 
-<!-- ── iOS 안내 시트 ── -->
 <div id="a2hsOverlay">
   <div id="a2hsSheet">
     <h3>홈 화면에 추가하기</h3>

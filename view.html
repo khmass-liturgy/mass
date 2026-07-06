@@ -32,7 +32,7 @@
   #title{ display:none; }
   #wrap{
     position:absolute; top:52px; left:0; right:0; bottom:0;
-    overflow-y:auto; overflow-x:hidden; /* 좌우로는 절대 안 잘리게: 항상 폭에 맞춤 */
+    overflow:auto; /* 세로+가로 모두 스크롤 가능하게: 폭 고정 요소가 있어도 잘린 부분을 볼 수 있도록 */
     -webkit-overflow-scrolling:touch;
     background:#fff;
   }
@@ -67,7 +67,7 @@
 </div>
 
 <div id="wrap">
-  <iframe id="frame" scrolling="no"></iframe>
+  <iframe id="frame" scrolling="yes"></iframe>
 </div>
 
 <div id="hint">

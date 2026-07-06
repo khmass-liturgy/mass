@@ -315,6 +315,26 @@
   @media (max-width:380px){
     .link-grid{grid-template-columns:1fr;}
   }
+
+  /* ── 신부님 묵상 (최근 3일, 자동 수집) ── */
+  .badge-muksang{background:var(--gold);color:var(--navy);}
+  .muksang-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 4px 4px 0;overflow:hidden;margin-bottom:8px;}
+  .muksang-item{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
+  .muksang-item:last-child{border-bottom:none;}
+  .muksang-item:hover{background:var(--cream);}
+  .muksang-date{flex:0 0 auto;width:46px;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+  .muksang-priest{flex:0 0 auto;font-size:.72rem;font-weight:700;color:var(--cream);background:var(--navy);border-radius:10px;padding:2px 9px;white-space:nowrap;}
+  .muksang-title{flex:1 1 auto;font-size:.88rem;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .muksang-item:hover .muksang-title{color:var(--navy);text-decoration:underline;}
+  .muksang-author{flex:0 0 auto;font-size:.72rem;color:var(--muted);}
+  .muksang-empty{padding:18px 16px;font-size:.85rem;color:var(--muted);text-align:center;}
+  .muksang-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:40px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
+  .muksang-foot a{color:var(--navy);text-decoration:none;font-weight:600;}
+  .muksang-foot a:hover{text-decoration:underline;}
+  @media (max-width:600px){
+    .muksang-author{display:none;}
+    .muksang-item{gap:8px;padding:10px 12px;}
+  }
 </style>
 </head>
 <body>
@@ -584,6 +604,49 @@
 
     </div>
   </section>
+
+  <!-- ── 신부님 묵상 (최근 3일, GitHub Actions 자동 수집) ── -->
+  <section>
+    <div class="group-header">
+      <span class="group-badge badge-muksang">Daily</span>
+      <h2 class="group-title">📿 신부님 묵상 · 최근 3일</h2>
+    </div>
+    <div id="muksangBox" class="muksang-box">
+      <div class="muksang-empty">묵상 글을 불러오는 중입니다…</div>
+    </div>
+    <div class="muksang-foot">
+      <span id="muksangUpdated"></span>
+      <a href="https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770" target="_blank" rel="noopener">우리들의 묵상 게시판 전체 보기 →</a>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var box = document.getElementById('muksangBox');
+    var upd = document.getElementById('muksangUpdated');
+    function esc(t){ var d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
+    fetch('data/muksang.json?v=' + Math.floor(Date.now()/600000))
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(d){
+        if(!d.posts || d.posts.length === 0){
+          box.innerHTML = '<div class="muksang-empty">최근 ' + (d.days||3) + '일간 등록된 묵상 글이 없습니다.</div>';
+        } else {
+          box.innerHTML = d.posts.map(function(p){
+            return '<a class="muksang-item" href="' + esc(p.url) + '" target="_blank" rel="noopener">'
+              + '<span class="muksang-date">' + esc((p.date||'').slice(5)) + '</span>'
+              + '<span class="muksang-priest">' + esc(p.priest) + ' 신부님</span>'
+              + '<span class="muksang-title">' + esc(p.title) + '</span>'
+              + '<span class="muksang-author">' + esc(p.author) + '</span>'
+              + '</a>';
+          }).join('');
+        }
+        if(d.updated){ upd.textContent = '업데이트: ' + d.updated + ' (자동 수집)'; }
+      })
+      .catch(function(){
+        box.innerHTML = '<div class="muksang-empty">묵상 목록을 불러오지 못했습니다. 아래 게시판 링크를 이용해 주세요.</div>';
+      });
+  })();
+  </script>
 
   <!-- ── 교황청 ── -->
   <section>

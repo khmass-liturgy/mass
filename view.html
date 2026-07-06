@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>미리보기 — 교하성당 뉴스 포털</title>
+<style>
+  :root{
+    --navy:#1A2744; --gold:#C9A84C; --cream:#F5F0E8; --border:#DDD5C0;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;background:var(--cream);font-family:'Noto Sans KR',sans-serif;}
+  #bar{
+    position:fixed;top:0;left:0;right:0;height:52px;z-index:10;
+    display:flex;align-items:center;gap:8px;padding:0 10px;
+    background:var(--navy);color:#fff;
+  }
+  #bar button, #bar a{
+    display:flex;align-items:center;gap:5px;
+    background:rgba(255,255,255,.12);color:#fff;border:none;
+    border-radius:6px;padding:8px 12px;font-size:.82rem;
+    text-decoration:none;cursor:pointer;white-space:nowrap;
+  }
+  #bar button:active, #bar a:active{background:rgba(255,255,255,.25);}
+  #title{
+    flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    font-size:.82rem;color:var(--gold);
+  }
+  #wrap{
+    position:absolute; top:52px; left:0; right:0; bottom:0;
+    overflow:auto; -webkit-overflow-scrolling:touch;
+    background:#fff;
+  }
+  #frame{
+    display:block; border:0; transform-origin:0 0; background:#fff;
+  }
+  #hint{
+    display:none; position:absolute; top:52px; left:0; right:0; bottom:0;
+    align-items:center; justify-content:center; text-align:center; padding:30px;
+    color:var(--navy); font-size:.95rem; line-height:1.7; background:var(--cream);
+  }
+  #hint a{color:var(--navy); font-weight:700;}
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <button onclick="history.length>1?history.back():location.href='index.html'">← 뒤로</button>
+  <span id="title">불러오는 중…</span>
+  <a id="openNew" href="#" target="_blank" rel="noopener">새 창 ↗</a>
+</div>
+
+<div id="wrap">
+  <iframe id="frame" scrolling="no"></iframe>
+</div>
+
+<div id="hint">
+  <div>
+    이 페이지는 미리보기를 지원하지 않는 것 같습니다.<br/>
+    아래 버튼으로 새 창에서 열어주세요.<br/><br/>
+    <a id="hintOpen" href="#" target="_blank" rel="noopener">새 창에서 열기 ↗</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var url = params.get('u');
+  var title = params.get('t') || url || '';
+  var DESKTOP_WIDTH = parseInt(params.get('w'), 10) || 1080;
+
+  document.getElementById('title').textContent = title;
+  document.title = title + ' — 미리보기';
+
+  if(!url){
+    document.getElementById('hint').style.display = 'flex';
+    document.getElementById('hint').firstElementChild.innerHTML = '열어야 할 주소가 없습니다.';
+  } else {
+    var target = url;
+    document.getElementById('openNew').href = target;
+    document.getElementById('hintOpen').href = target;
+
+    var frame = document.getElementById('frame');
+    var wrap = document.getElementById('wrap');
+    var hint = document.getElementById('hint');
+    var loaded = false;
+
+    function layout(){
+      var scale = wrap.clientWidth / DESKTOP_WIDTH;
+      frame.style.width = DESKTOP_WIDTH + 'px';
+      // 실제 문서 높이를 모르므로 넉넉하게 잡고, 로드 후 재조정 시도
+      var h = Math.max(wrap.clientHeight / scale, 2000);
+      frame.style.height = h + 'px';
+      frame.style.transform = 'scale(' + scale + ')';
+    }
+
+    frame.addEventListener('load', function(){
+      loaded = true;
+      try {
+        // 동일 출처가 아니면 접근 시 예외 발생 → catch로 넘어감 (정상)
+        var doc = frame.contentWindow.document;
+        var h = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight);
+        if(h > 0){
+          frame.style.height = h + 'px';
+        }
+      } catch(e) { /* cross-origin: 높이 재계산 불가, 기본값 유지 */ }
+    });
+
+    window.addEventListener('resize', layout);
+    layout();
+    frame.src = target;
+
+    // 일정 시간 후에도 아무 반응이 없으면(예: X-Frame-Options 차단) 안내 표시
+    setTimeout(function(){
+      if(!loaded){
+        hint.style.display = 'flex';
+      }
+    }, 4000);
+  }
+})();
+</script>
+
+</body>
+</html>

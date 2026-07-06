@@ -12,20 +12,24 @@
   html,body{margin:0;padding:0;height:100%;background:var(--cream);font-family:'Noto Sans KR',sans-serif;}
   #bar{
     position:fixed;top:0;left:0;right:0;height:52px;z-index:10;
-    display:flex;align-items:center;gap:8px;padding:0 10px;
+    display:flex;align-items:center;gap:6px;padding:0 8px;
     background:var(--navy);color:#fff;
   }
   #bar button, #bar a{
-    display:flex;align-items:center;gap:5px;
+    display:flex;align-items:center;justify-content:center;gap:4px;
     background:rgba(255,255,255,.12);color:#fff;border:none;
-    border-radius:6px;padding:8px 12px;font-size:.82rem;
+    border-radius:6px;padding:8px 10px;font-size:.8rem;
     text-decoration:none;cursor:pointer;white-space:nowrap;
+    -webkit-tap-highlight-color:transparent;
   }
-  #bar button:active, #bar a:active{background:rgba(255,255,255,.25);}
-  #title{
-    flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    font-size:.82rem;color:var(--gold);
-  }
+  #bar button:active, #bar a:active{background:rgba(255,255,255,.28);}
+  #back{flex:0 0 auto;}
+  #zoomGroup{flex:0 0 auto;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.08);border-radius:6px;padding:2px;}
+  #zoomGroup button{padding:7px 10px;background:transparent;font-size:1rem;font-weight:700;}
+  #zoomGroup button:active{background:rgba(255,255,255,.25);}
+  #zoomPct{font-size:.72rem;color:var(--gold);min-width:34px;text-align:center;}
+  #openNew{flex:0 0 auto;}
+  #title{ display:none; }
   #wrap{
     position:absolute; top:52px; left:0; right:0; bottom:0;
     overflow:auto; -webkit-overflow-scrolling:touch;
@@ -40,13 +44,24 @@
     color:var(--navy); font-size:.95rem; line-height:1.7; background:var(--cream);
   }
   #hint a{color:var(--navy); font-weight:700;}
+  @media (min-width:480px){
+    #title{
+      display:block; flex:1 1 auto; overflow:hidden; text-overflow:ellipsis;
+      white-space:nowrap; font-size:.8rem; color:var(--gold); margin:0 4px;
+    }
+  }
 </style>
 </head>
 <body>
 
 <div id="bar">
-  <button onclick="history.length>1?history.back():location.href='index.html'">← 뒤로</button>
+  <button id="back" onclick="history.length>1?history.back():location.href='index.html'">← 뒤로</button>
   <span id="title">불러오는 중…</span>
+  <div id="zoomGroup">
+    <button id="zoomOut" aria-label="축소">−</button>
+    <span id="zoomPct">100%</span>
+    <button id="zoomIn" aria-label="확대">+</button>
+  </div>
   <a id="openNew" href="#" target="_blank" rel="noopener">새 창 ↗</a>
 </div>
 
@@ -67,10 +82,19 @@
   var params = new URLSearchParams(location.search);
   var url = params.get('u');
   var title = params.get('t') || url || '';
-  var DESKTOP_WIDTH = parseInt(params.get('w'), 10) || 1080;
+  // 원본이 대략 이 정도 폭의 데스크톱 레이아웃이라고 가정하고 화면 폭에 맞춘다.
+  // 값을 낮출수록(=데스크톱 폭을 좁게 가정할수록) 처음부터 글자가 더 크게 보인다.
+  var BASE_WIDTH = parseInt(params.get('w'), 10) || 760;
+
+  var ZOOM_KEY = 'khmass_view_zoom';
+  var MIN_ZOOM = 0.7, MAX_ZOOM = 2.2, STEP = 0.15;
+  var zoom = parseFloat(localStorage.getItem(ZOOM_KEY) || '1.3');
+  if(isNaN(zoom) || zoom < MIN_ZOOM || zoom > MAX_ZOOM) zoom = 1.3;
 
   document.getElementById('title').textContent = title;
   document.title = title + ' — 미리보기';
+
+  var zoomPctEl = document.getElementById('zoomPct');
 
   if(!url){
     document.getElementById('hint').style.display = 'flex';
@@ -86,18 +110,18 @@
     var loaded = false;
 
     function layout(){
-      var scale = wrap.clientWidth / DESKTOP_WIDTH;
-      frame.style.width = DESKTOP_WIDTH + 'px';
-      // 실제 문서 높이를 모르므로 넉넉하게 잡고, 로드 후 재조정 시도
+      var fitScale = wrap.clientWidth / BASE_WIDTH;   // 화면 폭에 딱 맞는 기본 배율
+      var scale = fitScale * zoom;                    // 사용자가 조절한 확대 배율 적용
+      frame.style.width = BASE_WIDTH + 'px';
       var h = Math.max(wrap.clientHeight / scale, 2000);
       frame.style.height = h + 'px';
       frame.style.transform = 'scale(' + scale + ')';
+      zoomPctEl.textContent = Math.round(zoom * 100) + '%';
     }
 
     frame.addEventListener('load', function(){
       loaded = true;
       try {
-        // 동일 출처가 아니면 접근 시 예외 발생 → catch로 넘어감 (정상)
         var doc = frame.contentWindow.document;
         var h = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight);
         if(h > 0){
@@ -106,11 +130,21 @@
       } catch(e) { /* cross-origin: 높이 재계산 불가, 기본값 유지 */ }
     });
 
+    document.getElementById('zoomIn').addEventListener('click', function(){
+      zoom = Math.min(MAX_ZOOM, Math.round((zoom + STEP) * 100) / 100);
+      localStorage.setItem(ZOOM_KEY, zoom);
+      layout();
+    });
+    document.getElementById('zoomOut').addEventListener('click', function(){
+      zoom = Math.max(MIN_ZOOM, Math.round((zoom - STEP) * 100) / 100);
+      localStorage.setItem(ZOOM_KEY, zoom);
+      layout();
+    });
+
     window.addEventListener('resize', layout);
     layout();
     frame.src = target;
 
-    // 일정 시간 후에도 아무 반응이 없으면(예: X-Frame-Options 차단) 안내 표시
     setTimeout(function(){
       if(!loaded){
         hint.style.display = 'flex';

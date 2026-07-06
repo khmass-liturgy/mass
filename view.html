@@ -32,7 +32,8 @@
   #title{ display:none; }
   #wrap{
     position:absolute; top:52px; left:0; right:0; bottom:0;
-    overflow:auto; -webkit-overflow-scrolling:touch;
+    overflow-y:auto; overflow-x:hidden; /* 좌우로는 절대 안 잘리게: 항상 폭에 맞춤 */
+    -webkit-overflow-scrolling:touch;
     background:#fff;
   }
   #frame{
@@ -59,7 +60,7 @@
   <span id="title">불러오는 중…</span>
   <div id="zoomGroup">
     <button id="zoomOut" aria-label="축소">−</button>
-    <span id="zoomPct">100%</span>
+    <span id="zoomPct">130%</span>
     <button id="zoomIn" aria-label="확대">+</button>
   </div>
   <a id="openNew" href="#" target="_blank" rel="noopener">새 창 ↗</a>
@@ -82,12 +83,13 @@
   var params = new URLSearchParams(location.search);
   var url = params.get('u');
   var title = params.get('t') || url || '';
-  // 원본이 대략 이 정도 폭의 데스크톱 레이아웃이라고 가정하고 화면 폭에 맞춘다.
-  // 값을 낮출수록(=데스크톱 폭을 좁게 가정할수록) 처음부터 글자가 더 크게 보인다.
+  // 원본이 대략 이 정도 폭의 데스크톱 레이아웃이라고 가정한다.
+  // zoom이 커질수록 이 폭을 "더 좁게" 다시 가정해서(=창을 좁힌 것처럼) 다시 그리게 하고,
+  // 화면 폭에는 항상 정확히 맞춰 스케일하므로 좌우로 잘리는 일이 없다.
   var BASE_WIDTH = parseInt(params.get('w'), 10) || 760;
 
   var ZOOM_KEY = 'khmass_view_zoom';
-  var MIN_ZOOM = 0.7, MAX_ZOOM = 2.2, STEP = 0.15;
+  var MIN_ZOOM = 0.8, MAX_ZOOM = 2.5, STEP = 0.15;
   var zoom = parseFloat(localStorage.getItem(ZOOM_KEY) || '1.3');
   if(isNaN(zoom) || zoom < MIN_ZOOM || zoom > MAX_ZOOM) zoom = 1.3;
 
@@ -110,9 +112,10 @@
     var loaded = false;
 
     function layout(){
-      var fitScale = wrap.clientWidth / BASE_WIDTH;   // 화면 폭에 딱 맞는 기본 배율
-      var scale = fitScale * zoom;                    // 사용자가 조절한 확대 배율 적용
-      frame.style.width = BASE_WIDTH + 'px';
+      // zoom이 클수록 더 좁은 폭으로 다시 그려서(effectiveWidth↓) 상대적 글자 크기를 키운다.
+      var effectiveWidth = BASE_WIDTH / zoom;
+      var scale = wrap.clientWidth / effectiveWidth;   // 이 스케일로 그리면 폭이 항상 화면에 정확히 맞음
+      frame.style.width = effectiveWidth + 'px';
       var h = Math.max(wrap.clientHeight / scale, 2000);
       frame.style.height = h + 'px';
       frame.style.transform = 'scale(' + scale + ')';

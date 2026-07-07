@@ -145,8 +145,11 @@ def parse_title_date(title: str, fallback_date: str) -> str:
     return fallback_date
 
 
-def parse_rows(html: str):
-    """목록 페이지에서 (num, id, title, date, author) 행을 추출."""
+def parse_rows(html: str, today_str: str):
+    """목록 페이지에서 (num, id, title, date, author) 행을 추출.
+    오늘 올라온 글은 게시판에 날짜(YYYY-MM-DD) 대신 '13:22' 같은 시간만
+    표시되는 경우가 많아서, 그 경우 today_str(오늘 날짜)로 채워준다.
+    """
     soup = BeautifulSoup(html, "html.parser")
     rows = []
     for a in soup.select('a[href*="bbs_view.asp"]'):
@@ -161,12 +164,16 @@ def parse_rows(html: str):
         if len(tds) < 4:
             continue
         texts = [td.get_text(" ", strip=True) for td in tds]
-        # 날짜 셀 찾기 (yyyy-mm-dd 또는 yy-mm-dd / mm-dd 형식 대응)
+        # 날짜 셀 찾기: 'YYYY-MM-DD' 형식, 또는 오늘 글이면 'HH:MM' 시간 형식
         date_str = None
         date_idx = None
         for i, t in enumerate(texts):
             if re.fullmatch(r"\d{4}-\d{2}-\d{2}", t):
                 date_str = t
+                date_idx = i
+                break
+            if re.fullmatch(r"\d{1,2}:\d{2}", t):
+                date_str = today_str
                 date_idx = i
                 break
         if date_str is None:
@@ -192,6 +199,7 @@ def parse_rows(html: str):
 
 def main():
     now = datetime.now(KST)
+    today_str = now.strftime("%Y-%m-%d")
     cutoff = (now - timedelta(days=DAYS - 1)).strftime("%Y-%m-%d")  # 오늘 포함 3일
 
     session = requests.Session()
@@ -199,7 +207,7 @@ def main():
     all_rows = {}
     try:
         first = get_html(session, LIST_URL, {"menu": MENU})
-        for r in parse_rows(first):
+        for r in parse_rows(first, today_str):
             all_rows[r["id"]] = r
     except Exception as e:
         print("first page fetch failed:", e, file=sys.stderr)
@@ -213,7 +221,7 @@ def main():
         except Exception as e:
             print(f"page {page} fetch failed:", e, file=sys.stderr)
             continue
-        rows = parse_rows(html)
+        rows = parse_rows(html, today_str)
         if not rows:
             continue
         dates = [r["date"] for r in rows]

@@ -330,9 +330,20 @@
   .muksang-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px;}
   .muksang-excerpt{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .muksang-empty{padding:18px 16px;font-size:.85rem;color:var(--muted);text-align:center;}
-  .muksang-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:40px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
+  .muksang-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
   .muksang-foot a{color:var(--navy);text-decoration:none;font-weight:600;}
   .muksang-foot a:hover{text-decoration:underline;}
+  .muksang-help{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:40px;font-size:.82rem;}
+  .muksang-help summary{cursor:pointer;padding:12px 16px;color:var(--navy);font-weight:600;list-style:none;display:flex;align-items:center;gap:6px;-webkit-tap-highlight-color:transparent;}
+  .muksang-help summary::-webkit-details-marker{display:none;}
+  .muksang-help summary::after{content:'▾';margin-left:auto;color:var(--muted);transition:transform .15s;}
+  .muksang-help[open] summary::after{transform:rotate(180deg);}
+  .muksang-help-body{padding:0 16px 16px;color:var(--text);line-height:1.6;}
+  .muksang-help-body p{margin:10px 0 4px;}
+  .muksang-help-body ol{margin:0 0 6px;padding-left:20px;}
+  .muksang-help-body li{margin:2px 0;}
+  .muksang-help-body code{background:var(--cream);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.82em;}
+  .muksang-help-note{color:var(--muted);font-size:.8rem;margin-top:10px;}
   @media (max-width:600px){
     .muksang-author{display:none;}
     .muksang-item{gap:8px;padding:10px 12px;}
@@ -620,6 +631,24 @@
       <span id="muksangUpdated"></span>
       <a id="muksangAllLink" href="https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770" target="_blank" rel="noopener">우리들의 묵상 게시판 전체 보기 →</a>
     </div>
+    <details class="muksang-help">
+      <summary>📖 새 창이 작게 보이나요? 읽기 모드 자동 켜기 (한 번만 설정)</summary>
+      <div class="muksang-help-body">
+        <p><strong>삼성 인터넷</strong></p>
+        <ol>
+          <li>브라우저 오른쪽 아래 <strong>⋮ (메뉴)</strong> → <strong>설정</strong></li>
+          <li><strong>유용한 기능</strong> → <strong>읽기 모드</strong></li>
+          <li><strong>자동으로 사용</strong> 켜기</li>
+          <li><strong>웹 사이트 목록</strong>에 <code>maria.catholic.or.kr</code> 추가</li>
+        </ol>
+        <p><strong>iOS(Safari)</strong></p>
+        <ol>
+          <li><strong>설정</strong> → <strong>Safari</strong></li>
+          <li><strong>리더 자동 사용</strong> 켜기</li>
+        </ol>
+        <p class="muksang-help-note">한 번만 설정해두면, 다음부터 묵상 글을 누르면 자동으로 이렇게(👇) 읽기 좋은 모습으로 열립니다.</p>
+      </div>
+    </details>
   </section>
 
   <script>

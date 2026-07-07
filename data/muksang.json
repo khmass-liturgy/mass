@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08 07:15",
+  "updated": "2026-07-08 08:26",
   "cutoff": "2026-07-07",
   "days": 2,
   "names": [
@@ -9,11 +9,23 @@
     "조욱현",
     "한상우",
     "양승국",
-    "이영근"
+    "이영근",
+    "빠다킹",
+    "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 7,
+  "count": 10,
   "posts": [
+    {
+      "id": "2134436",
+      "title": "빠다킹 신부와 새벽을 열며(2026.07.08)",
+      "author": "김중애",
+      "date": "2026-07-08",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134436&ref=190497&menu=4770",
+      "mass_date": "2026-07-08",
+      "priest": "빠다킹",
+      "excerpt": "2026년 7월 8일 연중 제14주간 수요일 독일제국 프로이센의 철혈 재상…"
+    },
     {
       "id": "2134428",
       "title": "07.08.수 / 한상우 신부님",
@@ -45,6 +57,16 @@
       "excerpt": "이병우 신부님_\"수확할 것은 많은데 일꾼은 적다.\"(마태9,37ㄱ) '예수님…"
     },
     {
+      "id": "2134402",
+      "title": "전삼용 신부님_불평의 동의어는 책임회피다",
+      "author": "최원석",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134402&ref=190488&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "전삼용",
+      "excerpt": "우리는 하루에도 알게 모르게 평균 30번 내외의 불평을 한다고 합니다."
+    },
+    {
       "id": "2134401",
       "title": "양승국 신부님_기적을 불러일으키는 측은지심! |1|",
       "author": "최원석",
@@ -63,6 +85,16 @@
       "mass_date": "2026-07-07",
       "priest": "이영근",
       "excerpt": "* 독서 : 호세 8, 4-7."
+    },
+    {
+      "id": "2134389",
+      "title": "빠다킹 신부와 새벽을 열며(2026.07.07)",
+      "author": "김중애",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134389&ref=190480&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "빠다킹",
+      "excerpt": "2026년 7월 7일 연중 제14주간 화요일 인간과 침팬지의 지능 대결이 있…"
     },
     {
       "id": "2134384",

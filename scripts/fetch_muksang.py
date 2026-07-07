@@ -119,6 +119,32 @@ def fetch_excerpt_safely(session: requests.Session, url: str) -> str:
         return ""
 
 
+def parse_title_date(title: str, fallback_date: str) -> str:
+    """제목에 적힌 '7월 7일' 같은 실제 미사 날짜를 뽑아 YYYY-MM-DD로 반환.
+    이 게시판은 다음날 묵상을 전날 저녁에 미리 올리는 경우가 많아서,
+    게시판 '작성일'과 실제 미사 날짜가 하루 어긋나는 일이 흔하다.
+    제목에서 날짜를 못 찾으면 작성일(fallback_date)을 그대로 쓴다.
+    """
+    year = fallback_date.split("-")[0] if fallback_date else str(datetime.now().year)
+    patterns = [
+        r"(\d{1,2})\s*월\s*(\d{1,2})\s*일",   # 7월 7일
+        r"\((\d{1,2})\s*/\s*(\d{1,2})\)",       # (7/6)
+        r"\b(\d{1,2})\.(\d{1,2})\b(?!\d)",       # 07.06 / 7.6
+        r"\b(\d{1,2})/(\d{1,2})\b(?!\d)",        # 07/06 / 7/6 (괄호 없이)
+    ]
+    for pat in patterns:
+        m = re.search(pat, title)
+        if m:
+            mo, da = int(m.group(1)), int(m.group(2))
+            if 1 <= mo <= 12 and 1 <= da <= 31:
+                try:
+                    datetime(int(year), mo, da)  # 유효한 날짜인지 검증
+                except ValueError:
+                    continue
+                return f"{year}-{mo:02d}-{da:02d}"
+    return fallback_date
+
+
 def parse_rows(html: str):
     """목록 페이지에서 (num, id, title, date, author) 행을 추출."""
     soup = BeautifulSoup(html, "html.parser")
@@ -204,7 +230,9 @@ def main():
 
     posts = []
     for r in all_rows.values():
-        if r["date"] < cutoff:
+        r["mass_date"] = parse_title_date(r["title"], r["date"])
+        # 필터 기준은 실제 미사 날짜(mass_date)로 판단 — 게시판 작성일과 하루 어긋나는 경우 대응
+        if max(r["mass_date"], r["date"]) < cutoff:
             continue
         names = matched_names(r)
         if not names:
@@ -212,7 +240,7 @@ def main():
         r["priest"] = names[0]
         posts.append(r)
 
-    posts.sort(key=lambda r: (r["date"], int(r["id"])), reverse=True)
+    posts.sort(key=lambda r: (max(r["mass_date"], r["date"]), int(r["id"])), reverse=True)
 
     # 짧은 미리보기(스니펫)만 가져온다 — 본문 전체를 저장/복제하지 않는다.
     for r in posts:

@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-07 15:20",
-  "cutoff": "2026-07-05",
-  "days": 3,
+  "updated": "2026-07-07 17:11",
+  "cutoff": "2026-07-06",
+  "days": 2,
   "names": [
     "조명연",
     "이병우",
@@ -12,7 +12,7 @@
     "이영근"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 13,
+  "count": 12,
   "posts": [
     {
       "id": "2134403",
@@ -133,16 +133,6 @@
       "mass_date": "2026-07-06",
       "priest": "조명연",
       "excerpt": "2026년 7월 6일 연중 제14주간 월요일 가장 친한 신부가 다이어트에 성…"
-    },
-    {
-      "id": "2134302",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 5일 한국 성직자들의 수호자 성 ...",
-      "author": "박양석",
-      "date": "2026-07-04",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=46&id=2134302&ref=190446&menu=4770",
-      "mass_date": "2026-07-05",
-      "priest": "조명연",
-      "excerpt": "2026년 7월 5일 한국 성직자들의 수호자 성 김대건 안드레아 사제 순교자…"
     }
   ]
 }

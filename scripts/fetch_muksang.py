@@ -5,12 +5,14 @@
 data/muksang.json 으로 저장한다.
 
 GitHub Actions에서 주기적으로 실행됨.
-※ 본문은 저장하지 않고 제목/작성자/날짜/원문 링크만 저장한다(저작권 존중).
+※ 저작권 보호: 본문 전체는 절대 저장/복제하지 않는다.
+   제목/작성자/날짜/원문 링크 + 아주 짧은 한 문장 미리보기(최대 42자·15단어)만 저장한다.
 """
 
 import json
 import re
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -28,6 +30,11 @@ NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양�
 DAYS = 3          # 최근 3일
 MAX_PAGES = 8     # 안전 상한 (페이지당 약 30여 건)
 
+# 미리보기(스니펫) 길이 제한 — 저작권 보호를 위해 아주 짧게만 노출한다.
+# 본문 전체나 문단 단위가 아니라 '한 문장 정도의 맛보기'만 허용.
+EXCERPT_MAX_CHARS = 42
+EXCERPT_MAX_WORDS = 15
+
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "muksang.json"
 
@@ -40,13 +47,76 @@ HEADERS = {
 }
 
 
-def get_html(session: requests.Session, params: dict) -> str:
-    r = session.get(LIST_URL, params=params, headers=HEADERS, timeout=30)
+def get_html(session: requests.Session, url: str, params: dict) -> str:
+    r = session.get(url, params=params, headers=HEADERS, timeout=30)
     r.raise_for_status()
-    # 서버가 utf-8로 응답하지만, 혹시 모를 인코딩 오판에 대비
     if not r.encoding or r.encoding.lower() in ("iso-8859-1",):
         r.encoding = r.apparent_encoding or "utf-8"
     return r.text
+
+
+def extract_excerpt(html: str) -> str:
+    """게시글 본문에서 아주 짧은 미리보기 한 조각만 뽑아낸다.
+    저작권 보호를 위해 절대 문단 전체를 옮기지 않고,
+    글자 수/단어 수 상한을 강하게 걸어 '한 문장 맛보기' 수준으로만 반환한다.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    for tag in soup(["script", "style", "table"]):
+        # 메뉴/헤더 등은 보통 table 구조이므로 큰 table은 일단 후보에서 제외
+        pass
+
+    # 후보 텍스트 블록: td 중 텍스트가 충분히 길고, 메뉴성 링크가 적은 곳
+    candidates = []
+    for td in soup.find_all("td"):
+        text = td.get_text("\n", strip=True)
+        if len(text) < 80:
+            continue
+        link_count = len(td.find_all("a"))
+        if link_count > 5:
+            continue
+        candidates.append(text)
+
+    if not candidates:
+        # td 구조가 아니면 div/p에서도 시도
+        for tag in soup.find_all(["div", "p"]):
+            text = tag.get_text("\n", strip=True)
+            if len(text) >= 80:
+                candidates.append(text)
+
+    if not candidates:
+        return ""
+
+    # 가장 긴 텍스트 블록을 본문으로 간주
+    body = max(candidates, key=len)
+
+    # 첫 문단, 첫 문장 정도만 취함
+    first_chunk = re.split(r"\n\s*\n", body.strip())[0]
+    # 문장 끝(. ! ? 또는 한글 종결) 기준으로 첫 문장만
+    m = re.search(r"^(.{5,}?[\.!\?])(\s|$)", first_chunk)
+    sentence = m.group(1) if m else first_chunk
+
+    words = sentence.split()
+    truncated = False
+    if len(words) > EXCERPT_MAX_WORDS:
+        sentence = " ".join(words[:EXCERPT_MAX_WORDS])
+        truncated = True
+    if len(sentence) > EXCERPT_MAX_CHARS:
+        sentence = sentence[:EXCERPT_MAX_CHARS]
+        truncated = True
+
+    sentence = sentence.strip()
+    if truncated or not sentence.endswith((".", "!", "?")):
+        sentence = sentence.rstrip(".!?") + "…"
+    return sentence
+
+
+def fetch_excerpt_safely(session: requests.Session, url: str) -> str:
+    try:
+        html = session.get(url, headers=HEADERS, timeout=20).text
+        return extract_excerpt(html)
+    except Exception as e:
+        print("excerpt fetch failed for", url, ":", e, file=sys.stderr)
+        return ""
 
 
 def parse_rows(html: str):
@@ -102,7 +172,7 @@ def main():
     # 세션 확립: 파라미터 없이 기본 목록을 먼저 요청 (세션 없이는 옛 페이지로 리다이렉트되는 경우가 있음)
     all_rows = {}
     try:
-        first = get_html(session, {"menu": MENU})
+        first = get_html(session, LIST_URL, {"menu": MENU})
         for r in parse_rows(first):
             all_rows[r["id"]] = r
     except Exception as e:
@@ -113,7 +183,7 @@ def main():
         if stop:
             break
         try:
-            html = get_html(session, {"menu": MENU, "Page": str(page), "SORT": "W"})
+            html = get_html(session, LIST_URL, {"menu": MENU, "Page": str(page), "SORT": "W"})
         except Exception as e:
             print(f"page {page} fetch failed:", e, file=sys.stderr)
             continue
@@ -143,6 +213,11 @@ def main():
         posts.append(r)
 
     posts.sort(key=lambda r: (r["date"], int(r["id"])), reverse=True)
+
+    # 짧은 미리보기(스니펫)만 가져온다 — 본문 전체를 저장/복제하지 않는다.
+    for r in posts:
+        r["excerpt"] = fetch_excerpt_safely(session, r["url"])
+        time.sleep(0.4)  # 대상 서버에 부담을 주지 않도록 살짝 간격을 둠
 
     out = {
         "updated": now.strftime("%Y-%m-%d %H:%M"),

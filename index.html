@@ -327,6 +327,8 @@
   .muksang-title{flex:1 1 auto;font-size:.88rem;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .muksang-item:hover .muksang-title{color:var(--navy);text-decoration:underline;}
   .muksang-author{flex:0 0 auto;font-size:.72rem;color:var(--muted);}
+  .muksang-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px;}
+  .muksang-excerpt{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .muksang-empty{padding:18px 16px;font-size:.85rem;color:var(--muted);text-align:center;}
   .muksang-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:40px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
   .muksang-foot a{color:var(--navy);text-decoration:none;font-weight:600;}
@@ -651,10 +653,16 @@
         } else {
           box.innerHTML = d.posts.map(function(p){
             var href = linkFor(p.url, p.title);
+            var excerptHtml = p.excerpt
+              ? '<span class="muksang-excerpt">' + esc(p.excerpt) + '</span>'
+              : '';
             return '<a class="muksang-item" href="' + esc(href) + '" target="_blank" rel="noopener">'
               + '<span class="muksang-date">' + esc((p.date||'').slice(5)) + '</span>'
               + '<span class="muksang-priest">' + esc(p.priest) + ' 신부님</span>'
-              + '<span class="muksang-title">' + esc(p.title) + '</span>'
+              + '<span class="muksang-main">'
+                + '<span class="muksang-title">' + esc(p.title) + '</span>'
+                + excerptHtml
+              + '</span>'
               + '<span class="muksang-author">' + esc(p.author) + '</span>'
               + '</a>';
           }).join('');

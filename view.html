@@ -29,6 +29,7 @@
   #zoomGroup button:active{background:rgba(255,255,255,.25);}
   #zoomPct{font-size:.72rem;color:var(--gold);min-width:34px;text-align:center;}
   #openNew{flex:0 0 auto;}
+  #skipBtn{flex:0 0 auto;}
   #title{ display:none; }
   #wrap{
     position:absolute; top:52px; left:0; right:0; bottom:0;
@@ -63,6 +64,7 @@
     <span id="zoomPct">130%</span>
     <button id="zoomIn" aria-label="확대">+</button>
   </div>
+  <button id="skipBtn" aria-label="본문으로 건너뛰기">본문↓</button>
   <a id="openNew" href="#" target="_blank" rel="noopener">새 창 ↗</a>
 </div>
 
@@ -142,6 +144,16 @@
       zoom = Math.max(MIN_ZOOM, Math.round((zoom - STEP) * 100) / 100);
       localStorage.setItem(ZOOM_KEY, zoom);
       layout();
+    });
+
+    // 이 게시판은 보통 상단 메뉴/배너/탭/제목표가 원본 기준 약 650px 정도를 차지한다.
+    // 교차 출처(iframe) 안쪽은 직접 스크롤을 제어할 수 없으므로,
+    // 우리 쪽 바깥 컨테이너(wrap)를 그만큼 대신 내려주는 방식으로 "본문 건너뛰기"를 구현한다.
+    var SKIP_ORIG_PX = parseInt(params.get('skip'), 10) || 650;
+    document.getElementById('skipBtn').addEventListener('click', function(){
+      var effectiveWidth = BASE_WIDTH / zoom;
+      var scale = wrap.clientWidth / effectiveWidth;
+      wrap.scrollTo({ top: SKIP_ORIG_PX * scale, behavior: 'smooth' });
     });
 
     window.addEventListener('resize', layout);

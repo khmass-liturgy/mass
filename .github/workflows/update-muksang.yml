@@ -2,8 +2,8 @@ name: Update 묵상 posts
 
 on:
   schedule:
-    # UTC 기준 → KST 04:30 / 10:30 / 16:30 / 22:30 (하루 4회)
-    - cron: '30 19,1,7,13 * * *'
+    # UTC 기준 → KST 06:00 / 12:00 (하루 2회)
+    - cron: '0 21,3 * * *'
   workflow_dispatch: {}
 
 permissions:

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07 14:05",
+  "updated": "2026-07-07 15:20",
   "cutoff": "2026-07-05",
   "days": 3,
   "names": [
@@ -12,14 +12,55 @@
     "이영근"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 8,
+  "count": 13,
   "posts": [
+    {
+      "id": "2134403",
+      "title": "이병우 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134403&ref=190489&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "이병우",
+      "excerpt": "이병우 신부님_\"수확할 것은 많은데 일꾼은 적다.\"(마태9,37ㄱ) '예수님…"
+    },
+    {
+      "id": "2134401",
+      "title": "양승국 신부님_기적을 불러일으키는 측은지심! |1|",
+      "author": "최원석",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=5&id=2134401&ref=190487&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "양승국",
+      "excerpt": "참교육이라는 드라마가 요즘 교육자들 사이에서는 물론 전국민적으로 큰 반향을…"
+    },
+    {
+      "id": "2134399",
+      "title": "이영근 신부님_* 오늘의 말씀(7/7) : 연중 제14주간 화요일",
+      "author": "최원석",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=7&id=2134399&ref=190485&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "이영근",
+      "excerpt": "* 독서 : 호세 8, 4-7."
+    },
+    {
+      "id": "2134384",
+      "title": "07.07.화 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-07",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=15&id=2134384&ref=190477&menu=4770",
+      "mass_date": "2026-07-07",
+      "priest": "한상우",
+      "excerpt": "07.07.화."
+    },
     {
       "id": "2134377",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 7일 연중 제14주간 화요일",
       "author": "박양석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=16&id=2134377&ref=190475&menu=4770",
+      "mass_date": "2026-07-07",
       "priest": "조명연",
       "excerpt": "2026년 7월 7일 연중 제14주간 화요일 인간과 침팬지의 지능 대결이 있…"
     },
@@ -29,6 +70,7 @@
       "author": "최원석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=18&id=2134358&ref=190474&menu=4770",
+      "mass_date": "2026-07-05",
       "priest": "이병우",
       "excerpt": "PS : 7월 5일 몸이 불편한 점과 제속회 일정으로 신부님들 묵상글을 못…"
     },
@@ -38,6 +80,7 @@
       "author": "최원석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134357&ref=190473&menu=4770",
+      "mass_date": "2026-07-05",
       "priest": "양승국",
       "excerpt": "PS : 7월 5일 몸이 불편한 점과 제속회 일정으로 신부님들 묵상글을 못…"
     },
@@ -47,6 +90,7 @@
       "author": "최원석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=21&id=2134355&ref=190471&menu=4770",
+      "mass_date": "2026-07-06",
       "priest": "이병우",
       "excerpt": "김건태 신부님_믿음과 기적 오늘 복음 말씀을 접하면서, 같은 이야기를 전하고…"
     },
@@ -56,6 +100,7 @@
       "author": "최원석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=24&id=2134351&ref=190468&menu=4770",
+      "mass_date": "2026-07-06",
       "priest": "양승국",
       "excerpt": "연세가 조금 드신 분들 중에, 이야기가 무르익어가면서, 우울해지는 분들이 많…"
     },
@@ -65,6 +110,7 @@
       "author": "최원석",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=26&id=2134349&ref=190466&menu=4770",
+      "mass_date": "2026-07-06",
       "priest": "이영근",
       "excerpt": "* 독서 : 호세 2, 6."
     },
@@ -74,6 +120,7 @@
       "author": "강칠등",
       "date": "2026-07-06",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=33&id=2134336&ref=190459&menu=4770",
+      "mass_date": "2026-07-06",
       "priest": "한상우",
       "excerpt": "07.06.월."
     },
@@ -83,8 +130,19 @@
       "author": "박양석",
       "date": "2026-07-05",
       "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=34&id=2134329&ref=190458&menu=4770",
+      "mass_date": "2026-07-06",
       "priest": "조명연",
       "excerpt": "2026년 7월 6일 연중 제14주간 월요일 가장 친한 신부가 다이어트에 성…"
+    },
+    {
+      "id": "2134302",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 5일 한국 성직자들의 수호자 성 ...",
+      "author": "박양석",
+      "date": "2026-07-04",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=46&id=2134302&ref=190446&menu=4770",
+      "mass_date": "2026-07-05",
+      "priest": "조명연",
+      "excerpt": "2026년 7월 5일 한국 성직자들의 수호자 성 김대건 안드레아 사제 순교자…"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-08 14:57",
-  "cutoff": "2026-07-07",
+  "updated": "2026-07-09 07:12",
+  "cutoff": "2026-07-08",
   "days": 2,
   "names": [
     "조명연",
@@ -14,14 +14,34 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 15,
+  "count": 10,
   "posts": [
+    {
+      "id": "2134473",
+      "title": "빠다킹 신부와 새벽을 열며(2026.07.09)",
+      "author": "김중애",
+      "date": "2026-07-09",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134473&ref=190512&menu=4770",
+      "mass_date": "2026-07-09",
+      "priest": "빠다킹",
+      "excerpt": "2026년 7월 9일 연중 제14주간 목요일 “축복해 주세요.”라면서 안수를…"
+    },
+    {
+      "id": "2134466",
+      "title": "07.09.목 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-09",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=7&id=2134466&ref=190508&menu=4770",
+      "mass_date": "2026-07-09",
+      "priest": "한상우",
+      "excerpt": "07.09.목 \"여행 보따리도 여벌 옷도 신발도 지팡이도 지니지 마라.\" (…"
+    },
     {
       "id": "2134450",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 9일 연중 제14주간 목요일",
       "author": "박양석",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=1&id=2134450&ref=190507&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=8&id=2134450&ref=190507&menu=4770",
       "mass_date": "2026-07-09",
       "priest": "조명연",
       "excerpt": "2026년 7월 9일 연중 제14주간 목요일 “축복해 주세요.”라면서 안수를…"
@@ -31,7 +51,7 @@
       "title": "이병우 신부님_조욱현 신부님_김건테 신부님_묵상",
       "author": "최원석",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134448&ref=190505&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=10&id=2134448&ref=190505&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "이병우",
       "excerpt": "이병우 신부님_\"이스라엘 집안의 길 잃은 양들에게 가라.\"(마태10,6) '…"
@@ -41,7 +61,7 @@
       "title": "전삼용 신부님_남과 비교하며 살고 싶지 않아요?",
       "author": "최원석",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=4&id=2134447&ref=190504&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134447&ref=190504&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "전삼용",
       "excerpt": "남과 비교하며 살고 싶지 않은데 어떻게 하면 그럴 수 있느냐고 묻는 분들이…"
@@ -51,7 +71,7 @@
       "title": "양승국 신부님_눈이 시리도록 맑은 몽골 대초원 하늘 아래서!",
       "author": "최원석",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=5&id=2134446&ref=190503&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=12&id=2134446&ref=190503&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "양승국",
       "excerpt": "몽골 자연 순례 피정을 동반하고 있습니다."
@@ -61,7 +81,7 @@
       "title": "이영근 신부님_* 오늘의 말씀(7/8) : 연중 제14주간 수요일",
       "author": "최원석",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=6&id=2134445&ref=190502&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=13&id=2134445&ref=190502&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "이영근",
       "excerpt": "* 독서 : 호세 10, 1-3."
@@ -71,7 +91,7 @@
       "title": "빠다킹 신부와 새벽을 열며(2026.07.08)",
       "author": "김중애",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134436&ref=190497&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=18&id=2134436&ref=190497&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "빠다킹",
       "excerpt": "2026년 7월 8일 연중 제14주간 수요일 독일제국 프로이센의 철혈 재상…"
@@ -81,7 +101,7 @@
       "title": "07.08.수 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-08",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=15&id=2134428&ref=190493&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=22&id=2134428&ref=190493&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "한상우",
       "excerpt": "07.08.수."
@@ -91,80 +111,10 @@
       "title": "조명연 마태오신부님(빠다킹신부님 7월 8일 연중 제14주간 수요일",
       "author": "박양석",
       "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=16&id=2134415&ref=190492&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=23&id=2134415&ref=190492&menu=4770",
       "mass_date": "2026-07-08",
       "priest": "조명연",
       "excerpt": "2026년 7월 8일 연중 제14주간 수요일 독일제국 프로이센의 철혈 재상…"
-    },
-    {
-      "id": "2134403",
-      "title": "이병우 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=18&id=2134403&ref=190489&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "이병우",
-      "excerpt": "이병우 신부님_\"수확할 것은 많은데 일꾼은 적다.\"(마태9,37ㄱ) '예수님…"
-    },
-    {
-      "id": "2134402",
-      "title": "전삼용 신부님_불평의 동의어는 책임회피다",
-      "author": "최원석",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134402&ref=190488&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "전삼용",
-      "excerpt": "우리는 하루에도 알게 모르게 평균 30번 내외의 불평을 한다고 합니다."
-    },
-    {
-      "id": "2134401",
-      "title": "양승국 신부님_기적을 불러일으키는 측은지심! |1|",
-      "author": "최원석",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=20&id=2134401&ref=190487&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "양승국",
-      "excerpt": "참교육이라는 드라마가 요즘 교육자들 사이에서는 물론 전국민적으로 큰 반향을…"
-    },
-    {
-      "id": "2134399",
-      "title": "이영근 신부님_* 오늘의 말씀(7/7) : 연중 제14주간 화요일",
-      "author": "최원석",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=22&id=2134399&ref=190485&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "이영근",
-      "excerpt": "* 독서 : 호세 8, 4-7."
-    },
-    {
-      "id": "2134389",
-      "title": "빠다킹 신부와 새벽을 열며(2026.07.07)",
-      "author": "김중애",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=27&id=2134389&ref=190480&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "빠다킹",
-      "excerpt": "2026년 7월 7일 연중 제14주간 화요일 인간과 침팬지의 지능 대결이 있…"
-    },
-    {
-      "id": "2134384",
-      "title": "07.07.화 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-07",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=30&id=2134384&ref=190477&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "한상우",
-      "excerpt": "07.07.화."
-    },
-    {
-      "id": "2134377",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 7일 연중 제14주간 화요일",
-      "author": "박양석",
-      "date": "2026-07-06",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=31&id=2134377&ref=190475&menu=4770",
-      "mass_date": "2026-07-07",
-      "priest": "조명연",
-      "excerpt": "2026년 7월 7일 연중 제14주간 화요일 인간과 침팬지의 지능 대결이 있…"
     }
   ]
 }

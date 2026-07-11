@@ -646,6 +646,10 @@
     var box = document.getElementById('muksangBox');
     var upd = document.getElementById('muksangUpdated');
 
+    // 페이지 로드 직후 정적 문구에도 동일한 픽셀 속도(초당 200px) 적용
+    var mq0 = document.getElementById('marqueeInner');
+    if(mq0){ mq0.style.animationDuration = Math.max(6, mq0.scrollWidth / 2 / 200) + 's'; }
+
     function esc(t){ var d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
 
     fetch('data/muksang.json?v=' + Math.floor(Date.now()/600000))
@@ -685,8 +689,9 @@
           items.unshift('<span>✦ <strong>신부님 묵상</strong> 오늘의 묵상 글 (자동 업데이트)</span>');
           // 끊김 없는 반복을 위해 내용을 정확히 2번 이어 붙인다 (애니메이션이 -50% 이동)
           mq.innerHTML = items.join('') + items.join('');
-          // 글이 많을수록 천천히 흐르도록 속도 조절
-          mq.style.animationDuration = Math.max(13, items.length * 3) + 's';
+          // 내용 길이와 무관하게 픽셀 속도를 일정하게 고정 (초당 200px)
+          var half = mq.scrollWidth / 2;
+          mq.style.animationDuration = Math.max(6, half / 200) + 's';
         }
       })
       .catch(function(){

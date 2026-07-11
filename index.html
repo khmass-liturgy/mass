@@ -48,6 +48,10 @@
   .marquee-inner{display:flex;gap:60px;animation:marquee 40s linear infinite;white-space:nowrap;}
   .marquee-inner span{color:var(--gold-lt);font-size:.74rem;letter-spacing:.03em;}
   .marquee-inner strong{color:var(--cream);}
+  .marquee-inner a{color:var(--gold-lt);font-size:.74rem;letter-spacing:.03em;text-decoration:none;}
+  .marquee-inner a strong{color:var(--cream);}
+  .marquee-inner a:hover{color:var(--cream);text-decoration:underline;}
+  .marquee-wrap:hover .marquee-inner{animation-play-state:paused;}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   main{max-width:1200px;margin:0 auto;padding:32px 24px 60px;}
@@ -358,7 +362,7 @@
 <div class="gold-bar"></div>
 
 <div class="marquee-wrap">
-  <div class="marquee-inner">
+  <div class="marquee-inner" id="marqueeInner">
     <span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>
     <span>✦ <strong>교하성당</strong> 공지사항 · 주보 · 갤러리</span>
     <span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>
@@ -667,6 +671,23 @@
           }).join('');
         }
         if(d.updated){ upd.textContent = '업데이트: ' + d.updated + ' (자동 수집)'; }
+
+        // ── 상단 흐르는 띠에 최신 묵상 글 반영 ──
+        var mq = document.getElementById('marqueeInner');
+        if(mq && d.posts && d.posts.length > 0){
+          var items = d.posts.slice(0, 8).map(function(p){
+            var dt = (p.mass_date || p.date || '').slice(5);
+            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">'
+              + '✦ <strong>' + esc(p.priest) + ' 신부님</strong> ' + esc(p.title)
+              + (dt ? ' <span style="opacity:.7">(' + esc(dt) + ')</span>' : '')
+              + '</a>';
+          });
+          items.unshift('<span>✦ <strong>신부님 묵상</strong> 오늘의 묵상 글 (자동 업데이트)</span>');
+          // 끊김 없는 반복을 위해 내용을 정확히 2번 이어 붙인다 (애니메이션이 -50% 이동)
+          mq.innerHTML = items.join('') + items.join('');
+          // 글이 많을수록 천천히 흐르도록 속도 조절
+          mq.style.animationDuration = Math.max(40, items.length * 9) + 's';
+        }
       })
       .catch(function(){
         box.innerHTML = '<div class="muksang-empty">묵상 목록을 불러오지 못했습니다. 아래 게시판 링크를 이용해 주세요.</div>';

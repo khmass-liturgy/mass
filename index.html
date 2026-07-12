@@ -325,9 +325,36 @@
   .muksang-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px;}
   .muksang-excerpt{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .muksang-empty{padding:18px 16px;font-size:.85rem;color:var(--muted);text-align:center;}
-  .muksang-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
-  .muksang-foot a{color:var(--navy);text-decoration:none;font-weight:600;}
-  .muksang-foot a:hover{text-decoration:underline;}
+  .muksang-foot{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:10px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
+  /* ── 묵상 게시판 전체 보기 가로형 카드 ── */
+  .muksang-all-card{
+    display:flex;align-items:center;gap:20px;
+    background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
+    border-radius:6px;padding:20px 24px;margin-bottom:14px;
+    text-decoration:none;position:relative;overflow:hidden;
+    box-shadow:0 6px 22px rgba(26,39,68,.22);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .muksang-all-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,39,68,.32);}
+  .muksang-all-card::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 92% -20%, rgba(201,168,76,.20), transparent 55%),
+               radial-gradient(circle at -5% 120%, rgba(201,168,76,.10), transparent 50%);
+    pointer-events:none;
+  }
+  .muksang-all-icon{flex-shrink:0;width:58px;height:58px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 4px 12px rgba(0,0,0,.25);z-index:1;}
+  .muksang-all-body{flex:1;min-width:0;z-index:1;}
+  .muksang-all-eyebrow{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+  .muksang-all-title{font-family:'Noto Serif KR',serif;font-size:1.15rem;font-weight:700;color:var(--cream);line-height:1.4;}
+  .muksang-all-sub{font-size:.8rem;color:#B8C0D8;margin-top:2px;}
+  .muksang-all-arrow{flex-shrink:0;font-size:1.5rem;color:var(--gold);z-index:1;transition:transform .2s;}
+  .muksang-all-card:hover .muksang-all-arrow{transform:translateX(5px);}
+  @media (max-width:600px){
+    .muksang-all-card{gap:14px;padding:16px 18px;}
+    .muksang-all-icon{width:48px;height:48px;font-size:1.4rem;}
+    .muksang-all-title{font-size:1rem;}
+    .muksang-all-arrow{display:none;}
+  }
   .muksang-help{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:40px;font-size:.82rem;}
   .muksang-help summary{cursor:pointer;padding:12px 16px;color:var(--navy);font-weight:600;list-style:none;display:flex;align-items:center;gap:6px;-webkit-tap-highlight-color:transparent;}
   .muksang-help summary::-webkit-details-marker{display:none;}
@@ -619,8 +646,20 @@
     </div>
     <div class="muksang-foot">
       <span id="muksangUpdated"></span>
-      <a id="muksangAllLink" href="https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770" target="_blank" rel="noopener">우리들의 묵상 게시판 전체 보기 →</a>
     </div>
+    <a id="muksangAllLink" class="muksang-all-card" href="https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770" target="_blank" rel="noopener">
+      <div class="muksang-all-icon">
+        <svg viewBox="0 0 24 32" width="26" height="34" aria-hidden="true">
+          <path d="M10 0 h4 v9 h9 v4 h-9 v19 h-4 v-19 h-9 v-4 h9 z" fill="#1A2744"/>
+        </svg>
+      </div>
+      <div class="muksang-all-body">
+        <div class="muksang-all-eyebrow">Good News · Catholic Board</div>
+        <div class="muksang-all-title">우리들의 묵상 게시판 전체 보기</div>
+        <div class="muksang-all-sub">가톨릭 굿뉴스 게시판에서 지난 묵상 글 전체를 확인하세요</div>
+      </div>
+      <div class="muksang-all-arrow">→</div>
+    </a>
     <details class="muksang-help">
       <summary>📖 새 창이 작게 보이나요? 읽기 모드 자동 켜기 (한 번만 설정)</summary>
       <div class="muksang-help-body">

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12 06:39",
+  "updated": "2026-07-12 10:43",
   "cutoff": "2026-07-11",
   "days": 2,
   "names": [
@@ -14,14 +14,54 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 9,
+  "count": 13,
   "posts": [
+    {
+      "id": "2134605",
+      "title": "전삼용 신부님_마음이 정해지면 머리와 몸은 봉사한다",
+      "author": "최원석",
+      "date": "2026-07-12",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=1&id=2134605&ref=190575&menu=4770",
+      "mass_date": "2026-07-12",
+      "priest": "전삼용",
+      "excerpt": "살다 보면 말이 전혀 통하지 않는 사람을 만나게 됩니다."
+    },
+    {
+      "id": "2134603",
+      "title": "양승국 신부님_지금이라도 이렇게 당신을 볼 수 있게 해주셔서 진심으로  ...",
+      "author": "최원석",
+      "date": "2026-07-12",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134603&ref=190573&menu=4770",
+      "mass_date": "2026-07-12",
+      "priest": "양승국",
+      "excerpt": "몽골 자연 피정 6일째, 드디어 몽골의 깊숙한 내륙 탐방을 마치고 수도 울란…"
+    },
+    {
+      "id": "2134602",
+      "title": "이영근 신부님_<'좋은 땅'의 사람은 어떤 사람일까요?>",
+      "author": "최원석",
+      "date": "2026-07-12",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=4&id=2134602&ref=190572&menu=4770",
+      "mass_date": "2026-07-12",
+      "priest": "이영근",
+      "excerpt": "<'좋은 땅'의 사람은 어떤 사람일까요?> 오늘 말씀전례는 ‘말씀이 있는 존…"
+    },
+    {
+      "id": "2134597",
+      "title": "빠다킹 신부와 새벽을 열며(2026.07.12)",
+      "author": "김중애",
+      "date": "2026-07-12",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=9&id=2134597&ref=190567&menu=4770",
+      "mass_date": "2026-07-12",
+      "priest": "빠다킹",
+      "excerpt": "2026년 7월 12일 연중 제15주일 어느 건축가가 지인의 배려로 박물관…"
+    },
     {
       "id": "2134592",
       "title": "07.12.연중 제15주일 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-12",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=1&id=2134592&ref=190565&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134592&ref=190565&menu=4770",
       "mass_date": "2026-07-12",
       "priest": "한상우",
       "excerpt": "07.12.연중 제15주일."
@@ -31,7 +71,7 @@
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 12일 연중 제15주일",
       "author": "박양석",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=2&id=2134586&ref=190564&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=12&id=2134586&ref=190564&menu=4770",
       "mass_date": "2026-07-12",
       "priest": "조명연",
       "excerpt": "2026년 7월 12일 연중 제15주일 어느 건축가가 지인의 배려로 박물관…"
@@ -41,7 +81,7 @@
       "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=5&id=2134580&ref=190561&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=15&id=2134580&ref=190561&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "이병우",
       "excerpt": "이병우 신부님_성 베네딕토 아빠스 기념일 ⠀ 마태오 복음 10장 24-33절…"
@@ -51,7 +91,7 @@
       "title": "이영근 신부님_* 오늘의 말씀(7/11) : 성 베네딕도 아빠스 기념일",
       "author": "최원석",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=7&id=2134578&ref=190559&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=17&id=2134578&ref=190559&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "이영근",
       "excerpt": "* 독서 : 이사 6, 1-8 * 복음 : 마태 10, 24-33 24 제자…"
@@ -61,7 +101,7 @@
       "title": "양승국 신부님_ 하느님과 더 가까이 살고 더 긴밀히 소통하기 위하여!",
       "author": "최원석",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=8&id=2134577&ref=190558&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=18&id=2134577&ref=190558&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "양승국",
       "excerpt": "많은 몽골 주민들이 신봉하고 있는 라마 불교 사원엘 다녀왔습니다."
@@ -71,7 +111,7 @@
       "title": "전삼용 신부님_스승이 없는 사람은 나침반 없는 선장과 같다",
       "author": "최원석",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=9&id=2134576&ref=190557&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134576&ref=190557&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "전삼용",
       "excerpt": "우리가 아무에게도 영향을 미치지 않고 살 수 있을까요?"
@@ -81,7 +121,7 @@
       "title": "07.11.토.성 베네딕토 아빠스 기념일 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=17&id=2134554&ref=190549&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=26&id=2134554&ref=190549&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "한상우",
       "excerpt": "07.11.토.성 베네딕토 아빠스 기념일."
@@ -91,7 +131,7 @@
       "title": "빠다킹 신부와 새벽을 열며(2026.07.10)",
       "author": "김중애",
       "date": "2026-07-11",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134552&ref=190547&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=28&id=2134552&ref=190547&menu=4770",
       "mass_date": "2026-07-10",
       "priest": "빠다킹",
       "excerpt": "2026년 7월 11일 성 베네딕토 아빠스 기념일 군대에서 단기 하사 교육받…"
@@ -101,7 +141,7 @@
       "title": "조명연 마태오신부님(빠다킹신부님)  7월 11일 토요일 성 베네딕토 아 ...",
       "author": "박양석",
       "date": "2026-07-10",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=21&id=2134543&ref=190545&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=30&id=2134543&ref=190545&menu=4770",
       "mass_date": "2026-07-11",
       "priest": "조명연",
       "excerpt": "2026년 7월 11일 성 베네딕토 아빠스 기념일 군대에서 단기 하사 교육받…"

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>축일 관리 ✚ 세례명 축일 달력</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%A0%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#5B1F2E; --wine-dark:#3E1520; --gold:#B98A2F; --gold-soft:#E4CE96;
+  --ink:#22303F; --muted:#6B7A8C; --bg:#F4F3F1; --card:#FFF; --line:#E2DDD8;
+  --ok:#2E7D4F; --danger:#A3352F;
+  --serif:'Noto Serif KR',serif; --sans:'Noto Sans KR',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:100px}
+
+header{background:linear-gradient(160deg,var(--wine-dark),var(--wine));color:#fff;padding:22px 18px;text-align:center;position:relative}
+header h1{font-family:var(--serif);font-size:21px}
+header p{font-size:12.5px;color:#E3C9CF;margin-top:4px}
+header .back{position:absolute;top:14px;left:14px;font-size:12px;color:#E3C9CF;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+
+main{max-width:720px;margin:0 auto;padding:16px}
+
+/* ── 토큰/저장소 패널 ── */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.panel .lbl{font-size:12px;font-weight:700;color:var(--wine);letter-spacing:1px;margin-bottom:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row input{flex:1;min-width:180px;padding:10px 12px;font-size:14px;border:1.5px solid var(--line);border-radius:9px;outline:none;font-family:var(--sans)}
+.row input:focus{border-color:var(--wine)}
+button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font-size:13.5px;font-weight:500}
+.btn-load{background:var(--wine);color:#fff;padding:10px 16px}
+.hint{font-size:11.5px;color:var(--muted);margin-top:8px;word-break:keep-all}
+.hint a{color:var(--wine)}
+.status{font-size:12.5px;margin-top:8px;display:none}
+.status.show{display:block}
+.status.ok{color:var(--ok)} .status.err{color:var(--danger)} .status.busy{color:var(--muted)}
+
+/* ── 도구줄 ── */
+.tools{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.tools input{flex:1;min-width:150px;padding:10px 12px;font-size:14px;border:1.5px solid var(--line);border-radius:9px;outline:none;background:var(--card)}
+.btn-add{background:var(--gold);color:#fff;padding:10px 16px;font-weight:700}
+.stat{font-size:12px;color:var(--muted);width:100%}
+.stat b{color:var(--wine)}
+
+/* ── 목록 ── */
+.list{display:flex;flex-direction:column;gap:8px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:11px 13px;display:flex;gap:11px;align-items:center}
+.item.new{border-color:var(--ok)}
+.item .d{flex:none;font-family:var(--serif);font-weight:700;color:var(--wine);font-size:14px;width:48px}
+.item .b{flex:1;min-width:0}
+.item .n{font-weight:700;font-size:14.5px;word-break:keep-all}
+.item .n .g{font-size:10.5px;font-weight:400;color:#fff;border-radius:7px;padding:1px 6px;margin-left:5px;vertical-align:1px}
+.g.남{background:#5B7BA6}.g.여{background:#B0708A}.g.공통{background:#8B9A6B}
+.item .t{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .acts{flex:none;display:flex;gap:5px}
+.mini{padding:7px 10px;font-size:12px;border-radius:8px}
+.mini.edit{background:#EEF3FA;color:#3D5B85}
+.mini.del{background:#FBEAE8;color:var(--danger)}
+.empty{text-align:center;color:var(--muted);padding:36px 10px;font-size:13.5px}
+
+/* ── 편집 폼 (모달) ── */
+.overlay{position:fixed;inset:0;background:rgba(30,20,25,.5);display:none;align-items:flex-end;justify-content:center;z-index:100}
+.overlay.show{display:flex}
+.form{background:#fff;border-radius:16px 16px 0 0;padding:20px 18px 26px;width:100%;max-width:720px;max-height:88vh;overflow-y:auto}
+.form h2{font-family:var(--serif);font-size:17px;color:var(--wine);margin-bottom:14px}
+.f{margin-bottom:12px}
+.f label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.f input,.f select,.f textarea{width:100%;padding:11px 12px;font-size:15px;border:1.5px solid var(--line);border-radius:9px;outline:none;font-family:var(--sans)}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--wine)}
+.f .err-msg{font-size:11.5px;color:var(--danger);margin-top:3px;display:none}
+.f.bad input{border-color:var(--danger)}
+.f.bad .err-msg{display:block}
+.f2{display:flex;gap:10px}.f2 .f{flex:1}
+.form .btns{display:flex;gap:8px;margin-top:16px}
+.btn-save{flex:1;background:var(--wine);color:#fff;padding:13px;font-size:15px;font-weight:700}
+.btn-cancel{background:#EFEBE7;color:var(--muted);padding:13px 18px;font-size:14px}
+
+/* ── 하단 커밋 바 ── */
+.commitbar{position:fixed;left:0;right:0;bottom:0;background:var(--wine-dark);color:#fff;padding:12px 16px;display:none;align-items:center;gap:12px;z-index:50;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
+.commitbar.show{display:flex}
+.commitbar .txt{flex:1;font-size:13px}
+.commitbar .txt b{color:var(--gold-soft)}
+.btn-commit{background:var(--gold);color:#fff;padding:11px 18px;font-weight:700;font-size:14px}
+.btn-discard{background:transparent;color:#D9BEC5;border:1px solid rgba(255,255,255,.3);padding:11px 14px;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="feastday.html">← 축일 달력</a>
+  <h1>🛠 축일 관리</h1>
+  <p>세례명 축일을 추가·수정·삭제하고 GitHub에 바로 저장합니다</p>
+</header>
+
+<main>
+  <div class="panel">
+    <div class="lbl">🔑 GITHUB 연결</div>
+    <div class="row">
+      <input type="password" id="token" placeholder="GitHub Token (ghp_... 또는 github_pat_...)" autocomplete="off">
+      <button class="btn-load" id="btnLoad">데이터 불러오기</button>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="hint">
+      토큰은 이 화면에서만 사용되고 어디에도 저장되지 않습니다.
+      Fine-grained 토큰은 <b>khmass-liturgy/mass</b> 저장소에 <b>Contents: Read and write</b> 권한, Classic 토큰은 <b>repo</b> 권한이 필요합니다.
+    </div>
+  </div>
+
+  <div class="tools" id="tools" style="display:none">
+    <input type="search" id="q" placeholder="이름·명칭 검색" autocomplete="off">
+    <button class="btn-add" id="btnAdd">＋ 축일 추가</button>
+    <div class="stat" id="stat"></div>
+  </div>
+
+  <div class="list" id="list"></div>
+</main>
+
+<div class="commitbar" id="commitbar">
+  <div class="txt">저장 안 된 변경 <b id="dirtyN">0</b>건</div>
+  <button class="btn-discard" id="btnDiscard">되돌리기</button>
+  <button class="btn-commit" id="btnCommit">☁ GitHub에 저장</button>
+</div>
+
+<!-- 편집 모달 -->
+<div class="overlay" id="overlay">
+  <div class="form">
+    <h2 id="formTitle">축일 추가</h2>
+    <div class="f2">
+      <div class="f" id="fDate">
+        <label>축일 날짜 (MM-DD)</label>
+        <input id="inDate" placeholder="예: 07-05" inputmode="numeric" maxlength="5">
+        <div class="err-msg">MM-DD 형식으로 입력하세요 (예: 03-19)</div>
+      </div>
+      <div class="f">
+        <label>구분</label>
+        <select id="inGender">
+          <option value="남">남자 세례명</option>
+          <option value="여">여자 세례명</option>
+          <option value="공통">공통</option>
+        </select>
+      </div>
+    </div>
+    <div class="f" id="fName">
+      <label>세례명</label>
+      <input id="inName" placeholder="예: 김대건 안드레아">
+      <div class="err-msg">세례명을 입력하세요</div>
+    </div>
+    <div class="f" id="fTitle">
+      <label>정식 명칭</label>
+      <input id="inTitle" placeholder="예: 성 김대건 안드레아 사제 순교자 대축일">
+      <div class="err-msg">정식 명칭을 입력하세요</div>
+    </div>
+    <div class="f">
+      <label>참고 (선택)</label>
+      <textarea id="inNote" rows="2" placeholder="선택 안내나 참고 사항"></textarea>
+    </div>
+    <div class="btns">
+      <button class="btn-cancel" id="btnCancel">취소</button>
+      <button class="btn-save" id="btnFormSave">확인</button>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ── 저장소 설정 ─────────────────── */
+const OWNER = 'khmass-liturgy', REPO = 'mass', PATH = 'feast_days.json', BRANCH = 'main';
+const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + PATH;
+
+/* ── 상태 ────────────────────────── */
+let meta = null;        // JSON의 meta 부분 보존
+let saints = [];        // 현재 편집본
+let baseline = '[]';    // 마지막 저장 시점 스냅샷(JSON 문자열)
+let sha = null;         // GitHub 파일 sha (커밋에 필요)
+let editIdx = -1;       // 수정 중인 인덱스, -1이면 추가
+let query = '';
+
+const $ = id => document.getElementById(id);
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function setStatus(msg, cls){
+  const s = $('status');
+  s.textContent = msg; s.className = 'status show ' + cls;
+}
+
+/* ── Base64 (UTF-8 안전) ─────────── */
+function utf8ToB64(str){
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 8192)
+    bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+  return btoa(bin);
+}
+function b64ToUtf8(b64){
+  const bin = atob(b64.replace(/\s/g, ''));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+
+/* ── 불러오기 ────────────────────── */
+async function load(){
+  const token = $('token').value.trim();
+  if (!token){ setStatus('❌ 토큰을 입력하세요', 'err'); return; }
+  setStatus('불러오는 중…', 'busy');
+  try {
+    const res = await fetch(API + '?ref=' + BRANCH, {
+      headers: {
+        'Authorization': 'token ' + token,
+        'Accept': 'application/vnd.github+json'
+      }
+    });
+    if (res.status === 401) throw new Error('토큰이 유효하지 않습니다');
+    if (res.status === 404) throw new Error('feast_days.json 파일이 저장소에 없습니다. 먼저 파일을 업로드하세요');
+    if (!res.ok) throw new Error('불러오기 실패 (' + res.status + ')');
+    const data = await res.json();
+    sha = data.sha;
+    const parsed = JSON.parse(b64ToUtf8(data.content));
+    meta = parsed.meta || null;
+    saints = (parsed.saints || parsed).slice();
+    baseline = JSON.stringify(saints);
+    setStatus('✅ 불러오기 완료 — 축일 ' + saints.length + '건', 'ok');
+    $('tools').style.display = 'flex';
+    render();
+  } catch(e) {
+    setStatus('❌ ' + e.message, 'err');
+  }
+}
+
+/* ── 목록 렌더 ───────────────────── */
+function isDirty(){ return JSON.stringify(saints) !== baseline; }
+function dirtyCount(){
+  try {
+    const base = JSON.parse(baseline);
+    const key = s => s.date + '|' + s.name + '|' + s.gender + '|' + s.title + '|' + (s.note || '');
+    const a = new Set(base.map(key)), b = new Set(saints.map(key));
+    let n = 0;
+    b.forEach(k => { if (!a.has(k)) n++; });
+    a.forEach(k => { if (!b.has(k)) n++; });
+    return n;
+  } catch(e){ return isDirty() ? 1 : 0; }
+}
+
+function render(){
+  const q = query.replace(/\s+/g, '').toLowerCase();
+  const view = saints
+    .map((s, i) => ({ s, i }))
+    .filter(x => !q || (x.s.name + x.s.title).replace(/\s+/g,'').toLowerCase().includes(q))
+    .sort((a, b) => a.s.date.localeCompare(b.s.date) || a.s.name.localeCompare(b.s.name));
+
+  $('stat').innerHTML = '전체 <b>' + saints.length + '</b>건' +
+    (q ? ' · 검색 결과 <b>' + view.length + '</b>건' : '');
+
+  $('list').innerHTML = view.length ? view.map(x => {
+    const s = x.s;
+    return '<div class="item">' +
+      '<div class="d">' + s.date + '</div>' +
+      '<div class="b">' +
+        '<div class="n">' + esc(s.name) + '<span class="g ' + s.gender + '">' + s.gender + '</span></div>' +
+        '<div class="t">' + esc(s.title) + '</div>' +
+      '</div>' +
+      '<div class="acts">' +
+        '<button class="mini edit" data-i="' + x.i + '" data-act="edit">수정</button>' +
+        '<button class="mini del" data-i="' + x.i + '" data-act="del">삭제</button>' +
+      '</div>' +
+    '</div>';
+  }).join('') : '<div class="empty">표시할 축일이 없습니다</div>';
+
+  const n = dirtyCount();
+  $('dirtyN').textContent = n;
+  $('commitbar').classList.toggle('show', n > 0);
+}
+
+/* ── 추가/수정 폼 ────────────────── */
+function openForm(idx){
+  editIdx = idx;
+  const s = idx >= 0 ? saints[idx] : { date:'', name:'', gender:'남', title:'', note:'' };
+  $('formTitle').textContent = idx >= 0 ? '축일 수정' : '축일 추가';
+  $('inDate').value = s.date; $('inName').value = s.name;
+  $('inGender').value = s.gender; $('inTitle').value = s.title;
+  $('inNote').value = s.note || '';
+  ['fDate','fName','fTitle'].forEach(id => $(id).classList.remove('bad'));
+  $('overlay').classList.add('show');
+  $('inDate').focus();
+}
+function closeForm(){ $('overlay').classList.remove('show'); }
+
+function saveForm(){
+  const date = $('inDate').value.trim();
+  const name = $('inName').value.trim();
+  const title = $('inTitle').value.trim();
+  const note = $('inNote').value.trim();
+  const gender = $('inGender').value;
+
+  let ok = true;
+  const dateOk = /^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/.test(date);
+  $('fDate').classList.toggle('bad', !dateOk); if (!dateOk) ok = false;
+  $('fName').classList.toggle('bad', !name); if (!name) ok = false;
+  $('fTitle').classList.toggle('bad', !title); if (!title) ok = false;
+  if (!ok) return;
+
+  const dup = saints.findIndex((s, i) => i !== editIdx && s.date === date && s.name === name);
+  if (dup >= 0 && !confirm('같은 날짜(' + date + ')에 같은 이름(' + name + ')이 이미 있습니다.\n그래도 저장할까요?')) return;
+
+  const entry = { date, name, gender, title };
+  if (note) entry.note = note;
+  if (editIdx >= 0) saints[editIdx] = entry; else saints.push(entry);
+  closeForm();
+  render();
+}
+
+/* ── GitHub 커밋 ─────────────────── */
+async function commit(){
+  const token = $('token').value.trim();
+  if (!token){ setStatus('❌ 토큰을 입력하세요', 'err'); return; }
+  if (!sha){ setStatus('❌ 먼저 [데이터 불러오기]를 눌러주세요', 'err'); return; }
+  const n = dirtyCount();
+  if (!n) return;
+
+  const btn = $('btnCommit');
+  btn.disabled = true; btn.textContent = '저장 중…';
+  try {
+    const sorted = saints.slice().sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name));
+    const out = { meta: meta || {}, saints: sorted };
+    out.meta.updated = new Date().toISOString().slice(0, 10);
+    const body = {
+      message: '축일 데이터 수정 (' + n + '건 변경) - 축일 관리 페이지',
+      content: utf8ToB64(JSON.stringify(out, null, 2)),
+      sha: sha,
+      branch: BRANCH
+    };
+    const res = await fetch(API, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    if (res.status === 409) throw new Error('다른 곳에서 파일이 수정되었습니다. [데이터 불러오기]로 새로 받은 뒤 다시 시도하세요');
+    if (!res.ok) throw new Error(data.message || '저장 실패 (' + res.status + ')');
+    sha = data.content.sha;
+    saints = sorted;
+    baseline = JSON.stringify(saints);
+    render();
+    setStatus('✅ GitHub에 저장 완료 — 1~2분 뒤 사이트에 반영됩니다', 'ok');
+  } catch(e) {
+    setStatus('❌ ' + e.message, 'err');
+  } finally {
+    btn.disabled = false; btn.textContent = '☁ GitHub에 저장';
+  }
+}
+
+/* ── 이벤트 ──────────────────────── */
+$('btnLoad').addEventListener('click', load);
+$('token').addEventListener('keydown', e => { if (e.key === 'Enter') load(); });
+$('q').addEventListener('input', e => { query = e.target.value; render(); });
+$('btnAdd').addEventListener('click', () => openForm(-1));
+$('list').addEventListener('click', e => {
+  const btn = e.target.closest('[data-act]'); if (!btn) return;
+  const i = parseInt(btn.dataset.i, 10);
+  if (btn.dataset.act === 'edit') openForm(i);
+  else if (btn.dataset.act === 'del'){
+    const s = saints[i];
+    if (confirm('[' + s.date + '] ' + s.name + ' 축일을 삭제할까요?')){
+      saints.splice(i, 1); render();
+    }
+  }
+});
+$('btnFormSave').addEventListener('click', saveForm);
+$('btnCancel').addEventListener('click', closeForm);
+$('overlay').addEventListener('click', e => { if (e.target === $('overlay')) closeForm(); });
+$('btnCommit').addEventListener('click', commit);
+$('btnDiscard').addEventListener('click', () => {
+  if (confirm('저장하지 않은 변경을 모두 되돌릴까요?')){
+    saints = JSON.parse(baseline); render();
+  }
+});
+$('inDate').addEventListener('input', e => {  // 0705 → 07-05 자동 하이픈
+  let v = e.target.value.replace(/[^\d]/g, '');
+  if (v.length > 2) v = v.slice(0, 2) + '-' + v.slice(2, 4);
+  e.target.value = v;
+});
+window.addEventListener('beforeunload', e => {
+  if (dirtyCount() > 0){ e.preventDefault(); e.returnValue = ''; }
+});
+</script>
+</body>
+</html>

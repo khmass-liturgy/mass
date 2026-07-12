@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세례명 축일 달력 ✚ 내 축일을 캘린더에</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marian:#274B77;        /* 깊은 마리안 블루 */
+  --marian-dark:#1B3557;
+  --gold:#B98A2F;          /* 전례 금색 */
+  --gold-soft:#E4CE96;
+  --ink:#22303F;
+  --muted:#6B7A8C;
+  --bg:#F4F6F9;
+  --card:#FFFFFF;
+  --line:#DDE4EC;
+  --danger:#A3352F;
+  --radius:14px;
+  --serif:'Noto Serif KR', serif;
+  --sans:'Noto Sans KR', -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:90px}
+a{color:var(--marian)}
+
+/* ── 헤더 ─────────────────────────── */
+header{background:linear-gradient(160deg,var(--marian-dark),var(--marian));color:#fff;padding:26px 18px 70px;text-align:center;position:relative}
+header .cross{font-size:15px;letter-spacing:8px;color:var(--gold-soft);margin-bottom:8px}
+header h1{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:1px}
+header p{font-size:13px;color:#C7D4E4;margin-top:6px}
+header .home{position:absolute;top:14px;right:14px;font-size:12px;color:#C7D4E4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+
+/* ── 오늘의 축일 메달리온 ─────────── */
+.today-wrap{max-width:680px;margin:-52px auto 0;padding:0 16px}
+.today{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 6px 20px rgba(30,53,87,.10);display:flex;align-items:center;gap:16px;padding:16px 18px}
+.medallion{flex:none;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#FFF8E8,#F3E3BE);border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#7A5A14}
+.medallion b{font-family:var(--serif);font-size:22px;line-height:1}
+.medallion span{font-size:11px;margin-top:2px}
+.today .info{min-width:0}
+.today .label{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:2px}
+.today .names{font-family:var(--serif);font-weight:600;font-size:16px;margin-top:2px;word-break:keep-all}
+.today .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+/* ── 검색/필터 ────────────────────── */
+main{max-width:680px;margin:0 auto;padding:18px 16px}
+.searchbox{position:relative}
+.searchbox input{width:100%;padding:13px 44px 13px 16px;font-size:16px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--card);outline:none}
+.searchbox input:focus{border-color:var(--marian)}
+.searchbox .icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:17px;color:var(--muted)}
+.chips{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:20px;padding:6px 15px;font-size:13.5px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+.chip.on{background:var(--marian);border-color:var(--marian);color:#fff;font-weight:500}
+
+/* ── 월 리본 ──────────────────────── */
+.months{display:flex;gap:6px;overflow-x:auto;padding:10px 2px 6px;scrollbar-width:none}
+.months::-webkit-scrollbar{display:none}
+.mo{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:7px 13px;font-size:13.5px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+.mo.on{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:700}
+
+/* ── 결과 리스트 ──────────────────── */
+.count{font-size:12.5px;color:var(--muted);margin:10px 2px 8px}
+.list{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:flex;gap:12px;align-items:flex-start}
+.card.checked{border-color:var(--marian);box-shadow:0 0 0 1px var(--marian)}
+.datebadge{flex:none;width:52px;text-align:center;background:#EEF3FA;border:1px solid #D6E2F2;border-radius:10px;padding:6px 0;color:var(--marian)}
+.datebadge b{font-family:var(--serif);font-size:17px;display:block;line-height:1.1}
+.datebadge span{font-size:10.5px;color:#5F7AA0}
+.card .body{flex:1;min-width:0}
+.card .name{font-family:var(--serif);font-weight:600;font-size:16.5px;word-break:keep-all}
+.card .name .g{font-size:11px;font-weight:400;font-family:var(--sans);color:#fff;border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.g.m{background:#5B7BA6}.g.f{background:#B0708A}.g.c{background:#8B9A6B}
+.card .title{font-size:13px;color:var(--muted);margin-top:2px;word-break:keep-all}
+.card .note{font-size:12px;color:#8A6D2B;background:#FBF5E6;border-radius:8px;padding:5px 9px;margin-top:7px;word-break:keep-all}
+.card .actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
+.btn{border:none;border-radius:9px;padding:7px 13px;font-size:12.5px;cursor:pointer;font-family:var(--sans);font-weight:500;display:inline-flex;align-items:center;gap:5px;text-decoration:none}
+.btn.ics{background:var(--marian);color:#fff}
+.btn.gcal{background:#fff;color:var(--marian);border:1.5px solid var(--marian)}
+.pick{flex:none;width:24px;height:24px;border:2px solid var(--line);border-radius:7px;cursor:pointer;background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;margin-top:2px}
+.pick.on{background:var(--marian);border-color:var(--marian)}
+.empty{text-align:center;color:var(--muted);padding:40px 10px;font-size:14px}
+.empty b{display:block;font-size:30px;margin-bottom:8px}
+
+/* ── 선택 바 ──────────────────────── */
+.basket{position:fixed;left:0;right:0;bottom:0;background:var(--marian-dark);color:#fff;padding:12px 16px;display:none;align-items:center;gap:12px;box-shadow:0 -4px 16px rgba(0,0,0,.18);z-index:50}
+.basket.show{display:flex}
+.basket .txt{flex:1;font-size:13.5px}
+.basket .txt b{color:var(--gold-soft)}
+.basket button{border:none;border-radius:10px;padding:10px 16px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:var(--sans)}
+.basket .dl{background:var(--gold);color:#fff}
+.basket .clear{background:transparent;color:#B9C7D9;border:1px solid rgba(255,255,255,.3)}
+
+footer{text-align:center;font-size:11.5px;color:var(--muted);padding:26px 16px 10px}
+@media (prefers-reduced-motion:no-preference){
+  .card{transition:box-shadow .15s,border-color .15s}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
+  <div class="cross">✚ ✚ ✚</div>
+  <h1>세례명 축일 달력</h1>
+  <p>내 세례명의 축일을 찾아 매년 알림으로 받아보세요</p>
+</header>
+
+<div class="today-wrap">
+  <div class="today">
+    <div class="medallion"><b id="todayDay">--</b><span id="todayMon">--월</span></div>
+    <div class="info">
+      <div class="label">오늘의 축일</div>
+      <div class="names" id="todayNames">불러오는 중…</div>
+      <div class="sub" id="todaySub"></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="searchbox">
+    <input type="search" id="q" placeholder="세례명을 입력하세요 (예: 데레사, 베드로)" autocomplete="off">
+    <span class="icon">🔍</span>
+  </div>
+
+  <div class="chips" id="genderChips">
+    <button class="chip on" data-g="">전체</button>
+    <button class="chip" data-g="남">남자 세례명</button>
+    <button class="chip" data-g="여">여자 세례명</button>
+  </div>
+
+  <div class="months" id="months"></div>
+
+  <div class="count" id="count"></div>
+  <div class="list" id="list"></div>
+
+  <footer>
+    축일은 로마 보편 전례력과 한국 교회 전례력을 기준으로 하며, 일부는 전통 축일입니다.<br>
+    ⬇ .ics 파일은 아이폰·안드로이드·아웃룩 캘린더에서 열면 매년 반복 일정으로 등록됩니다.<br><a href="feastday-admin.html" style="color:#9AA7B5;text-decoration:none">🛠 축일 관리</a>
+  </footer>
+</main>
+
+<div class="basket" id="basket">
+  <div class="txt">선택한 축일 <b id="basketN">0</b>개</div>
+  <button class="clear" id="basketClear">비우기</button>
+  <button class="dl" id="basketDl">⬇ 캘린더 파일 받기</button>
+</div>
+
+<script>
+'use strict';
+let SAINTS = [];
+
+/* ── 상태 ─────────────────────────── */
+let query = '', gender = '', month = 0; // month 0 = 전체
+const selected = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem('feastSelection') || '[]');
+  saved.forEach(k => selected.add(k));
+} catch(e) {}
+
+const keyOf = s => s.date + '|' + s.name;
+const norm = t => (t || '').replace(/\s+/g, '').toLowerCase();
+
+/* ── 오늘의 축일 ──────────────────── */
+function renderToday(){
+  const now = new Date();
+  const mm = String(now.getMonth()+1).padStart(2,'0');
+  const dd = String(now.getDate()).padStart(2,'0');
+  document.getElementById('todayDay').textContent = now.getDate();
+  document.getElementById('todayMon').textContent = (now.getMonth()+1) + '월';
+  const hits = SAINTS.filter(s => s.date === mm + '-' + dd);
+  const namesEl = document.getElementById('todayNames');
+  const subEl = document.getElementById('todaySub');
+  if (hits.length){
+    namesEl.textContent = hits.map(s => s.name).join(' · ');
+    subEl.textContent = hits[0].title;
+  } else {
+    namesEl.textContent = '오늘 축일인 세례명이 없습니다';
+    subEl.textContent = '검색으로 내 세례명의 축일을 찾아보세요';
+  }
+}
+
+/* ── 필터/렌더 ────────────────────── */
+function filtered(){
+  const q = norm(query);
+  return SAINTS.filter(s => {
+    if (gender && s.gender !== gender && s.gender !== '공통') return false;
+    if (month && parseInt(s.date.slice(0,2),10) !== month) return false;
+    if (q && !(norm(s.name).includes(q) || norm(s.title).includes(q))) return false;
+    return true;
+  }).sort((a,b) => a.date.localeCompare(b.date));
+}
+
+function render(){
+  const items = filtered();
+  document.getElementById('count').textContent =
+    items.length ? items.length + '개의 축일' : '';
+  const list = document.getElementById('list');
+  if (!items.length){
+    list.innerHTML = '<div class="empty"><b>🕊️</b>검색 결과가 없습니다.<br>다른 표기(예: 글라라/클라라)로 검색해 보세요.</div>';
+    return;
+  }
+  list.innerHTML = items.map(s => {
+    const k = keyOf(s);
+    const on = selected.has(k);
+    const [m, d] = s.date.split('-');
+    const gCls = s.gender === '남' ? 'm' : (s.gender === '여' ? 'f' : 'c');
+    return '<div class="card' + (on ? ' checked' : '') + '" data-key="' + esc(k) + '">' +
+      '<div class="datebadge"><b>' + Number(d) + '</b><span>' + Number(m) + '월</span></div>' +
+      '<div class="body">' +
+        '<div class="name">' + esc(s.name) + '<span class="g ' + gCls + '">' + s.gender + '</span></div>' +
+        '<div class="title">' + esc(s.title) + '</div>' +
+        (s.note ? '<div class="note">💡 ' + esc(s.note) + '</div>' : '') +
+        '<div class="actions">' +
+          '<button class="btn ics" data-act="ics">⬇ .ics 캘린더</button>' +
+          '<a class="btn gcal" data-act="gcal" href="' + gcalUrl(s) + '" target="_blank" rel="noopener">📅 구글 캘린더</a>' +
+        '</div>' +
+      '</div>' +
+      '<button class="pick' + (on ? ' on' : '') + '" data-act="pick" aria-label="선택">' + (on ? '✓' : '') + '</button>' +
+    '</div>';
+  }).join('');
+  renderBasket();
+}
+
+function esc(t){
+  return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── ICS 생성 ─────────────────────── */
+function nextDate(mmdd){
+  const now = new Date();
+  const [m, d] = mmdd.split('-').map(Number);
+  let y = now.getFullYear();
+  const cand = new Date(y, m-1, d);
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  if (cand < today) y++;
+  return y + mmdd.replace('-','');   // YYYYMMDD
+}
+function plusOneDay(ymd){
+  const y = +ymd.slice(0,4), m = +ymd.slice(4,6), d = +ymd.slice(6,8);
+  const t = new Date(y, m-1, d+1);
+  return t.getFullYear() + String(t.getMonth()+1).padStart(2,'0') + String(t.getDate()).padStart(2,'0');
+}
+function icsEsc(t){
+  return String(t).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');
+}
+function vevent(s){
+  const start = nextDate(s.date);
+  const end = plusOneDay(start);
+  const stamp = new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');
+  const uid = s.date + '-' + encodeURIComponent(s.name).replace(/%/g,'') + '@khmass-liturgy.github.io';
+  const summary = '⛪ 축일: ' + s.name;
+  const desc = s.title + (s.note ? '\n' + s.note : '');
+  return [
+    'BEGIN:VEVENT',
+    'UID:' + uid,
+    'DTSTAMP:' + stamp,
+    'DTSTART;VALUE=DATE:' + start,
+    'DTEND;VALUE=DATE:' + end,
+    'RRULE:FREQ=YEARLY',
+    'SUMMARY:' + icsEsc(summary),
+    'DESCRIPTION:' + icsEsc(desc),
+    'BEGIN:VALARM',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:' + icsEsc('내일은 ' + s.name + ' 축일입니다'),
+    'TRIGGER:-PT15H',
+    'END:VALARM',
+    'BEGIN:VALARM',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:' + icsEsc('오늘은 ' + s.name + ' 축일입니다 ⛪'),
+    'TRIGGER:PT9H',
+    'END:VALARM',
+    'END:VEVENT'
+  ].join('\r\n');
+}
+function buildIcs(items){
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//khmass-liturgy//feastday//KO',
+    'CALSCALE:GREGORIAN',
+    'X-WR-CALNAME:세례명 축일',
+    items.map(vevent).join('\r\n'),
+    'END:VCALENDAR'
+  ].join('\r\n');
+}
+function downloadIcs(items, fname){
+  const blob = new Blob([buildIcs(items)], {type:'text/calendar;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = fname;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 500);
+}
+
+/* ── 구글 캘린더 링크 ─────────────── */
+function gcalUrl(s){
+  const start = nextDate(s.date);
+  const p = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: '⛪ 축일: ' + s.name,
+    dates: start + '/' + plusOneDay(start),
+    details: s.title + (s.note ? '\n' + s.note : ''),
+    recur: 'RRULE:FREQ=YEARLY'
+  });
+  return 'https://calendar.google.com/calendar/render?' + p.toString();
+}
+
+/* ── 선택 바 ──────────────────────── */
+function renderBasket(){
+  const b = document.getElementById('basket');
+  document.getElementById('basketN').textContent = selected.size;
+  b.classList.toggle('show', selected.size > 0);
+  try { localStorage.setItem('feastSelection', JSON.stringify([...selected])); } catch(e) {}
+}
+
+/* ── 이벤트 ───────────────────────── */
+document.getElementById('q').addEventListener('input', e => {
+  query = e.target.value; render();
+});
+document.getElementById('genderChips').addEventListener('click', e => {
+  const btn = e.target.closest('.chip'); if (!btn) return;
+  gender = btn.dataset.g;
+  document.querySelectorAll('#genderChips .chip').forEach(c => c.classList.toggle('on', c === btn));
+  render();
+});
+const moWrap = document.getElementById('months');
+moWrap.innerHTML = '<button class="mo on" data-m="0">전체</button>' +
+  Array.from({length:12}, (_,i) => '<button class="mo" data-m="' + (i+1) + '">' + (i+1) + '월</button>').join('');
+moWrap.addEventListener('click', e => {
+  const btn = e.target.closest('.mo'); if (!btn) return;
+  month = parseInt(btn.dataset.m, 10);
+  document.querySelectorAll('#months .mo').forEach(c => c.classList.toggle('on', c === btn));
+  render();
+});
+document.getElementById('list').addEventListener('click', e => {
+  const card = e.target.closest('.card'); if (!card) return;
+  const key = card.dataset.key;
+  const s = SAINTS.find(x => keyOf(x) === key); if (!s) return;
+  const act = e.target.closest('[data-act]');
+  if (!act) return;
+  if (act.dataset.act === 'ics'){
+    downloadIcs([s], '축일_' + s.name.replace(/[\/\\:*?"<>|]/g,'') + '.ics');
+  } else if (act.dataset.act === 'pick'){
+    if (selected.has(key)) selected.delete(key); else selected.add(key);
+    render();
+  }
+  // gcal은 <a> 기본 동작
+});
+document.getElementById('basketDl').addEventListener('click', () => {
+  const items = SAINTS.filter(s => selected.has(keyOf(s)));
+  if (items.length) downloadIcs(items, '세례명_축일_모음.ics');
+});
+document.getElementById('basketClear').addEventListener('click', () => {
+  selected.clear(); render();
+});
+
+/* ── 초기화: feast_days.json 불러오기 ── */
+fetch('feast_days.json', {cache:'no-store'})
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    SAINTS = d.saints || d;
+    renderToday();
+    render();
+  })
+  .catch(() => {
+    document.getElementById('todayNames').textContent = '축일 데이터를 불러오지 못했습니다';
+    document.getElementById('todaySub').textContent = 'feast_days.json 파일이 저장소에 있는지 확인해 주세요';
+    document.getElementById('list').innerHTML =
+      '<div class="empty"><b>⚠️</b>축일 데이터(feast_days.json)를 불러오지 못했습니다.<br>잠시 후 새로고침해 주세요.</div>';
+  });
+</script>
+</body>
+</html>

@@ -283,8 +283,24 @@ document.getElementById('genderChips').addEventListener('click', e => {
   render();
 });
 const moWrap = document.getElementById('months');
-moWrap.innerHTML = '<button class="mo on" data-m="0">전체</button>' +
+moWrap.innerHTML = '<button class="mo" data-m="0">전체</button>' +
   Array.from({length:12}, (_,i) => '<button class="mo" data-m="' + (i+1) + '">' + (i+1) + '월</button>').join('');
+
+/* 처음 열면 이번 달이 기본 선택되도록 */
+month = new Date().getMonth() + 1;
+(function(){
+  const cur = moWrap.querySelector('.mo[data-m="' + month + '"]');
+  if (cur){
+    cur.classList.add('on');
+    /* 월 버튼 줄이 가로 스크롤이라, 현재 월 버튼이 보이게 이동 */
+    requestAnimationFrame(() => {
+      cur.scrollIntoView({block:'nearest', inline:'center'});
+    });
+  } else {
+    month = 0;
+    moWrap.querySelector('.mo[data-m="0"]').classList.add('on');
+  }
+})();
 moWrap.addEventListener('click', e => {
   const btn = e.target.closest('.mo'); if (!btn) return;
   month = parseInt(btn.dataset.m, 10);

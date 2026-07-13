@@ -75,6 +75,11 @@ main{max-width:680px;margin:0 auto;padding:18px 16px}
 .g.m{background:#5B7BA6}.g.f{background:#B0708A}.g.c{background:#8B9A6B}
 .card .title{font-size:13px;color:var(--muted);margin-top:2px;word-break:keep-all}
 .card .note{font-size:12px;color:#8A6D2B;background:#FBF5E6;border-radius:8px;padding:5px 9px;margin-top:7px;word-break:keep-all}
+.card .bio-toggle{background:none;border:none;padding:0;margin-top:8px;font-size:12.5px;color:var(--marian);font-weight:500;cursor:pointer;display:flex;align-items:center;gap:4px;font-family:var(--sans)}
+.card .bio-toggle::after{content:'▾';font-size:10px;transition:transform .15s}
+.card .bio-toggle.open::after{transform:rotate(180deg)}
+.card .bio{display:none;font-size:13px;color:var(--muted);line-height:1.6;margin-top:7px;padding-top:7px;border-top:1px dashed var(--line);word-break:keep-all}
+.card .bio.open{display:block}
 .card .actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}
 .btn{border:none;border-radius:9px;padding:7px 13px;font-size:12.5px;cursor:pointer;font-family:var(--sans);font-weight:500;display:inline-flex;align-items:center;gap:5px;text-decoration:none}
 .btn.gcal{background:var(--marian);color:#fff;padding:9px 16px;font-size:13px}
@@ -224,6 +229,7 @@ function render(){
         '<div class="name">' + esc(s.name) + '<span class="g ' + gCls + '">' + s.gender + '</span></div>' +
         '<div class="title">' + esc(s.title) + '</div>' +
         (s.note ? '<div class="note">💡 ' + esc(s.note) + '</div>' : '') +
+        (s.bio ? '<button class="bio-toggle" data-act="bio">이 성인은 어떤 분인가요?</button><div class="bio">' + esc(s.bio) + '</div>' : '') +
         '<div class="actions">' +
           '<a class="btn gcal" href="' + gcalUrl(s) + '" target="_blank" rel="noopener">📅 구글 캘린더에 추가</a>' +
         '</div>' +
@@ -286,6 +292,14 @@ moWrap.addEventListener('click', e => {
   render();
 });
 
+document.getElementById('list').addEventListener('click', e => {
+  const btn = e.target.closest('[data-act="bio"]');
+  if (!btn) return;
+  const bio = btn.nextElementSibling;
+  const open = bio.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.textContent = open ? '접기' : '이 성인은 어떤 분인가요?';
+});
 /* ── 사용법 안내: 넓은 화면에서 자동 펼침 ── */
 function syncGuide(){
   const g = document.getElementById('icsGuide');

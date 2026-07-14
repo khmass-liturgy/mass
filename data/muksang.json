@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14 06:43",
+  "updated": "2026-07-14 10:22",
   "cutoff": "2026-07-13",
   "days": 2,
   "names": [
@@ -14,14 +14,54 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 10,
+  "count": 14,
   "posts": [
+    {
+      "id": "2134680",
+      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-14",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=1&id=2134680&ref=190611&menu=4770",
+      "mass_date": "2026-07-14",
+      "priest": "이병우",
+      "excerpt": "이병우 신부님_\"예수님께서 당신이 기적을 가장 많이 일으키신 고을들을 꾸짖기…"
+    },
+    {
+      "id": "2134679",
+      "title": "전삼용 신부님_은총이 많을 때가 가장 위험한 때다",
+      "author": "최원석",
+      "date": "2026-07-14",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=2&id=2134679&ref=190610&menu=4770",
+      "mass_date": "2026-07-14",
+      "priest": "전삼용",
+      "excerpt": "어떠한 판단을 내릴 때, 배가 부를 때 더 올바른 판단을 할 수 있을까요,…"
+    },
+    {
+      "id": "2134678",
+      "title": "양승국 신부님_키를 낮춰야만 천국 문을 통과할 수 있습니다!",
+      "author": "최원석",
+      "date": "2026-07-14",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134678&ref=190609&menu=4770",
+      "mass_date": "2026-07-14",
+      "priest": "양승국",
+      "excerpt": "오늘도 몽골 수도 울란바토르에서의 여정이 계속됩니다."
+    },
+    {
+      "id": "2134676",
+      "title": "이영근 신부님_* 오늘의 말씀(7/14) : 연중 제15주간 화요일",
+      "author": "최원석",
+      "date": "2026-07-14",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=5&id=2134676&ref=190607&menu=4770",
+      "mass_date": "2026-07-14",
+      "priest": "이영근",
+      "excerpt": "* 독서 : 이사 7, 1-9 * 복음 : 마태 11, 20-24 20 그때…"
+    },
     {
       "id": "2134669",
       "title": "빠다킹 신부와 새벽을 열며(2026.07.14)",
       "author": "김중애",
       "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=4&id=2134669&ref=190603&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=9&id=2134669&ref=190603&menu=4770",
       "mass_date": "2026-07-14",
       "priest": "빠다킹",
       "excerpt": "2026년 7월 14일 연중 제15주간 화요일 예전에 축구장 필드에 서봤던…"
@@ -31,7 +71,7 @@
       "title": "07.14.화 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=6&id=2134664&ref=190600&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134664&ref=190600&menu=4770",
       "mass_date": "2026-07-14",
       "priest": "한상우",
       "excerpt": "07.14.화."
@@ -41,7 +81,7 @@
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 14일 연중 제15주간 화요일",
       "author": "박양석",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=7&id=2134662&ref=190599&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=12&id=2134662&ref=190599&menu=4770",
       "mass_date": "2026-07-14",
       "priest": "조명연",
       "excerpt": "2026년 7월 14일 연중 제15주간 화요일 예전에 축구장 필드에 서봤던…"
@@ -51,7 +91,7 @@
       "title": "07.13.월 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=12&id=2134646&ref=190594&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=17&id=2134646&ref=190594&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "한상우",
       "excerpt": "07.13.월."
@@ -61,7 +101,7 @@
       "title": "이병우 신부님_김건태 신부님_조욱현 신부님 묵 |1|",
       "author": "최원석",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=14&id=2134640&ref=190591&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=19&id=2134640&ref=190591&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "이병우",
       "excerpt": "이병우 신부님_\"내가 세상에 평화를 주러 왔다고 생각하지 마라."
@@ -71,7 +111,7 @@
       "title": "전삼용 신부님_삶의 의미를 잃었을 때 |1|",
       "author": "최원석",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=15&id=2134639&ref=190590&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=20&id=2134639&ref=190590&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "전삼용",
       "excerpt": "자살이란 극단적인 선택을 하는 사람들이나 무기력증에 빠진 사람들이 자주 하는…"
@@ -81,7 +121,7 @@
       "title": "양승국 신부님_매 순간 주님께 올리는 분향처럼!",
       "author": "최원석",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=16&id=2134638&ref=190589&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=21&id=2134638&ref=190589&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "양승국",
       "excerpt": "몽골 자연 피정이 벌써 종착점을 향해 달려가고 있습니다."
@@ -91,7 +131,7 @@
       "title": "이영근 신부님_* 오늘의 말씀(7/13) 연중 제15주간 월요일",
       "author": "최원석",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=18&id=2134636&ref=190587&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=23&id=2134636&ref=190587&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "이영근",
       "excerpt": "* 독서 : 이사 1, 10-17 * 복음 : 마태 10, 34-11, 1…"
@@ -101,7 +141,7 @@
       "title": "빠다킹 신부와 새벽을 열며(2026.07.13)",
       "author": "김중애",
       "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=22&id=2134629&ref=190582&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=27&id=2134629&ref=190582&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "빠다킹",
       "excerpt": "2026년 7월 13일 연중 제15주간 월요일 신약이 개발되었다고 합니다…"
@@ -111,7 +151,7 @@
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 13일 연중 제15주간 월요일",
       "author": "박양석",
       "date": "2026-07-12",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=25&id=2134614&ref=190579&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=30&id=2134614&ref=190579&menu=4770",
       "mass_date": "2026-07-13",
       "priest": "조명연",
       "excerpt": "2026년 7월 13일 연중 제15주간 월요일 신약이 개발되었다고 합니다…"

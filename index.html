@@ -57,7 +57,7 @@
   main{max-width:1200px;margin:0 auto;padding:32px 24px 60px;}
 
   /* ── 매일미사 카드 ── */
-  .missa-section{margin-bottom:44px;}
+  .missa-section{margin-bottom:10px;}
   .missa-card{
     position:relative;
     background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
@@ -221,7 +221,7 @@
     border-radius:6px;padding:20px 24px;
     box-shadow:0 4px 16px rgba(26,39,68,.2);
     position:relative;overflow:hidden;
-    margin-bottom:44px;
+    margin-bottom:10px;
   }
   .small-prayer::before{
     content:'';position:absolute;inset:0;
@@ -260,7 +260,7 @@
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
     gap:14px;
-    margin-bottom:40px;
+    margin-bottom:10px;
   }
   .link-grid.single{
     grid-template-columns:repeat(auto-fill, minmax(230px, 280px));
@@ -330,7 +330,7 @@
   .muksang-all-card{
     display:flex;align-items:center;gap:20px;
     background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
-    border-radius:6px;padding:20px 24px;margin-bottom:14px;
+    border-radius:6px;padding:20px 24px;margin-bottom:10px;
     text-decoration:none;position:relative;overflow:hidden;
     box-shadow:0 6px 22px rgba(26,39,68,.22);
     transition:transform .25s, box-shadow .25s;
@@ -364,7 +364,7 @@
   }
   .feast-card .muksang-all-eyebrow{color:var(--gold);}
   .feast-card .muksang-all-sub{color:#E3C9CF;}
-  .muksang-help{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:40px;font-size:.82rem;}
+  .muksang-help{background:var(--card);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;font-size:.82rem;}
   .muksang-help summary{cursor:pointer;padding:12px 16px;color:var(--navy);font-weight:600;list-style:none;display:flex;align-items:center;gap:6px;-webkit-tap-highlight-color:transparent;}
   .muksang-help summary::-webkit-details-marker{display:none;}
   .muksang-help summary::after{content:'▾';margin-left:auto;color:var(--muted);transition:transform .15s;}
@@ -430,7 +430,7 @@
   </section>
 
   <!-- ── 세례명 축일 달력 카드 ── -->
-  <section>
+  <section class="missa-section">
     <a class="muksang-all-card feast-card" href="feastday.html">
       <div class="muksang-all-icon">
         <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">

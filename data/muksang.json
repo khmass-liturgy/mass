@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-15 14:21",
-  "cutoff": "2026-07-14",
+  "updated": "2026-07-16 03:53",
+  "cutoff": "2026-07-15",
   "days": 2,
   "names": [
     "조명연",
@@ -14,14 +14,24 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 14,
+  "count": 8,
   "posts": [
+    {
+      "id": "2134742",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 16일 연중 제15주간 목요일",
+      "author": "박양석",
+      "date": "2026-07-15",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=2&id=2134742&ref=190631&menu=4770",
+      "mass_date": "2026-07-16",
+      "priest": "조명연",
+      "excerpt": "2026년 7월 16일 연중 제15주간 목요일 어느 신부가 깨진 도자기를 구…"
+    },
     {
       "id": "2134727",
       "title": "전삼용 신부님_사람을 알려거든 순종해 보라",
       "author": "최원석",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=3&id=2134727&ref=190628&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=5&id=2134727&ref=190628&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "전삼용",
       "excerpt": "오늘 복음은 왜 유다인들이 예수님을 알아보지 못했는지에 대한 설명입니다."
@@ -31,7 +41,7 @@
       "title": "양승국 신부님_양 한 마리 프로젝트!",
       "author": "최원석",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=4&id=2134726&ref=190627&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=6&id=2134726&ref=190627&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "양승국",
       "excerpt": "드디어 8박 9일의 몽골 자연 피정을 끝내고 귀국합니다."
@@ -41,7 +51,7 @@
       "title": "이영근 신부님_* 오늘의 말씀(7/15) : 성 보나벤투라 주교 학자  ...",
       "author": "최원석",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=6&id=2134724&ref=190625&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=8&id=2134724&ref=190625&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "이영근",
       "excerpt": "* 독서 : 이사 10, 5-7."
@@ -51,7 +61,7 @@
       "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
       "author": "최원석",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=7&id=2134723&ref=190624&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=9&id=2134723&ref=190624&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "이병우",
       "excerpt": "김건태 신부님_하느님의 방식 대부분의 사람에게 힘 있는 사람들은 앞에, 그리…"
@@ -61,7 +71,7 @@
       "title": "07.15.수.성 보나벤투라 주교 학자 기념일 / 한상우 신부님",
       "author": "강칠등",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=8&id=2134717&ref=190623&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=10&id=2134717&ref=190623&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "한상우",
       "excerpt": "07.15.수.성 보나벤투라 주교 학자 기념일."
@@ -71,7 +81,7 @@
       "title": "빠다킹 신부와 새벽을 열며(2026.07.15)",
       "author": "김중애",
       "date": "2026-07-15",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=11&id=2134714&ref=190620&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=13&id=2134714&ref=190620&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "빠다킹",
       "excerpt": "2026년 7월 15일 성 보나벤투라 주교 학자 기념일 비평가나 평론가의 글…"
@@ -81,80 +91,10 @@
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 15일 성 보나벤투라 주교 학자 ...",
       "author": "박양석",
       "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=15&id=2134698&ref=190616&menu=4770",
+      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=17&id=2134698&ref=190616&menu=4770",
       "mass_date": "2026-07-15",
       "priest": "조명연",
       "excerpt": "2026년 7월 15일 성 보나벤투라 주교 학자 기념일 비평가나 평론가의 글…"
-    },
-    {
-      "id": "2134680",
-      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=20&id=2134680&ref=190611&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "이병우",
-      "excerpt": "이병우 신부님_\"예수님께서 당신이 기적을 가장 많이 일으키신 고을들을 꾸짖기…"
-    },
-    {
-      "id": "2134679",
-      "title": "전삼용 신부님_은총이 많을 때가 가장 위험한 때다",
-      "author": "최원석",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=21&id=2134679&ref=190610&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "전삼용",
-      "excerpt": "어떠한 판단을 내릴 때, 배가 부를 때 더 올바른 판단을 할 수 있을까요,…"
-    },
-    {
-      "id": "2134678",
-      "title": "양승국 신부님_키를 낮춰야만 천국 문을 통과할 수 있습니다!",
-      "author": "최원석",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=22&id=2134678&ref=190609&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "양승국",
-      "excerpt": "오늘도 몽골 수도 울란바토르에서의 여정이 계속됩니다."
-    },
-    {
-      "id": "2134676",
-      "title": "이영근 신부님_* 오늘의 말씀(7/14) : 연중 제15주간 화요일",
-      "author": "최원석",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=24&id=2134676&ref=190607&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "이영근",
-      "excerpt": "* 독서 : 이사 7, 1-9 * 복음 : 마태 11, 20-24 20 그때…"
-    },
-    {
-      "id": "2134669",
-      "title": "빠다킹 신부와 새벽을 열며(2026.07.14)",
-      "author": "김중애",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=28&id=2134669&ref=190603&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "빠다킹",
-      "excerpt": "2026년 7월 14일 연중 제15주간 화요일 예전에 축구장 필드에 서봤던…"
-    },
-    {
-      "id": "2134664",
-      "title": "07.14.화 / 한상우 신부님 |1|",
-      "author": "강칠등",
-      "date": "2026-07-14",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=30&id=2134664&ref=190600&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "한상우",
-      "excerpt": "07.14.화."
-    },
-    {
-      "id": "2134662",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 14일 연중 제15주간 화요일",
-      "author": "박양석",
-      "date": "2026-07-13",
-      "url": "https://maria.catholic.or.kr/mi_pr/missa/bbs_view.asp?num=31&id=2134662&ref=190599&menu=4770",
-      "mass_date": "2026-07-14",
-      "priest": "조명연",
-      "excerpt": "2026년 7월 14일 연중 제15주간 화요일 예전에 축구장 필드에 서봤던…"
     }
   ]
 }

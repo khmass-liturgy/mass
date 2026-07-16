@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.khmass_liturgy.twa",
+        "sha256_cert_fingerprints": ["BF:EE:75:32:A0:DF:B5:02:34:B2:B6:5E:02:BD:99:38:2D:7E:0A:8D:AC:6D:DE:30:14:F9:06:E9:DF:34:46:87"]
+      }
+    }]

@@ -339,5 +339,14 @@ fetch('feast_days.json', {cache:'no-store'})
       '<div class="empty"><b>⚠️</b>축일 데이터(feast_days.json)를 불러오지 못했습니다.<br>잠시 후 새로고침해 주세요.</div>';
   });
 </script>
+
+<!-- ── 서비스 워커 등록 (오프라인 지원 · PWA 설치 요건) ── -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('service-worker.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>

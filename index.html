@@ -1042,5 +1042,14 @@ document.getElementById('headerDate').textContent = formatDate();
   });
 })();
 </script>
+
+<!-- ── 서비스 워커 등록 (오프라인 지원 · PWA 설치 요건) ── -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('service-worker.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>

@@ -737,7 +737,7 @@
               ? '<span class="muksang-excerpt">' + esc(p.excerpt) + '</span>'
               : '';
             // 원문을 새 창으로 바로 연다 — 모바일 브라우저의 "읽기 모드"를 그대로 활용할 수 있도록.
-            return '<a class="muksang-item" href="' + MUKSANG_BOARD_URL + '" target="_blank" rel="noopener">'
+            return '<a class="muksang-item" href="' + esc(p.url) + '" target="_blank" rel="noopener">'
               + '<span class="muksang-date">' + esc((p.mass_date || p.date || '').slice(5)) + '</span>'
               + '<span class="muksang-priest">' + esc(p.priest) + ' 신부님</span>'
               + '<span class="muksang-main">'
@@ -755,7 +755,7 @@
         if(mq && d.posts && d.posts.length > 0){
           var items = d.posts.slice(0, 8).map(function(p){
             var dt = (p.mass_date || p.date || '').slice(5);
-            return '<a href="' + MUKSANG_BOARD_URL + '" target="_blank" rel="noopener">'
+            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">'
               + '✦ <strong>' + esc(p.priest) + ' 신부님</strong> ' + esc(p.title)
               + (dt ? ' <span style="opacity:.7">(' + esc(dt) + ')</span>' : '')
               + '</a>';

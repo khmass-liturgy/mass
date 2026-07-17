@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17 09:53",
+  "updated": "2026-07-17 10:43",
   "cutoff": "2026-07-16",
   "days": 2,
   "names": [
@@ -14,8 +14,48 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 10,
+  "count": 14,
   "posts": [
+    {
+      "id": "2134808",
+      "title": "전삼용 신부님_안식일은 무조건 쉬는 날이 아닌 '이것'을 내려놓는 날!",
+      "author": "최원석",
+      "date": "2026-07-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134808&menu=4770",
+      "mass_date": "2026-07-17",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134807",
+      "title": "양승국 신부님_울지 마라, 내 아들아! 힘내거라, 내 딸아!",
+      "author": "최원석",
+      "date": "2026-07-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134807&menu=4770",
+      "mass_date": "2026-07-17",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134805",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134805&menu=4770",
+      "mass_date": "2026-07-17",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134804",
+      "title": "이영근 신부님_* 오늘의 말씀(7/17) : 연중 제15주간 금요일",
+      "author": "최원석",
+      "date": "2026-07-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134804&menu=4770",
+      "mass_date": "2026-07-17",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134796",
       "title": "빠다킹 신부와 새벽을 열며(2026.07.17)",

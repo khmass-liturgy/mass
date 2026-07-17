@@ -24,6 +24,10 @@ BASE = "https://maria.catholic.or.kr/mi_pr/missa/"
 LIST_URL = BASE + "bbs_list.asp"
 MENU = "4770"
 
+# 실제로 공유/저장할 글 링크는 bbsm 경로를 쓴다.
+# (같은 글이라도 bbsm 경로로 들어가면 글씨가 크게 나와 가독성이 더 좋다)
+BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbsm/bbs_view.asp"
+
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
 NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양승국", "이영근", "빠다킹", "전삼용"]
 
@@ -181,12 +185,8 @@ def parse_rows(html: str, today_str: str):
         title = a.get_text(" ", strip=True)
         # 작성자: 날짜 바로 다음 셀
         author = texts[date_idx + 1] if date_idx + 1 < len(texts) else ""
-        if "?" in href:
-            url = BASE + "bbs_view.asp" + href[href.index("?"):]
-        elif href.startswith("http"):
-            url = href
-        else:
-            url = BASE + href.lstrip("/")
+        # 공개 링크는 bbsm 경로(글씨 크게 보이는 버전)로 구성한다. id·menu만 있으면 충분하다.
+        url = f"{BBSM_VIEW_URL}?id={m_id.group(1)}&menu={MENU}"
         rows.append({
             "id": m_id.group(1),
             "title": title,

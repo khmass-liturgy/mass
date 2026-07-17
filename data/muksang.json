@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-17 14:32",
-  "cutoff": "2026-07-16",
+  "updated": "2026-07-18 00:11",
+  "cutoff": "2026-07-17",
   "days": 2,
   "names": [
     "조명연",
@@ -14,8 +14,18 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 14,
+  "count": 8,
   "posts": [
+    {
+      "id": "2134828",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 18일 연중 제15주간 토요일",
+      "author": "박양석",
+      "date": "2026-07-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134828&menu=4770",
+      "mass_date": "2026-07-18",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134808",
       "title": "전삼용 신부님_안식일은 무조건 쉬는 날이 아닌 '이것'을 내려놓는 날!",
@@ -83,76 +93,6 @@
       "date": "2026-07-16",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134786&menu=4770",
       "mass_date": "2026-07-17",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134768",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134768&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134767",
-      "title": "전삼용 신부님-마음이 온유하고 겸손하면 에너지가 넘친다",
-      "author": "최원석",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134767&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134766",
-      "title": "양승국 신부님_주님은 내게 얼마나 자상하고 따뜻하고 친절한 분이신지?",
-      "author": "최원석",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134766&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134764",
-      "title": "이영근 신부님_“고생하며 무거운 짐을 진 너희는 모두 나에게 오너라.” ...",
-      "author": "최원석",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134764&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134751",
-      "title": "빠다킹 신부와 새벽을 열며(2026.07.16)",
-      "author": "김중애",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134751&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "빠다킹",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134748",
-      "title": "07.16.목 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134748&menu=4770",
-      "mass_date": "2026-07-16",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134742",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 16일 연중 제15주간 목요일",
-      "author": "박양석",
-      "date": "2026-07-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134742&menu=4770",
-      "mass_date": "2026-07-16",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

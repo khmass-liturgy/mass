@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18 19:17",
+  "updated": "2026-07-18 23:50",
   "cutoff": "2026-07-17",
   "days": 2,
   "names": [
@@ -14,8 +14,18 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 14,
+  "count": 15,
   "posts": [
+    {
+      "id": "2134884",
+      "title": "조명연 마태오신부님(빠다킹신부님)  7월 19일 연중 제16주일",
+      "author": "박양석",
+      "date": "2026-07-18",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134884&menu=4770",
+      "mass_date": "2026-07-19",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134851",
       "title": "전삼용 신부님_옳은 말만 하는데 재수 없는 사람",
@@ -58,7 +68,7 @@
     },
     {
       "id": "2134841",
-      "title": "07.18.토 / 한상우 신부님",
+      "title": "07.18.토 / 한상우 신부님 |1|",
       "author": "강칠등",
       "date": "2026-07-18",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134841&menu=4770",

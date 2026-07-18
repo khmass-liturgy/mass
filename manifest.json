@@ -1,6 +1,6 @@
 {
   "id": "/mass/",
-  "name": "가톨릭 뉴스 포털 - 교하성당",
+  "name": "교하성당 신앙생활 포털",
   "short_name": "교하성당",
   "description": "교하성당 공지·주보·갤러리 및 교황청 Vatican News 바로가기",
   "start_url": "./index.html",

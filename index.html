@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>교하성당 가톨릭 뉴스 포털 — 교황청 소식 및 성경, 교회교리서</title>
+<title>교하성당 신앙생활 포털 — 교황청 소식 및 성경, 교회교리서</title>
 
 <!-- ── 홈 화면 추가 시 아이콘 설정 (교하성당 로고, PNG base64 내장 — 외부 파일 불필요) ── -->
 <link rel="manifest" href="manifest.json" />
@@ -40,6 +40,7 @@
   .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
   .header-title{flex:1;}
   .header-title h1{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);}
+  .title-rose{font-size:.85em;vertical-align:-0.05em;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));}
   .header-title p{font-family:'Cinzel',serif;font-size:.62rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
   .header-date{font-size:.78rem;color:var(--gold-lt);font-family:'Noto Serif KR',serif;text-align:right;}
   .gold-bar{background:linear-gradient(90deg,var(--gold),var(--gold-lt) 50%,var(--gold));height:3px;}
@@ -395,8 +396,8 @@
 <header>
   <div class="header-inner">
     <div class="header-title">
-      <h1>교하성당 가톨릭 뉴스 포털</h1>
-      <p>Nuntii Catholici · Vatican News</p>
+      <h1><span class="title-rose" aria-hidden="true">🌹</span> 교하성당 신앙생활 포털 <span class="title-rose" aria-hidden="true">🌹</span></h1>
+      <p>Vita Fidei · Vatican News</p>
     </div>
     <button id="a2hsBtn" type="button">
       <span class="a2hs-icon">📲</span> 홈 화면에 추가
@@ -996,7 +997,7 @@
 </main>
 
 <footer>
-  <p>가톨릭 뉴스 포털 · <em>Nuntii Catholici</em></p>
+  <p>가톨릭 신앙생활 포털 · <em>Vita Fidei</em></p>
   <p>뉴스 출처: <a href="https://www.vaticannews.va/ko.html" target="_blank">Vatican News 한국어</a> · <a href="https://www.catholictimes.org" target="_blank">가톨릭신문</a> 외</p>
   <p style="margin-top:12px;color:#555;">GitHub Pages 호환 · 정적 페이지 · 홈 화면 추가 지원</p>
 </footer>

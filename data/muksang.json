@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20 06:50",
+  "updated": "2026-07-20 07:57",
   "cutoff": "2026-07-19",
   "days": 2,
   "names": [
@@ -10,22 +10,11 @@
     "한상우",
     "양승국",
     "이영근",
-    "빠다킹",
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 10,
+  "count": 8,
   "posts": [
-    {
-      "id": "2134923",
-      "title": "빠다킹 신부와 새벽을 열며(2026.07.20)",
-      "author": "김중애",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134923&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "빠다킹",
-      "excerpt": "안녕하세요."
-    },
     {
       "id": "2134919",
       "title": "07.20.월 / 한상우 신부님",
@@ -94,16 +83,6 @@
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134895&menu=4770",
       "mass_date": "2026-07-19",
       "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134890",
-      "title": "빠다킹 신부와 새벽을 열며(2026.07.19)",
-      "author": "김중애",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134890&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "빠다킹",
       "excerpt": "안녕하세요."
     },
     {

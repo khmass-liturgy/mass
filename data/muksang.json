@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19 19:26",
+  "updated": "2026-07-19 23:54",
   "cutoff": "2026-07-18",
   "days": 2,
   "names": [
@@ -14,8 +14,18 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 14,
+  "count": 15,
   "posts": [
+    {
+      "id": "2134914",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 20일 연중 제16주간 월요일",
+      "author": "박양석",
+      "date": "2026-07-19",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134914&menu=4770",
+      "mass_date": "2026-07-20",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134901",
       "title": "이영근 신부님_“밀밭의 가라지”(마태 13,36)",

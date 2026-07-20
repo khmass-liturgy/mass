@@ -99,6 +99,7 @@
   .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
   .missa-sub{font-size:.85rem;color:#B8C0D8;}
+  .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold);font-weight:600;}
   .missa-arrow{
     flex-shrink:0; z-index:1;
     width:42px; height:42px;
@@ -434,6 +435,7 @@
         <div class="missa-eyebrow">Daily Mass · 한국천주교주교회의</div>
         <div class="missa-title">오늘의 매일미사 보기</div>
         <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
+        <div class="missa-special" id="missaSpecial" style="display:none;"></div>
       </div>
       <div class="missa-arrow">→</div>
     </a>
@@ -1042,6 +1044,35 @@ document.getElementById('headerDate').textContent = formatDate();
   const isFirstWeek = now.getDate() <= 7;
   if (isSaturday && isFirstWeek) {
     document.getElementById('marianCard').style.display = '';
+  }
+})();
+
+// 매일미사 카드 안, 월별 특별 미사 일정 안내 (해당 요일이면 하루 종일 표시)
+(function(){
+  const el = document.getElementById('missaSpecial');
+  if (!el) return;
+  const now = new Date();
+  const date = now.getDate();
+  const dow = now.getDay(); // 0=일 ... 6=토
+
+  // dow: 0=일,1=월,2=화,3=수,4=목,5=금,6=토 / weekRange: 그 달의 며칠부터 며칠까지가 "몇째 주"인지
+  const schedule = [
+    { dow: 5, weekRange: [1, 7],   text: '🔹 오늘 19:30 성시간 미사가 있습니다 (매월 첫째 금)' },
+    { dow: 6, weekRange: [1, 7],   text: '🔹 오늘 10:00 성모신심 미사가 있습니다 (매월 첫째 토)' },
+    { dow: 4, weekRange: [8, 14],  text: '🔹 오늘 10:00 성소 미사가 있습니다 (매월 둘째 목)' },
+    { dow: 5, weekRange: [8, 14],  text: '🔹 오늘 10:00 추모 미사가 있습니다 (매월 둘째 금)' },
+    { dow: 6, weekRange: [8, 14],  text: '🔹 오늘 10:00 민족화해 미사가 있습니다 (매월 둘째 토)' },
+    { dow: 3, weekRange: [8, 14],  text: '🔹 오늘 10:00 천사 미사가 있습니다 (매월 둘째 수)' },
+    { dow: 6, weekRange: [22, 28], text: '🔹 오늘 10:00 찬미 미사가 있습니다 (매월 넷째 토)' },
+  ];
+
+  const match = schedule.find(function (s) {
+    return dow === s.dow && date >= s.weekRange[0] && date <= s.weekRange[1];
+  });
+
+  if (match) {
+    el.textContent = match.text;
+    el.style.display = '';
   }
 })();
 

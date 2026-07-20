@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-20 20:43",
-  "cutoff": "2026-07-19",
+  "updated": "2026-07-21 00:48",
+  "cutoff": "2026-07-20",
   "days": 2,
   "names": [
     "조명연",
@@ -13,11 +13,21 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 12,
+  "count": 7,
   "posts": [
     {
+      "id": "2134946",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 21일 연중 제16주간 화요일",
+      "author": "박양석",
+      "date": "2026-07-20",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134946&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
       "id": "2134936",
-      "title": "전삼용 신부님_여러분 삶의 의욕의 정도를 측정해 드립니다",
+      "title": "전삼용 신부님_여러분 삶의 의욕의 정도를 측정해 드립니다 |1|",
       "author": "최원석",
       "date": "2026-07-20",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134936&menu=4770",
@@ -72,66 +82,6 @@
       "date": "2026-07-19",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134914&menu=4770",
       "mass_date": "2026-07-20",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134901",
-      "title": "이영근 신부님_“밀밭의 가라지”(마태 13,36)",
-      "author": "최원석",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134901&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134900",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134900&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134899",
-      "title": "전삼용 신부님_모든 고통을 성장통으로 만들 수 있다면",
-      "author": "최원석",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134899&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134897",
-      "title": "양승국 신부님_기다림은 가장 그리스도적인 삶의 방법입니다!",
-      "author": "최원석",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134897&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134895",
-      "title": "07.19.연중 제16주일(농민 주일) / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134895&menu=4770",
-      "mass_date": "2026-07-19",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134884",
-      "title": "조명연 마태오신부님(빠다킹신부님)  7월 19일 연중 제16주일",
-      "author": "박양석",
-      "date": "2026-07-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134884&menu=4770",
-      "mass_date": "2026-07-19",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

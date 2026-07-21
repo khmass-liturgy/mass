@@ -55,6 +55,7 @@ header .home{position:absolute;top:14px;right:14px;font-size:12px;color:#C7D4E4;
 .week-date span{display:block;font-size:10px;color:var(--muted);margin-top:1px}
 .week-names{flex:1;min-width:0;font-size:13.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .week-names.week-empty{color:var(--muted);font-size:12.5px}
+.week-info{flex:none;max-width:38%;font-size:11.5px;color:var(--muted);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-left:8px}
 .today .info{min-width:0}
 .today .label{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:2px}
 .today .names{font-family:var(--serif);font-weight:600;font-size:16px;margin-top:2px;word-break:keep-all}
@@ -233,11 +234,13 @@ function renderWeek(){
     const hits = SAINTS.filter(s => s.date === mm + '-' + dd);
     const hasHit = hits.length > 0;
     const namesText = hasHit ? hits.map(s => s.name).join(' · ') : '해당 축일 없음';
+    const briefText = hasHit ? (hits[0].note || hits[0].bio || hits[0].title || '') : '';
     const itemCls = 'week-item' + (i === 0 ? ' is-today' : '');
     const namesCls = 'week-names' + (hasHit ? '' : ' week-empty');
     html += '<div class="' + itemCls + '">' +
       '<div class="week-date"><b>' + d.getDate() + '</b><span>' + days[d.getDay()] + '요일</span></div>' +
       '<div class="' + namesCls + '">' + esc(namesText) + '</div>' +
+      (briefText ? '<div class="week-info">' + esc(briefText) + '</div>' : '') +
     '</div>';
   }
   list.innerHTML = html;

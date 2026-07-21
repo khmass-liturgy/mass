@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-21 20:06",
-  "cutoff": "2026-07-20",
+  "updated": "2026-07-22 00:41",
+  "cutoff": "2026-07-21",
   "days": 2,
   "names": [
     "조명연",
@@ -13,8 +13,28 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 12,
+  "count": 8,
   "posts": [
+    {
+      "id": "2134996",
+      "title": "07.22.수.성녀 마리아 막달레나 축일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-22",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134996&menu=4770",
+      "mass_date": "2026-07-22",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134991",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 22일 성녀 마리아 막달레나 축 ...",
+      "author": "박양석",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134991&menu=4770",
+      "mass_date": "2026-07-22",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134974",
       "title": "07.21.화 / 한상우 신부님",
@@ -72,66 +92,6 @@
       "date": "2026-07-20",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134946&menu=4770",
       "mass_date": "2026-07-21",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134936",
-      "title": "전삼용 신부님_여러분 삶의 의욕의 정도를 측정해 드립니다 |1|",
-      "author": "최원석",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134936&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134935",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134935&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134933",
-      "title": "양승국 신부님_우리 각자는 니네베인 동시에 요나 예언자입니다!",
-      "author": "최원석",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134933&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134932",
-      "title": "이영근 신부님_“악하고 절개 없는 세대가 표징을 요구하는구나!”(마태  ...",
-      "author": "최원석",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134932&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134919",
-      "title": "07.20.월 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134919&menu=4770",
-      "mass_date": "2026-07-20",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134914",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 20일 연중 제16주간 월요일",
-      "author": "박양석",
-      "date": "2026-07-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134914&menu=4770",
-      "mass_date": "2026-07-20",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

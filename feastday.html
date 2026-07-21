@@ -42,6 +42,19 @@ header .home{position:absolute;top:14px;right:14px;font-size:12px;color:#C7D4E4;
 .medallion{flex:none;width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#FFF8E8,#F3E3BE);border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#7A5A14}
 .medallion b{font-family:var(--serif);font-size:22px;line-height:1}
 .medallion span{font-size:11px;margin-top:2px}
+
+/* ── 금주의 축일 미리보기 ─────────── */
+.week-wrap{max-width:680px;margin:14px auto 0;padding:0 16px}
+.week-head{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--marian-dark);margin-bottom:8px;padding-left:2px}
+.week-list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 3px 10px rgba(30,53,87,.06)}
+.week-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.week-item:last-child{border-bottom:none}
+.week-item.is-today{background:#FBF3DF}
+.week-date{flex:none;width:44px;text-align:center}
+.week-date b{display:block;font-family:var(--serif);font-size:16px;color:var(--marian);line-height:1.2}
+.week-date span{display:block;font-size:10px;color:var(--muted);margin-top:1px}
+.week-names{flex:1;min-width:0;font-size:13.5px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.week-names.week-empty{color:var(--muted);font-size:12.5px}
 .today .info{min-width:0}
 .today .label{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:2px}
 .today .names{font-family:var(--serif);font-weight:600;font-size:16px;margin-top:2px;word-break:keep-all}
@@ -132,6 +145,11 @@ footer{text-align:center;font-size:11.5px;color:var(--muted);padding:26px 16px 1
   </div>
 </div>
 
+<div class="week-wrap">
+  <div class="week-head">📅 금주의 축일</div>
+  <div class="week-list" id="weekList"></div>
+</div>
+
 <main>
   <div class="searchbox">
     <input type="search" id="q" placeholder="세례명을 입력하세요 (예: 데레사, 베드로)" autocomplete="off">
@@ -199,6 +217,30 @@ function renderToday(){
     namesEl.textContent = '오늘 축일인 세례명이 없습니다';
     subEl.textContent = '검색으로 내 세례명의 축일을 찾아보세요';
   }
+}
+
+/* ── 금주의 축일 미리보기 (오늘 포함 7일) ── */
+function renderWeek(){
+  const list = document.getElementById('weekList');
+  if (!list) return;
+  const days = ['일','월','화','수','목','금','토'];
+  const now = new Date();
+  let html = '';
+  for (let i = 0; i < 7; i++){
+    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    const mm = String(d.getMonth()+1).padStart(2,'0');
+    const dd = String(d.getDate()).padStart(2,'0');
+    const hits = SAINTS.filter(s => s.date === mm + '-' + dd);
+    const hasHit = hits.length > 0;
+    const namesText = hasHit ? hits.map(s => s.name).join(' · ') : '해당 축일 없음';
+    const itemCls = 'week-item' + (i === 0 ? ' is-today' : '');
+    const namesCls = 'week-names' + (hasHit ? '' : ' week-empty');
+    html += '<div class="' + itemCls + '">' +
+      '<div class="week-date"><b>' + d.getDate() + '</b><span>' + days[d.getDay()] + '요일</span></div>' +
+      '<div class="' + namesCls + '">' + esc(namesText) + '</div>' +
+    '</div>';
+  }
+  list.innerHTML = html;
 }
 
 /* ── 필터/렌더 ────────────────────── */
@@ -331,6 +373,7 @@ fetch('feast_days.json', {cache:'no-store'})
   .then(d => {
     SAINTS = d.saints || d;
     renderToday();
+    renderWeek();
     render();
   })
   .catch(() => {

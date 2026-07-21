@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21 06:58",
+  "updated": "2026-07-21 14:48",
   "cutoff": "2026-07-20",
   "days": 2,
   "names": [
@@ -13,8 +13,58 @@
     "전삼용"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 7,
+  "count": 12,
   "posts": [
+    {
+      "id": "2134974",
+      "title": "07.21.화 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134974&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134973",
+      "title": "전삼용 신부님_비대면 사회는 없다!",
+      "author": "최원석",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134973&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134972",
+      "title": "양승국 신부님_우리 모두는 더 이상 남남이 아니라 가족입니다!",
+      "author": "최원석",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134972&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134970",
+      "title": "이영근 신부님_“누가 내 어머니고 누가 내 형제들이냐?”(마태 12,4 ...",
+      "author": "최원석",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134970&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2134969",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134969&menu=4770",
+      "mass_date": "2026-07-21",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2134946",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 21일 연중 제16주간 화요일",

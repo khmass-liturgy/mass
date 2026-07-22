@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23 00:40",
+  "updated": "2026-07-23 07:02",
   "cutoff": "2026-07-22",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "naver_1672849243214539986",
+      "title": "연중 제16주간 금요일 강론",
+      "author": "",
+      "date": "2026-07-23",
+      "url": "https://blog.naver.com/syj1212ad/224355039410?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-23",
+      "priest": "송영진",
+      "excerpt": "<연중 제16주간 금요일 강론>(2026."
+    },
+    {
+      "id": "2135035",
+      "title": "07.23.목 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135035&menu=4770",
+      "mass_date": "2026-07-23",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135030",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 23일 연중 제16주간 목요일",
@@ -28,7 +48,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4063878596479775250",
+      "id": "naver_5961419365057196022",
       "title": "연중 제16주간 목요일 강론",
       "author": "",
       "date": "2026-07-22",

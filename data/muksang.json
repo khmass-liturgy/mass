@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22 07:02",
+  "updated": "2026-07-22 09:24",
   "cutoff": "2026-07-21",
   "days": 2,
   "names": [
@@ -10,11 +10,23 @@
     "한상우",
     "양승국",
     "이영근",
-    "전삼용"
+    "전삼용",
+    "송영진"
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
-  "count": 8,
+  "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
+  "count": 10,
   "posts": [
+    {
+      "id": "naver_837749650942639027",
+      "title": "연중 제16주간 목요일 강론",
+      "author": "",
+      "date": "2026-07-22",
+      "url": "https://blog.naver.com/syj1212ad/224353899142?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-22",
+      "priest": "송영진",
+      "excerpt": "<연중 제16주간 목요일 강론>(2026."
+    },
     {
       "id": "2134996",
       "title": "07.22.수.성녀 마리아 막달레나 축일 / 한상우 신부님",
@@ -34,6 +46,16 @@
       "mass_date": "2026-07-22",
       "priest": "조명연",
       "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_4656144052965814104",
+      "title": "성녀 마리아 막달레나 축일 강론",
+      "author": "",
+      "date": "2026-07-21",
+      "url": "https://blog.naver.com/syj1212ad/224352769853?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-21",
+      "priest": "송영진",
+      "excerpt": "<성녀 마리아 막달레나 축일 강론> (2026."
     },
     {
       "id": "2134974",

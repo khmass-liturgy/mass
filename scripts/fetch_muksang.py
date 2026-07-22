@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-가톨릭굿뉴스 '우리들의 묵상/체험' 게시판(menu=4770)에서
-지정한 신부님들의 최근 3일간 글(제목 또는 작성자 기준)을 추출하여
-data/muksang.json 으로 저장한다.
+1) 가톨릭굿뉴스 '우리들의 묵상/체험' 게시판(menu=4770)에서
+   지정한 신부님들의 최근 3일간 글(제목 또는 작성자 기준)을 추출한다.
+2) 송영진 신부님의 네이버 블로그 RSS에서 최근 글을 추출한다.
+두 출처를 합쳐 data/muksang.json 으로 저장한다.
 
 GitHub Actions에서 주기적으로 실행됨.
 ※ 저작권 보호: 본문 전체는 절대 저장/복제하지 않는다.
@@ -13,6 +14,7 @@ import json
 import re
 import sys
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -30,6 +32,11 @@ BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbsm/bbs_view.asp"
 
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
 NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]
+
+# 송영진 신부님 네이버 블로그
+NAVER_BLOG_ID = "syj1212ad"
+NAVER_RSS_URL = f"https://rss.blog.naver.com/{NAVER_BLOG_ID}.xml"
+NAVER_PRIEST_NAME = "송영진"
 
 DAYS = 2          # 최근 3일
 MAX_PAGES = 8     # 안전 상한 (페이지당 약 30여 건)
@@ -59,15 +66,41 @@ def get_html(session: requests.Session, url: str, params: dict) -> str:
     return r.text
 
 
+def truncate_to_excerpt(text: str) -> str:
+    """긴 텍스트에서 아주 짧은 '한 문장 맛보기'만 남긴다.
+    저작권 보호를 위해 글자 수/단어 수 상한을 강하게 건다.
+    """
+    text = (text or "").strip()
+    if not text:
+        return ""
+
+    # 첫 문단, 첫 문장 정도만 취함
+    first_chunk = re.split(r"\n\s*\n", text)[0]
+    # 문장 끝(. ! ? 또는 한글 종결) 기준으로 첫 문장만
+    m = re.search(r"^(.{5,}?[\.!\?])(\s|$)", first_chunk)
+    sentence = m.group(1) if m else first_chunk
+
+    words = sentence.split()
+    truncated = False
+    if len(words) > EXCERPT_MAX_WORDS:
+        sentence = " ".join(words[:EXCERPT_MAX_WORDS])
+        truncated = True
+    if len(sentence) > EXCERPT_MAX_CHARS:
+        sentence = sentence[:EXCERPT_MAX_CHARS]
+        truncated = True
+
+    sentence = sentence.strip()
+    if truncated or not sentence.endswith((".", "!", "?")):
+        sentence = sentence.rstrip(".!?") + "…"
+    return sentence
+
+
 def extract_excerpt(html: str) -> str:
     """게시글 본문에서 아주 짧은 미리보기 한 조각만 뽑아낸다.
     저작권 보호를 위해 절대 문단 전체를 옮기지 않고,
-    글자 수/단어 수 상한을 강하게 걸어 '한 문장 맛보기' 수준으로만 반환한다.
+    truncate_to_excerpt()로 '한 문장 맛보기' 수준으로만 반환한다.
     """
     soup = BeautifulSoup(html, "html.parser")
-    for tag in soup(["script", "style", "table"]):
-        # 메뉴/헤더 등은 보통 table 구조이므로 큰 table은 일단 후보에서 제외
-        pass
 
     # 후보 텍스트 블록: td 중 텍스트가 충분히 길고, 메뉴성 링크가 적은 곳
     candidates = []
@@ -92,26 +125,7 @@ def extract_excerpt(html: str) -> str:
 
     # 가장 긴 텍스트 블록을 본문으로 간주
     body = max(candidates, key=len)
-
-    # 첫 문단, 첫 문장 정도만 취함
-    first_chunk = re.split(r"\n\s*\n", body.strip())[0]
-    # 문장 끝(. ! ? 또는 한글 종결) 기준으로 첫 문장만
-    m = re.search(r"^(.{5,}?[\.!\?])(\s|$)", first_chunk)
-    sentence = m.group(1) if m else first_chunk
-
-    words = sentence.split()
-    truncated = False
-    if len(words) > EXCERPT_MAX_WORDS:
-        sentence = " ".join(words[:EXCERPT_MAX_WORDS])
-        truncated = True
-    if len(sentence) > EXCERPT_MAX_CHARS:
-        sentence = sentence[:EXCERPT_MAX_CHARS]
-        truncated = True
-
-    sentence = sentence.strip()
-    if truncated or not sentence.endswith((".", "!", "?")):
-        sentence = sentence.rstrip(".!?") + "…"
-    return sentence
+    return truncate_to_excerpt(body)
 
 
 def fetch_excerpt_safely(session: requests.Session, url: str) -> str:
@@ -121,6 +135,60 @@ def fetch_excerpt_safely(session: requests.Session, url: str) -> str:
     except Exception as e:
         print("excerpt fetch failed for", url, ":", e, file=sys.stderr)
         return ""
+
+
+def fetch_naver_posts(session: requests.Session, cutoff: str, today_str: str) -> list:
+    """송영진 신부님 네이버 블로그 RSS에서 최근 글을 가져온다.
+    본문 전체는 절대 가져오지 않고, RSS description에서 짧은 미리보기만 추출한다.
+    """
+    posts = []
+    try:
+        r = session.get(NAVER_RSS_URL, headers=HEADERS, timeout=20)
+        r.raise_for_status()
+        root = ET.fromstring(r.content)
+    except Exception as e:
+        print("naver rss fetch failed:", e, file=sys.stderr)
+        return posts
+
+    for item in root.findall(".//item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        pub_date_raw = (item.findtext("pubDate") or "").strip()
+        desc_raw = item.findtext("description") or ""
+        if not title or not link:
+            continue
+
+        # pubDate 예: "Wed, 22 Jul 2026 07:00:00 +0900"
+        dt = None
+        try:
+            dt = datetime.strptime(pub_date_raw[:25].strip(), "%a, %d %b %Y %H:%M:%S")
+        except Exception:
+            pass
+        date_str = dt.strftime("%Y-%m-%d") if dt else today_str
+
+        mass_date = parse_title_date(title, date_str)
+        if max(mass_date, date_str) < cutoff:
+            continue
+
+        # description은 HTML 미리보기인 경우가 많음 — 태그 제거 후 아주 짧게만 사용
+        desc_text = BeautifulSoup(desc_raw, "html.parser").get_text(" ", strip=True)
+        excerpt = truncate_to_excerpt(desc_text)
+
+        m_id = re.search(r"/(\d+)\s*$", link)
+        post_id = "naver_" + (m_id.group(1) if m_id else str(abs(hash(link))))
+
+        posts.append({
+            "id": post_id,
+            "title": title,
+            "author": "",
+            "date": date_str,
+            "url": link,
+            "mass_date": mass_date,
+            "priest": NAVER_PRIEST_NAME,
+            "excerpt": excerpt,
+        })
+
+    return posts
 
 
 def parse_title_date(title: str, fallback_date: str) -> str:
@@ -255,12 +323,21 @@ def main():
         r["excerpt"] = fetch_excerpt_safely(session, r["url"])
         time.sleep(0.4)  # 대상 서버에 부담을 주지 않도록 살짝 간격을 둠
 
+    # 송영진 신부님 네이버 블로그 글을 같은 목록에 합친다.
+    naver_posts = fetch_naver_posts(session, cutoff, today_str)
+    posts.extend(naver_posts)
+
+    # 정렬 기준(mass_date, id)이 서로 다른 두 소스(숫자 id / "naver_"+숫자)를 섞으므로
+    # 문자열 id를 그대로 안전하게 비교할 수 있도록 정렬 키를 다시 통일한다.
+    posts.sort(key=lambda r: (max(r["mass_date"], r["date"]), str(r["id"])), reverse=True)
+
     out = {
         "updated": now.strftime("%Y-%m-%d %H:%M"),
         "cutoff": cutoff,
         "days": DAYS,
-        "names": NAMES,
+        "names": NAMES + [NAVER_PRIEST_NAME],
         "source": LIST_URL + "?menu=" + MENU,
+        "naver_source": NAVER_RSS_URL,
         "count": len(posts),
         "posts": posts,
     }

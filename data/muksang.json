@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-23 20:08",
-  "cutoff": "2026-07-22",
+  "updated": "2026-07-24 00:54",
+  "cutoff": "2026-07-23",
   "days": 2,
   "names": [
     "조명연",
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 8,
   "posts": [
     {
-      "id": "naver_8341832753403654704",
+      "id": "2135069",
+      "title": "조명연 마태오신부님(빠다킹신부님) 7월 24일 연중 제16주간 금요일",
+      "author": "박양석",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135069&menu=4770",
+      "mass_date": "2026-07-24",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_8158638140705686687",
       "title": "연중 제16주간 금요일 강론",
       "author": "",
       "date": "2026-07-23",
@@ -49,7 +59,7 @@
     },
     {
       "id": "2135045",
-      "title": "양승국 신부님_이 작고 소소한 일상이 얼마나 큰 은총이요 축복인지?",
+      "title": "양승국 신부님_이 작고 소소한 일상이 얼마나 큰 은총이요 축복인지? |1|",
       "author": "최원석",
       "date": "2026-07-23",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135045&menu=4770",
@@ -84,76 +94,6 @@
       "date": "2026-07-22",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135030&menu=4770",
       "mass_date": "2026-07-23",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_720205193582613960",
-      "title": "연중 제16주간 목요일 강론",
-      "author": "",
-      "date": "2026-07-22",
-      "url": "https://blog.naver.com/syj1212ad/224353899142?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-07-22",
-      "priest": "송영진",
-      "excerpt": "<연중 제16주간 목요일 강론>(2026."
-    },
-    {
-      "id": "2135016",
-      "title": "전삼용 신부님_위대한 스승은 제자의 일곱 마귀를 방치하지 않는다",
-      "author": "최원석",
-      "date": "2026-07-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135016&menu=4770",
-      "mass_date": "2026-07-22",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135014",
-      "title": "이영근 신부님_ “나를 더 이상 붙들지 마라.”(요한 20,17)",
-      "author": "최원석",
-      "date": "2026-07-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135014&menu=4770",
-      "mass_date": "2026-07-22",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135013",
-      "title": "양승국 신부님_사도들의 사도(Apostle to the Apostls) ...",
-      "author": "최원석",
-      "date": "2026-07-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135013&menu=4770",
-      "mass_date": "2026-07-22",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135011",
-      "title": "조욱현 신부님_이병우 신부님_ 김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135011&menu=4770",
-      "mass_date": "2026-07-22",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134996",
-      "title": "07.22.수.성녀 마리아 막달레나 축일 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134996&menu=4770",
-      "mass_date": "2026-07-22",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2134991",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 22일 성녀 마리아 막달레나 축 ...",
-      "author": "박양석",
-      "date": "2026-07-21",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2134991&menu=4770",
-      "mass_date": "2026-07-22",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

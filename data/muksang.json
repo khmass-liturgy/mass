@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24 00:54",
+  "updated": "2026-07-24 07:03",
   "cutoff": "2026-07-23",
   "days": 2,
   "names": [
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_7881005267451165093",
+      "title": "성 야고보 사도 축일 강론",
+      "author": "",
+      "date": "2026-07-24",
+      "url": "https://blog.naver.com/syj1212ad/224356170491?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-24",
+      "priest": "송영진",
+      "excerpt": "<성 야고보 사도 축일 강론>(2026."
+    },
     {
       "id": "2135069",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 24일 연중 제16주간 금요일",
@@ -28,7 +38,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_8158638140705686687",
+      "id": "naver_3415640641237989820",
       "title": "연중 제16주간 금요일 강론",
       "author": "",
       "date": "2026-07-23",

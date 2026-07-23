@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-23 07:02",
+  "updated": "2026-07-23 14:52",
   "cutoff": "2026-07-22",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 10,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_1672849243214539986",
+      "id": "naver_4371524411210460740",
       "title": "연중 제16주간 금요일 강론",
       "author": "",
       "date": "2026-07-23",
@@ -26,6 +26,46 @@
       "mass_date": "2026-07-23",
       "priest": "송영진",
       "excerpt": "<연중 제16주간 금요일 강론>(2026."
+    },
+    {
+      "id": "2135047",
+      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135047&menu=4770",
+      "mass_date": "2026-07-23",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135046",
+      "title": "전삼용 신부님_우리는 행복지도를 가지고 있나요?",
+      "author": "최원석",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135046&menu=4770",
+      "mass_date": "2026-07-23",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135045",
+      "title": "양승국 신부님_이 작고 소소한 일상이 얼마나 큰 은총이요 축복인지?",
+      "author": "최원석",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135045&menu=4770",
+      "mass_date": "2026-07-23",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135043",
+      "title": "이영근 신부님_“저들이 보아도 보지 못하고~ 깨닫지 못하기 때문이다.” ...",
+      "author": "최원석",
+      "date": "2026-07-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135043&menu=4770",
+      "mass_date": "2026-07-23",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135035",
@@ -48,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_5961419365057196022",
+      "id": "naver_4305125651696345464",
       "title": "연중 제16주간 목요일 강론",
       "author": "",
       "date": "2026-07-22",

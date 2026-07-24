@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가톨릭 전례력 미사 등급 분류</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #F4EFE0;
+    --ink-dim: #C9C2AD;
+    --bg: #14172B;
+    --bg-card: #1D2140;
+    --gold: #C8A24A;
+    --gold-soft: rgba(200,162,74,0.35);
+    --line: rgba(200,162,74,0.28);
+    --red: #A5433D;
+    --green: #4C7A5E;
+    --violet: #6E5A8C;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(200,162,74,0.10), transparent 45%),
+      radial-gradient(ellipse at 90% 10%, rgba(110,90,140,0.14), transparent 40%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    padding: 56px 20px 80px;
+  }
+  .wrap{max-width: 920px; margin:0 auto;}
+
+  /* HERO */
+  .hero{
+    text-align:center;
+    padding-bottom: 44px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-size:12px;
+    letter-spacing:0.35em;
+    color: var(--gold);
+    text-transform:uppercase;
+    margin-bottom:18px;
+    font-weight:500;
+  }
+  .hero h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight:900;
+    font-size: clamp(30px, 5vw, 46px);
+    line-height:1.35;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  .hero p{
+    color:var(--ink-dim);
+    font-size:15px;
+    line-height:1.8;
+    max-width:560px;
+    margin:0 auto;
+  }
+  .hero .dove{ font-size:28px; margin-bottom:14px; display:block; opacity:0.9;}
+
+  /* CARD GRID */
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 60px;
+  }
+  @media (max-width:720px){ .grid{ grid-template-columns: 1fr; } }
+
+  .card{
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 30px 28px 28px;
+    position: relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute; inset:6px;
+    border: 1px solid rgba(200,162,74,0.14);
+    border-radius: 2px;
+    pointer-events:none;
+  }
+  .card .numeral{
+    font-family:'Noto Serif KR', serif;
+    font-weight:900;
+    font-size: 46px;
+    line-height:1;
+    color: var(--gold);
+    opacity:0.9;
+    margin-bottom: 8px;
+    display:block;
+  }
+  .card .rank-label{
+    font-size:11px;
+    letter-spacing:0.2em;
+    color: var(--ink-dim);
+    text-transform:uppercase;
+    margin-bottom: 4px;
+  }
+  .card h2{
+    font-family:'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight:700;
+    margin: 0 0 4px;
+  }
+  .card .latin{
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    font-weight:400;
+    color: var(--ink-dim);
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .card .meaning{
+    font-size:13.5px;
+    line-height:1.75;
+    color: var(--ink-dim);
+    margin-bottom:18px;
+    padding-bottom:18px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .card .feature-title{
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    color: var(--gold);
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  .card ul{
+    list-style:none;
+    margin:0 0 16px;
+    padding:0;
+  }
+  .card li{
+    font-size:13.5px;
+    line-height:1.7;
+    padding-left:16px;
+    position:relative;
+    margin-bottom:7px;
+  }
+  .card li::before{
+    content:"—";
+    position:absolute; left:0; top:0;
+    color: var(--gold-soft);
+  }
+  .card li b{ color: var(--ink); font-weight:600; }
+  .card .example{
+    font-size:12.5px;
+    line-height:1.7;
+    color: var(--ink-dim);
+    background: rgba(200,162,74,0.06);
+    border-left: 2px solid var(--gold);
+    padding: 10px 12px;
+  }
+  .card .example b{ color:var(--gold); font-weight:600; }
+
+  .card.s1 .numeral, .card.s1 .feature-title, .card.s1 .example b { color: var(--gold); }
+  .card.s2 .numeral, .card.s2 .feature-title, .card.s2 .example b { color: #C77B6B; }
+  .card.s2 .example{ border-left-color:#C77B6B; }
+  .card.s3 .numeral, .card.s3 .feature-title, .card.s3 .example b { color: #7FAE8E; }
+  .card.s3 .example{ border-left-color:#7FAE8E; }
+  .card.s4 .numeral, .card.s4 .feature-title, .card.s4 .example b { color: #9C8AC2; }
+  .card.s4 .example{ border-left-color:#9C8AC2; }
+
+  /* PRIORITY TABLE */
+  .priority{
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 34px 30px;
+  }
+  .priority .eyebrow{
+    font-size:11px;
+    letter-spacing:0.25em;
+    color: var(--gold);
+    text-transform:uppercase;
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .priority h3{
+    font-family:'Noto Serif KR', serif;
+    font-size:22px;
+    margin: 0 0 22px;
+  }
+  .prow{
+    display:grid;
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+  .prow:first-of-type{ border-top:none; }
+  .prow .pn{
+    font-family:'Noto Serif KR', serif;
+    font-weight:700;
+    font-size:15px;
+    color: var(--gold);
+  }
+  .prow .pt{
+    font-size:13.5px;
+    line-height:1.7;
+    color: var(--ink-dim);
+  }
+  .prow .pt b{ color:var(--ink); font-weight:500; }
+
+  .footnote{
+    text-align:center;
+    margin-top: 36px;
+    font-size:11.5px;
+    color: var(--ink-dim);
+    opacity:0.7;
+    letter-spacing:0.03em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="dove">🕊️</span>
+    <div class="eyebrow">Ordo Missae · 전례력 안내</div>
+    <h1>가톨릭 전례력에 따른<br>미사 등급 분류</h1>
+    <p>전례력의 각 날은 그 중요도에 따라 등급이 나뉘며, 이에 따라 미사 중 바치는 기도문과 독서의 구성이 달라집니다.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card s1">
+      <span class="numeral">Ⅰ</span>
+      <div class="rank-label">전례력 최고 등급</div>
+      <h2>대축일</h2>
+      <div class="latin">Solemnitas</div>
+      <div class="meaning">구원 역사의 핵심 신비(부활, 성탄 등)나 주요 성인을 공경하는 날.</div>
+      <div class="feature-title">전례 특징</div>
+      <ul>
+        <li><b>대영광송</b> — 의무적으로 바침</li>
+        <li><b>신앙 고백</b> — 의무적으로 바침</li>
+        <li><b>독서</b> — 제1독서·화답송·제2독서·복음 (3개 본문)</li>
+        <li><b>시간</b> — 전날 저녁 제1 저녁기도부터 시작</li>
+      </ul>
+      <div class="example"><b>대표 사례</b> — 주님 부활 대축일 · 주님 성탄 대축일 · 성모 마리아의 하늘에 올리심 대축일 · 성 김대건 안드레아와 성 정하상 바오로와 동료 순교자 대축일</div>
+    </div>
+
+    <div class="card s2">
+      <span class="numeral">Ⅱ</span>
+      <div class="rank-label">대축일 다음 등급</div>
+      <h2>축일</h2>
+      <div class="latin">Festum</div>
+      <div class="meaning">주로 사도, 복음사가, 또는 주님의 신비 중 일부를 기념하는 날.</div>
+      <div class="feature-title">전례 특징</div>
+      <ul>
+        <li><b>대영광송</b> — 의무적으로 바침</li>
+        <li><b>신앙 고백</b> — 바치지 않음</li>
+        <li><b>독서</b> — 제1(또는 2)독서·화답송·복음 (2개 본문)</li>
+      </ul>
+      <div class="example"><b>대표 사례</b> — 주님의 성전 봉헌 축일 · 사도들의 축일 · 성 라우렌시오 부제 순교자 축일</div>
+    </div>
+
+    <div class="card s3">
+      <span class="numeral">Ⅲ</span>
+      <div class="rank-label">성인을 기억하는 날</div>
+      <h2>기념일</h2>
+      <div class="latin">Memoria</div>
+      <div class="meaning"><b>의무 기념일</b> — 보편 전례력에 따라 반드시 지내며, 해당 성인의 고유 본기도를 사용함.<br><b>선택 기념일</b> — 사제의 재량이나 지역 신심에 따라 거행 여부를 결정.</div>
+      <div class="feature-title">전례 특징</div>
+      <ul>
+        <li>대영광송과 신앙 고백을 바치지 않음 (특별한 이유가 있는 경우 제외)</li>
+      </ul>
+    </div>
+
+    <div class="card s4">
+      <span class="numeral">Ⅳ</span>
+      <div class="rank-label">일반적인 날</div>
+      <h2>평일</h2>
+      <div class="latin">Feria</div>
+      <div class="meaning">특별한 축일이 지정되지 않아, 전례 시기(대림·성탄·사순·부활·연중)의 성격에 따라 매일의 미사를 거행함.</div>
+      <div class="feature-title">전례 특징</div>
+      <ul>
+        <li>해당 시기의 고유 독서와 기도문을 사용</li>
+        <li>대영광송과 신앙 고백을 바치지 않음</li>
+        <li>연중 시기엔 '기념일 없는 성인' 미사나 '기원 미사'를 자유롭게 선택 가능</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="priority">
+    <div class="eyebrow">The Table of Liturgical Days</div>
+    <h3>미사 거행의 우선순위</h3>
+
+    <div class="prow"><div class="pn">1</div><div class="pt"><b>파스카 삼일</b>(성목요일~부활 성야), 주님 부활·성탄·주현·승천 대축일, 사순·부활·대림 시기의 주일</div></div>
+    <div class="prow"><div class="pn">2</div><div class="pt"><b>고유 전례력의 대축일</b>, 위령의 날 (11월 2일)</div></div>
+    <div class="prow"><div class="pn">3</div><div class="pt"><b>보편 전례력의 대축일</b>, 주님의 축일</div></div>
+    <div class="prow"><div class="pn">4</div><div class="pt"><b>성탄 시기와 연중 시기의 주일</b></div></div>
+    <div class="prow"><div class="pn">5</div><div class="pt"><b>보편/고유 전례력의 축일</b></div></div>
+    <div class="prow"><div class="pn">6</div><div class="pt"><b>의무 기념일</b> &gt; <b>선택 기념일</b> &gt; <b>평일</b> 순</div></div>
+  </div>
+
+  <div class="footnote">참고 · 「전례력과 전례주년 보편 규범」 및 「로마 미사 경본 총지침」</div>
+
+</div>
+</body>
+</html>

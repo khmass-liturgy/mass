@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25 00:24",
+  "updated": "2026-07-25 07:02",
   "cutoff": "2026-07-24",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "naver_5561041481014690854",
+      "title": "연중 제17주일 강론",
+      "author": "",
+      "date": "2026-07-25",
+      "url": "https://blog.naver.com/syj1212ad/224357187258?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-25",
+      "priest": "송영진",
+      "excerpt": "<연중 제17주일 강론>(2026."
+    },
+    {
+      "id": "2135123",
+      "title": "07.25.토.성 야고보 사도 축일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135123&menu=4770",
+      "mass_date": "2026-07-25",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135116",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 25일 성 야고보 사도 축일",
@@ -28,7 +48,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4635118575011933865",
+      "id": "naver_704049827979758805",
       "title": "성 야고보 사도 축일 강론",
       "author": "",
       "date": "2026-07-24",

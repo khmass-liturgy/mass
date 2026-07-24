@@ -220,6 +220,68 @@
     color: var(--ink-dim);
     opacity:0.7;
     letter-spacing:0.03em;
+  }  .card .rank-toggle{
+    margin-top:16px;
+    border-top: 1px dashed var(--line);
+    padding-top: 14px;
+  }
+  .card .rank-toggle summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    color: var(--gold);
+    font-weight:600;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .card .rank-toggle summary::-webkit-details-marker{ display:none; }
+  .card .rank-toggle summary::after{
+    content:"▾";
+    margin-left:auto;
+    color: var(--ink-dim);
+    transition: transform .15s;
+    font-size:12px;
+  }
+  .card .rank-toggle[open] summary::after{ transform: rotate(180deg); }
+  .card .rank-toggle-body{ margin-top:14px; }
+  .rank-sub-title{
+    font-size:11px;
+    letter-spacing:0.1em;
+    color: var(--ink);
+    font-weight:600;
+    margin-bottom:8px;
+    margin-top:16px;
+  }
+  .rank-sub-title:first-child{ margin-top:0; }
+  .rank-list{ list-style:none; margin:0; padding:0; }
+  .rank-list li{
+    display:flex;
+    gap:10px;
+    font-size:12.5px;
+    line-height:1.6;
+    padding:6px 0;
+    border-bottom: 1px solid rgba(200,162,74,0.10);
+    color: var(--ink-dim);
+  }
+  .rank-list li:last-child{ border-bottom:none; }
+  .rank-date{
+    flex: 0 0 auto;
+    min-width: 40px;
+    color: var(--gold);
+    font-weight:600;
+    font-family:'Noto Serif KR', serif;
+  }
+  .rank-note{
+    font-size:11.5px;
+    line-height:1.7;
+    color: var(--ink-dim);
+    opacity:0.85;
+    margin-top:10px;
+    padding-top:10px;
+    border-top: 1px dashed var(--line);
   }
 </style>
 </head>
@@ -249,6 +311,46 @@
         <li><b>시간</b> — 전날 저녁 제1 저녁기도부터 시작</li>
       </ul>
       <div class="example"><b>대표 사례</b> — 주님 부활 대축일 · 주님 성탄 대축일 · 성모 마리아의 하늘에 올리심 대축일 · 성 김대건 안드레아와 성 정하상 바오로와 동료 순교자 대축일</div>
+
+      <details class="rank-toggle">
+        <summary>대축일 목록 (날짜순)</summary>
+        <div class="rank-toggle-body">
+
+          <div class="rank-sub-title">보편 전례력 · 날짜 고정 (10)</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">1/1</span><span>천주의 성모 마리아 대축일</span></li>
+            <li><span class="rank-date">1/6</span><span>주님 공현 대축일 (한국은 1/2~8 사이 주일로 이동)</span></li>
+            <li><span class="rank-date">3/19</span><span>성 요셉 대축일</span></li>
+            <li><span class="rank-date">3/25</span><span>주님 탄생 예고 대축일</span></li>
+            <li><span class="rank-date">6/24</span><span>세례자 성 요한 탄생 대축일</span></li>
+            <li><span class="rank-date">6/29</span><span>성 베드로와 성 바오로 사도 대축일</span></li>
+            <li><span class="rank-date">8/15</span><span>성모 승천 대축일</span></li>
+            <li><span class="rank-date">11/1</span><span>모든 성인 대축일</span></li>
+            <li><span class="rank-date">12/8</span><span>원죄 없이 잉태되신 복되신 동정 마리아 대축일</span></li>
+            <li><span class="rank-date">12/25</span><span>주님 성탄 대축일</span></li>
+          </ul>
+
+          <div class="rank-sub-title">보편 전례력 · 이동 축일 (부활 기준, 7)</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">·</span><span>주님 부활 대축일 (춘분 후 첫 보름 다음 주일)</span></li>
+            <li><span class="rank-date">·</span><span>주님 승천 대축일 (부활 40일째, 한국은 부활 제7주일로 이전)</span></li>
+            <li><span class="rank-date">·</span><span>성령 강림 대축일 (부활 50일째)</span></li>
+            <li><span class="rank-date">·</span><span>지극히 거룩하신 삼위일체 대축일 (성령 강림 다음 주일)</span></li>
+            <li><span class="rank-date">·</span><span>그리스도의 성체와 성혈 대축일 (삼위일체 대축일 다음 목/주일)</span></li>
+            <li><span class="rank-date">·</span><span>예수 성심 대축일 (성체성혈대축일 후 금요일)</span></li>
+            <li><span class="rank-date">·</span><span>그리스도 왕 대축일 (연중 마지막 주일)</span></li>
+          </ul>
+
+          <div class="rank-sub-title">고유 전례력 · 한국 교회 (2)</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">7/5</span><span>성 김대건 안드레아 사제 순교자 대축일 (한국 성직자 수호자)</span></li>
+            <li><span class="rank-date">9/20</span><span>성 김대건 안드레아와 성 정하상 바오로와 동료 순교자(103위) 대축일</span></li>
+          </ul>
+
+          <div class="rank-note">9/20은 보편 전례력상 의무 기념일이지만, 한국 교구들은 대축일로 격상해 지냅니다. 의무 대축일(반드시 미사 참례)은 모든 주일과 1/1·8/15·12/25입니다.</div>
+
+        </div>
+      </details>
     </div>
 
     <div class="card s2">
@@ -264,6 +366,50 @@
         <li><b>독서</b> — 제1(또는 2)독서·화답송·복음 (2개 본문)</li>
       </ul>
       <div class="example"><b>대표 사례</b> — 주님의 성전 봉헌 축일 · 사도들의 축일 · 성 라우렌시오 부제 순교자 축일</div>
+
+      <details class="rank-toggle">
+        <summary>축일 목록 (날짜순)</summary>
+        <div class="rank-toggle-body">
+
+          <div class="rank-sub-title">날짜 고정 (26)</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">1/25</span><span>성 바오로 사도의 개종 축일</span></li>
+            <li><span class="rank-date">2/2</span><span>주님 봉헌 축일</span></li>
+            <li><span class="rank-date">2/22</span><span>성 베드로 사도좌 축일</span></li>
+            <li><span class="rank-date">4/25</span><span>성 마르코 복음사가 축일</span></li>
+            <li><span class="rank-date">5/3</span><span>성 필립보와 성 야고보 사도 축일</span></li>
+            <li><span class="rank-date">5/14</span><span>성 마티아 사도 축일</span></li>
+            <li><span class="rank-date">5/31</span><span>복되신 동정 마리아 방문 축일</span></li>
+            <li><span class="rank-date">6/11</span><span>성 바르나바 사도 축일</span></li>
+            <li><span class="rank-date">7/3</span><span>성 토마스 사도 축일</span></li>
+            <li><span class="rank-date">7/22</span><span>성녀 마리아 막달레나 축일</span></li>
+            <li><span class="rank-date">7/25</span><span>성 야고보 사도 축일</span></li>
+            <li><span class="rank-date">8/6</span><span>주님의 거룩한 변모 축일</span></li>
+            <li><span class="rank-date">8/10</span><span>성 라우렌시오 부제 순교자 축일</span></li>
+            <li><span class="rank-date">8/24</span><span>성 바르톨로메오 사도 축일</span></li>
+            <li><span class="rank-date">9/8</span><span>복되신 동정 마리아 탄생 축일</span></li>
+            <li><span class="rank-date">9/14</span><span>성 십자가 현양 축일</span></li>
+            <li><span class="rank-date">9/21</span><span>성 마태오 사도 복음사가 축일</span></li>
+            <li><span class="rank-date">9/29</span><span>성 미카엘·가브리엘·라파엘 대천사 축일</span></li>
+            <li><span class="rank-date">10/18</span><span>성 루카 복음사가 축일</span></li>
+            <li><span class="rank-date">10/28</span><span>성 시몬과 성 유다 사도 축일</span></li>
+            <li><span class="rank-date">11/9</span><span>라테라노 대성전 봉헌 축일</span></li>
+            <li><span class="rank-date">11/30</span><span>성 안드레아 사도 축일</span></li>
+            <li><span class="rank-date">12/26</span><span>성 스테파노 첫 순교자 축일</span></li>
+            <li><span class="rank-date">12/27</span><span>성 요한 사도 복음사가 축일</span></li>
+            <li><span class="rank-date">12/28</span><span>죄 없는 아기 순교자들 축일</span></li>
+          </ul>
+
+          <div class="rank-sub-title">이동 축일 (2)</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">·</span><span>성가정(예수·마리아·요셉) 축일 (성탄 후 첫 주일, 없으면 12/30)</span></li>
+            <li><span class="rank-date">·</span><span>주님 세례 축일 (주님 공현 대축일 다음 주일)</span></li>
+          </ul>
+
+          <div class="rank-note">사도 축일이 대부분이며, 주일과 겹치면 원칙적으로 삭제됩니다(대축일과 달리 옮겨 지내지 않음).</div>
+
+        </div>
+      </details>
     </div>
 
     <div class="card s3">
@@ -276,6 +422,70 @@
       <ul>
         <li>대영광송과 신앙 고백을 바치지 않음 (특별한 이유가 있는 경우 제외)</li>
       </ul>
+
+      <details class="rank-toggle">
+        <summary>주요 기념일 목록 (날짜순)</summary>
+        <div class="rank-toggle-body">
+
+          <div class="rank-sub-title">1~3월</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">1/17</span><span>성 안토니오 아빠스 기념일</span></li>
+            <li><span class="rank-date">1/21</span><span>성녀 아녜스 동정 순교자 기념일</span></li>
+            <li><span class="rank-date">1/24</span><span>성 프란치스코 살레시오 주교 학자 기념일</span></li>
+            <li><span class="rank-date">1/28</span><span>성 토마스 아퀴나스 사제 학자 기념일</span></li>
+            <li><span class="rank-date">2/5</span><span>성녀 아가타 동정 순교자 기념일</span></li>
+            <li><span class="rank-date">2/6</span><span>성 바오로 미키와 동료 순교자 기념일</span></li>
+            <li><span class="rank-date">2/10</span><span>성녀 스콜라스티카 동정 기념일</span></li>
+          </ul>
+
+          <div class="rank-sub-title">4~6월</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">4/29</span><span>시에나의 성녀 가타리나 동정 학자 기념일 (유럽 수호성인)</span></li>
+            <li><span class="rank-date">5/26</span><span>성 필립보 네리 사제 기념일</span></li>
+            <li><span class="rank-date">6/3</span><span>성 가롤로 르왕가와 동료 순교자 기념일</span></li>
+            <li><span class="rank-date">6/13</span><span>파도바의 성 안토니오 사제 학자 기념일</span></li>
+          </ul>
+
+          <div class="rank-sub-title">7~9월</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">7/11</span><span>누르시아의 성 베네딕토 아빠스 기념일 (유럽 수호성인)</span></li>
+            <li><span class="rank-date">7/26</span><span>성 요아킴과 성녀 안나(예수의 조부모) 기념일</span></li>
+            <li><span class="rank-date">7/29</span><span>성녀 마르타·마리아·라자로 기념일</span></li>
+            <li><span class="rank-date">7/31</span><span>성 이냐시오 데 로욜라 사제 기념일</span></li>
+            <li><span class="rank-date">8/4</span><span>성 요한 마리아 비안네 사제 기념일 (본당 사제 수호자)</span></li>
+            <li><span class="rank-date">8/8</span><span>성 도미니코 사제 기념일</span></li>
+            <li><span class="rank-date">8/11</span><span>성녀 글라라 동정 기념일</span></li>
+            <li><span class="rank-date">8/20</span><span>성 베르나르도 아빠스 학자 기념일</span></li>
+            <li><span class="rank-date">8/27</span><span>성녀 모니카 기념일</span></li>
+            <li><span class="rank-date">8/28</span><span>성 아우구스티노 주교 학자 기념일</span></li>
+            <li><span class="rank-date">8/29</span><span>세례자 성 요한 수난 기념일</span></li>
+            <li><span class="rank-date">9/3</span><span>성 대 그레고리오 교황 학자 기념일</span></li>
+            <li><span class="rank-date">9/13</span><span>성 요한 크리소스토모 주교 학자 기념일</span></li>
+            <li><span class="rank-date">9/27</span><span>성 빈첸시오 아 바오로 사제 기념일</span></li>
+          </ul>
+
+          <div class="rank-sub-title">10~12월</div>
+          <ul class="rank-list">
+            <li><span class="rank-date">10/1</span><span>아기 예수의 성녀 데레사 동정 학자 기념일 (전교의 수호자)</span></li>
+            <li><span class="rank-date">10/2</span><span>수호천사 기념일</span></li>
+            <li><span class="rank-date">10/4</span><span>아씨시의 성 프란치스코 기념일</span></li>
+            <li><span class="rank-date">10/7</span><span>묵주 기도의 복되신 동정 마리아 기념일</span></li>
+            <li><span class="rank-date">10/15</span><span>예수의 성녀 데레사 동정 학자 기념일</span></li>
+            <li><span class="rank-date">11/4</span><span>성 가롤로 보로메오 주교 기념일</span></li>
+            <li><span class="rank-date">11/11</span><span>투르의 성 마르티노 주교 기념일</span></li>
+            <li><span class="rank-date">11/17</span><span>헝가리의 성녀 엘리사벳 기념일</span></li>
+            <li><span class="rank-date">11/21</span><span>복되신 동정 마리아 자헌 기념일</span></li>
+            <li><span class="rank-date">11/22</span><span>성녀 체칠리아 동정 순교자 기념일</span></li>
+            <li><span class="rank-date">12/3</span><span>성 프란치스코 하비에르 사제 기념일 (전교의 수호자)</span></li>
+            <li><span class="rank-date">12/7</span><span>성 암브로시오 주교 학자 기념일</span></li>
+            <li><span class="rank-date">12/13</span><span>성녀 루치아 동정 순교자 기념일</span></li>
+            <li><span class="rank-date">12/14</span><span>십자가의 성 요한 사제 학자 기념일</span></li>
+          </ul>
+
+          <div class="rank-note">보편 전례력의 기념일은 약 180개에 이르러 이 목록은 전체가 아닌 주요 항목만 정리한 것입니다. 등급 표시 없이 소개된 성인은 대부분 선택 기념일이며, 지역·수도회 고유 전례력에는 이 외에도 다수의 성인이 추가됩니다.</div>
+
+        </div>
+      </details>
     </div>
 
     <div class="card s4">

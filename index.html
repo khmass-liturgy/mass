@@ -560,7 +560,7 @@
 
   <!-- ── 복되신 동정 마리아 신심미사 (매월 첫째 토요일에만 표시) ── -->
   <section class="missa-section" id="marianCard" style="display:none;">
-    <a class="missa-card" id="marianCardLink" href="https://missa.cbck.or.kr/MariaHeartMass" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#3B2A5E 0%,#1E3060 100%);">
+    <a class="missa-card" id="marianCardLink" href="https://missa.cbck.or.kr/MariaHeartMass" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#3B2A5E 0%,#1E3060 100%);" data-base-href="https://missa.cbck.or.kr/MariaHeartMass">
       <div class="missa-date-box" style="background:var(--gold-lt);">
         <span class="dow">SAT</span>
         <span class="day">♥</span>
@@ -1149,12 +1149,19 @@ document.getElementById('headerDate').textContent = formatDate();
   document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
 })();
 
-// 매월 첫째 토요일에만 성모 신심미사 카드 표시
+// 매월 첫째 토요일 0시~12시까지만 성모 신심미사 카드 표시 (10시 미사 안내용)
+// 그 이후 시간부터는 신심미사 카드를 숨기고, 상단의 날짜별 매일미사 카드로 안내
 (function(){
   const now = new Date();
   const isSaturday = now.getDay() === 6;
   const isFirstWeek = now.getDate() <= 7;
-  if (isSaturday && isFirstWeek) {
+  const isBeforeNoon = now.getHours() < 12;
+  if (isSaturday && isFirstWeek && isBeforeNoon) {
+    const link = document.getElementById('marianCardLink');
+    const base = link.getAttribute('data-base-href');
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    link.href = base + '?year=' + year + '&month=' + month;
     document.getElementById('marianCard').style.display = '';
   }
 })();

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25 14:41",
+  "updated": "2026-07-25 19:25",
   "cutoff": "2026-07-24",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 13,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_2346025857600143411",
+      "id": "naver_4538772365765341637",
       "title": "연중 제17주일 강론",
       "author": "",
       "date": "2026-07-25",
@@ -26,6 +26,16 @@
       "mass_date": "2026-07-25",
       "priest": "송영진",
       "excerpt": "<연중 제17주일 강론>(2026."
+    },
+    {
+      "id": "2135141",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135141&menu=4770",
+      "mass_date": "2026-07-25",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135134",
@@ -78,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_7813262145433117550",
+      "id": "naver_6184998410381908448",
       "title": "성 야고보 사도 축일 강론",
       "author": "",
       "date": "2026-07-24",

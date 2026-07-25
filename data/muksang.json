@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25 07:02",
+  "updated": "2026-07-25 14:41",
   "cutoff": "2026-07-24",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 10,
+  "count": 13,
   "posts": [
     {
-      "id": "naver_5561041481014690854",
+      "id": "naver_2346025857600143411",
       "title": "연중 제17주일 강론",
       "author": "",
       "date": "2026-07-25",
@@ -26,6 +26,36 @@
       "mass_date": "2026-07-25",
       "priest": "송영진",
       "excerpt": "<연중 제17주일 강론>(2026."
+    },
+    {
+      "id": "2135134",
+      "title": "양승국 신부님_성장에 성장을 거듭한 야고보 사도의 신앙!",
+      "author": "최원석",
+      "date": "2026-07-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135134&menu=4770",
+      "mass_date": "2026-07-25",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135132",
+      "title": "이영근 신부님_“너희는 내 잔을 마실 것이다.”(마태 20,23)",
+      "author": "최원석",
+      "date": "2026-07-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135132&menu=4770",
+      "mass_date": "2026-07-25",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135130",
+      "title": "전삼용 신부님_사랑하는 만큼 마시기!",
+      "author": "최원석",
+      "date": "2026-07-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135130&menu=4770",
+      "mass_date": "2026-07-25",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135123",
@@ -48,7 +78,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_704049827979758805",
+      "id": "naver_7813262145433117550",
       "title": "성 야고보 사도 축일 강론",
       "author": "",
       "date": "2026-07-24",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26 00:01",
+  "updated": "2026-07-26 06:54",
   "cutoff": "2026-07-25",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "naver_4773574379095928793",
+      "title": "연중 제17주간 월요일 강론",
+      "author": "",
+      "date": "2026-07-26",
+      "url": "https://blog.naver.com/syj1212ad/224358023894?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-26",
+      "priest": "송영진",
+      "excerpt": "<연중 제17주간 월요일 강론>(2026."
+    },
+    {
+      "id": "2135156",
+      "title": "07.26.연중 제17주일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-26",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135156&menu=4770",
+      "mass_date": "2026-07-26",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135149",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 26일 연중 제17주일",
@@ -28,7 +48,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_6016402552257320851",
+      "id": "naver_7288471752109208624",
       "title": "연중 제17주일 강론",
       "author": "",
       "date": "2026-07-25",

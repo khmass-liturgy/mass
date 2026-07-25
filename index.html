@@ -380,6 +380,28 @@
     .muksang-all-title{font-size:1rem;}
     .muksang-all-arrow{display:none;}
   }
+  /* ── 성무일도 아침·저녁기도 (반절 카드 2개) ── */
+  .lauds-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
+  .lauds-card{
+    display:flex;align-items:center;gap:12px;
+    border-radius:6px;padding:16px 18px;
+    text-decoration:none;position:relative;overflow:hidden;
+    box-shadow:0 6px 22px rgba(26,39,68,.2);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .lauds-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,39,68,.3);}
+  .lauds-morning{background:linear-gradient(135deg,#8A5A1E 0%,#C08A2E 100%);}
+  .lauds-evening{background:linear-gradient(135deg,#241C4A 0%,#463880 100%);}
+  .lauds-icon{flex-shrink:0;width:40px;height:40px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:1;}
+  .lauds-body{flex:1;min-width:0;z-index:1;}
+  .lauds-eyebrow{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:2px;}
+  .lauds-title{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:700;color:var(--cream);}
+  .lauds-arrow{flex-shrink:0;font-size:1.1rem;color:rgba(255,255,255,.85);transition:transform .2s;z-index:1;}
+  .lauds-card:hover .lauds-arrow{transform:translateX(4px);}
+  @media (max-width:380px){
+    .lauds-grid{grid-template-columns:1fr;}
+  }
+
   /* ── 세례명 축일 달력 카드 ── */
   .feast-card{background:linear-gradient(135deg,#5B1F2E 0%,#7E2F42 100%);box-shadow:0 6px 22px rgba(91,31,46,.25);}
   .feast-card:hover{box-shadow:0 12px 32px rgba(91,31,46,.35);}
@@ -697,6 +719,37 @@
         </div>
       </div>
     </details>
+  </section>
+
+  <!-- ── 성무일도와 함께하는 아침·저녁기도 (반절 카드 2개) ── -->
+  <section class="missa-section">
+    <div class="lauds-grid">
+      <a class="lauds-card lauds-morning" href="https://missa.cbck.or.kr/Prayer-Morn" target="_blank" rel="noopener">
+        <div class="lauds-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <circle cx="12" cy="14" r="5" fill="#FFF3D6"/>
+            <path d="M12 2v3M4.2 6.2l2.1 2.1M19.8 6.2l-2.1 2.1M2 15h3M19 15h3" stroke="#FFF3D6" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="lauds-body">
+          <div class="lauds-eyebrow">성무일도</div>
+          <div class="lauds-title">아침기도</div>
+        </div>
+        <div class="lauds-arrow">→</div>
+      </a>
+      <a class="lauds-card lauds-evening" href="https://missa.cbck.or.kr/Prayer-Even" target="_blank" rel="noopener">
+        <div class="lauds-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="#E3D6F5"/>
+          </svg>
+        </div>
+        <div class="lauds-body">
+          <div class="lauds-eyebrow">성무일도</div>
+          <div class="lauds-title">저녁기도</div>
+        </div>
+        <div class="lauds-arrow">→</div>
+      </a>
+    </div>
   </section>
 
   <!-- ── 미사 중 빠른 검색: 주요기도문 · 성가검색 ── -->

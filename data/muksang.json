@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27 06:57",
+  "updated": "2026-07-27 15:28",
   "cutoff": "2026-07-26",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 10,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_4416688428051844268",
+      "id": "naver_2772397733214441846",
       "title": "연중 제17주간 화요일 강론",
       "author": "",
       "date": "2026-07-27",
@@ -26,6 +26,46 @@
       "mass_date": "2026-07-27",
       "priest": "송영진",
       "excerpt": "<연중 제17주간 화요일 강론>(2026."
+    },
+    {
+      "id": "2135199",
+      "title": "이영근 신부님_“하느님의 나라는 겨자씨와 같다.”(마태 13,31)",
+      "author": "최원석",
+      "date": "2026-07-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135199&menu=4770",
+      "mass_date": "2026-07-27",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135198",
+      "title": "전삼용 신부님_늙는 것이 아니라 익어간다는 것은 무슨 뜻인가?",
+      "author": "최원석",
+      "date": "2026-07-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135198&menu=4770",
+      "mass_date": "2026-07-27",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135197",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-07-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135197&menu=4770",
+      "mass_date": "2026-07-27",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135196",
+      "title": "양승국 신부님_내 안에 뿌려진 생명의 씨앗으로 인해 나는 위대합니다!",
+      "author": "최원석",
+      "date": "2026-07-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135196&menu=4770",
+      "mass_date": "2026-07-27",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135181",
@@ -48,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_8195198706260919128",
+      "id": "naver_5022426099555600655",
       "title": "연중 제17주간 월요일 강론",
       "author": "",
       "date": "2026-07-26",

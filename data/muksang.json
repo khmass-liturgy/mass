@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28 01:16",
+  "updated": "2026-07-28 07:04",
   "cutoff": "2026-07-27",
   "days": 2,
   "names": [
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_7776261734792986945",
+      "title": "성녀 마르타와 성녀 마리아와 성 라자로 기념일 강론",
+      "author": "",
+      "date": "2026-07-28",
+      "url": "https://blog.naver.com/syj1212ad/224360032037?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-28",
+      "priest": "송영진",
+      "excerpt": "<성녀 마르타와 성녀 마리아와 성 라자로 기념일 강론> (2026."
+    },
     {
       "id": "2135223",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 28일 연중 제17주간 화요일",
@@ -28,7 +38,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1690700309504414518",
+      "id": "naver_6692749012011563141",
       "title": "연중 제17주간 화요일 강론",
       "author": "",
       "date": "2026-07-27",
@@ -49,7 +59,7 @@
     },
     {
       "id": "2135198",
-      "title": "전삼용 신부님_늙는 것이 아니라 익어간다는 것은 무슨 뜻인가?",
+      "title": "전삼용 신부님_늙는 것이 아니라 익어간다는 것은 무슨 뜻인가? |1|",
       "author": "최원석",
       "date": "2026-07-27",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135198&menu=4770",

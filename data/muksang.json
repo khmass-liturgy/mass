@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-28 20:15",
-  "cutoff": "2026-07-27",
+  "updated": "2026-07-29 01:04",
+  "cutoff": "2026-07-28",
   "days": 2,
   "names": [
     "조명연",
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 8,
   "posts": [
     {
-      "id": "naver_5858904881582295458",
+      "id": "2135261",
+      "title": "조명연 마태오신부님(빠다킹신부님)  7월 29일 성녀 마르타와 성녀 마 ...",
+      "author": "박양석",
+      "date": "2026-07-28",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135261&menu=4770",
+      "mass_date": "2026-07-29",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_3222136134227329334",
       "title": "성녀 마르타와 성녀 마리아와 성 라자로 기념일 강론",
       "author": "",
       "date": "2026-07-28",
@@ -84,76 +94,6 @@
       "date": "2026-07-27",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135223&menu=4770",
       "mass_date": "2026-07-28",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_3989570198559807695",
-      "title": "연중 제17주간 화요일 강론",
-      "author": "",
-      "date": "2026-07-27",
-      "url": "https://blog.naver.com/syj1212ad/224358902238?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-07-27",
-      "priest": "송영진",
-      "excerpt": "<연중 제17주간 화요일 강론>(2026."
-    },
-    {
-      "id": "2135199",
-      "title": "이영근 신부님_“하느님의 나라는 겨자씨와 같다.”(마태 13,31)",
-      "author": "최원석",
-      "date": "2026-07-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135199&menu=4770",
-      "mass_date": "2026-07-27",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135198",
-      "title": "전삼용 신부님_늙는 것이 아니라 익어간다는 것은 무슨 뜻인가? |1|",
-      "author": "최원석",
-      "date": "2026-07-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135198&menu=4770",
-      "mass_date": "2026-07-27",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135197",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-07-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135197&menu=4770",
-      "mass_date": "2026-07-27",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135196",
-      "title": "양승국 신부님_내 안에 뿌려진 생명의 씨앗으로 인해 나는 위대합니다!",
-      "author": "최원석",
-      "date": "2026-07-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135196&menu=4770",
-      "mass_date": "2026-07-27",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135181",
-      "title": "07.27.월 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135181&menu=4770",
-      "mass_date": "2026-07-27",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135178",
-      "title": "조명연 마태오신부님(빠다킹신부님) 7월 27일 연중 제17주간 월요일",
-      "author": "박양석",
-      "date": "2026-07-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135178&menu=4770",
-      "mass_date": "2026-07-27",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

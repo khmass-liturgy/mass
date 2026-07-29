@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30 00:48",
+  "updated": "2026-07-30 06:59",
   "cutoff": "2026-07-29",
   "days": 2,
   "names": [
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_7627667879495628796",
+      "title": "연중 제17주간 금요일 강론",
+      "author": "",
+      "date": "2026-07-30",
+      "url": "https://blog.naver.com/syj1212ad/224362396617?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-30",
+      "priest": "송영진",
+      "excerpt": "<연중 제17주간 금요일 강론>(2026."
+    },
     {
       "id": "2135303",
       "title": "조명연 마태오신부님(빠다킹신부님) 7월 30일 연중 제17주간 목요일",
@@ -28,7 +38,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3267377279795470296",
+      "id": "naver_6732637053847678802",
       "title": "연중 제17주간 목요일 강론",
       "author": "",
       "date": "2026-07-29",
@@ -49,7 +59,7 @@
     },
     {
       "id": "2135278",
-      "title": "전삼용 신부님_저는 누군가의 신앙을 평가해야 할 때 이것만 봅니다",
+      "title": "전삼용 신부님_저는 누군가의 신앙을 평가해야 할 때 이것만 봅니다 |1|",
       "author": "최원석",
       "date": "2026-07-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135278&menu=4770",
@@ -59,7 +69,7 @@
     },
     {
       "id": "2135277",
-      "title": "양승국 신부님_사막의 오아시스 같은 우리 공동체!",
+      "title": "양승국 신부님_사막의 오아시스 같은 우리 공동체! |1|",
       "author": "최원석",
       "date": "2026-07-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135277&menu=4770",

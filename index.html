@@ -1215,22 +1215,46 @@ document.getElementById('headerDate').textContent = formatDate();
 
   const ua = window.navigator.userAgent;
   const isIOS = /iphone|ipad|ipod/i.test(ua);
-  const isAndroid = /android/i.test(ua);
+
+  // 카카오톡·네이버·인스타그램·페이스북·라인 등 인앱 브라우저는
+  // "홈 화면에 추가" 기능 자체를 지원하지 않는 경우가 대부분이라 별도 안내가 필요하다.
+  const isKakao = /kakaotalk/i.test(ua);
+  const isNaverApp = /naver\(inapp/i.test(ua) || /naver\s*app/i.test(ua);
+  const isLine = /\bline\//i.test(ua);
+  const isFacebook = /fban|fbav/i.test(ua);
+  const isInstagram = /instagram/i.test(ua);
+  const isInApp = isKakao || isNaverApp || isLine || isFacebook || isInstagram;
 
   let deferredPrompt = null;
 
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
-    btn.style.display = 'flex';
   });
 
-  // iOS는 beforeinstallprompt 미지원 → 안내 버튼을 바로 노출
-  if (isIOS) {
-    btn.style.display = 'flex';
-  }
+  // 브라우저가 beforeinstallprompt를 보내주든 안 보내주든,
+  // 버튼은 항상 보이게 하고 눌렀을 때 상황에 맞는 안내를 보여준다.
+  btn.style.display = 'flex';
 
   btn.addEventListener('click', async () => {
+    // 인앱 브라우저(카카오톡 등)에서는 홈 화면 추가가 막혀 있는 경우가 대부분이므로
+    // 기본 브라우저로 열도록 먼저 안내한다.
+    if (isInApp) {
+      let appName = '현재 앱';
+      if (isKakao) appName = '카카오톡';
+      else if (isNaverApp) appName = '네이버 앱';
+      else if (isLine) appName = '라인';
+      else if (isFacebook) appName = '페이스북';
+      else if (isInstagram) appName = '인스타그램';
+      steps.innerHTML = `
+        <li><strong>${appName} 내장 브라우저</strong>에서는 홈 화면 추가가 되지 않는 경우가 많아요</li>
+        <li>화면 오른쪽 위 <strong>⋮ (메뉴)</strong> 또는 <strong>공유 아이콘</strong>을 누르세요</li>
+        <li><strong>다른 브라우저로 열기</strong>(또는 "Chrome으로 열기")를 선택하세요</li>
+        <li>연 브라우저에서 이 버튼을 다시 눌러 홈 화면에 추가하세요</li>`;
+      overlay.style.display = 'flex';
+      return;
+    }
+
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;

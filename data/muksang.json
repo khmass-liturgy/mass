@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31 00:51",
+  "updated": "2026-07-31 07:04",
   "cutoff": "2026-07-30",
   "days": 2,
   "names": [
@@ -15,10 +15,30 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 10,
   "posts": [
     {
-      "id": "naver_3128283607850450837",
+      "id": "naver_3863328650101241950",
+      "title": "연중 제17주간 토요일 강론",
+      "author": "",
+      "date": "2026-07-31",
+      "url": "https://blog.naver.com/syj1212ad/224363451391?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-07-31",
+      "priest": "송영진",
+      "excerpt": "<연중 제17주간 토요일 강론>(2026."
+    },
+    {
+      "id": "2135347",
+      "title": "07.31.금.성 이냐시오 데 로욜라 사제 기념일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-07-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135347&menu=4770",
+      "mass_date": "2026-07-31",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_137848360002024057",
       "title": "연중 제17주간 금요일 강론",
       "author": "",
       "date": "2026-07-30",
@@ -59,7 +79,7 @@
     },
     {
       "id": "2135320",
-      "title": "전삼용 신부님_하늘나라가 그물인 이유",
+      "title": "전삼용 신부님_하늘나라가 그물인 이유 |1|",
       "author": "최원석",
       "date": "2026-07-30",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135320&menu=4770",

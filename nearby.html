@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>주변 성당 찾기 ⛪ 가까운 성당 10곳</title>
+<meta name="description" content="내 위치에서 가까운 성당 10곳을 거리순으로 찾아드립니다. 한국천주교주교회의 공식 주소록 기반." />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1A2744" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1A2744; --navy-lt:#243560;
+    --gold:#C9A84C; --gold-lt:#E2C97E;
+    --cream:#F5F0E8; --card:#FFFFFF;
+    --border:#DDD5C0; --text:#1A1A1A;
+    --muted:#7A6F5E;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;margin:0;min-height:100vh;}
+
+  header{background:var(--navy);position:relative;padding:34px 20px 44px;text-align:center;}
+  header .cross{font-size:14px;letter-spacing:8px;color:var(--gold-lt);margin-bottom:8px;}
+  header h1{font-family:'Noto Serif KR',serif;font-weight:700;font-size:1.4rem;color:var(--cream);margin:0;}
+  header p{font-size:.82rem;color:#B8C0D8;margin-top:8px;}
+  header .home{position:absolute;top:16px;left:16px;font-size:.78rem;color:#C7D4E4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 13px;}
+  header .home:hover{background:rgba(255,255,255,.08);}
+
+  main{max-width:640px;margin:-24px auto 0;padding:0 16px 60px;position:relative;z-index:2;}
+
+  .locate-card{background:var(--card);border-radius:16px;padding:26px 22px;box-shadow:0 10px 30px rgba(26,39,68,.15);text-align:center;}
+  .locate-card p{color:var(--muted);font-size:.88rem;margin:8px 0 18px;}
+  .locate-btn{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);color:var(--navy);
+    border:none;border-radius:24px;padding:13px 28px;font-family:'Noto Serif KR',serif;font-weight:700;
+    font-size:.95rem;cursor:pointer;box-shadow:0 6px 16px rgba(201,168,76,.35);}
+  .locate-btn:active{transform:translateY(1px);}
+  .locate-btn:disabled{opacity:.6;cursor:default;}
+
+  .status-msg{margin-top:16px;font-size:.82rem;color:var(--muted);}
+  .status-msg.error{color:#A23B3B;}
+
+  .result-list{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
+  .parish-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;
+    display:flex;gap:14px;align-items:flex-start;box-shadow:0 3px 10px rgba(26,39,68,.06);}
+  .parish-rank{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-weight:700;font-size:.85rem;}
+  .parish-body{flex:1;min-width:0;}
+  .parish-name{font-family:'Noto Serif KR',serif;font-weight:700;font-size:1.02rem;color:var(--navy);margin-bottom:2px;}
+  .parish-diocese{display:inline-block;font-size:.68rem;color:var(--gold-lt);background:var(--navy);
+    border-radius:8px;padding:1px 8px;margin-bottom:6px;}
+  .parish-addr{font-size:.82rem;color:var(--muted);margin-bottom:6px;}
+  .parish-actions{display:flex;gap:10px;font-size:.78rem;}
+  .parish-actions a{color:var(--navy);text-decoration:none;font-weight:600;border-bottom:1px solid var(--gold);}
+  .parish-dist{flex-shrink:0;text-align:right;font-family:'Cinzel',serif;font-weight:700;color:var(--navy);
+    font-size:.95rem;white-space:nowrap;}
+  .parish-dist span{display:block;font-family:'Noto Sans KR',sans-serif;font-weight:400;font-size:.66rem;color:var(--muted);}
+
+  .footnote{margin-top:26px;font-size:.72rem;color:var(--muted);text-align:center;line-height:1.6;}
+  .footnote a{color:var(--muted);}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="home" href="index.html">← 홈으로</a>
+  <div class="cross">⛪</div>
+  <h1>주변 성당 찾기</h1>
+  <p>내 위치에서 가까운 성당 10곳을 거리순으로 보여드립니다</p>
+</header>
+
+<main>
+  <div class="locate-card">
+    <button class="locate-btn" id="locateBtn" type="button">📍 내 위치에서 가까운 성당 찾기</button>
+    <p>위치 정보는 이 브라우저에서만 사용되며 서버로 전송·저장되지 않습니다.</p>
+    <div class="status-msg" id="statusMsg" style="display:none;"></div>
+  </div>
+
+  <div class="result-list" id="resultList"></div>
+
+  <div class="footnote">
+    성당 정보 출처: 한국천주교주교회의 공식 「한국 천주교 주소록」<br>
+    주소 → 좌표 변환은 카카오 로컬 API를 사용합니다. 정보가 실제와 다를 수 있으니<br>
+    방문 전 성당 홈페이지 또는 전화로 미사시간을 다시 확인해 주세요.
+  </div>
+</main>
+
+<script>
+(function(){
+  const btn = document.getElementById('locateBtn');
+  const statusEl = document.getElementById('statusMsg');
+  const listEl = document.getElementById('resultList');
+
+  function setStatus(msg, isError){
+    statusEl.textContent = msg;
+    statusEl.className = 'status-msg' + (isError ? ' error' : '');
+    statusEl.style.display = msg ? '' : 'none';
+  }
+
+  function haversineKm(lat1, lng1, lat2, lng2){
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat/2)**2 +
+      Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function render(parishes, userLat, userLng){
+    const withDist = parishes
+      .filter(function(p){ return typeof p.lat === 'number' && typeof p.lng === 'number'; })
+      .map(function(p){
+        return Object.assign({}, p, { dist: haversineKm(userLat, userLng, p.lat, p.lng) });
+      })
+      .sort(function(a,b){ return a.dist - b.dist; })
+      .slice(0, 10);
+
+    if (withDist.length === 0){
+      setStatus('주변 성당 정보를 찾지 못했습니다. 데이터가 아직 준비 중일 수 있습니다.', true);
+      return;
+    }
+
+    listEl.innerHTML = withDist.map(function(p, i){
+      const distText = p.dist < 1 ? Math.round(p.dist*1000) + 'm' : p.dist.toFixed(1) + 'km';
+      const mapUrl = 'https://map.kakao.com/link/to/' + encodeURIComponent(p.name) + ',' + p.lat + ',' + p.lng;
+      const telHref = p.phone ? 'tel:' + p.phone.replace(/[^\d]/g, '') : '';
+      return '<div class="parish-card">'
+        + '<div class="parish-rank">' + (i+1) + '</div>'
+        + '<div class="parish-body">'
+          + '<div class="parish-name">' + esc(p.name) + '</div>'
+          + '<div class="parish-diocese">' + esc(p.diocese) + '</div>'
+          + '<div class="parish-addr">' + esc(p.address) + '</div>'
+          + '<div class="parish-actions">'
+            + '<a href="' + mapUrl + '" target="_blank" rel="noopener">🧭 길찾기</a>'
+            + (telHref ? '<a href="' + telHref + '">📞 전화</a>' : '')
+          + '</div>'
+        + '</div>'
+        + '<div class="parish-dist">' + distText + '<span>거리</span></div>'
+        + '</div>';
+    }).join('');
+
+    setStatus('');
+  }
+
+  btn.addEventListener('click', function(){
+    if (!('geolocation' in navigator)){
+      setStatus('이 브라우저는 위치 정보 기능을 지원하지 않습니다.', true);
+      return;
+    }
+
+    btn.disabled = true;
+    setStatus('위치를 확인하는 중입니다…');
+    listEl.innerHTML = '';
+
+    navigator.geolocation.getCurrentPosition(
+      function(pos){
+        const userLat = pos.coords.latitude;
+        const userLng = pos.coords.longitude;
+        setStatus('가까운 성당을 찾는 중입니다…');
+
+        fetch('data/parishes.json', { cache: 'no-store' })
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            btn.disabled = false;
+            if (!d || !d.parishes || d.parishes.length === 0){
+              setStatus('성당 데이터가 아직 준비되지 않았습니다. 잠시 후 다시 시도해 주세요.', true);
+              return;
+            }
+            render(d.parishes, userLat, userLng);
+          })
+          .catch(function(){
+            btn.disabled = false;
+            setStatus('성당 데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.', true);
+          });
+      },
+      function(err){
+        btn.disabled = false;
+        if (err.code === err.PERMISSION_DENIED){
+          setStatus('위치 접근 권한이 거부되었습니다. 브라우저 설정에서 이 사이트의 위치 권한을 허용한 뒤 다시 시도해 주세요.', true);
+        } else if (err.code === err.TIMEOUT){
+          setStatus('위치 확인이 시간 초과되었습니다. GPS/위치 서비스가 켜져 있는지 확인 후 다시 시도해 주세요.', true);
+        } else {
+          setStatus('위치를 확인할 수 없습니다. 잠시 후 다시 시도해 주세요.', true);
+        }
+      },
+      { enableHighAccuracy: true, timeout: 12000, maximumAge: 60000 }
+    );
+  });
+})();
+</script>
+</body>
+</html>

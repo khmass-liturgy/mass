@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31 07:04",
+  "updated": "2026-07-31 15:11",
   "cutoff": "2026-07-30",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 10,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_3863328650101241950",
+      "id": "naver_2961706206994200787",
       "title": "연중 제17주간 토요일 강론",
       "author": "",
       "date": "2026-07-31",
@@ -26,6 +26,46 @@
       "mass_date": "2026-07-31",
       "priest": "송영진",
       "excerpt": "<연중 제17주간 토요일 강론>(2026."
+    },
+    {
+      "id": "2135360",
+      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 默想",
+      "author": "최원석",
+      "date": "2026-07-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135360&menu=4770",
+      "mass_date": "2026-07-31",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135357",
+      "title": "이영근 신부님_“예언자는 어디에서나 존경받지만 고향과 집안에서만은 존경 ...",
+      "author": "최원석",
+      "date": "2026-07-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135357&menu=4770",
+      "mass_date": "2026-07-31",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135356",
+      "title": "양승국 신부님_[성 이냐시오 데 로욜라 사제 기념일]",
+      "author": "최원석",
+      "date": "2026-07-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135356&menu=4770",
+      "mass_date": "2026-07-31",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135355",
+      "title": "전삼용 신부님_언제부터 아버지는 자녀에게 망령이 되는가?",
+      "author": "최원석",
+      "date": "2026-07-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135355&menu=4770",
+      "mass_date": "2026-07-31",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135347",
@@ -38,7 +78,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_137848360002024057",
+      "id": "naver_6258763201795456540",
       "title": "연중 제17주간 금요일 강론",
       "author": "",
       "date": "2026-07-30",

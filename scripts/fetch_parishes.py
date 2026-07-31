@@ -19,6 +19,7 @@ import re
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 from datetime import datetime
 
@@ -60,6 +61,13 @@ KAKAO_API_KEY = os.environ.get("KAKAO_REST_API_KEY", "").strip()
 REQUEST_DELAY = 0.25  # 대상 서버에 부담을 주지 않도록 매 요청 사이 간격
 
 
+def resolve_href(soup, page_url, href):
+    """페이지에 <base> 태그가 있으면 그 기준으로, 없으면 페이지 자체 URL 기준으로 링크를 절대경로화."""
+    base_tag = soup.find("base", href=True)
+    effective_base = urljoin(page_url, base_tag["href"]) if base_tag else page_url
+    return urljoin(effective_base, href)
+
+
 SESSION = requests.Session()
 
 
@@ -95,10 +103,14 @@ def list_parish_links(diocese_code):
         print(f"    [진단] 본당 목록 링크(Church.aspx)를 찾지 못함", file=sys.stderr)
         return []
 
-    if church_link.startswith("http"):
-        church_url = church_link
-    else:
-        church_url = f"{BASE}/{church_link.lstrip('./')}"
+    base_tag = soup.find("base", href=True)
+    print(f"    [진단] 원본 church_link href: {church_link!r} / <base> 태그: {base_tag['href'] if base_tag else '없음'}", file=sys.stderr)
+
+    diocese_page_url = f"{BASE}/Diocese.aspx"
+    church_url = resolve_href(soup, diocese_page_url, church_link)
+
+    # 안전장치: 어떤 경로 조합 방식이든 'OnlineAddress/Catholic'이 중복되면 강제로 한 번만 남긴다.
+    church_url = re.sub(r"(OnlineAddress/Catholic/)(?:OnlineAddress/Catholic/)+", r"\1", church_url)
 
     print(f"    [진단] 본당 목록 URL: {church_url}", file=sys.stderr)
     html2 = get(church_url)

@@ -78,6 +78,20 @@ def get(url, params=None):
     return r.text
 
 
+def clean_phone(raw):
+    """'948-9064~5', '(031)948-9064', '948-9064,9065' 같은 표기에서
+    부가 회선/괄호를 정리하고 첫 번째 번호만 깔끔하게 남긴다."""
+    if not raw:
+        return ""
+    # 물결표(~)·쉼표·슬래시·가운뎃점으로 병기된 보조 회선은 첫 번째 번호만 사용
+    first = re.split(r"[~,/·]", raw)[0].strip()
+    # 괄호로 감싼 지역번호 표기를 대시로 정리: (031)948-9064 -> 031-948-9064
+    first = first.replace("(", "").replace(")", "-")
+    first = re.sub(r"-+", "-", first).strip("-")
+    first = re.sub(r"\s+", "", first)
+    return first
+
+
 def get_field(soup, label):
     """'대표주소' 같은 라벨 셀 옆의 값 셀 텍스트를 찾아 반환한다."""
     for cell in soup.find_all(["td", "th"]):
@@ -143,7 +157,7 @@ def fetch_parish_detail(diocese_code, code):
 
     name = get_field(soup, "한글명칭")
     address = get_field(soup, "대표주소")
-    phone = get_field(soup, "대표 전화 번호")
+    phone = clean_phone(get_field(soup, "대표 전화 번호"))
     homepage = get_field(soup, "홈페이지 주소")
 
     # 주소 앞의 우편번호(5자리 숫자)는 지오코딩에 방해가 될 수 있어 제거

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01 01:00",
+  "updated": "2026-08-01 07:03",
   "cutoff": "2026-07-31",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 7,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_6210189949182925103",
+      "title": "연중 제18주일 강론",
+      "author": "",
+      "date": "2026-08-01",
+      "url": "https://blog.naver.com/syj1212ad/224364543304?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-01",
+      "priest": "송영진",
+      "excerpt": "<연중 제18주일 강론>(2026."
+    },
+    {
+      "id": "2135380",
+      "title": "08.01.토 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-01",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135380&menu=4770",
+      "mass_date": "2026-08-01",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135368",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 1일 성 알폰소 마리아 데 리구 ...",
@@ -28,7 +48,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_6087120065933161439",
+      "id": "naver_4072760551457898829",
       "title": "연중 제17주간 토요일 강론",
       "author": "",
       "date": "2026-07-31",
@@ -59,7 +79,7 @@
     },
     {
       "id": "2135356",
-      "title": "양승국 신부님_[성 이냐시오 데 로욜라 사제 기념일]",
+      "title": "양승국 신부님_[성 이냐시오 데 로욜라 사제 기념일] |1|",
       "author": "최원석",
       "date": "2026-07-31",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135356&menu=4770",

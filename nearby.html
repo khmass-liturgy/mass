@@ -129,7 +129,9 @@
 
     listEl.innerHTML = withDist.map(function(p, i){
       const distText = p.dist < 1 ? Math.round(p.dist*1000) + 'm' : p.dist.toFixed(1) + 'km';
-      const mapUrl = 'https://map.kakao.com/link/to/' + encodeURIComponent(p.name) + ',' + p.lat + ',' + p.lng;
+      // 좌표 기반 길찾기 딥링크(/link/to/)는 최근 카카오 쪽에서 불안정하다는 보고가 있어,
+      // 훨씬 안정적인 주소 검색 링크를 사용한다. 지도에서 핀을 확인한 뒤 앱 내에서 길찾기를 누르면 된다.
+      const mapUrl = 'https://map.kakao.com/?q=' + encodeURIComponent(p.address || p.name);
       const telHref = p.phone ? 'tel:' + p.phone.replace(/[^\d]/g, '') : '';
       return '<div class="parish-card">'
         + '<div class="parish-rank">' + (i+1) + '</div>'
@@ -138,7 +140,7 @@
           + '<div class="parish-diocese">' + esc(p.diocese) + '</div>'
           + '<div class="parish-addr">' + esc(p.address) + '</div>'
           + '<div class="parish-actions">'
-            + '<a href="' + mapUrl + '" target="_blank" rel="noopener">🧭 길찾기</a>'
+            + '<a href="' + mapUrl + '" target="_blank" rel="noopener">🧭 지도 보기</a>'
             + (telHref ? '<a href="' + telHref + '">📞 전화</a>' : '')
           + '</div>'
         + '</div>'

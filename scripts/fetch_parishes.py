@@ -60,8 +60,11 @@ KAKAO_API_KEY = os.environ.get("KAKAO_REST_API_KEY", "").strip()
 REQUEST_DELAY = 0.25  # 대상 서버에 부담을 주지 않도록 매 요청 사이 간격
 
 
+SESSION = requests.Session()
+
+
 def get(url, params=None):
-    r = requests.get(url, headers=HEADERS, params=params, timeout=20)
+    r = SESSION.get(url, headers=HEADERS, params=params, timeout=20)
     r.raise_for_status()
     r.encoding = r.apparent_encoding or "utf-8"
     return r.text
@@ -80,6 +83,7 @@ def get_field(soup, label):
 def list_parish_links(diocese_code):
     """교구 코드로 해당 교구의 본당 목록 페이지를 찾아 (이름, 상세페이지코드) 목록을 반환."""
     html = get(f"{BASE}/Diocese.aspx", params={"cgubn": "c", "gyogu": diocese_code, "char": "all"})
+    print(f"    [진단] Diocese.aspx 응답 길이: {len(html)}자, 'Church.aspx' 포함 여부: {'Church.aspx' in html}", file=sys.stderr)
     soup = BeautifulSoup(html, "html.parser")
 
     church_link = None
@@ -88,6 +92,7 @@ def list_parish_links(diocese_code):
             church_link = a["href"]
             break
     if not church_link:
+        print(f"    [진단] 본당 목록 링크(Church.aspx)를 찾지 못함", file=sys.stderr)
         return []
 
     if church_link.startswith("http"):
@@ -95,7 +100,9 @@ def list_parish_links(diocese_code):
     else:
         church_url = f"{BASE}/{church_link.lstrip('./')}"
 
+    print(f"    [진단] 본당 목록 URL: {church_url}", file=sys.stderr)
     html2 = get(church_url)
+    print(f"    [진단] Church.aspx 응답 길이: {len(html2)}자, 'DetailInfo.aspx' 포함 여부: {'DetailInfo.aspx' in html2}", file=sys.stderr)
     soup2 = BeautifulSoup(html2, "html.parser")
 
     results = []
@@ -153,6 +160,8 @@ def geocode_kakao(address):
             docs = r.json().get("documents", [])
             if docs:
                 return float(docs[0]["y"]), float(docs[0]["x"])  # y=위도, x=경도
+        else:
+            print(f"    [진단] 주소 지오코딩 실패 status={r.status_code} body={r.text[:200]}", file=sys.stderr)
     except Exception as e:
         print("address geocode failed:", address, e, file=sys.stderr)
 
@@ -166,6 +175,8 @@ def geocode_kakao(address):
             docs = r.json().get("documents", [])
             if docs:
                 return float(docs[0]["y"]), float(docs[0]["x"])
+        else:
+            print(f"    [진단] 키워드 지오코딩 실패 status={r.status_code} body={r.text[:200]}", file=sys.stderr)
     except Exception as e:
         print("keyword geocode failed:", address, e, file=sys.stderr)
 
@@ -176,6 +187,9 @@ def main():
     if not KAKAO_API_KEY:
         print("경고: KAKAO_REST_API_KEY가 설정되어 있지 않습니다. 좌표 없이는 결과가 비어 있게 됩니다.",
               file=sys.stderr)
+    else:
+        masked = KAKAO_API_KEY[:4] + "..." + KAKAO_API_KEY[-4:] if len(KAKAO_API_KEY) > 8 else "***"
+        print(f"[진단] KAKAO_REST_API_KEY 감지됨 (길이 {len(KAKAO_API_KEY)}자, {masked})", file=sys.stderr)
 
     all_parishes = []
 
@@ -184,17 +198,18 @@ def main():
         try:
             links = list_parish_links(code)
         except Exception as e:
-            print(f"[{diocese_name}] 목록 조회 실패:", e, file=sys.stderr)
+            print(f"[{diocese_name}] 목록 조회 실패:", repr(e), file=sys.stderr)
             continue
         time.sleep(REQUEST_DELAY)
 
         print(f"[{diocese_name}] 본당 {len(links)}곳 발견", file=sys.stderr)
 
+        diocese_ok = 0
         for list_name, parish_code in links:
             try:
                 detail = fetch_parish_detail(code, parish_code)
             except Exception as e:
-                print(f"  상세 조회 실패 ({list_name}):", e, file=sys.stderr)
+                print(f"  상세 조회 실패 ({list_name}):", repr(e), file=sys.stderr)
                 time.sleep(REQUEST_DELAY)
                 continue
             time.sleep(REQUEST_DELAY)
@@ -202,6 +217,7 @@ def main():
             name = detail["name"] or list_name
             address = detail["address"]
             if not address:
+                print(f"  주소 없음, 제외: {name}", file=sys.stderr)
                 continue
 
             lat, lng = geocode_kakao(address)
@@ -211,6 +227,7 @@ def main():
                 print(f"  지오코딩 실패, 제외: {name} ({address})", file=sys.stderr)
                 continue
 
+            diocese_ok += 1
             all_parishes.append({
                 "name": name,
                 "diocese": diocese_name,
@@ -220,6 +237,7 @@ def main():
                 "lat": lat,
                 "lng": lng,
             })
+        print(f"[{diocese_name}] 완료: {diocese_ok}/{len(links)}곳 저장됨", file=sys.stderr)
 
     out = {
         "updated": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),

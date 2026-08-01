@@ -105,7 +105,7 @@
   .missa-sub{font-size:.85rem;color:#B8C0D8;}
   .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold);font-weight:600;}
 
-  .pope-card{display:block;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--vatican);
+  .pope-card{display:none;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--vatican);
     border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 3px 12px rgba(26,39,68,.06);
     transition:transform .15s,box-shadow .15s;}
   .pope-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,39,68,.12);}
@@ -501,31 +501,56 @@
     </a>
   </section>
 
-  <!-- ── 이달의 교황님 기도지향 (자동 갱신) ── -->
+  <!-- ── 이달의 교황님 기도지향 ── -->
   <section class="missa-section">
-    <a class="pope-card" id="popeCard" href="https://thepopevideo.org/?lang=ko" target="_blank" rel="noopener" style="display:none;">
+    <a class="pope-card" id="popeCard" href="https://cbck.or.kr/Pope/Prayer" target="_blank" rel="noopener">
       <div class="pope-eyebrow" id="popeEyebrow">이달의 교황님 기도지향</div>
       <div class="pope-title" id="popeTitle"></div>
       <div class="pope-intention" id="popeIntention"></div>
-      <div class="pope-more">The Pope Video · 교황기도네트워크 공식 사이트에서 더 보기 →</div>
+      <div class="pope-more">한국천주교주교회의 공식 사이트에서 더 보기 →</div>
     </a>
   </section>
 
   <script>
+  // ── 교황님의 기도지향 (연간 발표 공식 자료를 미리 담아둠 — 매년 12월경 다음 해분 추가 필요) ──
+  const POPE_PRAYER_INTENTIONS = {
+    2026: {
+      1:  { title: '하느님 말씀과 함께 하는 기도를 위하여',
+            body: '하느님 말씀과 함께 드리는 기도가 우리 삶의 양식이 되고 공동체 안에서 희망의 원천이 되어, 더욱 형제적이고 선교적인 교회를 이루어가도록 기도합시다.' },
+      2:  { title: '불치병으로 고통받는 어린이를 위하여',
+            body: '불치병으로 고통받는 어린이들과 그 가족들이 필요한 의료적 보살핌과 도움을 받으며 결코 힘과 희망을 잃지 않도록 기도합시다.' },
+      3:  { title: '군축과 평화를 위하여',
+            body: '모든 국가가 효과적인 군축, 특히 핵 군축을 향해 나아가고, 세계 지도자들이 폭력 대신 대화와 외교의 길을 선택하도록 기도합시다.' },
+      4:  { title: '위기에 처한 사제들을 위하여',
+            body: '성소의 위기를 겪고 있는 사제들이 필요한 동반을 얻고, 공동체가 이해와 기도로 그들을 지지하도록 기도합시다.' },
+      5:  { title: '모든 이가 양식을 얻을 수 있도록',
+            body: '큰 생산자에서부터 작은 소비자에 이르기까지 모든 사람이 음식 낭비를 피하기 위해 노력하고, 모두가 양질의 식품을 얻을 수 있도록 기도합시다.' },
+      6:  { title: '스포츠의 가치를 위하여',
+            body: '스포츠가 문화와 국가들 사이의 평화와 만남과 대화의 도구가 되고, 존중과 연대와 인격적 성장의 가치를 증진시키도록 기도합시다.' },
+      7:  { title: '인간 생명의 존중을 위하여',
+            body: '인간 생명을 하느님의 선물로 인정하며, 모든 단계에서 생명이 존중받고 보호받도록 기도합시다.' },
+      8:  { title: '도시 안에서의 복음화를 위하여',
+            body: '익명성과 외로움이 만연한 대도시에서 복음을 선포할 새로운 길을 찾고, 공동체를 이루어갈 창의적인 방법을 발견하도록 기도합시다.' },
+      9:  { title: '물의 관리를 위하여',
+            body: '생명에 필수적인 자원인 물을 정의롭고 지속가능하게 관리하여, 모두가 동등하게 물에 접근할 수 있도록 기도합시다.' },
+      10: { title: '정신건강 사목을 위하여',
+            body: '정신건강 사목이 교회 전반에 확립되어, 정신적 어려움을 겪는 이들에 대한 낙인과 차별을 극복할 수 있도록 기도합시다.' },
+      11: { title: '부의 올바른 사용을 위하여',
+            body: '부가 이기심의 유혹에 빠지지 않고 늘 공동선과 가난한 이들과의 연대를 위해 사용되도록 기도합시다.' },
+      12: { title: '한부모 가정을 위하여',
+            body: '어머니 또는 아버지의 부재를 겪는 가정들이 교회 안에서 지지와 동반을 얻고, 어려운 시기에 신앙 안에서 힘과 도움을 얻도록 기도합시다.' }
+    }
+  };
+
   (function(){
-    const card = document.getElementById('popeCard');
-    if (!card) return;
-    fetch('data/pope_intention.json', { cache: 'no-store' })
-      .then(function(r){ return r.json(); })
-      .then(function(d){
-        if (!d || !d.intention) return;
-        document.getElementById('popeEyebrow').textContent = '이달의 교황님 기도지향 · ' + d.year + '년 ' + d.month + '월';
-        document.getElementById('popeTitle').textContent = d.title || '';
-        document.getElementById('popeIntention').textContent = d.intention;
-        if (d.source_url) card.href = d.source_url;
-        card.style.display = 'block';
-      })
-      .catch(function(){ /* 데이터가 아직 없으면 조용히 숨김 상태 유지 */ });
+    const now = new Date();
+    const y = now.getFullYear(), m = now.getMonth() + 1;
+    const entry = POPE_PRAYER_INTENTIONS[y] && POPE_PRAYER_INTENTIONS[y][m];
+    if (!entry) return; // 해당 연도 데이터가 아직 없으면 카드를 조용히 숨긴 채로 둔다
+    document.getElementById('popeEyebrow').textContent = '이달의 교황님 기도지향 · ' + y + '년 ' + m + '월';
+    document.getElementById('popeTitle').textContent = entry.title;
+    document.getElementById('popeIntention').textContent = entry.body;
+    document.getElementById('popeCard').style.display = 'block';
   })();
   </script>
 

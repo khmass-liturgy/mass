@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01 07:03",
+  "updated": "2026-08-01 14:53",
   "cutoff": "2026-07-31",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 9,
+  "count": 13,
   "posts": [
     {
-      "id": "naver_6210189949182925103",
+      "id": "naver_5448770396316847330",
       "title": "연중 제18주일 강론",
       "author": "",
       "date": "2026-08-01",
@@ -26,6 +26,46 @@
       "mass_date": "2026-08-01",
       "priest": "송영진",
       "excerpt": "<연중 제18주일 강론>(2026."
+    },
+    {
+      "id": "2135391",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-01",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135391&menu=4770",
+      "mass_date": "2026-08-01",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135389",
+      "title": "이영근 신부님_ “세례자 요한의 머리를 쟁반에 담아 이리 가져다주십시오 ...",
+      "author": "최원석",
+      "date": "2026-08-01",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135389&menu=4770",
+      "mass_date": "2026-08-01",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135388",
+      "title": "양승국 신부님_이 시대 또 다른 순교자, 노인들!",
+      "author": "최원석",
+      "date": "2026-08-01",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135388&menu=4770",
+      "mass_date": "2026-08-01",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135387",
+      "title": "전삼용 신부님_두 종류의 행복이라는 마약",
+      "author": "최원석",
+      "date": "2026-08-01",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135387&menu=4770",
+      "mass_date": "2026-08-01",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135380",
@@ -48,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4072760551457898829",
+      "id": "naver_863197342692002013",
       "title": "연중 제17주간 토요일 강론",
       "author": "",
       "date": "2026-07-31",

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-01 23:58",
-  "cutoff": "2026-07-31",
+  "updated": "2026-08-02 06:53",
+  "cutoff": "2026-08-01",
   "days": 2,
   "names": [
     "조명연",
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_1542105692771421077",
+      "title": "잠시 중단...",
+      "author": "",
+      "date": "2026-08-02",
+      "url": "https://blog.naver.com/syj1212ad/224365394813?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-02",
+      "priest": "송영진",
+      "excerpt": "여름 휴가로 인해 강론을 잠시 중단합니다."
+    },
     {
       "id": "2135401",
       "title": "조명연 마태오신부님(빠다킹신부님)  8월 2일 연중 제18주일",
@@ -28,7 +38,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_5024648831967760850",
+      "id": "naver_6294757132250553799",
       "title": "연중 제18주일 강론",
       "author": "",
       "date": "2026-08-01",
@@ -39,7 +49,7 @@
     },
     {
       "id": "2135391",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-08-01",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135391&menu=4770",
@@ -95,66 +105,6 @@
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135368&menu=4770",
       "mass_date": "2026-08-01",
       "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_3422653112043466339",
-      "title": "연중 제17주간 토요일 강론",
-      "author": "",
-      "date": "2026-07-31",
-      "url": "https://blog.naver.com/syj1212ad/224363451391?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-07-31",
-      "priest": "송영진",
-      "excerpt": "<연중 제17주간 토요일 강론>(2026."
-    },
-    {
-      "id": "2135360",
-      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 默想",
-      "author": "최원석",
-      "date": "2026-07-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135360&menu=4770",
-      "mass_date": "2026-07-31",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135357",
-      "title": "이영근 신부님_“예언자는 어디에서나 존경받지만 고향과 집안에서만은 존경 ...",
-      "author": "최원석",
-      "date": "2026-07-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135357&menu=4770",
-      "mass_date": "2026-07-31",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135356",
-      "title": "양승국 신부님_[성 이냐시오 데 로욜라 사제 기념일] |1|",
-      "author": "최원석",
-      "date": "2026-07-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135356&menu=4770",
-      "mass_date": "2026-07-31",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135355",
-      "title": "전삼용 신부님_언제부터 아버지는 자녀에게 망령이 되는가?",
-      "author": "최원석",
-      "date": "2026-07-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135355&menu=4770",
-      "mass_date": "2026-07-31",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135347",
-      "title": "07.31.금.성 이냐시오 데 로욜라 사제 기념일 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-07-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135347&menu=4770",
-      "mass_date": "2026-07-31",
-      "priest": "한상우",
       "excerpt": "안녕하세요."
     }
   ]

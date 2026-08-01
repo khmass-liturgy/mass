@@ -61,70 +61,82 @@
   .missa-section{margin-bottom:10px;}
   .missa-card{
     position:relative;
-    background:linear-gradient(135deg,var(--navy) 0%,#2A3D6B 100%);
-    border-radius:6px;
+    background:linear-gradient(160deg,#2B1B4A 0%,#1A2744 55%,#3A1F2E 100%);
+    border-radius:10px;
     padding:30px 32px;
     overflow:hidden;
     display:flex;
     align-items:center;
     gap:28px;
     text-decoration:none;
-    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    box-shadow:0 10px 32px rgba(26,20,50,.4);
     transition:transform .25s, box-shadow .25s;
   }
-  .missa-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(26,39,68,.35);}
+  .missa-card:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(26,20,50,.5);}
   .missa-card::before{
     content:'';
     position:absolute; inset:0;
     background:
-      radial-gradient(circle at 90% -10%, rgba(201,168,76,.18), transparent 50%),
-      radial-gradient(circle at -5% 110%, rgba(201,168,76,.12), transparent 50%);
+      conic-gradient(from 200deg at 85% 10%, rgba(201,168,76,.25), transparent 35%),
+      radial-gradient(circle at 15% 100%, rgba(139,26,79,.35), transparent 55%);
     pointer-events:none;
+  }
+  .missa-card::after{
+    content:'✦';
+    position:absolute; top:14px; right:18px;
+    color:rgba(226,201,126,.35);
+    font-size:1.1rem;
+    z-index:1;
   }
   .missa-date-box{
     flex-shrink:0;
     width:130px; height:130px;
-    background:var(--gold);
-    border-radius:8px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-lt), var(--vatican) 85%);
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
-    color:var(--navy);
-    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    color:#fff;
+    box-shadow:0 4px 18px rgba(0,0,0,.4), inset 0 0 0 2px rgba(255,255,255,.25);
     z-index:1;
   }
-  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.75;}
-  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:4.2rem;font-weight:700;line-height:1;margin:4px 0;}
-  .missa-date-box .month{font-size:.95rem;font-weight:500;}
+  .missa-date-box .dow{font-family:'Cinzel',serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85;}
+  .missa-date-box .day{font-family:'Noto Serif KR',serif;font-size:3.6rem;font-weight:700;line-height:1;margin:4px 0;}
+  .missa-date-box .month{font-size:.9rem;font-weight:500;}
   .missa-body{flex:1;z-index:1;min-width:0;}
-  .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+  .missa-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:6px;}
   .missa-liturgy{display:inline-block;margin-bottom:6px;padding:2px 9px;border-radius:10px;
     font-size:.66rem;font-weight:600;letter-spacing:.02em;
-    background:rgba(245,224,158,.14);color:var(--gold-lt,#F5E09E);border:1px solid rgba(245,224,158,.3);}
-  .missa-liturgy.rank-solemn{background:rgba(245,224,158,.22);color:#FFF3CE;border-color:rgba(245,224,158,.5);}
-  .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
-  .missa-sub{font-size:.85rem;color:#B8C0D8;}
-  .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold);font-weight:600;}
+    background:rgba(226,201,126,.16);color:var(--gold-lt,#F5E09E);border:1px solid rgba(226,201,126,.35);}
+  .missa-liturgy.rank-solemn{background:rgba(226,201,126,.26);color:#FFF3CE;border-color:rgba(226,201,126,.55);}
+  .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:#F5EFE3;margin-bottom:6px;line-height:1.4;}
+  .missa-sub{font-size:.85rem;color:#C7B8D8;}
+  .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold-lt);font-weight:600;}
 
-  .pope-card{display:none;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--vatican);
-    border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 3px 12px rgba(26,39,68,.06);
-    transition:transform .15s,box-shadow .15s;}
-  .pope-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,39,68,.12);}
-  .pope-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--vatican);margin-bottom:6px;font-weight:600;}
+  .pope-card{display:none;gap:16px;align-items:flex-start;background:linear-gradient(135deg,#fff 0%,#FBF7EE 100%);
+    border:1px solid var(--gold);border-radius:16px;padding:20px;text-decoration:none;
+    box-shadow:0 4px 16px rgba(201,168,76,.18);transition:transform .15s,box-shadow .15s;}
+  .pope-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.28);}
+  .pope-medal{flex-shrink:0;width:52px;height:52px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--gold-lt), var(--vatican) 78%);
+    display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+    box-shadow:0 3px 8px rgba(107,26,26,.35), inset 0 0 0 2px rgba(255,255,255,.5);}
+  .pope-content{flex:1;min-width:0;}
+  .pope-eyebrow{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--vatican);margin-bottom:5px;font-weight:700;}
   .pope-title{font-family:'Noto Serif KR',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
-  .pope-intention{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:8px;}
-  .pope-more{font-size:.76rem;color:var(--muted);}
+  .pope-intention{font-size:.86rem;color:var(--text);line-height:1.6;margin-bottom:8px;}
+  .pope-more{font-size:.76rem;color:var(--gold);font-weight:600;}
   .missa-arrow{
     flex-shrink:0; z-index:1;
     width:42px; height:42px;
-    border:1px solid var(--gold);
+    border:1px solid var(--gold-lt);
     border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    color:var(--gold);
+    color:var(--gold-lt);
     font-size:1.1rem;
     transition:background .2s, color .2s;
   }
-  .missa-card:hover .missa-arrow{background:var(--gold);color:var(--navy);}
+  .missa-card:hover .missa-arrow{background:var(--gold-lt);color:var(--navy);}
 
   /* ── 홈 화면에 추가 버튼 (헤더 내, 날짜 좌측) ── */
   #a2hsBtn{
@@ -504,10 +516,13 @@
   <!-- ── 이달의 교황님 기도지향 (data/pope_intentions.json 에서 자동으로 불러옴) ── -->
   <section class="missa-section">
     <a class="pope-card" id="popeCard" href="https://cbck.or.kr/Pope/Prayer" target="_blank" rel="noopener">
-      <div class="pope-eyebrow" id="popeEyebrow">이달의 교황님 기도지향</div>
-      <div class="pope-title" id="popeTitle"></div>
-      <div class="pope-intention" id="popeIntention"></div>
-      <div class="pope-more">한국천주교주교회의 공식 사이트에서 더 보기 →</div>
+      <div class="pope-medal">🕊</div>
+      <div class="pope-content">
+        <div class="pope-eyebrow" id="popeEyebrow">이달의 교황님 기도지향</div>
+        <div class="pope-title" id="popeTitle"></div>
+        <div class="pope-intention" id="popeIntention"></div>
+        <div class="pope-more">한국천주교주교회의 공식 사이트에서 더 보기 →</div>
+      </div>
     </a>
   </section>
 
@@ -524,7 +539,7 @@
         document.getElementById('popeEyebrow').textContent = '이달의 교황님 기도지향 · ' + y + '년 ' + m + '월';
         document.getElementById('popeTitle').textContent = entry.title;
         document.getElementById('popeIntention').textContent = entry.body;
-        document.getElementById('popeCard').style.display = 'block';
+        document.getElementById('popeCard').style.display = 'flex';
       })
       .catch(function(){ /* 데이터를 못 불러오면 카드를 숨긴 채로 둔다 */ });
   })();

@@ -514,6 +514,7 @@
   <script>
   (function(){
     const now = new Date();
+    if (now.getDate() !== 1) return; // 매월 1일에만 표시
     const y = String(now.getFullYear()), m = String(now.getMonth() + 1);
     fetch('data/pope_intentions.json', { cache: 'no-store' })
       .then(function(r){ return r.json(); })

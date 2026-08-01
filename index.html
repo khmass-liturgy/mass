@@ -104,6 +104,16 @@
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.4;}
   .missa-sub{font-size:.85rem;color:#B8C0D8;}
   .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold);font-weight:600;}
+
+  .pope-card{display:block;background:var(--card);border:1px solid var(--border);border-left:4px solid var(--vatican);
+    border-radius:14px;padding:18px 20px;text-decoration:none;box-shadow:0 3px 12px rgba(26,39,68,.06);
+    transition:transform .15s,box-shadow .15s;}
+  .pope-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,39,68,.12);}
+  .pope-eyebrow{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--vatican);margin-bottom:6px;font-weight:600;}
+  .pope-title{font-family:'Noto Serif KR',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .pope-intention{font-size:.88rem;color:var(--text);line-height:1.6;margin-bottom:8px;}
+  .pope-more{font-size:.76rem;color:var(--muted);}
   .missa-arrow{
     flex-shrink:0; z-index:1;
     width:42px; height:42px;
@@ -490,6 +500,34 @@
       <div class="missa-arrow">→</div>
     </a>
   </section>
+
+  <!-- ── 이달의 교황님 기도지향 (자동 갱신) ── -->
+  <section class="missa-section">
+    <a class="pope-card" id="popeCard" href="https://thepopevideo.org/?lang=ko" target="_blank" rel="noopener" style="display:none;">
+      <div class="pope-eyebrow" id="popeEyebrow">이달의 교황님 기도지향</div>
+      <div class="pope-title" id="popeTitle"></div>
+      <div class="pope-intention" id="popeIntention"></div>
+      <div class="pope-more">The Pope Video · 교황기도네트워크 공식 사이트에서 더 보기 →</div>
+    </a>
+  </section>
+
+  <script>
+  (function(){
+    const card = document.getElementById('popeCard');
+    if (!card) return;
+    fetch('data/pope_intention.json', { cache: 'no-store' })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (!d || !d.intention) return;
+        document.getElementById('popeEyebrow').textContent = '이달의 교황님 기도지향 · ' + d.year + '년 ' + d.month + '월';
+        document.getElementById('popeTitle').textContent = d.title || '';
+        document.getElementById('popeIntention').textContent = d.intention;
+        if (d.source_url) card.href = d.source_url;
+        card.style.display = 'block';
+      })
+      .catch(function(){ /* 데이터가 아직 없으면 조용히 숨김 상태 유지 */ });
+  })();
+  </script>
 
   <!-- ── 듣는 소금항아리 (생활성서사 유튜브, 자동 갱신) ── -->
   <section class="missa-section">

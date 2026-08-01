@@ -30,6 +30,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ ! -f data/pope_intention.json ]; then
+            echo "data/pope_intention.json 파일이 생성되지 않았습니다 (스크래핑 실패). 위 단계 로그를 확인하세요."
+            exit 0
+          fi
           git add data/pope_intention.json
           if git diff --cached --quiet; then
             echo "No changes."

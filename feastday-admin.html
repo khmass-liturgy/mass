@@ -7,6 +7,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%A0%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 :root{
   --wine:#5B1F2E; --wine-dark:#3E1520; --gold:#B98A2F; --gold-soft:#E4CE96;
@@ -85,6 +86,19 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 .commitbar .txt b{color:var(--gold-soft)}
 .btn-commit{background:var(--gold);color:#fff;padding:11px 18px;font-weight:700;font-size:14px}
 .btn-discard{background:transparent;color:#D9BEC5;border:1px solid rgba(255,255,255,.3);padding:11px 14px;font-size:12.5px}
+
+/* ── 구글 로그인 관문 ── */
+.gate{max-width:420px;margin:60px auto;text-align:center;padding:0 20px}
+.gate .icon{font-size:40px;margin-bottom:14px}
+.gate h2{font-family:var(--serif);font-size:19px;color:var(--wine);margin-bottom:8px}
+.gate p{font-size:13px;color:var(--muted);margin-bottom:22px;word-break:keep-all;line-height:1.6}
+.gate .gsi-wrap{display:flex;justify-content:center;margin-bottom:16px}
+.gate .denied{display:none;background:#FBEAE8;color:var(--danger);border-radius:10px;padding:12px 14px;font-size:13px;margin-top:14px}
+.gate .denied.show{display:block}
+.who{display:none;align-items:center;gap:8px;justify-content:center;font-size:12.5px;color:var(--muted);margin-top:14px}
+.who.show{display:flex}
+.who img{width:22px;height:22px;border-radius:50%}
+.who button{background:none;color:var(--wine);text-decoration:underline;font-size:12px;padding:2px}
 </style>
 </head>
 <body>
@@ -95,7 +109,22 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
   <p>세례명 축일을 추가·수정·삭제하고 GitHub에 바로 저장합니다</p>
 </header>
 
-<main>
+<!-- ── 구글 로그인 관문 ── -->
+<div class="gate" id="gate">
+  <div class="icon">🔐</div>
+  <h2>관리자 확인</h2>
+  <p>허용된 구글 계정으로 로그인해야 축일 관리 화면에 들어갈 수 있습니다.</p>
+  <div class="gsi-wrap" id="gsiButton"></div>
+  <div class="denied" id="denied"></div>
+</div>
+
+<div class="who" id="who">
+  <img id="whoAvatar" src="" alt="">
+  <span id="whoEmail"></span>
+  <button id="btnLogout">로그아웃</button>
+</div>
+
+<main id="mainContent" style="display:none">
   <div class="panel">
     <div class="lbl">🔑 GITHUB 연결</div>
     <div class="row">
@@ -104,7 +133,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
     </div>
     <div class="status" id="status"></div>
     <div class="hint">
-      토큰은 이 화면에서만 사용되고 어디에도 저장되지 않습니다.
+      토큰은 이 브라우저에만 저장되고 서버로 전송되지 않습니다. 한 번 입력해두면 다음부터는 구글 로그인만으로 바로 이어집니다.
       Fine-grained 토큰은 <b>khmass-liturgy/mass</b> 저장소에 <b>Contents: Read and write</b> 권한, Classic 토큰은 <b>repo</b> 권한이 필요합니다.
     </div>
   </div>
@@ -170,6 +199,70 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 const OWNER = 'khmass-liturgy', REPO = 'mass', PATH = 'feast_days.json', BRANCH = 'main';
 const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + PATH;
 
+/* ── 구글 로그인 설정 ─────────────── */
+// ⚠️ 아래 두 값을 반드시 채워야 합니다.
+// 1) GOOGLE_CLIENT_ID: Google Cloud Console에서 발급받은 OAuth 클라이언트 ID
+// 2) ALLOWED_EMAILS: 이 화면 접속을 허용할 구글 계정 이메일 목록
+const GOOGLE_CLIENT_ID = '635707607180-3q95mv8hmg8glu4ritvckc8bhmjnb06s.apps.googleusercontent.com.apps.googleusercontent.com';
+const ALLOWED_EMAILS = [
+   'trsumun@gmail.com',
+];
+const TOKEN_STORAGE_KEY = 'khmass_feastday_admin_token';
+
+function decodeJwt(token){
+  try {
+    const payload = token.split('.')[1];
+    const json = decodeURIComponent(atob(payload.replace(/-/g,'+').replace(/_/g,'/'))
+      .split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+    return JSON.parse(json);
+  } catch(e) { return null; }
+}
+
+function handleGoogleLogin(response){
+  const payload = decodeJwt(response.credential);
+  if (!payload || !payload.email){
+    $('denied').textContent = '❌ 로그인 정보를 확인할 수 없습니다. 다시 시도해 주세요.';
+    $('denied').classList.add('show');
+    return;
+  }
+  if (ALLOWED_EMAILS.length === 0){
+    $('denied').textContent = '⚠️ ALLOWED_EMAILS가 비어 있습니다. 코드에서 허용할 이메일을 먼저 등록해 주세요.';
+    $('denied').classList.add('show');
+    return;
+  }
+  if (!ALLOWED_EMAILS.includes(payload.email)){
+    $('denied').textContent = '❌ ' + payload.email + ' 계정은 이 화면에 접근할 수 없습니다.';
+    $('denied').classList.add('show');
+    return;
+  }
+  // 로그인 성공 — 관문 숨기고 본문 표시
+  $('denied').classList.remove('show');
+  $('gate').style.display = 'none';
+  $('mainContent').style.display = 'block';
+  $('who').classList.add('show');
+  $('whoAvatar').src = payload.picture || '';
+  $('whoEmail').textContent = payload.email;
+
+  // 저장해둔 GitHub 토큰이 있으면 자동으로 채우고 바로 불러오기
+  const savedToken = localStorage.getItem(TOKEN_STORAGE_KEY);
+  if (savedToken){
+    $('token').value = savedToken;
+    load();
+  }
+}
+
+function initGoogleSignIn(){
+  if (!window.google || !google.accounts || !google.accounts.id) {
+    setTimeout(initGoogleSignIn, 200);
+    return;
+  }
+  google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID,
+    callback: handleGoogleLogin,
+  });
+  google.accounts.id.renderButton($('gsiButton'), { theme: 'outline', size: 'large', text: 'signin_with' });
+}
+
 /* ── 상태 ────────────────────────── */
 let meta = null;        // JSON의 meta 부분 보존
 let saints = [];        // 현재 편집본
@@ -213,7 +306,7 @@ async function load(){
         'Accept': 'application/vnd.github+json'
       }
     });
-    if (res.status === 401) throw new Error('토큰이 유효하지 않습니다');
+    if (res.status === 401) { localStorage.removeItem(TOKEN_STORAGE_KEY); throw new Error('토큰이 유효하지 않습니다'); }
     if (res.status === 404) throw new Error('feast_days.json 파일이 저장소에 없습니다. 먼저 파일을 업로드하세요');
     if (!res.ok) throw new Error('불러오기 실패 (' + res.status + ')');
     const data = await res.json();
@@ -222,6 +315,7 @@ async function load(){
     meta = parsed.meta || null;
     saints = (parsed.saints || parsed).slice();
     baseline = JSON.stringify(saints);
+    localStorage.setItem(TOKEN_STORAGE_KEY, token);
     setStatus('✅ 불러오기 완료 — 축일 ' + saints.length + '건', 'ok');
     $('tools').style.display = 'flex';
     render();
@@ -389,6 +483,14 @@ $('inDate').addEventListener('input', e => {  // 0705 → 07-05 자동 하이픈
 window.addEventListener('beforeunload', e => {
   if (dirtyCount() > 0){ e.preventDefault(); e.returnValue = ''; }
 });
+
+$('btnLogout').addEventListener('click', () => {
+  if (dirtyCount() > 0 && !confirm('저장하지 않은 변경이 있습니다. 그래도 로그아웃할까요?')) return;
+  localStorage.removeItem(TOKEN_STORAGE_KEY);
+  location.reload();
+});
+
+initGoogleSignIn();
 </script>
 </body>
 </html>

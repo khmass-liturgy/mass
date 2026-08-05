@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-05 20:17",
-  "cutoff": "2026-08-04",
+  "updated": "2026-08-06 00:59",
+  "cutoff": "2026-08-05",
   "days": 2,
   "names": [
     "조명연",
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 12,
+  "count": 7,
   "posts": [
+    {
+      "id": "2135546",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 6일 주님의 거룩한 변모 축일",
+      "author": "박양석",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135546&menu=4770",
+      "mass_date": "2026-08-06",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135536",
       "title": "전삼용 신부님_부스러기라도 감사할 때 빵도 받는다",
@@ -74,66 +84,6 @@
       "date": "2026-08-04",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135508&menu=4770",
       "mass_date": "2026-08-05",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135488",
-      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135488&menu=4770",
-      "mass_date": "2026-08-04",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135483",
-      "title": "이영근 신부님_“입으로 들어가는 것이 사람을 더럽히지 않는다. 오히려  ...",
-      "author": "최원석",
-      "date": "2026-08-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135483&menu=4770",
-      "mass_date": "2026-08-04",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135482",
-      "title": "양승국 신부님_단 한 명의 죄인도 남겨두지 않겠습니다! |1|",
-      "author": "최원석",
-      "date": "2026-08-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135482&menu=4770",
-      "mass_date": "2026-08-04",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135480",
-      "title": "전삼용 신부님_?주님을 만나는 법; 불가능에 도전하라! |1|",
-      "author": "최원석",
-      "date": "2026-08-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135480&menu=4770",
-      "mass_date": "2026-08-04",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135472",
-      "title": "08.04.화.성 요한 마리아 비안네 사제 기념일 / 한상우 신부님 |1|",
-      "author": "강칠등",
-      "date": "2026-08-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135472&menu=4770",
-      "mass_date": "2026-08-04",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135461",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 4일 성 요한 마리아 비안네 사 ...",
-      "author": "박양석",
-      "date": "2026-08-03",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135461&menu=4770",
-      "mass_date": "2026-08-04",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

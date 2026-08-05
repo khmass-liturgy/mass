@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05 07:08",
+  "updated": "2026-08-05 12:57",
   "cutoff": "2026-08-04",
   "days": 2,
   "names": [
@@ -15,8 +15,58 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 7,
+  "count": 12,
   "posts": [
+    {
+      "id": "2135536",
+      "title": "전삼용 신부님_부스러기라도 감사할 때 빵도 받는다",
+      "author": "최원석",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135536&menu=4770",
+      "mass_date": "2026-08-05",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135535",
+      "title": "양승국 신부님_더 큰 성장, 더 큰 도약을 위해!",
+      "author": "최원석",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135535&menu=4770",
+      "mass_date": "2026-08-05",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135533",
+      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135533&menu=4770",
+      "mass_date": "2026-08-05",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135532",
+      "title": "이영근 신부님_“예수님께서는 한 마디도 대답하지 않으셨다.”(마태 15 ...",
+      "author": "최원석",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135532&menu=4770",
+      "mass_date": "2026-08-05",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135530",
+      "title": "08.05.수 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135530&menu=4770",
+      "mass_date": "2026-08-05",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135508",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 5일 연중 제18주간 수요일",

@@ -138,6 +138,27 @@
   }
   .missa-card:hover .missa-arrow{background:var(--gold-lt);color:var(--navy);}
 
+  /* ── 공유하기 버튼 (헤더 내) ── */
+  #shareBtn{
+    flex-shrink:0;
+    display:flex; align-items:center; gap:6px; width:fit-content;
+    background:transparent; color:var(--gold);
+    border:1px solid rgba(201,168,76,.5); border-radius:20px;
+    padding:7px 13px; font-family:'Noto Serif KR',serif; font-weight:700;
+    font-size:.72rem; cursor:pointer;
+    transition:background .2s, transform .2s;
+  }
+  #shareBtn:hover{background:rgba(201,168,76,.12); transform:translateY(-1px);}
+  #shareBtn .share-icon{font-size:.85rem;}
+  #shareToast{
+    position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px);
+    background:var(--navy-lt); color:var(--cream); border:1px solid var(--gold);
+    padding:10px 18px; border-radius:24px; font-size:.82rem; font-weight:600;
+    box-shadow:0 8px 24px rgba(0,0,0,.35); z-index:2000;
+    opacity:0; pointer-events:none; transition:opacity .25s, transform .25s;
+  }
+  #shareToast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
   /* ── 홈 화면에 추가 버튼 (헤더 내, 날짜 좌측) ── */
   #a2hsBtn{
     flex-shrink:0;
@@ -357,6 +378,8 @@
     .missa-date-box .day{font-size:3.4rem;}
     #a2hsBtn span:not(.a2hs-icon){display:none;}
     #a2hsBtn{padding:8px;border-radius:50%;}
+    #shareBtn span:not(.share-icon){display:none;}
+    #shareBtn{padding:8px;border-radius:50%;}
   }
   @media (max-width:380px){
     .link-grid{grid-template-columns:1fr;}
@@ -471,12 +494,16 @@
       <h1><span class="title-rose" aria-hidden="true">🌹</span> 교하성당 신앙생활 포털 <span class="title-rose" aria-hidden="true">🌹</span></h1>
       <p>Vita Fidei · Vatican News</p>
     </div>
+    <button id="shareBtn" type="button">
+      <span class="share-icon">🔗</span> 공유하기
+    </button>
     <button id="a2hsBtn" type="button">
       <span class="a2hs-icon">📲</span> 홈 화면에 추가
     </button>
     <div class="header-date" id="headerDate"></div>
   </div>
 </header>
+<div id="shareToast">링크가 복사되었습니다</div>
 <div class="gold-bar"></div>
 
 <div class="marquee-wrap">
@@ -1548,6 +1575,45 @@ document.getElementById('headerDate').textContent = formatDate();
     const el = document.getElementById(id);
     if (el) el.style.display = '';
   }
+})();
+
+// 공유하기 버튼 로직
+(function(){
+  const btn = document.getElementById('shareBtn');
+  const toast = document.getElementById('shareToast');
+  if (!btn) return;
+
+  let toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  btn.addEventListener('click', async () => {
+    const shareData = {
+      title: '교하성당 신앙생활 포털',
+      text: '매일미사·묵상글·축일달력 등 가톨릭 신앙생활 정보를 한 곳에서 만나보세요.',
+      url: location.href,
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (e) {
+        // 사용자가 공유를 취소한 경우 등은 조용히 무시
+      }
+      return;
+    }
+    // Web Share API 미지원 브라우저(주로 데스크톱) → 클립보드 복사로 대체
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      showToast('링크가 복사되었습니다');
+    } catch (e) {
+      // 클립보드 API도 안 되면 최후 수단으로 프롬프트 표시
+      window.prompt('아래 링크를 복사하세요', shareData.url);
+    }
+  });
 })();
 
 // 홈 화면에 추가 버튼 로직

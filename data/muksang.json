@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07 18:57",
+  "updated": "2026-08-07 22:29",
   "cutoff": "2026-08-06",
   "days": 2,
   "names": [
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 12,
+  "count": 13,
   "posts": [
+    {
+      "id": "2135652",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 8일 성 도미니코 사제 기념일",
+      "author": "박양석",
+      "date": "2026-08-07",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135652&menu=4770",
+      "mass_date": "2026-08-08",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135627",
       "title": "전삼용 신부님_명상과 기도의 차이",

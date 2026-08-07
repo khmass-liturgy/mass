@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-07 23:56",
-  "cutoff": "2026-08-06",
+  "updated": "2026-08-08 06:42",
+  "cutoff": "2026-08-07",
   "days": 2,
   "names": [
     "조명연",
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 13,
+  "count": 8,
   "posts": [
+    {
+      "id": "2135656",
+      "title": "08.08.토.성 도미니꼬 사제 기념일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-08",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135656&menu=4770",
+      "mass_date": "2026-08-08",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135652",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 8일 성 도미니코 사제 기념일",
@@ -29,7 +39,7 @@
     },
     {
       "id": "2135627",
-      "title": "전삼용 신부님_명상과 기도의 차이",
+      "title": "전삼용 신부님_명상과 기도의 차이 |1|",
       "author": "최원석",
       "date": "2026-08-07",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135627&menu=4770",
@@ -39,7 +49,7 @@
     },
     {
       "id": "2135626",
-      "title": "양승국 신부님_우리 삶에서 자신을 빼고 십자가를 더합시다!",
+      "title": "양승국 신부님_우리 삶에서 자신을 빼고 십자가를 더합시다! |1|",
       "author": "최원석",
       "date": "2026-08-07",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135626&menu=4770",
@@ -84,66 +94,6 @@
       "date": "2026-08-06",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135600&menu=4770",
       "mass_date": "2026-08-07",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135580",
-      "title": "전삼용 신부님_기도의 목적 |1|",
-      "author": "최원석",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135580&menu=4770",
-      "mass_date": "2026-08-06",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135579",
-      "title": "양승국 신부님_우리는 결코 죽지 않을 것입니다! |1|",
-      "author": "최원석",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135579&menu=4770",
-      "mass_date": "2026-08-06",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135577",
-      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135577&menu=4770",
-      "mass_date": "2026-08-06",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135576",
-      "title": "이영근 신부님_“이는 내가 사랑하는 아들, 내 마음에 드는 아들이니 너 ...",
-      "author": "최원석",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135576&menu=4770",
-      "mass_date": "2026-08-06",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135572",
-      "title": "08.06.주님의 거룩한 변모 축일 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135572&menu=4770",
-      "mass_date": "2026-08-06",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135546",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 6일 주님의 거룩한 변모 축일",
-      "author": "박양석",
-      "date": "2026-08-05",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135546&menu=4770",
-      "mass_date": "2026-08-06",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

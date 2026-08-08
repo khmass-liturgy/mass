@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 06:42",
+  "updated": "2026-08-08 11:55",
   "cutoff": "2026-08-07",
   "days": 2,
   "names": [
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_474043630949617135",
+      "title": "연중 제19주일 강론",
+      "author": "",
+      "date": "2026-08-08",
+      "url": "https://blog.naver.com/syj1212ad/224371880995?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-08",
+      "priest": "송영진",
+      "excerpt": "<연중 제19주일 강론>(2026."
+    },
     {
       "id": "2135656",
       "title": "08.08.토.성 도미니꼬 사제 기념일 / 한상우 신부님",

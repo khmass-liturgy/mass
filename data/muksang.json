@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-08 23:35",
-  "cutoff": "2026-08-07",
+  "updated": "2026-08-09 06:34",
+  "cutoff": "2026-08-08",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 13,
+  "count": 7,
   "posts": [
     {
       "id": "2135696",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1535171710025043710",
+      "id": "naver_3853466705584003525",
       "title": "연중 제19주일 강론",
       "author": "",
       "date": "2026-08-08",
@@ -49,7 +49,7 @@
     },
     {
       "id": "2135683",
-      "title": "양승국 신부님_말뿐이 아니라 행동으로 설교했던 도미니코 사제!",
+      "title": "양승국 신부님_말뿐이 아니라 행동으로 설교했던 도미니코 사제! |1|",
       "author": "최원석",
       "date": "2026-08-08",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135683&menu=4770",
@@ -59,7 +59,7 @@
     },
     {
       "id": "2135682",
-      "title": "전삼용 신부님_?산을 옮길 믿음이 있다면 삽부터 산다",
+      "title": "전삼용 신부님_?산을 옮길 믿음이 있다면 삽부터 산다 |1|",
       "author": "최원석",
       "date": "2026-08-08",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135682&menu=4770",
@@ -84,66 +84,6 @@
       "date": "2026-08-07",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135652&menu=4770",
       "mass_date": "2026-08-08",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135627",
-      "title": "전삼용 신부님_명상과 기도의 차이 |1|",
-      "author": "최원석",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135627&menu=4770",
-      "mass_date": "2026-08-07",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135626",
-      "title": "양승국 신부님_우리 삶에서 자신을 빼고 십자가를 더합시다! |1|",
-      "author": "최원석",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135626&menu=4770",
-      "mass_date": "2026-08-07",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135624",
-      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135624&menu=4770",
-      "mass_date": "2026-08-07",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135623",
-      "title": "이영근 신부님_“누구든지 내 뒤를 따라오려면~”(마태 16,24)",
-      "author": "최원석",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135623&menu=4770",
-      "mass_date": "2026-08-07",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135605",
-      "title": "08.07.금 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135605&menu=4770",
-      "mass_date": "2026-08-07",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135600",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 7일 연중 제18주간 금요일",
-      "author": "박양석",
-      "date": "2026-08-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135600&menu=4770",
-      "mass_date": "2026-08-07",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

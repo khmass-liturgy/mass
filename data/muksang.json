@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 13:14",
+  "updated": "2026-08-08 18:41",
   "cutoff": "2026-08-07",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 9,
+  "count": 12,
   "posts": [
     {
-      "id": "naver_6925909041855229098",
+      "id": "naver_4899055772985865728",
       "title": "연중 제19주일 강론",
       "author": "",
       "date": "2026-08-08",
@@ -26,6 +26,36 @@
       "mass_date": "2026-08-08",
       "priest": "송영진",
       "excerpt": "<연중 제19주일 강론>(2026."
+    },
+    {
+      "id": "2135684",
+      "title": "이영근 신부님_“너희가 못할 일은 하나도 없을 것이다.”(마태 17,2 ...",
+      "author": "최원석",
+      "date": "2026-08-08",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135684&menu=4770",
+      "mass_date": "2026-08-08",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135683",
+      "title": "양승국 신부님_말뿐이 아니라 행동으로 설교했던 도미니코 사제!",
+      "author": "최원석",
+      "date": "2026-08-08",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135683&menu=4770",
+      "mass_date": "2026-08-08",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135682",
+      "title": "전삼용 신부님_?산을 옮길 믿음이 있다면 삽부터 산다",
+      "author": "최원석",
+      "date": "2026-08-08",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135682&menu=4770",
+      "mass_date": "2026-08-08",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2135656",

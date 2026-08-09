@@ -85,6 +85,17 @@
   var params = new URLSearchParams(location.search);
   var url = params.get('u');
   var title = params.get('t') || url || '';
+
+  // 이 페이지가 신뢰하는 도메인의 게시글만 열어준다 (임의 URL을 우리 도메인 UI로
+  // 감싸서 보여주는 오픈 리다이렉트/피싱 악용을 막기 위함).
+  var ALLOWED_HOSTS = ['catholic.or.kr', 'naver.com'];
+  function isAllowedUrl(u){
+    try {
+      var host = new URL(u, location.href).hostname.toLowerCase();
+      return ALLOWED_HOSTS.some(function(h){ return host === h || host.endsWith('.' + h); });
+    } catch(e) { return false; }
+  }
+  if (url && !isAllowedUrl(url)) { url = ''; }
   // 원본이 대략 이 정도 폭의 데스크톱 레이아웃이라고 가정한다.
   // zoom이 커질수록 이 폭을 "더 좁게" 다시 가정해서(=창을 좁힌 것처럼) 다시 그리게 하고,
   // 화면 폭에는 항상 정확히 맞춰 스케일하므로 좌우로 잘리는 일이 없다.

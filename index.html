@@ -1006,7 +1006,11 @@
     var mq0 = document.getElementById('marqueeInner');
     if(mq0){ mq0.style.animationDuration = Math.max(6, mq0.scrollWidth / 2 / 200) + 's'; }
 
-    function esc(t){ var d=document.createElement('div'); d.textContent=t||''; return d.innerHTML; }
+    function esc(t){
+      return String(t||'').replace(/[&<>"']/g, function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
     var MUKSANG_BOARD_URL = 'https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770';
 
     fetch('data/muksang.json?v=' + Math.floor(Date.now()/600000))

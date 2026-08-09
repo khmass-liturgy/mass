@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09 06:34",
+  "updated": "2026-08-09 12:03",
   "cutoff": "2026-08-08",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 7,
+  "count": 9,
   "posts": [
+    {
+      "id": "naver_4420987477176175723",
+      "title": "성 라우렌시오 부제 순교자 축일 강론",
+      "author": "",
+      "date": "2026-08-09",
+      "url": "https://blog.naver.com/syj1212ad/224372800207?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-09",
+      "priest": "송영진",
+      "excerpt": "<성 라우렌시오 부제 순교자 축일 강론> (2026."
+    },
+    {
+      "id": "2135710",
+      "title": "08.09.연중 제19주일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-09",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135710&menu=4770",
+      "mass_date": "2026-08-09",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135696",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 9일 연중 제19주일",
@@ -28,7 +48,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3853466705584003525",
+      "id": "naver_7004595289628152558",
       "title": "연중 제19주일 강론",
       "author": "",
       "date": "2026-08-08",

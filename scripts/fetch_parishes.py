@@ -114,7 +114,7 @@ def list_parish_links(diocese_code):
             church_link = a["href"]
             break
     if not church_link:
-        print(f"    [진단] 본당 목록 링크(Church.aspx)를 찾지 못함", file=sys.stderr)
+        print("    [진단] 본당 목록 링크(Church.aspx)를 찾지 못함", file=sys.stderr)
         return []
 
     base_tag = soup.find("base", href=True)

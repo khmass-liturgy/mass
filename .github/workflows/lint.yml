@@ -1,0 +1,31 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Lint Python scripts
+        run: |
+          pip install ruff
+          ruff check scripts/
+
+      - name: Validate JSON files
+        run: |
+          for f in *.json data/*.json; do
+            echo "checking $f"
+            python -m json.tool "$f" > /dev/null
+          done
+
+      - name: Lint HTML
+        run: npx --yes htmlhint "*.html"

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-09 23:38",
-  "cutoff": "2026-08-08",
+  "updated": "2026-08-10 06:36",
+  "cutoff": "2026-08-09",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 8,
   "posts": [
     {
       "id": "2135738",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1599126014562199971",
+      "id": "naver_5418812310332397537",
       "title": "성 라우렌시오 부제 순교자 축일 강론",
       "author": "",
       "date": "2026-08-09",
@@ -94,66 +94,6 @@
       "date": "2026-08-08",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135696&menu=4770",
       "mass_date": "2026-08-09",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_6853429980994285705",
-      "title": "연중 제19주일 강론",
-      "author": "",
-      "date": "2026-08-08",
-      "url": "https://blog.naver.com/syj1212ad/224371880995?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-08",
-      "priest": "송영진",
-      "excerpt": "<연중 제19주일 강론>(2026."
-    },
-    {
-      "id": "2135684",
-      "title": "이영근 신부님_“너희가 못할 일은 하나도 없을 것이다.”(마태 17,2 ...",
-      "author": "최원석",
-      "date": "2026-08-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135684&menu=4770",
-      "mass_date": "2026-08-08",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135683",
-      "title": "양승국 신부님_말뿐이 아니라 행동으로 설교했던 도미니코 사제! |1|",
-      "author": "최원석",
-      "date": "2026-08-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135683&menu=4770",
-      "mass_date": "2026-08-08",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135682",
-      "title": "전삼용 신부님_?산을 옮길 믿음이 있다면 삽부터 산다 |1|",
-      "author": "최원석",
-      "date": "2026-08-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135682&menu=4770",
-      "mass_date": "2026-08-08",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135656",
-      "title": "08.08.토.성 도미니꼬 사제 기념일 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135656&menu=4770",
-      "mass_date": "2026-08-08",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135652",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 8일 성 도미니코 사제 기념일",
-      "author": "박양석",
-      "date": "2026-08-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135652&menu=4770",
-      "mass_date": "2026-08-08",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-10 22:17",
-  "cutoff": "2026-08-09",
+  "updated": "2026-08-11 00:03",
+  "cutoff": "2026-08-10",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 15,
+  "count": 8,
   "posts": [
     {
       "id": "2135806",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4129116643281757876",
+      "id": "naver_7591298575668879929",
       "title": "연중 제19주간 화요일 강론",
       "author": "",
       "date": "2026-08-10",
@@ -94,76 +94,6 @@
       "date": "2026-08-09",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135738&menu=4770",
       "mass_date": "2026-08-10",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_1322559672384180370",
-      "title": "성 라우렌시오 부제 순교자 축일 강론",
-      "author": "",
-      "date": "2026-08-09",
-      "url": "https://blog.naver.com/syj1212ad/224372800207?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-09",
-      "priest": "송영진",
-      "excerpt": "<성 라우렌시오 부제 순교자 축일 강론> (2026."
-    },
-    {
-      "id": "2135724",
-      "title": "전삼용 신부님_노력하라 가르치면 자녀 인생 망친다",
-      "author": "최원석",
-      "date": "2026-08-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135724&menu=4770",
-      "mass_date": "2026-08-09",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135723",
-      "title": "양승국 신부님_주님께서 내 인생의 조각배 위로 올라오시면!",
-      "author": "최원석",
-      "date": "2026-08-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135723&menu=4770",
-      "mass_date": "2026-08-09",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135722",
-      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵",
-      "author": "최원석",
-      "date": "2026-08-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135722&menu=4770",
-      "mass_date": "2026-08-09",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135720",
-      "title": "이영근 신부님_“주님, ~저더러 물 위를 걸어오라고 명령하십시오.”(마 ...",
-      "author": "최원석",
-      "date": "2026-08-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135720&menu=4770",
-      "mass_date": "2026-08-09",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135710",
-      "title": "08.09.연중 제19주일 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135710&menu=4770",
-      "mass_date": "2026-08-09",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135696",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 9일 연중 제19주일",
-      "author": "박양석",
-      "date": "2026-08-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135696&menu=4770",
-      "mass_date": "2026-08-09",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

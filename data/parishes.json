@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-04 06:33",
-  "count": 1719,
+  "updated": "2026-08-11 06:02",
+  "count": 1720,
   "source": "한국천주교주교회의 한국 천주교 주소록 (directory.cbck.or.kr)",
   "parishes": [
     {
@@ -182,6 +182,15 @@
       "homepage": "",
       "lat": 37.5735391506714,
       "lng": 126.960777984991
+    },
+    {
+      "name": "무악재",
+      "diocese": "서울대교구",
+      "address": "서울특별시 서대문구 통일로 387  (홍제동) 2층 무악재성당 임시 성전",
+      "phone": "02-739-4418",
+      "homepage": "http://www.muakjae.com",
+      "lat": 37.5844012292241,
+      "lng": 126.94849614928
     },
     {
       "name": "상암동",
@@ -989,7 +998,7 @@
       "diocese": "서울대교구",
       "address": "서울특별시 광진구  뚝섬로58길 81 (자양동)",
       "phone": "02-444-8444",
-      "homepage": "",
+      "homepage": "https://cafe.daum.net/jayang2Catholic",
       "lat": 37.5290520122811,
       "lng": 127.084206363322
     },
@@ -1124,7 +1133,7 @@
       "diocese": "서울대교구",
       "address": "서울특별시 송파구 중대로20길 20",
       "phone": "02-2043-0084",
-      "homepage": "",
+      "homepage": "https://www.bonuspastor.kr/",
       "lat": 37.4979110247436,
       "lng": 127.127744598701
     },
@@ -1161,8 +1170,8 @@
       "address": "서울특별시 송파구  거마로24길 11 (마천동)",
       "phone": "02-406-1033",
       "homepage": "http://www.machuncatholic.or.kr",
-      "lat": 37.4993133793358,
-      "lng": 127.149096513078
+      "lat": 37.4993222995525,
+      "lng": 127.149096304637
     },
     {
       "name": "문정2동",
@@ -1321,7 +1330,7 @@
       "name": "대치4동",
       "diocese": "서울대교구",
       "address": "서울특별시 강남구  삼성로71길 10 (대치동)",
-      "phone": "02-3453-7810",
+      "phone": "02-3453-7811",
       "homepage": "",
       "lat": 37.5023696842739,
       "lng": 127.058035467037
@@ -1493,7 +1502,7 @@
       "diocese": "서울대교구",
       "address": "서울특별시 서초구  효령로49길 30 (서초동)",
       "phone": "02-582-3485",
-      "homepage": "",
+      "homepage": "https://www.seocho3catholic.or.kr/",
       "lat": 37.4851945319421,
       "lng": 127.010263571152
     },
@@ -7109,7 +7118,7 @@
       "diocese": "원주교구",
       "address": "강원특별자치도 원주시  치악로 1723 (단구동)",
       "phone": "033-761-3111",
-      "homepage": "http://www.dangudong.or.kr",
+      "homepage": "https://dg-catholic.org/",
       "lat": 37.3365681754324,
       "lng": 127.955734465058
     },
@@ -7135,7 +7144,7 @@
       "name": "용소막",
       "diocese": "원주교구",
       "address": "강원특별자치도 원주시 신림면 구학산로 1857",
-      "phone": "033-763-2343",
+      "phone": "033-763-2343사무1번",
       "homepage": "",
       "lat": 37.2122028592964,
       "lng": 128.087171537699
@@ -7369,7 +7378,7 @@
       "name": "백운",
       "diocese": "원주교구",
       "address": "충청북도 제천시 백운면 구학산로2길 14",
-      "phone": "043-652-6037",
+      "phone": "",
       "homepage": "",
       "lat": 37.1407581811234,
       "lng": 128.023165281655
@@ -7396,7 +7405,7 @@
       "name": "의림동",
       "diocese": "원주교구",
       "address": "충청북도 제천시  명륜로13길 5 (의림동)",
-      "phone": "043-643-7507",
+      "phone": "043-651-4627",
       "homepage": "",
       "lat": 37.1417946562811,
       "lng": 128.211137828272
@@ -7459,7 +7468,7 @@
       "name": "아우라지",
       "diocese": "원주교구",
       "address": "강원특별자치도 정선군 여량면 서동로 2957",
-      "phone": "033-562-1019",
+      "phone": "",
       "homepage": "",
       "lat": 37.4731280002966,
       "lng": 128.727783583548
@@ -7477,7 +7486,7 @@
       "name": "임계",
       "diocese": "원주교구",
       "address": "강원특별자치도 정선군 임계면 송계10길 7",
-      "phone": "033-562-6433",
+      "phone": "",
       "homepage": "",
       "lat": 37.4989921595796,
       "lng": 128.851034830017
@@ -9819,8 +9828,8 @@
       "address": "부산광역시 수영구  수영로427번길 15",
       "phone": "051-623-4528",
       "homepage": "",
-      "lat": 35.1443299351632,
-      "lng": 129.108253603405
+      "lat": 35.1443318343765,
+      "lng": 129.108253213558
     },
     {
       "name": "중앙 주교좌",
@@ -10026,8 +10035,8 @@
       "address": "부산광역시 사하구  승학로229번길 11",
       "phone": "051-207-3977",
       "homepage": "",
-      "lat": 35.1019085044699,
-      "lng": 128.98937163895
+      "lat": 35.1019189000444,
+      "lng": 128.989375181312
     },
     {
       "name": "다대",
@@ -10224,8 +10233,8 @@
       "address": "부산광역시 부산진구  진남로 536",
       "phone": "051-852-0685",
       "homepage": "http://yangjeong.catb.kr/",
-      "lat": 35.1711005352699,
-      "lng": 129.073278554335
+      "lat": 35.1710729340926,
+      "lng": 129.07329058413
     },
     {
       "name": "엄궁",
@@ -12347,7 +12356,7 @@
       "diocese": "안동교구",
       "address": "경상북도 안동시 풍천면 검무로 20",
       "phone": "",
-      "homepage": "",
+      "homepage": "https://cafe.daum.net/gjchurch1781",
       "lat": 36.5773041009931,
       "lng": 128.494675851351
     },
@@ -12365,7 +12374,7 @@
       "diocese": "안동교구",
       "address": "경상북도 안동시  중평4길 36",
       "phone": "",
-      "homepage": "http://ch.catholic.or.kr/yongsang",
+      "homepage": "https://cafe.daum.net/yougsangc",
       "lat": 36.5563930457036,
       "lng": 128.753691259254
     },
@@ -12392,7 +12401,7 @@
       "diocese": "안동교구",
       "address": "경상북도 영덕군 강구면 강산로 17",
       "phone": "",
-      "homepage": "",
+      "homepage": "http://cafe.daum.net/ganggusd",
       "lat": 36.350705837899,
       "lng": 129.377384837082
     },
@@ -12401,7 +12410,7 @@
       "diocese": "안동교구",
       "address": "경상북도 울진군 북면 울진북로 2133",
       "phone": "",
-      "homepage": "http://ch.catholic.or.kr/bukmyeon",
+      "homepage": "https://cafe.daum.net/bmsd",
       "lat": 37.1062328258972,
       "lng": 129.37156314229
     },
@@ -12410,7 +12419,7 @@
       "diocese": "안동교구",
       "address": "경상북도 영덕군 영덕읍 덕곡3길 11 - 23",
       "phone": "",
-      "homepage": "http://club.catholic.or.kr/ydsd",
+      "homepage": "",
       "lat": 36.4145261573379,
       "lng": 129.368873752661
     },
@@ -12437,7 +12446,7 @@
       "diocese": "안동교구",
       "address": "경상북도 울진군 울진읍 읍내10길 7",
       "phone": "",
-      "homepage": "http://www.catholic-uljin.or.kr",
+      "homepage": "",
       "lat": 36.9969162498835,
       "lng": 129.40235558335
     },
@@ -12446,7 +12455,7 @@
       "diocese": "안동교구",
       "address": "경상북도 청송군 진보면 진보로 95 - 8",
       "phone": "",
-      "homepage": "",
+      "homepage": "https://cafe.daum.net/wlsqhtjdekd",
       "lat": 36.5298191428187,
       "lng": 129.042717747318
     },
@@ -12464,7 +12473,7 @@
       "diocese": "안동교구",
       "address": "경상북도 울진군 후포면 후포로 8 - 2",
       "phone": "",
-      "homepage": "http://cafe.daum.net/huposungdang",
+      "homepage": "",
       "lat": 36.6801914966604,
       "lng": 129.443298072494
     },
@@ -12491,7 +12500,7 @@
       "diocese": "안동교구",
       "address": "경상북도 문경시 문경읍 청운로 95",
       "phone": "",
-      "homepage": "http://cafe.daum.net/mg0532",
+      "homepage": "https://cafe.daum.net/mgcatholic/HJpW",
       "lat": 36.7373070060563,
       "lng": 128.111764621067
     },
@@ -12509,7 +12518,7 @@
       "diocese": "안동교구",
       "address": "경상북도 문경시  점촌5길 39 - 9",
       "phone": "",
-      "homepage": "",
+      "homepage": "http://cafe.daum.net/jcccda",
       "lat": 36.5970967404891,
       "lng": 128.195438476127
     },
@@ -12554,7 +12563,7 @@
       "diocese": "안동교구",
       "address": "경상북도 영주시  영주로 269",
       "phone": "",
-      "homepage": "http://hamang.com.ne.kr",
+      "homepage": "",
       "lat": 36.8254017465945,
       "lng": 128.62945175352
     },
@@ -12563,7 +12572,7 @@
       "diocese": "안동교구",
       "address": "경상북도 영주시  지천로194번길 28",
       "phone": "",
-      "homepage": "http://cafe.daum.net/youngjuhuchon",
+      "homepage": "",
       "lat": 36.8161534178679,
       "lng": 128.62109120584
     },
@@ -12644,7 +12653,7 @@
       "diocese": "안동교구",
       "address": "경상북도 의성군 다인면 서릉3길 11 - 5",
       "phone": "",
-      "homepage": "http://cafe.daum.net/dain1004",
+      "homepage": "",
       "lat": 36.4514214905181,
       "lng": 128.353916967048
     },

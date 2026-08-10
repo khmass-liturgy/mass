@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10 19:20",
+  "updated": "2026-08-10 22:17",
   "cutoff": "2026-08-09",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_6167986677663435356",
+      "id": "2135806",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 11일 성녀 클라라 동정 기념일",
+      "author": "박양석",
+      "date": "2026-08-10",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135806&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_4129116643281757876",
       "title": "연중 제19주간 화요일 강론",
       "author": "",
       "date": "2026-08-10",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_6001298959406515329",
+      "id": "naver_1322559672384180370",
       "title": "성 라우렌시오 부제 순교자 축일 강론",
       "author": "",
       "date": "2026-08-09",

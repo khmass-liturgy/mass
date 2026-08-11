@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11 06:45",
+  "updated": "2026-08-11 12:05",
   "cutoff": "2026-08-10",
   "days": 2,
   "names": [
@@ -15,8 +15,68 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 14,
   "posts": [
+    {
+      "id": "naver_9199249181206032657",
+      "title": "연중 제19주간 수요일 강론",
+      "author": "",
+      "date": "2026-08-11",
+      "url": "https://blog.naver.com/syj1212ad/224374848834?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-11",
+      "priest": "송영진",
+      "excerpt": "<연중 제19주간 수요일 강론>(2026."
+    },
+    {
+      "id": "2135830",
+      "title": "08.11.화.성녀 클라라 동정 기념일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-11",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135830&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135825",
+      "title": "전삼용 신부님_어른이 미각을 끊으면 어린이처럼 된다",
+      "author": "최원석",
+      "date": "2026-08-11",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135825&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135824",
+      "title": "양승국 신부님_영웅적인 겸손과 빛나는 가난의 성녀 클라라!",
+      "author": "최원석",
+      "date": "2026-08-11",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135824&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135823",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-11",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135823&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135822",
+      "title": "이영근 신부님_“이 작은이들 가운데 하나라도 잃어버리는 것은   하늘에 ...",
+      "author": "최원석",
+      "date": "2026-08-11",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135822&menu=4770",
+      "mass_date": "2026-08-11",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135806",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 11일 성녀 클라라 동정 기념일",
@@ -28,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_5931452355637949969",
+      "id": "naver_650746862014629972",
       "title": "연중 제19주간 화요일 강론",
       "author": "",
       "date": "2026-08-10",

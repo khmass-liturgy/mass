@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12 06:53",
+  "updated": "2026-08-12 12:24",
   "cutoff": "2026-08-11",
   "days": 2,
   "names": [
@@ -15,10 +15,80 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 7,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_9070558408813833699",
+      "id": "naver_598523382202257253",
+      "title": "연중 제19주간 목요일 강론",
+      "author": "",
+      "date": "2026-08-12",
+      "url": "https://blog.naver.com/syj1212ad/224375978065?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-12",
+      "priest": "송영진",
+      "excerpt": "<연중 제19주간 목요일 강론>(2026."
+    },
+    {
+      "id": "2135872",
+      "title": "전삼용 신부님_결속력이 사랑 기반인 공동체의 특징",
+      "author": "최원석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135872&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135871",
+      "title": "양승국 신부님_때로 홀로, 때로 함께!",
+      "author": "최원석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135871&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135869",
+      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135869&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135868",
+      "title": "이영근 신부님_“네 형제가 너에게 죄를 짓거든~”(마태 18,15)",
+      "author": "최원석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135868&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135866",
+      "title": "08.12.수 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135866&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135861",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 연중 제19주간 수요일",
+      "author": "박양석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135861&menu=4770",
+      "mass_date": "2026-08-12",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_5061577905215904389",
       "title": "연중 제19주간 수요일 강론",
       "author": "",
       "date": "2026-08-11",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12 19:10",
+  "updated": "2026-08-12 22:18",
   "cutoff": "2026-08-11",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_8930053090752368816",
+      "id": "2135886",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 13일 연중 제19주간 목요일",
+      "author": "박양석",
+      "date": "2026-08-12",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135886&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_8778747953980163338",
       "title": "연중 제19주간 목요일 강론",
       "author": "",
       "date": "2026-08-12",
@@ -29,7 +39,7 @@
     },
     {
       "id": "2135872",
-      "title": "전삼용 신부님_결속력이 사랑 기반인 공동체의 특징",
+      "title": "전삼용 신부님_결속력이 사랑 기반인 공동체의 특징 |1|",
       "author": "최원석",
       "date": "2026-08-12",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135872&menu=4770",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3628073271601358282",
+      "id": "naver_6393402736912547990",
       "title": "연중 제19주간 수요일 강론",
       "author": "",
       "date": "2026-08-11",

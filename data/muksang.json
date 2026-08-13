@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13 06:51",
+  "updated": "2026-08-13 12:28",
   "cutoff": "2026-08-12",
   "days": 2,
   "names": [
@@ -15,8 +15,68 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 14,
   "posts": [
+    {
+      "id": "naver_5980356153752446960",
+      "title": "연중 제19주간 금요일 강론",
+      "author": "",
+      "date": "2026-08-13",
+      "url": "https://blog.naver.com/syj1212ad/224377138822?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-13",
+      "priest": "송영진",
+      "excerpt": "<연중 제19주간 금요일 강론>(2026."
+    },
+    {
+      "id": "2135904",
+      "title": "이영근 신부님_ “일곱 번이 아니라 일흔일곱 번까지라도 용서해야 한다. ...",
+      "author": "최원석",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135904&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135903",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135903&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135902",
+      "title": "전삼용 신부님_고해성사 수천 번을 해도 죄가 용서 되지 않는 경우",
+      "author": "최원석",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135902&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135901",
+      "title": "양승국 신부님_용서에도 과정이나 절차가 필요합니다!",
+      "author": "최원석",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135901&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135899",
+      "title": "08.13.목 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135899&menu=4770",
+      "mass_date": "2026-08-13",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135886",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 13일 연중 제19주간 목요일",
@@ -28,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_7667556058997121466",
+      "id": "naver_2279646160707070206",
       "title": "연중 제19주간 목요일 강론",
       "author": "",
       "date": "2026-08-12",

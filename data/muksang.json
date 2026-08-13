@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13 19:11",
+  "updated": "2026-08-13 22:20",
   "cutoff": "2026-08-12",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_5972144558445078860",
+      "id": "2135917",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 14일 성 막시밀리아노 마리아  ...",
+      "author": "박양석",
+      "date": "2026-08-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135917&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_1227213987760197704",
       "title": "연중 제19주간 금요일 강론",
       "author": "",
       "date": "2026-08-13",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_549914291776884307",
+      "id": "naver_7747721694455050804",
       "title": "연중 제19주간 목요일 강론",
       "author": "",
       "date": "2026-08-12",

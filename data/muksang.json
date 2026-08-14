@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14 06:51",
+  "updated": "2026-08-14 12:25",
   "cutoff": "2026-08-13",
   "days": 2,
   "names": [
@@ -15,8 +15,68 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 14,
   "posts": [
+    {
+      "id": "naver_6849537480231074719",
+      "title": "성모 승천 대축일 강론",
+      "author": "",
+      "date": "2026-08-14",
+      "url": "https://blog.naver.com/syj1212ad/224378235804?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-14",
+      "priest": "송영진",
+      "excerpt": "<성모 승천 대축일 강론>(2026."
+    },
+    {
+      "id": "2135948",
+      "title": "이영근 신부님_“둘이 한 몸이 될 것이다.”(마태 19,5)",
+      "author": "최원석",
+      "date": "2026-08-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135948&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135947",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135947&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135946",
+      "title": "양승국 신부님_[성 막시밀리아노 마리아 콜베 사제 순교자 기념일]",
+      "author": "최원석",
+      "date": "2026-08-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135946&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135944",
+      "title": "전삼용 신부님_결국 끝까지 해내는 사람의 비밀!",
+      "author": "최원석",
+      "date": "2026-08-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135944&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2135940",
+      "title": "08 14.금 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135940&menu=4770",
+      "mass_date": "2026-08-14",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2135917",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 14일 성 막시밀리아노 마리아  ...",
@@ -28,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3809232831459403549",
+      "id": "naver_7639758179926596782",
       "title": "연중 제19주간 금요일 강론",
       "author": "",
       "date": "2026-08-13",

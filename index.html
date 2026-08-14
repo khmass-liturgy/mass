@@ -264,6 +264,16 @@
     pointer-events:none;
   }
 
+  /* ── 민족화해 기도 · WYD 기도문 (반절 카드 2개, 한 줄 배치) ── */
+  .prayer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
+  .prayer-grid .missa-section{margin-bottom:0;}
+  .prayer-grid .prayer-summary{padding:16px 18px;}
+  .prayer-grid .wyd-eyebrow{font-size:.56rem;}
+  .prayer-grid .wyd-title{font-size:1rem;}
+  @media (max-width:380px){
+    .prayer-grid{grid-template-columns:1fr;}
+  }
+
   /* ── 소기도문 박스 ── */
   .small-prayer{
     background:linear-gradient(135deg,#1E3060 0%,#2E2250 100%);
@@ -661,6 +671,7 @@
     </a>
   </section>
 
+  <div class="prayer-grid">
   <!-- ── 민족 화해와 일치를 위한 기도 ── -->
   <section class="missa-section">
     <details class="prayer-details">
@@ -744,6 +755,7 @@
       </div>
     </details>
   </section>
+  </div>
 
   <!-- ── 예수성심성월 기도 (6월에만 표시) ── -->
   <section class="missa-section" id="sacredHeartSection" style="display:none;">

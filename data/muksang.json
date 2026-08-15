@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15 18:29",
+  "updated": "2026-08-15 21:43",
   "cutoff": "2026-08-14",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_3499972684901308856",
+      "id": "2136008",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 16일 연중 제20주일",
+      "author": "박양석",
+      "date": "2026-08-15",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136008&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_5284698354603901148",
       "title": "연중 제20주일 강론",
       "author": "",
       "date": "2026-08-15",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_7712268156077064240",
+      "id": "naver_233188492530476646",
       "title": "성모 승천 대축일 강론",
       "author": "",
       "date": "2026-08-14",

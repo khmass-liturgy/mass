@@ -439,6 +439,27 @@
     .muksang-all-title{font-size:1rem;}
     .muksang-all-arrow{display:none;}
   }
+  /* ── 소금항아리 · 빈첸시오말씀방 (반절 카드 2개, 한 줄 배치) ── */
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
+  .video-grid .missa-section{margin-bottom:0;height:100%;}
+  .video-grid .muksang-all-card{gap:10px;padding:14px 14px;margin-bottom:0;height:100%;box-sizing:border-box;}
+  .video-grid .muksang-all-icon{width:38px;height:38px;font-size:1.1rem;}
+  .video-grid .muksang-all-eyebrow{font-size:.54rem;}
+  .video-grid .muksang-all-title{font-size:.94rem;}
+  .video-grid .muksang-all-sub{font-size:.72rem;}
+  .video-grid .prayer-details{height:100%;box-sizing:border-box;}
+  .vincent-card{background:linear-gradient(135deg,#12352A 0%,#1E5C42 100%);}
+  .vincent-summary{display:flex;align-items:center;gap:10px;padding:14px 14px;}
+  .vincent-summary .prayer-arrow{margin-left:auto;}
+  .vincent-list{margin-bottom:6px;}
+  .vincent-item{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.1);text-decoration:none;}
+  .vincent-item:last-child{border-bottom:none;}
+  .vincent-item:hover .vincent-title{text-decoration:underline;}
+  .vincent-date{flex-shrink:0;font-size:.7rem;font-weight:700;color:#8FE0B8;}
+  .vincent-title{font-size:.82rem;color:#E8F5EE;line-height:1.4;}
+  @media (max-width:380px){
+    .video-grid{grid-template-columns:1fr;}
+  }
   /* ── 성무일도 아침·저녁기도 (반절 카드 2개) ── */
   .lauds-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
   .lauds-card{
@@ -582,20 +603,20 @@
   })();
   </script>
 
+  <div class="video-grid">
   <!-- ── 듣는 소금항아리 (생활성서사 유튜브, 자동 갱신) ── -->
   <section class="missa-section">
     <a class="muksang-all-card saltjar-card" id="saltjarCard" href="https://youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw?si=zxz-K-Cdu6rZ6raI" target="_blank" rel="noopener">
       <div class="muksang-all-icon">
-        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
           <path d="M12 2a8 8 0 0 0-8 8v6a3 3 0 0 0 3 3h1v-7H6v-2a6 6 0 0 1 12 0v2h-2v7h1a3 3 0 0 0 3-3v-6a8 8 0 0 0-8-8z" fill="#F5E09E"/>
         </svg>
       </div>
       <div class="muksang-all-body">
-        <div class="muksang-all-eyebrow">생활성서사 · 매일 저녁 9시 업데이트</div>
+        <div class="muksang-all-eyebrow">생활성서사</div>
         <div class="muksang-all-title">듣는 소금항아리</div>
-        <div class="muksang-all-sub" id="saltjarSub">오늘의 복음 묵상을 목소리로 들어보세요</div>
+        <div class="muksang-all-sub" id="saltjarSub">오늘의 복음 묵상</div>
       </div>
-      <div class="muksang-all-arrow">→</div>
     </a>
     <script>
     (function(){
@@ -615,6 +636,62 @@
     })();
     </script>
   </section>
+
+  <!-- ── 빈첸시오말씀방 (유튜브, 날짜별 목록, 자동 갱신) ── -->
+  <section class="missa-section">
+    <details class="prayer-details vincent-card">
+      <summary class="prayer-summary vincent-summary">
+        <div class="muksang-all-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="#CDEFDD" stroke-width="1.6"/>
+            <path d="M10 8.5l6 3.5-6 3.5z" fill="#CDEFDD"/>
+          </svg>
+        </div>
+        <div class="muksang-all-body">
+          <div class="muksang-all-eyebrow">빈첸시오말씀방</div>
+          <div class="muksang-all-title">빈첸시오 말씀방</div>
+        </div>
+        <span class="prayer-arrow">▼</span>
+      </summary>
+      <div class="prayer-body">
+        <div id="vincentList" class="vincent-list">
+          <div class="muksang-empty">불러오는 중…</div>
+        </div>
+        <a class="wyd-link" href="https://www.youtube.com/@빈첸시오말씀방" target="_blank" rel="noopener">
+          채널에서 더 보기 →
+        </a>
+      </div>
+    </details>
+    <script>
+    (function(){
+      var list = document.getElementById('vincentList');
+      if (!list) return;
+      function esc(t){
+        return String(t||'').replace(/[&<>"']/g, function(c){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+      }
+      fetch('data/vincent.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (!d.videos || d.videos.length === 0) {
+            list.innerHTML = '<div class="muksang-empty">최근 영상이 없습니다.</div>';
+            return;
+          }
+          list.innerHTML = d.videos.map(function(v){
+            return '<a class="vincent-item" href="' + esc(v.url) + '" target="_blank" rel="noopener">'
+              + '<span class="vincent-date">' + esc((v.date||'').slice(5)) + '</span>'
+              + '<span class="vincent-title">' + esc(v.title) + '</span>'
+              + '</a>';
+          }).join('');
+        })
+        .catch(function(){
+          list.innerHTML = '<div class="muksang-empty">목록을 불러오지 못했습니다.</div>';
+        });
+    })();
+    </script>
+  </section>
+  </div>
 
   <!-- ── 세례명 축일 달력 카드 ── -->
   <section class="missa-section">

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16 06:24",
+  "updated": "2026-08-16 11:21",
   "cutoff": "2026-08-15",
   "days": 2,
   "names": [
@@ -15,8 +15,68 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 14,
   "posts": [
+    {
+      "id": "naver_1630165287532920096",
+      "title": "연중 제20주간 월요일 강론",
+      "author": "",
+      "date": "2026-08-16",
+      "url": "https://blog.naver.com/syj1212ad/224380119281?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-16",
+      "priest": "송영진",
+      "excerpt": "<연중 제20주간 월요일 강론>(2026."
+    },
+    {
+      "id": "2136036",
+      "title": "08.16. 연중 제20주일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-16",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136036&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136035",
+      "title": "이병우 신부님_김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-16",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136035&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136033",
+      "title": "전삼용 신부님_죽이 되든, 밥이 되든!",
+      "author": "최원석",
+      "date": "2026-08-16",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136033&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136032",
+      "title": "양승국 신부님_우리가 보다 간절하게 주님께 부르짖는다면...",
+      "author": "최원석",
+      "date": "2026-08-16",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136032&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136030",
+      "title": "이영근 신부님_“예수님께서는 한 마디도 대답하지 않으셨다.”(마태 15 ...",
+      "author": "최원석",
+      "date": "2026-08-16",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136030&menu=4770",
+      "mass_date": "2026-08-16",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2136008",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 16일 연중 제20주일",
@@ -28,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4558876157120345781",
+      "id": "naver_8814467437301740569",
       "title": "연중 제20주일 강론",
       "author": "",
       "date": "2026-08-15",

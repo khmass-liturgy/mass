@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-16 21:46",
-  "cutoff": "2026-08-15",
+  "updated": "2026-08-17 06:24",
+  "cutoff": "2026-08-16",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 15,
+  "count": 8,
   "posts": [
     {
       "id": "2136044",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_174995356237490600",
+      "id": "naver_1428062913735415305",
       "title": "연중 제20주간 월요일 강론",
       "author": "",
       "date": "2026-08-16",
@@ -94,76 +94,6 @@
       "date": "2026-08-15",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136008&menu=4770",
       "mass_date": "2026-08-16",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_421644398723161407",
-      "title": "연중 제20주일 강론",
-      "author": "",
-      "date": "2026-08-15",
-      "url": "https://blog.naver.com/syj1212ad/224379327489?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-15",
-      "priest": "송영진",
-      "excerpt": "<연중 제20주일 강론>(2026."
-    },
-    {
-      "id": "2135990",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135990&menu=4770",
-      "mass_date": "2026-08-15",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135989",
-      "title": "이영근 신부님_“행복하십니다. ~말씀이 이루어지리라고 믿으신 분!”(루 ...",
-      "author": "최원석",
-      "date": "2026-08-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135989&menu=4770",
-      "mass_date": "2026-08-15",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135988",
-      "title": "양승국 신부님_마리아의 18번곡 마니피캇!",
-      "author": "최원석",
-      "date": "2026-08-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135988&menu=4770",
-      "mass_date": "2026-08-15",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135986",
-      "title": "전삼용 신부님_내가 어디로 향하는지 아는 방법",
-      "author": "최원석",
-      "date": "2026-08-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135986&menu=4770",
-      "mass_date": "2026-08-15",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135972",
-      "title": "08.15.토.성모 승천 대축일 낮 미사 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135972&menu=4770",
-      "mass_date": "2026-08-15",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2135969",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 15일 성모 승천 대축일",
-      "author": "박양석",
-      "date": "2026-08-14",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2135969&menu=4770",
-      "mass_date": "2026-08-15",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

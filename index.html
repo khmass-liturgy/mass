@@ -270,6 +270,11 @@
   .prayer-grid .prayer-summary{padding:16px 18px;}
   .prayer-grid .wyd-eyebrow{font-size:.56rem;}
   .prayer-grid .wyd-title{font-size:1rem;}
+  /* 펼쳤을 때만 가로 전체를 차지해 글줄이 좁고 길어지지 않게 한다 */
+  .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
+  .prayer-grid .missa-section.is-open .prayer-summary{padding:20px 28px;}
+  .prayer-grid .missa-section.is-open .wyd-eyebrow{font-size:.62rem;}
+  .prayer-grid .missa-section.is-open .wyd-title{font-size:1.2rem;}
   @media (max-width:380px){
     .prayer-grid{grid-template-columns:1fr;}
   }
@@ -813,6 +818,20 @@
     </details>
   </section>
   </div>
+  <script>
+  // 반절 카드를 펼치면 가로 전체로 넓히고, 접으면 다시 반절로 되돌린다.
+  (function(){
+    var items = document.querySelectorAll('.prayer-grid .prayer-details');
+    Array.prototype.forEach.call(items, function(d){
+      var sec = d.closest('.missa-section');
+      if (!sec) return;
+      d.addEventListener('toggle', function(){
+        if (d.open) sec.classList.add('is-open');
+        else sec.classList.remove('is-open');
+      });
+    });
+  })();
+  </script>
 
   <!-- ── 예수성심성월 기도 (6월에만 표시) ── -->
   <section class="missa-section" id="sacredHeartSection" style="display:none;">

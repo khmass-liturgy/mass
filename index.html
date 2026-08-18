@@ -272,6 +272,8 @@
   .prayer-grid .wyd-title{font-size:1rem;}
   /* 펼쳤을 때만 가로 전체를 차지해 글줄이 좁고 길어지지 않게 한다 */
   .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
+  /* 하나를 펼치면 다른 카드는 숨겨 펼친 기도문에만 집중하게 한다 */
+  .prayer-grid.has-open .missa-section:not(.is-open){display:none;}
   .prayer-grid .missa-section.is-open .prayer-summary{padding:20px 28px;}
   .prayer-grid .missa-section.is-open .wyd-eyebrow{font-size:.62rem;}
   .prayer-grid .missa-section.is-open .wyd-title{font-size:1.2rem;}
@@ -819,16 +821,24 @@
   </section>
   </div>
   <script>
-  // 반절 카드를 펼치면 가로 전체로 넓히고, 접으면 다시 반절로 되돌린다.
+  // 반절 카드를 펼치면 가로 전체로 넓히고 다른 카드는 감춘다. 접으면 둘 다 원래대로.
   (function(){
-    var items = document.querySelectorAll('.prayer-grid .prayer-details');
-    Array.prototype.forEach.call(items, function(d){
-      var sec = d.closest('.missa-section');
-      if (!sec) return;
-      d.addEventListener('toggle', function(){
-        if (d.open) sec.classList.add('is-open');
-        else sec.classList.remove('is-open');
+    var grid = document.querySelector('.prayer-grid');
+    if (!grid) return;
+    var items = grid.querySelectorAll('.prayer-details');
+    function sync(){
+      var anyOpen = false;
+      Array.prototype.forEach.call(items, function(d){
+        var sec = d.closest('.missa-section');
+        if (!sec) return;
+        if (d.open) { sec.classList.add('is-open'); anyOpen = true; }
+        else { sec.classList.remove('is-open'); }
       });
+      if (anyOpen) grid.classList.add('has-open');
+      else grid.classList.remove('has-open');
+    }
+    Array.prototype.forEach.call(items, function(d){
+      d.addEventListener('toggle', sync);
     });
   })();
   </script>

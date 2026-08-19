@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-19 06:15",
+  "updated": "2026-08-19 18:25",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 5,
   "videos": [
+    {
+      "videoId": "YhC7v6VvEao",
+      "date": "2026-08-19",
+      "title": "연중 제20주간 수요일",
+      "url": "https://www.youtube.com/watch?v=YhC7v6VvEao"
+    },
     {
       "videoId": "eA9vF5_LLvE",
       "date": "2026-08-18",
@@ -27,12 +33,6 @@
       "date": "2026-08-15",
       "title": "성모 승천 대축일",
       "url": "https://www.youtube.com/watch?v=akueXhtoLjc"
-    },
-    {
-      "videoId": "O3RwYmVsSN0",
-      "date": "2026-08-14",
-      "title": "성 막시밀리아노 마리아 콜베 사제 순교자 기념일",
-      "url": "https://www.youtube.com/watch?v=O3RwYmVsSN0"
     }
   ]
 }

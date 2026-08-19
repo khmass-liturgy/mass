@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19 18:37",
+  "updated": "2026-08-19 21:54",
   "cutoff": "2026-08-18",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 15,
+  "count": 16,
   "posts": [
     {
-      "id": "naver_340238298207135703",
+      "id": "2136168",
+      "title": "조명연 마태오신부님(빠다킹신부님)  8월 20일 성 베르나르도 아빠스  ...",
+      "author": "박양석",
+      "date": "2026-08-19",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136168&menu=4770",
+      "mass_date": "2026-08-20",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_4755237749551098770",
       "title": "연중 제20주간 목요일 강론",
       "author": "",
       "date": "2026-08-19",
@@ -98,7 +108,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_6515102102498931433",
+      "id": "naver_2952938390217340824",
       "title": "연중 제20주간 수요일 강론",
       "author": "",
       "date": "2026-08-18",

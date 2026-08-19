@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-19 23:37",
-  "cutoff": "2026-08-18",
+  "updated": "2026-08-20 06:28",
+  "cutoff": "2026-08-19",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 16,
+  "count": 9,
   "posts": [
     {
       "id": "2136168",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_8151747420760659673",
+      "id": "naver_3613853790708536613",
       "title": "연중 제20주간 목요일 강론",
       "author": "",
       "date": "2026-08-19",
@@ -104,76 +104,6 @@
       "date": "2026-08-18",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136131&menu=4770",
       "mass_date": "2026-08-19",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_5767501669686944990",
-      "title": "연중 제20주간 수요일 강론",
-      "author": "",
-      "date": "2026-08-18",
-      "url": "https://blog.naver.com/syj1212ad/224381901183?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-18",
-      "priest": "송영진",
-      "excerpt": "<연중 제20주간 수요일 강론>(2026."
-    },
-    {
-      "id": "2136115",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136115&menu=4770",
-      "mass_date": "2026-08-18",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136114",
-      "title": "전삼용 신부님_하느님께서 부자를 구원하시는 방법",
-      "author": "최원석",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136114&menu=4770",
-      "mass_date": "2026-08-18",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136109",
-      "title": "이영근 신부님_“부자가 하느님 나라에 들어가는 것보다   낙타가 바늘구 ...",
-      "author": "최원석",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136109&menu=4770",
-      "mass_date": "2026-08-18",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136107",
-      "title": "양승국 신부님_돈이 모든 행복의 근원은 아닙니다!",
-      "author": "최원석",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136107&menu=4770",
-      "mass_date": "2026-08-18",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136090",
-      "title": "08.18.화 / 한상우 신부님 |1|",
-      "author": "강칠등",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136090&menu=4770",
-      "mass_date": "2026-08-18",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136086",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 18일 연중 제20주간 화요일",
-      "author": "박양석",
-      "date": "2026-08-17",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136086&menu=4770",
-      "mass_date": "2026-08-18",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

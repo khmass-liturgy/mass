@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-20 23:40",
-  "cutoff": "2026-08-19",
+  "updated": "2026-08-21 06:31",
+  "cutoff": "2026-08-20",
   "days": 2,
   "names": [
     "조명연",
@@ -15,7 +15,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 16,
+  "count": 8,
   "posts": [
     {
       "id": "2136228",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1804762823968421476",
+      "id": "naver_5546104968117409813",
       "title": "연중 제20주간 금요일 강론",
       "author": "",
       "date": "2026-08-20",
@@ -94,86 +94,6 @@
       "date": "2026-08-19",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136168&menu=4770",
       "mass_date": "2026-08-20",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_6453522789022071784",
-      "title": "연중 제20주간 목요일 강론",
-      "author": "",
-      "date": "2026-08-19",
-      "url": "https://blog.naver.com/syj1212ad/224383026636?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-19",
-      "priest": "송영진",
-      "excerpt": "<연중 제20주간 목요일 강론>(2026."
-    },
-    {
-      "id": "2136155",
-      "title": "08.19.수 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136155&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136151",
-      "title": "양승국 신부님_착한 목자는 바빠야 합니다!",
-      "author": "최원석",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136151&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136149",
-      "title": "전삼용 신부님_감사는 태도다",
-      "author": "최원석",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136149&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136148",
-      "title": "이영근 신부님_몬테 올리베토 연합회의 창설자 베르나르도 똘로메이 대축일",
-      "author": "최원석",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136148&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136147",
-      "title": "이영근 신부님_“당신들도 포도밭으로 가시오. 정당한 삯을 주겠소.”(마 ...",
-      "author": "최원석",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136147&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136146",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136146&menu=4770",
-      "mass_date": "2026-08-19",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136131",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 19일 연중 제20주간 수요일",
-      "author": "박양석",
-      "date": "2026-08-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136131&menu=4770",
-      "mass_date": "2026-08-19",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

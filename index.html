@@ -626,11 +626,22 @@
       fetch('data/saltjar.json', {cache:'no-store'})
         .then(function(r){ return r.json(); })
         .then(function(d){
-          if (d && d.url) card.href = d.url;
-          if (d && d.title) {
-            var m = d.title.match(/\[(.+?)\]/);
-            sub.textContent = m ? m[1] : d.title;
+          if (!d) return;
+          var now = new Date();
+          var kst = new Date(now.toLocaleString('en-US', {timeZone:'Asia/Seoul'}));
+          var todayStr = kst.getFullYear() + '-' + String(kst.getMonth()+1).padStart(2,'0') + '-' + String(kst.getDate()).padStart(2,'0');
+          var list = d.videos || [];
+          // videos는 매일미사 날짜 최신순 — 당일 영상이 있으면 그것을, 없으면 가장 최근(전일) 영상을 사용
+          var picked = list.filter(function(v){ return v.date === todayStr; })[0]
+                    || list.filter(function(v){ return v.date < todayStr; })[0]
+                    || list[0] || d;
+          if (picked && picked.url) card.href = picked.url;
+          var label = picked && (picked.label || picked.title) || '';
+          if (!picked.label && label) {
+            var m = label.match(/\[(.+?)\]/);
+            label = m ? m[1] : label;
           }
+          if (label) sub.textContent = label;
         })
         .catch(function(){});
     })();

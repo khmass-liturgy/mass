@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20 21:56",
+  "updated": "2026-08-20 23:40",
   "cutoff": "2026-08-19",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 15,
+  "count": 16,
   "posts": [
     {
-      "id": "naver_5027050963531897944",
+      "id": "2136228",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 21일 성 비오 10세 교황 기 ...",
+      "author": "박양석",
+      "date": "2026-08-20",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136228&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_1804762823968421476",
       "title": "연중 제20주간 금요일 강론",
       "author": "",
       "date": "2026-08-20",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3039263575592010260",
+      "id": "naver_6453522789022071784",
       "title": "연중 제20주간 목요일 강론",
       "author": "",
       "date": "2026-08-19",

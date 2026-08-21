@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21 06:31",
+  "updated": "2026-08-21 11:24",
   "cutoff": "2026-08-20",
   "days": 2,
   "names": [
@@ -15,11 +15,61 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 8,
+  "count": 13,
   "posts": [
     {
+      "id": "naver_1030469805279115794",
+      "title": "연중 제20주간 토요일 강론",
+      "author": "",
+      "date": "2026-08-21",
+      "url": "https://blog.naver.com/syj1212ad/224385339643?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-21",
+      "priest": "송영진",
+      "excerpt": "<연중 제20주간 토요일 강론>(2026."
+    },
+    {
+      "id": "2136251",
+      "title": "이영근 신부님_“네 이웃을 너 자신처럼 사랑해야 한다.”(마태 22,3 ...",
+      "author": "최원석",
+      "date": "2026-08-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136251&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136250",
+      "title": "양승국 신부님_애야, 성인(聖人)이 되는 길은 결코 어려운 일이 아니란 ...",
+      "author": "최원석",
+      "date": "2026-08-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136250&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136249",
+      "title": "전삼용 신부님_이해할 수 없는 이유는 사랑하지 않기 때문이다",
+      "author": "최원석",
+      "date": "2026-08-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136249&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136247",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136247&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
       "id": "2136228",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 21일 성 비오 10세 교황 기 ...",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 21일 성 비오 10세 교황 기 ... |1|",
       "author": "박양석",
       "date": "2026-08-20",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136228&menu=4770",
@@ -28,7 +78,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_5546104968117409813",
+      "id": "naver_2163102548680688620",
       "title": "연중 제20주간 금요일 강론",
       "author": "",
       "date": "2026-08-20",

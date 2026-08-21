@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-21 06:20",
+  "updated": "2026-08-21 18:28",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 5,
   "videos": [
+    {
+      "videoId": "OjD2gcZV8bY",
+      "date": "2026-08-21",
+      "title": "성 비오 10세 교화 기념일",
+      "url": "https://www.youtube.com/watch?v=OjD2gcZV8bY"
+    },
     {
       "videoId": "WFo7hD_YQ_Q",
       "date": "2026-08-20",
@@ -27,12 +33,6 @@
       "date": "2026-08-17",
       "title": "연중 제20주간 월요일",
       "url": "https://www.youtube.com/watch?v=uxVsBZObWFI"
-    },
-    {
-      "videoId": "BLu16Zk5Nls",
-      "date": "2026-08-16",
-      "title": "연중 제20주일",
-      "url": "https://www.youtube.com/watch?v=BLu16Zk5Nls"
     }
   ]
 }

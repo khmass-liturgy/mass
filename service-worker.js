@@ -2,12 +2,13 @@
 // 네트워크 우선(신선한 콘텐츠 우선) + 실패 시 캐시로 대체하는 전략
 // 매일미사·묵상글·축일 등 자주 바뀌는 콘텐츠 특성에 맞춤
 
-const CACHE_NAME = 'khmass-liturgy-v1';
+const CACHE_NAME = 'khmass-liturgy-v2';
 
 // 설치 시 미리 담아둘 핵심 파일 (오프라인 최소 보장)
 const PRECACHE_URLS = [
   './',
   './index.html',
+  './privacy.html',
   './feastday.html',
   './feast_days.json',
   './manifest.json'

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21 11:24",
+  "updated": "2026-08-21 12:52",
   "cutoff": "2026-08-20",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 13,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_1030469805279115794",
+      "id": "naver_5717466258403014520",
       "title": "연중 제20주간 토요일 강론",
       "author": "",
       "date": "2026-08-21",
@@ -26,6 +26,16 @@
       "mass_date": "2026-08-21",
       "priest": "송영진",
       "excerpt": "<연중 제20주간 토요일 강론>(2026."
+    },
+    {
+      "id": "2136255",
+      "title": "08.21.금.성 비오 10세 교황 기념일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136255&menu=4770",
+      "mass_date": "2026-08-21",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2136251",
@@ -78,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_2163102548680688620",
+      "id": "naver_315774413635600370",
       "title": "연중 제20주간 금요일 강론",
       "author": "",
       "date": "2026-08-20",

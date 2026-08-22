@@ -42,6 +42,8 @@
   .header-title h1{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);}
   .title-rose{font-size:.85em;vertical-align:-0.05em;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));}
   .header-title p{font-family:'Cinzel',serif;font-size:.62rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
+  /* 제목이 길어 모바일에서 잘리지 않도록 줄바꿈을 허용한다 */
+  .header-title h1{line-height:1.25;word-break:keep-all;}
   .header-date{font-size:.78rem;color:var(--gold-lt);font-family:'Noto Serif KR',serif;text-align:right;}
   .gold-bar{background:linear-gradient(90deg,var(--gold),var(--gold-lt) 50%,var(--gold));height:3px;}
 
@@ -520,7 +522,6 @@
   <div class="header-inner">
     <div class="header-title">
       <h1><span class="title-rose" aria-hidden="true">🌹</span> 가톨릭 신앙생활 포털 <span class="title-rose" aria-hidden="true">🌹</span></h1>
-      <p>Vita Fidei · Vatican News</p>
     </div>
     <button id="shareBtn" type="button" aria-label="공유하기" title="공유하기">
       <span class="share-icon" aria-hidden="true">🔗</span>
@@ -1463,12 +1464,33 @@ function formatDate(){
 document.getElementById('headerDate').textContent = formatDate();
 
 // 매일미사 카드 날짜 채우기
-(function(){
+// 토요일 오후 3시부터는 주일 미사(토요 특전미사)를 드리는 시간대이므로,
+// 그때부터 주일이 끝날 때까지 주일 매일미사를 보여 준다.
+window.MISSA_TARGET_DATE = (function(){
   const now = new Date();
+  const target = new Date(now);
+  if (now.getDay() === 6 && now.getHours() >= 15) {   // 토요일 15:00 이후 → 다음 날(주일)
+    target.setDate(target.getDate() + 1);
+  }
   const dowNames = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  document.getElementById('missaDow').textContent = dowNames[now.getDay()];
-  document.getElementById('missaDay').textContent = now.getDate();
-  document.getElementById('missaMonth').textContent = (now.getMonth()+1) + '월';
+  document.getElementById('missaDow').textContent = dowNames[target.getDay()];
+  document.getElementById('missaDay').textContent = target.getDate();
+  document.getElementById('missaMonth').textContent = (target.getMonth()+1) + '월';
+
+  // 오늘이 아닌 날짜를 보여 줄 때만 날짜를 지정한 주소로 연결한다.
+  const isToday = target.toDateString() === now.toDateString();
+  const card = document.querySelector('.missa-card');
+  if (card && !isToday) {
+    const ymd = target.getFullYear()
+      + ('0' + (target.getMonth() + 1)).slice(-2)
+      + ('0' + target.getDate()).slice(-2);
+    card.href = 'https://missa.cbck.or.kr/DailyMissa/' + ymd;
+    const title = card.querySelector('.missa-title');
+    const sub = card.querySelector('.missa-sub');
+    if (title) title.textContent = '주일 매일미사 보기';
+    if (sub) sub.textContent = '토요 특전미사 시간입니다. 주일의 말씀, 독서, 복음을 확인하세요';
+  }
+  return target;
 })();
 
 // ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
@@ -1503,7 +1525,9 @@ document.getElementById('headerDate').textContent = formatDate();
     return new Date(year, month-1, day);
   }
 
-  const now = new Date();
+  // 매일미사 카드가 가리키는 날짜와 같은 날의 전례를 계산한다.
+  // (토요일 오후 3시 이후에는 카드가 주일을 가리키므로 배지도 주일 기준이 된다)
+  const now = window.MISSA_TARGET_DATE || new Date();
   const year = now.getFullYear();
   const easter = computeEaster(year);
 

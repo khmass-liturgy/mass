@@ -1071,7 +1071,36 @@
         <div class="lc-desc">내 위치에서 가까운 성당 10곳을 거리순으로 (CBCK 공식 주소록 기반)</div>
       </a>
 
+      <a class="link-card" id="gospeltoonCard" href="https://www.catholicpress.kr/m/list.php?mcode=m96sroz" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🖍</span><span class="lc-go">→</span></div>
+        <div class="lc-name">만화로 보는 복음</div>
+        <div class="lc-desc" id="gospeltoonDesc">주일 복음을 만화로 풀어낸 가스펠툰 (가톨릭프레스)</div>
+      </a>
+
     </div>
+    <script>
+    // 가스펠툰은 주간 연재 — 가장 최근(이번 주일) 편으로 바로 연결한다.
+    (function(){
+      var card = document.getElementById('gospeltoonCard');
+      var desc = document.getElementById('gospeltoonDesc');
+      if (!card || !desc) return;
+      fetch('data/gospeltoon.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (!d || !d.url) return;
+          card.href = d.url;
+          var parts = [];
+          if (d.date) {
+            var p = d.date.split('-');
+            if (p.length === 3) parts.push(parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일');
+          }
+          if (d.label) parts.push(d.label);
+          var head = parts.join(' · ');
+          desc.textContent = (head ? head + ' — ' : '') + (d.title || '가스펠툰');
+        })
+        .catch(function(){ /* 못 불러오면 연재 목록 링크를 그대로 둔다 */ });
+    })();
+    </script>
   </section>
 
   <!-- ── 신부님 묵상 (최근 3일, GitHub Actions 자동 수집) ── -->

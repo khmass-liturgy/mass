@@ -1,0 +1,39 @@
+name: Update 가스펠툰
+
+on:
+  schedule:
+    # UTC 기준 → KST 06:00 / 18:00 (하루 2회)
+    # 주간 연재라 자주 볼 필요가 없다. 보통 토요일에 다음 날 주일 자로 올라온다.
+  - cron: '0 9,21 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 가스펠툰 latest
+        run: python scripts/fetch_gospeltoon.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/gospeltoon.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update 가스펠툰 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            git push
+          fi

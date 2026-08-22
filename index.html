@@ -324,6 +324,8 @@
   .badge-kyoha{background:var(--kyoha);color:var(--cream);}
   .badge-world{background:#4A4A4A;color:var(--cream);}
   .group-title{font-family:'Noto Serif KR',serif;font-size:1.1rem;font-weight:700;color:var(--navy);}
+  /* 섹션 제목 앞 장식 아이콘 — 낭독기에는 읽히지 않도록 aria-hidden 을 함께 쓴다 */
+  .gt-icon{margin-right:5px;font-size:.95em;font-style:normal;}
 
   .link-grid{
     display:grid;
@@ -1047,7 +1049,7 @@
   <section>
     <div class="group-header">
       <span class="group-badge badge-kyoha">Tools</span>
-      <h2 class="group-title">신앙생활 도우미</h2>
+      <h2 class="group-title"><span class="gt-icon" aria-hidden="true">🕯️</span>신앙생활 도우미</h2>
     </div>
     <div class="link-grid">
 
@@ -1121,7 +1123,7 @@
   <section>
     <div class="group-header">
       <span class="group-badge badge-muksang">Daily</span>
-      <h2 class="group-title"><a href="https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">🌹 신부님 묵상글 모음</a></h2>
+      <h2 class="group-title"><a href="https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><span class="gt-icon" aria-hidden="true">🌹</span>신부님 묵상글 모음</a></h2>
     </div>
     <div id="muksangBox" class="muksang-box">
       <div class="muksang-empty">묵상 글을 불러오는 중입니다…</div>
@@ -1217,7 +1219,7 @@
   <section>
     <div class="group-header">
       <span class="group-badge badge-vatican">Holy See</span>
-      <h2 class="group-title">교황청 소식 및 성경, 교회교리서</h2>
+      <h2 class="group-title"><span class="gt-icon" aria-hidden="true">🕊️</span>교황청 소식 및 성경, 교회교리서</h2>
     </div>
     <div class="link-grid">
 
@@ -1282,7 +1284,7 @@
       <summary>
         <div class="group-header">
           <span class="group-badge badge-korea">Korea</span>
-          <h2 class="group-title">국내 가톨릭 뉴스 · 전국 주보</h2>
+          <h2 class="group-title"><span class="gt-icon" aria-hidden="true">⛪</span>국내 가톨릭 뉴스 · 전국 주보</h2>
           <span class="section-arrow">▾</span>
         </div>
       </summary>
@@ -1340,7 +1342,7 @@
       <summary>
         <div class="group-header">
           <span class="group-badge" style="background:#8B1A1A;color:var(--cream);">Books</span>
-          <h2 class="group-title">가톨릭 도서·소리책</h2>
+          <h2 class="group-title"><span class="gt-icon" aria-hidden="true">📖</span>가톨릭 도서·소리책</h2>
           <span class="section-arrow">▾</span>
         </div>
       </summary>
@@ -1380,7 +1382,7 @@
       <summary>
         <div class="group-header">
           <span class="group-badge" style="background:#CC0000;color:#fff;">Media</span>
-          <h2 class="group-title">가톨릭 영상·방송</h2>
+          <h2 class="group-title"><span class="gt-icon" aria-hidden="true">🎬</span>가톨릭 영상·방송</h2>
           <span class="section-arrow">▾</span>
         </div>
       </summary>

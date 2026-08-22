@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-'빈첸시오말씀방' 유튜브 채널(공개 RSS 피드)에서 매일 올라오는
-[묵상] 영상을 날짜별로 모아 data/vincent.json 으로 저장한다.
+'빈첸시오말씀방' 유튜브 채널(공개 RSS 피드)에서 매일미사 영상을
+날짜별로 모아 data/vincent.json 으로 저장한다.
 
 RSS 피드는 API 키 없이 접근 가능한 유튜브 공식 공개 피드이며,
 채널당 최근 업로드 15개까지 최신순으로 내려온다.
-이 채널은 하루에 [묵상]/[독서,복음,묵상]/복음 말씀 영상을 각각 올리므로,
-제목에 '[묵상]'이 포함된 영상만 걸러서 날짜별 목록을 만든다.
+
+이 채널은 같은 날짜로 여러 종류를 올린다.
+  · '가톨릭 매일미사 [독서,복음,묵상] 2026년 8월 17일 …'  ← 전체 매일미사 (원하는 것)
+  · '가톨릭 매일미사 [묵상] 2026년 8월 17일 …'            ← 묵상만 담은 쇼츠
+  · '매일미사 마태오복음(19,16-22) …'                     ← 성경 구절 클립
+제목의 대괄호에 '독서'와 '복음'이 함께 든 항목만 매일미사로 인정하고,
+쇼츠(/shorts/ 링크)는 형식 자체로 배제한다.
 
 GitHub Actions에서 주기적으로 실행됨.
 """
@@ -23,7 +28,6 @@ import requests
 
 CHANNEL_ID = "UC-0yMi0sXeG2HYmKCzwM7sQ"  # 빈첸시오말씀방
 FEED_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
-TITLE_FILTER = "[묵상]"  # 채널에 성경 구절/독서 영상도 섞여 올라오므로 제목으로 필터링
 MAX_ITEMS = 10
 
 KST = ZoneInfo("Asia/Seoul")
@@ -41,23 +45,33 @@ NS = {
     "yt": "http://www.youtube.com/xml/schemas/2015",
 }
 
-DATE_RE = re.compile(r"(\d{4})년\s*(\d{1,2})월\s*(\d{1,2})일\s*(.*)")
+DATE_RE = re.compile(r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일\s*(.*)")
+
+# 전체 매일미사 영상의 표식: 대괄호 안에 '독서'와 '복음'이 함께 들어 있다.
+# 묵상만 담은 쇼츠('[묵상]')와 성경 구절 클립은 이 조건에서 걸러진다.
+MASS_TAG_RE = re.compile(r"\[[^\]]*독서[^\]]*복음[^\]]*\]")
 
 
-def clean_title(title: str, published_kst_date: str):
-    """제목에서 '[묵상] YYYY년 M월 D일 <설명> #태그...' 형태를 분리해
-    (날짜, 짧은 설명) 튜플로 반환한다. 날짜를 못 찾으면 게시일을 대신 쓴다.
+def parse_mass_entry(title: str):
+    """전체 매일미사 제목에서 (날짜, 전례일 표기)를 뽑는다.
+
+    예) '가톨릭 매일미사 [독서,복음,묵상] 2026년 8월 17일 연중 제20주간 월요일'
+        → ('2026-08-17', '연중 제20주간 월요일')
+    매일미사 표식이나 날짜가 없으면 None을 돌려 호출부에서 건너뛰게 한다.
     """
-    after_tag = title.split(TITLE_FILTER, 1)
-    rest = after_tag[1].strip() if len(after_tag) > 1 else title
-    m = DATE_RE.match(rest)
-    if m:
-        y, mo, da, desc = m.groups()
+    m = MASS_TAG_RE.search(title)
+    if not m:
+        return None
+    rest = title[m.end():].strip()
+    d = DATE_RE.match(rest)
+    if not d:
+        return None
+    y, mo, da, desc = d.groups()
+    try:
         date_str = f"{int(y):04d}-{int(mo):02d}-{int(da):02d}"
-    else:
-        date_str = published_kst_date
-        desc = rest
-    desc = desc.split(" #")[0].strip()
+    except ValueError:
+        return None
+    desc = desc.split("#")[0].strip(" ·-—")
     return date_str, desc
 
 
@@ -77,36 +91,43 @@ def main():
     videos = []
     for entry in entries:
         title_el = entry.find("atom:title", NS)
-        title = title_el.text if title_el is not None and title_el.text else ""
-        if TITLE_FILTER not in title:
+        title = (title_el.text or "").strip() if title_el is not None else ""
+
+        # 쇼츠는 링크 형식만으로 걸러낸다 (제목이 매일미사처럼 보여도 배제)
+        link_el = entry.find("atom:link", NS)
+        href = link_el.get("href", "") if link_el is not None else ""
+        if "/shorts/" in href:
+            print(f"skip (쇼츠): {title}", file=sys.stderr)
             continue
+
+        parsed = parse_mass_entry(title)
+        if parsed is None:
+            print(f"skip (매일미사 아님): {title}", file=sys.stderr)
+            continue
+        date_str, desc = parsed
+
         video_id_el = entry.find("yt:videoId", NS)
         video_id = video_id_el.text if video_id_el is not None else None
         if not video_id:
             continue
         published_el = entry.find("atom:published", NS)
         published = published_el.text if published_el is not None else ""
-        try:
-            published_kst = datetime.fromisoformat(published).astimezone(KST)
-            published_kst_date = published_kst.strftime("%Y-%m-%d")
-        except Exception:
-            published_kst_date = now.strftime("%Y-%m-%d")
 
-        date_str, desc = clean_title(title.strip(), published_kst_date)
         videos.append({
             "videoId": video_id,
             "date": date_str,
-            "title": desc or title.strip(),
+            "title": desc or title,
+            "published": published,
             "url": f"https://www.youtube.com/watch?v={video_id}",
         })
         if len(videos) >= MAX_ITEMS:
             break
 
     if not videos:
-        print("no matching '[묵상]' entries found in feed", file=sys.stderr)
+        print("no 매일미사([독서,복음,묵상]) entry found in feed", file=sys.stderr)
         sys.exit(1)
 
-    videos.sort(key=lambda v: (v["date"], v["videoId"]), reverse=True)
+    videos.sort(key=lambda v: (v["date"], v["published"]), reverse=True)
 
     out = {
         "updated": now.strftime("%Y-%m-%d %H:%M"),

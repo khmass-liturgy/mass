@@ -139,17 +139,17 @@
   .missa-card:hover .missa-arrow{background:var(--gold-lt);color:var(--navy);}
 
   /* ── 공유하기 버튼 (헤더 내) ── */
+  /* 아이콘만 있는 원형 버튼 (글자 없이 아이콘으로만 표시) */
   #shareBtn{
     flex-shrink:0;
-    display:flex; align-items:center; gap:6px; width:fit-content;
+    display:flex; align-items:center; justify-content:center;
     background:transparent; color:var(--gold);
-    border:1px solid rgba(201,168,76,.5); border-radius:20px;
-    padding:7px 13px; font-family:'Noto Serif KR',serif; font-weight:700;
-    font-size:.72rem; cursor:pointer;
+    border:1px solid rgba(201,168,76,.5); border-radius:50%;
+    width:34px; height:34px; padding:0; cursor:pointer;
     transition:background .2s, transform .2s;
   }
   #shareBtn:hover{background:rgba(201,168,76,.12); transform:translateY(-1px);}
-  #shareBtn .share-icon{font-size:.85rem;}
+  #shareBtn .share-icon{font-size:.95rem; line-height:1;}
   #shareToast{
     position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px);
     background:var(--navy-lt); color:var(--cream); border:1px solid var(--gold);
@@ -160,17 +160,18 @@
   #shareToast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
   /* ── 홈 화면에 추가 버튼 (헤더 내, 날짜 좌측) ── */
+  /* 아이콘만 있는 원형 버튼 — 설치 가능할 때만 JS 가 display:flex 로 켠다 */
   #a2hsBtn{
     flex-shrink:0;
-    display:none; align-items:center; gap:6px; width:fit-content;
+    display:none; align-items:center; justify-content:center;
     background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
-    color:var(--navy); border:none; border-radius:20px;
-    padding:7px 13px; font-family:'Noto Serif KR',serif; font-weight:700;
-    font-size:.72rem; box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer;
+    color:var(--navy); border:none; border-radius:50%;
+    width:34px; height:34px; padding:0;
+    box-shadow:0 3px 10px rgba(0,0,0,.3); cursor:pointer;
     transition:transform .2s, box-shadow .2s;
   }
   #a2hsBtn:hover{transform:translateY(-1px); box-shadow:0 5px 14px rgba(0,0,0,.4);}
-  #a2hsBtn .a2hs-icon{font-size:.85rem;}
+  #a2hsBtn .a2hs-icon{font-size:.95rem; line-height:1;}
   #a2hsOverlay{
     position:fixed; inset:0; z-index:1000; display:none;
     align-items:flex-end; justify-content:center;
@@ -393,10 +394,6 @@
     .link-grid{grid-template-columns:1fr 1fr;}
     .missa-date-box{width:110px;height:128px;border-radius:55px 55px 8px 8px;}
     .missa-date-box .day{font-size:3.4rem;}
-    #a2hsBtn span:not(.a2hs-icon){display:none;}
-    #a2hsBtn{padding:8px;border-radius:50%;}
-    #shareBtn span:not(.share-icon){display:none;}
-    #shareBtn{padding:8px;border-radius:50%;}
   }
   @media (max-width:380px){
     .link-grid{grid-template-columns:1fr;}
@@ -525,11 +522,11 @@
       <h1><span class="title-rose" aria-hidden="true">🌹</span> 가톨릭 신앙생활 포털 <span class="title-rose" aria-hidden="true">🌹</span></h1>
       <p>Vita Fidei · Vatican News</p>
     </div>
-    <button id="shareBtn" type="button">
-      <span class="share-icon">🔗</span> 공유하기
+    <button id="shareBtn" type="button" aria-label="공유하기" title="공유하기">
+      <span class="share-icon" aria-hidden="true">🔗</span>
     </button>
-    <button id="a2hsBtn" type="button">
-      <span class="a2hs-icon">📲</span> 홈 화면에 추가
+    <button id="a2hsBtn" type="button" aria-label="홈 화면에 추가" title="홈 화면에 추가">
+      <span class="a2hs-icon" aria-hidden="true">📲</span>
     </button>
     <div class="header-date" id="headerDate"></div>
   </div>

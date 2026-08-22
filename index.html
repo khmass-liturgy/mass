@@ -1079,17 +1079,26 @@
 
     </div>
     <script>
-    // 가스펠툰은 주간 연재 — 해당 전례일 당일에만 카드를 보여 준다.
+    // 가스펠툰은 주간 연재 — 주일 편을 하루 전(토요일)부터 당일까지 이틀간 보여 준다.
     (function(){
       var card = document.getElementById('gospeltoonCard');
       var desc = document.getElementById('gospeltoonDesc');
       if (!card || !desc) return;
       // 한국 시간 기준 오늘 날짜 (YYYY-MM-DD)
       var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+      function shift(ymd, days){
+        var p = ymd.split('-');
+        var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+        dt.setDate(dt.getDate() + days);
+        return dt.getFullYear() + '-' + ('0' + (dt.getMonth() + 1)).slice(-2)
+               + '-' + ('0' + dt.getDate()).slice(-2);
+      }
       fetch('data/gospeltoon.json', {cache:'no-store'})
         .then(function(r){ return r.json(); })
         .then(function(d){
-          if (!d || !d.url || d.date !== today) return;  // 그 날이 아니면 숨긴 채로 둔다
+          if (!d || !d.url || !d.date) return;
+          // 전날(토요일)과 당일(주일) 이틀만 노출한다
+          if (today !== d.date && today !== shift(d.date, -1)) return;
           card.href = d.url;
           var p = d.date.split('-');
           var head = parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일';

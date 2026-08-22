@@ -45,6 +45,11 @@ BODY_DATE_RE = re.compile(
     r"(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일\s*(.{0,40}?)\s*제\s*1\s*독서"
 )
 
+# 기사에 찍히는 게시 일시. 예: '김웅배 2026-08-22 07:00:04 공유하기'
+# 보통 전례일 하루 전이지만 이틀 전에 올라오는 편도 있어(7/31 게시 → 8/2 주일)
+# 노출 시작일은 이 값을 그대로 쓴다.
+PUBLISHED_RE = re.compile(r"(20\d\d-\d\d-\d\d)\s+\d\d:\d\d:\d\d")
+
 
 def get(url: str) -> str:
     r = requests.get(url, headers=HEADERS, timeout=30)
@@ -70,21 +75,27 @@ def latest_from_list(html: str):
 
 
 def date_from_article(html: str):
-    """기사 본문에서 (날짜, 전례일 이름)을 뽑는다. 못 찾으면 (None, '')."""
+    """기사 본문에서 (전례일 날짜, 전례일 이름, 게시일)을 뽑는다.
+    못 찾은 항목은 None / '' 로 돌려준다.
+    """
     text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html))
+
+    m_pub = PUBLISHED_RE.search(text)
+    published = m_pub.group(1) if m_pub else ""
+
     m = BODY_DATE_RE.search(text)
     if not m:
-        return None, ""
+        return None, "", published
     y, mo, da, label = m.groups()
     try:
         date_str = f"{int(y):04d}-{int(mo):02d}-{int(da):02d}"
     except ValueError:
-        return None, ""
+        return None, "", published
     # '주일 (연중 제21주일)' 처럼 괄호가 있으면 괄호 안쪽을 쓴다.
     inner = re.search(r"\(([^)]{2,40})\)", label)
     label = inner.group(1) if inner else label
-    label = label.replace("주일", "주일").strip(" ·-—()")
-    return date_str, label
+    label = label.strip(" ·-—()")
+    return date_str, label, published
 
 
 def main():
@@ -97,14 +108,16 @@ def main():
         sys.exit(1)
 
     url = f"{BASE}/m/view.php?idx={idx}&mcode={MCODE}"
-    date_str, label = None, ""
+    date_str, label, published = None, "", ""
     try:
-        date_str, label = date_from_article(get(url))
+        date_str, label, published = date_from_article(get(url))
     except Exception as e:
         print("기사 본문 조회 실패(날짜 없이 진행):", e, file=sys.stderr)
 
     if not date_str:
         print("본문에서 날짜를 찾지 못했습니다 (제목만 사용)", file=sys.stderr)
+    if not published:
+        print("게시일을 찾지 못했습니다 (카드가 전례일 전날부터 노출됨)", file=sys.stderr)
 
     # 제목 앞의 '[가스펠:툰] ' 표지는 카드에서 중복이라 떼어 낸다.
     clean_title = re.sub(r"^\[[^\]]*\]\s*", "", title).strip()
@@ -114,6 +127,7 @@ def main():
         "source": LIST_URL,
         "idx": idx,
         "date": date_str or "",
+        "published": published,
         "label": label,
         "title": clean_title or title,
         "url": url,

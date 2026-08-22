@@ -1097,8 +1097,10 @@
         .then(function(r){ return r.json(); })
         .then(function(d){
           if (!d || !d.url || !d.date) return;
-          // 전날(토요일)과 당일(주일) 이틀만 노출한다
-          if (today !== d.date && today !== shift(d.date, -1)) return;
+          // 만화가 올라온 날부터 해당 전례일(주일)까지만 노출한다.
+          // 보통 토·일 이틀이지만, 이틀 전에 올라오는 편도 있어 게시일을 시작점으로 쓴다.
+          var from = d.published || shift(d.date, -1);
+          if (today < from || today > d.date) return;
           card.href = d.url;
           var p = d.date.split('-');
           var head = parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일';

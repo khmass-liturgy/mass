@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22 18:30",
+  "updated": "2026-08-22 23:25",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "g7D-OD_Ck4k",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=g7D-OD_Ck4k",
   "count": 10,
   "videos": [
+    {
+      "videoId": "NpOTvT7s45o",
+      "date": "2026-08-23",
+      "label": "2026년 8월 23일(주일) 연중 제21주일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월23일(주일) 연중 제21주일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=NpOTvT7s45o"
+    },
     {
       "videoId": "g7D-OD_Ck4k",
       "date": "2026-08-22",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월14일(금) 성 막시밀리아노 마리아 콜베 사제 순교자 기념일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel",
       "published": "",
       "url": "https://www.youtube.com/watch?v=RVqKq_sidKA"
-    },
-    {
-      "videoId": "xv2XZ3VPIXY",
-      "date": "2026-08-13",
-      "label": "2026년 8월 13일(목) 연중 제19주간",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월13일(목) 연중 제19주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=xv2XZ3VPIXY"
     }
   ]
 }

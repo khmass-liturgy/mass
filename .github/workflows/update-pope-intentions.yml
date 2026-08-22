@@ -2,8 +2,9 @@ name: Update Pope's prayer intentions (annual data)
 
 on:
   schedule:
-  # 매일 UTC 21:00 (KST 06:00) — 올해/내년 데이터 중 빈 달이 있으면 자동으로 채운다.
-  - cron: '0 21 * * *'
+  # 매일 UTC 21:51 (KST 06:51) — 올해/내년 데이터 중 빈 달이 있으면 자동으로 채운다.
+  # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '51 21 * * *'
   workflow_dispatch: {}
 
 permissions:

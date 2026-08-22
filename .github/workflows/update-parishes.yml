@@ -2,8 +2,9 @@ name: Update parish directory
 
 on:
   schedule:
-  # 매주 월요일 UTC 20:00 → KST 화요일 05:00 (전국 스캔이라 오래 걸려 새벽 실행)
-  - cron: '0 20 * * 1'
+  # 매주 월요일 UTC 20:37 → KST 화요일 05:37 (전국 스캔이라 오래 걸려 새벽 실행)
+  # 정각을 피하고, 뒤이어 21시대에 도는 워크플로들보다 앞서 끝나도록 분을 앞당겨 둔다.
+  - cron: '37 20 * * 1'
   workflow_dispatch: {}
 
 permissions:

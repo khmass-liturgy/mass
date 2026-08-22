@@ -1,38 +1,68 @@
 {
-  "updated": "2026-08-22 06:15",
+  "updated": "2026-08-22 14:55",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
-  "count": 5,
+  "count": 10,
   "videos": [
     {
-      "videoId": "OjD2gcZV8bY",
-      "date": "2026-08-21",
-      "title": "성 비오 10세 교화 기념일",
-      "url": "https://www.youtube.com/watch?v=OjD2gcZV8bY"
+      "videoId": "z_s9Njas6Dk",
+      "date": "2026-08-22",
+      "title": "복되신 동정 마리아 모후 기념일",
+      "url": "https://www.youtube.com/watch?v=z_s9Njas6Dk"
     },
     {
-      "videoId": "WFo7hD_YQ_Q",
+      "videoId": "7By_sfUW2ww",
+      "date": "2026-08-21",
+      "title": "성 비오 10세 교황 기념일",
+      "url": "https://www.youtube.com/watch?v=7By_sfUW2ww"
+    },
+    {
+      "videoId": "_RctJB2ws-A",
       "date": "2026-08-20",
       "title": "성 베르나르도 아빠스 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=WFo7hD_YQ_Q"
+      "url": "https://www.youtube.com/watch?v=_RctJB2ws-A"
     },
     {
-      "videoId": "YhC7v6VvEao",
+      "videoId": "b98ebB1peKw",
       "date": "2026-08-19",
       "title": "연중 제20주간 수요일",
-      "url": "https://www.youtube.com/watch?v=YhC7v6VvEao"
+      "url": "https://www.youtube.com/watch?v=b98ebB1peKw"
     },
     {
-      "videoId": "eA9vF5_LLvE",
+      "videoId": "thYq4XLnazU",
       "date": "2026-08-18",
       "title": "연중 제20주간 화요일",
-      "url": "https://www.youtube.com/watch?v=eA9vF5_LLvE"
+      "url": "https://www.youtube.com/watch?v=thYq4XLnazU"
     },
     {
-      "videoId": "uxVsBZObWFI",
+      "videoId": "PnMe5AGsCIM",
       "date": "2026-08-17",
       "title": "연중 제20주간 월요일",
-      "url": "https://www.youtube.com/watch?v=uxVsBZObWFI"
+      "url": "https://www.youtube.com/watch?v=PnMe5AGsCIM"
+    },
+    {
+      "videoId": "hcvYihF9Xvk",
+      "date": "2026-08-16",
+      "title": "연중 제20주일",
+      "url": "https://www.youtube.com/watch?v=hcvYihF9Xvk"
+    },
+    {
+      "videoId": "l0IcVlNfYRY",
+      "date": "2026-08-15",
+      "title": "성모 승천 대축일",
+      "url": "https://www.youtube.com/watch?v=l0IcVlNfYRY"
+    },
+    {
+      "videoId": "ChWtaulWBII",
+      "date": "2026-08-14",
+      "title": "성 막시밀리아노 마리아 콜베 사제 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=ChWtaulWBII"
+    },
+    {
+      "videoId": "Jj3N8RPtTR4",
+      "date": "2026-08-13",
+      "title": "연중 제19주간 목요일",
+      "url": "https://www.youtube.com/watch?v=Jj3N8RPtTR4"
     }
   ]
 }

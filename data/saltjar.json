@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23 18:42",
+  "updated": "2026-08-23 23:38",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "NpOTvT7s45o",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=NpOTvT7s45o",
   "count": 10,
   "videos": [
+    {
+      "videoId": "42lelRoNHco",
+      "date": "2026-08-24",
+      "label": "2026년 8월 24일(월요일) 성 바르톨로메오 사도 축일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월24일(월요일) 성 바르톨로메오 사도 축일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=42lelRoNHco"
+    },
     {
       "videoId": "NpOTvT7s45o",
       "date": "2026-08-23",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월15일(토) 성모 승천 대축일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
       "published": "",
       "url": "https://www.youtube.com/watch?v=5JJ33_dJxZQ"
-    },
-    {
-      "videoId": "RVqKq_sidKA",
-      "date": "2026-08-14",
-      "label": "2026년 8월 14일(금) 성 막시밀리아노 마리아 콜베 사제 순교자 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월14일(금) 성 막시밀리아노 마리아 콜베 사제 순교자 기념일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=RVqKq_sidKA"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-23 23:29",
-  "cutoff": "2026-08-22",
+  "updated": "2026-08-24 06:28",
+  "cutoff": "2026-08-23",
   "days": 2,
   "names": [
     "조명연",
@@ -15,8 +15,18 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 9,
   "posts": [
+    {
+      "id": "2136352",
+      "title": "08.24.월 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-24",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136352&menu=4770",
+      "mass_date": "2026-08-24",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2136340",
       "title": "조명연 마태오신부님(빠다킹신부님) 8월 24일 성 바르톨로메오 사도 축 ...",
@@ -28,7 +38,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1678110279737233871",
+      "id": "naver_474540404826096627",
       "title": "성 바르톨로메오 사도 축일 강론",
       "author": "",
       "date": "2026-08-23",
@@ -95,66 +105,6 @@
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136306&menu=4770",
       "mass_date": "2026-08-23",
       "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_5207339851181796579",
-      "title": "연중 제21주일 강론",
-      "author": "",
-      "date": "2026-08-22",
-      "url": "https://blog.naver.com/syj1212ad/224386389686?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-22",
-      "priest": "송영진",
-      "excerpt": "<연중 제21주일 강론>(2026."
-    },
-    {
-      "id": "2136288",
-      "title": "양승국 신부님_저는 그저 당신의 이름 ‘은총이 가득하신 마리아님’만 부 ...",
-      "author": "최원석",
-      "date": "2026-08-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136288&menu=4770",
-      "mass_date": "2026-08-22",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136287",
-      "title": "이영근 신부님_“누구든지 자신을 높이는 이는 낮아지고   자신을 낮추는 ...",
-      "author": "최원석",
-      "date": "2026-08-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136287&menu=4770",
-      "mass_date": "2026-08-22",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136285",
-      "title": "전삼용 신부님_걸리버 여행기와 겸손의 4단계",
-      "author": "최원석",
-      "date": "2026-08-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136285&menu=4770",
-      "mass_date": "2026-08-22",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136284",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136284&menu=4770",
-      "mass_date": "2026-08-22",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136282",
-      "title": "08.22.토 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136282&menu=4770",
-      "mass_date": "2026-08-22",
-      "priest": "한상우",
       "excerpt": "안녕하세요."
     }
   ]

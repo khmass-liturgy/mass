@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-23 18:53",
+  "updated": "2026-08-23 23:51",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "AYWGjBJ5YhU",
+      "date": "2026-08-24",
+      "title": "성 바르톨로메오 사도 축일",
+      "url": "https://www.youtube.com/watch?v=AYWGjBJ5YhU"
+    },
     {
       "videoId": "BjNj2n4mwHc",
       "date": "2026-08-23",
@@ -57,12 +63,6 @@
       "date": "2026-08-15",
       "title": "성모 승천 대축일",
       "url": "https://www.youtube.com/watch?v=l0IcVlNfYRY"
-    },
-    {
-      "videoId": "ChWtaulWBII",
-      "date": "2026-08-14",
-      "title": "성 막시밀리아노 마리아 콜베 사제 순교자 기념일",
-      "url": "https://www.youtube.com/watch?v=ChWtaulWBII"
     }
   ]
 }

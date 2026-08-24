@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-24 19:12",
+  "updated": "2026-08-25 00:10",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "_tWio0VzA2g",
+      "date": "2026-08-25",
+      "title": "연중 제21주간 화요일",
+      "url": "https://www.youtube.com/watch?v=_tWio0VzA2g"
+    },
     {
       "videoId": "AYWGjBJ5YhU",
       "date": "2026-08-24",
@@ -57,12 +63,6 @@
       "date": "2026-08-16",
       "title": "연중 제20주일",
       "url": "https://www.youtube.com/watch?v=hcvYihF9Xvk"
-    },
-    {
-      "videoId": "l0IcVlNfYRY",
-      "date": "2026-08-15",
-      "title": "성모 승천 대축일",
-      "url": "https://www.youtube.com/watch?v=l0IcVlNfYRY"
     }
   ]
 }

@@ -1249,6 +1249,87 @@
     </details>
   </section>
 
+  <!-- ── 가톨릭 영상·매일미사·성경 (유튜브 채널·재생목록 모음) ── -->
+  <section>
+    <details class="section-toggle">
+      <summary>
+        <div class="group-header">
+          <span class="group-badge" style="background:#CC0000;color:#fff;">Media</span>
+          <h2 class="group-title"><span class="gt-icon" aria-hidden="true">📻</span>가톨릭 영상·매일미사·성경</h2>
+          <span class="section-arrow">▾</span>
+        </div>
+      </summary>
+      <div class="link-grid">
+
+      <a class="link-card" href="https://www.youtube.com/@VaticanNews" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
+        <div class="lc-name">Vatican News</div>
+        <div class="lc-desc">교황님 활동과 바티칸 소식 · 교황청 공식 채널 (다국어)</div>
+      </a>
+
+      <a class="link-card" id="massVideoCard" href="https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎥</span><span class="lc-go">→</span></div>
+        <div class="lc-name">매일미사 영상</div>
+        <div class="lc-desc" id="massVideoDesc">매일 새벽 5시 미사 영상 (cpbc TV)</div>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📺</span><span class="lc-go">→</span></div>
+        <div class="lc-name">cpbc TV</div>
+        <div class="lc-desc">가톨릭평화방송 공식 유튜브</div>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@fspmusic?si=ceRKxp_sDfxc_CPW" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎵</span><span class="lc-go">→</span></div>
+        <div class="lc-name">바오로딸 음악채널</div>
+        <div class="lc-desc">바오로딸 수녀회 음악 유튜브</div>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@hymnscatholic?si=xE17s-e0foOyWiil" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
+        <div class="lc-name">성경듣기</div>
+        <div class="lc-desc">가톨릭 성경 낭독 유튜브</div>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@studybible?si=Um0Hw1BRQdZVSmVR" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">✏️</span><span class="lc-go">→</span></div>
+        <div class="lc-name">성경과외 해주는 신부</div>
+        <div class="lc-desc">알기 쉬운 성경 해설 유튜브</div>
+      </a>
+
+      <a class="link-card" href="https://youtube.com/@koreacatholictimes?si=-AiXmzyxecVY3WIo" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭신문 유튜브</div>
+        <div class="lc-desc">가톨릭신문 공식 유튜브 채널</div>
+      </a>
+
+      </div>
+    </details>
+    <script>
+    // 매일미사 영상: 오늘 날짜 영상이 있으면 그것으로, 없으면 가장 최근 영상으로 연결한다.
+    (function(){
+      var card = document.getElementById('massVideoCard');
+      var desc = document.getElementById('massVideoDesc');
+      if (!card || !desc) return;
+      var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+      fetch('data/dailymass_video.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (!d.videos || !d.videos.length) return;
+          var v = d.videos.filter(function(x){ return x.date === today; })[0] || d.videos[0];
+          if (v.url) card.href = v.url;
+          var p = (v.date || '').split('-');
+          var parts = [];
+          if (p.length === 3) parts.push(parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일');
+          if (v.liturgy) parts.push(v.liturgy);
+          if (v.priest) parts.push(v.priest + ' 집전');
+          if (parts.length) desc.textContent = parts.join(' · ');
+        })
+        .catch(function(){ /* 못 불러오면 재생목록 링크를 그대로 둔다 */ });
+    })();
+    </script>
+  </section>
+
   <!-- ── 국내 가톨릭 ── -->
   <section>
     <details class="section-toggle">
@@ -1345,87 +1426,6 @@
 
       </div>
     </details>
-  </section>
-
-  <!-- ── 가톨릭 영상·매일미사·성경 (유튜브 채널·재생목록 모음) ── -->
-  <section>
-    <details class="section-toggle">
-      <summary>
-        <div class="group-header">
-          <span class="group-badge" style="background:#CC0000;color:#fff;">Media</span>
-          <h2 class="group-title"><span class="gt-icon" aria-hidden="true">📻</span>가톨릭 영상·매일미사·성경</h2>
-          <span class="section-arrow">▾</span>
-        </div>
-      </summary>
-      <div class="link-grid">
-
-      <a class="link-card" href="https://www.youtube.com/@VaticanNews" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
-        <div class="lc-name">Vatican News</div>
-        <div class="lc-desc">교황님 활동과 바티칸 소식 · 교황청 공식 채널 (다국어)</div>
-      </a>
-
-      <a class="link-card" id="massVideoCard" href="https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎥</span><span class="lc-go">→</span></div>
-        <div class="lc-name">매일미사 영상</div>
-        <div class="lc-desc" id="massVideoDesc">매일 새벽 5시 미사 영상 (cpbc TV)</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📺</span><span class="lc-go">→</span></div>
-        <div class="lc-name">cpbc TV</div>
-        <div class="lc-desc">가톨릭평화방송 공식 유튜브</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@fspmusic?si=ceRKxp_sDfxc_CPW" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎵</span><span class="lc-go">→</span></div>
-        <div class="lc-name">바오로딸 음악채널</div>
-        <div class="lc-desc">바오로딸 수녀회 음악 유튜브</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@hymnscatholic?si=xE17s-e0foOyWiil" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성경듣기</div>
-        <div class="lc-desc">가톨릭 성경 낭독 유튜브</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@studybible?si=Um0Hw1BRQdZVSmVR" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">✏️</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성경과외 해주는 신부</div>
-        <div class="lc-desc">알기 쉬운 성경 해설 유튜브</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@koreacatholictimes?si=-AiXmzyxecVY3WIo" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭신문 유튜브</div>
-        <div class="lc-desc">가톨릭신문 공식 유튜브 채널</div>
-      </a>
-
-      </div>
-    </details>
-    <script>
-    // 매일미사 영상: 오늘 날짜 영상이 있으면 그것으로, 없으면 가장 최근 영상으로 연결한다.
-    (function(){
-      var card = document.getElementById('massVideoCard');
-      var desc = document.getElementById('massVideoDesc');
-      if (!card || !desc) return;
-      var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
-      fetch('data/dailymass_video.json', {cache:'no-store'})
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          if (!d.videos || !d.videos.length) return;
-          var v = d.videos.filter(function(x){ return x.date === today; })[0] || d.videos[0];
-          if (v.url) card.href = v.url;
-          var p = (v.date || '').split('-');
-          var parts = [];
-          if (p.length === 3) parts.push(parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일');
-          if (v.liturgy) parts.push(v.liturgy);
-          if (v.priest) parts.push(v.priest + ' 집전');
-          if (parts.length) desc.textContent = parts.join(' · ');
-        })
-        .catch(function(){ /* 못 불러오면 재생목록 링크를 그대로 둔다 */ });
-    })();
-    </script>
   </section>
 
 </main>

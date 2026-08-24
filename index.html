@@ -270,6 +270,8 @@
   /* ── 민족화해 기도 · WYD 기도문 (반절 카드 2개, 한 줄 배치) ── */
   .prayer-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
   .prayer-grid .missa-section{margin-bottom:0;}
+  /* 한 줄에 놓인 카드들의 상자 높이를 서로 맞춘다 */
+  .prayer-grid .prayer-details{height:100%;box-sizing:border-box;}
   .prayer-grid .prayer-summary{padding:16px 18px;}
   .prayer-grid .wyd-eyebrow{font-size:.56rem;}
   .prayer-grid .wyd-title{font-size:1rem;}
@@ -1202,12 +1204,18 @@
         <div class="lc-desc">한국천주교주교회의 새 번역 성경 (온라인)</div>
       </a>
 
+      <a class="link-card" href="mass-grade-cards.html">
+        <div class="lc-top"><span class="lc-icon">🎖️</span><span class="lc-go">→</span></div>
+        <div class="lc-name">전례력 미사 등급 분류</div>
+        <div class="lc-desc">대축일·축일·기념일·평일 등급과 거행 우선순위</div>
+      </a>
+
     </div>
 
     <details class="link-more">
       <summary class="link-more-summary">
         <span class="lc-icon">📜</span>
-        <span>가톨릭 교리서 외 자료 더보기 (4)</span>
+        <span>가톨릭 교리서 · 교회법전 등 더보기 (4)</span>
       </summary>
       <div class="link-grid">
 
@@ -1215,12 +1223,6 @@
           <div class="lc-top"><span class="lc-icon">📜</span><span class="lc-go">→</span></div>
           <div class="lc-name">가톨릭 교회 교리서</div>
           <div class="lc-desc">한국천주교주교회의 공식 교리서 전문</div>
-        </a>
-
-        <a class="link-card" href="mass-grade-cards.html">
-          <div class="lc-top"><span class="lc-icon">🎖️</span><span class="lc-go">→</span></div>
-          <div class="lc-name">전례력 미사 등급 분류</div>
-          <div class="lc-desc">대축일·축일·기념일·평일 등급과 거행 우선순위</div>
         </a>
 
         <a class="link-card" href="https://www.cbck.or.kr/Documents/Canon" target="_blank" rel="noopener">

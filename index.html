@@ -277,6 +277,25 @@
   .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
   /* 하나를 펼치면 다른 카드는 숨겨 펼친 기도문에만 집중하게 한다 */
   .prayer-grid.has-open .missa-section:not(.is-open){display:none;}
+
+  /* ── 다가오는 대축일 카드 ── */
+  .dday-card{
+    display:flex;align-items:center;gap:10px;height:100%;box-sizing:border-box;
+    background:linear-gradient(135deg,#3B2A5E 0%,#1E3060 100%);
+    border-radius:6px;padding:16px 18px;text-decoration:none;
+    box-shadow:0 8px 30px rgba(26,39,68,.25);
+    transition:transform .25s, box-shadow .25s;
+  }
+  .dday-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,39,68,.35);}
+  .dday-body{flex:1;min-width:0;}
+  .dday-card .wyd-title{font-size:1rem;line-height:1.35;margin:0;}
+  .dday-date{margin-top:6px;font-size:.78rem;color:var(--gold-lt);}
+  .dday-badge{
+    flex-shrink:0;align-self:flex-start;
+    font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;
+    color:var(--navy);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
+    border-radius:12px;padding:3px 9px;white-space:nowrap;
+  }
   .prayer-grid .missa-section.is-open .prayer-summary{padding:20px 28px;}
   .prayer-grid .missa-section.is-open .wyd-eyebrow{font-size:.62rem;}
   .prayer-grid .missa-section.is-open .wyd-title{font-size:1.2rem;}
@@ -820,29 +839,6 @@
     </details>
   </section>
   </div>
-  <script>
-  // 반절 카드를 펼치면 가로 전체로 넓히고 다른 카드는 감춘다. 접으면 둘 다 원래대로.
-  (function(){
-    var grid = document.querySelector('.prayer-grid');
-    if (!grid) return;
-    var items = grid.querySelectorAll('.prayer-details');
-    function sync(){
-      var anyOpen = false;
-      Array.prototype.forEach.call(items, function(d){
-        var sec = d.closest('.missa-section');
-        if (!sec) return;
-        if (d.open) { sec.classList.add('is-open'); anyOpen = true; }
-        else { sec.classList.remove('is-open'); }
-      });
-      if (anyOpen) grid.classList.add('has-open');
-      else grid.classList.remove('has-open');
-    }
-    Array.prototype.forEach.call(items, function(d){
-      d.addEventListener('toggle', sync);
-    });
-  })();
-  </script>
-
   <!-- ── 예수성심성월 기도 (6월에만 표시) ── -->
   <section class="missa-section" id="sacredHeartSection" style="display:none;">
     <details class="prayer-details">
@@ -1428,6 +1424,158 @@
     </details>
   </section>
 
+  <!-- ── 오늘의 묵주기도 신비 · 다가오는 대축일 (반절 카드 2개) ── -->
+  <div class="prayer-grid">
+
+  <section class="missa-section">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;">오늘의 묵주기도</div>
+            <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon" id="rosaryDecades"></div>
+        </div>
+        <a class="wyd-link" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
+          묵주기도 전문 보기 →
+        </a>
+      </div>
+    </details>
+  </section>
+
+  <section class="missa-section">
+    <a class="dday-card" id="ddayCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <div class="dday-body">
+        <div class="wyd-eyebrow">다가오는 대축일</div>
+        <div class="wyd-title" id="ddayTitle">전례력을 계산하고 있습니다…</div>
+        <div class="dday-date" id="ddayDate"></div>
+      </div>
+      <span class="dday-badge" id="ddayBadge"></span>
+    </a>
+  </section>
+
+  </div>
+  <script>
+  // ── 반절 카드 펼침 처리 (페이지 안의 모든 .prayer-grid 에 적용) ──────
+  // 펼치면 가로 전체로 넓히고 다른 카드는 감춘다. 접으면 둘 다 원래대로.
+  // 모든 그리드가 그려진 뒤 실행되도록 문서 끝에 둔다.
+  Array.prototype.forEach.call(document.querySelectorAll('.prayer-grid'), function(grid){
+    var items = grid.querySelectorAll('.prayer-details');
+    function sync(){
+      var anyOpen = false;
+      Array.prototype.forEach.call(items, function(d){
+        var sec = d.closest('.missa-section');
+        if (!sec) return;
+        if (d.open) { sec.classList.add('is-open'); anyOpen = true; }
+        else { sec.classList.remove('is-open'); }
+      });
+      if (anyOpen) grid.classList.add('has-open');
+      else grid.classList.remove('has-open');
+    }
+    Array.prototype.forEach.call(items, function(d){
+      d.addEventListener('toggle', sync);
+    });
+  });
+
+  // ── 오늘의 묵주기도 신비 (요일별) ──────────────────────────
+  // 월·토=환희, 화·금=고통, 수·일=영광, 목=빛 (한국 천주교 기도서 기준)
+  (function(){
+    var titleEl = document.getElementById('rosaryTitle');
+    var eyebrowEl = document.getElementById('rosaryEyebrow');
+    var listEl = document.getElementById('rosaryDecades');
+    if (!titleEl || !listEl) return;
+
+    var JOYFUL = ['마리아께서 예수님을 잉태하심을 묵상합시다',
+                  '마리아께서 엘리사벳을 방문하심을 묵상합시다',
+                  '마리아께서 예수님을 낳으심을 묵상합시다',
+                  '마리아께서 예수님을 성전에 바치심을 묵상합시다',
+                  '마리아께서 성전에서 예수님을 찾으심을 묵상합시다'];
+    var LUMINOUS = ['예수님께서 요르단 강에서 세례받으심을 묵상합시다',
+                    '예수님께서 카나에서 첫 기적을 행하심을 묵상합시다',
+                    '예수님께서 하느님 나라를 선포하심을 묵상합시다',
+                    '예수님께서 거룩하게 변모하심을 묵상합시다',
+                    '예수님께서 성체성사를 세우심을 묵상합시다'];
+    var SORROWFUL = ['예수님께서 우리를 위하여 피땀 흘리심을 묵상합시다',
+                     '예수님께서 우리를 위하여 매 맞으심을 묵상합시다',
+                     '예수님께서 우리를 위하여 가시관 쓰심을 묵상합시다',
+                     '예수님께서 우리를 위하여 십자가 지심을 묵상합시다',
+                     '예수님께서 우리를 위하여 십자가에 못 박혀 돌아가심을 묵상합시다'];
+    var GLORIOUS = ['예수님께서 부활하심을 묵상합시다',
+                    '예수님께서 승천하심을 묵상합시다',
+                    '성령께서 사도들에게 임하심을 묵상합시다',
+                    '성모님께서 하늘에 불려 올림을 받으심을 묵상합시다',
+                    '성모님께서 하늘 나라의 여왕이 되심을 묵상합시다'];
+
+    var BY_DAY = [
+      { name: '영광의 신비', decades: GLORIOUS },   // 일
+      { name: '환희의 신비', decades: JOYFUL },     // 월
+      { name: '고통의 신비', decades: SORROWFUL },  // 화
+      { name: '영광의 신비', decades: GLORIOUS },   // 수
+      { name: '빛의 신비',   decades: LUMINOUS },   // 목
+      { name: '고통의 신비', decades: SORROWFUL },  // 금
+      { name: '환희의 신비', decades: JOYFUL }      // 토
+    ];
+    var DOW = ['주일','월요일','화요일','수요일','목요일','금요일','토요일'];
+
+    var d = new Date();
+    var today = BY_DAY[d.getDay()];
+    if (eyebrowEl) eyebrowEl.textContent = '오늘의 묵주기도 · ' + DOW[d.getDay()];
+    titleEl.textContent = today.name;
+    listEl.innerHTML = today.decades.map(function(t, i){
+      return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';
+    }).join('');
+  })();
+
+  // ── 다가오는 대축일 (D-day) ────────────────────────────────
+  // window.Liturgy 는 이 스크립트보다 아래에서 정의되므로 문서 파싱이 끝난 뒤 실행한다.
+  (function(){
+  function renderNextSolemnity(){
+    var titleEl = document.getElementById('ddayTitle');
+    var dateEl = document.getElementById('ddayDate');
+    var badgeEl = document.getElementById('ddayBadge');
+    var card = document.getElementById('ddayCard');
+    if (!titleEl || !window.Liturgy) return;
+
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var year = today.getFullYear();
+    // 연말에는 내년 대축일(1월 1일 등)까지 봐야 하므로 두 해를 합쳐서 찾는다
+    var list = window.Liturgy.solemnitiesOf(year).concat(window.Liturgy.solemnitiesOf(year + 1));
+    var next = null;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].date.getTime() >= today.getTime()) { next = list[i]; break; }
+    }
+    if (!next) return;
+
+    var diff = Math.round((next.date - today) / 86400000);
+    var DOW = ['주일','월','화','수','목','금','토'];
+    titleEl.textContent = next.name;
+    if (dateEl) {
+      dateEl.textContent = (next.date.getMonth() + 1) + '월 ' + next.date.getDate() + '일 ('
+        + DOW[next.date.getDay()] + ')';
+    }
+    if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
+    if (card) {
+      var ymd = next.date.getFullYear()
+        + ('0' + (next.date.getMonth() + 1)).slice(-2)
+        + ('0' + next.date.getDate()).slice(-2);
+      card.href = 'https://missa.cbck.or.kr/DailyMissa/' + ymd;
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderNextSolemnity);
+  } else {
+    renderNextSolemnity();
+  }
+  })();
+  </script>
+
 </main>
 
 <footer>
@@ -1490,21 +1638,13 @@ window.MISSA_TARGET_DATE = (function(){
   return target;
 })();
 
-// ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
-// 부활 계산(가톨릭 서방 그레고리력 공식) + 한국 천주교 고유 이동축일 규정을 반영한다.
-// 완전한 성인 축일력까지는 다루지 않고, 주요 대축일과 시기(대림·성탄·사순·부활·연중)·
-// 주간을 정확히 계산해 "작은 참고용 표시"로 보여준다.
-(function(){
-  const el = document.getElementById('missaLiturgy');
-  if (!el) return;
+// ── 전례력 공용 계산 (전례등급 배지 · 다가오는 대축일 카드가 함께 쓴다) ──
+// 대축일 목록을 한 곳에만 두어 두 기능이 서로 어긋나지 않게 한다.
+window.Liturgy = (function(){
   const DAY = 86400000;
-
-  function addDays(d, n){ return new Date(d.getTime() + n*DAY); }
-  function ymd(y,m,d){ return new Date(y, m-1, d); } // m: 1-12
-  function sundayOnOrBefore(d){ const wd=d.getDay(); return addDays(d, -wd); }
-  function sameDate(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
-  function mmdd(d){ return String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
-  const DOW_KO = ['주일','월','화','수','목','금','토'];
+  const addDays = (d,n) => new Date(d.getTime() + n*DAY);
+  const ymd = (y,m,d) => new Date(y, m-1, d);          // m: 1-12
+  const sundayOnOrBefore = d => addDays(d, -d.getDay());
 
   // 그레고리력 부활 계산 (Anonymous/Meeus 알고리즘)
   function computeEaster(year){
@@ -1521,6 +1661,71 @@ window.MISSA_TARGET_DATE = (function(){
     const day = ((h + l - 7*m + 114) % 31) + 1;
     return new Date(year, month-1, day);
   }
+
+  // 고정 날짜 대축일 (한국 교회 전례력 포함)
+  const FIXED_SOLEMNITIES = {
+    '01-01': '천주의 성모 마리아 대축일',
+    '03-19': '성 요셉 대축일',
+    '03-25': '주님 탄생 예고 대축일',
+    '06-24': '성 요한 세례자 탄생 대축일',
+    '06-29': '성 베드로와 성 바오로 사도 대축일',
+    '08-15': '성모 승천 대축일',
+    '09-20': '성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자 대축일',
+    '11-01': '모든 성인 대축일',
+    '12-08': '원죄 없이 잉태되신 성모 마리아 대축일',
+    '12-25': '주님 성탄 대축일'
+  };
+
+  // 공현 대축일: 1월 2일~8일 사이의 주일 (한국 이동 규정)
+  function epiphanySunday(y){
+    let d = ymd(y,1,2);
+    while (d.getDay() !== 0) d = addDays(d,1);
+    return d;
+  }
+
+  /* 해당 연도의 대축일 전체를 날짜순으로 돌려준다. [{date, name}] */
+  function solemnitiesOf(year){
+    const easter = computeEaster(year);
+    const advent1 = addDays(sundayOnOrBefore(ymd(year,12,24)), -21);
+    const list = [
+      { date: epiphanySunday(year),   name: '주님 공현 대축일' },
+      { date: easter,                 name: '주님 부활 대축일' },
+      { date: addDays(easter, 42),    name: '주님 승천 대축일' },        // 한국: 부활 제7주일
+      { date: addDays(easter, 49),    name: '성령 강림 대축일' },
+      { date: addDays(easter, 56),    name: '삼위일체 대축일' },
+      { date: addDays(easter, 63),    name: '그리스도의 성체 성혈 대축일' }, // 한국: 삼위일체 다음 주일
+      { date: addDays(easter, 68),    name: '예수 성심 대축일' },
+      { date: addDays(advent1, -7),   name: '그리스도 왕 대축일' }        // 연중 제34주일
+    ];
+    Object.keys(FIXED_SOLEMNITIES).forEach(function(k){
+      const p = k.split('-');
+      list.push({ date: ymd(year, parseInt(p[0],10), parseInt(p[1],10)), name: FIXED_SOLEMNITIES[k] });
+    });
+    list.sort((a,b) => a.date - b.date);
+    return list;
+  }
+
+  return { computeEaster: computeEaster, FIXED_SOLEMNITIES: FIXED_SOLEMNITIES, solemnitiesOf: solemnitiesOf };
+})();
+
+// ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
+// 부활 계산(가톨릭 서방 그레고리력 공식) + 한국 천주교 고유 이동축일 규정을 반영한다.
+// 완전한 성인 축일력까지는 다루지 않고, 주요 대축일과 시기(대림·성탄·사순·부활·연중)·
+// 주간을 정확히 계산해 "작은 참고용 표시"로 보여준다.
+(function(){
+  const el = document.getElementById('missaLiturgy');
+  if (!el) return;
+  const DAY = 86400000;
+
+  function addDays(d, n){ return new Date(d.getTime() + n*DAY); }
+  function ymd(y,m,d){ return new Date(y, m-1, d); } // m: 1-12
+  function sundayOnOrBefore(d){ const wd=d.getDay(); return addDays(d, -wd); }
+  function sameDate(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
+  function mmdd(d){ return String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  const DOW_KO = ['주일','월','화','수','목','금','토'];
+
+  // 부활 계산도 window.Liturgy 를 함께 쓴다
+  const computeEaster = window.Liturgy.computeEaster;
 
   // 매일미사 카드가 가리키는 날짜와 같은 날의 전례를 계산한다.
   // (토요일 오후 3시 이후에는 카드가 주일을 가리키므로 배지도 주일 기준이 된다)
@@ -1555,19 +1760,8 @@ window.MISSA_TARGET_DATE = (function(){
 
   const dec25 = ymd(year,12,25);
 
-  // 고정 날짜 대축일 (한국 포함, 매년 반복)
-  const FIXED_SOLEMNITIES = {
-    '01-01': '천주의 성모 마리아 대축일',
-    '03-19': '성 요셉 대축일',
-    '03-25': '주님 탄생 예고 대축일',
-    '06-24': '성 요한 세례자 탄생 대축일',
-    '06-29': '성 베드로와 성 바오로 사도 대축일',
-    '08-15': '성모 승천 대축일',
-    '09-20': '성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자 대축일',
-    '11-01': '모든 성인 대축일',
-    '12-08': '원죄 없이 잉태되신 성모 마리아 대축일',
-    '12-25': '주님 성탄 대축일'
-  };
+  // 대축일 목록은 window.Liturgy 한 곳에서 관리한다
+  const FIXED_SOLEMNITIES = window.Liturgy.FIXED_SOLEMNITIES;
 
   let label = '', rank = '평일';
   const key = mmdd(now);

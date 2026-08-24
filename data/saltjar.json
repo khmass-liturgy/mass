@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24 19:03",
+  "updated": "2026-08-24 23:59",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "42lelRoNHco",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=42lelRoNHco",
   "count": 10,
   "videos": [
+    {
+      "videoId": "a-xeowo6x5g",
+      "date": "2026-08-25",
+      "label": "2026년 8월 25일연중 제21주간 화요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월25일 연중 제21주간 화요일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=a-xeowo6x5g"
+    },
     {
       "videoId": "42lelRoNHco",
       "date": "2026-08-24",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월16일(일) 연중 제20주일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
       "published": "",
       "url": "https://www.youtube.com/watch?v=DSfE6W8RK9Y"
-    },
-    {
-      "videoId": "5JJ33_dJxZQ",
-      "date": "2026-08-15",
-      "label": "2026년 8월 15일(토) 성모 승천 대축일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월15일(토) 성모 승천 대축일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=5JJ33_dJxZQ"
     }
   ]
 }

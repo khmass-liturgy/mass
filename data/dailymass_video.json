@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-24 23:57",
+  "updated": "2026-08-25 06:42",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "cC8hp09Q2Js",
+      "date": "2026-08-25",
+      "liturgy": "연중 제21주간 화요일",
+      "priest": "박희전 루케시오 신부",
+      "url": "https://www.youtube.com/watch?v=cC8hp09Q2Js&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "jVOhD5mscuw",
       "date": "2026-08-24",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제19주간 수요일",
       "priest": "이보람 마태오 신부",
       "url": "https://www.youtube.com/watch?v=1kVDQcE1ar0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "kenVHrxOrG8",
-      "date": "2026-08-11",
-      "liturgy": "성녀 클라라 동정 기념일",
-      "priest": "심승우 마르티노 신부",
-      "url": "https://www.youtube.com/watch?v=kenVHrxOrG8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

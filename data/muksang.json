@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-25 12:53",
+  "updated": "2026-08-25 18:42",
   "cutoff": "2026-08-24",
   "days": 2,
   "names": [
@@ -15,10 +15,10 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 10,
+  "count": 14,
   "posts": [
     {
-      "id": "naver_1816404426677046182",
+      "id": "naver_8841996325199571489",
       "title": "연중 제21주간 수요일 강론",
       "author": "",
       "date": "2026-08-25",
@@ -26,6 +26,46 @@
       "mass_date": "2026-08-25",
       "priest": "송영진",
       "excerpt": "<연중 제21주간 수요일 강론>(2026."
+    },
+    {
+      "id": "2136404",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136404&menu=4770",
+      "mass_date": "2026-08-25",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136403",
+      "title": "이영근 신부님_“먼저 잔속을 깨끗이 하여라. 그러면 겉도 깨끗해질 것이 ...",
+      "author": "최원석",
+      "date": "2026-08-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136403&menu=4770",
+      "mass_date": "2026-08-25",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136401",
+      "title": "8월 25일 양승국 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136401&menu=4770",
+      "mass_date": "2026-08-25",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136400",
+      "title": "전삼용 신부님_십일조의 의미와 목적",
+      "author": "최원석",
+      "date": "2026-08-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136400&menu=4770",
+      "mass_date": "2026-08-25",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "2136394",
@@ -48,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_5533034056894780645",
+      "id": "naver_9057298664310270914",
       "title": "연중 제21주간 화요일 강론",
       "author": "",
       "date": "2026-08-24",

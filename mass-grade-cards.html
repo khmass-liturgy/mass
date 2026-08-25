@@ -43,7 +43,8 @@
   }
   /* 축일 달력과 같은 자리·모양의 '메인으로' 버튼 */
   .hero .home{
-    position:absolute; top:0; right:0;
+    /* .dove 가 opacity:0.9 라 쌓임 맥락이 생겨 버튼을 덮는다. z-index 로 위에 올린다 */
+    position:absolute; top:0; right:0; z-index:2;
     font-size:12px; color:var(--ink-dim); text-decoration:none;
     border:1px solid var(--line); border-radius:20px; padding:4px 12px;
     white-space:nowrap; transition:color .2s, border-color .2s, background .2s;

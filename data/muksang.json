@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-25 23:52",
-  "cutoff": "2026-08-24",
+  "updated": "2026-08-26 06:35",
+  "cutoff": "2026-08-25",
   "days": 2,
   "names": [
     "조명연",
@@ -15,11 +15,11 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 15,
+  "count": 8,
   "posts": [
     {
       "id": "2136413",
-      "title": "조명연 마태오신부님(빠다킹신부님)8월 26일연중제21주간 수요일 (출처 ...",
+      "title": "조명연 마태오신부님(빠다킹신부님)8월 26일연중제21주간 수요일 (출처 ... |1|",
       "author": "박양석",
       "date": "2026-08-25",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136413&menu=4770",
@@ -28,7 +28,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4167537602741879568",
+      "id": "naver_6022277082591049388",
       "title": "연중 제21주간 수요일 강론",
       "author": "",
       "date": "2026-08-25",
@@ -94,76 +94,6 @@
       "date": "2026-08-24",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136375&menu=4770",
       "mass_date": "2026-08-25",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_6868161881543668070",
-      "title": "연중 제21주간 화요일 강론",
-      "author": "",
-      "date": "2026-08-24",
-      "url": "https://blog.naver.com/syj1212ad/224388133174?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-24",
-      "priest": "송영진",
-      "excerpt": "<연중 제21주간 화요일 강론>(2026."
-    },
-    {
-      "id": "2136362",
-      "title": "양승국 신부님_나무 그늘 아래 서서 잠시 쉬어갑시다!",
-      "author": "최원석",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136362&menu=4770",
-      "mass_date": "2026-08-24",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136360",
-      "title": "이영근 신부님_“하늘이 열리고 하느님의 천사들이 사람의 아들 위에서   ...",
-      "author": "최원석",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136360&menu=4770",
-      "mass_date": "2026-08-24",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136359",
-      "title": "전삼용 신부님_천국의 시작: 내가 벗으면 다른 이도 벗는다 |2|",
-      "author": "최원석",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136359&menu=4770",
-      "mass_date": "2026-08-24",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136358",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136358&menu=4770",
-      "mass_date": "2026-08-24",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136352",
-      "title": "08.24.월 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136352&menu=4770",
-      "mass_date": "2026-08-24",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136340",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 24일 성 바르톨로메오 사도 축 ...",
-      "author": "박양석",
-      "date": "2026-08-23",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136340&menu=4770",
-      "mass_date": "2026-08-24",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

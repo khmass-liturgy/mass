@@ -41,6 +41,17 @@
     border-bottom: 1px solid var(--line);
     position:relative;
   }
+  /* 축일 달력과 같은 자리·모양의 '메인으로' 버튼 */
+  .hero .home{
+    position:absolute; top:0; right:0;
+    font-size:12px; color:var(--ink-dim); text-decoration:none;
+    border:1px solid var(--line); border-radius:20px; padding:4px 12px;
+    white-space:nowrap; transition:color .2s, border-color .2s, background .2s;
+  }
+  .hero .home:hover{color:var(--ink); border-color:var(--gold); background:rgba(200,162,74,.10);}
+  @media (max-width:520px){
+    .hero .home{position:static; display:inline-block; margin-bottom:16px;}
+  }
   .hero .eyebrow{
     font-size:12px;
     letter-spacing:0.35em;
@@ -297,6 +308,7 @@
 <div class="wrap">
 
   <div class="hero">
+    <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
     <span class="dove">🕊️</span>
     <div class="eyebrow">Ordo Missae · 전례력 안내</div>
     <h1>가톨릭 전례력에 따른<br>미사 등급 분류</h1>

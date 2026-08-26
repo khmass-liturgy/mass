@@ -794,8 +794,46 @@
     </details>
   </section>
 
-  <!-- ── 2027 서울 세계청년대회 공식기도문 ── -->
-  <section class="missa-section">
+  <!-- ── 순교자 성월 기도 (9월 한 달만 표시 · 이때는 WYD 카드를 대신한다) ── -->
+  <section class="missa-section" id="martyrsSection" style="display:none;">
+    <details class="prayer-details">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div>
+            <div class="wyd-eyebrow" style="margin-bottom:4px;">9월 · 순교자 성월</div>
+            <div class="wyd-title" style="margin-bottom:0;">한국 순교자들에게 바치는 기도</div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 이 땅의 모든 순교자여,<br>&emsp;당신들은 하느님의 은총에 힘입어<br>&emsp;굳은 신앙으로 예수 그리스도의 사랑과<br>&emsp;복음과 교회를 위하여 피를 흘리셨나이다.</p>
+            <p><span class="wyd-response2">●</span> 저희는 현세에서 악의 세력과 치열하게 싸우며<br>&emsp;당신들이 거두신 승리의 영광을 노래하고<br>&emsp;모든 선의 근원이신 하느님을 찬양하오니<br>&emsp;저희를 위하여 빌어 주소서.</p>
+            <p><span class="wyd-leader">○</span> 위대하신 순교자들이여,<br>&emsp;천상의 모후이신 성모 마리아와 함께<br>&emsp;저희를 위하여 빌어 주시어<br>&emsp;하느님의 자비를 얻어 주소서.</p>
+            <p><span class="wyd-response2">●</span> 지금도 어둠의 세력이 교회를 박해하고 있사오니<br>&emsp;하느님께서 전능하신 팔로 교회를 붙들어 보호하시며<br>&emsp;아직 어둠 속에 있는 지역에까지<br>&emsp;널리 펴시도록 빌어 주소서.</p>
+            <p><span class="wyd-leader">○</span> 용감하신 순교자들이여, 특별히 청하오니<br>&emsp;우리나라를 위하여 하느님께 빌어 주소서.</p>
+            <p><span class="wyd-response2">●</span> 당신들은 이 땅에서<br>&emsp;많은 고난을 겪으며 사시다가<br>&emsp;목숨까지 바치셨으니</p>
+            <p><span class="wyd-leader">○</span> 전능하신 하느님께 빌어 주시어<br>&emsp;교회를 이 땅에서 날로 자라게 하시며<br>&emsp;사제와 수도자를 많이 나게 하시고</p>
+            <p><span class="wyd-response2">●</span> 신자들이 주님의 계명을 잘 지키고<br>&emsp;냉담 교우들은 다시 열심해지며<br>&emsp;갈린 형제들은 같은 믿음으로 하나 되고<br>&emsp;비신자들은 참신앙으로 하느님을 알아<br>&emsp;천지의 창조주 인류의 구세주를 찾아오게 하소서.</p>
+            <p><span class="wyd-leader">○</span> 참으로 영광스러운 순교자들이여,<br>&emsp;저희도 그 영광을 생각하며 기뻐하나이다.<br>&emsp;간절히 청하오니 자비로우신 하느님 아버지께 빌어 주시어<br>&emsp;저희와 친척과 은인들에게 필요한 은혜를 얻어 주소서.</p>
+            <p><span class="wyd-response2">●</span> 또한 저희가 죽을 때까지<br>&emsp;예수 그리스도를 한결같이 믿어 증언하며<br>&emsp;비록 피는 흘리지 못할지라도<br>&emsp;주님의 은총을 입어 선종하게 하소서.</p>
+          </div>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 성 김대건 안드레아와 성 정하상 바오로와<br>&emsp;동료 순교자들이여,</p>
+            <p><span class="wyd-response2">●</span> 저희를 위하여 빌어 주소서.</p>
+          </div>
+        </div>
+        <a class="wyd-link" href="https://m.catholic.or.kr/web/prayer/?flag=1&amp;ingId=24" target="_blank" rel="noopener">
+          가톨릭 기도서에서 보기 →
+        </a>
+      </div>
+    </details>
+  </section>
+
+  <!-- ── 2027 서울 세계청년대회 공식기도문 (9월에는 순교자 성월 기도로 교체) ── -->
+  <section class="missa-section" id="wydSection">
     <details class="prayer-details">
       <summary class="prayer-summary">
         <div class="prayer-summary-inner">
@@ -1907,6 +1945,17 @@ window.Liturgy = (function(){
   if (now.getMonth() === 5) { // 0-indexed: 5 = 6월
     document.getElementById('sacredHeartSection').style.display = '';
   }
+})();
+
+// 9월(순교자 성월) 한 달 동안은 WYD 기도문 자리에 순교자 성월 기도를 보여 준다.
+// 두 카드가 같은 칸을 나눠 쓰므로, 한쪽을 켜면 다른 쪽은 반드시 끈다.
+(function(){
+  const martyrs = document.getElementById('martyrsSection');
+  const wyd = document.getElementById('wydSection');
+  if (!martyrs || !wyd) return;
+  const isSeptember = new Date().getMonth() === 8; // 0-indexed: 8 = 9월
+  martyrs.style.display = isSeptember ? '' : 'none';
+  wyd.style.display = isSeptember ? 'none' : '';
 })();
 
 // 5월(성모성월)/10월(묵주기도성월)/11월(위령성월)에만 각 기도 표시

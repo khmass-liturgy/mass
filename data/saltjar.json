@@ -1,15 +1,23 @@
 {
-  "updated": "2026-08-26 18:57",
+  "updated": "2026-08-27 00:52",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "FCcg9N1yNo0",
-  "date": "2026-08-26",
-  "label": "2026년 8월 26일연중 제21주간 수요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 8월26일 연중 제21주간 수요일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+  "videoId": "lk0rRnB_ITQ",
+  "date": "2026-08-27",
+  "label": "2026년 8월 27일성녀 모니카 기념일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 8월27일 성녀 모니카 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=FCcg9N1yNo0",
+  "url": "https://www.youtube.com/watch?v=lk0rRnB_ITQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "lk0rRnB_ITQ",
+      "date": "2026-08-27",
+      "label": "2026년 8월 27일성녀 모니카 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월27일 성녀 모니카 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=lk0rRnB_ITQ"
+    },
     {
       "videoId": "FCcg9N1yNo0",
       "date": "2026-08-26",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월18일(화) 연중 제20주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
       "published": "",
       "url": "https://www.youtube.com/watch?v=XldV5OAQca4"
-    },
-    {
-      "videoId": "PS4QezfmMJI",
-      "date": "2026-08-17",
-      "label": "2026년 8월 17일(월) 연중 제20주간",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월17일(월) 연중 제20주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=PS4QezfmMJI"
     }
   ]
 }

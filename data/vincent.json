@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-26 19:06",
+  "updated": "2026-08-27 01:01",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "pUTaTplwDKc",
+      "date": "2026-08-27",
+      "title": "성녀 모니카 기념일",
+      "url": "https://www.youtube.com/watch?v=pUTaTplwDKc"
+    },
     {
       "videoId": "VRzwgL6FIR4",
       "date": "2026-08-26",
@@ -57,12 +63,6 @@
       "date": "2026-08-18",
       "title": "연중 제20주간 화요일",
       "url": "https://www.youtube.com/watch?v=thYq4XLnazU"
-    },
-    {
-      "videoId": "PnMe5AGsCIM",
-      "date": "2026-08-17",
-      "title": "연중 제20주간 월요일",
-      "url": "https://www.youtube.com/watch?v=PnMe5AGsCIM"
     }
   ]
 }

@@ -1352,7 +1352,12 @@
         .then(function(r){ return r.json(); })
         .then(function(d){
           if (!d.videos || !d.videos.length) return;
-          var v = d.videos.filter(function(x){ return x.date === today; })[0] || d.videos[0];
+          // 1순위 오늘 → 2순위 오늘 이전 중 가장 최근 → 3순위 목록의 최신.
+          // 재생목록에 다음 날 영상이 미리 올라오는 일이 있어, 오늘 것이 없을 때
+          // 무턱대고 최신을 집으면 아직 오지 않은 날짜의 미사를 보여 주게 된다.
+          var v = d.videos.filter(function(x){ return x.date === today; })[0]
+               || d.videos.filter(function(x){ return x.date < today; })[0]
+               || d.videos[0];
           if (v.url) card.href = v.url;
           var p = (v.date || '').split('-');
           var parts = [];

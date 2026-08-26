@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-27 00:00",
+  "updated": "2026-08-27 06:45",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "rc78LomG6ms",
+      "date": "2026-08-27",
+      "liturgy": "성녀 모니카 기념일",
+      "priest": "이용권 안드레아 신부",
+      "url": "https://www.youtube.com/watch?v=rc78LomG6ms&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "cC8hp09Q2Js",
       "date": "2026-08-25",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제19주간 목요일",
       "priest": "심승우 마르티노 신부",
       "url": "https://www.youtube.com/watch?v=xiL2bHNeU90&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "1kVDQcE1ar0",
-      "date": "2026-08-12",
-      "liturgy": "연중 제19주간 수요일",
-      "priest": "이보람 마태오 신부",
-      "url": "https://www.youtube.com/watch?v=1kVDQcE1ar0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

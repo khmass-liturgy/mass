@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27 09:47",
+  "updated": "2026-08-27 23:11",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "lk0rRnB_ITQ",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=lk0rRnB_ITQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "ZzKpcDZhVYQ",
+      "date": "2026-08-28",
+      "label": "2026년 8월 28일성 아우구스티노 주교 학자 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월28일 성 아우구스티노 주교 학자 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=ZzKpcDZhVYQ"
+    },
     {
       "videoId": "lk0rRnB_ITQ",
       "date": "2026-08-27",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월19일(수) 연중 제20주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
       "published": "",
       "url": "https://www.youtube.com/watch?v=icXDj3TwAN4"
-    },
-    {
-      "videoId": "XldV5OAQca4",
-      "date": "2026-08-18",
-      "label": "2026년 8월 18일(화) 연중 제20주간",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월18일(화) 연중 제20주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=XldV5OAQca4"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-27 20:05",
-  "cutoff": "2026-08-26",
+  "updated": "2026-08-28 07:09",
+  "cutoff": "2026-08-27",
   "days": 2,
   "names": [
     "조명연",
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 8,
   "posts": [
     {
-      "id": "naver_679344176166757173",
+      "id": "2136509",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 28일 성 아우구스티노 주교 학 ...",
+      "author": "박양석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136509&menu=4770",
+      "mass_date": "2026-08-28",
+      "priest": "조명연",
+      "excerpt": "출처 빠다킹신부와 새벽을 열며 | 2026년 8월 28일 성 아우구스티노 주…"
+    },
+    {
+      "id": "naver_3082181251919312170",
       "title": "연중 제21주간 금요일 강론",
       "author": "",
       "date": "2026-08-27",
@@ -29,7 +39,7 @@
     },
     {
       "id": "2136491",
-      "title": "08.27.목.성녀 모니카 기념일 / 한상우 신부님 |1|",
+      "title": "08.27.목.성녀 모니카 기념일 / 한상우 신부님 |2|",
       "author": "강칠등",
       "date": "2026-08-27",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136491&menu=4770",
@@ -84,76 +94,6 @@
       "date": "2026-08-27",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136458&menu=4770",
       "mass_date": "2026-08-27",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_8162883603109996245",
-      "title": "연중 제21주간 목요일 강론",
-      "author": "",
-      "date": "2026-08-26",
-      "url": "https://blog.naver.com/syj1212ad/224390547991?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-26",
-      "priest": "송영진",
-      "excerpt": "<연중 제21주간 목요일 강론>(2026."
-    },
-    {
-      "id": "2136438",
-      "title": "08.26.수 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136438&menu=4770",
-      "mass_date": "2026-08-26",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136435",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136435&menu=4770",
-      "mass_date": "2026-08-26",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136434",
-      "title": "전삼용 신부님_절대 믿으면 안 되는 사람의 유형, 회칠한 무덤!",
-      "author": "최원석",
-      "date": "2026-08-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136434&menu=4770",
-      "mass_date": "2026-08-26",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136433",
-      "title": "양승국 신부님_돌직구를 날리시는 예수님!",
-      "author": "최원석",
-      "date": "2026-08-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136433&menu=4770",
-      "mass_date": "2026-08-26",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136432",
-      "title": "이영근 신부님_“너희는 예언자들을 살해한 자들의 자손임을 스스로 증언한 ...",
-      "author": "최원석",
-      "date": "2026-08-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136432&menu=4770",
-      "mass_date": "2026-08-26",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136413",
-      "title": "조명연 마태오신부님(빠다킹신부님)8월 26일연중제21주간 수요일 (출처 ... |1|",
-      "author": "박양석",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136413&menu=4770",
-      "mass_date": "2026-08-26",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

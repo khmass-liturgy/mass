@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-27 09:59",
+  "updated": "2026-08-27 23:30",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "Jw6aVmmDcTw",
+      "date": "2026-08-28",
+      "title": "성 아우구스티노 주교 학자 기념일",
+      "url": "https://www.youtube.com/watch?v=Jw6aVmmDcTw"
+    },
     {
       "videoId": "pUTaTplwDKc",
       "date": "2026-08-27",
@@ -57,12 +63,6 @@
       "date": "2026-08-19",
       "title": "연중 제20주간 수요일",
       "url": "https://www.youtube.com/watch?v=b98ebB1peKw"
-    },
-    {
-      "videoId": "thYq4XLnazU",
-      "date": "2026-08-18",
-      "title": "연중 제20주간 화요일",
-      "url": "https://www.youtube.com/watch?v=thYq4XLnazU"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-27 09:37",
+  "updated": "2026-08-27 20:05",
   "cutoff": "2026-08-26",
   "days": 2,
   "names": [
@@ -15,8 +15,28 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 12,
+  "count": 14,
   "posts": [
+    {
+      "id": "naver_679344176166757173",
+      "title": "연중 제21주간 금요일 강론",
+      "author": "",
+      "date": "2026-08-27",
+      "url": "https://blog.naver.com/syj1212ad/224391771892?fromRss=true&trackingCode=rss",
+      "mass_date": "2026-08-27",
+      "priest": "송영진",
+      "excerpt": "<연중 제21주간 금요일 강론>(2026."
+    },
+    {
+      "id": "2136491",
+      "title": "08.27.목.성녀 모니카 기념일 / 한상우 신부님 |1|",
+      "author": "강칠등",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136491&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
     {
       "id": "2136481",
       "title": "양승국 신부님_눈물로 씨뿌리던 사람들이...",
@@ -68,7 +88,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_3574591972410983980",
+      "id": "naver_8162883603109996245",
       "title": "연중 제21주간 목요일 강론",
       "author": "",
       "date": "2026-08-26",

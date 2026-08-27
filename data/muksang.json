@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-26 23:51",
-  "cutoff": "2026-08-25",
+  "updated": "2026-08-27 09:37",
+  "cutoff": "2026-08-26",
   "days": 2,
   "names": [
     "조명연",
@@ -15,10 +15,60 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 12,
   "posts": [
     {
-      "id": "naver_4698594547976365757",
+      "id": "2136481",
+      "title": "양승국 신부님_눈물로 씨뿌리던 사람들이...",
+      "author": "최원석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136481&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136480",
+      "title": "전삼용 신부님_나의 뜻은 수면제고, 주님의 뜻은 각성제다.",
+      "author": "최원석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136480&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "전삼용",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136478",
+      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136478&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "이병우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136477",
+      "title": "이영근 신부님_ “어떻게 하는 종이 충실하고 슬기로운 종이겠느냐?”(마 ...",
+      "author": "최원석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136477&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136458",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 27일 성녀 모니카 기념일",
+      "author": "박양석",
+      "date": "2026-08-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136458&menu=4770",
+      "mass_date": "2026-08-27",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_3574591972410983980",
       "title": "연중 제21주간 목요일 강론",
       "author": "",
       "date": "2026-08-26",
@@ -84,76 +134,6 @@
       "date": "2026-08-25",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136413&menu=4770",
       "mass_date": "2026-08-26",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "naver_676585930878765689",
-      "title": "연중 제21주간 수요일 강론",
-      "author": "",
-      "date": "2026-08-25",
-      "url": "https://blog.naver.com/syj1212ad/224389376715?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-25",
-      "priest": "송영진",
-      "excerpt": "<연중 제21주간 수요일 강론>(2026."
-    },
-    {
-      "id": "2136404",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136404&menu=4770",
-      "mass_date": "2026-08-25",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136403",
-      "title": "이영근 신부님_“먼저 잔속을 깨끗이 하여라. 그러면 겉도 깨끗해질 것이 ...",
-      "author": "최원석",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136403&menu=4770",
-      "mass_date": "2026-08-25",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136401",
-      "title": "8월 25일 양승국 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136401&menu=4770",
-      "mass_date": "2026-08-25",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136400",
-      "title": "전삼용 신부님_십일조의 의미와 목적",
-      "author": "최원석",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136400&menu=4770",
-      "mass_date": "2026-08-25",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136394",
-      "title": "08.25.화 / 한상우 신부님 |1|",
-      "author": "강칠등",
-      "date": "2026-08-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136394&menu=4770",
-      "mass_date": "2026-08-25",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136375",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 25일 연중 제21주간 화요일  ...",
-      "author": "박양석",
-      "date": "2026-08-24",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136375&menu=4770",
-      "mass_date": "2026-08-25",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

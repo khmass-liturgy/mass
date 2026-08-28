@@ -1,15 +1,23 @@
 {
-  "updated": "2026-08-28 08:46",
+  "updated": "2026-08-29 00:21",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "ZzKpcDZhVYQ",
-  "date": "2026-08-28",
-  "label": "2026년 8월 28일성 아우구스티노 주교 학자 기념일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 8월28일 성 아우구스티노 주교 학자 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+  "videoId": "UOU2XVNNkb0",
+  "date": "2026-08-29",
+  "label": "2026년 8월 29일성 요한 세례자의 수난 기념일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 8월29일 성 요한 세례자의 수난 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=ZzKpcDZhVYQ",
+  "url": "https://www.youtube.com/watch?v=UOU2XVNNkb0",
   "count": 10,
   "videos": [
+    {
+      "videoId": "UOU2XVNNkb0",
+      "date": "2026-08-29",
+      "label": "2026년 8월 29일성 요한 세례자의 수난 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월29일 성 요한 세례자의 수난 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=UOU2XVNNkb0"
+    },
     {
       "videoId": "ZzKpcDZhVYQ",
       "date": "2026-08-28",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월20일(목) 성 베르나르도 아빠스 학자 기념일](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
       "published": "",
       "url": "https://www.youtube.com/watch?v=JsYD3WHVLVo"
-    },
-    {
-      "videoId": "icXDj3TwAN4",
-      "date": "2026-08-19",
-      "label": "2026년 8월 19일(수) 연중 제20주간",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월19일(수) 연중 제20주간](박재형 미카엘 신부) #매일미사#복음묵상#Daily#Gospel &#Meditation",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=icXDj3TwAN4"
     }
   ]
 }

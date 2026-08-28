@@ -301,8 +301,11 @@
   .prayer-grid.has-open .missa-section:not(.is-open){display:none;}
 
   /* ── 다가오는 대축일 카드 ── */
+  /* 배지를 flex 칸으로 두면 카드 오른쪽에 세로 띠가 생겨 배지 아래 줄까지
+     좁아진다. 블록으로 두고 배지를 띄워(float) 첫 줄만 비켜 가고 그 아래는
+     카드 폭을 끝까지 쓰게 한다. */
   .dday-card{
-    display:flex;align-items:center;gap:10px;height:100%;box-sizing:border-box;
+    display:block;height:100%;box-sizing:border-box;
     background:linear-gradient(135deg,#3B2A5E 0%,#1E3060 100%);
     border-radius:6px;padding:16px 18px;text-decoration:none;
     box-shadow:0 8px 30px rgba(26,39,68,.25);
@@ -315,20 +318,22 @@
   .term-card .dday-date{color:#A8DCC0;}
   .term-meaning{margin-top:7px;font-size:.76rem;line-height:1.5;color:#DCEFE4;word-break:keep-all;}
   .term-meaning .term-hanja{color:#8FCBAA;font-weight:700;margin-right:4px;}
-  .dday-body{flex:1;min-width:0;}
+  .dday-body{min-width:0;}
   .dday-card .wyd-title{font-size:1rem;line-height:1.35;margin:0;}
   .dday-date{margin-top:6px;font-size:.78rem;color:var(--gold-lt);}
   .dday-badge{
-    flex-shrink:0;align-self:flex-start;
+    float:right;margin:0 0 4px 8px;
     font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;
     color:var(--navy);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
     border-radius:12px;padding:3px 9px;white-space:nowrap;
   }
+  /* 띄운 배지·점 때문에 카드 높이가 무너지지 않도록 정리한다 */
+  .dday-card::after{content:'';display:block;clear:both;}
 
   /* ── 다가오는 전례 시기(절기) 카드 ── */
   .season-card{background:linear-gradient(135deg,#2A3556 0%,#1B2540 100%);}
   .season-dot{
-    flex-shrink:0;align-self:flex-start;margin-top:5px;
+    float:left;margin:5px 8px 0 0;
     width:12px;height:12px;border-radius:50%;background:#8FCFA8;
     box-shadow:0 0 0 3px rgba(255,255,255,.08);
   }
@@ -1541,12 +1546,12 @@
 
   <section class="missa-section">
     <a class="dday-card" id="ddayCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <span class="dday-badge" id="ddayBadge"></span>
       <div class="dday-body">
         <div class="wyd-eyebrow">다가오는 대축일</div>
         <div class="wyd-title" id="ddayTitle">전례력을 계산하고 있습니다…</div>
         <div class="dday-date" id="ddayDate"></div>
       </div>
-      <span class="dday-badge" id="ddayBadge"></span>
     </a>
   </section>
 
@@ -1557,6 +1562,7 @@
 
   <section class="missa-section">
     <a class="dday-card season-card" id="seasonCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <span class="dday-badge" id="seasonBadge"></span>
       <span class="season-dot" id="seasonDot" aria-hidden="true"></span>
       <div class="dday-body">
         <div class="wyd-eyebrow">다가오는 전례 시기</div>
@@ -1564,19 +1570,18 @@
         <div class="dday-date" id="seasonDate"></div>
         <div class="season-now" id="seasonNow"></div>
       </div>
-      <span class="dday-badge" id="seasonBadge"></span>
     </a>
   </section>
 
   <section class="missa-section">
     <div class="dday-card term-card" id="termCard">
+      <span class="dday-badge" id="termBadge"></span>
       <div class="dday-body">
         <div class="wyd-eyebrow">다가오는 절기</div>
         <div class="wyd-title" id="termTitle">절기를 계산하고 있습니다…</div>
         <div class="dday-date" id="termDate"></div>
         <div class="term-meaning" id="termMeaning"></div>
       </div>
-      <span class="dday-badge" id="termBadge"></span>
     </div>
   </section>
 

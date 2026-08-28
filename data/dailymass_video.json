@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-28 14:23",
+  "updated": "2026-08-29 05:49",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "CHUa9_3TOEU",
+      "date": "2026-08-29",
+      "liturgy": "성 요한 세례자의 수난 기념일",
+      "priest": "이창준 세례자요한 신부",
+      "url": "https://www.youtube.com/watch?v=CHUa9_3TOEU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "HKTHf9Th7do",
       "date": "2026-08-28",
@@ -95,13 +102,6 @@
       "liturgy": "연중 20주간 주일",
       "priest": "김지석 안드레아 신부",
       "url": "https://www.youtube.com/watch?v=fs9qGHVeNNY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "XMGAdClwgg0",
-      "date": "2026-08-15",
-      "liturgy": "성모 승천 대축일",
-      "priest": "김경환 바오로 신부",
-      "url": "https://www.youtube.com/watch?v=XMGAdClwgg0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

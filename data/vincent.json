@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-28 08:55",
+  "updated": "2026-08-29 00:35",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "EjY55j724vg",
+      "date": "2026-08-29",
+      "title": "성 요한 세례자의 수난 기념일",
+      "url": "https://www.youtube.com/watch?v=EjY55j724vg"
+    },
     {
       "videoId": "Jw6aVmmDcTw",
       "date": "2026-08-28",
@@ -57,12 +63,6 @@
       "date": "2026-08-20",
       "title": "성 베르나르도 아빠스 학자 기념일",
       "url": "https://www.youtube.com/watch?v=_RctJB2ws-A"
-    },
-    {
-      "videoId": "b98ebB1peKw",
-      "date": "2026-08-19",
-      "title": "연중 제20주간 수요일",
-      "url": "https://www.youtube.com/watch?v=b98ebB1peKw"
     }
   ]
 }

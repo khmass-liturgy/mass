@@ -110,6 +110,19 @@
     font-size:.66rem;font-weight:600;letter-spacing:.02em;
     background:rgba(226,201,126,.16);color:var(--gold-lt,#F5E09E);border:1px solid rgba(226,201,126,.35);}
   .missa-liturgy.rank-solemn{background:rgba(226,201,126,.26);color:#FFF3CE;border-color:rgba(226,201,126,.55);}
+  /* 전례 시기(절기) 배지 — 그 시기의 전례색에 맞춰 색을 달리한다 */
+  .missa-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px;}
+  .missa-badges .missa-liturgy{margin-bottom:0;}
+  .missa-season{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:10px;
+    font-size:.66rem;font-weight:700;letter-spacing:.02em;
+    background:rgba(255,255,255,.12);color:#EDE4FF;border:1px solid rgba(255,255,255,.28);}
+  .missa-season::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9;}
+  .missa-season.season-advent,
+  .missa-season.season-lent{background:rgba(155,123,212,.20);color:#D8C4F7;border-color:rgba(155,123,212,.45);}
+  .missa-season.season-christmas,
+  .missa-season.season-easter{background:rgba(243,231,196,.20);color:#F8EFD3;border-color:rgba(243,231,196,.45);}
+  .missa-season.season-ordinary{background:rgba(111,191,142,.18);color:#A9E3C1;border-color:rgba(111,191,142,.45);}
+  .missa-season.season-triduum{background:rgba(208,106,106,.20);color:#F2C3C3;border-color:rgba(208,106,106,.48);}
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:#F5EFE3;margin-bottom:6px;line-height:1.4;}
   .missa-sub{font-size:.85rem;color:#C7B8D8;}
   .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold-lt);font-weight:600;}
@@ -298,6 +311,20 @@
     color:var(--navy);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);
     border-radius:12px;padding:3px 9px;white-space:nowrap;
   }
+
+  /* ── 다가오는 전례 시기(절기) 카드 ── */
+  .season-card{background:linear-gradient(135deg,#2A3556 0%,#1B2540 100%);}
+  .season-dot{
+    flex-shrink:0;align-self:flex-start;margin-top:5px;
+    width:12px;height:12px;border-radius:50%;background:#8FCFA8;
+    box-shadow:0 0 0 3px rgba(255,255,255,.08);
+  }
+  .season-dot.color-purple{background:#9B7BD4;}
+  .season-dot.color-white{background:#F3E7C4;}
+  .season-dot.color-green{background:#6FBF8E;}
+  .season-dot.color-red{background:#D06A6A;}
+  .season-now{margin-top:6px;font-size:.74rem;color:#C7B8D8;}
+
   .prayer-grid .missa-section.is-open .prayer-summary{padding:20px 28px;}
   .prayer-grid .missa-section.is-open .wyd-eyebrow{font-size:.62rem;}
   .prayer-grid .missa-section.is-open .wyd-title{font-size:1.2rem;}
@@ -572,7 +599,10 @@
       </div>
       <div class="missa-body">
         <div class="missa-eyebrow">Daily Mass · 한국천주교주교회의</div>
-        <div class="missa-liturgy" id="missaLiturgy" style="display:none;"></div>
+        <div class="missa-badges">
+          <span class="missa-season" id="missaSeason" style="display:none;"></span>
+          <div class="missa-liturgy" id="missaLiturgy" style="display:none;"></div>
+        </div>
         <div class="missa-title">오늘의 매일미사 보기</div>
         <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
         <div class="missa-special" id="missaSpecial" style="display:none;"></div>
@@ -1506,6 +1536,21 @@
   </section>
 
   </div>
+
+  <!-- ── 다가오는 전례 시기(절기) ── -->
+  <section class="missa-section">
+    <a class="dday-card season-card" id="seasonCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
+      <span class="season-dot" id="seasonDot" aria-hidden="true"></span>
+      <div class="dday-body">
+        <div class="wyd-eyebrow">다가오는 전례 시기</div>
+        <div class="wyd-title" id="seasonTitle">전례력을 계산하고 있습니다…</div>
+        <div class="dday-date" id="seasonDate"></div>
+        <div class="season-now" id="seasonNow"></div>
+      </div>
+      <span class="dday-badge" id="seasonBadge"></span>
+    </a>
+  </section>
+
   <script>
   // ── 반절 카드 펼침 처리 (페이지 안의 모든 .prayer-grid 에 적용) ──────
   // 펼치면 가로 전체로 넓히고 다른 카드는 감춘다. 접으면 둘 다 원래대로.
@@ -1617,6 +1662,54 @@
     document.addEventListener('DOMContentLoaded', renderNextSolemnity);
   } else {
     renderNextSolemnity();
+  }
+  })();
+
+  // ── 다가오는 전례 시기(절기) ──────────────────────────────
+  // 지금 시기가 언제 끝나고 다음 시기가 언제 시작하는지 함께 보여 준다.
+  (function(){
+  function renderNextSeason(){
+    var titleEl = document.getElementById('seasonTitle');
+    if (!titleEl || !window.Liturgy || !window.Liturgy.nextSeasonAfter) return;
+
+    var dateEl = document.getElementById('seasonDate');
+    var nowEl = document.getElementById('seasonNow');
+    var badgeEl = document.getElementById('seasonBadge');
+    var dotEl = document.getElementById('seasonDot');
+    var card = document.getElementById('seasonCard');
+
+    var n = new Date();
+    var today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+    var next = window.Liturgy.nextSeasonAfter(today);
+    var cur = window.Liturgy.seasonAt(today);
+    if (!next) return;
+
+    var DOW = ['주일','월','화','수','목','금','토'];
+    function korDate(d){
+      return (d.getFullYear() === today.getFullYear() ? '' : d.getFullYear() + '년 ')
+        + (d.getMonth()+1) + '월 ' + d.getDate() + '일 (' + DOW[d.getDay()] + ')';
+    }
+
+    var diff = Math.round((next.start - today) / 86400000);
+    titleEl.textContent = next.name;
+    if (dateEl) dateEl.textContent = korDate(next.start) + ' 시작 · 전례색 ' + next.color;
+    if (nowEl && cur) {
+      nowEl.textContent = '지금은 ' + cur.name
+        + (cur.end ? ' · ' + korDate(cur.end) + '까지' : '');
+    }
+    if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
+    if (dotEl) dotEl.className = 'season-dot color-' + next.dot;
+    if (card) {
+      var ymd = next.start.getFullYear()
+        + ('0' + (next.start.getMonth() + 1)).slice(-2)
+        + ('0' + next.start.getDate()).slice(-2);
+      card.href = 'https://missa.cbck.or.kr/DailyMissa/' + ymd;
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderNextSeason);
+  } else {
+    renderNextSeason();
   }
   })();
   </script>
@@ -1750,7 +1843,84 @@ window.Liturgy = (function(){
     return list;
   }
 
-  return { computeEaster: computeEaster, FIXED_SOLEMNITIES: FIXED_SOLEMNITIES, solemnitiesOf: solemnitiesOf };
+  // ── 전례 시기(절기) ──
+  // 한 전례주년은 대림 → 성탄 → 연중(전반) → 사순 → 파스카 성삼일 → 부활 → 연중(후반) 순으로 이어진다.
+  // color 는 그 시기의 전례색, dot 는 카드에서 쓰는 색 이름이다.
+  const SEASON_INFO = {
+    advent:    { name: '대림 시기',     color: '자주색',      dot: 'purple' },
+    christmas: { name: '성탄 시기',     color: '백색',        dot: 'white'  },
+    ordinary:  { name: '연중 시기',     color: '녹색',        dot: 'green'  },
+    lent:      { name: '사순 시기',     color: '자주색',      dot: 'purple' },
+    triduum:   { name: '파스카 성삼일', color: '백색·홍색',   dot: 'red'    },
+    easter:    { name: '부활 시기',     color: '백색',        dot: 'white'  }
+  };
+
+  /* 주님 세례 축일: 공현 대축일이 1/7·1/8이면 그 다음 날, 아니면 공현 다음 주일 */
+  function baptismOfLord(year){
+    const e = epiphanySunday(year);
+    return (e.getDate() === 7 || e.getDate() === 8) ? addDays(e,1) : addDays(e,7);
+  }
+
+  /* 해당 연도에 시작하는 시기들의 시작일 목록 (날짜순) */
+  function seasonStartsOf(year){
+    const easter = computeEaster(year);
+    const advent1 = addDays(sundayOnOrBefore(ymd(year,12,24)), -21);
+    return [
+      { start: addDays(baptismOfLord(year), 1), key: 'ordinary'  },  // 주님 세례 축일 다음 날
+      { start: addDays(easter, -46),            key: 'lent'      },  // 재의 수요일
+      { start: addDays(easter, -3),             key: 'triduum'   },  // 주님 만찬 성목요일
+      { start: easter,                          key: 'easter'    },  // 주님 부활 대축일
+      { start: addDays(easter, 50),             key: 'ordinary'  },  // 성령 강림 대축일 다음 날
+      { start: advent1,                         key: 'advent'    },  // 대림 제1주일
+      { start: ymd(year,12,25),                 key: 'christmas' }   // 주님 성탄 대축일
+    ];
+  }
+
+  /* 앞뒤 해까지 이어 붙인 시기 연표 — 시기의 시작일과 마지막 날을 함께 담는다 */
+  function seasonTimeline(year){
+    const list = seasonStartsOf(year-1)
+      .concat(seasonStartsOf(year), seasonStartsOf(year+1))
+      .sort(function(a,b){ return a.start - b.start; });
+    return list.map(function(it, i){
+      const info = SEASON_INFO[it.key];
+      return {
+        key: it.key, name: info.name, color: info.color, dot: info.dot,
+        start: it.start,
+        end: i + 1 < list.length ? addDays(list[i+1].start, -1) : null   // 다음 시기 시작 하루 전
+      };
+    });
+  }
+
+  const midnight = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+
+  /* 그 날이 속한 전례 시기 */
+  function seasonAt(date){
+    const day = midnight(date);
+    const list = seasonTimeline(day.getFullYear());
+    let cur = null;
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].start <= day) cur = list[i]; else break;
+    }
+    return cur;
+  }
+
+  /* 그 날 다음에 시작하는 전례 시기 */
+  function nextSeasonAfter(date){
+    const day = midnight(date);
+    const list = seasonTimeline(day.getFullYear());
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].start > day) return list[i];
+    }
+    return null;
+  }
+
+  return {
+    computeEaster: computeEaster,
+    FIXED_SOLEMNITIES: FIXED_SOLEMNITIES,
+    solemnitiesOf: solemnitiesOf,
+    seasonAt: seasonAt,
+    nextSeasonAfter: nextSeasonAfter
+  };
 })();
 
 // ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
@@ -1891,8 +2061,20 @@ window.Liturgy = (function(){
     label = '성탄 시기'; rank = '축일';
   }
 
+  // ── 전례 시기(절기) 배지 ──
+  const seasonEl = document.getElementById('missaSeason');
+  const season = window.Liturgy.seasonAt(now);
+  if (seasonEl && season) {
+    seasonEl.textContent = season.name;
+    seasonEl.className = 'missa-season season-' + season.key;
+    seasonEl.title = season.name + ' · 전례색 ' + season.color;
+    seasonEl.style.display = '';
+  }
+
   if (label) {
-    el.textContent = label + ' · ' + rank;
+    // 상세 배지가 시기 이름과 똑같으면(예: 성탄 시기) 등급만 남겨 중복을 없앤다
+    const dup = season && label === season.name;
+    el.textContent = dup ? rank : (label + ' · ' + rank);
     el.className = 'missa-liturgy' + (rank === '대축일' ? ' rank-solemn' : '');
     el.style.display = '';
   }

@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-28 04:50",
+  "updated": "2026-08-28 14:23",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "HKTHf9Th7do",
+      "date": "2026-08-28",
+      "liturgy": "성 아우구스티노 주교 학자 기념일",
+      "priest": "박유민 세례자요한",
+      "url": "https://www.youtube.com/watch?v=HKTHf9Th7do&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "rc78LomG6ms",
       "date": "2026-08-27",
@@ -95,13 +102,6 @@
       "liturgy": "성모 승천 대축일",
       "priest": "김경환 바오로 신부",
       "url": "https://www.youtube.com/watch?v=XMGAdClwgg0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "A7MHO9BN7GE",
-      "date": "2026-08-14",
-      "liturgy": "성 막시밀리아노 마리아 콜베 사제 순교자 기념일",
-      "priest": "이보람 마태오 신부",
-      "url": "https://www.youtube.com/watch?v=A7MHO9BN7GE&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

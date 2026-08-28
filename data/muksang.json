@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-28 21:38",
-  "cutoff": "2026-08-27",
+  "updated": "2026-08-29 08:30",
+  "cutoff": "2026-08-28",
   "days": 2,
   "names": [
     "조명연",
@@ -15,10 +15,50 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 11,
   "posts": [
     {
-      "id": "naver_6790612891165575211",
+      "id": "2136608",
+      "title": "양승국 신부님__거룩한 열정으로 활활 타올랐던 세례자 요한! |1|",
+      "author": "최원석",
+      "date": "2026-08-29",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136608&menu=4770",
+      "mass_date": "2026-08-29",
+      "priest": "양승국",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136607",
+      "title": "이영근 신부님_“동생의 아내를 차지하는 것은 옳지 않습니다.”(마르 6 ...",
+      "author": "최원석",
+      "date": "2026-08-29",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136607&menu=4770",
+      "mass_date": "2026-08-29",
+      "priest": "이영근",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136598",
+      "title": "08.29.토.성 요한 세례자의 수난 기념일 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-08-29",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136598&menu=4770",
+      "mass_date": "2026-08-29",
+      "priest": "한상우",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "2136596",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 29일 성 요한 세례자의 수난  ... |1|",
+      "author": "박양석",
+      "date": "2026-08-28",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136596&menu=4770",
+      "mass_date": "2026-08-29",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_4933904468304781551",
       "title": "성 요한 세례자의 수난 기념일 강론",
       "author": "",
       "date": "2026-08-28",
@@ -86,76 +126,6 @@
       "mass_date": "2026-08-28",
       "priest": "조명연",
       "excerpt": "출처 빠다킹신부와 새벽을 열며 | 2026년 8월 28일 성 아우구스티노 주…"
-    },
-    {
-      "id": "naver_2177459202862796043",
-      "title": "연중 제21주간 금요일 강론",
-      "author": "",
-      "date": "2026-08-27",
-      "url": "https://blog.naver.com/syj1212ad/224391771892?fromRss=true&trackingCode=rss",
-      "mass_date": "2026-08-27",
-      "priest": "송영진",
-      "excerpt": "<연중 제21주간 금요일 강론>(2026."
-    },
-    {
-      "id": "2136491",
-      "title": "08.27.목.성녀 모니카 기념일 / 한상우 신부님 |2|",
-      "author": "강칠등",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136491&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136481",
-      "title": "양승국 신부님_눈물로 씨뿌리던 사람들이...",
-      "author": "최원석",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136481&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136480",
-      "title": "전삼용 신부님_나의 뜻은 수면제고, 주님의 뜻은 각성제다.",
-      "author": "최원석",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136480&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136478",
-      "title": "김건태 신부님_조욱현 신부님_이병우 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136478&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "이병우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136477",
-      "title": "이영근 신부님_ “어떻게 하는 종이 충실하고 슬기로운 종이겠느냐?”(마 ...",
-      "author": "최원석",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136477&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136458",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 27일 성녀 모니카 기념일",
-      "author": "박양석",
-      "date": "2026-08-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136458&menu=4770",
-      "mass_date": "2026-08-27",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
     }
   ]
 }

@@ -113,6 +113,10 @@
   /* 전례 시기(절기) 배지 — 그 시기의 전례색에 맞춰 색을 달리한다 */
   .missa-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px;}
   .missa-badges .missa-liturgy{margin-bottom:0;}
+  /* 24절기(입춘·처서 …) 배지 — 전례 시기 배지와 구분되도록 초록 계열 */
+  .missa-term{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:10px;
+    font-size:.66rem;font-weight:700;letter-spacing:.02em;
+    background:rgba(150,200,150,.16);color:#D6EBD6;border:1px solid rgba(150,200,150,.38);}
   .missa-season{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:10px;
     font-size:.66rem;font-weight:700;letter-spacing:.02em;
     background:rgba(255,255,255,.12);color:#EDE4FF;border:1px solid rgba(255,255,255,.28);}
@@ -302,6 +306,10 @@
     transition:transform .25s, box-shadow .25s;
   }
   .dday-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(26,39,68,.35);}
+  /* 24절기 카드 — 링크가 아닌 안내용이라 hover 로 들리지 않는다 */
+  .term-card{background:linear-gradient(135deg,#1E4033 0%,#24564A 100%);cursor:default;}
+  .term-card:hover{transform:none;box-shadow:0 8px 30px rgba(26,39,68,.25);}
+  .term-card .dday-date{color:#A8DCC0;}
   .dday-body{flex:1;min-width:0;}
   .dday-card .wyd-title{font-size:1rem;line-height:1.35;margin:0;}
   .dday-date{margin-top:6px;font-size:.78rem;color:var(--gold-lt);}
@@ -600,7 +608,9 @@
       <div class="missa-body">
         <div class="missa-eyebrow">Daily Mass · 한국천주교주교회의</div>
         <div class="missa-badges">
+          <!-- 짧은 배지(시기·절기)를 먼저 두어 좁은 화면에서 한 줄에 모이게 한다 -->
           <span class="missa-season" id="missaSeason" style="display:none;"></span>
+          <span class="missa-term" id="missaTerm" style="display:none;"></span>
           <div class="missa-liturgy" id="missaLiturgy" style="display:none;"></div>
         </div>
         <div class="missa-title">오늘의 매일미사 보기</div>
@@ -1537,7 +1547,9 @@
 
   </div>
 
-  <!-- ── 다가오는 전례 시기(절기) ── -->
+  <!-- ── 다가오는 전례 시기 · 다가오는 24절기 (반절 카드 2개) ── -->
+  <div class="prayer-grid">
+
   <section class="missa-section">
     <a class="dday-card season-card" id="seasonCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
       <span class="season-dot" id="seasonDot" aria-hidden="true"></span>
@@ -1550,6 +1562,20 @@
       <span class="dday-badge" id="seasonBadge"></span>
     </a>
   </section>
+
+  <section class="missa-section">
+    <div class="dday-card term-card" id="termCard">
+      <div class="dday-body">
+        <div class="wyd-eyebrow">다가오는 절기</div>
+        <div class="wyd-title" id="termTitle">절기를 계산하고 있습니다…</div>
+        <div class="dday-date" id="termDate"></div>
+        <div class="season-now" id="termNow"></div>
+      </div>
+      <span class="dday-badge" id="termBadge"></span>
+    </div>
+  </section>
+
+  </div>
 
   <script>
   // ── 반절 카드 펼침 처리 (페이지 안의 모든 .prayer-grid 에 적용) ──────
@@ -1710,6 +1736,41 @@
     document.addEventListener('DOMContentLoaded', renderNextSeason);
   } else {
     renderNextSeason();
+  }
+  })();
+
+  // ── 다가오는 24절기 ────────────────────────────────────────
+  // window.SolarTerms 가 이 스크립트보다 아래에서 정의되므로 파싱 후 실행한다.
+  (function(){
+  function renderNextTerm(){
+    var titleEl = document.getElementById('termTitle');
+    if (!titleEl || !window.SolarTerms) return;
+    var dateEl = document.getElementById('termDate');
+    var badgeEl = document.getElementById('termBadge');
+    var nowEl = document.getElementById('termNow');
+
+    var now = new Date();
+    var next = window.SolarTerms.next(now);
+    var cur = window.SolarTerms.current(now);
+
+    // 한국 시간 기준 '날짜'로만 견주어 D-day 를 낸다 (절기 시각은 하루 중 아무 때나 온다)
+    function kstYmd(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); }
+    function toUtcNoon(ymd){ var p = ymd.split('-'); return Date.UTC(+p[0], +p[1]-1, +p[2]); }
+    var diff = Math.round((toUtcNoon(kstYmd(next.date)) - toUtcNoon(kstYmd(now))) / 86400000);
+
+    var fmt = { timeZone:'Asia/Seoul', month:'long', day:'numeric', weekday:'short' };
+    titleEl.textContent = next.name;
+    if (dateEl) dateEl.textContent = next.date.toLocaleDateString('ko-KR', fmt);
+    if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
+    if (nowEl) {
+      nowEl.textContent = '지금은 ' + cur.name + ' · '
+        + cur.date.toLocaleDateString('ko-KR', {timeZone:'Asia/Seoul', month:'long', day:'numeric'}) + '부터';
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderNextTerm);
+  } else {
+    renderNextTerm();
   }
   })();
   </script>
@@ -1923,6 +1984,63 @@ window.Liturgy = (function(){
   };
 })();
 
+// ── 24절기 (입춘·처서 …) ────────────────────────────────────────────
+// 절기는 태양의 황경이 15°씩 나아갈 때마다 바뀌며, 날짜가 해마다 하루씩
+// 달라진다. 표를 박아 두면 틀리는 해가 생기므로 황경을 직접 계산한다.
+// (Meeus 저정밀 태양 위치 — 실제 관측값과 몇 분 이내로 맞는다)
+window.SolarTerms = (function(){
+  const NAMES = ['입춘','우수','경칩','춘분','청명','곡우','입하','소만','망종','하지','소서','대서',
+                 '입추','처서','백로','추분','한로','상강','입동','소설','대설','동지','소한','대한'];
+  const DEG_PER_DAY = 0.98565;                 // 태양 황경이 하루에 나아가는 각도
+  const lonOf = i => (315 + 15 * i) % 360;     // 입춘이 황경 315°
+  const jdOf = d => d.getTime() / 86400000 + 2440587.5;
+  const dateOf = jd => new Date((jd - 2440587.5) * 86400000);
+
+  function sunLongitude(jd){
+    const T = (jd - 2451545.0) / 36525;
+    const L0 = 280.46646 + 36000.76983 * T + 0.0003032 * T * T;
+    const M  = 357.52911 + 35999.05029 * T - 0.0001537 * T * T;
+    const Mr = M * Math.PI / 180;
+    const C = (1.914602 - 0.004817 * T - 0.000014 * T * T) * Math.sin(Mr)
+            + (0.019993 - 0.000101 * T) * Math.sin(2 * Mr)
+            + 0.000289 * Math.sin(3 * Mr);
+    const omega = (125.04 - 1934.136 * T) * Math.PI / 180;
+    const lam = L0 + C - 0.00569 - 0.00478 * Math.sin(omega);
+    return ((lam % 360) + 360) % 360;
+  }
+
+  // 목표 황경에 닿는 정확한 시각을 뉴턴법으로 조인다
+  function refine(jd, target){
+    for (let i = 0; i < 8; i++){
+      const d = ((target - sunLongitude(jd) + 540) % 360) - 180;
+      jd += d / DEG_PER_DAY;
+      if (Math.abs(d) < 1e-6) break;
+    }
+    return dateOf(jd);
+  }
+  const indexAt = lon => Math.floor(((((lon - 315) % 360) + 360) % 360) / 15);
+
+  /* 그 시각이 속한 절기와 그 절기가 시작된 시각 */
+  function current(date){
+    const jd = jdOf(date), lon = sunLongitude(jd), i = indexAt(lon);
+    const target = lonOf(i);
+    const back = (((lon - target) % 360) + 360) % 360;      // 0~15°
+    return { name: NAMES[i], date: refine(jd - back / DEG_PER_DAY, target) };
+  }
+
+  /* 그 시각 다음에 오는 절기와 그 시작 시각 */
+  function next(date){
+    const jd = jdOf(date), lon = sunLongitude(jd);
+    const i = (indexAt(lon) + 1) % 24;
+    const target = lonOf(i);
+    let fwd = (((target - lon) % 360) + 360) % 360;         // 0~15°
+    if (fwd < 1e-9) fwd = 15;
+    return { name: NAMES[i], date: refine(jd + fwd / DEG_PER_DAY, target) };
+  }
+
+  return { NAMES: NAMES, current: current, next: next, sunLongitude: sunLongitude };
+})();
+
 // ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
 // 부활 계산(가톨릭 서방 그레고리력 공식) + 한국 천주교 고유 이동축일 규정을 반영한다.
 // 완전한 성인 축일력까지는 다루지 않고, 주요 대축일과 시기(대림·성탄·사순·부활·연중)·
@@ -2059,6 +2177,16 @@ window.Liturgy = (function(){
   } else {
     // 12/25 ~ 12/31: 성탄 시기 시작 (12/25 자체는 위 FIXED_SOLEMNITIES에서 이미 처리)
     label = '성탄 시기'; rank = '축일';
+  }
+
+  // ── 24절기 배지 (입춘·처서 …) ──
+  const termEl = document.getElementById('missaTerm');
+  if (termEl && window.SolarTerms) {
+    const term = window.SolarTerms.current(now);
+    const ts = term.date.toLocaleDateString('ko-KR', {timeZone:'Asia/Seoul', month:'long', day:'numeric'});
+    termEl.textContent = '🌾 ' + term.name;
+    termEl.title = term.name + ' · ' + ts + '부터';
+    termEl.style.display = '';
   }
 
   // ── 전례 시기(절기) 배지 ──

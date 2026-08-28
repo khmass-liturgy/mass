@@ -19,7 +19,9 @@
     --muted:#7A6F5E;
   }
   *{box-sizing:border-box;}
-  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;margin:0;min-height:100vh;}
+  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;margin:0;min-height:100vh;
+    /* 한글이 어절 중간에서 끊기지 않게 한다 */
+    word-break:keep-all; overflow-wrap:break-word;}
 
   header{background:var(--navy);position:relative;padding:34px 20px 44px;text-align:center;}
   header .cross{font-size:14px;letter-spacing:8px;color:var(--gold-lt);margin-bottom:8px;}

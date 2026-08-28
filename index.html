@@ -34,7 +34,10 @@
     --cpbc:#1A4A6B; --kyoha:#3D6B3D;
   }
   html{scroll-behavior:smooth;}
-  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;}
+  body{background:var(--cream);color:var(--text);font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;min-height:100vh;
+    /* 한글은 기본값이면 어절 중간에서 끊긴다('안드/레아'). 좁은 카드에서 특히
+       심하므로 어절 단위로 줄을 바꾼다. 한 어절이 칸보다 길 때만 예외로 쪼갠다. */
+    word-break:keep-all; overflow-wrap:break-word;}
 
   header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
   .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
@@ -1722,8 +1725,13 @@
     titleEl.textContent = next.name;
     if (dateEl) dateEl.textContent = korDate(next.start) + ' 시작 · 전례색 ' + next.color;
     if (nowEl && cur) {
-      nowEl.textContent = '지금은 ' + cur.name
-        + (cur.end ? ' · ' + korDate(cur.end) + '까지' : '');
+      // 끝나는 날은 요일을 빼고 적는다. '(토)까지' 처럼 쓰면 좁은 화면에서
+      // 괄호 뒤가 줄바꿈 지점이 되어 '(토)' 와 '까지' 가 갈라진다.
+      var end = cur.end
+        ? (cur.end.getFullYear() === today.getFullYear() ? '' : cur.end.getFullYear() + '년 ')
+          + (cur.end.getMonth()+1) + '월 ' + cur.end.getDate() + '일까지'
+        : '';
+      nowEl.textContent = '지금은 ' + cur.name + (end ? ' · ' + end : '');
     }
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
     if (dotEl) dotEl.className = 'season-dot color-' + next.dot;

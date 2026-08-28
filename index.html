@@ -310,6 +310,8 @@
   .term-card{background:linear-gradient(135deg,#1E4033 0%,#24564A 100%);cursor:default;}
   .term-card:hover{transform:none;box-shadow:0 8px 30px rgba(26,39,68,.25);}
   .term-card .dday-date{color:#A8DCC0;}
+  .term-meaning{margin-top:7px;font-size:.76rem;line-height:1.5;color:#DCEFE4;word-break:keep-all;}
+  .term-meaning .term-hanja{color:#8FCBAA;font-weight:700;margin-right:4px;}
   .dday-body{flex:1;min-width:0;}
   .dday-card .wyd-title{font-size:1rem;line-height:1.35;margin:0;}
   .dday-date{margin-top:6px;font-size:.78rem;color:var(--gold-lt);}
@@ -1569,7 +1571,7 @@
         <div class="wyd-eyebrow">다가오는 절기</div>
         <div class="wyd-title" id="termTitle">절기를 계산하고 있습니다…</div>
         <div class="dday-date" id="termDate"></div>
-        <div class="season-now" id="termNow"></div>
+        <div class="term-meaning" id="termMeaning"></div>
       </div>
       <span class="dday-badge" id="termBadge"></span>
     </div>
@@ -1747,11 +1749,9 @@
     if (!titleEl || !window.SolarTerms) return;
     var dateEl = document.getElementById('termDate');
     var badgeEl = document.getElementById('termBadge');
-    var nowEl = document.getElementById('termNow');
 
     var now = new Date();
     var next = window.SolarTerms.next(now);
-    var cur = window.SolarTerms.current(now);
 
     // 한국 시간 기준 '날짜'로만 견주어 D-day 를 낸다 (절기 시각은 하루 중 아무 때나 온다)
     function kstYmd(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); }
@@ -1762,9 +1762,16 @@
     titleEl.textContent = next.name;
     if (dateEl) dateEl.textContent = next.date.toLocaleDateString('ko-KR', fmt);
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
-    if (nowEl) {
-      nowEl.textContent = '지금은 ' + cur.name + ' · '
-        + cur.date.toLocaleDateString('ko-KR', {timeZone:'Asia/Seoul', month:'long', day:'numeric'}) + '부터';
+
+    var meaningEl = document.getElementById('termMeaning');
+    var mean = window.SolarTerms.meaningOf(next.name);
+    if (meaningEl && mean) {
+      meaningEl.textContent = '';
+      var h = document.createElement('span');
+      h.className = 'term-hanja';
+      h.textContent = mean.hanja;
+      meaningEl.appendChild(h);
+      meaningEl.appendChild(document.createTextNode(mean.text));
     }
   }
   if (document.readyState === 'loading') {
@@ -1991,6 +1998,33 @@ window.Liturgy = (function(){
 window.SolarTerms = (function(){
   const NAMES = ['입춘','우수','경칩','춘분','청명','곡우','입하','소만','망종','하지','소서','대서',
                  '입추','처서','백로','추분','한로','상강','입동','소설','대설','동지','소한','대한'];
+  // 절기마다 한자 뜻과 한 줄 풀이
+  const MEANINGS = {
+    '입춘': ['立春', '봄이 시작되는 절기'],
+    '우수': ['雨水', '눈이 녹아 비가 되고 초목이 싹트는 때'],
+    '경칩': ['驚蟄', '겨울잠 자던 개구리와 벌레가 깨어나는 때'],
+    '춘분': ['春分', '낮과 밤의 길이가 같아지는 날'],
+    '청명': ['淸明', '하늘이 맑아지고 본격적으로 농사를 시작하는 때'],
+    '곡우': ['穀雨', '곡식을 자라게 하는 봄비가 내리는 때'],
+    '입하': ['立夏', '여름이 시작되는 절기'],
+    '소만': ['小滿', '햇볕이 풍부해 만물이 자라 가득 차는 때'],
+    '망종': ['芒種', '보리를 거두고 모를 심는 때'],
+    '하지': ['夏至', '한 해 중 낮이 가장 긴 날'],
+    '소서': ['小暑', '더위가 본격적으로 시작되는 때'],
+    '대서': ['大暑', '한 해 중 가장 무더운 때'],
+    '입추': ['立秋', '가을이 시작되는 절기'],
+    '처서': ['處暑', '더위가 물러가고 아침저녁으로 선선해지는 때'],
+    '백로': ['白露', '밤 기온이 내려가 이슬이 맺히기 시작하는 때'],
+    '추분': ['秋分', '낮과 밤의 길이가 같아지고 가을이 깊어지는 날'],
+    '한로': ['寒露', '찬 이슬이 맺히고 단풍이 짙어지는 때'],
+    '상강': ['霜降', '서리가 내리기 시작하는 때'],
+    '입동': ['立冬', '겨울이 시작되는 절기'],
+    '소설': ['小雪', '첫눈이 내리기 시작하는 때'],
+    '대설': ['大雪', '한 해 중 눈이 가장 많이 내린다는 때'],
+    '동지': ['冬至', '한 해 중 밤이 가장 긴 날 · 팥죽을 먹는다'],
+    '소한': ['小寒', '겨울 추위가 매서워지는 때'],
+    '대한': ['大寒', '큰 추위라는 뜻으로 겨울의 마지막 절기']
+  };
   const DEG_PER_DAY = 0.98565;                 // 태양 황경이 하루에 나아가는 각도
   const lonOf = i => (315 + 15 * i) % 360;     // 입춘이 황경 315°
   const jdOf = d => d.getTime() / 86400000 + 2440587.5;
@@ -2038,7 +2072,14 @@ window.SolarTerms = (function(){
     return { name: NAMES[i], date: refine(jd + fwd / DEG_PER_DAY, target) };
   }
 
-  return { NAMES: NAMES, current: current, next: next, sunLongitude: sunLongitude };
+  /* 절기 이름 → { hanja, text } */
+  function meaningOf(name){
+    const m = MEANINGS[name];
+    return m ? { hanja: m[0], text: m[1] } : null;
+  }
+
+  return { NAMES: NAMES, current: current, next: next,
+           meaningOf: meaningOf, sunLongitude: sunLongitude };
 })();
 
 // ── 오늘의 전례등급 (대축일/축일/평일/주일) 작은 배지 ──
@@ -2180,13 +2221,24 @@ window.SolarTerms = (function(){
   }
 
   // ── 24절기 배지 (입춘·처서 …) ──
+  // 절기는 '그 날' 하나를 가리키는 것이지 15일간 이어지는 시기가 아니다.
+  // 그래서 절기 당일에만 배지를 보여 준다.
   const termEl = document.getElementById('missaTerm');
   if (termEl && window.SolarTerms) {
-    const term = window.SolarTerms.current(now);
-    const ts = term.date.toLocaleDateString('ko-KR', {timeZone:'Asia/Seoul', month:'long', day:'numeric'});
-    termEl.textContent = '🌾 ' + term.name;
-    termEl.title = term.name + ' · ' + ts + '부터';
-    termEl.style.display = '';
+    const ymdKst = d => d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'});
+    const todayKst = ymdKst(now);
+    // 절기가 드는 '시각'은 하루 중 아무 때나 온다(예: 백로 23:41). 우리는 그 날
+    // 하루 전체를 그 절기로 치므로, 오늘 안에 절기가 들면 낮에도 배지를 띄운다.
+    const cur = window.SolarTerms.current(now);
+    const nxt = window.SolarTerms.next(now);
+    const today = ymdKst(cur.date) === todayKst ? cur
+                : ymdKst(nxt.date) === todayKst ? nxt : null;
+    if (today) {
+      const mean = window.SolarTerms.meaningOf(today.name);
+      termEl.textContent = '🌾 ' + today.name;
+      termEl.title = mean ? today.name + '(' + mean.hanja + ') · ' + mean.text : today.name;
+      termEl.style.display = '';
+    }
   }
 
   // ── 전례 시기(절기) 배지 ──

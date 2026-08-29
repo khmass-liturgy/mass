@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-29 19:20",
+  "updated": "2026-08-30 02:49",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "n4q-dPeGXFA",
+      "date": "2026-08-30",
+      "title": "연중 제22주일",
+      "url": "https://www.youtube.com/watch?v=n4q-dPeGXFA"
+    },
     {
       "videoId": "EjY55j724vg",
       "date": "2026-08-29",
@@ -57,12 +63,6 @@
       "date": "2026-08-21",
       "title": "성 비오 10세 교황 기념일",
       "url": "https://www.youtube.com/watch?v=7By_sfUW2ww"
-    },
-    {
-      "videoId": "_RctJB2ws-A",
-      "date": "2026-08-20",
-      "title": "성 베르나르도 아빠스 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=_RctJB2ws-A"
     }
   ]
 }

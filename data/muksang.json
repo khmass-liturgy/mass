@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29 16:47",
+  "updated": "2026-08-29 23:21",
   "cutoff": "2026-08-28",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_2082253188343374583",
+      "id": "2136648",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 30일 출처 https://ca ... |1|",
+      "author": "박양석",
+      "date": "2026-08-29",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136648&menu=4770",
+      "mass_date": "2026-08-30",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_4817512190731037274",
       "title": "연중 제22주일 강론",
       "author": "",
       "date": "2026-08-29",
@@ -39,7 +49,7 @@
     },
     {
       "id": "2136616",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
+      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-08-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136616&menu=4770",
@@ -49,7 +59,7 @@
     },
     {
       "id": "2136608",
-      "title": "양승국 신부님__거룩한 열정으로 활활 타올랐던 세례자 요한! |1|",
+      "title": "양승국 신부님__거룩한 열정으로 활활 타올랐던 세례자 요한! |2|",
       "author": "최원석",
       "date": "2026-08-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136608&menu=4770",
@@ -59,7 +69,7 @@
     },
     {
       "id": "2136607",
-      "title": "이영근 신부님_“동생의 아내를 차지하는 것은 옳지 않습니다.”(마르 6 ...",
+      "title": "이영근 신부님_“동생의 아내를 차지하는 것은 옳지 않습니다.”(마르 6 ... |1|",
       "author": "최원석",
       "date": "2026-08-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136607&menu=4770",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_4948003978359510883",
+      "id": "naver_7274118326133232635",
       "title": "성 요한 세례자의 수난 기념일 강론",
       "author": "",
       "date": "2026-08-28",

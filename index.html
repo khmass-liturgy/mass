@@ -1830,19 +1830,33 @@ document.getElementById('headerDate').textContent = formatDate();
 // 매일미사 카드 날짜 채우기
 // 토요일 오후 3시부터는 주일 미사(토요 특전미사)를 드리는 시간대이므로,
 // 그때부터 주일이 끝날 때까지 주일 매일미사를 보여 준다.
+// 기기 시간대와 무관하게 한국 시간(KST)으로 '지금'을 읽는다.
+// 해외에 있는 신자의 기기에서도 국내와 같은 날짜·시각을 가리키게 하기 위함이다.
+window.kstNow = function(at){
+  const d = at || new Date();
+  const k = new Date(d.getTime() + 9 * 3600000);   // UTC+9 로 옮겨 UTC 게터로 읽는다
+  return {
+    year: k.getUTCFullYear(), month: k.getUTCMonth(), day: k.getUTCDate(),
+    dow: k.getUTCDay(), hour: k.getUTCHours(), minute: k.getUTCMinutes(),
+    /* 한국 날짜를 가리키는 '로컬 자정' Date — 이후 날짜 계산에 그대로 쓴다 */
+    date: new Date(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate())
+  };
+};
+
 window.MISSA_TARGET_DATE = (function(){
-  const now = new Date();
-  const target = new Date(now);
-  if (now.getDay() === 6 && now.getHours() >= 15) {   // 토요일 15:00 이후 → 다음 날(주일)
-    target.setDate(target.getDate() + 1);
-  }
+  const kst = window.kstNow();
+  const target = new Date(kst.date);
+  // 토요일 15:00(한국 시간) 이후 → 다음 날(주일). 토요 특전미사 시간대.
+  const shifted = (kst.dow === 6 && kst.hour >= 15);
+  if (shifted) target.setDate(target.getDate() + 1);
+
   const dowNames = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
   document.getElementById('missaDow').textContent = dowNames[target.getDay()];
   document.getElementById('missaDay').textContent = target.getDate();
   document.getElementById('missaMonth').textContent = (target.getMonth()+1) + '월';
 
   // 오늘이 아닌 날짜를 보여 줄 때만 날짜를 지정한 주소로 연결한다.
-  const isToday = target.toDateString() === now.toDateString();
+  const isToday = !shifted;
   const card = document.querySelector('.missa-card');
   if (card && !isToday) {
     const ymd = target.getFullYear()

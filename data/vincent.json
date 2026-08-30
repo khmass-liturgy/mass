@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-30 18:25",
+  "updated": "2026-08-30 23:29",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "kQ0HUQkqd6w",
+      "date": "2026-08-31",
+      "title": "연중 제22주간 월요일",
+      "url": "https://www.youtube.com/watch?v=kQ0HUQkqd6w"
+    },
     {
       "videoId": "n4q-dPeGXFA",
       "date": "2026-08-30",
@@ -57,12 +63,6 @@
       "date": "2026-08-22",
       "title": "복되신 동정 마리아 모후 기념일",
       "url": "https://www.youtube.com/watch?v=z_s9Njas6Dk"
-    },
-    {
-      "videoId": "7By_sfUW2ww",
-      "date": "2026-08-21",
-      "title": "성 비오 10세 교황 기념일",
-      "url": "https://www.youtube.com/watch?v=7By_sfUW2ww"
     }
   ]
 }

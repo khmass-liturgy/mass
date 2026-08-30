@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30 18:13",
+  "updated": "2026-08-30 23:24",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "sqngCJhzkaU",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=sqngCJhzkaU",
   "count": 10,
   "videos": [
+    {
+      "videoId": "e3HoGRjYrbE",
+      "date": "2026-08-31",
+      "label": "2026년 8월 31일연중 제22주간 월요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 8월31일 연중 제22주간 월요일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=e3HoGRjYrbE"
+    },
     {
       "videoId": "sqngCJhzkaU",
       "date": "2026-08-30",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월22일(토) 복되신 동정 마리아 모후 기념일](김현 신부) #매일미사#복음묵상#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=g7D-OD_Ck4k"
-    },
-    {
-      "videoId": "qgPflPB97dc",
-      "date": "2026-08-21",
-      "label": "2026년 8월 21일(금)  성 비오 10세 교황 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월21일(금)  성 비오 10세 교황 기념일](김현 신부) #매일미사#복음묵상#Daily#Gospel #Korean#bible",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=qgPflPB97dc"
     }
   ]
 }

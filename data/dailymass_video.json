@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-30 23:26",
+  "updated": "2026-08-31 08:28",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "S8SvJl2Y7wk",
+      "date": "2026-08-31",
+      "liturgy": "연중 제22주간 월요일",
+      "priest": "이용권 안드레아 신부",
+      "url": "https://www.youtube.com/watch?v=S8SvJl2Y7wk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "yEcbJSI27kI",
       "date": "2026-08-30",
@@ -95,13 +102,6 @@
       "liturgy": "연중 20주간 화요일",
       "priest": "이응준 요셉 신부",
       "url": "https://www.youtube.com/watch?v=SkDgSRqS0yg&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "z9haopWc7hI",
-      "date": "2026-08-17",
-      "liturgy": "연중 20주간 월요일",
-      "priest": "최지훈 스테파노 신부",
-      "url": "https://www.youtube.com/watch?v=z9haopWc7hI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

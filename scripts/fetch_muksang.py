@@ -26,9 +26,14 @@ BASE = "https://maria.catholic.or.kr/mi_pr/missa/"
 LIST_URL = BASE + "bbs_list.asp"
 MENU = "4770"
 
-# 실제로 공유/저장할 글 링크는 bbsm 경로를 쓴다.
-# (같은 글이라도 bbsm 경로로 들어가면 글씨가 크게 나와 가독성이 더 좋다)
-BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbsm/bbs_view.asp"
+# 실제로 공유/저장할 글 링크는 인쇄 보기(bbs_print) 경로를 쓴다.
+# 모바일 게시판(/bbsm/bbs_view.asp)은 글씨는 크게 나오지만,
+# 페이지가 뜼자마자 댓글을 불러오려고 /bbsm/get_bbs_view_cmt.asp 를 호출하는데,
+# 이 주소가 사이트 밖(www.catholic.or.kr)으로 302 리다이렉트되어
+# ajax 가 실패하고 게시판 자체 스크립트(common_add.js)가 alert('error') 를 띄운다.
+# 사이트 자체 버그라 우리 쪽에서 막을 수 없으므로,
+# 댓글 호출이 없고 본문만 깨끗하게 나오는 인쇄 보기로 연결한다.
+BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbs/bbs_print.asp"
 
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
 NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]

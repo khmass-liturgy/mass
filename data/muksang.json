@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30 15:26",
+  "updated": "2026-08-30 23:22",
   "cutoff": "2026-08-29",
   "days": 2,
   "names": [
@@ -15,10 +15,20 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "naver_source": "https://rss.blog.naver.com/syj1212ad.xml",
-  "count": 14,
+  "count": 15,
   "posts": [
     {
-      "id": "naver_3306839021863066709",
+      "id": "2136697",
+      "title": "조명연 마태오신부님(빠다킹신부님) 8월 31일 출처https://caf ...",
+      "author": "박양석",
+      "date": "2026-08-30",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136697&menu=4770",
+      "mass_date": "2026-08-31",
+      "priest": "조명연",
+      "excerpt": "안녕하세요."
+    },
+    {
+      "id": "naver_2829103614677306345",
       "title": "연중 제22주간 월요일 강론",
       "author": "",
       "date": "2026-08-30",
@@ -88,7 +98,7 @@
       "excerpt": "안녕하세요."
     },
     {
-      "id": "naver_1936473290014333490",
+      "id": "naver_4113476813389783174",
       "title": "연중 제22주일 강론",
       "author": "",
       "date": "2026-08-29",

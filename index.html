@@ -469,7 +469,7 @@
     .link-grid{grid-template-columns:1fr;}
   }
 
-  /* ── 신부님 묵상 (최근 3일, 자동 수집) ── */
+  /* ── 신부님 묵상 (당일자만 노출, 자동 수집) ── */
   .badge-muksang{background:var(--gold);color:var(--navy);}
   .muksang-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 4px 4px 0;overflow:hidden;margin-bottom:8px;}
   .muksang-item{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s;}
@@ -1224,7 +1224,7 @@
     </script>
   </section>
 
-  <!-- ── 신부님 묵상 (최근 3일, GitHub Actions 자동 수집) ── -->
+  <!-- ── 신부님 묵상 (당일자만 노출, GitHub Actions 자동 수집) ── -->
   <section>
     <div class="group-header">
       <span class="group-badge badge-muksang">Daily</span>
@@ -1257,10 +1257,17 @@
     fetch('data/muksang.json?v=' + Math.floor(Date.now()/600000))
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(d){
-        if(!d.posts || d.posts.length === 0){
-          box.innerHTML = '<div class="muksang-empty">최근 ' + (d.days||3) + '일간 등록된 묵상 글이 없습니다.</div>';
+        // 수집 자체는 여러 날짜를 보관하지만, 화면에는 당일자 글만 노출한다.
+        // 게시판 작성일(date)과 실제 미사 날짜(mass_date)가 하루 어긋나는 글이 있어
+        // 미사 날짜를 먼저 본다. 기준 시각은 한국 시간.
+        var todayKst = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+        var posts = (d.posts || []).filter(function(p){
+          return (p.mass_date || p.date) === todayKst;
+        });
+        if(posts.length === 0){
+          box.innerHTML = '<div class="muksang-empty">오늘 등록된 묵상 글이 아직 없습니다.</div>';
         } else {
-          box.innerHTML = d.posts.map(function(p){
+          box.innerHTML = posts.map(function(p){
             var excerptHtml = p.excerpt
               ? '<span class="muksang-excerpt">' + esc(p.excerpt) + '</span>'
               : '';
@@ -1280,8 +1287,8 @@
 
         // ── 상단 흐르는 띠에 최신 묵상 글 반영 ──
         var mq = document.getElementById('marqueeInner');
-        if(mq && d.posts && d.posts.length > 0){
-          var items = d.posts.slice(0, 8).map(function(p){
+        if(mq && posts.length > 0){
+          var items = posts.slice(0, 8).map(function(p){
             var dt = (p.mass_date || p.date || '').slice(5);
             return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">'
               + '✦ <strong>' + esc(p.priest) + ' 신부님</strong> ' + esc(p.title)

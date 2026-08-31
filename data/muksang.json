@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31 13:54",
+  "updated": "2026-08-31 13:57",
   "cutoff": "2026-08-30",
   "days": 2,
   "names": [
@@ -14,7 +14,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "daum_source": "https://m.cafe.daum.net/bbadaking/LxKw",
-  "count": 14,
+  "count": 12,
   "posts": [
     {
       "id": "daum_161",
@@ -25,16 +25,6 @@
       "mass_date": "2026-08-31",
       "priest": "김경진",
       "excerpt": ""
-    },
-    {
-      "id": "2136719",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-31",
-      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136719&menu=4770",
-      "mass_date": "2026-08-31",
-      "priest": "김건태",
-      "excerpt": "최원석 09:27 ㅣ No. 191596 <연중 제22주간 월요일> \"주님께…"
     },
     {
       "id": "2136718",
@@ -105,16 +95,6 @@
       "mass_date": "2026-08-30",
       "priest": "한상우",
       "excerpt": "강칠등 2026-08-30 ㅣ No. 191576 08.30.연중 제22주일…"
-    },
-    {
-      "id": "2136676",
-      "title": "이병우 신부님_조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-08-30",
-      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136676&menu=4770",
-      "mass_date": "2026-08-30",
-      "priest": "김건태",
-      "excerpt": "최원석 2026-08-30 ㅣ No. 191573 이병우 신부님_ <연중 제…"
     },
     {
       "id": "2136675",

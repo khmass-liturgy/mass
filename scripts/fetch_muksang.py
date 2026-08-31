@@ -38,6 +38,10 @@ BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbs/bbs_print.asp"
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
 NAMES = ["조명연", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]
 
+# 목록에서 빼기로 한 신부님. 이 이름이 제목·작성자에 들어 있으면 그 글은 통째로 건너뛴다.
+# '이병우 신부님_조욱현 신부님_김건태 신부님 묵상' 처럼 여러 분이 묶인 글도 함께 빠진다.
+EXCLUDE_NAMES = ["이병우", "송영진"]
+
 
 # 김경진 베드로 신부님 — 다음 카페 '빠다킹신부와 새벽을 열며' 안의 '김경진 신부 강론' 게시판.
 # 굿뉴스 게시판(menu=4770)에는 이 신부님 글이 올라오지 않아 카페를 따로 본다.
@@ -354,11 +358,17 @@ def main():
         hay = r["title"] + " " + r["author"]
         return [n for n in NAMES if n in hay]
 
+    def is_excluded(r):
+        hay = r["title"] + " " + r["author"]
+        return any(n in hay for n in EXCLUDE_NAMES)
+
     posts = []
     for r in all_rows.values():
         r["mass_date"] = parse_title_date(r["title"], r["date"])
         # 필터 기준은 실제 미사 날짜(mass_date)로 판단 — 게시판 작성일과 하루 어긋나는 경우 대응
         if max(r["mass_date"], r["date"]) < cutoff:
+            continue
+        if is_excluded(r):
             continue
         names = matched_names(r)
         if not names:

@@ -1,15 +1,23 @@
 {
-  "updated": "2026-08-31 18:43",
+  "updated": "2026-09-01 05:04",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "e3HoGRjYrbE",
-  "date": "2026-08-31",
-  "label": "2026년 8월 31일연중 제22주간 월요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 8월31일 연중 제22주간 월요일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+  "videoId": "bGYZdyHDAzo",
+  "date": "2026-09-01",
+  "label": "2026년 9월 1일연중 제22주간 화요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 9월1일 연중 제22주간 화요일](이창항 세바스티아노 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=e3HoGRjYrbE",
+  "url": "https://www.youtube.com/watch?v=bGYZdyHDAzo",
   "count": 10,
   "videos": [
+    {
+      "videoId": "bGYZdyHDAzo",
+      "date": "2026-09-01",
+      "label": "2026년 9월 1일연중 제22주간 화요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월1일 연중 제22주간 화요일](이창항 세바스티아노 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=bGYZdyHDAzo"
+    },
     {
       "videoId": "e3HoGRjYrbE",
       "date": "2026-08-31",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 8월23일(주일) 연중 제21주일](김현 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=NpOTvT7s45o"
-    },
-    {
-      "videoId": "g7D-OD_Ck4k",
-      "date": "2026-08-22",
-      "label": "2026년 8월 22일(토) 복되신 동정 마리아 모후 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 8월22일(토) 복되신 동정 마리아 모후 기념일](김현 신부) #매일미사#복음묵상#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=g7D-OD_Ck4k"
     }
   ]
 }

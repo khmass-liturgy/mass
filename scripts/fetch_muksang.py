@@ -2,10 +2,9 @@
 """
 1) 가톨릭굿뉴스 '우리들의 묵상/체험' 게시판(menu=4770)에서
    지정한 신부님들의 최근 3일간 글(제목 또는 작성자 기준)을 추출한다.
-2) 송영진 신부님의 네이버 블로그 RSS에서 최근 글을 추출한다.
-3) 김경진 베드로 신부님 글을 다음 카페 '빠다킹신부와 새벽을 열며'의
+2) 김경진 베드로 신부님 글을 다음 카페 '빠다킹신부와 새벽을 열며'의
    '김경진 신부 강론' 게시판에서 추출한다.
-세 출처를 합쳐 data/muksang.json 으로 저장한다.
+두 출처를 합쳐 data/muksang.json 으로 저장한다.
 
 GitHub Actions에서 주기적으로 실행됨.
 ※ 저작권 보호: 본문 전체는 절대 저장/복제하지 않는다.
@@ -16,7 +15,6 @@ import json
 import re
 import sys
 import time
-import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -38,12 +36,8 @@ MENU = "4770"
 BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbs/bbs_print.asp"
 
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
-NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]
+NAMES = ["조명연", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]
 
-# 송영진 신부님 네이버 블로그
-NAVER_BLOG_ID = "syj1212ad"
-NAVER_RSS_URL = f"https://rss.blog.naver.com/{NAVER_BLOG_ID}.xml"
-NAVER_PRIEST_NAME = "송영진"
 
 # 김경진 베드로 신부님 — 다음 카페 '빠다킹신부와 새벽을 열며' 안의 '김경진 신부 강론' 게시판.
 # 굿뉴스 게시판(menu=4770)에는 이 신부님 글이 올라오지 않아 카페를 따로 본다.
@@ -153,60 +147,6 @@ def fetch_excerpt_safely(session: requests.Session, url: str) -> str:
     except Exception as e:
         print("excerpt fetch failed for", url, ":", e, file=sys.stderr)
         return ""
-
-
-def fetch_naver_posts(session: requests.Session, cutoff: str, today_str: str) -> list:
-    """송영진 신부님 네이버 블로그 RSS에서 최근 글을 가져온다.
-    본문 전체는 절대 가져오지 않고, RSS description에서 짧은 미리보기만 추출한다.
-    """
-    posts = []
-    try:
-        r = session.get(NAVER_RSS_URL, headers=HEADERS, timeout=20)
-        r.raise_for_status()
-        root = ET.fromstring(r.content)
-    except Exception as e:
-        print("naver rss fetch failed:", e, file=sys.stderr)
-        return posts
-
-    for item in root.findall(".//item"):
-        title = (item.findtext("title") or "").strip()
-        link = (item.findtext("link") or "").strip()
-        pub_date_raw = (item.findtext("pubDate") or "").strip()
-        desc_raw = item.findtext("description") or ""
-        if not title or not link:
-            continue
-
-        # pubDate 예: "Wed, 22 Jul 2026 07:00:00 +0900"
-        dt = None
-        try:
-            dt = datetime.strptime(pub_date_raw[:25].strip(), "%a, %d %b %Y %H:%M:%S")
-        except Exception:
-            pass
-        date_str = dt.strftime("%Y-%m-%d") if dt else today_str
-
-        mass_date = parse_title_date(title, date_str)
-        if max(mass_date, date_str) < cutoff:
-            continue
-
-        # description은 HTML 미리보기인 경우가 많음 — 태그 제거 후 아주 짧게만 사용
-        desc_text = BeautifulSoup(desc_raw, "html.parser").get_text(" ", strip=True)
-        excerpt = truncate_to_excerpt(desc_text)
-
-        m_id = re.search(r"/(\d+)\s*$", link)
-        post_id = "naver_" + (m_id.group(1) if m_id else str(abs(hash(link))))
-
-        posts.append({
-            "id": post_id,
-            "title": title,
-            "author": "",
-            "date": date_str,
-            "url": link,
-            "mass_date": mass_date,
-            "priest": NAVER_PRIEST_NAME,
-            "excerpt": excerpt,
-        })
-
-    return posts
 
 
 DAUM_ARTICLE_RE = re.compile(r"articles\.push\(\{(.*?)\}\);", re.S)
@@ -433,15 +373,11 @@ def main():
         r["excerpt"] = fetch_excerpt_safely(session, r["url"])
         time.sleep(0.4)  # 대상 서버에 부담을 주지 않도록 살짝 간격을 둠
 
-    # 송영진 신부님 네이버 블로그 글을 같은 목록에 합친다.
-    naver_posts = fetch_naver_posts(session, cutoff, today_str)
-    posts.extend(naver_posts)
-
     # 김경진 베드로 신부님 다음 카페 글을 같은 목록에 합친다.
     daum_posts = fetch_daum_posts(session, cutoff, today_str)
     posts.extend(daum_posts)
 
-    # 정렬 기준(mass_date, id)이 서로 다른 두 소스(숫자 id / "naver_"+숫자)를 섞으므로
+    # 정렬 기준(mass_date, id)이 서로 다른 두 소스(숫자 id / "daum_"+숫자)를 섞으므로
     # 문자열 id를 그대로 안전하게 비교할 수 있도록 정렬 키를 다시 통일한다.
     posts.sort(key=lambda r: (max(r["mass_date"], r["date"]), str(r["id"])), reverse=True)
 
@@ -449,9 +385,8 @@ def main():
         "updated": now.strftime("%Y-%m-%d %H:%M"),
         "cutoff": cutoff,
         "days": DAYS,
-        "names": NAMES + [NAVER_PRIEST_NAME, DAUM_PRIEST_NAME],
+        "names": NAMES + [DAUM_PRIEST_NAME],
         "source": LIST_URL + "?menu=" + MENU,
-        "naver_source": NAVER_RSS_URL,
         "daum_source": DAUM_LIST_URL,
         "count": len(posts),
         "posts": posts,

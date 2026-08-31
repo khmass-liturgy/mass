@@ -1,9 +1,15 @@
 {
-  "updated": "2026-08-31 19:01",
+  "updated": "2026-09-01 05:17",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "E63ThwX3HbY",
+      "date": "2026-09-01",
+      "title": "연중 제22주간 화요일",
+      "url": "https://www.youtube.com/watch?v=E63ThwX3HbY"
+    },
     {
       "videoId": "kQ0HUQkqd6w",
       "date": "2026-08-31",
@@ -57,12 +63,6 @@
       "date": "2026-08-23",
       "title": "연중 제21주일",
       "url": "https://www.youtube.com/watch?v=BjNj2n4mwHc"
-    },
-    {
-      "videoId": "z_s9Njas6Dk",
-      "date": "2026-08-22",
-      "title": "복되신 동정 마리아 모후 기념일",
-      "url": "https://www.youtube.com/watch?v=z_s9Njas6Dk"
     }
   ]
 }

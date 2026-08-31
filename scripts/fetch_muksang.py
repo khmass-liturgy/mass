@@ -3,7 +3,9 @@
 1) 가톨릭굿뉴스 '우리들의 묵상/체험' 게시판(menu=4770)에서
    지정한 신부님들의 최근 3일간 글(제목 또는 작성자 기준)을 추출한다.
 2) 송영진 신부님의 네이버 블로그 RSS에서 최근 글을 추출한다.
-두 출처를 합쳐 data/muksang.json 으로 저장한다.
+3) 김경진 베드로 신부님 글을 다음 카페 '빠다킹신부와 새벽을 열며'의
+   '김경진 신부 강론' 게시판에서 추출한다.
+세 출처를 합쳐 data/muksang.json 으로 저장한다.
 
 GitHub Actions에서 주기적으로 실행됨.
 ※ 저작권 보호: 본문 전체는 절대 저장/복제하지 않는다.
@@ -42,6 +44,17 @@ NAMES = ["조명연", "이병우", "김건태", "조욱현", "한상우", "양�
 NAVER_BLOG_ID = "syj1212ad"
 NAVER_RSS_URL = f"https://rss.blog.naver.com/{NAVER_BLOG_ID}.xml"
 NAVER_PRIEST_NAME = "송영진"
+
+# 김경진 베드로 신부님 — 다음 카페 '빠다킹신부와 새벽을 열며' 안의 '김경진 신부 강론' 게시판.
+# 굿뉴스 게시판(menu=4770)에는 이 신부님 글이 올라오지 않아 카페를 따로 본다.
+# 모바일 카페(m.cafe.daum.net)는 목록도 본문도 서버에서 만들어 내려주므로
+# 로그인이나 자바스크립트 없이 읽을 수 있다. 목록 데이터는 페이지 안의
+# articles.push({...}) 자바스크립트 배열에 그대로 들어 있다.
+DAUM_CAFE = "bbadaking"
+DAUM_FLDID = "LxKw"
+DAUM_LIST_URL = f"https://m.cafe.daum.net/{DAUM_CAFE}/{DAUM_FLDID}"
+DAUM_PRIEST_NAME = "김경진"
+DAUM_MAX_POSTS = 5   # 본문(미리보기)까지 확인할 최근 글 수 — 카페 서버 부담을 줄인다
 
 DAYS = 2          # 최근 3일
 MAX_PAGES = 8     # 안전 상한 (페이지당 약 30여 건)
@@ -196,6 +209,98 @@ def fetch_naver_posts(session: requests.Session, cutoff: str, today_str: str) ->
     return posts
 
 
+DAUM_ARTICLE_RE = re.compile(r"articles\.push\(\{(.*?)\}\);", re.S)
+
+
+def daum_field(block: str, key: str) -> str:
+    """articles.push({...}) 한 덩어리에서 필드 하나를 꺼낸다."""
+    m = re.search(key + r'\s*:\s*"([^"]*)"', block)
+    if m:
+        return m.group(1).strip()
+    m = re.search(key + r"\s*:\s*(\d+)", block)
+    return m.group(1) if m else ""
+
+
+def parse_daum_date(elapsed: str, today_str: str) -> str:
+    """카페 목록의 작성시간 표기를 YYYY-MM-DD 로 바꾼다.
+    당일 글은 '2시간 36분 전', 지난 글은 '26.08.30' 형식으로 내려온다.
+    """
+    m = re.fullmatch(r"(\d{2})\.(\d{2})\.(\d{2})", (elapsed or "").strip())
+    if m:
+        yy, mm, dd = (int(x) for x in m.groups())
+        return f"20{yy:02d}-{mm:02d}-{dd:02d}"
+    return today_str   # '…분 전' / '…시간 전' → 오늘 올라온 글
+
+
+def extract_daum_excerpt(html: str) -> str:
+    """카페 글 본문에서 한 문장 맛보기만 뽑는다. 본문 전체는 저장하지 않는다."""
+    soup = BeautifulSoup(html, "html.parser")
+    body = soup.find(id="article")
+    if body is None:
+        return ""
+    return truncate_to_excerpt(body.get_text("\n", strip=True))
+
+
+def fetch_daum_posts(session: requests.Session, cutoff: str, today_str: str) -> list:
+    """김경진 베드로 신부님 묵상 글을 다음 카페 게시판에서 가져온다.
+    다른 신부님 글과 똑같이 제목/작성자/날짜/링크 + 한 문장 맛보기만 남긴다.
+    """
+    posts = []
+    headers = dict(HEADERS)
+    headers["Referer"] = DAUM_LIST_URL
+    try:
+        r = session.get(DAUM_LIST_URL, headers=headers, timeout=30)
+        r.raise_for_status()
+        r.encoding = "utf-8"      # 카페는 항상 UTF-8로 내려준다
+        html = r.text
+    except Exception as e:
+        print("daum cafe list fetch failed:", e, file=sys.stderr)
+        return posts
+
+    for block in DAUM_ARTICLE_RE.findall(html):
+        # 이 게시판(LxKw) 글만 — 목록 위쪽에 붙는 카페 전체 공지는 fldid 가 다르다
+        if daum_field(block, "fldid") != DAUM_FLDID:
+            continue
+        data_id = daum_field(block, "dataid")
+        if not data_id:
+            continue
+        title = daum_field(block, "title")
+        date_str = parse_daum_date(daum_field(block, "articleElapsedTime"), today_str)
+        mass_date = parse_title_date(title, date_str)
+        if max(mass_date, date_str) < cutoff:
+            continue
+        posts.append({
+            "id": "daum_" + data_id,
+            "title": title,
+            "author": daum_field(block, "writerNickname"),
+            "date": date_str,
+            "url": f"{DAUM_LIST_URL}/{data_id}",
+            "mass_date": mass_date,
+            "priest": DAUM_PRIEST_NAME,
+            "excerpt": "",
+        })
+
+    posts.sort(key=lambda p: (p["date"], p["id"]), reverse=True)
+    posts = posts[:DAUM_MAX_POSTS]
+
+    # 이 게시판은 글 제목이 늘 '김 베드로신부님 ~' 이라 목록에서 아무것도 알려주지 못한다.
+    # 그래서 제목 자리에 본문 첫 문장 맛보기를 넣고 미리보기 줄은 비워 둔다.
+    # 인용 분량은 truncate_to_excerpt 가 다른 신부님 글과 똑같이 한 문장으로 묶는다.
+    for post in posts:
+        try:
+            art = session.get(post["url"], headers=headers, timeout=20)
+            art.raise_for_status()
+            art.encoding = "utf-8"
+            snippet = extract_daum_excerpt(art.text)
+            if snippet:
+                post["title"] = snippet
+        except Exception as e:
+            print("daum article fetch failed for", post["url"], ":", e, file=sys.stderr)
+        time.sleep(0.4)   # 카페 서버에 부담을 주지 않도록 간격을 둔다
+
+    return posts
+
+
 def parse_title_date(title: str, fallback_date: str) -> str:
     """제목에 적힌 '7월 7일' 같은 실제 미사 날짜를 뽑아 YYYY-MM-DD로 반환.
     이 게시판은 다음날 묵상을 전날 저녁에 미리 올리는 경우가 많아서,
@@ -332,6 +437,10 @@ def main():
     naver_posts = fetch_naver_posts(session, cutoff, today_str)
     posts.extend(naver_posts)
 
+    # 김경진 베드로 신부님 다음 카페 글을 같은 목록에 합친다.
+    daum_posts = fetch_daum_posts(session, cutoff, today_str)
+    posts.extend(daum_posts)
+
     # 정렬 기준(mass_date, id)이 서로 다른 두 소스(숫자 id / "naver_"+숫자)를 섞으므로
     # 문자열 id를 그대로 안전하게 비교할 수 있도록 정렬 키를 다시 통일한다.
     posts.sort(key=lambda r: (max(r["mass_date"], r["date"]), str(r["id"])), reverse=True)
@@ -340,9 +449,10 @@ def main():
         "updated": now.strftime("%Y-%m-%d %H:%M"),
         "cutoff": cutoff,
         "days": DAYS,
-        "names": NAMES + [NAVER_PRIEST_NAME],
+        "names": NAMES + [NAVER_PRIEST_NAME, DAUM_PRIEST_NAME],
         "source": LIST_URL + "?menu=" + MENU,
         "naver_source": NAVER_RSS_URL,
+        "daum_source": DAUM_LIST_URL,
         "count": len(posts),
         "posts": posts,
     }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-01 23:04",
-  "cutoff": "2026-08-31",
+  "updated": "2026-09-02 02:47",
+  "cutoff": "2026-09-01",
   "days": 2,
   "names": [
     "조명연",
@@ -14,7 +14,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "daum_source": "https://m.cafe.daum.net/bbadaking/LxKw",
-  "count": 13,
+  "count": 7,
   "posts": [
     {
       "id": "2136814",
@@ -83,66 +83,6 @@
       "date": "2026-09-01",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136755&menu=4770",
       "mass_date": "2026-09-01",
-      "priest": "조명연",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_161",
-      "title": "지식은 채우는 것이고 지혜는 비우는 것입니다.",
-      "author": "환희 평화",
-      "date": "2026-08-31",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/161",
-      "mass_date": "2026-08-31",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2136718",
-      "title": "이영근 신부님_“오늘 이 성경 말씀이 너희가 듣는 가운데서 이루어졌다. ...",
-      "author": "최원석",
-      "date": "2026-08-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136718&menu=4770",
-      "mass_date": "2026-08-31",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136717",
-      "title": "양승국 신부님_주눅 들거나 위축되지 않으시는 예수님!",
-      "author": "최원석",
-      "date": "2026-08-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136717&menu=4770",
-      "mass_date": "2026-08-31",
-      "priest": "양승국",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136715",
-      "title": "전삼용 신부님_왕이 '된' 사람은 모든 이를 왕으로 대한다. |1|",
-      "author": "최원석",
-      "date": "2026-08-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136715&menu=4770",
-      "mass_date": "2026-08-31",
-      "priest": "전삼용",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136713",
-      "title": "08.31.월 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-08-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136713&menu=4770",
-      "mass_date": "2026-08-31",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136697",
-      "title": "조명연 마태오신부님(빠다킹신부님) 8월 31일 출처https://caf ...",
-      "author": "박양석",
-      "date": "2026-08-30",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136697&menu=4770",
-      "mass_date": "2026-08-31",
       "priest": "조명연",
       "excerpt": "안녕하세요."
     }

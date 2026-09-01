@@ -26,14 +26,18 @@ BASE = "https://maria.catholic.or.kr/mi_pr/missa/"
 LIST_URL = BASE + "bbs_list.asp"
 MENU = "4770"
 
-# 실제로 공유/저장할 글 링크는 인쇄 보기(bbs_print) 경로를 쓴다.
-# 모바일 게시판(/bbsm/bbs_view.asp)은 글씨는 크게 나오지만,
-# 페이지가 뜼자마자 댓글을 불러오려고 /bbsm/get_bbs_view_cmt.asp 를 호출하는데,
-# 이 주소가 사이트 밖(www.catholic.or.kr)으로 302 리다이렉트되어
-# ajax 가 실패하고 게시판 자체 스크립트(common_add.js)가 alert('error') 를 띄운다.
-# 사이트 자체 버그라 우리 쪽에서 막을 수 없으므로,
-# 댓글 호출이 없고 본문만 깨끗하게 나오는 인쇄 보기로 연결한다.
-BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbs/bbs_print.asp"
+# 실제로 공유/저장할 글 링크는 모바일 게시판(bbsm) 경로를 쓴다.
+# 공지: 이 페이지는 열릴 때 'error' 알림창을 한 번 띄운다. 굿뉴스 쪽 버그다.
+#   본문 스크립트가 댓글을 get_bbs_view_cmt.asp?id=... 로 불러오는데
+#   서버는 seq 파라미터를 기대해서(seq=... 로 부르면 200) id 로 부르면
+#   www.catholic.or.kr 로 302 보낸다. 그러면 ajax 가 실패하고
+#   게시판 자체 스크립트(common_add.js)가 alert('error') 를 띄운다.
+#   호출 주소를 그쪽에서 만드므로 우리가 고칠 수는 없다.
+# 그래도 이 경로를 쓰는 이유는 모바일에서 글이 크게 보이는 유일한 경로이기 때문이다.
+#   /bbs/bbs_view.asp 와 /bbs/bbs_print.asp 는 알림창은 없지만, 모바일로 부르면
+#   서버가 viewport 를 initial-scale=0.1 로 내려줘서 글씨가 아주 작게 나온다.
+#   maria.catholic.or.kr 도 initial-scale=0.3 이고 같은 알림창이 뜼다.
+BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbsm/bbs_view.asp"
 
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
 NAMES = ["조명연", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01 09:30",
+  "updated": "2026-09-01 15:10",
   "cutoff": "2026-08-31",
   "days": 2,
   "names": [
@@ -14,7 +14,7 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "daum_source": "https://m.cafe.daum.net/bbadaking/LxKw",
-  "count": 9,
+  "count": 12,
   "posts": [
     {
       "id": "daum_162",
@@ -27,8 +27,38 @@
       "excerpt": ""
     },
     {
+      "id": "2136773",
+      "title": "전삼용 신부님_땀이 섞이지 않은 망치로는 달걀도 깰 수 없다",
+      "author": "최원석",
+      "date": "2026-09-01",
+      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136773&menu=4770",
+      "mass_date": "2026-09-01",
+      "priest": "전삼용",
+      "excerpt": "최원석 11:05 ㅣ No. 191616 좋은 사람에게는 반드시 좋은 말을…"
+    },
+    {
+      "id": "2136771",
+      "title": "양승국 신부님_믿음에 행동이 수반되지 않으면...",
+      "author": "최원석",
+      "date": "2026-09-01",
+      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136771&menu=4770",
+      "mass_date": "2026-09-01",
+      "priest": "양승국",
+      "excerpt": "최원석 11:05 ㅣ No. 191614 예수님께서 기존의 다른 종교 지도자…"
+    },
+    {
+      "id": "2136770",
+      "title": "이영근 신부님_“당신께서 저희와 무슨 상관이 있습니까?”(루카 4,34 ... |1|",
+      "author": "최원석",
+      "date": "2026-09-01",
+      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136770&menu=4770",
+      "mass_date": "2026-09-01",
+      "priest": "이영근",
+      "excerpt": "최원석 11:05 ㅣ No. 191613 * 오늘의 말씀(9/1) : 연중…"
+    },
+    {
       "id": "2136764",
-      "title": "09.01.화 / 한상우 신부님",
+      "title": "09.01.화 / 한상우 신부님 |1|",
       "author": "강칠등",
       "date": "2026-09-01",
       "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136764&menu=4770",

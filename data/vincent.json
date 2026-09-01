@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-01 17:51",
+  "updated": "2026-09-01 23:15",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "BjBYyenEpkE",
+      "date": "2026-09-02",
+      "title": "연중 제22주간 수요일",
+      "url": "https://www.youtube.com/watch?v=BjBYyenEpkE"
+    },
     {
       "videoId": "E63ThwX3HbY",
       "date": "2026-09-01",
@@ -57,12 +63,6 @@
       "date": "2026-08-24",
       "title": "성 바르톨로메오 사도 축일",
       "url": "https://www.youtube.com/watch?v=AYWGjBJ5YhU"
-    },
-    {
-      "videoId": "BjNj2n4mwHc",
-      "date": "2026-08-23",
-      "title": "연중 제21주일",
-      "url": "https://www.youtube.com/watch?v=BjNj2n4mwHc"
     }
   ]
 }

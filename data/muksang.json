@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01 01:59",
+  "updated": "2026-09-01 09:30",
   "cutoff": "2026-08-31",
   "days": 2,
   "names": [
@@ -14,8 +14,38 @@
   ],
   "source": "https://maria.catholic.or.kr/mi_pr/missa/bbs_list.asp?menu=4770",
   "daum_source": "https://m.cafe.daum.net/bbadaking/LxKw",
-  "count": 6,
+  "count": 9,
   "posts": [
+    {
+      "id": "daum_162",
+      "title": "진정한 권위는 깨달음과 직결됩니다.",
+      "author": "환희 평화",
+      "date": "2026-09-01",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/162",
+      "mass_date": "2026-09-01",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2136764",
+      "title": "09.01.화 / 한상우 신부님",
+      "author": "강칠등",
+      "date": "2026-09-01",
+      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136764&menu=4770",
+      "mass_date": "2026-09-01",
+      "priest": "한상우",
+      "excerpt": "강칠등 08:07 ㅣ No. 191610 09.01.화. \"저는 당신이 누구…"
+    },
+    {
+      "id": "2136755",
+      "title": "조명연 마태오신부님(빠다킹신부님)9월 1일 출처https://cafe. ...",
+      "author": "박양석",
+      "date": "2026-09-01",
+      "url": "https://bbs.catholic.or.kr/bbs/bbs_print.asp?id=2136755&menu=4770",
+      "mass_date": "2026-09-01",
+      "priest": "조명연",
+      "excerpt": "박양석 04:56 ㅣ No. 191602 2026년 9월 1일 연중 제22주…"
+    },
     {
       "id": "daum_161",
       "title": "지식은 채우는 것이고 지혜는 비우는 것입니다.",

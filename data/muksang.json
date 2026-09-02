@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02 14:37",
+  "updated": "2026-09-02 22:30",
   "cutoff": "2026-09-01",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7384",
+      "title": "전삼용 요셉 신부 / 연중 제22주간 목요일 - 나의 목소리와 주님의 목소리 구별하는 법",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-02",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7384",
+      "mass_date": "2026-09-03",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 목요일 1코린토 3,18-23 루카…"
+    },
+    {
+      "id": "daum_bbadaking_7922",
+      "title": "2026년 9월 3일 성 대 그레고리오 교황 학자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-09-02",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7922",
+      "mass_date": "2026-09-03",
+      "priest": "조명연",
+      "excerpt": "진세를 버렸어라 이 몸마저 버렸어라/ 깨끗이 한 청춘을 부르심에 바쳤어라/…"
+    },
     {
       "id": "daum_catholicsb_7383",
       "title": "전삼용 요셉 신부 / 연중 제22주간 수요일 - 하느님께 순종 하지 못하며 자녀에게 순종을 기대한다면?",

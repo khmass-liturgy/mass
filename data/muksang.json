@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03 02:49",
+  "updated": "2026-09-03 08:13",
   "cutoff": "2026-09-02",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7384",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-03",
       "priest": "조명연",
       "excerpt": "진세를 버렸어라 이 몸마저 버렸어라/ 깨끗이 한 청춘을 부르심에 바쳤어라/…"
+    },
+    {
+      "id": "daum_bbadaking_2198",
+      "title": "2026년 9월 3일 성 대 그레고리오 교황 학자 기념일",
+      "author": "박 베로니카",
+      "date": "2026-09-03",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2198",
+      "mass_date": "2026-09-03",
+      "priest": "양승국",
+      "excerpt": "제가 생각할 때 분명 아니지만, 스승님께서 그리 말씀하시니..."
     },
     {
       "id": "daum_catholicsb_7383",

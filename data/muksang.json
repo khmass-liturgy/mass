@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-02 22:30",
-  "cutoff": "2026-09-01",
+  "updated": "2026-09-03 02:49",
+  "cutoff": "2026-09-02",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7384",
@@ -76,46 +76,6 @@
       "date": "2026-09-02",
       "url": "https://m.cafe.daum.net/bbadaking/LxKw/163",
       "mass_date": "2026-09-02",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "daum_catholicsb_7382",
-      "title": "전삼용 요셉 신부 / 연중 제22주간 화요일 - ​땀이 섞이지 않은 망치로는 달걀도 깰 수 없다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-08-31",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7382",
-      "mass_date": "2026-09-01",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 화요일 1코린토 2,10ㄴ-16 루…"
-    },
-    {
-      "id": "daum_bbadaking_7920",
-      "title": "2026년 9월 1일 연중 제22주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-08-31",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7920",
-      "mass_date": "2026-09-01",
-      "priest": "조명연",
-      "excerpt": "인상을 쓰며 저를 바라보는 사람이 있습니다."
-    },
-    {
-      "id": "daum_bbadaking_2196",
-      "title": "2026년 9월 1일 연중 제22주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-08-31",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2196",
-      "mass_date": "2026-09-01",
-      "priest": "양승국",
-      "excerpt": "믿음에 행동이 수반되지 않으면..."
-    },
-    {
-      "id": "daum_bbadaking_162",
-      "title": "진정한 권위는 깨달음과 직결됩니다.",
-      "author": "환희 평화",
-      "date": "2026-09-01",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/162",
-      "mass_date": "2026-09-01",
       "priest": "김경진",
       "excerpt": ""
     }

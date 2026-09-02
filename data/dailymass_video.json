@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-01 23:08",
+  "updated": "2026-09-02 16:54",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "LNbhcn3IZCo",
+      "date": "2026-09-02",
+      "liturgy": "연중 제22주간 수요일",
+      "priest": "정준민 다니엘 신부",
+      "url": "https://www.youtube.com/watch?v=LNbhcn3IZCo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "_uy17-qo7bk",
       "date": "2026-09-01",
@@ -95,13 +102,6 @@
       "liturgy": "성 베르나르도 아빠스 학자 기념일",
       "priest": "이응준 요셉 신부",
       "url": "https://www.youtube.com/watch?v=e7oD45OXvRc&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "i1mCCiWo8hA",
-      "date": "2026-08-19",
-      "liturgy": "연중 제20주간 수요일",
-      "priest": "최지훈 스테파노 신부",
-      "url": "https://www.youtube.com/watch?v=i1mCCiWo8hA&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

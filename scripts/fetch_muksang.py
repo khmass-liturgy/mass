@@ -2,8 +2,9 @@
 """
 1) 가톨릭굿뉴스 '우리들의 묵상/체험' 게시판(menu=4770)에서
    지정한 신부님들의 최근 3일간 글(제목 또는 작성자 기준)을 추출한다.
-2) 김경진 베드로 신부님 글을 다음 카페 '빠다킹신부와 새벽을 열며'의
-   '김경진 신부 강론' 게시판에서 추출한다.
+2) 다음 카페의 신부님별 게시판(DAUM_BOARDS)에서 최근 글을 추출한다.
+   조명연·양승국·김경진 신부님은 '빠다킹신부와 새벽을 열며' 카페,
+   전삼용 신부님은 '가톨릭 사랑방' 카페에 각자 게시판이 있다.
 두 출처를 합쳐 data/muksang.json 으로 저장한다.
 
 GitHub Actions에서 주기적으로 실행됨.
@@ -11,6 +12,7 @@ GitHub Actions에서 주기적으로 실행됨.
    제목/작성자/날짜/원문 링크 + 아주 짧은 한 문장 미리보기(최대 42자·15단어)만 저장한다.
 """
 
+import html
 import json
 import re
 import sys
@@ -40,23 +42,33 @@ MENU = "4770"
 BBSM_VIEW_URL = "https://bbs.catholic.or.kr/bbsm/bbs_view.asp"
 
 # 추출 대상 신부님 (이름만; '신부님' 유무와 무관하게 매칭)
-NAMES = ["조명연", "김건태", "조욱현", "한상우", "양승국", "이영근", "전삼용"]
+NAMES = ["김건태", "조욱현", "한상우", "이영근"]
 
 # 목록에서 빼기로 한 신부님. 이 이름이 제목·작성자에 들어 있으면 그 글은 통째로 건너뛴다.
 # '이병우 신부님_조욱현 신부님_김건태 신부님 묵상' 처럼 여러 분이 묶인 글도 함께 빠진다.
 EXCLUDE_NAMES = ["이병우", "송영진"]
 
 
-# 김경진 베드로 신부님 — 다음 카페 '빠다킹신부와 새벽을 열며' 안의 '김경진 신부 강론' 게시판.
-# 굿뉴스 게시판(menu=4770)에는 이 신부님 글이 올라오지 않아 카페를 따로 본다.
+# 다음 카페에서 가져오는 신부님들.
+# 굿뉴스 게시판(menu=4770)이 아니라 각 신부님 전용 카페 게시판에서 직접 읽어 온다.
 # 모바일 카페(m.cafe.daum.net)는 목록도 본문도 서버에서 만들어 내려주므로
-# 로그인이나 자바스크립트 없이 읽을 수 있다. 목록 데이터는 페이지 안의
+# 로그인이나 자바스크립트 없이 읽을 수 있고, 목록 데이터는 페이지 안의
 # articles.push({...}) 자바스크립트 배열에 그대로 들어 있다.
-DAUM_CAFE = "bbadaking"
-DAUM_FLDID = "LxKw"
-DAUM_LIST_URL = f"https://m.cafe.daum.net/{DAUM_CAFE}/{DAUM_FLDID}"
-DAUM_PRIEST_NAME = "김경진"
-DAUM_MAX_POSTS = 5   # 본문(미리보기)까지 확인할 최근 글 수 — 카페 서버 부담을 줄인다
+#   cafe  : 카페 주소 id            fldid : 게시판 id
+#   priest: 목록에 표시할 신부님 이름  board : 사람이 알아보기 위한 게시판 이름
+#   title_from_body: 제목이 인사말뿐이라 쓸모없는 게시판만 True
+#                    (제목 자리에 본문 첫 문장 맛보기를 넣는다)
+DAUM_BOARDS = [
+    {"cafe": "bbadaking", "fldid": "LxKw", "priest": "김경진",
+     "board": "김경진 신부 강론", "title_from_body": True},
+    {"cafe": "bbadaking", "fldid": "4Zol", "priest": "조명연",
+     "board": "새벽을 열며"},
+    {"cafe": "bbadaking", "fldid": "LgBn", "priest": "양승국",
+     "board": "양승국 신부 강론"},
+    {"cafe": "catholicsb", "fldid": "Iir1", "priest": "전삼용",
+     "board": "전삼용 요셉 신부님"},
+]
+DAUM_MAX_POSTS = 5   # 게시판마다 본문(미리보기)까지 확인할 최근 글 수
 
 DAYS = 2          # 최근 3일
                   # 화면에는 index.html 에서 당일자만 골라 보여 준다.
@@ -174,83 +186,133 @@ def daum_field(block: str, key: str) -> str:
 
 def parse_daum_date(elapsed: str, today_str: str) -> str:
     """카페 목록의 작성시간 표기를 YYYY-MM-DD 로 바꾼다.
-    당일 글은 '2시간 36분 전', 지난 글은 '26.08.30' 형식으로 내려온다.
+    지난 글은 '26.08.30', 당일 글은 '2시간 36분 전' 또는 '06:09' 로 내려온다.
     """
     m = re.fullmatch(r"(\d{2})\.(\d{2})\.(\d{2})", (elapsed or "").strip())
     if m:
         yy, mm, dd = (int(x) for x in m.groups())
         return f"20{yy:02d}-{mm:02d}-{dd:02d}"
-    return today_str   # '…분 전' / '…시간 전' → 오늘 올라온 글
+    return today_str   # '…분 전' / 'HH:MM' → 오늘 올라온 글
 
 
-def extract_daum_excerpt(html: str) -> str:
-    """카페 글 본문에서 한 문장 맛보기만 뽑는다. 본문 전체는 저장하지 않는다."""
-    soup = BeautifulSoup(html, "html.parser")
+WEEKDAY_KO = {"월": 0, "화": 1, "수": 2, "목": 3, "금": 4, "토": 5, "일": 6}
+
+
+def snap_to_weekday(title: str, date_str: str) -> str:
+    """제목에 날짜 없이 '수요일'·'주일' 처럼 요일만 있는 게시판을 위한 보정.
+    다음날 묵상을 전날 저녁에 올리는 게시판이 많아서, 작성일부터 이틀 안에서
+    제목이 가리키는 요일에 해당하는 날짜로 맞춰 준다.
+    예) 9월 1일(화)에 올라온 '연중 제22주간 수요일' → 9월 2일
+    """
+    m = re.search(r"([월화수목금토일])요일", title)
+    if m:
+        target = WEEKDAY_KO[m.group(1)]
+    elif "주일" in title:
+        target = 6            # 주일 = 일요일
+    else:
+        return date_str
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+    except ValueError:
+        return date_str
+    for delta in range(3):
+        cand = d + timedelta(days=delta)
+        if cand.weekday() == target:
+            return cand.strftime("%Y-%m-%d")
+    return date_str
+
+
+def extract_daum_excerpt(html_text: str, skip_title: str = "") -> str:
+    """카페 글 본문에서 한 문장 맛보기만 뽑는다. 본문 전체는 저장하지 않는다.
+    본문 첫 줄이 제목을 그대로 되풀이하는 게시판이 있어, 그런 줄은 건너뛴다.
+    """
+    soup = BeautifulSoup(html_text, "html.parser")
     body = soup.find(id="article")
     if body is None:
         return ""
-    return truncate_to_excerpt(body.get_text("\n", strip=True))
+
+    def squeeze(t):
+        return re.sub(r"\s+", "", t)
+
+    skip = squeeze(skip_title)
+    lines = [ln.strip() for ln in body.get_text("\n", strip=True).split("\n")]
+    while lines and (not lines[0] or (skip and squeeze(lines[0]) and squeeze(lines[0]) in skip)):
+        lines.pop(0)
+    return truncate_to_excerpt("\n".join(lines))
 
 
-def fetch_daum_posts(session: requests.Session, cutoff: str, today_str: str) -> list:
-    """김경진 베드로 신부님 묵상 글을 다음 카페 게시판에서 가져온다.
-    다른 신부님 글과 똑같이 제목/작성자/날짜/링크 + 한 문장 맛보기만 남긴다.
-    """
+def fetch_daum_board(session: requests.Session, board: dict, cutoff: str, today_str: str) -> list:
+    """다음 카페 게시판 하나에서 최근 글을 가져온다."""
     posts = []
+    list_url = f"https://m.cafe.daum.net/{board['cafe']}/{board['fldid']}"
     headers = dict(HEADERS)
-    headers["Referer"] = DAUM_LIST_URL
+    headers["Referer"] = list_url
     try:
-        r = session.get(DAUM_LIST_URL, headers=headers, timeout=30)
+        r = session.get(list_url, headers=headers, timeout=30)
         r.raise_for_status()
         r.encoding = "utf-8"      # 카페는 항상 UTF-8로 내려준다
-        html = r.text
+        page = r.text
     except Exception as e:
-        print("daum cafe list fetch failed:", e, file=sys.stderr)
+        print(f"daum list fetch failed ({board['priest']}):", e, file=sys.stderr)
         return posts
 
-    for block in DAUM_ARTICLE_RE.findall(html):
-        # 이 게시판(LxKw) 글만 — 목록 위쪽에 붙는 카페 전체 공지는 fldid 가 다르다
-        if daum_field(block, "fldid") != DAUM_FLDID:
+    for block in DAUM_ARTICLE_RE.findall(page):
+        # 이 게시판 글만 — 목록 위쪽에 붙는 카페 전체 공지는 fldid 가 다르다
+        if daum_field(block, "fldid") != board["fldid"]:
             continue
         data_id = daum_field(block, "dataid")
         if not data_id:
             continue
-        title = daum_field(block, "title")
+        title = html.unescape(daum_field(block, "title"))
         date_str = parse_daum_date(daum_field(block, "articleElapsedTime"), today_str)
+        # 다음날 묵상을 전날 저녁에 올리는 게시판이 많다 — 제목에 날짜가 있으면 그쪽을 쓴다
         mass_date = parse_title_date(title, date_str)
+        if mass_date == date_str:
+            mass_date = snap_to_weekday(title, date_str)
         if max(mass_date, date_str) < cutoff:
             continue
         posts.append({
-            "id": "daum_" + data_id,
+            "id": f"daum_{board['cafe']}_{data_id}",
             "title": title,
             "author": daum_field(block, "writerNickname"),
             "date": date_str,
-            "url": f"{DAUM_LIST_URL}/{data_id}",
+            "url": f"{list_url}/{data_id}",
             "mass_date": mass_date,
-            "priest": DAUM_PRIEST_NAME,
+            "priest": board["priest"],
             "excerpt": "",
         })
 
     posts.sort(key=lambda p: (p["date"], p["id"]), reverse=True)
     posts = posts[:DAUM_MAX_POSTS]
 
-    # 이 게시판은 글 제목이 늘 '김 베드로신부님 ~' 이라 목록에서 아무것도 알려주지 못한다.
-    # 그래서 제목 자리에 본문 첫 문장 맛보기를 넣고 미리보기 줄은 비워 둔다.
-    # 인용 분량은 truncate_to_excerpt 가 다른 신부님 글과 똑같이 한 문장으로 묶는다.
     for post in posts:
+        snippet = ""
         try:
             art = session.get(post["url"], headers=headers, timeout=20)
             art.raise_for_status()
             art.encoding = "utf-8"
-            snippet = extract_daum_excerpt(art.text)
-            if snippet:
-                post["title"] = snippet
+            snippet = extract_daum_excerpt(art.text, post["title"])
         except Exception as e:
             print("daum article fetch failed for", post["url"], ":", e, file=sys.stderr)
+        # 김경진 신부님 게시판은 제목이 늘 '김 베드로신부님 ~' 이라 목록에서 아무것도 알려주지
+        # 못한다. 그런 게시판만 제목 자리에 첫 문장 맛보기를 넣고, 나머지는 제목을 그대로 두고
+        # 미리보기 줄에 넣는다. 인용 분량은 어느 쪽이든 truncate_to_excerpt 한 문장이다.
+        if board.get("title_from_body"):
+            if snippet:
+                post["title"] = snippet
+        else:
+            post["excerpt"] = snippet
         time.sleep(0.4)   # 카페 서버에 부담을 주지 않도록 간격을 둔다
 
     return posts
 
+
+def fetch_daum_posts(session: requests.Session, cutoff: str, today_str: str) -> list:
+    """DAUM_BOARDS 에 적힌 게시판을 차례로 돌며 글을 모은다."""
+    posts = []
+    for board in DAUM_BOARDS:
+        posts.extend(fetch_daum_board(session, board, cutoff, today_str))
+    return posts
 
 def parse_title_date(title: str, fallback_date: str) -> str:
     """제목에 적힌 '7월 7일' 같은 실제 미사 날짜를 뽑아 YYYY-MM-DD로 반환.
@@ -402,9 +464,9 @@ def main():
         "updated": now.strftime("%Y-%m-%d %H:%M"),
         "cutoff": cutoff,
         "days": DAYS,
-        "names": NAMES + [DAUM_PRIEST_NAME],
+        "names": NAMES + [b["priest"] for b in DAUM_BOARDS],
         "source": LIST_URL + "?menu=" + MENU,
-        "daum_source": DAUM_LIST_URL,
+        "daum_sources": [f"https://m.cafe.daum.net/{b['cafe']}/{b['fldid']}" for b in DAUM_BOARDS],
         "count": len(posts),
         "posts": posts,
     }

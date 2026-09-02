@@ -1,12 +1,10 @@
 {
-  "updated": "2026-09-02 10:30",
+  "updated": "2026-09-02 10:35",
   "cutoff": "2026-09-01",
   "days": 2,
   "names": [
     "김건태",
     "조욱현",
-    "한상우",
-    "이영근",
     "김경진",
     "조명연",
     "양승국",
@@ -19,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7383",
@@ -62,26 +60,6 @@
       "excerpt": ""
     },
     {
-      "id": "2136837",
-      "title": "09.02.수 / 한상우 신부님",
-      "author": "강칠등",
-      "date": "2026-09-02",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136837&menu=4770",
-      "mass_date": "2026-09-02",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136832",
-      "title": "이영근 신부님_“나는 그 일을 하도록 파견된 것이다.”(루카 4,43)",
-      "author": "최원석",
-      "date": "2026-09-02",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136832&menu=4770",
-      "mass_date": "2026-09-02",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
       "id": "daum_catholicsb_7382",
       "title": "전삼용 요셉 신부 / 연중 제22주간 화요일 - ​땀이 섞이지 않은 망치로는 달걀도 깰 수 없다",
       "author": "효재마리아(수풀)",
@@ -120,26 +98,6 @@
       "mass_date": "2026-09-01",
       "priest": "김경진",
       "excerpt": ""
-    },
-    {
-      "id": "2136770",
-      "title": "이영근 신부님_“당신께서 저희와 무슨 상관이 있습니까?”(루카 4,34 ... |1|",
-      "author": "최원석",
-      "date": "2026-09-01",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136770&menu=4770",
-      "mass_date": "2026-09-01",
-      "priest": "이영근",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "2136764",
-      "title": "09.01.화 / 한상우 신부님 |1|",
-      "author": "강칠등",
-      "date": "2026-09-01",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2136764&menu=4770",
-      "mass_date": "2026-09-01",
-      "priest": "한상우",
-      "excerpt": "안녕하세요."
     }
   ]
 }

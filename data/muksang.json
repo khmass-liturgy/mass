@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04 02:45",
+  "updated": "2026-09-04 08:11",
   "cutoff": "2026-09-03",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 5,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7385",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-04",
       "priest": "조명연",
       "excerpt": "지인으로부터 고충을 듣게 되었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2199",
+      "title": "2026년 9월 4일 연중 제22주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-09-04",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2199",
+      "mass_date": "2026-09-04",
+      "priest": "양승국",
+      "excerpt": "이 세상을 즐기고 만끽하십시오!"
+    },
+    {
+      "id": "daum_bbadaking_164",
+      "title": "세상을 위하여 봉사하고 섬기는 교회가 되기 위하여 우리가 새 부대에 담아야…",
+      "author": "환희 평화",
+      "date": "2026-09-04",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/164",
+      "mass_date": "2026-09-04",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7384",

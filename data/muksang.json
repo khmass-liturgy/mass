@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-04 22:23",
-  "cutoff": "2026-09-03",
+  "updated": "2026-09-05 02:32",
+  "cutoff": "2026-09-04",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7386",
@@ -78,36 +78,6 @@
       "mass_date": "2026-09-04",
       "priest": "김경진",
       "excerpt": ""
-    },
-    {
-      "id": "daum_catholicsb_7384",
-      "title": "전삼용 요셉 신부 / 연중 제22주간 목요일 - 나의 목소리와 주님의 목소리 구별하는 법",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-02",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7384",
-      "mass_date": "2026-09-03",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 목요일 1코린토 3,18-23 루카…"
-    },
-    {
-      "id": "daum_bbadaking_7922",
-      "title": "2026년 9월 3일 성 대 그레고리오 교황 학자 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-09-02",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7922",
-      "mass_date": "2026-09-03",
-      "priest": "조명연",
-      "excerpt": "진세를 버렸어라 이 몸마저 버렸어라/ 깨끗이 한 청춘을 부르심에 바쳤어라/…"
-    },
-    {
-      "id": "daum_bbadaking_2198",
-      "title": "2026년 9월 3일 성 대 그레고리오 교황 학자 기념일",
-      "author": "박 베로니카",
-      "date": "2026-09-03",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2198",
-      "mass_date": "2026-09-03",
-      "priest": "양승국",
-      "excerpt": "제가 생각할 때 분명 아니지만, 스승님께서 그리 말씀하시니..."
     }
   ]
 }

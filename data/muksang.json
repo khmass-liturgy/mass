@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04 14:42",
+  "updated": "2026-09-04 22:23",
   "cutoff": "2026-09-03",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
+    {
+      "id": "daum_catholicsb_7386",
+      "title": "전삼용 요셉 신부 / 연중 제22주간 토요일 - 화내는 사람은 화내기 전부터 화가 나 있었다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-04",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7386",
+      "mass_date": "2026-09-05",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 토요일 1코린토 4,6ㄴ-15 루카…"
+    },
+    {
+      "id": "daum_bbadaking_7924",
+      "title": "2026년 9월 5일 연중 제22주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-04",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7924",
+      "mass_date": "2026-09-05",
+      "priest": "조명연",
+      "excerpt": "어떤 자매의 가슴 아픈 이야기를 들었습니다."
+    },
     {
       "id": "daum_catholicsb_7385",
       "title": "전삼용 요셉 신부 / 연중 제22주간 금요일 - 시스템이 시대 변화를 따라가지 못하는 이유",

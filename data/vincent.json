@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-04 14:46",
+  "updated": "2026-09-04 22:25",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "0bDauGfK5ic",
+      "date": "2026-09-05",
+      "title": "복되신 동정 마리아 신심 미사",
+      "url": "https://www.youtube.com/watch?v=0bDauGfK5ic"
+    },
     {
       "videoId": "6yAm4ygJeZ0",
       "date": "2026-09-04",
@@ -57,12 +63,6 @@
       "date": "2026-08-27",
       "title": "성녀 모니카 기념일",
       "url": "https://www.youtube.com/watch?v=pUTaTplwDKc"
-    },
-    {
-      "videoId": "VRzwgL6FIR4",
-      "date": "2026-08-26",
-      "title": "연중 제21주간 수요일",
-      "url": "https://www.youtube.com/watch?v=VRzwgL6FIR4"
     }
   ]
 }

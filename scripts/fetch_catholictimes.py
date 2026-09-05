@@ -23,11 +23,13 @@ data/catholictimes.json 으로 저장한다.
 GitHub Actions에서 주기적으로 실행됨.
 """
 
+import html
 import json
 import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 import requests
@@ -47,6 +49,10 @@ HEADERS = {
 
 TOP_NEWS_RE = re.compile(r'class="top_news section"')
 SLIDE_RE = re.compile(r'<div class="swiper-slide">')
+# 제목과 부제는 반드시 이 안(top_tit)에 함께 있다. 슬라이드 전체가 아니라
+# 이 블록 안에서만 찾으면, 슬라이드 경계 계산이 느슨해도(첫 화면에 슬라이드가
+# 하나뿐일 때 등) 다른 기사의 제목·부제를 잘못 집어올 일이 없다.
+TOP_TIT_RE = re.compile(r'<div class="top_tit">(.*?)</div>', re.S)
 TITLE_RE = re.compile(r'<h2>\s*<a href="([^"]+)"[^>]*>(.*?)</a>', re.S)
 SUB_RE = re.compile(r'<strong>\s*<a[^>]*>(.*?)</a>', re.S)
 IMG_RE = re.compile(r'<div class="top_img">.*?<img src="([^"]+)"', re.S)
@@ -55,27 +61,25 @@ IMG_RE = re.compile(r'<div class="top_img">.*?<img src="([^"]+)"', re.S)
 ARTICLE_DATE_RE = re.compile(r"/?article/(\d{4})(\d{2})(\d{2})\d+")
 
 
-def strip_tags(html: str) -> str:
-    """태그를 걷어내고 공백을 한 칸으로 정리한다."""
-    text = re.sub(r"<[^>]+>", "", html)
-    text = text.replace("&nbsp;", " ").replace("&amp;", "&")
-    text = text.replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", '"')
+def strip_tags(raw_html: str) -> str:
+    """태그를 걷어내고 엔티티를 되돌린 뒤 공백을 한 칸으로 정리한다.
+    html.unescape 를 쓰면 &#39; 처럼 흔치 않은 엔티티도 놓치지 않는다."""
+    text = html.unescape(re.sub(r"<[^>]+>", "", raw_html))
     return re.sub(r"\s+", " ", text).strip()
 
 
 def absolute(href: str) -> str:
-    """첫 화면 링크는 'article/2026...' 처럼 앞 슬래시가 없이 온다."""
-    if href.startswith("http"):
-        return href
-    return BASE + "/" + href.lstrip("/")
+    """첫 화면 링크는 'article/2026...' 처럼 앞 슬래시가 없이 온다.
+    urljoin 을 쓰면 '//host/a' 같은 프로토콜 상대 주소도 규칙대로 처리된다."""
+    return urljoin(BASE + "/", href)
 
 
-def first_slide(html: str) -> str:
+def first_slide(page_html: str) -> str:
     """톱기사 영역에서 첫 번째 슬라이드 조각만 잘라 낸다."""
-    m = TOP_NEWS_RE.search(html)
+    m = TOP_NEWS_RE.search(page_html)
     if not m:
         raise ValueError("첫 화면에서 톱기사 영역(top_news)을 찾지 못했습니다.")
-    seg = html[m.start():m.start() + 40000]
+    seg = page_html[m.start():m.start() + 40000]
 
     starts = [s.start() for s in SLIDE_RE.finditer(seg)]
     if not starts:
@@ -84,10 +88,13 @@ def first_slide(html: str) -> str:
     return seg[starts[0]:end]
 
 
-def parse_top_article(html: str) -> dict:
-    slide = first_slide(html)
+def parse_top_article(page_html: str) -> dict:
+    slide = first_slide(page_html)
 
-    m = TITLE_RE.search(slide)
+    tit_m = TOP_TIT_RE.search(slide)
+    tit_block = tit_m.group(1) if tit_m else slide
+
+    m = TITLE_RE.search(tit_block)
     if not m:
         raise ValueError("대표기사 제목을 찾지 못했습니다.")
     url = absolute(m.group(1))
@@ -95,7 +102,7 @@ def parse_top_article(html: str) -> dict:
     if not title:
         raise ValueError("대표기사 제목이 비어 있습니다.")
 
-    sub_m = SUB_RE.search(slide)
+    sub_m = SUB_RE.search(tit_block)
     summary = strip_tags(sub_m.group(1)) if sub_m else ""
 
     img_m = IMG_RE.search(slide)
@@ -119,7 +126,11 @@ def main() -> int:
     try:
         r = requests.get(HOME_URL, headers=HEADERS, timeout=30)
         r.raise_for_status()
-        r.encoding = "utf-8"
+        # 서버가 charset을 선언하지 않아 requests가 기본값(iso-8859-1)으로
+        # 떨어졌을 때만 utf-8로 보정한다. 서버가 이미 올바르게 선언했다면
+        # (지금이 그렇다) 그 값을 그대로 믿는다.
+        if not r.encoding or r.encoding.lower() == "iso-8859-1":
+            r.encoding = r.apparent_encoding or "utf-8"
         article = parse_top_article(r.text)
     except Exception as e:
         print("catholictimes fetch/parse failed:", e, file=sys.stderr)

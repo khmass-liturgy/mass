@@ -1,0 +1,43 @@
+name: Update 가톨릭신문 기획특집
+
+on:
+  schedule:
+    # UTC 기준 → KST 23:33 (하루 1회)
+    # 일부러 하루 한 번만, 그것도 날짜가 바뀌기 직전에 받아온다.
+    # 카드는 목록에서 '몇 번째'를 고르는 방식이라 목록이 갱신되면 순서가 밀린다.
+    # 낮에 새 기사가 올라와 목록이 바뀌면 그날 보여주던 기사가 도중에 바뀌어
+    # '하루 한 편'이 깨지므로, 갱신을 하루의 끝으로 몰아 둔 것이다.
+    # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '33 14 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 가톨릭신문 기획특집 목록
+        run: python scripts/fetch_ct_feature.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ct_feature.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update 가톨릭신문 기획특집 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            git push
+          fi

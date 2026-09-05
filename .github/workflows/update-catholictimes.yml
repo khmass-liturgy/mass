@@ -1,0 +1,40 @@
+name: Update 가톨릭신문 대표기사
+
+on:
+  schedule:
+    # UTC 기준 → KST 07:27 / 12:27 / 18:27 / 22:27 (하루 4회)
+    # 주간 신문이지만 첫 화면 톱기사는 평일에도 바뀐다.
+    # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '27 22,3,9,13 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 가톨릭신문 대표기사
+        run: python scripts/fetch_catholictimes.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/catholictimes.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update 가톨릭신문 대표기사 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            git push
+          fi

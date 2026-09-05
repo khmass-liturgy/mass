@@ -1182,6 +1182,12 @@
         <div class="lc-desc">내 위치에서 가까운 성당 10곳을 거리순으로 (CBCK 공식 주소록 기반)</div>
       </a>
 
+      <a class="link-card" id="ctimesCard" href="https://www.catholictimes.org/" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
+        <div class="lc-name">가톨릭신문 대표기사</div>
+        <div class="lc-desc" id="ctimesDesc">가톨릭신문 첫 화면의 톱기사를 보여 줍니다</div>
+      </a>
+
       <a class="link-card" id="gospeltoonCard" style="display:none;" href="https://www.catholicpress.kr/m/list.php?mcode=m96sroz" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">🖍</span><span class="lc-go">→</span></div>
         <div class="lc-name">만화로 보는 복음</div>
@@ -1189,6 +1195,23 @@
       </a>
 
     </div>
+    <script>
+    // 가톨릭신문 대표기사 — 첫 화면 톱기사 한 건을 제목만 보여 주고 읽기는 원문으로 넘긴다.
+    (function(){
+      var card = document.getElementById('ctimesCard');
+      var desc = document.getElementById('ctimesDesc');
+      if (!card || !desc) return;
+      fetch('data/catholictimes.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (!d || !d.title) return;
+          if (d.url) card.href = d.url;
+          desc.textContent = d.title;
+        })
+        .catch(function(){ /* 못 불러오면 신문 첫 화면으로 가는 기본 링크를 그대로 둔다 */ });
+    })();
+    </script>
+
     <script>
     // 가스펠툰은 주간 연재 — 주일 편을 하루 전(토요일)부터 당일까지 이틀간 보여 준다.
     (function(){

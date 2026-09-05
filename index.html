@@ -2424,26 +2424,35 @@ window.SolarTerms = (function(){
 
 // 매월 첫째 토요일 0시~12시까지만 성모 신심미사 카드 표시 (10시 미사 안내용)
 // 그 이후 시간부터는 신심미사 카드를 숨기고, 상단의 날짜별 매일미사 카드로 안내
+// 시각 판단은 기기 시간대가 아니라 한국 시간 기준이다 (매일미사 카드와 같은 기준).
 (function(){
-  const now = new Date();
-  const isSaturday = now.getDay() === 6;
-  const isFirstWeek = now.getDate() <= 7;
-  const isBeforeNoon = now.getHours() < 12;
+  const kst = window.kstNow();
+  const isSaturday = kst.dow === 6;
+  const isFirstWeek = kst.day <= 7;
+  const isBeforeNoon = kst.hour < 12;
   if (isSaturday && isFirstWeek && isBeforeNoon) {
     const link = document.getElementById('marianCardLink');
+    const card = document.getElementById('marianCard');
+    // 이 블록은 첫째 토요일 오전에만 여기까지 들어온다. 바로 그날이 아래
+    // 특별미사 안내가 필요한 날이므로, 여기서 예외가 나면 같은 <script> 안의
+    // 아래 코드가 통째로 멈춰 안내까지 사라진다. 그래서 먼저 확인하고 나간다.
+    if (!link || !card) return;
     const base = link.getAttribute('data-base-href');
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    link.href = base + '?year=' + year + '&month=' + month;
-    document.getElementById('marianCard').style.display = '';
+    const month = String(kst.month + 1).padStart(2, '0');
+    link.href = base + '?year=' + kst.year + '&month=' + month;
+    card.style.display = '';
   }
 })();
 
-// 매일미사 카드 안, 월별 특별 미사 일정 안내 (해당 요일이면 하루 종일 표시)
+// 매일미사 카드 안, 월별 특별 미사 일정 안내
+// 기준 날짜는 카드가 가리키는 날짜(MISSA_TARGET_DATE)를 그대로 따른다.
+// 토요일 15:00(한국 시간)부터 카드가 주일 미사로 넘어가므로, 그때부터는
+// 토요일 특별 미사 안내도 함께 사라진다 — 카드는 주일을 가리키는데
+// "오늘 10:00 …미사가 있습니다"가 같이 떠 있으면 어느 날 이야기인지 헷갈린다.
 (function(){
   const el = document.getElementById('missaSpecial');
   if (!el) return;
-  const now = new Date();
+  const now = window.MISSA_TARGET_DATE || new Date();
   const date = now.getDate();
   const dow = now.getDay(); // 0=일 ... 6=토
 

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05 07:57",
+  "updated": "2026-09-05 14:31",
   "cutoff": "2026-09-04",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7386",
@@ -48,6 +48,16 @@
       "mass_date": "2026-09-05",
       "priest": "양승국",
       "excerpt": "이 모든 고통에도 불구하고 저는 하느님을 사랑합니다!"
+    },
+    {
+      "id": "daum_bbadaking_165",
+      "title": "안식일에 일을 한다 하여 그것을 잘못된 행동으로 여기는 유다인들은 사람보다…",
+      "author": "환희 평화",
+      "date": "2026-09-05",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/165",
+      "mass_date": "2026-09-05",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7385",

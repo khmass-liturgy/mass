@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 01:43",
+  "updated": "2026-09-06 07:45",
   "cutoff": "2026-09-05",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7387",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-06",
       "priest": "조명연",
       "excerpt": "1940년대 오스트리아의 정신분석학자 ‘르네 스피츠’는 감옥에서 태어나서 길…"
+    },
+    {
+      "id": "daum_bbadaking_2201",
+      "title": "2026년 9월 6일 연중 제23주일",
+      "author": "박 베로니카",
+      "date": "2026-09-06",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2201",
+      "mass_date": "2026-09-06",
+      "priest": "양승국",
+      "excerpt": "아직도 이러고 있습니다!"
+    },
+    {
+      "id": "daum_bbadaking_166",
+      "title": "이웃 사랑은 감상적인 느낌으로 베푸는 시혜가 아닙니다.",
+      "author": "환희 평화",
+      "date": "2026-09-06",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/166",
+      "mass_date": "2026-09-06",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7386",

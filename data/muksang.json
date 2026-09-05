@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05 14:31",
+  "updated": "2026-09-05 21:33",
   "cutoff": "2026-09-04",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7387",
+      "title": "전삼용 요셉 신부 / 연중 제23주일 - 예수님의 이름으로 모인다는 말의 의미",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-05",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7387",
+      "mass_date": "2026-09-06",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주일 에제키엘 33,7-9 로마 13,8…"
+    },
+    {
+      "id": "daum_bbadaking_7925",
+      "title": "2026년 9월 6일 연중 제23주일",
+      "author": "빠다킹신부",
+      "date": "2026-09-05",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7925",
+      "mass_date": "2026-09-06",
+      "priest": "조명연",
+      "excerpt": "1940년대 오스트리아의 정신분석학자 ‘르네 스피츠’는 감옥에서 태어나서 길…"
+    },
     {
       "id": "daum_catholicsb_7386",
       "title": "전삼용 요셉 신부 / 연중 제22주간 토요일 - 화내는 사람은 화내기 전부터 화가 나 있었다",

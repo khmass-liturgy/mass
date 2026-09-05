@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-05 21:33",
-  "cutoff": "2026-09-04",
+  "updated": "2026-09-06 01:43",
+  "cutoff": "2026-09-05",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7387",
@@ -76,46 +76,6 @@
       "date": "2026-09-05",
       "url": "https://m.cafe.daum.net/bbadaking/LxKw/165",
       "mass_date": "2026-09-05",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "daum_catholicsb_7385",
-      "title": "전삼용 요셉 신부 / 연중 제22주간 금요일 - 시스템이 시대 변화를 따라가지 못하는 이유",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-03",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7385",
-      "mass_date": "2026-09-04",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 금요일 1코린토 4,1-5 루카 5…"
-    },
-    {
-      "id": "daum_bbadaking_7923",
-      "title": "2026년 9월 4일 연중 제22주간 금요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-03",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7923",
-      "mass_date": "2026-09-04",
-      "priest": "조명연",
-      "excerpt": "지인으로부터 고충을 듣게 되었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2199",
-      "title": "2026년 9월 4일 연중 제22주간 금요일",
-      "author": "박 베로니카",
-      "date": "2026-09-04",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2199",
-      "mass_date": "2026-09-04",
-      "priest": "양승국",
-      "excerpt": "이 세상을 즐기고 만끽하십시오!"
-    },
-    {
-      "id": "daum_bbadaking_164",
-      "title": "세상을 위하여 봉사하고 섬기는 교회가 되기 위하여 우리가 새 부대에 담아야…",
-      "author": "환희 평화",
-      "date": "2026-09-04",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/164",
-      "mass_date": "2026-09-04",
       "priest": "김경진",
       "excerpt": ""
     }

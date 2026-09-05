@@ -194,6 +194,21 @@ footer{text-align:center;font-size:11.5px;color:var(--muted);padding:26px 16px 1
 
 <script>
 'use strict';
+
+/* ── 한국 시간(KST)으로 '지금'을 읽는다 ────────────────
+   축일은 한국 교회 전례력을 따르므로, 기기 시간대가 어디든
+   국내와 같은 날짜의 축일이 보여야 한다. (index.html 과 같은 헬퍼) */
+function kstNow(at){
+  const d = at || new Date();
+  const k = new Date(d.getTime() + 9 * 3600000);   // UTC+9 로 옮겨 UTC 게터로 읽는다
+  return {
+    year: k.getUTCFullYear(), month: k.getUTCMonth(), day: k.getUTCDate(),
+    dow: k.getUTCDay(), hour: k.getUTCHours(), minute: k.getUTCMinutes(),
+    /* 한국 날짜를 가리키는 '로컬 자정' Date */
+    date: new Date(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate())
+  };
+}
+
 let SAINTS = [];
 
 /* ── 상태 ─────────────────────────── */
@@ -203,11 +218,11 @@ const norm = t => (t || '').replace(/\s+/g, '').toLowerCase();
 
 /* ── 오늘의 축일 ──────────────────── */
 function renderToday(){
-  const now = new Date();
-  const mm = String(now.getMonth()+1).padStart(2,'0');
-  const dd = String(now.getDate()).padStart(2,'0');
-  document.getElementById('todayDay').textContent = now.getDate();
-  document.getElementById('todayMon').textContent = (now.getMonth()+1) + '월';
+  const kst = kstNow();
+  const mm = String(kst.month+1).padStart(2,'0');
+  const dd = String(kst.day).padStart(2,'0');
+  document.getElementById('todayDay').textContent = kst.day;
+  document.getElementById('todayMon').textContent = (kst.month+1) + '월';
   const hits = SAINTS.filter(s => s.date === mm + '-' + dd);
   const namesEl = document.getElementById('todayNames');
   const subEl = document.getElementById('todaySub');
@@ -225,10 +240,10 @@ function renderWeek(){
   const list = document.getElementById('weekList');
   if (!list) return;
   const days = ['일','월','화','수','목','금','토'];
-  const now = new Date();
+  const base = kstNow().date;
   let html = '';
   for (let i = 0; i < 7; i++){
-    const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    const d = new Date(base.getFullYear(), base.getMonth(), base.getDate() + i);
     const mm = String(d.getMonth()+1).padStart(2,'0');
     const dd = String(d.getDate()).padStart(2,'0');
     const hits = SAINTS.filter(s => s.date === mm + '-' + dd);
@@ -290,11 +305,10 @@ function esc(t){
 
 /* ── 날짜 계산 ────────────────────── */
 function nextDate(mmdd){
-  const now = new Date();
+  const today = kstNow().date;
   const [m, d] = mmdd.split('-').map(Number);
-  let y = now.getFullYear();
+  let y = today.getFullYear();
   const cand = new Date(y, m-1, d);
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   if (cand < today) y++;
   return y + mmdd.replace('-','');   // YYYYMMDD
 }
@@ -333,7 +347,7 @@ moWrap.innerHTML = '<button class="mo" data-m="0">전체</button>' +
   Array.from({length:12}, (_,i) => '<button class="mo" data-m="' + (i+1) + '">' + (i+1) + '월</button>').join('');
 
 /* 처음 열면 이번 달이 기본 선택되도록 */
-month = new Date().getMonth() + 1;
+month = kstNow().month + 1;
 (function(){
   const cur = moWrap.querySelector('.mo[data-m="' + month + '"]');
   if (cur){

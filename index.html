@@ -575,6 +575,27 @@
 </head>
 <body>
 
+<script>
+// ── 한국 시간(KST)으로 '지금'을 읽는 공용 헬퍼 ──────────────────
+// 이 앱은 한국 교회의 전례력을 따르므로, 날짜·요일 판단은 기기 시간대가 아니라
+// 언제나 한국 시간을 기준으로 한다. 해외에 있는 신자의 기기에서도 국내와 같은
+// 축일·묵주기도 신비·성월 기도가 보이게 하기 위함이다.
+// 아래 모든 스크립트가 쓰므로 문서 맨 앞에서 정의한다.
+// 주의 1: 같은 함수가 feastday.html 에도 있다(공유 .js 가 없는 구조). 고칠 때 두 곳을 함께.
+// 주의 2: 반환값 date 는 '실제 순간'이 아니라 한국 날짜를 로컬 성분으로 담은 자정 Date 다.
+//         toLocaleDateString(..., {timeZone:'Asia/Seoul'}) 에 다시 넣으면 이중 변환이 된다.
+window.kstNow = function(at){
+  const d = at || new Date();
+  const k = new Date(d.getTime() + 9 * 3600000);   // UTC+9 로 옮겨 UTC 게터로 읽는다
+  return {
+    year: k.getUTCFullYear(), month: k.getUTCMonth(), day: k.getUTCDate(),
+    dow: k.getUTCDay(), hour: k.getUTCHours(), minute: k.getUTCMinutes(),
+    /* 한국 날짜를 가리키는 '로컬 자정' Date — 이후 날짜 계산에 그대로 쓴다 */
+    date: new Date(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate())
+  };
+};
+</script>
+
 <header>
   <div class="header-inner">
     <div class="header-title">
@@ -646,9 +667,9 @@
 
   <script>
   (function(){
-    const now = new Date();
-    if (now.getDate() !== 1) return; // 매월 1일에만 표시
-    const y = String(now.getFullYear()), m = String(now.getMonth() + 1);
+    const kst = window.kstNow();
+    if (kst.day !== 1) return; // 매월 1일에만 표시 (한국 날짜 기준)
+    const y = String(kst.year), m = String(kst.month + 1);
     fetch('data/pope_intentions.json', { cache: 'no-store' })
       .then(function(r){ return r.json(); })
       .then(function(data){
@@ -778,8 +799,8 @@
         .then(function(r){ return r.json(); })
         .then(function(d){
           var list = d.saints || d;
-          var dt = new Date();
-          var k = ('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2);
+          var kst = window.kstNow();
+          var k = ('0'+(kst.month+1)).slice(-2)+'-'+('0'+kst.day).slice(-2);
           var names = [];
           for (var i = 0; i < list.length; i++) if (list[i].date === k) names.push(list[i].name);
           if (names.length) el.textContent = '오늘의 축일 · ' + names.join(' · ');
@@ -1784,9 +1805,9 @@
     ];
     var DOW = ['주일','월요일','화요일','수요일','목요일','금요일','토요일'];
 
-    var d = new Date();
-    var today = BY_DAY[d.getDay()];
-    if (eyebrowEl) eyebrowEl.textContent = '오늘의 묵주기도 · ' + DOW[d.getDay()];
+    var dow = window.kstNow().dow;   // 요일도 한국 시간 기준
+    var today = BY_DAY[dow];
+    if (eyebrowEl) eyebrowEl.textContent = '오늘의 묵주기도 · ' + DOW[dow];
     titleEl.textContent = today.name;
     listEl.innerHTML = today.decades.map(function(t, i){
       return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';
@@ -1803,8 +1824,7 @@
     var card = document.getElementById('ddayCard');
     if (!titleEl || !window.Liturgy) return;
 
-    var now = new Date();
-    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var today = window.kstNow().date;   // 한국 날짜 기준
     var year = today.getFullYear();
     // 연말에는 내년 대축일(1월 1일 등)까지 봐야 하므로 두 해를 합쳐서 찾는다
     var list = window.Liturgy.solemnitiesOf(year).concat(window.Liturgy.solemnitiesOf(year + 1));
@@ -1849,8 +1869,7 @@
     var dotEl = document.getElementById('seasonDot');
     var card = document.getElementById('seasonCard');
 
-    var n = new Date();
-    var today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+    var today = window.kstNow().date;   // 한국 날짜 기준
     var next = window.Liturgy.nextSeasonAfter(today);
     var cur = window.Liturgy.seasonAt(today);
     if (!next) return;
@@ -1958,26 +1977,16 @@
 
 <script>
 function formatDate(){
-  return new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'});
+  // 화면에 '오늘'로 적히는 날짜 — 축일·묵주기도와 같은 한국 시간 기준이어야 한다
+  return new Date().toLocaleDateString('ko-KR',
+    {timeZone:'Asia/Seoul',year:'numeric',month:'long',day:'numeric',weekday:'short'});
 }
 document.getElementById('headerDate').textContent = formatDate();
 
 // 매일미사 카드 날짜 채우기
 // 토요일 오후 3시부터는 주일 미사(토요 특전미사)를 드리는 시간대이므로,
 // 그때부터 주일이 끝날 때까지 주일 매일미사를 보여 준다.
-// 기기 시간대와 무관하게 한국 시간(KST)으로 '지금'을 읽는다.
-// 해외에 있는 신자의 기기에서도 국내와 같은 날짜·시각을 가리키게 하기 위함이다.
-window.kstNow = function(at){
-  const d = at || new Date();
-  const k = new Date(d.getTime() + 9 * 3600000);   // UTC+9 로 옮겨 UTC 게터로 읽는다
-  return {
-    year: k.getUTCFullYear(), month: k.getUTCMonth(), day: k.getUTCDate(),
-    dow: k.getUTCDay(), hour: k.getUTCHours(), minute: k.getUTCMinutes(),
-    /* 한국 날짜를 가리키는 '로컬 자정' Date — 이후 날짜 계산에 그대로 쓴다 */
-    date: new Date(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate())
-  };
-};
-
+// '지금'은 window.kstNow() 로 읽는다 (문서 맨 앞에서 정의).
 window.MISSA_TARGET_DATE = (function(){
   const kst = window.kstNow();
   const target = new Date(kst.date);
@@ -2387,8 +2396,14 @@ window.SolarTerms = (function(){
   // 그래서 절기 당일에만 배지를 보여 준다.
   const termEl = document.getElementById('missaTerm');
   if (termEl && window.SolarTerms) {
+    // ymdKst 는 '실제 순간'을 한국 달력으로 옮기는 함수다 — 절기가 드는 시각(cur.date /
+    // nxt.date)처럼 진짜 순간에만 쓴다. now 는 kstNow().date 계열이라 이미 한국 날짜를
+    // 로컬 성분으로 들고 있는 합성 Date 이므로, 여기에 다시 넣으면 이중 변환이 되어
+    // 기기가 한국보다 동쪽(호주·뉴질랜드 등 UTC+10 이상)이면 하루가 밀린다.
     const ymdKst = d => d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'});
-    const todayKst = ymdKst(now);
+    const todayKst = now.getFullYear() + '-'
+      + String(now.getMonth() + 1).padStart(2, '0') + '-'
+      + String(now.getDate()).padStart(2, '0');
     // 절기가 드는 '시각'은 하루 중 아무 때나 온다(예: 백로 23:41). 우리는 그 날
     // 하루 전체를 그 절기로 치므로, 오늘 안에 절기가 들면 낮에도 배지를 띄운다.
     const cur = window.SolarTerms.current(now);
@@ -2479,8 +2494,7 @@ window.SolarTerms = (function(){
 
 // 6월(예수성심성월)에만 예수 성심 기도 표시
 (function(){
-  const now = new Date();
-  if (now.getMonth() === 5) { // 0-indexed: 5 = 6월
+  if (window.kstNow().month === 5) { // 0-indexed: 5 = 6월
     document.getElementById('sacredHeartSection').style.display = '';
   }
 })();
@@ -2491,16 +2505,15 @@ window.SolarTerms = (function(){
   const martyrs = document.getElementById('martyrsSection');
   const wyd = document.getElementById('wydSection');
   if (!martyrs || !wyd) return;
-  const isSeptember = new Date().getMonth() === 8; // 0-indexed: 8 = 9월
+  const isSeptember = window.kstNow().month === 8; // 0-indexed: 8 = 9월
   martyrs.style.display = isSeptember ? '' : 'none';
   wyd.style.display = isSeptember ? 'none' : '';
 })();
 
 // 5월(성모성월)/10월(묵주기도성월)/11월(위령성월)에만 각 기도 표시
 (function(){
-  const now = new Date();
   const monthSections = { 4: 'marianMonthSection', 9: 'rosaryMonthSection', 10: 'allSoulsMonthSection' };
-  const id = monthSections[now.getMonth()];
+  const id = monthSections[window.kstNow().month];
   if (id) {
     const el = document.getElementById(id);
     if (el) el.style.display = '';

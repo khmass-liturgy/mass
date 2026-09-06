@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 14:44",
+  "updated": "2026-09-06 21:47",
   "cutoff": "2026-09-05",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7388",
+      "title": "전삼용 요셉 신부 / 연중 제23주간 월요일 - 나를 통제하려는 사람들의 심리",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-06",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7388",
+      "mass_date": "2026-09-07",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주간 월요일 1코린토 5,1-8 루카 6…"
+    },
+    {
+      "id": "daum_bbadaking_7926",
+      "title": "2026년 9월 7일 연중 제23주간 월요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-06",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7926",
+      "mass_date": "2026-09-07",
+      "priest": "조명연",
+      "excerpt": "어렸을 때의 일 하나가 생각납니다."
+    },
     {
       "id": "daum_catholicsb_7387",
       "title": "전삼용 요셉 신부 / 연중 제23주일 - 예수님의 이름으로 모인다는 말의 의미",

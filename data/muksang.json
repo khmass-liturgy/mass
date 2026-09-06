@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-06 21:47",
-  "cutoff": "2026-09-05",
+  "updated": "2026-09-07 01:50",
+  "cutoff": "2026-09-06",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7388",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-07",
       "priest": "조명연",
       "excerpt": "어렸을 때의 일 하나가 생각납니다."
+    },
+    {
+      "id": "daum_bbadaking_2202",
+      "title": "2026년 9월 7일 연중 제23주간 월요일",
+      "author": "박 베로니카",
+      "date": "2026-09-07",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2202",
+      "mass_date": "2026-09-07",
+      "priest": "양승국",
+      "excerpt": "올곧은 시선으로 정도(正道)를 걸어갑시다!"
     },
     {
       "id": "daum_catholicsb_7387",
@@ -88,46 +98,6 @@
       "mass_date": "2026-09-06",
       "priest": "김건태",
       "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7386",
-      "title": "전삼용 요셉 신부 / 연중 제22주간 토요일 - 화내는 사람은 화내기 전부터 화가 나 있었다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-04",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7386",
-      "mass_date": "2026-09-05",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제22주간 토요일 1코린토 4,6ㄴ-15 루카…"
-    },
-    {
-      "id": "daum_bbadaking_7924",
-      "title": "2026년 9월 5일 연중 제22주간 토요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-04",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7924",
-      "mass_date": "2026-09-05",
-      "priest": "조명연",
-      "excerpt": "어떤 자매의 가슴 아픈 이야기를 들었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2200",
-      "title": "2026년 9월 5일 연중 제22주간 토요일",
-      "author": "박 베로니카",
-      "date": "2026-09-05",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2200",
-      "mass_date": "2026-09-05",
-      "priest": "양승국",
-      "excerpt": "이 모든 고통에도 불구하고 저는 하느님을 사랑합니다!"
-    },
-    {
-      "id": "daum_bbadaking_165",
-      "title": "안식일에 일을 한다 하여 그것을 잘못된 행동으로 여기는 유다인들은 사람보다…",
-      "author": "환희 평화",
-      "date": "2026-09-05",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/165",
-      "mass_date": "2026-09-05",
-      "priest": "김경진",
-      "excerpt": ""
     }
   ]
 }

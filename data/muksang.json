@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 07:45",
+  "updated": "2026-09-06 14:44",
   "cutoff": "2026-09-05",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7387",
@@ -58,6 +58,16 @@
       "mass_date": "2026-09-06",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2137025",
+      "title": "조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-06",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137025&menu=4770",
+      "mass_date": "2026-09-06",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7386",

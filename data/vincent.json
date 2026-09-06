@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-06 21:50",
+  "updated": "2026-09-07 01:56",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "6bnDAMeMz-E",
+      "date": "2026-09-07",
+      "title": "연중 제23주간 월요일",
+      "url": "https://www.youtube.com/watch?v=6bnDAMeMz-E"
+    },
     {
       "videoId": "1T8q3s7XsbM",
       "date": "2026-09-06",
@@ -57,12 +63,6 @@
       "date": "2026-08-29",
       "title": "성 요한 세례자의 수난 기념일",
       "url": "https://www.youtube.com/watch?v=EjY55j724vg"
-    },
-    {
-      "videoId": "Jw6aVmmDcTw",
-      "date": "2026-08-28",
-      "title": "성 아우구스티노 주교 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=Jw6aVmmDcTw"
     }
   ]
 }

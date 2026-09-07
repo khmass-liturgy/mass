@@ -1693,9 +1693,14 @@ window.kstNow = function(at){
         <div class="wyd-body" style="color:#FFFFFF;">
           <div class="antiphon" id="rosaryDecades"></div>
         </div>
-        <a class="wyd-link" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
-          묵주기도 전문 보기 →
-        </a>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <a class="wyd-link" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
+            묵주기도 전문 보기 →
+          </a>
+          <a class="wyd-link" id="rosaryYoutubeLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">
+            ▶ 오늘의 신비 함께 바치기
+          </a>
+        </div>
       </div>
     </details>
   </section>
@@ -1805,6 +1810,17 @@ window.kstNow = function(at){
     ];
     var DOW = ['주일','월요일','화요일','수요일','목요일','금요일','토요일'];
 
+    // 신비별 낭독 영상 — cpbcTV(가톨릭평화방송평화신문) 공식 재생목록에서
+    // "[묵주기도] OO의 신비" 4편을 신비 이름으로 찾아 연결한다.
+    // https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR
+    var YOUTUBE_ID = {
+      '환희의 신비': '8Q4Jet8BEL4',
+      '빛의 신비':   'zWoqjhXSSPc',
+      '고통의 신비': 'IIb7jEGtRaE',
+      '영광의 신비': 'yzA8VK896u4'
+    };
+    var YOUTUBE_LIST = 'PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR';
+
     var dow = window.kstNow().dow;   // 요일도 한국 시간 기준
     var today = BY_DAY[dow];
     if (eyebrowEl) eyebrowEl.textContent = '오늘의 묵주기도 · ' + DOW[dow];
@@ -1812,6 +1828,14 @@ window.kstNow = function(at){
     listEl.innerHTML = today.decades.map(function(t, i){
       return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';
     }).join('');
+
+    // 유튜브 링크: 오늘 신비에 맞는 영상으로 바꿔 끼운다.
+    // 이름이 매핑에 없는 경우엔 마크업 기본값(재생목록 전체 링크)을 그대로 둔다.
+    var ytLink = document.getElementById('rosaryYoutubeLink');
+    var ytId = YOUTUBE_ID[today.name];
+    if (ytLink && ytId) {
+      ytLink.href = 'https://www.youtube.com/watch?v=' + ytId + '&list=' + YOUTUBE_LIST;
+    }
   })();
 
   // ── 다가오는 대축일 (D-day) ────────────────────────────────

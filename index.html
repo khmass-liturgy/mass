@@ -280,14 +280,14 @@
      좁은 화면) 기준이고, 반절 카드가 두 장 나란히 놓여 진짜 좁을 때만 아래에서 줄인다. */
   .rosary-yt-thumb-wrap{
     position:relative;flex-shrink:0;
-    width:76px;height:50px;border-radius:6px;overflow:hidden;
+    width:100px;height:66px;border-radius:7px;overflow:hidden;
     background:rgba(0,0,0,.25);
-    box-shadow:0 2px 8px rgba(0,0,0,.25);
+    box-shadow:0 2px 10px rgba(0,0,0,.3);
   }
   .rosary-yt-thumb{width:100%;height:100%;object-fit:cover;display:block;}
   .rosary-yt-play{
     position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-size:.7rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);
+    font-size:1.1rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);
     background:rgba(0,0,0,.15);
   }
   .prayer-body{
@@ -312,8 +312,8 @@
   .prayer-grid .wyd-title{font-size:1rem;}
   /* 반절 카드 두 장이 나란히 놓여 진짜 좁을 때만 썸네일을 줄인다.
      카드를 열면 가로 전체를 차지하므로(아래 is-open 규칙) 그때는 다시 키운다. */
-  .prayer-grid .rosary-yt-thumb-wrap{width:52px;height:34px;}
-  .prayer-grid .missa-section.is-open .rosary-yt-thumb-wrap{width:76px;height:50px;}
+  .prayer-grid .rosary-yt-thumb-wrap{width:72px;height:48px;}
+  .prayer-grid .missa-section.is-open .rosary-yt-thumb-wrap{width:100px;height:66px;}
   /* 펼쳤을 때만 가로 전체를 차지해 글줄이 좁고 길어지지 않게 한다 */
   .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
   /* 하나를 펼치면 다른 카드는 숨겨 펼친 기도문에만 집중하게 한다 */
@@ -369,7 +369,7 @@
     .prayer-grid{grid-template-columns:1fr;}
     /* 이 폭부터는 카드가 한 줄에 하나씩(가로 전체) 놓이므로,
        닫혀 있을 때도 두 장 나란히 놓일 때의 축소 크기를 쓸 이유가 없다 */
-    .prayer-grid .rosary-yt-thumb-wrap{width:76px;height:50px;}
+    .prayer-grid .rosary-yt-thumb-wrap{width:100px;height:66px;}
   }
 
   /* ── 소기도문 박스 ── */

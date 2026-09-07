@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-06 16:53",
+  "updated": "2026-09-07 10:00",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "EkVGN6Gg0Ac",
+      "date": "2026-09-07",
+      "liturgy": "연중 제23주간 월요일",
+      "priest": "박민준 가브리엘 신부",
+      "url": "https://www.youtube.com/watch?v=EkVGN6Gg0Ac&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "BmzD3j_GZpw",
       "date": "2026-09-06",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제21주간 화요일",
       "priest": "박희전 루케시오 신부",
       "url": "https://www.youtube.com/watch?v=cC8hp09Q2Js&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "jVOhD5mscuw",
-      "date": "2026-08-24",
-      "liturgy": "성 바르톨로메오 사도 축일",
-      "priest": "설재 안셀모 신부",
-      "url": "https://www.youtube.com/watch?v=jVOhD5mscuw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

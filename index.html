@@ -275,6 +275,19 @@
   .prayer-details[open] .prayer-arrow{
     transform:rotate(180deg);
   }
+  /* 묵주기도 카드: 펼치기 전에도 오늘의 신비 영상을 미리 보여 주는 작은 썸네일 */
+  .rosary-yt-thumb-wrap{
+    position:relative;flex-shrink:0;
+    width:60px;height:40px;border-radius:5px;overflow:hidden;
+    background:rgba(0,0,0,.25);
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  .rosary-yt-thumb{width:100%;height:100%;object-fit:cover;display:block;}
+  .rosary-yt-play{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-size:.7rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);
+    background:rgba(0,0,0,.15);
+  }
   .prayer-body{
     padding:0 28px 24px;
     border-top:1px solid rgba(201,168,76,.2);
@@ -295,6 +308,8 @@
   .prayer-grid .prayer-summary{padding:16px 18px;}
   .prayer-grid .wyd-eyebrow{font-size:.56rem;}
   .prayer-grid .wyd-title{font-size:1rem;}
+  /* 반절 카드는 폭이 좁으니 썸네일도 함께 줄여 글줄이 과하게 접히지 않게 한다 */
+  .prayer-grid .rosary-yt-thumb-wrap{width:44px;height:30px;}
   /* 펼쳤을 때만 가로 전체를 차지해 글줄이 좁고 길어지지 않게 한다 */
   .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
   /* 하나를 펼치면 다른 카드는 숨겨 펼친 기도문에만 집중하게 한다 */
@@ -1682,9 +1697,15 @@ window.kstNow = function(at){
     <details class="prayer-details">
       <summary class="prayer-summary">
         <div class="prayer-summary-inner">
-          <div>
-            <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;">오늘의 묵주기도</div>
-            <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
+          <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+            <span class="rosary-yt-thumb-wrap" id="rosaryYoutubeThumbWrap" style="display:none;" aria-hidden="true">
+              <img class="rosary-yt-thumb" id="rosaryYoutubeThumb" alt="" />
+              <span class="rosary-yt-play">▶</span>
+            </span>
+            <div style="min-width:0;">
+              <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;">오늘의 묵주기도</div>
+              <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
+            </div>
           </div>
           <span class="prayer-arrow">▼</span>
         </div>
@@ -1835,6 +1856,17 @@ window.kstNow = function(at){
     var ytId = YOUTUBE_ID[today.name];
     if (ytLink && ytId) {
       ytLink.href = 'https://www.youtube.com/watch?v=' + ytId + '&list=' + YOUTUBE_LIST;
+    }
+
+    // 카드를 펼치기 전에도 오늘의 신비 영상임을 알 수 있도록,
+    // 접힌 요약(summary) 줄에 유튜브 썸네일을 미리 보여 준다.
+    // 유튜브가 공식으로 내려주는 썸네일 주소라 별도 수집 없이 바로 쓸 수 있다.
+    var ytThumbWrap = document.getElementById('rosaryYoutubeThumbWrap');
+    var ytThumb = document.getElementById('rosaryYoutubeThumb');
+    if (ytThumbWrap && ytThumb && ytId) {
+      ytThumb.src = 'https://i.ytimg.com/vi/' + ytId + '/mqdefault.jpg';
+      ytThumb.alt = today.name + ' 낭독 영상 미리보기';
+      ytThumbWrap.style.display = '';
     }
   })();
 

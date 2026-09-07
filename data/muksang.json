@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07 07:51",
+  "updated": "2026-09-07 14:54",
   "cutoff": "2026-09-06",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7388",
@@ -48,6 +48,16 @@
       "mass_date": "2026-09-07",
       "priest": "양승국",
       "excerpt": "올곧은 시선으로 정도(正道)를 걸어갑시다!"
+    },
+    {
+      "id": "2137062",
+      "title": "조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-07",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137062&menu=4770",
+      "mass_date": "2026-09-07",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7387",

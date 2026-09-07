@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07 14:54",
+  "updated": "2026-09-07 23:58",
   "cutoff": "2026-09-06",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7389",
+      "title": "전삼용 요셉 신부 / 9월08일 복되신 동정 마리아 탄생 축일 - 인간 본성의 신분 상승은 어떻게 이루어지는가?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-07",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7389",
+      "mass_date": "2026-09-08",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 복되신 동정 마리아 탄생 축일 미카 5,1-4ㄱ 또…"
+    },
+    {
+      "id": "daum_bbadaking_7927",
+      "title": "2026년 9월 8일 복되신 동정 마리아 탄생 축일",
+      "author": "빠다킹신부",
+      "date": "2026-09-07",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7927",
+      "mass_date": "2026-09-08",
+      "priest": "조명연",
+      "excerpt": "예로부터 잘 알려진 희귀 광물이 있습니다."
+    },
     {
       "id": "daum_catholicsb_7388",
       "title": "전삼용 요셉 신부 / 연중 제23주간 월요일 - 나를 통제하려는 사람들의 심리",
@@ -51,7 +71,7 @@
     },
     {
       "id": "2137062",
-      "title": "조욱현 신부님_김건태 신부님 묵상",
+      "title": "조욱현 신부님_김건태 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-09-07",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137062&menu=4770",

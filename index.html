@@ -275,10 +275,12 @@
   .prayer-details[open] .prayer-arrow{
     transform:rotate(180deg);
   }
-  /* 묵주기도 카드: 펼치기 전에도 오늘의 신비 영상을 미리 보여 주는 작은 썸네일 */
+  /* 묵주기도 카드: 펼치기 전에도 오늘의 신비 영상을 미리 보여 주는 작은 썸네일.
+     기본값은 카드가 가로로 넓게 펼쳐진 상태(카드를 열었을 때 · 한 줄에 한 장뿐인
+     좁은 화면) 기준이고, 반절 카드가 두 장 나란히 놓여 진짜 좁을 때만 아래에서 줄인다. */
   .rosary-yt-thumb-wrap{
     position:relative;flex-shrink:0;
-    width:60px;height:40px;border-radius:5px;overflow:hidden;
+    width:76px;height:50px;border-radius:6px;overflow:hidden;
     background:rgba(0,0,0,.25);
     box-shadow:0 2px 8px rgba(0,0,0,.25);
   }
@@ -308,8 +310,10 @@
   .prayer-grid .prayer-summary{padding:16px 18px;}
   .prayer-grid .wyd-eyebrow{font-size:.56rem;}
   .prayer-grid .wyd-title{font-size:1rem;}
-  /* 반절 카드는 폭이 좁으니 썸네일도 함께 줄여 글줄이 과하게 접히지 않게 한다 */
-  .prayer-grid .rosary-yt-thumb-wrap{width:44px;height:30px;}
+  /* 반절 카드 두 장이 나란히 놓여 진짜 좁을 때만 썸네일을 줄인다.
+     카드를 열면 가로 전체를 차지하므로(아래 is-open 규칙) 그때는 다시 키운다. */
+  .prayer-grid .rosary-yt-thumb-wrap{width:52px;height:34px;}
+  .prayer-grid .missa-section.is-open .rosary-yt-thumb-wrap{width:76px;height:50px;}
   /* 펼쳤을 때만 가로 전체를 차지해 글줄이 좁고 길어지지 않게 한다 */
   .prayer-grid .missa-section.is-open{grid-column:1 / -1;}
   /* 하나를 펼치면 다른 카드는 숨겨 펼친 기도문에만 집중하게 한다 */
@@ -363,6 +367,9 @@
   .prayer-grid .missa-section.is-open .wyd-title{font-size:1.2rem;}
   @media (max-width:380px){
     .prayer-grid{grid-template-columns:1fr;}
+    /* 이 폭부터는 카드가 한 줄에 하나씩(가로 전체) 놓이므로,
+       닫혀 있을 때도 두 장 나란히 놓일 때의 축소 크기를 쓸 이유가 없다 */
+    .prayer-grid .rosary-yt-thumb-wrap{width:76px;height:50px;}
   }
 
   /* ── 소기도문 박스 ── */

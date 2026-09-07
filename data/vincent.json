@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-07 14:58",
+  "updated": "2026-09-08 00:00",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "gRHI8g4eKKE",
+      "date": "2026-09-08",
+      "title": "복되신 동정 마리아 탄생 축일",
+      "url": "https://www.youtube.com/watch?v=gRHI8g4eKKE"
+    },
     {
       "videoId": "6bnDAMeMz-E",
       "date": "2026-09-07",
@@ -57,12 +63,6 @@
       "date": "2026-08-30",
       "title": "연중 제22주일",
       "url": "https://www.youtube.com/watch?v=n4q-dPeGXFA"
-    },
-    {
-      "videoId": "EjY55j724vg",
-      "date": "2026-08-29",
-      "title": "성 요한 세례자의 수난 기념일",
-      "url": "https://www.youtube.com/watch?v=EjY55j724vg"
     }
   ]
 }

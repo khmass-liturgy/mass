@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-07 23:58",
-  "cutoff": "2026-09-06",
+  "updated": "2026-09-08 08:24",
+  "cutoff": "2026-09-07",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7389",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-08",
       "priest": "조명연",
       "excerpt": "예로부터 잘 알려진 희귀 광물이 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_2203",
+      "title": "2026년 9월 8일 복되신 동정 마리아 탄생 축일",
+      "author": "박 베로니카",
+      "date": "2026-09-08",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2203",
+      "mass_date": "2026-09-08",
+      "priest": "양승국",
+      "excerpt": "짙은 어둠 속에서도 기다리고 인내하고 희망하며..."
     },
     {
       "id": "daum_catholicsb_7388",
@@ -76,56 +86,6 @@
       "date": "2026-09-07",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137062&menu=4770",
       "mass_date": "2026-09-07",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7387",
-      "title": "전삼용 요셉 신부 / 연중 제23주일 - 예수님의 이름으로 모인다는 말의 의미",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-05",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7387",
-      "mass_date": "2026-09-06",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주일 에제키엘 33,7-9 로마 13,8…"
-    },
-    {
-      "id": "daum_bbadaking_7925",
-      "title": "2026년 9월 6일 연중 제23주일",
-      "author": "빠다킹신부",
-      "date": "2026-09-05",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7925",
-      "mass_date": "2026-09-06",
-      "priest": "조명연",
-      "excerpt": "1940년대 오스트리아의 정신분석학자 ‘르네 스피츠’는 감옥에서 태어나서 길…"
-    },
-    {
-      "id": "daum_bbadaking_2201",
-      "title": "2026년 9월 6일 연중 제23주일",
-      "author": "박 베로니카",
-      "date": "2026-09-06",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2201",
-      "mass_date": "2026-09-06",
-      "priest": "양승국",
-      "excerpt": "아직도 이러고 있습니다!"
-    },
-    {
-      "id": "daum_bbadaking_166",
-      "title": "이웃 사랑은 감상적인 느낌으로 베푸는 시혜가 아닙니다.",
-      "author": "환희 평화",
-      "date": "2026-09-06",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/166",
-      "mass_date": "2026-09-06",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137025",
-      "title": "조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-06",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137025&menu=4770",
-      "mass_date": "2026-09-06",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

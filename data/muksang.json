@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-08 22:28",
-  "cutoff": "2026-09-07",
+  "updated": "2026-09-09 02:51",
+  "cutoff": "2026-09-08",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7390",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-09",
       "priest": "조명연",
       "excerpt": "아무것도 당신을 흔들지 못하게 하십시오./ 아무것도 당신을 두렵게 하지 마십…"
+    },
+    {
+      "id": "daum_bbadaking_2204",
+      "title": "2026년 9월 9일 연중 제23주간 수요일",
+      "author": "박 베로니카",
+      "date": "2026-09-08",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2204",
+      "mass_date": "2026-09-09",
+      "priest": "양승국",
+      "excerpt": "지금 행복하십니까?"
     },
     {
       "id": "daum_catholicsb_7389",
@@ -76,46 +86,6 @@
       "date": "2026-09-08",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137095&menu=4770",
       "mass_date": "2026-09-08",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7388",
-      "title": "전삼용 요셉 신부 / 연중 제23주간 월요일 - 나를 통제하려는 사람들의 심리",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-06",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7388",
-      "mass_date": "2026-09-07",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주간 월요일 1코린토 5,1-8 루카 6…"
-    },
-    {
-      "id": "daum_bbadaking_7926",
-      "title": "2026년 9월 7일 연중 제23주간 월요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-06",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7926",
-      "mass_date": "2026-09-07",
-      "priest": "조명연",
-      "excerpt": "어렸을 때의 일 하나가 생각납니다."
-    },
-    {
-      "id": "daum_bbadaking_2202",
-      "title": "2026년 9월 7일 연중 제23주간 월요일",
-      "author": "박 베로니카",
-      "date": "2026-09-07",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2202",
-      "mass_date": "2026-09-07",
-      "priest": "양승국",
-      "excerpt": "올곧은 시선으로 정도(正道)를 걸어갑시다!"
-    },
-    {
-      "id": "2137062",
-      "title": "조욱현 신부님_김건태 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-09-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137062&menu=4770",
-      "mass_date": "2026-09-07",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

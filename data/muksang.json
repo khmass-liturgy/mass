@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08 14:47",
+  "updated": "2026-09-08 22:28",
   "cutoff": "2026-09-07",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7390",
+      "title": "전삼용 요셉 신부 / 연중 제23주간 수요일 - 감사하려고 해도 잘 안 되는 이유",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-08",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7390",
+      "mass_date": "2026-09-09",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주간 수요일 1코린토 7,25-31 루카…"
+    },
+    {
+      "id": "daum_bbadaking_7928",
+      "title": "2026년 9월 9일 연중 제23주간 수요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-08",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7928",
+      "mass_date": "2026-09-09",
+      "priest": "조명연",
+      "excerpt": "아무것도 당신을 흔들지 못하게 하십시오./ 아무것도 당신을 두렵게 하지 마십…"
+    },
     {
       "id": "daum_catholicsb_7389",
       "title": "전삼용 요셉 신부 / 9월08일 복되신 동정 마리아 탄생 축일 - 인간 본성의 신분 상승은 어떻게 이루어지는가?",

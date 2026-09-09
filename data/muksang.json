@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09 14:51",
+  "updated": "2026-09-09 22:38",
   "cutoff": "2026-09-08",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7391",
+      "title": "전삼용 요셉 신부 / 연중 제23주간 목요일 - 무엇이 원수를 만드는가?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-09",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7391",
+      "mass_date": "2026-09-10",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제23주간 목요일 1코린토 8,1ㄷ-7.11-…"
+    },
+    {
+      "id": "daum_bbadaking_7929",
+      "title": "2026년 9월 10일 연중 제23주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-09",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7929",
+      "mass_date": "2026-09-10",
+      "priest": "조명연",
+      "excerpt": "학창 시절에 여행을 많이 다녔습니다."
+    },
     {
       "id": "daum_catholicsb_7390",
       "title": "전삼용 요셉 신부 / 연중 제23주간 수요일 - 감사하려고 해도 잘 안 되는 이유",

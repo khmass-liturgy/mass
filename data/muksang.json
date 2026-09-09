@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09 08:17",
+  "updated": "2026-09-09 14:51",
   "cutoff": "2026-09-08",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7390",
@@ -48,6 +48,26 @@
       "mass_date": "2026-09-09",
       "priest": "양승국",
       "excerpt": "지금 행복하십니까?"
+    },
+    {
+      "id": "daum_bbadaking_167",
+      "title": "반드시 있어야 할 사람, 물건 등등이 없는 허전함 일이 뜻대로 되지 않는 허…",
+      "author": "환희 평화",
+      "date": "2026-09-09",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/167",
+      "mass_date": "2026-09-09",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2137145",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-09",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137145&menu=4770",
+      "mass_date": "2026-09-09",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7389",

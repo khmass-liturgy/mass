@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10 02:44",
+  "updated": "2026-09-10 08:07",
   "cutoff": "2026-09-09",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7391",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-10",
       "priest": "조명연",
       "excerpt": "학창 시절에 여행을 많이 다녔습니다."
+    },
+    {
+      "id": "daum_bbadaking_2205",
+      "title": "2026년 9월 10일 연중 제23주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-09-10",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2205",
+      "mass_date": "2026-09-10",
+      "priest": "양승국",
+      "excerpt": "선은 죽지 않습니다."
     },
     {
       "id": "daum_catholicsb_7390",

@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-11 02:41",
+  "updated": "2026-09-11 08:09",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "x3zAkBIGzRA",
+      "date": "2026-09-11",
+      "liturgy": "연중 제23주간 금요일",
+      "priest": "박원구 라파엘 신부",
+      "url": "https://www.youtube.com/watch?v=x3zAkBIGzRA&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "NT74q-l6vho",
       "date": "2026-09-10",
@@ -95,13 +102,6 @@
       "liturgy": "성 요한 세례자의 수난 기념일",
       "priest": "이창준 세례자요한 신부",
       "url": "https://www.youtube.com/watch?v=CHUa9_3TOEU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "HKTHf9Th7do",
-      "date": "2026-08-28",
-      "liturgy": "성 아우구스티노 주교 학자 기념일",
-      "priest": "박유민 세례자요한",
-      "url": "https://www.youtube.com/watch?v=HKTHf9Th7do&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11 02:37",
+  "updated": "2026-09-11 08:03",
   "cutoff": "2026-09-10",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7392",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-11",
       "priest": "조명연",
       "excerpt": "학창 시절에 다른 사람의 외모를 비하하는 별명을 부르는 친구가 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2206",
+      "title": "2026년 9월 11일 연중 제23주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-09-11",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2206",
+      "mass_date": "2026-09-11",
+      "priest": "양승국",
+      "excerpt": "돌아보니 모든 것이 다 틀린 것이었습니다!"
     },
     {
       "id": "daum_catholicsb_7391",

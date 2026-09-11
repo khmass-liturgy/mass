@@ -1,0 +1,42 @@
+name: Update 오늘의 떼제 음악
+
+on:
+  schedule:
+    # UTC 기준 → KST 23:03 (하루 1회)
+    # 성가 목록은 가톨릭신문 기획특집 카드처럼 하루에 한 곡을 순서대로
+    # 돌려 보여 주는 방식이라, 목록이 하루 중간에 바뀌면 그날 보여주던
+    # 곡이 도중에 달라진다. 그래서 하루의 끝으로 갱신을 몰아 둔다.
+    # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '3 14 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 떼제 성가 목록
+        run: python scripts/fetch_taize.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/taize.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update 오늘의 떼제 음악 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            git push
+          fi

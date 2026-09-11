@@ -1,0 +1,49 @@
+name: Update parish events
+
+on:
+  schedule:
+    # UTC 기준 → KST 05:47 (하루 1회)
+    # 지금은 sd.uca.or.kr(의정부교구) 43곳만 대상이라 부담이 적다.
+    # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '47 20 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch parish events (sd.uca.or.kr only for now)
+        run: python scripts/fetch_parish_events.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/parish_events.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update parish events ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
+          fi

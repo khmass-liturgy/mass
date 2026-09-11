@@ -132,6 +132,20 @@
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:#F5EFE3;margin-bottom:6px;line-height:1.4;}
   .missa-sub{font-size:.85rem;color:#C7B8D8;}
   .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold-lt);font-weight:600;}
+  /* 매일미사 카드 하단의 '오늘의 축일' — 카드 전체는 매일미사 사이트로 열리는
+     링크이므로, <a> 를 겹쳐 넣을 수 없다. 이 자리만 클릭을 가로채 축일
+     달력(feastday.html)으로 보낸다. 카드 나머지는 새 탭으로 열리지만
+     여기는 원래 세례명 축일 달력 카드와 같은 방식(같은 탭)으로 이동한다. */
+  .missa-feast{
+    margin-top:12px; padding-top:10px;
+    border-top:1px solid rgba(255,255,255,.15);
+    display:flex; align-items:center; gap:6px;
+    font-size:.8rem; color:var(--gold-lt);
+    cursor:pointer; position:relative; z-index:1;
+  }
+  .missa-feast:hover{color:var(--cream);}
+  .missa-feast .missa-feast-arrow{margin-left:auto; opacity:.6; transition:transform .15s;}
+  .missa-feast:hover .missa-feast-arrow{transform:translateX(3px); opacity:1;}
 
   .pope-card{display:none;gap:16px;align-items:flex-start;background:linear-gradient(135deg,#fff 0%,#FBF7EE 100%);
     border:1px solid var(--gold);border-radius:16px;padding:20px;text-decoration:none;
@@ -570,15 +584,6 @@
     .lauds-grid{grid-template-columns:1fr;}
   }
 
-  /* ── 세례명 축일 달력 카드 ── */
-  .feast-card{background:linear-gradient(135deg,#5B1F2E 0%,#7E2F42 100%);box-shadow:0 6px 22px rgba(91,31,46,.25);}
-  .feast-card:hover{box-shadow:0 12px 32px rgba(91,31,46,.35);}
-  .feast-card::before{
-    background:radial-gradient(circle at 92% -20%, rgba(201,168,76,.22), transparent 55%),
-               radial-gradient(circle at -5% 120%, rgba(201,168,76,.10), transparent 50%);
-  }
-  .feast-card .muksang-all-eyebrow{color:var(--gold);}
-  .feast-card .muksang-all-sub{color:#E3C9CF;}
   /* ── 듣는 소금항아리 카드 ── */
   .saltjar-card{background:linear-gradient(135deg,#5C4423 0%,#8A6A34 100%);box-shadow:0 6px 22px rgba(92,68,35,.25);}
   .saltjar-card:hover{box-shadow:0 12px 32px rgba(92,68,35,.35);}
@@ -668,10 +673,48 @@ window.kstNow = function(at){
         <div class="missa-title">오늘의 매일미사 보기</div>
         <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
         <div class="missa-special" id="missaSpecial" style="display:none;"></div>
+        <div class="missa-feast" id="missaFeast" role="link" tabindex="0" aria-label="세례명 축일 달력으로 이동">
+          <span aria-hidden="true">📅</span>
+          <span id="missaFeastText">세례명 축일 달력 보기</span>
+          <span class="missa-feast-arrow" aria-hidden="true">→</span>
+        </div>
       </div>
       <div class="missa-arrow">→</div>
     </a>
   </section>
+
+  <script>
+  // 매일미사 카드 하단의 '오늘의 축일'.
+  // 카드 전체(<a>)와 별도로 이 자리만 눌렀을 때 축일 달력으로 보낸다 —
+  // <a> 안에 <a>를 또 넣을 수 없어, 클릭을 가로채 직접 이동시키는 방식을 쓴다.
+  (function(){
+    var el = document.getElementById('missaFeast');
+    var textEl = document.getElementById('missaFeastText');
+    if (!el || !textEl) return;
+
+    function goToCalendar(e){
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = 'feastday.html';
+    }
+    el.addEventListener('click', goToCalendar);
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') goToCalendar(e);
+    });
+
+    fetch('feast_days.json', {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        var list = d.saints || d;
+        var kst = window.kstNow();
+        var k = ('0'+(kst.month+1)).slice(-2)+'-'+('0'+kst.day).slice(-2);
+        var names = [];
+        for (var i = 0; i < list.length; i++) if (list[i].date === k) names.push(list[i].name);
+        if (names.length) textEl.textContent = '오늘의 축일 · ' + names.join(' · ');
+      })
+      .catch(function(){ /* 못 불러와도 기본 문구(달력으로 가는 안내)는 그대로 둔다 */ });
+  })();
+  </script>
 
   <!-- ── 이달의 교황님 기도지향 (data/pope_intentions.json 에서 자동으로 불러옴) ── -->
   <section class="missa-section">
@@ -792,44 +835,6 @@ window.kstNow = function(at){
     </script>
   </section>
   </div>
-
-  <!-- ── 세례명 축일 달력 카드 ── -->
-  <section class="missa-section">
-    <a class="muksang-all-card feast-card" href="feastday.html">
-      <div class="muksang-all-icon">
-        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <rect x="2" y="4" width="20" height="18" rx="2.5" fill="#5B1F2E"/>
-          <rect x="2" y="4" width="20" height="5" rx="2.5" fill="#3E1520"/>
-          <rect x="6" y="1.5" width="2.4" height="5" rx="1.2" fill="#3E1520"/>
-          <rect x="15.6" y="1.5" width="2.4" height="5" rx="1.2" fill="#3E1520"/>
-          <path d="M11 11 h2 v3 h3 v2 h-3 v4 h-2 v-4 h-3 v-2 h3 z" fill="#F2E4C8"/>
-        </svg>
-      </div>
-      <div class="muksang-all-body">
-        <div class="muksang-all-eyebrow">Feast Day Calendar</div>
-        <div class="muksang-all-title">세례명 축일 달력</div>
-        <div class="muksang-all-sub" id="feastTodaySub">내 세례명의 축일을 찾아 매년 알림으로 받아보세요</div>
-      </div>
-      <div class="muksang-all-arrow">→</div>
-    </a>
-    <script>
-    (function(){
-      var el = document.getElementById('feastTodaySub');
-      if (!el) return;
-      fetch('feast_days.json', {cache:'no-store'})
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          var list = d.saints || d;
-          var kst = window.kstNow();
-          var k = ('0'+(kst.month+1)).slice(-2)+'-'+('0'+kst.day).slice(-2);
-          var names = [];
-          for (var i = 0; i < list.length; i++) if (list[i].date === k) names.push(list[i].name);
-          if (names.length) el.textContent = '오늘의 축일 · ' + names.join(' · ');
-        })
-        .catch(function(){});
-    })();
-    </script>
-  </section>
 
   <!-- ── 복되신 동정 마리아 신심미사 (매월 첫째 토요일에만 표시) ── -->
   <section class="missa-section" id="marianCard" style="display:none;">

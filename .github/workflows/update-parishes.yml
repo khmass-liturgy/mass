@@ -38,5 +38,16 @@ jobs:
             echo "No changes."
           else
             git commit -m "chore: update parish directory ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
-            git push
+            # 전국 스캔이라 최대 60분 걸리는 동안 다른 워크플로가 먼저 push하면
+            # 거부된다. 그 사이 새로 들어온 커밋과는 파일이 겹칠 일이 없으니
+            # (다른 워크플로는 각자 다른 data/*.json만 건드린다) rebase 후 재시도한다.
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
           fi

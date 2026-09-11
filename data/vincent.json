@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-11 14:51",
+  "updated": "2026-09-11 22:29",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "e6z-PVa3zkM",
+      "date": "2026-09-12",
+      "title": "연중 제23주간 토요일",
+      "url": "https://www.youtube.com/watch?v=e6z-PVa3zkM"
+    },
     {
       "videoId": "lKUxiq7CDyM",
       "date": "2026-09-11",
@@ -57,12 +63,6 @@
       "date": "2026-09-03",
       "title": "성 대 그레고리오 교황 학자 기념일",
       "url": "https://www.youtube.com/watch?v=wS88IjEDPYI"
-    },
-    {
-      "videoId": "BjBYyenEpkE",
-      "date": "2026-09-02",
-      "title": "연중 제22주간 수요일",
-      "url": "https://www.youtube.com/watch?v=BjBYyenEpkE"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12 02:41",
+  "updated": "2026-09-12 08:09",
   "cutoff": "2026-09-11",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7393",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-12",
       "priest": "조명연",
       "excerpt": "행복한 사람의 시간은 보통 사람과 대부분 다르지 않습니다."
+    },
+    {
+      "id": "daum_bbadaking_2207",
+      "title": "2026년 9월 12일 연중 제23주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-09-12",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2207",
+      "mass_date": "2026-09-12",
+      "priest": "양승국",
+      "excerpt": "인간을 향한 하느님의 가장 구체적인 현존방식, 용서!"
+    },
+    {
+      "id": "daum_bbadaking_169",
+      "title": "복음은 그리스도인에게 많은 것을 요구합니다.",
+      "author": "환희 평화",
+      "date": "2026-09-12",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/169",
+      "mass_date": "2026-09-12",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7392",

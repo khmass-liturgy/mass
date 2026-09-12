@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13 01:54",
+  "updated": "2026-09-13 07:55",
   "cutoff": "2026-09-12",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7394",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-13",
       "priest": "조명연",
       "excerpt": "예전에 신학생 때의 한 아이가 생각이 납니다."
+    },
+    {
+      "id": "daum_bbadaking_2208",
+      "title": "2026년 9월 13일 연중 제24주일",
+      "author": "박 베로니카",
+      "date": "2026-09-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2208",
+      "mass_date": "2026-09-13",
+      "priest": "양승국",
+      "excerpt": "나에게는 그리스도가 생의 전부입니다!"
+    },
+    {
+      "id": "daum_bbadaking_170",
+      "title": "우리 자신을 예수님으로 ‘채우고’ 또 ‘채우고’ 그럴려면 나를 ‘비우고’ 또…",
+      "author": "환희 평화",
+      "date": "2026-09-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/170",
+      "mass_date": "2026-09-13",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7393",

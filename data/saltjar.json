@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12 16:54",
+  "updated": "2026-09-12 21:50",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "jDYzzeJjUOA",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=jDYzzeJjUOA",
   "count": 10,
   "videos": [
+    {
+      "videoId": "a8b2X6WegQc",
+      "date": "2026-09-13",
+      "label": "2026년 9월 13일연중 제24주일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월13일 연중 제24주일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=a8b2X6WegQc"
+    },
     {
       "videoId": "jDYzzeJjUOA",
       "date": "2026-09-12",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월4일 연중 제22주간 금요일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=VVZXK7YJAaE"
-    },
-    {
-      "videoId": "YzGr_gMKRpo",
-      "date": "2026-09-03",
-      "label": "2026년 9월 3일성 대 그레고리오 교황 학자 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월3일 성 대 그레고리오 교황 학자 기념일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=YzGr_gMKRpo"
     }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-13 14:59",
+  "updated": "2026-09-13 22:46",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "BzfHSdgVFNM",
+      "date": "2026-09-14",
+      "title": "성 십자가 현양 축일",
+      "url": "https://www.youtube.com/watch?v=BzfHSdgVFNM"
+    },
     {
       "videoId": "AvpfxNmvILM",
       "date": "2026-09-13",
@@ -57,12 +63,6 @@
       "date": "2026-09-05",
       "title": "복되신 동정 마리아 신심 미사",
       "url": "https://www.youtube.com/watch?v=0bDauGfK5ic"
-    },
-    {
-      "videoId": "6yAm4ygJeZ0",
-      "date": "2026-09-04",
-      "title": "연중 제22주간 금요일",
-      "url": "https://www.youtube.com/watch?v=6yAm4ygJeZ0"
     }
   ]
 }

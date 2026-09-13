@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-14 02:24",
+  "updated": "2026-09-14 08:09",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "70IMpEnwZT4",
+      "date": "2026-09-14",
+      "liturgy": "성 십자가 현양 축일",
+      "priest": "김정일 안드레아 신부",
+      "url": "https://www.youtube.com/watch?v=70IMpEnwZT4&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "Cb9_yIPkGtg",
       "date": "2026-09-13",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제22주간 화요일 (피조물 보호를 위한 기도의 날)",
       "priest": "오형훈 미카엘 신부",
       "url": "https://www.youtube.com/watch?v=_uy17-qo7bk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "S8SvJl2Y7wk",
-      "date": "2026-08-31",
-      "liturgy": "연중 제22주간 월요일",
-      "priest": "이용권 안드레아 신부",
-      "url": "https://www.youtube.com/watch?v=S8SvJl2Y7wk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

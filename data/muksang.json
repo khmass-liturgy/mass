@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14 02:21",
+  "updated": "2026-09-14 08:04",
   "cutoff": "2026-09-13",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7395",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-14",
       "priest": "조명연",
       "excerpt": "매사에 부정적 생각으로 고민하던 남자가 숲속을 걷고 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2209",
+      "title": "2026년 9월 14일 성 십자가 현양 축일",
+      "author": "박 베로니카",
+      "date": "2026-09-14",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2209",
+      "mass_date": "2026-09-14",
+      "priest": "양승국",
+      "excerpt": "존재한다는 것을 하느님 사랑을 받고 있다는 것!"
     },
     {
       "id": "daum_catholicsb_7394",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15 00:50",
+  "updated": "2026-09-15 08:48",
   "cutoff": "2026-09-14",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7396",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-15",
       "priest": "조명연",
       "excerpt": "올 초에 있었던 일입니다."
+    },
+    {
+      "id": "daum_bbadaking_2210",
+      "title": "2026년 9월 15일 고통의 성모 마리아 기념일",
+      "author": "박 베로니카",
+      "date": "2026-09-15",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2210",
+      "mass_date": "2026-09-15",
+      "priest": "양승국",
+      "excerpt": "고통 속에서도 충만한 기쁨에 고무되어..."
+    },
+    {
+      "id": "daum_bbadaking_171",
+      "title": "율법의 희생양이 되어 십자가를 지고 가시는 예수님 곁에는 성모님께서 함께하십…",
+      "author": "환희 평화",
+      "date": "2026-09-15",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/171",
+      "mass_date": "2026-09-15",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7395",

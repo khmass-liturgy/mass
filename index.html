@@ -2607,13 +2607,7 @@ window.SolarTerms = (function(){
 
   // dow: 0=일,1=월,2=화,3=수,4=목,5=금,6=토 / weekRange: 그 달의 며칠부터 며칠까지가 "몇째 주"인지
   const schedule = [
-    { dow: 5, weekRange: [1, 7],   text: '🔹 오늘 19:30 성시간 미사가 있습니다 (매월 첫째 금)' },
     { dow: 6, weekRange: [1, 7],   text: '🔹 오늘 10:00 성모신심 미사가 있습니다 (매월 첫째 토)' },
-    { dow: 4, weekRange: [8, 14],  text: '🔹 오늘 10:00 성소 미사가 있습니다 (매월 둘째 목)' },
-    { dow: 5, weekRange: [8, 14],  text: '🔹 오늘 10:00 추모 미사가 있습니다 (매월 둘째 금)' },
-    { dow: 6, weekRange: [8, 14],  text: '🔹 오늘 10:00 민족화해 미사가 있습니다 (매월 둘째 토)' },
-    { dow: 3, weekRange: [8, 14],  text: '🔹 오늘 10:00 천사 미사가 있습니다 (매월 둘째 수)' },
-    { dow: 6, weekRange: [22, 28], text: '🔹 오늘 10:00 찬미 미사가 있습니다 (매월 넷째 토)' },
   ];
 
   const match = schedule.find(function (s) {

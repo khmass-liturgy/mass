@@ -49,6 +49,22 @@ NON_SONG_RE = re.compile(
     re.IGNORECASE,
 )
 
+# 아랍어 성가는 제목이 아랍 문자가 아니라 로마자 음역(예: 'Ehfazny Rabby')으로
+# 올라와 있어서, 유니코드 스크립트 판별로는 걸러지지 않는다. 'Remain With Me'
+# 앨범에 프랑스어·영어·스페인어 성가와 섞여 있는 아랍어 성가 제목을 직접
+# 나열해 둔다 — 화면(index.html)에서 한국어 사용자에게 매일 하나씩 보여 줄 때
+# 아랍어 성가가 나오지 않도록 하기 위함이다.
+ARABIC_TITLES = {
+    "Ehfazny Rabby",
+    "Nasjoudou Laka Ya Rabb",
+    "Haloumma Ya Rouh Allah",
+    "Haloummou Ya Shou'bou",
+    "Sayyidy Anta Liya'lqouwwa",
+    "Alzalamou Laysa Zalaman",
+    "Omkouthou Wa'sharou Ma'y",
+    "Abana Fy Yadayka",
+}
+
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "taize.json"
 
@@ -142,6 +158,8 @@ def fetch_album_tracks(playlist_id: str, album_title: str) -> list:
         if not video_id or not title:
             continue
         if NON_SONG_RE.search(title):
+            continue
+        if title in ARABIC_TITLES:
             continue
         secs = duration_of(lv)
         if secs is None or not (MIN_SECONDS <= secs <= MAX_SECONDS):

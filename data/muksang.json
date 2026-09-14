@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-14 15:00",
-  "cutoff": "2026-09-13",
+  "updated": "2026-09-15 00:50",
+  "cutoff": "2026-09-14",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
+    {
+      "id": "daum_catholicsb_7396",
+      "title": "전삼용 요셉 신부 / 9월15일 고통의 성모 마리아 기념일 - 고통은 의미 있다고 믿을 때만 의미 있다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-14",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7396",
+      "mass_date": "2026-09-15",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 고통의 성모 마리아 기념일 히브리 5,7-9 요한…"
+    },
+    {
+      "id": "daum_bbadaking_7934",
+      "title": "2026년 9월 15일 고통의 성모 마리아 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-09-14",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7934",
+      "mass_date": "2026-09-15",
+      "priest": "조명연",
+      "excerpt": "올 초에 있었던 일입니다."
+    },
     {
       "id": "daum_catholicsb_7395",
       "title": "전삼용 요셉 신부 / 9월14일 가해 성 십자가 현양 축일 - 명장은 숙련된 자기만의 무기가 있다",
@@ -56,56 +76,6 @@
       "date": "2026-09-14",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137367&menu=4770",
       "mass_date": "2026-09-14",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7394",
-      "title": "전삼용 요셉 신부 / 가해 연중 제24주일 - 용서? 아침에 고행하라!",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-12",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7394",
-      "mass_date": "2026-09-13",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제24주일 집회서 27,30―28,7 로마 1…"
-    },
-    {
-      "id": "daum_bbadaking_7932",
-      "title": "2026년 9월 13일 연중 제24주일",
-      "author": "빠다킹신부",
-      "date": "2026-09-12",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7932",
-      "mass_date": "2026-09-13",
-      "priest": "조명연",
-      "excerpt": "예전에 신학생 때의 한 아이가 생각이 납니다."
-    },
-    {
-      "id": "daum_bbadaking_2208",
-      "title": "2026년 9월 13일 연중 제24주일",
-      "author": "박 베로니카",
-      "date": "2026-09-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2208",
-      "mass_date": "2026-09-13",
-      "priest": "양승국",
-      "excerpt": "나에게는 그리스도가 생의 전부입니다!"
-    },
-    {
-      "id": "daum_bbadaking_170",
-      "title": "우리 자신을 예수님으로 ‘채우고’ 또 ‘채우고’ 그럴려면 나를 ‘비우고’ 또…",
-      "author": "환희 평화",
-      "date": "2026-09-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/170",
-      "mass_date": "2026-09-13",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137325",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-13",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137325&menu=4770",
-      "mass_date": "2026-09-13",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

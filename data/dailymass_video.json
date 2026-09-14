@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-15 00:53",
+  "updated": "2026-09-15 08:51",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "Y3OlX2FvBTw",
+      "date": "2026-09-15",
+      "liturgy": "고통의 성모 마리아 기념일",
+      "priest": "구대희 데니스 신부",
+      "url": "https://www.youtube.com/watch?v=Y3OlX2FvBTw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "70IMpEnwZT4",
       "date": "2026-09-14",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제22주간 수요일",
       "priest": "정준민 다니엘 신부",
       "url": "https://www.youtube.com/watch?v=LNbhcn3IZCo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "_uy17-qo7bk",
-      "date": "2026-09-01",
-      "liturgy": "연중 제22주간 화요일 (피조물 보호를 위한 기도의 날)",
-      "priest": "오형훈 미카엘 신부",
-      "url": "https://www.youtube.com/watch?v=_uy17-qo7bk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-14 15:07",
+  "updated": "2026-09-15 00:51",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "7_uTnJJ6ags",
+      "date": "2026-09-15",
+      "title": "고통의 성모 마리아 기념일",
+      "url": "https://www.youtube.com/watch?v=7_uTnJJ6ags"
+    },
     {
       "videoId": "BzfHSdgVFNM",
       "date": "2026-09-14",
@@ -57,12 +63,6 @@
       "date": "2026-09-06",
       "title": "연중 제23주일",
       "url": "https://www.youtube.com/watch?v=1T8q3s7XsbM"
-    },
-    {
-      "videoId": "0bDauGfK5ic",
-      "date": "2026-09-05",
-      "title": "복되신 동정 마리아 신심 미사",
-      "url": "https://www.youtube.com/watch?v=0bDauGfK5ic"
     }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-15 17:35",
+  "updated": "2026-09-15 23:17",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "2QHUo7EWWHE",
+      "date": "2026-09-16",
+      "title": "성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=2QHUo7EWWHE"
+    },
     {
       "videoId": "7_uTnJJ6ags",
       "date": "2026-09-15",
@@ -57,12 +63,6 @@
       "date": "2026-09-07",
       "title": "연중 제23주간 월요일",
       "url": "https://www.youtube.com/watch?v=6bnDAMeMz-E"
-    },
-    {
-      "videoId": "1T8q3s7XsbM",
-      "date": "2026-09-06",
-      "title": "연중 제23주일",
-      "url": "https://www.youtube.com/watch?v=1T8q3s7XsbM"
     }
   ]
 }

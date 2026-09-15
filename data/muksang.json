@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15 15:00",
+  "updated": "2026-09-15 23:16",
   "cutoff": "2026-09-14",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7397",
+      "title": "전삼용 요셉 신부 / 가해 연중 제24주간 수요일 - 어리석음의 자녀와 지혜의 자녀",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-15",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7397",
+      "mass_date": "2026-09-16",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제24주간 수요일 루카 7,31-35 어리석음…"
+    },
+    {
+      "id": "daum_bbadaking_7935",
+      "title": "2026년 9월 16일 성 고르넬리오 교황과 청 치프리아노 주교 순교자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-09-15",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7935",
+      "mass_date": "2026-09-16",
+      "priest": "조명연",
+      "excerpt": "15세기, 16세기에 영국은 범죄 없는 깨끗한 나라를 만들기 위해 고민하다가…"
+    },
     {
       "id": "daum_catholicsb_7396",
       "title": "전삼용 요셉 신부 / 9월15일 고통의 성모 마리아 기념일 - 고통은 의미 있다고 믿을 때만 의미 있다",

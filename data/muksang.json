@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-15 23:16",
-  "cutoff": "2026-09-14",
+  "updated": "2026-09-16 08:29",
+  "cutoff": "2026-09-15",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7397",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-16",
       "priest": "조명연",
       "excerpt": "15세기, 16세기에 영국은 범죄 없는 깨끗한 나라를 만들기 위해 고민하다가…"
+    },
+    {
+      "id": "daum_bbadaking_2211",
+      "title": "2026년 9월 16일 성 고르넬리오 교황과 청 치프리아노 주교 순교자 기념일",
+      "author": "박 베로니카",
+      "date": "2026-09-16",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2211",
+      "mass_date": "2026-09-16",
+      "priest": "양승국",
+      "excerpt": "죄인들과 밤늦도록 포도주잔을 기울이시는 예수님!"
+    },
+    {
+      "id": "daum_bbadaking_172",
+      "title": "지식과 지혜의 차이 ‘지식’은 채우는 것이고 ‘지혜’는 비우는 것입니다. ‘…",
+      "author": "환희 평화",
+      "date": "2026-09-16",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/172",
+      "mass_date": "2026-09-16",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7396",
@@ -86,46 +106,6 @@
       "date": "2026-09-15",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137429&menu=4770",
       "mass_date": "2026-09-15",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7395",
-      "title": "전삼용 요셉 신부 / 9월14일 가해 성 십자가 현양 축일 - 명장은 숙련된 자기만의 무기가 있다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-13",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7395",
-      "mass_date": "2026-09-14",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 성 십자가 현양 축일 민수기 21,4ㄴ-9 요한 3…"
-    },
-    {
-      "id": "daum_bbadaking_7933",
-      "title": "2026년 9월 14일 성 십자가 현양 축일",
-      "author": "빠다킹신부",
-      "date": "2026-09-13",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7933",
-      "mass_date": "2026-09-14",
-      "priest": "조명연",
-      "excerpt": "매사에 부정적 생각으로 고민하던 남자가 숲속을 걷고 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2209",
-      "title": "2026년 9월 14일 성 십자가 현양 축일",
-      "author": "박 베로니카",
-      "date": "2026-09-14",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2209",
-      "mass_date": "2026-09-14",
-      "priest": "양승국",
-      "excerpt": "존재한다는 것을 하느님 사랑을 받고 있다는 것!"
-    },
-    {
-      "id": "2137367",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-14",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137367&menu=4770",
-      "mass_date": "2026-09-14",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

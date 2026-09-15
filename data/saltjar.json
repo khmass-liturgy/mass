@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15 17:39",
+  "updated": "2026-09-15 23:19",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "gr67-3uqwmM",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=gr67-3uqwmM",
   "count": 10,
   "videos": [
+    {
+      "videoId": "5DI76E3OUMg",
+      "date": "2026-09-16",
+      "label": "2026년 9월 16일성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월16일 성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일](이영근 신부) #매일미사#복음묵상#bible#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=5DI76E3OUMg"
+    },
     {
       "videoId": "gr67-3uqwmM",
       "date": "2026-09-15",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월7일 연중 제23주간 월요일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=feWwLOTUJ1E"
-    },
-    {
-      "videoId": "olCxme0BwOE",
-      "date": "2026-09-06",
-      "label": "2026년 9월 6일연중 제23주일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월6일 연중 제23주일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=olCxme0BwOE"
     }
   ]
 }

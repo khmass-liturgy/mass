@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16 17:34",
+  "updated": "2026-09-16 23:11",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "5DI76E3OUMg",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=5DI76E3OUMg",
   "count": 10,
   "videos": [
+    {
+      "videoId": "YygKqqGsgh0",
+      "date": "2026-09-17",
+      "label": "2026년 9월 17일연중 제24주간 목요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월17일 연중 제24주간 목요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=YygKqqGsgh0"
+    },
     {
       "videoId": "5DI76E3OUMg",
       "date": "2026-09-16",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월8일 복되신 동정 마리아 탄생 축일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=rWHE1HRxWnA"
-    },
-    {
-      "videoId": "feWwLOTUJ1E",
-      "date": "2026-09-07",
-      "label": "2026년 9월 7일연중 제23주간 월요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월7일 연중 제23주간 월요일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=feWwLOTUJ1E"
     }
   ]
 }

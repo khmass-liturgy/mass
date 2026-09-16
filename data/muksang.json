@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16 14:51",
+  "updated": "2026-09-16 23:08",
   "cutoff": "2026-09-15",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7398",
+      "title": "전삼용 요셉 신부 / 가해 연중 제24주간 목요일 - 부모에게 감사하지 못하며 하느님께 감사할 수 있을까?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-16",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7398",
+      "mass_date": "2026-09-17",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제24주간 목요일 루카 7,36-50 부모에게…"
+    },
+    {
+      "id": "daum_bbadaking_7936",
+      "title": "2026년 9월 17일 연중 제24주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-16",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7936",
+      "mass_date": "2026-09-17",
+      "priest": "조명연",
+      "excerpt": "안데르센 동화 ‘미운 오리 새끼’를 잘 알 것입니다."
+    },
     {
       "id": "daum_catholicsb_7397",
       "title": "전삼용 요셉 신부 / 가해 연중 제24주간 수요일 - 어리석음의 자녀와 지혜의 자녀",

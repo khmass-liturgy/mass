@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-16 23:08",
-  "cutoff": "2026-09-15",
+  "updated": "2026-09-17 08:35",
+  "cutoff": "2026-09-16",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7398",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-17",
       "priest": "조명연",
       "excerpt": "안데르센 동화 ‘미운 오리 새끼’를 잘 알 것입니다."
+    },
+    {
+      "id": "daum_bbadaking_2212",
+      "title": "2026년 9월 17일 연중 제24주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-09-17",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2212",
+      "mass_date": "2026-09-17",
+      "priest": "양승국",
+      "excerpt": "부끄러움의 은총!"
     },
     {
       "id": "daum_catholicsb_7397",
@@ -86,56 +96,6 @@
       "date": "2026-09-16",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137484&menu=4770",
       "mass_date": "2026-09-16",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7396",
-      "title": "전삼용 요셉 신부 / 9월15일 고통의 성모 마리아 기념일 - 고통은 의미 있다고 믿을 때만 의미 있다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-14",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7396",
-      "mass_date": "2026-09-15",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 고통의 성모 마리아 기념일 히브리 5,7-9 요한…"
-    },
-    {
-      "id": "daum_bbadaking_7934",
-      "title": "2026년 9월 15일 고통의 성모 마리아 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-09-14",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7934",
-      "mass_date": "2026-09-15",
-      "priest": "조명연",
-      "excerpt": "올 초에 있었던 일입니다."
-    },
-    {
-      "id": "daum_bbadaking_2210",
-      "title": "2026년 9월 15일 고통의 성모 마리아 기념일",
-      "author": "박 베로니카",
-      "date": "2026-09-15",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2210",
-      "mass_date": "2026-09-15",
-      "priest": "양승국",
-      "excerpt": "고통 속에서도 충만한 기쁨에 고무되어..."
-    },
-    {
-      "id": "daum_bbadaking_171",
-      "title": "율법의 희생양이 되어 십자가를 지고 가시는 예수님 곁에는 성모님께서 함께하십…",
-      "author": "환희 평화",
-      "date": "2026-09-15",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/171",
-      "mass_date": "2026-09-15",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137429",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-15",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137429&menu=4770",
-      "mass_date": "2026-09-15",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

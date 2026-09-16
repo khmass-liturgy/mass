@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-16 17:29",
+  "updated": "2026-09-16 23:09",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "h-leEt5IA6M",
+      "date": "2026-09-17",
+      "title": "연중 제24주간 목요일",
+      "url": "https://www.youtube.com/watch?v=h-leEt5IA6M"
+    },
     {
       "videoId": "2QHUo7EWWHE",
       "date": "2026-09-16",
@@ -57,12 +63,6 @@
       "date": "2026-09-08",
       "title": "복되신 동정 마리아 탄생 축일",
       "url": "https://www.youtube.com/watch?v=gRHI8g4eKKE"
-    },
-    {
-      "videoId": "6bnDAMeMz-E",
-      "date": "2026-09-07",
-      "title": "연중 제23주간 월요일",
-      "url": "https://www.youtube.com/watch?v=6bnDAMeMz-E"
     }
   ]
 }

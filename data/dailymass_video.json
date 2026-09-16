@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16 08:31",
+  "updated": "2026-09-16 17:34",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
@@ -18,6 +18,13 @@
       "liturgy": "고통의 성모 마리아 기념일",
       "priest": "구대희 데니스 신부",
       "url": "https://www.youtube.com/watch?v=Y3OlX2FvBTw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "70IMpEnwZT4",
+      "date": "2026-09-14",
+      "liturgy": "성 십자가 현양 축일",
+      "priest": "김정일 안드레아 신부",
+      "url": "https://www.youtube.com/watch?v=70IMpEnwZT4&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     },
     {
       "videoId": "Cb9_yIPkGtg",
@@ -95,13 +102,6 @@
       "liturgy": "성 대 그레고리오 교황 학자 기념일",
       "priest": "최영진 그레고리오 신부",
       "url": "https://www.youtube.com/watch?v=mvOfS_JMC3o&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "LNbhcn3IZCo",
-      "date": "2026-09-02",
-      "liturgy": "연중 제22주간 수요일",
-      "priest": "정준민 다니엘 신부",
-      "url": "https://www.youtube.com/watch?v=LNbhcn3IZCo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

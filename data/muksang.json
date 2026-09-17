@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-17 23:14",
-  "cutoff": "2026-09-16",
+  "updated": "2026-09-18 08:29",
+  "cutoff": "2026-09-17",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7399",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-18",
       "priest": "조명연",
       "excerpt": "이런 말을 종종 합니다."
+    },
+    {
+      "id": "daum_bbadaking_2213",
+      "title": "2026년 9월 18일 연중 제24주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-09-18",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2213",
+      "mass_date": "2026-09-18",
+      "priest": "양승국",
+      "excerpt": "그릇된 신념처럼 위험한 것이 다시 또 없습니다!"
     },
     {
       "id": "daum_catholicsb_7398",
@@ -76,56 +86,6 @@
       "date": "2026-09-17",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137526&menu=4770",
       "mass_date": "2026-09-17",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7397",
-      "title": "전삼용 요셉 신부 / 가해 연중 제24주간 수요일 - 어리석음의 자녀와 지혜의 자녀",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-15",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7397",
-      "mass_date": "2026-09-16",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제24주간 수요일 루카 7,31-35 어리석음…"
-    },
-    {
-      "id": "daum_bbadaking_7935",
-      "title": "2026년 9월 16일 성 고르넬리오 교황과 청 치프리아노 주교 순교자 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-09-15",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7935",
-      "mass_date": "2026-09-16",
-      "priest": "조명연",
-      "excerpt": "15세기, 16세기에 영국은 범죄 없는 깨끗한 나라를 만들기 위해 고민하다가…"
-    },
-    {
-      "id": "daum_bbadaking_2211",
-      "title": "2026년 9월 16일 성 고르넬리오 교황과 청 치프리아노 주교 순교자 기념일",
-      "author": "박 베로니카",
-      "date": "2026-09-16",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2211",
-      "mass_date": "2026-09-16",
-      "priest": "양승국",
-      "excerpt": "죄인들과 밤늦도록 포도주잔을 기울이시는 예수님!"
-    },
-    {
-      "id": "daum_bbadaking_172",
-      "title": "지식과 지혜의 차이 ‘지식’은 채우는 것이고 ‘지혜’는 비우는 것입니다. ‘…",
-      "author": "환희 평화",
-      "date": "2026-09-16",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/172",
-      "mass_date": "2026-09-16",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137484",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137484&menu=4770",
-      "mass_date": "2026-09-16",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

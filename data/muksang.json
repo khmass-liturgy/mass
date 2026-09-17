@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 14:58",
+  "updated": "2026-09-17 23:14",
   "cutoff": "2026-09-16",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7399",
+      "title": "전삼용 요셉 신부 / 연중 제24주간 금요일 - 여성 봉사자는 사제의 오른팔인가, 그리스도의 왼팔인가?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-17",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7399",
+      "mass_date": "2026-09-18",
+      "priest": "전삼용",
+      "excerpt": "루카 8,1-3 여성 봉사자는 사제의 오른팔인가, 그리스도의 왼팔인가? 오늘…"
+    },
+    {
+      "id": "daum_bbadaking_7937",
+      "title": "2026년 9월 18일 연중 제24주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-17",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7937",
+      "mass_date": "2026-09-18",
+      "priest": "조명연",
+      "excerpt": "이런 말을 종종 합니다."
+    },
     {
       "id": "daum_catholicsb_7398",
       "title": "전삼용 요셉 신부 / 가해 연중 제24주간 목요일 - 부모에게 감사하지 못하며 하느님께 감사할 수 있을까?",

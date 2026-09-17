@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-17 03:12",
+  "updated": "2026-09-17 17:38",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "pmIyrQiXAjY",
+      "date": "2026-09-17",
+      "liturgy": "연중 제24주간 목요일",
+      "priest": "김정섭 필립보 신부",
+      "url": "https://www.youtube.com/watch?v=pmIyrQiXAjY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "lvC-NkECOhY",
       "date": "2026-09-16",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제22주간 금요일",
       "priest": "정준민 다니엘 신부",
       "url": "https://www.youtube.com/watch?v=q1n6u2-GE2Q&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "mvOfS_JMC3o",
-      "date": "2026-09-03",
-      "liturgy": "성 대 그레고리오 교황 학자 기념일",
-      "priest": "최영진 그레고리오 신부",
-      "url": "https://www.youtube.com/watch?v=mvOfS_JMC3o&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

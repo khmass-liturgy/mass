@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19 02:37",
+  "updated": "2026-09-19 08:10",
   "cutoff": "2026-09-18",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7400",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-19",
       "priest": "조명연",
       "excerpt": "꽃 피는 계절은 언제일까요?"
+    },
+    {
+      "id": "daum_bbadaking_2214",
+      "title": "2026년 9월 19일 연중 제24주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-09-19",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2214",
+      "mass_date": "2026-09-19",
+      "priest": "양승국",
+      "excerpt": "명심하겠습니다!"
     },
     {
       "id": "daum_catholicsb_7399",

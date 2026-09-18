@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18 14:44",
+  "updated": "2026-09-18 22:32",
   "cutoff": "2026-09-17",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7400",
+      "title": "전삼용 요셉 신부 / 연중 제24주간 토요일 - 좋은 땅이 되는 길; 하느님은 정의로우시다는 믿음",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-18",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7400",
+      "mass_date": "2026-09-19",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 연중 제24주간 토요일 복음: 루카 8,4-15 좋은 땅…"
+    },
+    {
+      "id": "daum_bbadaking_7938",
+      "title": "2026년 9월 19일 연중 제24주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-18",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7938",
+      "mass_date": "2026-09-19",
+      "priest": "조명연",
+      "excerpt": "꽃 피는 계절은 언제일까요?"
+    },
     {
       "id": "daum_catholicsb_7399",
       "title": "전삼용 요셉 신부 / 연중 제24주간 금요일 - 여성 봉사자는 사제의 오른팔인가, 그리스도의 왼팔인가?",

@@ -1,15 +1,23 @@
 {
-  "updated": "2026-09-19 17:02",
+  "updated": "2026-09-20 02:16",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "7LB7YDRSBCo",
-  "date": "2026-09-19",
-  "label": "2026년 9월 19일연중 제24주간 토요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 9월19일 연중 제24주간 토요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
+  "videoId": "7m610VzrxE4",
+  "date": "2026-09-20",
+  "label": "2026년 9월 20일성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 9월20일 성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일](이영근 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=7LB7YDRSBCo",
+  "url": "https://www.youtube.com/watch?v=7m610VzrxE4",
   "count": 10,
   "videos": [
+    {
+      "videoId": "7m610VzrxE4",
+      "date": "2026-09-20",
+      "label": "2026년 9월 20일성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월20일 성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일](이영근 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=7m610VzrxE4"
+    },
     {
       "videoId": "7LB7YDRSBCo",
       "date": "2026-09-19",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월11일 연중 제23주간 금요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=6o_HGunNWOs"
-    },
-    {
-      "videoId": "fE0Z_fbEiD4",
-      "date": "2026-09-10",
-      "label": "2026년 9월 10일연중 제23주간 목요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월10일 연중 제23주간 목요일](이창항 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=fE0Z_fbEiD4"
     }
   ]
 }

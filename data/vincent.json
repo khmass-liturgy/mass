@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-19 14:45",
+  "updated": "2026-09-19 22:04",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "0OlQEp0qqaA",
+      "date": "2026-09-20",
+      "title": "성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일",
+      "url": "https://www.youtube.com/watch?v=0OlQEp0qqaA"
+    },
     {
       "videoId": "UGr7xc4k3n8",
       "date": "2026-09-19",
@@ -57,12 +63,6 @@
       "date": "2026-09-11",
       "title": "연중 제23주간 금요일",
       "url": "https://www.youtube.com/watch?v=lKUxiq7CDyM"
-    },
-    {
-      "videoId": "mF5-b1OOOTc",
-      "date": "2026-09-10",
-      "title": "연중 제23주간 목요일",
-      "url": "https://www.youtube.com/watch?v=mF5-b1OOOTc"
     }
   ]
 }

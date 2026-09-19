@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-19 22:01",
-  "cutoff": "2026-09-18",
+  "updated": "2026-09-20 02:07",
+  "cutoff": "2026-09-19",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 8,
   "posts": [
     {
       "id": "daum_bbadaking_7939",
@@ -28,6 +28,16 @@
       "mass_date": "2026-09-20",
       "priest": "조명연",
       "excerpt": "어떤 사람이 한숨이 내쉬면서 이렇게 말합니다."
+    },
+    {
+      "id": "daum_bbadaking_2215",
+      "title": "2026년 9월 20일 성 김대건 안드레아 사제와 동료 순교자들 대축일",
+      "author": "박 베로니카",
+      "date": "2026-09-19",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2215",
+      "mass_date": "2026-09-20",
+      "priest": "양승국",
+      "excerpt": "김대건 안드레아 신부님 마음 속으로 들어가보니..."
     },
     {
       "id": "daum_catholicsb_7401",
@@ -86,46 +96,6 @@
       "date": "2026-09-19",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137670&menu=4770",
       "mass_date": "2026-09-19",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7399",
-      "title": "전삼용 요셉 신부 / 연중 제24주간 금요일 - 여성 봉사자는 사제의 오른팔인가, 그리스도의 왼팔인가?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-17",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7399",
-      "mass_date": "2026-09-18",
-      "priest": "전삼용",
-      "excerpt": "루카 8,1-3 여성 봉사자는 사제의 오른팔인가, 그리스도의 왼팔인가? 오늘…"
-    },
-    {
-      "id": "daum_bbadaking_7937",
-      "title": "2026년 9월 18일 연중 제24주간 금요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-17",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7937",
-      "mass_date": "2026-09-18",
-      "priest": "조명연",
-      "excerpt": "이런 말을 종종 합니다."
-    },
-    {
-      "id": "daum_bbadaking_2213",
-      "title": "2026년 9월 18일 연중 제24주간 금요일",
-      "author": "박 베로니카",
-      "date": "2026-09-18",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2213",
-      "mass_date": "2026-09-18",
-      "priest": "양승국",
-      "excerpt": "그릇된 신념처럼 위험한 것이 다시 또 없습니다!"
-    },
-    {
-      "id": "2137591",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137591&menu=4770",
-      "mass_date": "2026-09-18",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

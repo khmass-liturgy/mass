@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-20 02:16",
+  "updated": "2026-09-20 08:03",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "hXr5tBEo4J0",
+      "date": "2026-09-20",
+      "liturgy": "성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일",
+      "priest": "백남일 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=hXr5tBEo4J0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "Jqorqumr8g4",
       "date": "2026-09-19",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제23주간 월요일",
       "priest": "박민준 가브리엘 신부",
       "url": "https://www.youtube.com/watch?v=EkVGN6Gg0Ac&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "BmzD3j_GZpw",
-      "date": "2026-09-06",
-      "liturgy": "연중 제23주일",
-      "priest": "안효철 디오니시오 신부",
-      "url": "https://www.youtube.com/watch?v=BmzD3j_GZpw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

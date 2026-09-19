@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-19 14:39",
+  "updated": "2026-09-19 22:01",
   "cutoff": "2026-09-18",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_bbadaking_7939",
+      "title": "2026년 9월 20일 성 김대건 안드레아 사제와 동료 순교자들 대축일",
+      "author": "빠다킹신부",
+      "date": "2026-09-19",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7939",
+      "mass_date": "2026-09-20",
+      "priest": "조명연",
+      "excerpt": "어떤 사람이 한숨이 내쉬면서 이렇게 말합니다."
+    },
+    {
+      "id": "daum_catholicsb_7401",
+      "title": "전삼용 요셉 신부 / 성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 - 연습의 종교인가, 실전의 종교인",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-19",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7401",
+      "mass_date": "2026-09-19",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 성 김대건 안드레아 사제와 성 정하상 바오로와 동료…"
+    },
     {
       "id": "daum_catholicsb_7400",
       "title": "전삼용 요셉 신부 / 연중 제24주간 토요일 - 좋은 땅이 되는 길; 하느님은 정의로우시다는 믿음",

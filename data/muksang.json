@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20 14:58",
+  "updated": "2026-09-20 22:32",
   "cutoff": "2026-09-19",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7403",
+      "title": "전삼용 요셉 신부 / 9월21일 성 마태오 복음사가 축일 - 우리는 지금 내세에 가게 될 똑같은 세상을 만들며 산다.",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-20",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7403",
+      "mass_date": "2026-09-21",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 2022년 다해 성 마태오 복음사가 축일 마태오 9,9-…"
+    },
+    {
+      "id": "daum_bbadaking_7940",
+      "title": "2026년 9월 21일 성 마태오 복음사가 축일",
+      "author": "빠다킹신부",
+      "date": "2026-09-20",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7940",
+      "mass_date": "2026-09-21",
+      "priest": "조명연",
+      "excerpt": "깨진 유리창 이론이 있습니다."
+    },
     {
       "id": "daum_bbadaking_7939",
       "title": "2026년 9월 20일 성 김대건 안드레아 사제와 동료 순교자들 대축일",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-20 07:51",
+  "updated": "2026-09-20 14:58",
   "cutoff": "2026-09-19",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_bbadaking_7939",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-20",
       "priest": "양승국",
       "excerpt": "김대건 안드레아 신부님 마음 속으로 들어가보니..."
+    },
+    {
+      "id": "daum_bbadaking_174",
+      "title": "십자가의 무게를 손으로 달아보고 십자가의 무게를 헤아리지 마십시오. 그것은…",
+      "author": "환희 평화",
+      "date": "2026-09-20",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/174",
+      "mass_date": "2026-09-20",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7401",

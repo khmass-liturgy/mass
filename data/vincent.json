@@ -1,8 +1,8 @@
 {
-  "updated": "2026-09-20 22:33",
+  "updated": "2026-09-21 02:24",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
-  "count": 5,
+  "count": 10,
   "videos": [
     {
       "videoId": "RLX3e1rJaiI",
@@ -33,6 +33,36 @@
       "date": "2026-09-17",
       "title": "연중 제24주간 목요일",
       "url": "https://www.youtube.com/watch?v=h-leEt5IA6M"
+    },
+    {
+      "videoId": "2QHUo7EWWHE",
+      "date": "2026-09-16",
+      "title": "성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=2QHUo7EWWHE"
+    },
+    {
+      "videoId": "7_uTnJJ6ags",
+      "date": "2026-09-15",
+      "title": "고통의 성모 마리아 기념일",
+      "url": "https://www.youtube.com/watch?v=7_uTnJJ6ags"
+    },
+    {
+      "videoId": "BzfHSdgVFNM",
+      "date": "2026-09-14",
+      "title": "성 십자가 현양 축일",
+      "url": "https://www.youtube.com/watch?v=BzfHSdgVFNM"
+    },
+    {
+      "videoId": "AvpfxNmvILM",
+      "date": "2026-09-13",
+      "title": "연중 제24주일",
+      "url": "https://www.youtube.com/watch?v=AvpfxNmvILM"
+    },
+    {
+      "videoId": "e6z-PVa3zkM",
+      "date": "2026-09-12",
+      "title": "연중 제23주간 토요일",
+      "url": "https://www.youtube.com/watch?v=e6z-PVa3zkM"
     }
   ]
 }

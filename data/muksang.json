@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-20 22:32",
-  "cutoff": "2026-09-19",
+  "updated": "2026-09-21 02:22",
+  "cutoff": "2026-09-20",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 5,
   "posts": [
     {
       "id": "daum_catholicsb_7403",
@@ -68,66 +68,6 @@
       "mass_date": "2026-09-20",
       "priest": "김경진",
       "excerpt": ""
-    },
-    {
-      "id": "daum_catholicsb_7401",
-      "title": "전삼용 요셉 신부 / 성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 - 연습의 종교인가, 실전의 종교인",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-19",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7401",
-      "mass_date": "2026-09-19",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 성 김대건 안드레아 사제와 성 정하상 바오로와 동료…"
-    },
-    {
-      "id": "daum_catholicsb_7400",
-      "title": "전삼용 요셉 신부 / 연중 제24주간 토요일 - 좋은 땅이 되는 길; 하느님은 정의로우시다는 믿음",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-18",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7400",
-      "mass_date": "2026-09-19",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 연중 제24주간 토요일 복음: 루카 8,4-15 좋은 땅…"
-    },
-    {
-      "id": "daum_bbadaking_7938",
-      "title": "2026년 9월 19일 연중 제24주간 토요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-18",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7938",
-      "mass_date": "2026-09-19",
-      "priest": "조명연",
-      "excerpt": "꽃 피는 계절은 언제일까요?"
-    },
-    {
-      "id": "daum_bbadaking_2214",
-      "title": "2026년 9월 19일 연중 제24주간 토요일",
-      "author": "박 베로니카",
-      "date": "2026-09-19",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2214",
-      "mass_date": "2026-09-19",
-      "priest": "양승국",
-      "excerpt": "명심하겠습니다!"
-    },
-    {
-      "id": "daum_bbadaking_173",
-      "title": "씨뿌리는 사람의 비유 나를 괴롭히는 문제들과 상황들을 탓할 것이 아니라 그럼…",
-      "author": "환희 평화",
-      "date": "2026-09-19",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/173",
-      "mass_date": "2026-09-19",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137670",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137670&menu=4770",
-      "mass_date": "2026-09-19",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-21 15:05",
-  "cutoff": "2026-09-20",
+  "updated": "2026-09-22 00:49",
+  "cutoff": "2026-09-21",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 6,
   "posts": [
+    {
+      "id": "daum_catholicsb_7404",
+      "title": "전삼용 요셉 신부 / 연중 제25주간 화요일 - 가족과 있으면 외롭지 않습니까?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-21",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7404",
+      "mass_date": "2026-09-22",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 화요일 복음: 루카 8,19-21…"
+    },
+    {
+      "id": "daum_bbadaking_7941",
+      "title": "2026년 9월 22일 연중 제25주간 화요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-21",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7941",
+      "mass_date": "2026-09-22",
+      "priest": "조명연",
+      "excerpt": "대부분의 예비신자는 세례받으며 내심 기대합니다."
+    },
     {
       "id": "daum_catholicsb_7403",
       "title": "전삼용 요셉 신부 / 9월21일 성 마태오 복음사가 축일 - 우리는 지금 내세에 가게 될 똑같은 세상을 만들며 산다.",
@@ -58,36 +78,6 @@
       "mass_date": "2026-09-21",
       "priest": "김건태",
       "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_bbadaking_7939",
-      "title": "2026년 9월 20일 성 김대건 안드레아 사제와 동료 순교자들 대축일",
-      "author": "빠다킹신부",
-      "date": "2026-09-19",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7939",
-      "mass_date": "2026-09-20",
-      "priest": "조명연",
-      "excerpt": "어떤 사람이 한숨이 내쉬면서 이렇게 말합니다."
-    },
-    {
-      "id": "daum_bbadaking_2215",
-      "title": "2026년 9월 20일 성 김대건 안드레아 사제와 동료 순교자들 대축일",
-      "author": "박 베로니카",
-      "date": "2026-09-19",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2215",
-      "mass_date": "2026-09-20",
-      "priest": "양승국",
-      "excerpt": "김대건 안드레아 신부님 마음 속으로 들어가보니..."
-    },
-    {
-      "id": "daum_bbadaking_174",
-      "title": "십자가의 무게를 손으로 달아보고 십자가의 무게를 헤아리지 마십시오. 그것은…",
-      "author": "환희 평화",
-      "date": "2026-09-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/174",
-      "mass_date": "2026-09-20",
-      "priest": "김경진",
-      "excerpt": ""
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-21 08:07",
+  "updated": "2026-09-21 15:05",
   "cutoff": "2026-09-20",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 5,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7403",
@@ -38,6 +38,26 @@
       "mass_date": "2026-09-21",
       "priest": "조명연",
       "excerpt": "깨진 유리창 이론이 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_175",
+      "title": "이수철 프란치스코신부님 2026.9.21.월요일 성 마태오 사도 복음사가 축…",
+      "author": "환희 평화",
+      "date": "2026-09-21",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/175",
+      "mass_date": "2026-09-21",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2137774",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-21",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137774&menu=4770",
+      "mass_date": "2026-09-21",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_bbadaking_7939",

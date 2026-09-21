@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-21 02:28",
+  "updated": "2026-09-21 17:55",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "FKWprxNg6nc",
+      "date": "2026-09-21",
+      "liturgy": "성 마태오 사도 복음사가 축일",
+      "priest": "구대희 데니스 신부",
+      "url": "https://www.youtube.com/watch?v=FKWprxNg6nc&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "hXr5tBEo4J0",
       "date": "2026-09-20",
@@ -95,13 +102,6 @@
       "liturgy": "복되신 동정 마리아 탄생 축일",
       "priest": "김정일 안드레아 신부",
       "url": "https://www.youtube.com/watch?v=JdhtzUjYKcM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "EkVGN6Gg0Ac",
-      "date": "2026-09-07",
-      "liturgy": "연중 제23주간 월요일",
-      "priest": "박민준 가브리엘 신부",
-      "url": "https://www.youtube.com/watch?v=EkVGN6Gg0Ac&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

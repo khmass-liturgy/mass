@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22 08:58",
+  "updated": "2026-09-22 14:59",
   "cutoff": "2026-09-21",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7404",
@@ -58,6 +58,16 @@
       "mass_date": "2026-09-22",
       "priest": "양승국",
       "excerpt": "평생토록 말씀에 순명하고, 묵상하고, 되새기고, 간직하며..."
+    },
+    {
+      "id": "daum_bbadaking_176",
+      "title": "누가 너의 어머니이며 형제냐?",
+      "author": "환희 평화",
+      "date": "2026-09-22",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/176",
+      "mass_date": "2026-09-22",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7403",

@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-22 00:53",
+  "updated": "2026-09-22 09:06",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "OFK7v08vsvY",
+      "date": "2026-09-22",
+      "liturgy": "연중 제25주간 화요일",
+      "priest": "조승현 베드로 신부",
+      "url": "https://www.youtube.com/watch?v=OFK7v08vsvY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "FKWprxNg6nc",
       "date": "2026-09-21",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제23주간 수요일",
       "priest": "박원구 라파엘 신부",
       "url": "https://www.youtube.com/watch?v=4_x0UwKDcIs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "JdhtzUjYKcM",
-      "date": "2026-09-08",
-      "liturgy": "복되신 동정 마리아 탄생 축일",
-      "priest": "김정일 안드레아 신부",
-      "url": "https://www.youtube.com/watch?v=JdhtzUjYKcM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

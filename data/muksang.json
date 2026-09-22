@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22 14:59",
+  "updated": "2026-09-22 22:59",
   "cutoff": "2026-09-21",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7405",
+      "title": "전삼용 요셉 신부 / 가해 연중 제25주간 수요일 - 이별도 사랑할 때처럼",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-22",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7405",
+      "mass_date": "2026-09-23",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 수요일 복음: 루카 9,1-6 이별…"
+    },
+    {
+      "id": "daum_bbadaking_7942",
+      "title": "2026년 9월 23일 피에트렐치나의 성 비오 사제 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-09-22",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7942",
+      "mass_date": "2026-09-23",
+      "priest": "조명연",
+      "excerpt": "20대 청년이 80대인데도 건강을 잘 유지하는 할아버지와 함께 생활하게 되었…"
+    },
     {
       "id": "daum_catholicsb_7404",
       "title": "전삼용 요셉 신부 / 연중 제25주간 화요일 - 가족과 있으면 외롭지 않습니까?",
@@ -68,6 +88,16 @@
       "mass_date": "2026-09-22",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2137815",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-22",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137815&menu=4770",
+      "mass_date": "2026-09-22",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7403",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23 14:46",
+  "updated": "2026-09-23 23:10",
   "cutoff": "2026-09-22",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 13,
   "posts": [
+    {
+      "id": "daum_catholicsb_7406",
+      "title": "전삼용 요셉 신부 / 가해 연중 제25주간 목요일 - 솔직함이 주는 힘",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-23",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7406",
+      "mass_date": "2026-09-24",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 목요일 복음: 루카 9,7-9 ​솔…"
+    },
+    {
+      "id": "daum_bbadaking_7943",
+      "title": "2026년 9월 24일 연중 제25주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-23",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7943",
+      "mass_date": "2026-09-24",
+      "priest": "조명연",
+      "excerpt": "신학교에 입학한 날, 신학교 성당에서 열심히 기도했습니다."
+    },
     {
       "id": "daum_catholicsb_7405",
       "title": "전삼용 요셉 신부 / 가해 연중 제25주간 수요일 - 이별도 사랑할 때처럼",

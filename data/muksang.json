@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-23 23:10",
-  "cutoff": "2026-09-22",
+  "updated": "2026-09-24 08:33",
+  "cutoff": "2026-09-23",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 13,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7406",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-24",
       "priest": "조명연",
       "excerpt": "신학교에 입학한 날, 신학교 성당에서 열심히 기도했습니다."
+    },
+    {
+      "id": "daum_bbadaking_2219",
+      "title": "2026년 9월 24일 연중 제25주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-09-24",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2219",
+      "mass_date": "2026-09-24",
+      "priest": "양승국",
+      "excerpt": "보다 자주 허리를 펴고 하늘을 올려다 봅시다!"
     },
     {
       "id": "daum_catholicsb_7405",
@@ -86,66 +96,6 @@
       "date": "2026-09-23",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137854&menu=4770",
       "mass_date": "2026-09-23",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7404",
-      "title": "전삼용 요셉 신부 / 연중 제25주간 화요일 - 가족과 있으면 외롭지 않습니까?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-21",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7404",
-      "mass_date": "2026-09-22",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 화요일 복음: 루카 8,19-21…"
-    },
-    {
-      "id": "daum_bbadaking_7941",
-      "title": "2026년 9월 22일 연중 제25주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-09-21",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7941",
-      "mass_date": "2026-09-22",
-      "priest": "조명연",
-      "excerpt": "대부분의 예비신자는 세례받으며 내심 기대합니다."
-    },
-    {
-      "id": "daum_bbadaking_2217",
-      "title": "2026년 9월 21일 성 마태오 복음사가 축일",
-      "author": "박 베로니카",
-      "date": "2026-09-22",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2217",
-      "mass_date": "2026-09-21",
-      "priest": "양승국",
-      "excerpt": "오늘도 죄인들을 당신 제자로 부르시는 주님, 진심으로 감사드립니다!"
-    },
-    {
-      "id": "daum_bbadaking_2216",
-      "title": "2026년 9월 22일 연중 제25주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-09-22",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2216",
-      "mass_date": "2026-09-22",
-      "priest": "양승국",
-      "excerpt": "평생토록 말씀에 순명하고, 묵상하고, 되새기고, 간직하며..."
-    },
-    {
-      "id": "daum_bbadaking_176",
-      "title": "누가 너의 어머니이며 형제냐?",
-      "author": "환희 평화",
-      "date": "2026-09-22",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/176",
-      "mass_date": "2026-09-22",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137815",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137815&menu=4770",
-      "mass_date": "2026-09-22",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

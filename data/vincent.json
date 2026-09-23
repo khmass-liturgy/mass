@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-23 17:29",
+  "updated": "2026-09-23 23:11",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "GXOplAP0qwY",
+      "date": "2026-09-24",
+      "title": "연중 제25주간 목요일",
+      "url": "https://www.youtube.com/watch?v=GXOplAP0qwY"
+    },
     {
       "videoId": "vOij-CoU_8A",
       "date": "2026-09-23",
@@ -57,12 +63,6 @@
       "date": "2026-09-15",
       "title": "고통의 성모 마리아 기념일",
       "url": "https://www.youtube.com/watch?v=7_uTnJJ6ags"
-    },
-    {
-      "videoId": "BzfHSdgVFNM",
-      "date": "2026-09-14",
-      "title": "성 십자가 현양 축일",
-      "url": "https://www.youtube.com/watch?v=BzfHSdgVFNM"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-24 23:08",
-  "cutoff": "2026-09-23",
+  "updated": "2026-09-25 08:49",
+  "cutoff": "2026-09-24",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 8,
   "posts": [
     {
       "id": "daum_bbadaking_7944",
@@ -28,6 +28,16 @@
       "mass_date": "2026-09-25",
       "priest": "조명연",
       "excerpt": "생텍쥐페리의 ‘어린 왕자’에서 여우의 가르침을 기억하실 것입니다."
+    },
+    {
+      "id": "daum_bbadaking_2220",
+      "title": "2026년 9월 25일 한가위",
+      "author": "박 베로니카",
+      "date": "2026-09-25",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2220",
+      "mass_date": "2026-09-25",
+      "priest": "양승국",
+      "excerpt": "거두어 가시는 주님!"
     },
     {
       "id": "daum_catholicsb_7407",
@@ -86,56 +96,6 @@
       "date": "2026-09-24",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137903&menu=4770",
       "mass_date": "2026-09-24",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7405",
-      "title": "전삼용 요셉 신부 / 가해 연중 제25주간 수요일 - 이별도 사랑할 때처럼",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-22",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7405",
-      "mass_date": "2026-09-23",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 수요일 복음: 루카 9,1-6 이별…"
-    },
-    {
-      "id": "daum_bbadaking_7942",
-      "title": "2026년 9월 23일 피에트렐치나의 성 비오 사제 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-09-22",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7942",
-      "mass_date": "2026-09-23",
-      "priest": "조명연",
-      "excerpt": "20대 청년이 80대인데도 건강을 잘 유지하는 할아버지와 함께 생활하게 되었…"
-    },
-    {
-      "id": "daum_bbadaking_2218",
-      "title": "2026년 9월 23일 피에트렐치나의 성 비오 사제 기념일",
-      "author": "박 베로니카",
-      "date": "2026-09-23",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2218",
-      "mass_date": "2026-09-23",
-      "priest": "양승국",
-      "excerpt": "프란치스코 교황님께서 노숙인들이나 이방인들 난민들 만나실 때 마다 단골로 쓰…"
-    },
-    {
-      "id": "daum_bbadaking_177",
-      "title": "아무것도 짐은 정말 짐이 됩니다. 그래서 짐이라고 하는 겁니다. 짐이 되는…",
-      "author": "환희 평화",
-      "date": "2026-09-23",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/177",
-      "mass_date": "2026-09-23",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2137854",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-23",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137854&menu=4770",
-      "mass_date": "2026-09-23",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

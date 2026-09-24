@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24 15:00",
+  "updated": "2026-09-24 23:08",
   "cutoff": "2026-09-23",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_bbadaking_7944",
+      "title": "2026년 9월 25일 한가위",
+      "author": "빠다킹신부",
+      "date": "2026-09-24",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7944",
+      "mass_date": "2026-09-25",
+      "priest": "조명연",
+      "excerpt": "생텍쥐페리의 ‘어린 왕자’에서 여우의 가르침을 기억하실 것입니다."
+    },
+    {
+      "id": "daum_catholicsb_7407",
+      "title": "전삼용 요셉 신부 / 가해 한가위 - ​명절은 자녀에게 감사를 교육하는 장이다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-24",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7407",
+      "mass_date": "2026-09-24",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 한가위 복음: 루카 12,15-21 ​ 명절은 자녀…"
+    },
     {
       "id": "daum_catholicsb_7406",
       "title": "전삼용 요셉 신부 / 가해 연중 제25주간 목요일 - 솔직함이 주는 힘",
@@ -58,6 +78,16 @@
       "mass_date": "2026-09-24",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2137903",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-09-24",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137903&menu=4770",
+      "mass_date": "2026-09-24",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7405",

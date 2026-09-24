@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-24 17:21",
+  "updated": "2026-09-24 23:10",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "sNZ3zh73Vjw",
+      "date": "2026-09-25",
+      "title": "한가위",
+      "url": "https://www.youtube.com/watch?v=sNZ3zh73Vjw"
+    },
     {
       "videoId": "GXOplAP0qwY",
       "date": "2026-09-24",
@@ -57,12 +63,6 @@
       "date": "2026-09-16",
       "title": "성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
       "url": "https://www.youtube.com/watch?v=2QHUo7EWWHE"
-    },
-    {
-      "videoId": "7_uTnJJ6ags",
-      "date": "2026-09-15",
-      "title": "고통의 성모 마리아 기념일",
-      "url": "https://www.youtube.com/watch?v=7_uTnJJ6ags"
     }
   ]
 }

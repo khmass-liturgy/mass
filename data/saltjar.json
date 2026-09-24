@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24 08:41",
+  "updated": "2026-09-24 23:12",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "UuQUHNJth8M",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=UuQUHNJth8M",
   "count": 10,
   "videos": [
+    {
+      "videoId": "gm9nT7Daihc",
+      "date": "2026-09-25",
+      "label": "2026년 9월 25일한가위",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월25일 한가위](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=gm9nT7Daihc"
+    },
     {
       "videoId": "UuQUHNJth8M",
       "date": "2026-09-24",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월16일 성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일](이영근 신부) #매일미사#복음묵상#bible#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=5DI76E3OUMg"
-    },
-    {
-      "videoId": "gr67-3uqwmM",
-      "date": "2026-09-15",
-      "label": "2026년 9월 15일고통의 성모 마리아 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월15일 고통의 성모 마리아 기념일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=gr67-3uqwmM"
     }
   ]
 }

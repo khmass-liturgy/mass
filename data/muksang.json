@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25 15:01",
+  "updated": "2026-09-25 23:32",
   "cutoff": "2026-09-24",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7408",
+      "title": "전삼용 요셉 신부 / 연중 제25주간 토요일 - 불편하지 않은 진실은 없다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-25",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7408",
+      "mass_date": "2026-09-26",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제25주간 토요일 루카 9,43ㄴ-45 ​ 불…"
+    },
+    {
+      "id": "daum_bbadaking_7945",
+      "title": "2026년 9월 26일 연중 제25주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-09-25",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7945",
+      "mass_date": "2026-09-26",
+      "priest": "조명연",
+      "excerpt": "“짜장면 먹는 것이 좋을까?"
+    },
     {
       "id": "daum_bbadaking_7944",
       "title": "2026년 9월 25일 한가위",

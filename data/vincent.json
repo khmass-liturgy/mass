@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-25 17:44",
+  "updated": "2026-09-25 23:33",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "cUbQ2q1_Eqw",
+      "date": "2026-09-26",
+      "title": "연중 제25주간 토요일",
+      "url": "https://www.youtube.com/watch?v=cUbQ2q1_Eqw"
+    },
     {
       "videoId": "sNZ3zh73Vjw",
       "date": "2026-09-25",
@@ -57,12 +63,6 @@
       "date": "2026-09-17",
       "title": "연중 제24주간 목요일",
       "url": "https://www.youtube.com/watch?v=h-leEt5IA6M"
-    },
-    {
-      "videoId": "2QHUo7EWWHE",
-      "date": "2026-09-16",
-      "title": "성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
-      "url": "https://www.youtube.com/watch?v=2QHUo7EWWHE"
     }
   ]
 }

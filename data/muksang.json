@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27 02:42",
+  "updated": "2026-09-27 08:28",
   "cutoff": "2026-09-26",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7409",
@@ -38,6 +38,16 @@
       "mass_date": "2026-09-27",
       "priest": "조명연",
       "excerpt": "자기 삶에서 문제 되는 것은 무엇일까요?"
+    },
+    {
+      "id": "daum_bbadaking_2222",
+      "title": "2026년 9월 27일 연중 제26주일",
+      "author": "박 베로니카",
+      "date": "2026-09-27",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2222",
+      "mass_date": "2026-09-27",
+      "priest": "양승국",
+      "excerpt": "오로지 직진하시는 예수님!"
     },
     {
       "id": "daum_catholicsb_7408",

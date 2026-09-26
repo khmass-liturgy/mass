@@ -1,15 +1,23 @@
 {
-  "updated": "2026-09-26 17:35",
+  "updated": "2026-09-27 02:45",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "ZXdp0F1V63c",
-  "date": "2026-09-26",
-  "label": "2026년 9월 26일연중 제25주간 토요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 9월26일 연중 제25주간 토요일](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "48E6wamQL1U",
+  "date": "2026-09-27",
+  "label": "2026년 9월 27일연중 제26주일(세계 이주민과 난민의 날)",
+  "title": "생활성서 듣는 #소금항아리 [2026년 9월27일 연중 제26주일(세계 이주민과 난민의 날)](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=ZXdp0F1V63c",
+  "url": "https://www.youtube.com/watch?v=48E6wamQL1U",
   "count": 10,
   "videos": [
+    {
+      "videoId": "48E6wamQL1U",
+      "date": "2026-09-27",
+      "label": "2026년 9월 27일연중 제26주일(세계 이주민과 난민의 날)",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월27일 연중 제26주일(세계 이주민과 난민의 날)](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=48E6wamQL1U"
+    },
     {
       "videoId": "ZXdp0F1V63c",
       "date": "2026-09-26",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월18일 연중 제24주간 금요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=7eytf2CX3oQ"
-    },
-    {
-      "videoId": "YygKqqGsgh0",
-      "date": "2026-09-17",
-      "label": "2026년 9월 17일연중 제24주간 목요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월17일 연중 제24주간 목요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=YygKqqGsgh0"
     }
   ]
 }

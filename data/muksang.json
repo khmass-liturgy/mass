@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26 15:01",
+  "updated": "2026-09-26 22:42",
   "cutoff": "2026-09-25",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7409",
+      "title": "전삼용 요셉 신부 / 가해 연중 제26주일 - ​“나 담배 끊었어”와 “나 비흡연자야”라는 말의 차이",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-26",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7409",
+      "mass_date": "2026-09-27",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제26주일 복음: 마태오 21,28-32 ​…"
+    },
+    {
+      "id": "daum_bbadaking_7946",
+      "title": "2026년 9월 27일 연중 제26주일",
+      "author": "빠다킹신부",
+      "date": "2026-09-26",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7946",
+      "mass_date": "2026-09-27",
+      "priest": "조명연",
+      "excerpt": "자기 삶에서 문제 되는 것은 무엇일까요?"
+    },
     {
       "id": "daum_catholicsb_7408",
       "title": "전삼용 요셉 신부 / 연중 제25주간 토요일 - 불편하지 않은 진실은 없다",

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-26 22:42",
-  "cutoff": "2026-09-25",
+  "updated": "2026-09-27 02:42",
+  "cutoff": "2026-09-26",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7409",
@@ -86,36 +86,6 @@
       "date": "2026-09-26",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137977&menu=4770",
       "mass_date": "2026-09-26",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_bbadaking_7944",
-      "title": "2026년 9월 25일 한가위",
-      "author": "빠다킹신부",
-      "date": "2026-09-24",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7944",
-      "mass_date": "2026-09-25",
-      "priest": "조명연",
-      "excerpt": "생텍쥐페리의 ‘어린 왕자’에서 여우의 가르침을 기억하실 것입니다."
-    },
-    {
-      "id": "daum_bbadaking_2220",
-      "title": "2026년 9월 25일 한가위",
-      "author": "박 베로니카",
-      "date": "2026-09-25",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2220",
-      "mass_date": "2026-09-25",
-      "priest": "양승국",
-      "excerpt": "거두어 가시는 주님!"
-    },
-    {
-      "id": "2137936",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2137936&menu=4770",
-      "mass_date": "2026-09-25",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

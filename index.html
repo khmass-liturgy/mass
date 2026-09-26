@@ -2479,6 +2479,21 @@ window.MISSA_TARGET_DATE = (function(){
   }
 })();
 
+// 카드 왼쪽 색줄 — 같은 그리드 안 카드 수만큼 색상환을 골드~인디고
+// 구간(30~230도)에서 고르게 나눠, 스크롤할 때 자연스럽게 이어지는
+// 그러데이션처럼 보이게 한다. 카드가 추가·삭제돼도 그 그리드 안에서
+// 자동으로 다시 고르게 나뉜다.
+(function(){
+  document.querySelectorAll('.link-grid').forEach(function(grid){
+    const cards = grid.querySelectorAll(':scope > .link-card');
+    const n = cards.length;
+    cards.forEach(function(card, i){
+      const hue = 30 + (n > 1 ? (i / (n - 1)) * 200 : 0);
+      card.style.borderLeftColor = 'hsl(' + hue.toFixed(0) + ', 45%, 32%)';
+    });
+  });
+})();
+
 // 공유하기 버튼 로직
 (function(){
   const btn = document.getElementById('shareBtn');

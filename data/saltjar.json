@@ -1,15 +1,23 @@
 {
-  "updated": "2026-09-25 17:48",
+  "updated": "2026-09-26 17:35",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "gm9nT7Daihc",
-  "date": "2026-09-25",
-  "label": "2026년 9월 25일한가위",
-  "title": "생활성서 듣는 #소금항아리 [2026년 9월25일 한가위](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "ZXdp0F1V63c",
+  "date": "2026-09-26",
+  "label": "2026년 9월 26일연중 제25주간 토요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 9월26일 연중 제25주간 토요일](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=gm9nT7Daihc",
+  "url": "https://www.youtube.com/watch?v=ZXdp0F1V63c",
   "count": 10,
   "videos": [
+    {
+      "videoId": "ZXdp0F1V63c",
+      "date": "2026-09-26",
+      "label": "2026년 9월 26일연중 제25주간 토요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 9월26일 연중 제25주간 토요일](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=ZXdp0F1V63c"
+    },
     {
       "videoId": "gm9nT7Daihc",
       "date": "2026-09-25",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월17일 연중 제24주간 목요일](이영근 신부) #매일미사#복음묵상#Daily#Gospel#Korean#biblelife",
       "published": "",
       "url": "https://www.youtube.com/watch?v=YygKqqGsgh0"
-    },
-    {
-      "videoId": "5DI76E3OUMg",
-      "date": "2026-09-16",
-      "label": "2026년 9월 16일성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월16일 성 고르넬리오 교황과 성 치프리아노 주교 순교자 기념일](이영근 신부) #매일미사#복음묵상#bible#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=5DI76E3OUMg"
     }
   ]
 }

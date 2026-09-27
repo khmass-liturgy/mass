@@ -1,10 +1,17 @@
 {
-  "updated": "2026-09-28 03:22",
+  "updated": "2026-09-28 08:47",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "Cg90SzIhhR8",
+      "date": "2026-09-28",
+      "liturgy": "연중 제26주간 월요일",
+      "priest": "최재영 세례자 요한 신부",
+      "url": "https://www.youtube.com/watch?v=Cg90SzIhhR8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "-_ZS-cZNKa4",
       "date": "2026-09-27",
@@ -95,13 +102,6 @@
       "liturgy": "고통의 성모 마리아 기념일",
       "priest": "구대희 데니스 신부",
       "url": "https://www.youtube.com/watch?v=Y3OlX2FvBTw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "70IMpEnwZT4",
-      "date": "2026-09-14",
-      "liturgy": "성 십자가 현양 축일",
-      "priest": "김정일 안드레아 신부",
-      "url": "https://www.youtube.com/watch?v=70IMpEnwZT4&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

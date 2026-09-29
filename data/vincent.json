@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-29 15:48",
+  "updated": "2026-09-30 00:41",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "ZI3CacjTkOU",
+      "date": "2026-09-30",
+      "title": "성 예로니모 사제 학자 기념일",
+      "url": "https://www.youtube.com/watch?v=ZI3CacjTkOU"
+    },
     {
       "videoId": "AQA80CE8jEw",
       "date": "2026-09-29",
@@ -57,12 +63,6 @@
       "date": "2026-09-21",
       "title": "성 마태오 사도 복음사가 축일",
       "url": "https://www.youtube.com/watch?v=RLX3e1rJaiI"
-    },
-    {
-      "videoId": "0OlQEp0qqaA",
-      "date": "2026-09-20",
-      "title": "성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자들 대축일",
-      "url": "https://www.youtube.com/watch?v=0OlQEp0qqaA"
     }
   ]
 }

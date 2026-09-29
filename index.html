@@ -562,26 +562,12 @@
   @media (max-width:380px){
     .video-grid{grid-template-columns:1fr;}
   }
-  /* ── 성무일도 아침·저녁기도 (반절 카드 2개) ── */
-  .lauds-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:10px;}
-  .lauds-card{
-    display:flex;align-items:center;gap:12px;
-    border-radius:6px;padding:16px 18px;
-    text-decoration:none;position:relative;overflow:hidden;
-    transition:transform .25s;
-  }
-  .lauds-card:hover{transform:translateY(-3px);}
+  /* ── 아침·저녁기도 (반절 카드 2개, 눌러서 기도문을 바로 펼쳐 본다) ── */
   .lauds-morning{background:linear-gradient(135deg,#8A5A1E 0%,#C08A2E 100%);}
   .lauds-evening{background:linear-gradient(135deg,#241C4A 0%,#463880 100%);}
   .lauds-icon{flex-shrink:0;width:40px;height:40px;background:rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;z-index:1;}
-  .lauds-body{flex:1;min-width:0;z-index:1;}
-  .lauds-eyebrow{font-family:'Cinzel',serif;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:2px;}
-  .lauds-title{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:700;color:var(--cream);}
-  .lauds-arrow{flex-shrink:0;font-size:1.1rem;color:rgba(255,255,255,.85);transition:transform .2s;z-index:1;}
-  .lauds-card:hover .lauds-arrow{transform:translateX(4px);}
-  @media (max-width:380px){
-    .lauds-grid{grid-template-columns:1fr;}
-  }
+  /* 골드 배경(아침기도)에서는 기본 금색 leader 표시가 안 보여서 흰색으로 바꾼다 */
+  .lauds-morning .wyd-leader, .lauds-evening .wyd-leader{color:#FFFFFF;}
 
   /* ── 듣는 소금항아리 카드 ── */
   .saltjar-card{background:linear-gradient(135deg,#5C4423 0%,#8A6A34 100%);box-shadow:0 6px 22px rgba(92,68,35,.25);}
@@ -1107,36 +1093,103 @@
     </details>
   </section>
 
-  <!-- ── 성무일도와 함께하는 아침·저녁기도 (반절 카드 2개) ── -->
+  <!-- ── 아침·저녁기도 (반절 카드 2개, 눌러서 기도문을 바로 펼쳐 본다) ── -->
+  <div class="prayer-grid">
   <section class="missa-section">
-    <div class="lauds-grid">
-      <a class="lauds-card lauds-morning" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
-        <div class="lauds-icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <circle cx="12" cy="14" r="5" fill="#FFF3D6"/>
-            <path d="M12 2v3M4.2 6.2l2.1 2.1M19.8 6.2l-2.1 2.1M2 15h3M19 15h3" stroke="#FFF3D6" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
+    <details class="prayer-details lauds-morning">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+            <div class="lauds-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <circle cx="12" cy="14" r="5" fill="#FFF3D6"/>
+                <path d="M12 2v3M4.2 6.2l2.1 2.1M19.8 6.2l-2.1 2.1M2 15h3M19 15h3" stroke="#FFF3D6" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="wyd-eyebrow" style="margin-bottom:4px;">가톨릭 기도서</div>
+              <div class="wyd-title" style="margin-bottom:0;">아침기도</div>
+            </div>
+          </div>
+          <span class="prayer-arrow">▼</span>
         </div>
-        <div class="lauds-body">
-          <div class="lauds-eyebrow">가톨릭 기도서</div>
-          <div class="lauds-title">아침기도</div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p>╋ 성부와 성자와 성령의 이름으로.</p>
+            <p>◎ 아멘.</p>
+          </div>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 하늘에 계신 우리 아버지,<br>&emsp;아버지의 이름이 거룩히 빛나시며<br>&emsp;아버지의 나라가 오시며<br>&emsp;아버지의 뜻이 하늘에서와 같이<br>&emsp;땅에서도 이루어지소서!</p>
+            <p><span class="wyd-response2">●</span> 오늘 저희에게 일용할 양식을 주시고<br>&emsp;저희에게 잘못한 이를 저희가 용서하오니<br>&emsp;저희 죄를 용서하시고<br>&emsp;저희를 유혹에 빠지지 않게 하시고<br>&emsp;악에서 구하소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p>◎ 하느님, 저를 사랑으로 내시고<br>&emsp;저에게 영혼 육신을 주시어<br>&emsp;주님만을 섬기고 사람을 도우라 하셨나이다.<br>&emsp;저는 비록 죄가 많사오나<br>&emsp;주님께 받은 몸과 마음을 오롯이 도로 바쳐<br>&emsp;찬미와 봉사의 제물로 드리오니<br>&emsp;어여삐 여기시어 받아 주소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p>╋ 우리 주 하느님께 권능과 영광<br>&emsp;지혜와 굳셈이 있사오니<br>&emsp;찬미와 감사와 흠숭을 영원히 받으소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p>╋ 전능하신 하느님,<br>&emsp;오늘도 저희 생각과 말과 행위를<br>&emsp;주님의 평화로 이끌어 주소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
         </div>
-        <div class="lauds-arrow">→</div>
-      </a>
-      <a class="lauds-card lauds-evening" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
-        <div class="lauds-icon">
-          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="#E3D6F5"/>
-          </svg>
-        </div>
-        <div class="lauds-body">
-          <div class="lauds-eyebrow">가톨릭 기도서</div>
-          <div class="lauds-title">저녁기도</div>
-        </div>
-        <div class="lauds-arrow">→</div>
-      </a>
-    </div>
+      </div>
+    </details>
   </section>
+  <section class="missa-section">
+    <details class="prayer-details lauds-evening">
+      <summary class="prayer-summary">
+        <div class="prayer-summary-inner">
+          <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+            <div class="lauds-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="#E3D6F5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="wyd-eyebrow" style="margin-bottom:4px;">가톨릭 기도서</div>
+              <div class="wyd-title" style="margin-bottom:0;">저녁기도</div>
+            </div>
+          </div>
+          <span class="prayer-arrow">▼</span>
+        </div>
+      </summary>
+      <div class="prayer-body">
+        <div class="wyd-body" style="color:#FFFFFF;">
+          <div class="antiphon">
+            <p>╋ 성부와 성자와 성령의 이름으로.</p>
+            <p>◎ 아멘.</p>
+          </div>
+          <div class="antiphon">
+            <p>╋ 주님, 오늘 생각과 말과 행위로 지은 죄와<br>&emsp;의무를 소홀히 한 죄를 자세히 살피고<br>&emsp;그 가운데 버릇이 된 죄를 깨닫게 하소서.</p>
+            <p style="font-size:.78rem;color:rgba(255,255,255,.65);">(잠깐 반성한다.)</p>
+          </div>
+          <div class="antiphon">
+            <p>◎ 하느님,<br>&emsp;제가 죄를 지어<br>&emsp;참으로 사랑받으셔야 할<br>&emsp;하느님의 마음을 아프게 하였기에<br>&emsp;악을 저지르고 선을 멀리한 모든 잘못을<br>&emsp;진심으로 뉘우치나이다.<br>&emsp;하느님의 은총으로 속죄하고<br>&emsp;다시는 죄를 짓지 않으며<br>&emsp;죄지을 기회를 피하기로 굳게 다짐하오니<br>&emsp;우리 구세주 예수 그리스도의 수난 공로를 보시고<br>&emsp;저에게 자비를 베풀어 주소서. 아멘.</p>
+          </div>
+          <div class="antiphon">
+            <p><span class="wyd-leader">○</span> 하느님, 하느님께서는 진리의 근원이시며<br>&emsp;그르침이 없으시므로<br>&emsp;계시하신 진리를<br>&emsp;교회가 가르치는 대로 굳게 믿나이다.</p>
+            <p><span class="wyd-response2">●</span> 하느님, 하느님께서는 자비의 근원이시며<br>&emsp;저버림이 없으시므로<br>&emsp;예수 그리스도의 공로를 통하여 주실<br>&emsp;구원의 은총과 영원한 생명을 바라나이다.</p>
+            <p><span class="wyd-leader">○</span> 하느님, 하느님께서는 사랑의 근원이시며<br>&emsp;한없이 좋으시므로<br>&emsp;마음을 다하여 주님을 사랑하며<br>&emsp;이웃을 제 몸같이 사랑하나이다.</p>
+          </div>
+          <div class="antiphon">
+            <p>╋ 하늘에 계신 우리 아버지,<br>&emsp;오늘 하루도 이미 저물었나이다.<br>&emsp;이제 저희는 구세주 예수 그리스도를 통하여<br>&emsp;모든 천사와 성인과 함께 주님을 흠숭하며<br>&emsp;지금 이 순간까지 베풀어 주신<br>&emsp;주님의 사랑에 감사하나이다.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+          <div class="antiphon">
+            <p>╋ 전능하신 천주<br>&emsp;십자 성호를 그으며<br>&emsp;성부와 성자와 성령께서는<br>&emsp;저희에게 강복하시고 지켜 주소서.</p>
+          </div>
+          <p class="wyd-amen">◎ 아멘.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+  </div>
 
   <!-- ── 신앙생활 도우미: 기도서 · 성가 · 성당 찾기 · 주일 복음 만화 ── -->
   <section>

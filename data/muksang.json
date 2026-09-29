@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29 02:33",
+  "updated": "2026-09-29 09:54",
   "cutoff": "2026-09-28",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7411",
@@ -48,6 +48,16 @@
       "mass_date": "2026-09-29",
       "priest": "양승국",
       "excerpt": "천상적 삶인 동시에 천사적 삶을 추구합시다!"
+    },
+    {
+      "id": "daum_bbadaking_182",
+      "title": "아버지의 뜻을 실천하는 사람 나는 무엇을 중심에 두고 살아야 할까요? 주님께…",
+      "author": "환희 평화",
+      "date": "2026-09-29",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/182",
+      "mass_date": "2026-09-29",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7410",

@@ -692,7 +692,7 @@
   <script>
   (function(){
     const kst = window.kstNow();
-    if (kst.day !== 1) return; // 매월 1일에만 표시 (한국 날짜 기준)
+    if (kst.day > 3) return; // 매월 1~3일까지 표시 (한국 날짜 기준)
     const y = String(kst.year), m = String(kst.month + 1);
     fetch('data/pope_intentions.json', { cache: 'no-store' })
       .then(function(r){ return r.json(); })

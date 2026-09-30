@@ -36,5 +36,13 @@ jobs:
             echo "No changes."
           else
             git commit -m "chore: update 소금항아리 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
-            git push
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
           fi

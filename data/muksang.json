@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-30 15:32",
-  "cutoff": "2026-09-29",
+  "updated": "2026-10-01 00:48",
+  "cutoff": "2026-09-30",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 8,
   "posts": [
+    {
+      "id": "daum_catholicsb_7413",
+      "title": "전삼용 요셉 신부 / 연중 제26주간 목요일 - 거절 당하면 더 좋은 이유: 평화가 되돌아오기에",
+      "author": "효재마리아(수풀)",
+      "date": "2026-09-30",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7413",
+      "mass_date": "2026-10-01",
+      "priest": "전삼용",
+      "excerpt": "루카 10,1-12 거절 당하면 더 좋은 이유: 평화가 되돌아오기에 오늘 복…"
+    },
+    {
+      "id": "daum_bbadaking_7950",
+      "title": "2026년 10월 1일 아기 예수의 성녀 데레사 동정 학자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-09-30",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7950",
+      "mass_date": "2026-10-01",
+      "priest": "조명연",
+      "excerpt": "2023년 미국 공중 보건 총장인 비벡 머시는 미국이 외로움의 위기를 맞고…"
+    },
+    {
+      "id": "daum_bbadaking_2226",
+      "title": "2026년 10월 1일 아기 예수의 성녀 데레사 동정 학자 기념일",
+      "author": "박 베로니카",
+      "date": "2026-09-30",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2226",
+      "mass_date": "2026-10-01",
+      "priest": "양승국",
+      "excerpt": "지극한 겸손, 복음적 단순함, 하느님을 향한 깊은 신앙!"
+    },
     {
       "id": "daum_catholicsb_7412",
       "title": "전삼용 요셉 신부 / 가해 연중 제26주간 수요일 - 내일 세상을 떠나도 오늘 꽃에 물을 주세요",
@@ -61,61 +91,11 @@
     },
     {
       "id": "2138188",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-09-30",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138188&menu=4770",
       "mass_date": "2026-09-30",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7411",
-      "title": "전삼용 요셉 신부 / 9월 29일 성 미카엘, 성 가브리엘, 성 라파엘 대천사 축일 - 천사 없는 관계는 소멸한다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-28",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7411",
-      "mass_date": "2026-09-29",
-      "priest": "전삼용",
-      "excerpt": "요한 1,47-51 천사 없는 관계는 소멸한다 오늘은 세 대천사 축일입니다…"
-    },
-    {
-      "id": "daum_bbadaking_7948",
-      "title": "2026년 9월 29일 성 미카엘, 성 가브리엘, 성 라파엘 대천사 축일",
-      "author": "빠다킹신부",
-      "date": "2026-09-28",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7948",
-      "mass_date": "2026-09-29",
-      "priest": "조명연",
-      "excerpt": "어느 책에서 미국의 글로벌 출판 미디어 기업 ‘포브스’가 선정한 대우 받지…"
-    },
-    {
-      "id": "daum_bbadaking_2224",
-      "title": "2026년 9월 29일 성 미카엘, 성 가브리엘, 성 라파엘 대천사 축일",
-      "author": "박 베로니카",
-      "date": "2026-09-28",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2224",
-      "mass_date": "2026-09-29",
-      "priest": "양승국",
-      "excerpt": "천상적 삶인 동시에 천사적 삶을 추구합시다!"
-    },
-    {
-      "id": "daum_bbadaking_182",
-      "title": "아버지의 뜻을 실천하는 사람 나는 무엇을 중심에 두고 살아야 할까요? 주님께…",
-      "author": "환희 평화",
-      "date": "2026-09-29",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/182",
-      "mass_date": "2026-09-29",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2138131",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-09-29",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138131&menu=4770",
-      "mass_date": "2026-09-29",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

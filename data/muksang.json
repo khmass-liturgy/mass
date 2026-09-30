@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30 00:37",
+  "updated": "2026-09-30 09:16",
   "cutoff": "2026-09-29",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7412",
@@ -48,6 +48,16 @@
       "mass_date": "2026-09-30",
       "priest": "양승국",
       "excerpt": "성경을 파고 드십시오."
+    },
+    {
+      "id": "daum_bbadaking_183",
+      "title": "“쟁기에 손을 대고 뒤를 돌아보는 자는 하느님 나라에 합당하지 않다.” 오뚝…",
+      "author": "환희 평화",
+      "date": "2026-09-30",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/183",
+      "mass_date": "2026-09-30",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7411",

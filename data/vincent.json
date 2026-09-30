@@ -1,9 +1,15 @@
 {
-  "updated": "2026-09-30 18:35",
+  "updated": "2026-10-01 04:08",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "zKHlLR1tf9Y",
+      "date": "2026-10-01",
+      "title": "아기 예수의 성녀 데레사 동정 학자 기념일",
+      "url": "https://www.youtube.com/watch?v=zKHlLR1tf9Y"
+    },
     {
       "videoId": "ZI3CacjTkOU",
       "date": "2026-09-30",
@@ -57,12 +63,6 @@
       "date": "2026-09-22",
       "title": "연중 제25주간 화요일",
       "url": "https://www.youtube.com/watch?v=IyZXsxfzheM"
-    },
-    {
-      "videoId": "RLX3e1rJaiI",
-      "date": "2026-09-21",
-      "title": "성 마태오 사도 복음사가 축일",
-      "url": "https://www.youtube.com/watch?v=RLX3e1rJaiI"
     }
   ]
 }

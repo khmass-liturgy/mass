@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-01 16:06",
-  "cutoff": "2026-09-30",
+  "updated": "2026-10-02 01:15",
+  "cutoff": "2026-10-01",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
+    {
+      "id": "daum_catholicsb_7414",
+      "title": "전삼용 요셉 신부 /10월02일 수호천사 기념일 - 창조론과 진화론: 천사의 학설, 악마의 학설",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-01",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7414",
+      "mass_date": "2026-10-02",
+      "priest": "전삼용",
+      "excerpt": "가해 수호천사 기념일 복음: 마태오 18,1-5.10 창조론과 진화론: 천사…"
+    },
+    {
+      "id": "daum_bbadaking_7951",
+      "title": "2026년 10월 2일 수호천사 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-10-01",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7951",
+      "mass_date": "2026-10-02",
+      "priest": "조명연",
+      "excerpt": "선교지에서 아주 열정적으로 선교 활동을 하던 젊은 신부가 있었습니다."
+    },
     {
       "id": "daum_catholicsb_7413",
       "title": "전삼용 요셉 신부 / 연중 제26주간 목요일 - 거절 당하면 더 좋은 이유: 평화가 되돌아오기에",
@@ -66,56 +86,6 @@
       "date": "2026-10-01",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138239&menu=4770",
       "mass_date": "2026-10-01",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7412",
-      "title": "전삼용 요셉 신부 / 가해 연중 제26주간 수요일 - 내일 세상을 떠나도 오늘 꽃에 물을 주세요",
-      "author": "효재마리아(수풀)",
-      "date": "2026-09-29",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7412",
-      "mass_date": "2026-09-30",
-      "priest": "전삼용",
-      "excerpt": "복음: 루카 9,57-26 ​“ 내일 세상을 떠나도 오늘 꽃에 물을 주세요”…"
-    },
-    {
-      "id": "daum_bbadaking_7949",
-      "title": "2026년 9월 30일 성 예로니모 사제 학자 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-09-29",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7949",
-      "mass_date": "2026-09-30",
-      "priest": "조명연",
-      "excerpt": "서울에 갈 때 전철을 이용합니다."
-    },
-    {
-      "id": "daum_bbadaking_2225",
-      "title": "2026년 9월 30일 성 예로니모 사제 학자 기념일",
-      "author": "박 베로니카",
-      "date": "2026-09-30",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2225",
-      "mass_date": "2026-09-30",
-      "priest": "양승국",
-      "excerpt": "성경을 파고 드십시오."
-    },
-    {
-      "id": "daum_bbadaking_183",
-      "title": "“쟁기에 손을 대고 뒤를 돌아보는 자는 하느님 나라에 합당하지 않다.” 오뚝…",
-      "author": "환희 평화",
-      "date": "2026-09-30",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/183",
-      "mass_date": "2026-09-30",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2138188",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-09-30",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138188&menu=4770",
-      "mass_date": "2026-09-30",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-01 00:48",
+  "updated": "2026-10-01 09:27",
   "cutoff": "2026-09-30",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7413",
@@ -48,6 +48,16 @@
       "mass_date": "2026-10-01",
       "priest": "양승국",
       "excerpt": "지극한 겸손, 복음적 단순함, 하느님을 향한 깊은 신앙!"
+    },
+    {
+      "id": "daum_bbadaking_184",
+      "title": "예수님께서는 그 누구보다 현장의 중요성을 잘 아시는 분이셨습니다. 그래서 말…",
+      "author": "환희 평화",
+      "date": "2026-10-01",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/184",
+      "mass_date": "2026-10-01",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7412",

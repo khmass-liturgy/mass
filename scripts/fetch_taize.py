@@ -65,6 +65,14 @@ ARABIC_TITLES = {
     "Abana Fy Yadayka",
 }
 
+# 재생목록에는 그대로 올라와 있지만(제목·길이 정상) 실제로 열어 보면
+# '동영상을 재생할 수 없음'으로 막혀 있는 영상들. 권리자 측 사정으로
+# 생기는 것으로 보이며, 목록 재수집만으로는 걸러지지 않아 직접 적어 둔다.
+# (영상 id : 막힌 걸 확인한 날짜)
+BLOCKED_VIDEO_IDS = {
+    "ZrMcR7Ct-Pk",  # 2026-10-01 재생 불가 확인
+}
+
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "taize.json"
 
@@ -160,6 +168,8 @@ def fetch_album_tracks(playlist_id: str, album_title: str) -> list:
         if NON_SONG_RE.search(title):
             continue
         if title in ARABIC_TITLES:
+            continue
+        if video_id in BLOCKED_VIDEO_IDS:
             continue
         secs = duration_of(lv)
         if secs is None or not (MIN_SECONDS <= secs <= MAX_SECONDS):

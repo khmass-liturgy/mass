@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02 01:15",
+  "updated": "2026-10-02 09:37",
   "cutoff": "2026-10-01",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7414",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-02",
       "priest": "조명연",
       "excerpt": "선교지에서 아주 열정적으로 선교 활동을 하던 젊은 신부가 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2227",
+      "title": "2026년 10월 2일 수호천사 기념일",
+      "author": "박 베로니카",
+      "date": "2026-10-02",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2227",
+      "mass_date": "2026-10-02",
+      "priest": "양승국",
+      "excerpt": "충실하고 슬기로우며 능력 있는 수호천사!"
+    },
+    {
+      "id": "daum_bbadaking_185",
+      "title": "나이가 들면 들수록 어린아이의 마음을 지니기 어려워집니다. 어릴 때 나의 순…",
+      "author": "환희 평화",
+      "date": "2026-10-02",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/185",
+      "mass_date": "2026-10-02",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7413",

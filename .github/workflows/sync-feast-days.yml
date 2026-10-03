@@ -1,0 +1,46 @@
+name: Sync 축일 데이터 (Firebase → feast_days.json)
+
+on:
+  schedule:
+    # UTC 기준 → KST 04:23 (하루 1회). 정각을 피해 다른 워크플로와 분을 달리한다.
+  - cron: '23 19 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Firebase에서 축일 데이터 가져오기
+        run: python scripts/sync_feast_days.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feast_days.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: sync 축일 데이터 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
+          fi

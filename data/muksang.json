@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03 15:18",
+  "updated": "2026-10-03 23:15",
   "cutoff": "2026-10-02",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 12,
   "posts": [
     {
       "id": "daum_catholicsb_7416",
@@ -28,6 +28,16 @@
       "mass_date": "2026-10-04",
       "priest": "전삼용",
       "excerpt": "마태오 21,33-43 감사도 연습해야 한다 오늘 복음은 ‘못된 소작인들의…"
+    },
+    {
+      "id": "daum_bbadaking_7953",
+      "title": "2026년 10월 4일 연중 제27주일",
+      "author": "빠다킹신부",
+      "date": "2026-10-03",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7953",
+      "mass_date": "2026-10-04",
+      "priest": "조명연",
+      "excerpt": "신부가 된 지 얼마 안 되었을 때가 생각납니다."
     },
     {
       "id": "daum_catholicsb_7415",

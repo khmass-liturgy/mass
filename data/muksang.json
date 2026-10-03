@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03 00:39",
+  "updated": "2026-10-03 09:20",
   "cutoff": "2026-10-02",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7415",
@@ -48,6 +48,16 @@
       "mass_date": "2026-10-03",
       "priest": "양승국",
       "excerpt": "피곤보다는 충만한 기쁨이..."
+    },
+    {
+      "id": "daum_bbadaking_186",
+      "title": "주님께 사랑을 받고 있다고 느끼면 기적을 많이 체험하게 됩니다. 영적 식별을…",
+      "author": "환희 평화",
+      "date": "2026-10-03",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/186",
+      "mass_date": "2026-10-03",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7414",

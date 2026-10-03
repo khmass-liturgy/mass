@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 세례명 축일 데이터: 누구나 읽을 수 있고, 관리자 구글 계정만 저장할 수 있다.
+    match /feastday/{docId} {
+      allow read: if true;
+      allow write: if request.auth != null
+                   && request.auth.token.email_verified == true
+                   && request.auth.token.email == 'trsumun@gmail.com';
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

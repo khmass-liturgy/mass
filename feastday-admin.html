@@ -7,7 +7,6 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%A0%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
 :root{
   --wine:#5B1F2E; --wine-dark:#3E1520; --gold:#B98A2F; --gold-soft:#E4CE96;
@@ -106,7 +105,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 <header>
   <a class="back" href="feastday.html">← 축일 달력</a>
   <h1>🛠 축일 관리</h1>
-  <p>세례명 축일을 추가·수정·삭제하고 GitHub에 바로 저장합니다</p>
+  <p>세례명 축일을 추가·수정·삭제하고 Firebase에 바로 저장합니다</p>
 </header>
 
 <!-- ── 구글 로그인 관문 ── -->
@@ -114,7 +113,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
   <div class="icon">🔐</div>
   <h2>관리자 확인</h2>
   <p>허용된 구글 계정으로 로그인해야 축일 관리 화면에 들어갈 수 있습니다.</p>
-  <div class="gsi-wrap" id="gsiButton"></div>
+  <div class="gsi-wrap"><button class="btn-load" id="btnGoogle">구글 계정으로 로그인</button></div>
   <div class="denied" id="denied"></div>
 </div>
 
@@ -126,15 +125,14 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 
 <main id="mainContent" style="display:none">
   <div class="panel">
-    <div class="lbl">🔑 GITHUB 연결</div>
+    <div class="lbl">☁ FIREBASE 연결</div>
     <div class="row">
-      <input type="password" id="token" placeholder="GitHub Token (ghp_... 또는 github_pat_...)" autocomplete="off">
-      <button class="btn-load" id="btnLoad">데이터 불러오기</button>
+      <button class="btn-load" id="btnLoad">데이터 다시 불러오기</button>
     </div>
     <div class="status" id="status"></div>
     <div class="hint">
-      토큰은 이 브라우저에만 저장되고 서버로 전송되지 않습니다. 한 번 입력해두면 다음부터는 구글 로그인만으로 바로 이어집니다.
-      Fine-grained 토큰은 <b>khmass-liturgy/mass</b> 저장소에 <b>Contents: Read and write</b> 권한, Classic 토큰은 <b>repo</b> 권한이 필요합니다.
+      저장하면 축일달력과 초기화면에 바로 반영됩니다(GitHub 배포를 기다릴 필요 없음).
+      구글 로그인은 이 기기에 계속 유지됩니다.
     </div>
   </div>
 
@@ -150,7 +148,7 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 <div class="commitbar" id="commitbar">
   <div class="txt">저장 안 된 변경 <b id="dirtyN">0</b>건</div>
   <button class="btn-discard" id="btnDiscard">되돌리기</button>
-  <button class="btn-commit" id="btnCommit">☁ GitHub에 저장</button>
+  <button class="btn-commit" id="btnCommit">☁ 저장</button>
 </div>
 
 <!-- 편집 모달 -->
@@ -193,85 +191,70 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
   </div>
 </div>
 
-<script>
-'use strict';
-/* ── 저장소 설정 ─────────────────── */
-const OWNER = 'khmass-liturgy', REPO = 'mass', PATH = 'feast_days.json', BRANCH = 'main';
-const API = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/' + PATH;
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut }
+  from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import { getFirestore, doc, getDoc, setDoc, serverTimestamp }
+  from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-/* ── 구글 로그인 설정 ─────────────── */
-// ⚠️ 아래 두 값을 반드시 채워야 합니다.
-// 1) GOOGLE_CLIENT_ID: Google Cloud Console에서 발급받은 OAuth 클라이언트 ID
-// 2) ALLOWED_EMAILS: 이 화면 접속을 허용할 구글 계정 이메일 목록
-const GOOGLE_CLIENT_ID = '635707607180-3q95mv8hmg8glu4ritvckc8bhmjnb06s.apps.googleusercontent.com';
-const ALLOWED_EMAILS = [
-   'trsumun@gmail.com',
-];
-const TOKEN_STORAGE_KEY = 'khmass_feastday_admin_token';
+const $ = id => document.getElementById(id);
 
-function decodeJwt(token){
-  try {
-    const payload = token.split('.')[1];
-    const json = decodeURIComponent(atob(payload.replace(/-/g,'+').replace(/_/g,'/'))
-      .split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
-    return JSON.parse(json);
-  } catch(e) { return null; }
+/* ── Firebase 설정 ───────────────── */
+const app = initializeApp({
+  apiKey: 'AIzaSyB_XOy_6SqlWptnDRlX7oGESTyjqW2dN3A',
+  authDomain: 'khmass-jeonrye.firebaseapp.com',
+  projectId: 'khmass-jeonrye',
+  appId: '1:498800750143:web:2d120177e6539b686b128a'
+});
+const auth = getAuth(app);
+const db = getFirestore(app);
+const DATA_DOC = doc(db, 'feastday', 'data');
+
+// 이 화면에 들어올 수 있는 구글 계정. 실제 저장 권한은 firestore.rules 가 한 번 더 막는다.
+const ALLOWED_EMAILS = ['trsumun@gmail.com'];
+
+function showDenied(msg){
+  $('denied').textContent = msg;
+  $('denied').classList.add('show');
 }
 
-function handleGoogleLogin(response){
-  const payload = decodeJwt(response.credential);
-  if (!payload || !payload.email){
-    $('denied').textContent = '❌ 로그인 정보를 확인할 수 없습니다. 다시 시도해 주세요.';
-    $('denied').classList.add('show');
+onAuthStateChanged(auth, user => {
+  if (!user){
+    $('gate').style.display = '';
+    $('mainContent').style.display = 'none';
+    $('who').classList.remove('show');
     return;
   }
-  if (ALLOWED_EMAILS.length === 0){
-    $('denied').textContent = '⚠️ ALLOWED_EMAILS가 비어 있습니다. 코드에서 허용할 이메일을 먼저 등록해 주세요.';
-    $('denied').classList.add('show');
+  if (!ALLOWED_EMAILS.includes(user.email)){
+    showDenied('❌ ' + user.email + ' 계정은 이 화면에 접근할 수 없습니다.');
+    signOut(auth);
     return;
   }
-  if (!ALLOWED_EMAILS.includes(payload.email)){
-    $('denied').textContent = '❌ ' + payload.email + ' 계정은 이 화면에 접근할 수 없습니다.';
-    $('denied').classList.add('show');
-    return;
-  }
-  // 로그인 성공 — 관문 숨기고 본문 표시
   $('denied').classList.remove('show');
   $('gate').style.display = 'none';
   $('mainContent').style.display = 'block';
   $('who').classList.add('show');
-  $('whoAvatar').src = payload.picture || '';
-  $('whoEmail').textContent = payload.email;
+  $('whoAvatar').src = user.photoURL || '';
+  $('whoEmail').textContent = user.email;
+  load();
+});
 
-  // 저장해둔 GitHub 토큰이 있으면 자동으로 채우고 바로 불러오기
-  const savedToken = localStorage.getItem(TOKEN_STORAGE_KEY);
-  if (savedToken){
-    $('token').value = savedToken;
-    load();
+$('btnGoogle').addEventListener('click', async () => {
+  try {
+    await signInWithPopup(auth, new GoogleAuthProvider());
+  } catch(e) {
+    if (e.code !== 'auth/popup-closed-by-user') showDenied('❌ 로그인에 실패했습니다: ' + e.message);
   }
-}
-
-function initGoogleSignIn(){
-  if (!window.google || !google.accounts || !google.accounts.id) {
-    setTimeout(initGoogleSignIn, 200);
-    return;
-  }
-  google.accounts.id.initialize({
-    client_id: GOOGLE_CLIENT_ID,
-    callback: handleGoogleLogin,
-  });
-  google.accounts.id.renderButton($('gsiButton'), { theme: 'outline', size: 'large', text: 'signin_with' });
-}
+});
 
 /* ── 상태 ────────────────────────── */
 let meta = null;        // JSON의 meta 부분 보존
 let saints = [];        // 현재 편집본
 let baseline = '[]';    // 마지막 저장 시점 스냅샷(JSON 문자열)
-let sha = null;         // GitHub 파일 sha (커밋에 필요)
 let editIdx = -1;       // 수정 중인 인덱스, -1이면 추가
 let query = '';
 
-const $ = id => document.getElementById(id);
 const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
 function setStatus(msg, cls){
@@ -279,44 +262,28 @@ function setStatus(msg, cls){
   s.textContent = msg; s.className = 'status show ' + cls;
 }
 
-/* ── Base64 (UTF-8 안전) ─────────── */
-function utf8ToB64(str){
-  const bytes = new TextEncoder().encode(str);
-  let bin = '';
-  for (let i = 0; i < bytes.length; i += 8192)
-    bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
-  return btoa(bin);
-}
-function b64ToUtf8(b64){
-  const bin = atob(b64.replace(/\s/g, ''));
-  const bytes = new Uint8Array(bin.length);
-  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-  return new TextDecoder().decode(bytes);
-}
-
 /* ── 불러오기 ────────────────────── */
 async function load(){
-  const token = $('token').value.trim();
-  if (!token){ setStatus('❌ 토큰을 입력하세요', 'err'); return; }
   setStatus('불러오는 중…', 'busy');
   try {
-    const res = await fetch(API + '?ref=' + BRANCH, {
-      headers: {
-        'Authorization': 'token ' + token,
-        'Accept': 'application/vnd.github+json'
-      }
-    });
-    if (res.status === 401) { localStorage.removeItem(TOKEN_STORAGE_KEY); throw new Error('토큰이 유효하지 않습니다'); }
-    if (res.status === 404) throw new Error('feast_days.json 파일이 저장소에 없습니다. 먼저 파일을 업로드하세요');
-    if (!res.ok) throw new Error('불러오기 실패 (' + res.status + ')');
-    const data = await res.json();
-    sha = data.sha;
-    const parsed = JSON.parse(b64ToUtf8(data.content));
+    const snap = await getDoc(DATA_DOC);
+    let parsed, msg;
+    if (snap.exists()){
+      parsed = JSON.parse(snap.data().json);
+      baseline = null;
+      msg = '✅ 불러오기 완료 — 축일 ';
+    } else {
+      // Firebase에 아직 아무것도 없으면 저장소의 기존 파일로 채워 둔다
+      const res = await fetch('feast_days.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('feast_days.json 을 불러오지 못했습니다 (' + res.status + ')');
+      parsed = await res.json();
+      baseline = '[]';
+      msg = '⚠️ Firebase에 아직 데이터가 없어 기존 파일로 채웠습니다. [저장]을 누르면 Firebase에 올라갑니다 — 축일 ';
+    }
     meta = parsed.meta || null;
     saints = (parsed.saints || parsed).slice();
-    baseline = JSON.stringify(saints);
-    localStorage.setItem(TOKEN_STORAGE_KEY, token);
-    setStatus('✅ 불러오기 완료 — 축일 ' + saints.length + '건', 'ok');
+    if (baseline === null) baseline = JSON.stringify(saints);
+    setStatus(msg + saints.length + '건', snap.exists() ? 'ok' : 'busy');
     $('tools').style.display = 'flex';
     render();
   } catch(e) {
@@ -406,11 +373,8 @@ function saveForm(){
   render();
 }
 
-/* ── GitHub 커밋 ─────────────────── */
+/* ── Firebase 저장 ───────────────── */
 async function commit(){
-  const token = $('token').value.trim();
-  if (!token){ setStatus('❌ 토큰을 입력하세요', 'err'); return; }
-  if (!sha){ setStatus('❌ 먼저 [데이터 불러오기]를 눌러주세요', 'err'); return; }
   const n = dirtyCount();
   if (!n) return;
 
@@ -420,39 +384,24 @@ async function commit(){
     const sorted = saints.slice().sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name));
     const out = { meta: meta || {}, saints: sorted };
     out.meta.updated = new Date().toISOString().slice(0, 10);
-    const body = {
-      message: '축일 데이터 수정 (' + n + '건 변경) - 축일 관리 페이지',
-      content: utf8ToB64(JSON.stringify(out, null, 2)),
-      sha: sha,
-      branch: BRANCH
-    };
-    const res = await fetch(API, {
-      method: 'PUT',
-      headers: {
-        'Authorization': 'token ' + token,
-        'Accept': 'application/vnd.github+json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
+    await setDoc(DATA_DOC, {
+      json: JSON.stringify(out),
+      updatedAt: serverTimestamp(),
+      updatedBy: auth.currentUser.email
     });
-    const data = await res.json();
-    if (res.status === 409) throw new Error('다른 곳에서 파일이 수정되었습니다. [데이터 불러오기]로 새로 받은 뒤 다시 시도하세요');
-    if (!res.ok) throw new Error(data.message || '저장 실패 (' + res.status + ')');
-    sha = data.content.sha;
     saints = sorted;
     baseline = JSON.stringify(saints);
     render();
-    setStatus('✅ GitHub에 저장 완료 — 1~2분 뒤 사이트에 반영됩니다', 'ok');
+    setStatus('✅ 저장 완료 — 축일달력에 바로 반영됩니다', 'ok');
   } catch(e) {
-    setStatus('❌ ' + e.message, 'err');
+    setStatus('❌ ' + (e.code === 'permission-denied' ? '저장 권한이 없습니다(Firestore 보안 규칙을 확인하세요)' : e.message), 'err');
   } finally {
-    btn.disabled = false; btn.textContent = '☁ GitHub에 저장';
+    btn.disabled = false; btn.textContent = '☁ 저장';
   }
 }
 
 /* ── 이벤트 ──────────────────────── */
 $('btnLoad').addEventListener('click', load);
-$('token').addEventListener('keydown', e => { if (e.key === 'Enter') load(); });
 $('q').addEventListener('input', e => { query = e.target.value; render(); });
 $('btnAdd').addEventListener('click', () => openForm(-1));
 $('list').addEventListener('click', e => {
@@ -486,11 +435,9 @@ window.addEventListener('beforeunload', e => {
 
 $('btnLogout').addEventListener('click', () => {
   if (dirtyCount() > 0 && !confirm('저장하지 않은 변경이 있습니다. 그래도 로그아웃할까요?')) return;
-  localStorage.removeItem(TOKEN_STORAGE_KEY);
-  location.reload();
+  signOut(auth);
 });
 
-initGoogleSignIn();
 </script>
 </body>
 </html>

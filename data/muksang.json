@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-03 23:15",
-  "cutoff": "2026-10-02",
+  "updated": "2026-10-04 08:42",
+  "cutoff": "2026-10-03",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7416",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-04",
       "priest": "조명연",
       "excerpt": "신부가 된 지 얼마 안 되었을 때가 생각납니다."
+    },
+    {
+      "id": "daum_bbadaking_2229",
+      "title": "2026년 10월 4일 연중 제27주일",
+      "author": "박 베로니카",
+      "date": "2026-10-04",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2229",
+      "mass_date": "2026-10-04",
+      "priest": "양승국",
+      "excerpt": "달래고 감싸며 어루만져주시는 주님!"
     },
     {
       "id": "daum_catholicsb_7415",
@@ -86,56 +96,6 @@
       "date": "2026-10-03",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138348&menu=4770",
       "mass_date": "2026-10-03",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7414",
-      "title": "전삼용 요셉 신부 /10월02일 수호천사 기념일 - 창조론과 진화론: 천사의 학설, 악마의 학설",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-01",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7414",
-      "mass_date": "2026-10-02",
-      "priest": "전삼용",
-      "excerpt": "가해 수호천사 기념일 복음: 마태오 18,1-5.10 창조론과 진화론: 천사…"
-    },
-    {
-      "id": "daum_bbadaking_7951",
-      "title": "2026년 10월 2일 수호천사 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-10-01",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7951",
-      "mass_date": "2026-10-02",
-      "priest": "조명연",
-      "excerpt": "선교지에서 아주 열정적으로 선교 활동을 하던 젊은 신부가 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2227",
-      "title": "2026년 10월 2일 수호천사 기념일",
-      "author": "박 베로니카",
-      "date": "2026-10-02",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2227",
-      "mass_date": "2026-10-02",
-      "priest": "양승국",
-      "excerpt": "충실하고 슬기로우며 능력 있는 수호천사!"
-    },
-    {
-      "id": "daum_bbadaking_185",
-      "title": "나이가 들면 들수록 어린아이의 마음을 지니기 어려워집니다. 어릴 때 나의 순…",
-      "author": "환희 평화",
-      "date": "2026-10-02",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/185",
-      "mass_date": "2026-10-02",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2138301",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-02",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138301&menu=4770",
-      "mass_date": "2026-10-02",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

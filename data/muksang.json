@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04 15:42",
+  "updated": "2026-10-04 23:44",
   "cutoff": "2026-10-03",
   "days": 2,
   "names": [
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 13,
   "posts": [
+    {
+      "id": "daum_catholicsb_7417",
+      "title": "전삼용 요셉 신부 / 가해 연중 제27주간 월요일 - 계명이 행복의 가장 중요한 원인이 되는 이유",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-04",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7417",
+      "mass_date": "2026-10-05",
+      "priest": "전삼용",
+      "excerpt": "루카 10,25-37 계명이 행복의 가장 중요한 원인이 되는 이유 오늘 복음…"
+    },
+    {
+      "id": "daum_bbadaking_7954",
+      "title": "2026년 10월 5일 연중 제27주간 월요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-04",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7954",
+      "mass_date": "2026-10-05",
+      "priest": "조명연",
+      "excerpt": "명절에 편의점에서 컵라면 드시는 어르신이 많다는 뉴스를 본 적이 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_2230",
+      "title": "2026년 10월 5일 연중 제27주간 월요일",
+      "author": "박 베로니카",
+      "date": "2026-10-04",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2230",
+      "mass_date": "2026-10-05",
+      "priest": "양승국",
+      "excerpt": "구원이란? 진정으로 사랑하는 존재와 함께 있는 것!"
+    },
     {
       "id": "daum_catholicsb_7416",
       "title": "전삼용 요셉 신부 / 가해 연중 제27주일 - 감사도 연습해야 한다",

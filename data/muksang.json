@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05 08:54",
+  "updated": "2026-10-05 15:47",
   "cutoff": "2026-10-04",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7417",
@@ -48,6 +48,26 @@
       "mass_date": "2026-10-05",
       "priest": "양승국",
       "excerpt": "구원이란? 진정으로 사랑하는 존재와 함께 있는 것!"
+    },
+    {
+      "id": "daum_bbadaking_188",
+      "title": "고통에 빠진 이웃에 대한 연민의 정이나 사랑의 실천이 없다면, 어떤 높은 지…",
+      "author": "환희 평화",
+      "date": "2026-10-05",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/188",
+      "mass_date": "2026-10-05",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2138436",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-05",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138436&menu=4770",
+      "mass_date": "2026-10-05",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7416",

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-06 19:06",
+  "updated": "2026-10-07 04:27",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "WzuD8_l9QbQ",
+      "date": "2026-10-07",
+      "title": "묵주 기도의 복되신 동정 마리아 기념일",
+      "url": "https://www.youtube.com/watch?v=WzuD8_l9QbQ"
+    },
     {
       "videoId": "YPam8VPRHW0",
       "date": "2026-10-06",
@@ -57,12 +63,6 @@
       "date": "2026-09-28",
       "title": "연중 제26주간 월요일",
       "url": "https://www.youtube.com/watch?v=af15cJ6-_fk"
-    },
-    {
-      "videoId": "T4cRjfZpEBI",
-      "date": "2026-09-27",
-      "title": "연중 제26주일",
-      "url": "https://www.youtube.com/watch?v=T4cRjfZpEBI"
     }
   ]
 }

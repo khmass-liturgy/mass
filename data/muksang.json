@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06 03:15",
+  "updated": "2026-10-06 10:42",
   "cutoff": "2026-10-05",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7418",
@@ -38,6 +38,36 @@
       "mass_date": "2026-10-06",
       "priest": "조명연",
       "excerpt": "“삶은 짧지 않다."
+    },
+    {
+      "id": "daum_bbadaking_2231",
+      "title": "2026년 10월 6일 연중 제27주간 화요일",
+      "author": "박 베로니카",
+      "date": "2026-10-06",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2231",
+      "mass_date": "2026-10-06",
+      "priest": "양승국",
+      "excerpt": "관상과 이웃 사랑의 실천은 두 개의 톱니바퀴처럼 맞물려야 합니다!"
+    },
+    {
+      "id": "daum_bbadaking_189",
+      "title": "'관상'은 활동의 뿌리이고, '활동'은 관상의 열매입니다.",
+      "author": "환희 평화",
+      "date": "2026-10-06",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/189",
+      "mass_date": "2026-10-06",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2138479",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-06",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138479&menu=4770",
+      "mass_date": "2026-10-06",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7417",

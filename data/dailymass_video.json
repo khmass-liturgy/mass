@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-05 19:24",
+  "updated": "2026-10-06 11:57",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "lfiR1qH_w6A",
+      "date": "2026-10-06",
+      "liturgy": "연중 제27주간 화요일",
+      "priest": "정호영 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=lfiR1qH_w6A&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "KU-NeNlJGGk",
       "date": "2026-10-05",
@@ -95,13 +102,6 @@
       "liturgy": "피에트렐치나의 성 비오 사제 기념일",
       "priest": "김종호 프란치스코 신부",
       "url": "https://www.youtube.com/watch?v=xECGALXKcGQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "OFK7v08vsvY",
-      "date": "2026-09-22",
-      "liturgy": "연중 제25주간 화요일",
-      "priest": "조승현 베드로 신부",
-      "url": "https://www.youtube.com/watch?v=OFK7v08vsvY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,15 +1,23 @@
 {
-  "updated": "2026-10-06 19:16",
+  "updated": "2026-10-07 04:32",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "vGKwk4DlWwY",
-  "date": "2026-10-06",
-  "label": "2026년 10월 6일연중 제27주간 화요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 10월 6일 연중 제27주간 화요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "elQRVMIf9j8",
+  "date": "2026-10-07",
+  "label": "2026년 10월 7일묵주 기도의 복되신 동정 마리아 기념일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 10월 7일 묵주 기도의 복되신 동정 마리아 기념일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=vGKwk4DlWwY",
+  "url": "https://www.youtube.com/watch?v=elQRVMIf9j8",
   "count": 10,
   "videos": [
+    {
+      "videoId": "elQRVMIf9j8",
+      "date": "2026-10-07",
+      "label": "2026년 10월 7일묵주 기도의 복되신 동정 마리아 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 7일 묵주 기도의 복되신 동정 마리아 기념일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=elQRVMIf9j8"
+    },
     {
       "videoId": "vGKwk4DlWwY",
       "date": "2026-10-06",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 9월27일 연중 제26주일(세계 이주민과 난민의 날)](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=48E6wamQL1U"
-    },
-    {
-      "videoId": "ZXdp0F1V63c",
-      "date": "2026-09-26",
-      "label": "2026년 9월 26일연중 제25주간 토요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월26일 연중 제25주간 토요일](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=ZXdp0F1V63c"
     }
   ]
 }

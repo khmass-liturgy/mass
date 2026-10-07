@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07 03:14",
+  "updated": "2026-10-07 09:33",
   "cutoff": "2026-10-06",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7419",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-07",
       "priest": "조명연",
       "excerpt": "여름에 풀숲 근처를 가게 되면 날벌레가 얼굴로 달려들어 보통 신경이 쓰이는…"
+    },
+    {
+      "id": "daum_bbadaking_2232",
+      "title": "2026년 10월 7일 묵주 기도의 복되신 동정 마리아 기념일",
+      "author": "박 베로니카",
+      "date": "2026-10-07",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2232",
+      "mass_date": "2026-10-07",
+      "priest": "양승국",
+      "excerpt": "요약된 복음, 묵주 기도!"
+    },
+    {
+      "id": "daum_bbadaking_190",
+      "title": "기도 안에서 우리가 만족을 하는지, 그렇지 않은지는 중요하지 않습니다. 중요…",
+      "author": "환희 평화",
+      "date": "2026-10-07",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/190",
+      "mass_date": "2026-10-07",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7418",

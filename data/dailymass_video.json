@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-07 04:31",
+  "updated": "2026-10-07 09:41",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "-u-esAUl2MY",
+      "date": "2026-10-07",
+      "liturgy": "묵주 기도의 복되신 동정 마리아 기념일",
+      "priest": "최영섭 후고 신부",
+      "url": "https://www.youtube.com/watch?v=-u-esAUl2MY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "lfiR1qH_w6A",
       "date": "2026-10-06",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제25주간 목요일",
       "priest": "최재영 세례자 요한 신부",
       "url": "https://www.youtube.com/watch?v=15wklfMnh-c&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "xECGALXKcGQ",
-      "date": "2026-09-23",
-      "liturgy": "피에트렐치나의 성 비오 사제 기념일",
-      "priest": "김종호 프란치스코 신부",
-      "url": "https://www.youtube.com/watch?v=xECGALXKcGQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

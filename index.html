@@ -574,6 +574,133 @@
     .muksang-author{display:none;}
     .muksang-item{gap:8px;padding:10px 12px;}
   }
+
+  /* ══ 가을 테마 — 카드 디자인 ══
+     단풍 빨강 · 호박색 · 도토리 갈색 · 은행 노랑 팔레트로 카드를 다시 입힌다.
+     기존 규칙은 그대로 두고 뒤에서 덮어써서, 되돌리려면 이 블록만 지우면 된다. */
+  :root{
+    --navy:#3B281D; --navy-lt:#573A2A;
+    --gold:#D58A1F; --gold-lt:#F2C46B;
+    --cream:#FBF3E4; --card:#FFFDF8;
+    --border:#E8D5B5; --text:#2B1E16;
+    --muted:#8A7157; --vatican:#9E3426;
+    --maple:#B8412B; --pumpkin:#D2691E; --ginkgo:#E8B33A; --moss:#6B7A3A;
+  }
+  body{background:
+    radial-gradient(circle at 8% 0%, rgba(232,179,58,.14), transparent 40%),
+    radial-gradient(circle at 100% 30%, rgba(184,65,43,.07), transparent 45%),
+    var(--cream);}
+
+  /* 매일미사 카드 — 해 질 녘 단풍 숲 */
+  .missa-card{
+    background:linear-gradient(160deg,#4A2418 0%,#7A2E1D 55%,#A8501F 100%);
+    border-radius:18px;
+    box-shadow:0 12px 32px rgba(90,40,20,.35);
+  }
+  .missa-card:hover{box-shadow:0 18px 44px rgba(90,40,20,.45);}
+  .missa-card::before{
+    background:
+      radial-gradient(circle at 12% 105%, rgba(242,196,107,.35), transparent 55%),
+      radial-gradient(circle at 95% -10%, rgba(255,214,140,.18), transparent 45%);
+  }
+  .missa-card::after{content:'🍁';color:inherit;font-size:1.2rem;opacity:.75;}
+  .missa-date-box{
+    background:radial-gradient(circle at 35% 30%, #FFE29A, #D2691E 62%, #9E3426 100%);
+    box-shadow:0 4px 18px rgba(0,0,0,.35), inset 0 0 0 2px rgba(255,255,255,.3);
+  }
+  .missa-sub{color:#F0D9BE;}
+  .missa-title{color:#FFF6E6;}
+  .missa-arrow{border-color:var(--gold-lt);}
+  .missa-card:hover .missa-arrow{background:var(--gold-lt);color:#4A2418;}
+  .missa-season.season-ordinary{background:rgba(160,185,90,.22);color:#E2EEB8;border-color:rgba(190,210,120,.5);}
+
+  /* 기도문 · 대축일 · 절기 카드 */
+  .wyd-card,.prayer-details{
+    background:linear-gradient(135deg,#5A2E1E 0%,#7B3A22 100%);
+    border-radius:16px;box-shadow:0 8px 26px rgba(90,40,20,.25);
+  }
+  .wyd-body{color:#F0E0C8;}
+  .wyd-fiat{color:#E6D2B4;}
+  .prayer-body{border-top-color:rgba(242,196,107,.3);}
+  .dday-card{
+    background:linear-gradient(135deg,#6B3420 0%,#9A4A22 100%);
+    border-radius:16px;box-shadow:0 8px 24px rgba(90,40,20,.25);
+  }
+  .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,20,.35);}
+  .dday-badge{color:#4A2418;background:linear-gradient(135deg,#F2C46B,#FFE29A);}
+  .term-card{background:linear-gradient(135deg,#4F5A2A 0%,#7A8440 100%);}
+  .term-card:hover{box-shadow:0 8px 24px rgba(90,40,20,.25);}
+  .term-card .dday-date{color:#F0F0C0;}
+  .term-meaning{color:#F4F4DA;}
+  .term-meaning .term-hanja{color:#E6E49A;}
+  .season-card{background:linear-gradient(135deg,#5A3A2C 0%,#3B281D 100%);}
+  .season-now{color:#EBD3B4;}
+  .pope-card{
+    background:linear-gradient(135deg,#FFFDF8 0%,#FDF0DA 100%);
+    border-color:#E8B33A;border-radius:18px;box-shadow:0 4px 16px rgba(213,138,31,.2);
+  }
+
+  /* 묵상·소금항아리·빈첸시오 가로 카드 */
+  .muksang-all-card{
+    background:linear-gradient(135deg,#4A2A1C 0%,#8A3F22 100%);
+    border-radius:16px;box-shadow:0 6px 22px rgba(90,40,20,.25);
+  }
+  .muksang-all-card:hover{box-shadow:0 12px 32px rgba(90,40,20,.35);}
+  .muksang-all-card::before{
+    background:radial-gradient(circle at 92% -20%, rgba(242,196,107,.28), transparent 55%),
+               radial-gradient(circle at -5% 120%, rgba(242,196,107,.14), transparent 50%);
+  }
+  .muksang-all-icon{background:linear-gradient(135deg,#F2C46B,#E8A33A);border-radius:12px;}
+  .muksang-all-sub{color:#EBD3B4;}
+  .saltjar-card{background:linear-gradient(135deg,#7A4A12 0%,#C58A2E 100%);box-shadow:0 6px 22px rgba(122,74,18,.28);}
+  .vincent-card{background:linear-gradient(135deg,#3F4A1E 0%,#76843A 100%);}
+  .vincent-card .muksang-all-eyebrow{color:#EAF0A8;}
+  .vincent-card .muksang-all-sub{color:#F2F5D6;}
+  .lauds-morning{background:linear-gradient(135deg,#B8641A 0%,#E8A33A 100%);}
+  .lauds-evening{background:linear-gradient(135deg,#4A2418 0%,#8A3F4A 100%);}
+
+  /* 링크 카드 — 낙엽 한 장 같은 둥근 카드, 왼쪽 띠는 단풍색이 돌아가며 바뀐다 */
+  .link-card,.link-more-summary,.muksang-box{
+    border-radius:14px;
+    border:1px solid var(--border);
+    border-left:6px solid var(--maple);
+    background:linear-gradient(160deg,var(--card) 0%,#FCF1DE 100%);
+    box-shadow:0 2px 8px rgba(120,70,30,.07);
+    position:relative;overflow:hidden;
+  }
+  .link-grid .link-card:nth-child(4n+1){border-left-color:var(--maple);}
+  .link-grid .link-card:nth-child(4n+2){border-left-color:var(--pumpkin);}
+  .link-grid .link-card:nth-child(4n+3){border-left-color:var(--ginkgo);}
+  .link-grid .link-card:nth-child(4n){border-left-color:var(--moss);}
+  .link-card::after{
+    content:'🍂';position:absolute;right:-6px;bottom:-10px;
+    font-size:2.4rem;opacity:.08;transform:rotate(-18deg);
+    transition:opacity .25s, transform .25s;pointer-events:none;
+  }
+  .link-card:hover{
+    border-left-color:var(--maple);
+    box-shadow:0 10px 24px rgba(160,70,30,.2);
+    transform:translateY(-3px);
+    background:linear-gradient(160deg,#FFF8EA 0%,#FBE6C4 100%);
+  }
+  .link-card:hover::after{opacity:.2;transform:rotate(-8deg) scale(1.1);}
+  .link-card .lc-icon,.link-more-summary .lc-icon{color:var(--pumpkin);}
+  .link-card .lc-name,.link-more-summary{color:#4A2A1C;}
+  .link-card:hover .lc-go{color:var(--maple);}
+  .link-more-summary:hover{border-left-color:var(--pumpkin);box-shadow:0 8px 20px rgba(160,70,30,.15);}
+  .muksang-item:hover{background:#FCF1DE;}
+  .muksang-priest{background:var(--maple);}
+  .muksang-item:hover .muksang-title{color:var(--maple);}
+
+  /* 섹션 제목 — 단풍색 밑줄 */
+  .group-header{border-bottom:2px solid transparent;
+    border-image:linear-gradient(90deg,var(--maple),var(--pumpkin),var(--ginkgo),transparent) 1;}
+  .group-title{color:#4A2A1C;}
+  .badge-vatican{background:var(--maple);}
+  .badge-korea{background:var(--pumpkin);}
+  .badge-kyoha{background:var(--moss);}
+  .badge-muksang{background:var(--ginkgo);color:#4A2418;}
+  .gold-bar{background:linear-gradient(90deg,#B8412B,#D2691E 35%,#E8B33A 70%,#6B7A3A);}
 </style>
 </head>
 <body>

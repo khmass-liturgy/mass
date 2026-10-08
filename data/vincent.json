@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-08 16:15",
+  "updated": "2026-10-09 01:23",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "qi3mbbBaQmI",
+      "date": "2026-10-09",
+      "title": "연중 제27주간 금요일",
+      "url": "https://www.youtube.com/watch?v=qi3mbbBaQmI"
+    },
     {
       "videoId": "VynvK0nBWb4",
       "date": "2026-10-08",
@@ -57,12 +63,6 @@
       "date": "2026-09-30",
       "title": "성 예로니모 사제 학자 기념일",
       "url": "https://www.youtube.com/watch?v=ZI3CacjTkOU"
-    },
-    {
-      "videoId": "AQA80CE8jEw",
-      "date": "2026-09-29",
-      "title": "성 미카엘 성 가브리엘 성 라파엘 대천사 축일",
-      "url": "https://www.youtube.com/watch?v=AQA80CE8jEw"
     }
   ]
 }

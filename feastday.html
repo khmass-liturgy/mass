@@ -153,7 +153,7 @@ footer{text-align:center;font-size:11.5px;color:var(--muted);padding:26px 16px 1
 
 <main>
   <div class="searchbox">
-    <input type="search" id="q" placeholder="세례명을 입력하세요 (예: 데레사, 베드로)" autocomplete="off">
+    <input type="search" id="q" placeholder="세례명 검색 (예: 데레사, ㅂㄷㄹ 초성, 오타도 OK)" autocomplete="off">
     <span class="icon">🔍</span>
   </div>
 
@@ -261,13 +261,74 @@ function renderWeek(){
   list.innerHTML = html;
 }
 
+/* ── 검색: 초성 · 오자(철자 오류) 허용 ──────────────────────
+   1) 글자 그대로 포함되면 일치 (이름·칭호)
+   2) 입력이 모두 초성(ㅂㄷㄹ)이면 이름·칭호의 초성과 비교
+   3) 그 밖에는 자모 단위로 풀어 비슷한 소리끼리 같게 보고(ㅔ/ㅐ, ㄷ/ㅌ/ㄸ …)
+      이름에서 1~2자모 정도 틀려도 찾는다 (예: 테레사→데레사, 배드로→베드로) */
+const CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+const JUNG = ['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
+const JONG = ['','ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+// 발음이 비슷해 헷갈리기 쉬운 자모를 하나로 모은다
+const SOUND = {'ㄲ':'ㄱ','ㅋ':'ㄱ','ㄸ':'ㄷ','ㅌ':'ㄷ','ㅃ':'ㅂ','ㅍ':'ㅂ','ㅆ':'ㅅ','ㅉ':'ㅈ','ㅊ':'ㅈ',
+  'ㅐ':'ㅔ','ㅒ':'ㅔ','ㅖ':'ㅔ','ㅙ':'ㅞ','ㅚ':'ㅞ','ㅘ':'ㅗㅏ','ㅝ':'ㅜㅓ','ㅟ':'ㅜㅣ','ㅢ':'ㅡㅣ','ㅛ':'ㅗ','ㅠ':'ㅜ'};
+function jamoOf(text){
+  const out = [];
+  for (const ch of text){
+    const c = ch.charCodeAt(0);
+    if (c >= 0xAC00 && c <= 0xD7A3){
+      const n = c - 0xAC00;
+      out.push(CHO[Math.floor(n / 588)], JUNG[Math.floor((n % 588) / 28)], JONG[n % 28]);
+    } else out.push(ch);
+  }
+  const res = [];
+  out.join('').split('').forEach(j => { const m = SOUND[j] || j; for (const x of m) res.push(x); });
+  // 받침이 다음 글자 초성으로 넘어가는 표기 차이(예: 요셉/요세프)는 ㅂ/ㅍ 통합으로 이미 흡수된다
+  return res;
+}
+function choOf(text){
+  let r = '';
+  for (const ch of text){
+    const c = ch.charCodeAt(0);
+    if (c >= 0xAC00 && c <= 0xD7A3){ const j = CHO[Math.floor((c - 0xAC00) / 588)]; r += SOUND[j] || j; }
+  }
+  return r;
+}
+// 자모 배열에서 pattern 과 k 글자 이내로 비슷한 부분이 있는지 (Sellers 근사 부분문자열 일치)
+function fuzzyHas(text, pat, k){
+  const m = pat.length;
+  let prev = [];
+  for (let i = 0; i <= m; i++) prev[i] = i;
+  if (prev[m] <= k) return true;
+  for (let j = 0; j < text.length; j++){
+    const cur = [0];
+    for (let i = 1; i <= m; i++){
+      cur[i] = Math.min(prev[i-1] + (pat[i-1] === text[j] ? 0 : 1), prev[i] + 1, cur[i-1] + 1);
+    }
+    if (cur[m] <= k) return true;
+    prev = cur;
+  }
+  return false;
+}
+function matchSaint(s, q){
+  if (norm(s.name).includes(q) || norm(s.title).includes(q)) return true;
+  if (/^[ㄱ-ㅎ]+$/.test(q)){
+    const qc = q.split('').map(j => SOUND[j] || j).join('');
+    return choOf(s.name || '').includes(qc) || choOf(s.title || '').includes(qc);
+  }
+  const pat = jamoOf(q);
+  if (pat.length < 5) return false; // 너무 짧으면 오자 허용이 엉뚱한 결과를 부른다
+  const k = pat.length >= 10 ? 2 : 1;
+  return fuzzyHas(jamoOf(norm(s.name)), pat, k);
+}
+
 /* ── 필터/렌더 ────────────────────── */
 function filtered(){
   const q = norm(query);
   return SAINTS.filter(s => {
     if (gender && s.gender !== gender && s.gender !== '공통') return false;
     if (month && parseInt(s.date.slice(0,2),10) !== month) return false;
-    if (q && !(norm(s.name).includes(q) || norm(s.title).includes(q))) return false;
+    if (q && !matchSaint(s, q)) return false;
     return true;
   }).sort((a,b) => a.date.localeCompare(b.date));
 }

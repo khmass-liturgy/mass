@@ -1,15 +1,23 @@
 {
-  "updated": "2026-10-09 19:31",
+  "updated": "2026-10-10 04:32",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "3tE0d_E_wwM",
-  "date": "2026-10-09",
-  "label": "2026년 10월 9일연중 제27주간 금요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 10월 9일 연중 제27주간 금요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "29Vh3F2wZEM",
+  "date": "2026-10-10",
+  "label": "2026년 10월 10일연중 제27주간 토요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 10월 10일 연중 제27주간 토요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=3tE0d_E_wwM",
+  "url": "https://www.youtube.com/watch?v=29Vh3F2wZEM",
   "count": 10,
   "videos": [
+    {
+      "videoId": "29Vh3F2wZEM",
+      "date": "2026-10-10",
+      "label": "2026년 10월 10일연중 제27주간 토요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 10일 연중 제27주간 토요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=29Vh3F2wZEM"
+    },
     {
       "videoId": "3tE0d_E_wwM",
       "date": "2026-10-09",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 1일 아기 예수의 성녀 데레사 동정 학자 기념일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=m22-c2vm2Ug"
-    },
-    {
-      "videoId": "Z9DOoOuqFRY",
-      "date": "2026-09-30",
-      "label": "2026년 9월 30일성 예로니모 사제 학자 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 9월 30일 성 예로니모 사제 학자 기념일](정원재 요한세례자 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=Z9DOoOuqFRY"
     }
   ]
 }

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-09 16:19",
+  "updated": "2026-10-10 01:06",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "xzvVLAToBf4",
+      "date": "2026-10-10",
+      "title": "연중 제27주간 토요일",
+      "url": "https://www.youtube.com/watch?v=xzvVLAToBf4"
+    },
     {
       "videoId": "qi3mbbBaQmI",
       "date": "2026-10-09",
@@ -57,12 +63,6 @@
       "date": "2026-10-01",
       "title": "아기 예수의 성녀 데레사 동정 학자 기념일",
       "url": "https://www.youtube.com/watch?v=zKHlLR1tf9Y"
-    },
-    {
-      "videoId": "ZI3CacjTkOU",
-      "date": "2026-09-30",
-      "title": "성 예로니모 사제 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=ZI3CacjTkOU"
     }
   ]
 }

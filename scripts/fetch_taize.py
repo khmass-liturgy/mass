@@ -18,6 +18,11 @@ data/taize.json 으로 저장한다.
    페이지의 썸네일 뱃지에 'M:SS' 형태로 이미 나와 있다.
 3) 3~5분 안팎(2:30~5:30, '가량'을 감안한 여유)에 드는 것만 남기고,
    해설·인터뷰·티저 같은 노래가 아닌 보너스 트랙은 제목으로 걸러낸다.
+4) 남은 영상마다 실제 재생 페이지의 재생 가능 여부(playabilityStatus)를
+   확인해, 재생목록에는 있지만 열면 '동영상을 재생할 수 없음'인 영상을
+   자동으로 뺀다. (예전에는 막힌 영상 id 를 사람이 BLOCKED_VIDEO_IDS 에
+   적어 넣어야 했다.) 화면(index.html)도 보여 주기 직전에 한 번 더
+   확인하므로, 다음 갱신 전에 새로 막힌 영상도 건너뛴다.
 
 GitHub Actions에서 주기적으로 실행됨.
 """
@@ -25,6 +30,7 @@ GitHub Actions에서 주기적으로 실행됨.
 import json
 import re
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -72,6 +78,13 @@ ARABIC_TITLES = {
 BLOCKED_VIDEO_IDS = {
     "ZrMcR7Ct-Pk",  # 2026-10-01 재생 불가 확인
 }
+
+# 재생 가능 여부 점검에서 '확실히 못 본다'고 볼 상태. LOGIN_REQUIRED(봇 확인
+# 등)나 점검 자체의 실패는 영상 문제가 아닐 수 있으므로 막힌 것으로 치지 않는다.
+UNPLAYABLE_STATUSES = {"UNPLAYABLE", "ERROR"}
+# 점검에 걸린 영상이 이 비율을 넘으면 영상이 아니라 점검 쪽 문제로 보고 되돌린다.
+MAX_DROP_RATIO = 0.5
+PLAYABILITY_RE = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
 
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "taize.json"
@@ -184,6 +197,43 @@ def fetch_album_tracks(playlist_id: str, album_title: str) -> list:
     return tracks
 
 
+def is_unplayable(video_id: str) -> bool:
+    """재생 페이지의 playabilityStatus 가 UNPLAYABLE/ERROR 면 True.
+
+    페이지를 못 읽거나 상태를 못 찾으면 False(= 일단 살려 둔다)."""
+    try:
+        r = requests.get(
+            f"{BASE}/watch?v={video_id}",
+            headers={**HEADERS, "Cookie": "CONSENT=YES+1; SOCS=CAI"},
+            timeout=30,
+        )
+        if r.status_code == 404:
+            return True
+        r.raise_for_status()
+    except requests.RequestException as e:
+        print(f"  playability check skipped ({video_id}): {e}", file=sys.stderr)
+        return False
+    m = PLAYABILITY_RE.search(r.text)
+    return bool(m and m.group(1) in UNPLAYABLE_STATUSES)
+
+
+def drop_unplayable(by_video_id: dict) -> dict:
+    kept = dict(by_video_id)
+    dropped = []
+    for vid, t in by_video_id.items():
+        if is_unplayable(vid):
+            dropped.append(vid)
+            print(f"  재생 불가로 제외: {vid} {t['title']}")
+        time.sleep(0.3)
+    if dropped and len(dropped) > len(by_video_id) * MAX_DROP_RATIO:
+        print(f"재생 점검에서 {len(dropped)}/{len(by_video_id)} 곡이 걸렸습니다 — "
+              "점검 오류로 보고 모두 유지합니다.", file=sys.stderr)
+        return kept
+    for vid in dropped:
+        del kept[vid]
+    return kept
+
+
 def main() -> int:
     try:
         albums = fetch_album_playlists()
@@ -198,6 +248,10 @@ def main() -> int:
 
         if not by_video_id:
             raise ValueError("3~5분가량의 성가 영상을 하나도 찾지 못했습니다.")
+
+        by_video_id = drop_unplayable(by_video_id)
+        if not by_video_id:
+            raise ValueError("재생 가능한 성가 영상이 하나도 없습니다.")
 
         # videoId 순 정렬로 매 실행마다 순서를 고정한다 — 화면의 요일 회전이
         # 안정적으로 같은 순서를 보게 하기 위함이다.

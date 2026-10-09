@@ -1556,17 +1556,38 @@
         return order[pos];
       }
 
+      // 보여 주기 직전에 YouTube oEmbed 로 영상이 아직 살아 있는지 확인한다.
+      // 삭제·비공개면 404/400 이 오고, 그러면 순서상 다음 곡으로 넘어간다.
+      // (401 은 '퍼가기 금지'일 뿐 YouTube 에서는 재생되므로 통과.
+      //  네트워크 오류 등 판단이 안 될 때도 통과 — 점검 실패로 카드가 비면 안 된다.)
+      function isAlive(it){
+        return fetch('https://www.youtube.com/oembed?format=json&url=' +
+                     encodeURIComponent('https://www.youtube.com/watch?v=' + it.videoId))
+          .then(function(r){ return !(r.status === 404 || r.status === 400); })
+          .catch(function(){ return true; });
+      }
+
+      function show(it){
+        if (it.url) card.href = it.url;
+        var m = Math.floor(it.duration / 60), s = it.duration % 60;
+        var len = m + ':' + (s < 10 ? '0' : '') + s;
+        desc.textContent = it.title + (it.album ? ' · ' + it.album : '') + ' (' + len + ')';
+      }
+
       fetch('data/taize.json', {cache:'no-store'})
         .then(function(r){ return r.json(); })
         .then(function(d){
           var items = (d && d.items) ? d.items : [];
           if (!items.length) return;
-          var it = items[pickIndex(kstDayNumber(), items.length)];
-          if (!it || !it.title) return;
-          if (it.url) card.href = it.url;
-          var m = Math.floor(it.duration / 60), s = it.duration % 60;
-          var len = m + ':' + (s < 10 ? '0' : '') + s;
-          desc.textContent = it.title + (it.album ? ' · ' + it.album : '') + ' (' + len + ')';
+          var start = pickIndex(kstDayNumber(), items.length);
+          var tries = Math.min(items.length, 5);
+          // 같은 날엔 같은 순서로 후보를 시도하므로 결과도 같다.
+          (function next(k){
+            var it = items[(start + k) % items.length];
+            if (!it || !it.title) return;
+            if (!it.videoId || k >= tries - 1) return show(it);
+            isAlive(it).then(function(ok){ ok ? show(it) : next(k + 1); });
+          })(0);
         })
         .catch(function(){ /* 못 불러오면 채널 재생목록으로 가는 기본 링크를 그대로 둔다 */ });
     })();

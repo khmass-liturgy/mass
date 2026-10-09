@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09 01:19",
+  "updated": "2026-10-09 10:07",
   "cutoff": "2026-10-08",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7421",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-09",
       "priest": "조명연",
       "excerpt": "부모님께 고마운 점이 하나 있습니다(물론 너무 많지만 지금 생각나는 한 가지…"
+    },
+    {
+      "id": "daum_bbadaking_2234",
+      "title": "2026년 10월 9일 연중 제27주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-10-09",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2234",
+      "mass_date": "2026-10-09",
+      "priest": "양승국",
+      "excerpt": "우리 시대 베엘제불!"
+    },
+    {
+      "id": "daum_bbadaking_192",
+      "title": "부처님의 눈에는 부처님만 보이고, 돼지의 눈에는 돼지만 보인다는 말이 있습니…",
+      "author": "환희 평화",
+      "date": "2026-10-09",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/192",
+      "mass_date": "2026-10-09",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7420",

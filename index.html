@@ -1418,6 +1418,12 @@
         <div class="lc-desc" id="taizeDesc">3~5분가량의 떼제 성가를 날마다 한 곡씩 골라 보여 줍니다</div>
       </a>
 
+      <a class="link-card" id="meditationCard" href="https://youtu.be/Tpwp1OZEoZY" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🎼</span><span class="lc-go">→</span></div>
+        <div class="lc-name">오늘의 묵상성가</div>
+        <div class="lc-desc" id="meditationDesc">가톨릭 묵상 음악을 한 주에 한 곡씩 바꿔 보여 줍니다</div>
+      </a>
+
       <a class="link-card" id="gospeltoonCard" style="display:none;" href="https://www.catholicpress.kr/m/list.php?mcode=m96sroz" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">🖍</span><span class="lc-go">→</span></div>
         <div class="lc-name">만화로 보는 복음</div>
@@ -1590,6 +1596,40 @@
           })(0);
         })
         .catch(function(){ /* 못 불러오면 채널 재생목록으로 가는 기본 링크를 그대로 둔다 */ });
+    })();
+    </script>
+
+    <script>
+    // 오늘의 묵상성가 — 가톨릭 묵상 음악 링크를 일주일(월~일, 한국 시간)에 한 곡씩 순서대로 돌려 보여 준다.
+    // 곡 목록은 data/meditation_music.json 의 items 에서 관리한다.
+    (function(){
+      var card = document.getElementById('meditationCard');
+      var desc = document.getElementById('meditationDesc');
+      if (!card || !desc) return;
+
+      // 한국 날짜 기준 '월요일 시작 주'의 번호 (1970-01-05 가 월요일)
+      function kstWeekNumber(){
+        var ymd = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }).split('-');
+        var day = Math.round(Date.UTC(+ymd[0], +ymd[1] - 1, +ymd[2]) / 86400000);
+        return Math.floor((day - 4) / 7);
+      }
+
+      fetch('data/meditation_music.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var items = ((d && d.items) || []).filter(function(it){ return it && it.videoId; });
+          if (!items.length) return;
+          var it = items[kstWeekNumber() % items.length];
+          var url = 'https://youtu.be/' + it.videoId;
+          card.href = url;
+          desc.textContent = it.title || '이번 주 묵상성가';
+          // 영상 제목을 YouTube 에서 받아올 수 있으면 그 제목으로 바꿔 보여 준다.
+          fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent(url))
+            .then(function(r){ return r.ok ? r.json() : null; })
+            .then(function(o){ if (o && o.title) desc.textContent = o.title; })
+            .catch(function(){ /* 제목을 못 받으면 JSON 의 제목을 그대로 둔다 */ });
+        })
+        .catch(function(){ /* 못 불러오면 첫 곡 링크를 그대로 둔다 */ });
     })();
     </script>
 

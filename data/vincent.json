@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-10 18:43",
+  "updated": "2026-10-11 03:28",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "QP_pFAouVwI",
+      "date": "2026-10-11",
+      "title": "연중 제28주일",
+      "url": "https://www.youtube.com/watch?v=QP_pFAouVwI"
+    },
     {
       "videoId": "xzvVLAToBf4",
       "date": "2026-10-10",
@@ -57,12 +63,6 @@
       "date": "2026-10-02",
       "title": "수호천사 기념일",
       "url": "https://www.youtube.com/watch?v=eySKBQUrnxk"
-    },
-    {
-      "videoId": "zKHlLR1tf9Y",
-      "date": "2026-10-01",
-      "title": "아기 예수의 성녀 데레사 동정 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=zKHlLR1tf9Y"
     }
   ]
 }

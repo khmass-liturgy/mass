@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-10 04:32",
+  "updated": "2026-10-10 09:49",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "hTtlQtpmCpk",
+      "date": "2026-10-10",
+      "liturgy": "연중 제27주간 토요일",
+      "priest": "정재건 마르티노 신부",
+      "url": "https://www.youtube.com/watch?v=hTtlQtpmCpk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "zEb1oKa61Ao",
       "date": "2026-10-09",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제26주일 (세계 이주민과 난민의 날)",
       "priest": "이상원 베다 신부",
       "url": "https://www.youtube.com/watch?v=-_ZS-cZNKa4&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "yuo9y_c2M00",
-      "date": "2026-09-26",
-      "liturgy": "연중 제25주간 토요일",
-      "priest": "김종호 프란치스코 신부",
-      "url": "https://www.youtube.com/watch?v=yuo9y_c2M00&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

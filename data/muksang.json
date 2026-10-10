@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10 03:15",
+  "updated": "2026-10-10 09:39",
   "cutoff": "2026-10-09",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7422",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-10",
       "priest": "조명연",
       "excerpt": "중학생 때가 떠올려봅니다."
+    },
+    {
+      "id": "daum_bbadaking_2235",
+      "title": "2026년 10월 10일 연중 제27주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-10-10",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2235",
+      "mass_date": "2026-10-10",
+      "priest": "양승국",
+      "excerpt": "말씀의 전문가 성모님!"
+    },
+    {
+      "id": "daum_bbadaking_193",
+      "title": "하느님의 말씀을 듣고 마음에 새긴 사람은 이웃에 대한 배려와 사랑에 인색하지…",
+      "author": "환희 평화",
+      "date": "2026-10-10",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/193",
+      "mass_date": "2026-10-10",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7421",

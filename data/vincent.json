@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-12 19:37",
+  "updated": "2026-10-13 07:04",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "4x_Zi8eT3wo",
+      "date": "2026-10-13",
+      "title": "연중 제28주간 화요일",
+      "url": "https://www.youtube.com/watch?v=4x_Zi8eT3wo"
+    },
     {
       "videoId": "QlDhGWTQMrI",
       "date": "2026-10-12",
@@ -57,12 +63,6 @@
       "date": "2026-10-04",
       "title": "연중 제27주일",
       "url": "https://www.youtube.com/watch?v=HAsLHJVMKlA"
-    },
-    {
-      "videoId": "lgEPamYl4Pg",
-      "date": "2026-10-03",
-      "title": "복되신 동정 마리아 신심 미사",
-      "url": "https://www.youtube.com/watch?v=lgEPamYl4Pg"
     }
   ]
 }

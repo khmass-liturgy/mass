@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-12 16:11",
-  "cutoff": "2026-10-11",
+  "updated": "2026-10-13 03:52",
+  "cutoff": "2026-10-12",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
+    {
+      "id": "daum_catholicsb_7425",
+      "title": "전삼용 요셉 신부님 / 가해 연중 제28주간 화요일 - 바리사이의 초대",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-12",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7425",
+      "mass_date": "2026-10-13",
+      "priest": "전삼용",
+      "excerpt": "루카 11,37-41 바리사이의 초대 오늘 복음에서 예수님께서 어떤 바리사이…"
+    },
+    {
+      "id": "daum_bbadaking_7962",
+      "title": "2026년 10월 13일 연중 제28주간 화요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-12",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7962",
+      "mass_date": "2026-10-13",
+      "priest": "조명연",
+      "excerpt": "1986년 1월 28일, 우주 왕복선 챌린저호가 발사 후 73초 만에 공중…"
+    },
     {
       "id": "daum_catholicsb_7424",
       "title": "전삼용 요셉 신부 / 연중 제28주간 월요일 - 요나의 표징인 그리스도의 십자가",
@@ -66,46 +86,6 @@
       "date": "2026-10-12",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138754&menu=4770",
       "mass_date": "2026-10-12",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7423",
-      "title": "전삼용 요셉신부 / 가해 연중 제 28주일 - 쉬는 교우?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-10",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7423",
-      "mass_date": "2026-10-11",
-      "priest": "전삼용",
-      "excerpt": "마태오 22,1-14 쉬는 교우? 오늘 복음은 ‘혼인 잔치’ 비유입니다. 임…"
-    },
-    {
-      "id": "daum_bbadaking_7960",
-      "title": "2026년 10월 11일 연중 제28주일",
-      "author": "빠다킹신부",
-      "date": "2026-10-10",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7960",
-      "mass_date": "2026-10-11",
-      "priest": "조명연",
-      "excerpt": "예전에 수영 배울 때가 생각납니다."
-    },
-    {
-      "id": "daum_bbadaking_2236",
-      "title": "2026년 10월 11일 연중 제28주일",
-      "author": "박 베로니카",
-      "date": "2026-10-10",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2236",
-      "mass_date": "2026-10-11",
-      "priest": "양승국",
-      "excerpt": "은혜로운 하느님의 조대 앞에 망설이지 마십시오!"
-    },
-    {
-      "id": "2138696",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-11",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138696&menu=4770",
-      "mass_date": "2026-10-11",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

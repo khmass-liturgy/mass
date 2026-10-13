@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13 03:52",
+  "updated": "2026-10-13 11:29",
   "cutoff": "2026-10-12",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7425",
@@ -38,6 +38,36 @@
       "mass_date": "2026-10-13",
       "priest": "조명연",
       "excerpt": "1986년 1월 28일, 우주 왕복선 챌린저호가 발사 후 73초 만에 공중…"
+    },
+    {
+      "id": "daum_bbadaking_2238",
+      "title": "2026년 10월 13일 연중 제28주간 화요일",
+      "author": "박 베로니카",
+      "date": "2026-10-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2238",
+      "mass_date": "2026-10-13",
+      "priest": "양승국",
+      "excerpt": "나이를 조금 먹어가면서 조금씩 생각이 바뀝니다."
+    },
+    {
+      "id": "daum_bbadaking_195",
+      "title": "탐욕(貪慾)은 한자 뜻 그대로 지나치게 탐하는 욕심입니다. 탐욕이 많은 사람…",
+      "author": "환희 평화",
+      "date": "2026-10-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/195",
+      "mass_date": "2026-10-13",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2138791",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138791&menu=4770",
+      "mass_date": "2026-10-13",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7424",

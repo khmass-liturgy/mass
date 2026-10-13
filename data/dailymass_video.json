@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-12 19:46",
+  "updated": "2026-10-13 12:33",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "Da5WvlKKHvU",
+      "date": "2026-10-13",
+      "liturgy": "연중 제28주간 화요일",
+      "priest": "양창우 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=Da5WvlKKHvU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "53KrYAHN9jQ",
       "date": "2026-10-12",
@@ -95,13 +102,6 @@
       "liturgy": "성 예로니모 사제 학자 기념일",
       "priest": "노 수안 투",
       "url": "https://www.youtube.com/watch?v=umXAcVe7IJI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "zQGiaQLcZpM",
-      "date": "2026-09-29",
-      "liturgy": "성 미카엘, 성 가브리엘, 성 라파엘 대천사 축일",
-      "priest": "김재인 스테파 신부",
-      "url": "https://www.youtube.com/watch?v=zQGiaQLcZpM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

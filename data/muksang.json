@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14 14:59",
+  "updated": "2026-10-14 23:26",
   "cutoff": "2026-10-13",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7427",
+      "title": "전삼용 요셉신부/ 가해 연중 제 28주간 목요일-예수님은 사랑하면 행복하다는 진리가 육화되신 분",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-14",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7427",
+      "mass_date": "2026-10-15",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉님 가해 연중 제28주간 목요일 복음: 루카 11,47-54 예수…"
+    },
+    {
+      "id": "daum_bbadaking_7964",
+      "title": "2026년 10월 15일 예수의 성녀 데레사 동정 학자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-10-14",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7964",
+      "mass_date": "2026-10-15",
+      "priest": "조명연",
+      "excerpt": "“왜 저에게 이런 일이 생겼을까요?"
+    },
     {
       "id": "daum_catholicsb_7426",
       "title": "전삼용 요셉 신부 / 가해 연중 제28주간 수요일 - 율법 학자의 초대",

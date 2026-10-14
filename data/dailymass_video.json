@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-14 01:56",
+  "updated": "2026-10-14 09:16",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "29Xda2fT5sg",
+      "date": "2026-10-14",
+      "liturgy": "연중 제28주간 수요일",
+      "priest": "강석현 라파엘 신부",
+      "url": "https://www.youtube.com/watch?v=29Xda2fT5sg&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "Da5WvlKKHvU",
       "date": "2026-10-13",
@@ -95,13 +102,6 @@
       "liturgy": "아기 예수의 성녀 데레사 동정 학자 기념일",
       "priest": "김재인 스테파노 신부",
       "url": "https://www.youtube.com/watch?v=Ea4lclsXUMc&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "umXAcVe7IJI",
-      "date": "2026-09-30",
-      "liturgy": "성 예로니모 사제 학자 기념일",
-      "priest": "노 수안 투",
-      "url": "https://www.youtube.com/watch?v=umXAcVe7IJI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14 04:09",
+  "updated": "2026-10-14 09:13",
   "cutoff": "2026-10-13",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7426",
@@ -48,6 +48,26 @@
       "mass_date": "2026-10-14",
       "priest": "양승국",
       "excerpt": "작아지고 내려설 때 행복이 찾아옵니다!"
+    },
+    {
+      "id": "daum_bbadaking_196",
+      "title": "자신의 힘든 처지를 고백하는 신자들 중에는 말로는 힘들다고 하면서 하느님을…",
+      "author": "환희 평화",
+      "date": "2026-10-14",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/196",
+      "mass_date": "2026-10-14",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2138838",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138838&menu=4770",
+      "mass_date": "2026-10-14",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7425",

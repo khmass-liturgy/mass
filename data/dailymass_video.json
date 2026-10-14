@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-14 23:29",
+  "updated": "2026-10-15 08:54",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "MRmDvqSMj6Y",
+      "date": "2026-10-15",
+      "liturgy": "예수의 성녀 데레사 동정 학자 기념일",
+      "priest": "양창우 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=MRmDvqSMj6Y&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "29Xda2fT5sg",
       "date": "2026-10-14",
@@ -95,13 +102,6 @@
       "liturgy": "수호천사 기념일",
       "priest": "정호영 요셉 신부",
       "url": "https://www.youtube.com/watch?v=deCe09WWFhs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "Ea4lclsXUMc",
-      "date": "2026-10-01",
-      "liturgy": "아기 예수의 성녀 데레사 동정 학자 기념일",
-      "priest": "김재인 스테파노 신부",
-      "url": "https://www.youtube.com/watch?v=Ea4lclsXUMc&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

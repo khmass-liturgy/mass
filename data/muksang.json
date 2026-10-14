@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-14 23:26",
-  "cutoff": "2026-10-13",
+  "updated": "2026-10-15 08:49",
+  "cutoff": "2026-10-14",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7427",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-15",
       "priest": "조명연",
       "excerpt": "“왜 저에게 이런 일이 생겼을까요?"
+    },
+    {
+      "id": "daum_bbadaking_2240",
+      "title": "2026년 10월 15일 예수의 성녀 데레사 동정 학자 기념일",
+      "author": "박 베로니카",
+      "date": "2026-10-15",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2240",
+      "mass_date": "2026-10-15",
+      "priest": "양승국",
+      "excerpt": "진노하시는 예수님, 어떻게 이해해야 할까요?"
     },
     {
       "id": "daum_catholicsb_7426",
@@ -86,56 +96,6 @@
       "date": "2026-10-14",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138838&menu=4770",
       "mass_date": "2026-10-14",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7425",
-      "title": "전삼용 요셉 신부님 / 가해 연중 제28주간 화요일 - 바리사이의 초대",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-12",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7425",
-      "mass_date": "2026-10-13",
-      "priest": "전삼용",
-      "excerpt": "루카 11,37-41 바리사이의 초대 오늘 복음에서 예수님께서 어떤 바리사이…"
-    },
-    {
-      "id": "daum_bbadaking_7962",
-      "title": "2026년 10월 13일 연중 제28주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-12",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7962",
-      "mass_date": "2026-10-13",
-      "priest": "조명연",
-      "excerpt": "1986년 1월 28일, 우주 왕복선 챌린저호가 발사 후 73초 만에 공중…"
-    },
-    {
-      "id": "daum_bbadaking_2238",
-      "title": "2026년 10월 13일 연중 제28주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-10-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2238",
-      "mass_date": "2026-10-13",
-      "priest": "양승국",
-      "excerpt": "나이를 조금 먹어가면서 조금씩 생각이 바뀝니다."
-    },
-    {
-      "id": "daum_bbadaking_195",
-      "title": "탐욕(貪慾)은 한자 뜻 그대로 지나치게 탐하는 욕심입니다. 탐욕이 많은 사람…",
-      "author": "환희 평화",
-      "date": "2026-10-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/195",
-      "mass_date": "2026-10-13",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2138791",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-13",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138791&menu=4770",
-      "mass_date": "2026-10-13",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

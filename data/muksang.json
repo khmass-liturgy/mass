@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16 03:11",
+  "updated": "2026-10-16 08:37",
   "cutoff": "2026-10-15",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7428",
@@ -48,6 +48,16 @@
       "mass_date": "2026-10-16",
       "priest": "양승국",
       "excerpt": "하느님과의 친밀!"
+    },
+    {
+      "id": "daum_bbadaking_197",
+      "title": "거울을 향해 걸어가는 사람 우리도 거울 앞에 서서 옷 매무새를 다듬듯 내면을…",
+      "author": "환희 평화",
+      "date": "2026-10-16",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/197",
+      "mass_date": "2026-10-16",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7427",

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-15 23:04",
-  "cutoff": "2026-10-14",
+  "updated": "2026-10-16 03:11",
+  "cutoff": "2026-10-15",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7428",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-16",
       "priest": "조명연",
       "excerpt": "어떤 아이가 자기 엄마에게 이렇게 제안했습니다."
+    },
+    {
+      "id": "daum_bbadaking_2241",
+      "title": "2026년 10월 16일 연중 제28주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-10-16",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2241",
+      "mass_date": "2026-10-16",
+      "priest": "양승국",
+      "excerpt": "하느님과의 친밀!"
     },
     {
       "id": "daum_catholicsb_7427",
@@ -76,56 +86,6 @@
       "date": "2026-10-15",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138876&menu=4770",
       "mass_date": "2026-10-15",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7426",
-      "title": "전삼용 요셉 신부 / 가해 연중 제28주간 수요일 - 율법 학자의 초대",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-13",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7426",
-      "mass_date": "2026-10-14",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제28주간 수요일 루카 11,42-46 율법…"
-    },
-    {
-      "id": "daum_bbadaking_7963",
-      "title": "2026년 10월 14일 연중 제28주간 수요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-13",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7963",
-      "mass_date": "2026-10-14",
-      "priest": "조명연",
-      "excerpt": "대형마트에 가면 쇼핑 카트가 있습니다."
-    },
-    {
-      "id": "daum_bbadaking_2239",
-      "title": "2026년 10월 14일 연중 제28주간 수요일",
-      "author": "박 베로니카",
-      "date": "2026-10-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2239",
-      "mass_date": "2026-10-14",
-      "priest": "양승국",
-      "excerpt": "작아지고 내려설 때 행복이 찾아옵니다!"
-    },
-    {
-      "id": "daum_bbadaking_196",
-      "title": "자신의 힘든 처지를 고백하는 신자들 중에는 말로는 힘들다고 하면서 하느님을…",
-      "author": "환희 평화",
-      "date": "2026-10-14",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/196",
-      "mass_date": "2026-10-14",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2138838",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-14",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2138838&menu=4770",
-      "mass_date": "2026-10-14",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

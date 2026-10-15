@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 14:45",
+  "updated": "2026-10-15 23:04",
   "cutoff": "2026-10-14",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7428",
+      "title": "전삼용 요셉 신부 / 가해 연중 제28주간 금요일 - 왜 안 믿으면 위선자가 되는가?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-15",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7428",
+      "mass_date": "2026-10-16",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉님 가해 연중 제28주간 금요일 복음: 루카 12,1-7 왜 안…"
+    },
+    {
+      "id": "daum_bbadaking_7965",
+      "title": "2026년 10월 16일 연중 제28주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-15",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7965",
+      "mass_date": "2026-10-16",
+      "priest": "조명연",
+      "excerpt": "어떤 아이가 자기 엄마에게 이렇게 제안했습니다."
+    },
     {
       "id": "daum_catholicsb_7427",
       "title": "전삼용 요셉신부/ 가해 연중 제 28주간 목요일-예수님은 사랑하면 행복하다는 진리가 육화되신 분",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15 17:16",
+  "updated": "2026-10-15 23:09",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "1XHqIO1WXEk",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=1XHqIO1WXEk",
   "count": 10,
   "videos": [
+    {
+      "videoId": "4VYKcZ-Tcpo",
+      "date": "2026-10-16",
+      "label": "2026년 10월 16일연중 제28주간 금요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 16일 연중 제28주간 금요일](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=4VYKcZ-Tcpo"
+    },
     {
       "videoId": "1XHqIO1WXEk",
       "date": "2026-10-15",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 7일 묵주 기도의 복되신 동정 마리아 기념일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=elQRVMIf9j8"
-    },
-    {
-      "videoId": "vGKwk4DlWwY",
-      "date": "2026-10-06",
-      "label": "2026년 10월 6일연중 제27주간 화요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 6일 연중 제27주간 화요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=vGKwk4DlWwY"
     }
   ]
 }

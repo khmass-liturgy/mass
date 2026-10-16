@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-16 17:04",
+  "updated": "2026-10-16 22:54",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "ufDaWAtBzoI",
+      "date": "2026-10-17",
+      "title": "안티오키아의 성 이냐시오 주교 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=ufDaWAtBzoI"
+    },
     {
       "videoId": "7P_HKHj7n_E",
       "date": "2026-10-16",
@@ -57,12 +63,6 @@
       "date": "2026-10-08",
       "title": "연중 제27주간 목요일",
       "url": "https://www.youtube.com/watch?v=VynvK0nBWb4"
-    },
-    {
-      "videoId": "WzuD8_l9QbQ",
-      "date": "2026-10-07",
-      "title": "묵주 기도의 복되신 동정 마리아 기념일",
-      "url": "https://www.youtube.com/watch?v=WzuD8_l9QbQ"
     }
   ]
 }

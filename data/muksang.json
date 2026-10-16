@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16 14:42",
+  "updated": "2026-10-16 22:53",
   "cutoff": "2026-10-15",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7429",
+      "title": "전삼용 요셉 신부 / 가해 연중 제28주간 토요일 - 세상에서 세상을 거슬러, 교회에서 교회를 거슬러",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-16",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7429",
+      "mass_date": "2026-10-17",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제28주간 토요일 루카 12,8-12 세상에서…"
+    },
+    {
+      "id": "daum_bbadaking_7966",
+      "title": "2026년 10월 17일 안티오키아의 성 이냐시오 주교 순교자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-10-16",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7966",
+      "mass_date": "2026-10-17",
+      "priest": "조명연",
+      "excerpt": "누구보다도 친하다고 생각했던 회사 동료였는데, 어느 날 우연히 자기에 대해…"
+    },
     {
       "id": "daum_catholicsb_7428",
       "title": "전삼용 요셉 신부 / 가해 연중 제28주간 금요일 - 왜 안 믿으면 위선자가 되는가?",

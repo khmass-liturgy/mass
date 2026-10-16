@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16 17:09",
+  "updated": "2026-10-16 22:56",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "4VYKcZ-Tcpo",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=4VYKcZ-Tcpo",
   "count": 10,
   "videos": [
+    {
+      "videoId": "10lJLtjLgDM",
+      "date": "2026-10-17",
+      "label": "2026년 10월 17일안티오키아의 성 이냐시오 주교 순교자 기념일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 17일 안티오키아의 성 이냐시오 주교 순교자 기념일](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=10lJLtjLgDM"
+    },
     {
       "videoId": "4VYKcZ-Tcpo",
       "date": "2026-10-16",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 8일 연중 제27주간 목요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=LC8KmFxxqCY"
-    },
-    {
-      "videoId": "elQRVMIf9j8",
-      "date": "2026-10-07",
-      "label": "2026년 10월 7일묵주 기도의 복되신 동정 마리아 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 7일 묵주 기도의 복되신 동정 마리아 기념일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=elQRVMIf9j8"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18 01:57",
+  "updated": "2026-10-18 07:59",
   "cutoff": "2026-10-17",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7430",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-18",
       "priest": "조명연",
       "excerpt": "갓 태어난 아기의 시력은 그리 좋지 않습니다."
+    },
+    {
+      "id": "daum_bbadaking_2243",
+      "title": "2026년 10월 18일 연중 제29주일(전교주일)",
+      "author": "박 베로니카",
+      "date": "2026-10-18",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2243",
+      "mass_date": "2026-10-18",
+      "priest": "양승국",
+      "excerpt": "지상 순례 여정에서 만나는 고난은 너무나 당연한 것입니다!"
+    },
+    {
+      "id": "daum_bbadaking_199",
+      "title": "오늘 복음 말씀은 ‘언제나’ 마음 깊이 위로되는 말씀입니다.",
+      "author": "환희 평화",
+      "date": "2026-10-18",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/199",
+      "mass_date": "2026-10-18",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7429",

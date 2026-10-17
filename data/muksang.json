@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17 14:27",
+  "updated": "2026-10-17 21:52",
   "cutoff": "2026-10-16",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7430",
+      "title": "전삼용 요셉 신부 / 연중 제29주일 ​(민족들의 복음화를 위한 미사) - 동행과 선교는 동의어﻿",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-17",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7430",
+      "mass_date": "2026-10-18",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주일( ​민족들의 복음화를 위한 미사)…"
+    },
+    {
+      "id": "daum_bbadaking_7967",
+      "title": "2026년 10월 18일 연중 제29주일(전교주일)",
+      "author": "빠다킹신부",
+      "date": "2026-10-17",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7967",
+      "mass_date": "2026-10-18",
+      "priest": "조명연",
+      "excerpt": "갓 태어난 아기의 시력은 그리 좋지 않습니다."
+    },
     {
       "id": "daum_catholicsb_7429",
       "title": "전삼용 요셉 신부 / 가해 연중 제28주간 토요일 - 세상에서 세상을 거슬러, 교회에서 교회를 거슬러",
@@ -48,6 +68,16 @@
       "mass_date": "2026-10-17",
       "priest": "양승국",
       "excerpt": "성령께서 다 해주실 것입니다!"
+    },
+    {
+      "id": "daum_bbadaking_198",
+      "title": "주님께서 우리들의 구원을 위해 십자가에 매달리시고 당신을 희생하신 그 봉헌된…",
+      "author": "환희 평화",
+      "date": "2026-10-17",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/198",
+      "mass_date": "2026-10-17",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "2138972",

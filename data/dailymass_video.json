@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-17 16:46",
+  "updated": "2026-10-18 08:07",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "iZN1pbvdhjs",
+      "date": "2026-10-18",
+      "liturgy": "연중 제29주일 민족들의 복음화를 위한 미사ㅣ김동원 베드로 신부님 집전",
+      "priest": "",
+      "url": "https://www.youtube.com/watch?v=iZN1pbvdhjs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "dodBlZEb2YM",
       "date": "2026-10-17",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제27주간 월요일",
       "priest": "최영섭 후고 신부",
       "url": "https://www.youtube.com/watch?v=KU-NeNlJGGk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "svIarxlOxzQ",
-      "date": "2026-10-04",
-      "liturgy": "연중 제27주일",
-      "priest": "김종화 알로이시오 신부",
-      "url": "https://www.youtube.com/watch?v=svIarxlOxzQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18 14:39",
+  "updated": "2026-10-18 22:08",
   "cutoff": "2026-10-17",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7431",
+      "title": "전삼용 요셉 신부 / 가해 연중 제29주간 월요일 - 비우려면 가져야 하는 믿음: 내 것 = 근심",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-18",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7431",
+      "mass_date": "2026-10-19",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 월요일 루카 12,13-21 비우려…"
+    },
+    {
+      "id": "daum_bbadaking_7968",
+      "title": "2026년 10월 19일 연중 제29주간 월요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-18",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7968",
+      "mass_date": "2026-10-19",
+      "priest": "조명연",
+      "excerpt": "“너 피부가 정말 좋다."
+    },
     {
       "id": "daum_catholicsb_7430",
       "title": "전삼용 요셉 신부 / 연중 제29주일 ​(민족들의 복음화를 위한 미사) - 동행과 선교는 동의어﻿",
@@ -61,7 +81,7 @@
     },
     {
       "id": "2139020",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-10-18",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139020&menu=4770",

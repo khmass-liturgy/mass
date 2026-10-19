@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-19 14:57",
-  "cutoff": "2026-10-18",
+  "updated": "2026-10-20 01:23",
+  "cutoff": "2026-10-19",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 8,
   "posts": [
+    {
+      "id": "daum_catholicsb_7432",
+      "title": "전삼용 요셉 신부 / 연중 제29주간 화요일 - 근심, 우울, 무기력, 공황: 사막 위의 펭귄",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-19",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7432",
+      "mass_date": "2026-10-20",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 화요일 루카 12,35-38 근심,…"
+    },
+    {
+      "id": "daum_bbadaking_7969",
+      "title": "2026년 10월 20일 연중 제29주간 화요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-19",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7969",
+      "mass_date": "2026-10-20",
+      "priest": "조명연",
+      "excerpt": "라틴어 경구 ‘메멘토 모리(memento mori)’를 많이 들었고 또 잘…"
+    },
+    {
+      "id": "daum_bbadaking_2245",
+      "title": "2026년 10월 20일 연중 제29주간 화요일",
+      "author": "박 베로니카",
+      "date": "2026-10-20",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2245",
+      "mass_date": "2026-10-20",
+      "priest": "양승국",
+      "excerpt": "매일 아침 허리띠를 맬 때 마다..."
+    },
     {
       "id": "daum_catholicsb_7431",
       "title": "전삼용 요셉 신부 / 가해 연중 제29주간 월요일 - 비우려면 가져야 하는 믿음: 내 것 = 근심",
@@ -66,56 +96,6 @@
       "date": "2026-10-19",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139054&menu=4770",
       "mass_date": "2026-10-19",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7430",
-      "title": "전삼용 요셉 신부 / 연중 제29주일 ​(민족들의 복음화를 위한 미사) - 동행과 선교는 동의어﻿",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-17",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7430",
-      "mass_date": "2026-10-18",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주일( ​민족들의 복음화를 위한 미사)…"
-    },
-    {
-      "id": "daum_bbadaking_7967",
-      "title": "2026년 10월 18일 연중 제29주일(전교주일)",
-      "author": "빠다킹신부",
-      "date": "2026-10-17",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7967",
-      "mass_date": "2026-10-18",
-      "priest": "조명연",
-      "excerpt": "갓 태어난 아기의 시력은 그리 좋지 않습니다."
-    },
-    {
-      "id": "daum_bbadaking_2243",
-      "title": "2026년 10월 18일 연중 제29주일(전교주일)",
-      "author": "박 베로니카",
-      "date": "2026-10-18",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2243",
-      "mass_date": "2026-10-18",
-      "priest": "양승국",
-      "excerpt": "지상 순례 여정에서 만나는 고난은 너무나 당연한 것입니다!"
-    },
-    {
-      "id": "daum_bbadaking_199",
-      "title": "오늘 복음 말씀은 ‘언제나’ 마음 깊이 위로되는 말씀입니다.",
-      "author": "환희 평화",
-      "date": "2026-10-18",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/199",
-      "mass_date": "2026-10-18",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139020",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-10-18",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139020&menu=4770",
-      "mass_date": "2026-10-18",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

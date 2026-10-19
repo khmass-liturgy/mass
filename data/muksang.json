@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19 07:57",
+  "updated": "2026-10-19 14:57",
   "cutoff": "2026-10-18",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7431",
@@ -48,6 +48,26 @@
       "mass_date": "2026-10-19",
       "priest": "양승국",
       "excerpt": "유산이 없으니 얼마나 좋은지?"
+    },
+    {
+      "id": "daum_bbadaking_201",
+      "title": "악한 영은 오늘도 변함없이 우리를 유혹합니다.",
+      "author": "환희 평화",
+      "date": "2026-10-19",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/201",
+      "mass_date": "2026-10-19",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2139054",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-19",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139054&menu=4770",
+      "mass_date": "2026-10-19",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7430",

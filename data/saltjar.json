@@ -1,15 +1,23 @@
 {
-  "updated": "2026-10-19 17:50",
+  "updated": "2026-10-20 01:27",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "AIewg4IqZc8",
-  "date": "2026-10-19",
-  "label": "2026년 10월 19일연중 제29주간 월요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 10월 19일 연중 제29주간 월요일](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean# Gospel #Meditation",
+  "videoId": "Zh05pHn3_8k",
+  "date": "2026-10-20",
+  "label": "2026년 10월 20일연중 제29주간 화요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 10월 20일 연중 제29주간 화요일](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=AIewg4IqZc8",
+  "url": "https://www.youtube.com/watch?v=Zh05pHn3_8k",
   "count": 10,
   "videos": [
+    {
+      "videoId": "Zh05pHn3_8k",
+      "date": "2026-10-20",
+      "label": "2026년 10월 20일연중 제29주간 화요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 20일 연중 제29주간 화요일](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=Zh05pHn3_8k"
+    },
     {
       "videoId": "AIewg4IqZc8",
       "date": "2026-10-19",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 11일 연중 제28주일(군인 주일)](이승복 라파엘신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=EVZqEVrCCno"
-    },
-    {
-      "videoId": "29Vh3F2wZEM",
-      "date": "2026-10-10",
-      "label": "2026년 10월 10일연중 제27주간 토요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 10일 연중 제27주간 토요일](정강엽 베네딕토 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=29Vh3F2wZEM"
     }
   ]
 }

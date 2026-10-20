@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20 09:11",
+  "updated": "2026-10-20 14:50",
   "cutoff": "2026-10-19",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7432",
@@ -48,6 +48,26 @@
       "mass_date": "2026-10-20",
       "priest": "양승국",
       "excerpt": "매일 아침 허리띠를 맬 때 마다..."
+    },
+    {
+      "id": "daum_bbadaking_202",
+      "title": "하루의 삶 중에 주인이신 주님을 기다리는 시간은 얼마나 되는지 머물러 보게…",
+      "author": "환희 평화",
+      "date": "2026-10-20",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/202",
+      "mass_date": "2026-10-20",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2139107",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-20",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139107&menu=4770",
+      "mass_date": "2026-10-20",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7431",

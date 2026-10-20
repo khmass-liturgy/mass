@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20 14:50",
+  "updated": "2026-10-20 23:13",
   "cutoff": "2026-10-19",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7433",
+      "title": "전삼용 요셉 신부 / 가해 연중 제29주간 수요일 - 펭귄의 계절",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-20",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7433",
+      "mass_date": "2026-10-21",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 수요일 루카 12,39-48 펭귄의…"
+    },
+    {
+      "id": "daum_bbadaking_7970",
+      "title": "2026년 10월 21일 연중 제29주간 수요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-20",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7970",
+      "mass_date": "2026-10-21",
+      "priest": "조명연",
+      "excerpt": "어렸을 때, 우리 집에는 개가 있었습니다."
+    },
     {
       "id": "daum_catholicsb_7432",
       "title": "전삼용 요셉 신부 / 연중 제29주간 화요일 - 근심, 우울, 무기력, 공황: 사막 위의 펭귄",

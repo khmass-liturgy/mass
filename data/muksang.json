@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21 14:52",
+  "updated": "2026-10-21 23:25",
   "cutoff": "2026-10-20",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7434",
+      "title": "전삼용 요셉 신부 / 가해 연중 제29주간 목요일 - 불이 붙으면 불을 붙게 함",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-21",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7434",
+      "mass_date": "2026-10-22",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 목요일 복음: 루카 12,49-53…"
+    },
+    {
+      "id": "daum_bbadaking_7971",
+      "title": "2026년 10월 22일 연중 제29주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-21",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7971",
+      "mass_date": "2026-10-22",
+      "priest": "조명연",
+      "excerpt": "“우리를 괴롭게 하는 것은 우리에게 일어난 일이 아니라, 그 일에 대해 우리…"
+    },
     {
       "id": "daum_catholicsb_7433",
       "title": "전삼용 요셉 신부 / 가해 연중 제29주간 수요일 - 펭귄의 계절",

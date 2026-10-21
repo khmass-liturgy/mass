@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-20 23:17",
+  "updated": "2026-10-21 17:32",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "L1FVEwvvDU8",
+      "date": "2026-10-21",
+      "liturgy": "연중 제29주간 수요일",
+      "priest": "",
+      "url": "https://www.youtube.com/watch?v=L1FVEwvvDU8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "NHTHctUzxSU",
       "date": "2026-10-20",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제27주간 목요일",
       "priest": "정재건 마르티노 신부",
       "url": "https://www.youtube.com/watch?v=KwsBOQXSISw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "-u-esAUl2MY",
-      "date": "2026-10-07",
-      "liturgy": "묵주 기도의 복되신 동정 마리아 기념일",
-      "priest": "최영섭 후고 신부",
-      "url": "https://www.youtube.com/watch?v=-u-esAUl2MY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

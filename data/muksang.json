@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-21 23:25",
-  "cutoff": "2026-10-20",
+  "updated": "2026-10-22 08:57",
+  "cutoff": "2026-10-21",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7434",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-22",
       "priest": "조명연",
       "excerpt": "“우리를 괴롭게 하는 것은 우리에게 일어난 일이 아니라, 그 일에 대해 우리…"
+    },
+    {
+      "id": "daum_bbadaking_2247",
+      "title": "2026년 10월 22일 연중 제29주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-10-22",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2247",
+      "mass_date": "2026-10-22",
+      "priest": "양승국",
+      "excerpt": "평화로운 세상 건설을 위한 순교자의 삶!"
     },
     {
       "id": "daum_catholicsb_7433",
@@ -76,56 +86,6 @@
       "date": "2026-10-21",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139137&menu=4770",
       "mass_date": "2026-10-21",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7432",
-      "title": "전삼용 요셉 신부 / 연중 제29주간 화요일 - 근심, 우울, 무기력, 공황: 사막 위의 펭귄",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-19",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7432",
-      "mass_date": "2026-10-20",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 화요일 루카 12,35-38 근심,…"
-    },
-    {
-      "id": "daum_bbadaking_7969",
-      "title": "2026년 10월 20일 연중 제29주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-19",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7969",
-      "mass_date": "2026-10-20",
-      "priest": "조명연",
-      "excerpt": "라틴어 경구 ‘메멘토 모리(memento mori)’를 많이 들었고 또 잘…"
-    },
-    {
-      "id": "daum_bbadaking_2245",
-      "title": "2026년 10월 20일 연중 제29주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-10-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2245",
-      "mass_date": "2026-10-20",
-      "priest": "양승국",
-      "excerpt": "매일 아침 허리띠를 맬 때 마다..."
-    },
-    {
-      "id": "daum_bbadaking_202",
-      "title": "하루의 삶 중에 주인이신 주님을 기다리는 시간은 얼마나 되는지 머물러 보게…",
-      "author": "환희 평화",
-      "date": "2026-10-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/202",
-      "mass_date": "2026-10-20",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139107",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139107&menu=4770",
-      "mass_date": "2026-10-20",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-22 23:27",
-  "cutoff": "2026-10-21",
+  "updated": "2026-10-23 08:56",
+  "cutoff": "2026-10-22",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7435",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-23",
       "priest": "조명연",
       "excerpt": "어느 숲속에 버섯이 자라고 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2248",
+      "title": "2026년 10월 23일 연중 제29주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-10-22",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2248",
+      "mass_date": "2026-10-23",
+      "priest": "양승국",
+      "excerpt": "하느님 나라는 우리 가운데 와있는 현재 진행형!"
+    },
+    {
+      "id": "daum_bbadaking_204",
+      "title": "저는 결핍이 없습니다.",
+      "author": "환희 평화",
+      "date": "2026-10-23",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/204",
+      "mass_date": "2026-10-23",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7434",
@@ -86,46 +106,6 @@
       "date": "2026-10-22",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139173&menu=4770",
       "mass_date": "2026-10-22",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7433",
-      "title": "전삼용 요셉 신부 / 가해 연중 제29주간 수요일 - 펭귄의 계절",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-20",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7433",
-      "mass_date": "2026-10-21",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 수요일 루카 12,39-48 펭귄의…"
-    },
-    {
-      "id": "daum_bbadaking_7970",
-      "title": "2026년 10월 21일 연중 제29주간 수요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-20",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7970",
-      "mass_date": "2026-10-21",
-      "priest": "조명연",
-      "excerpt": "어렸을 때, 우리 집에는 개가 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2246",
-      "title": "2026년 10월 21일 연중 제29주간 수요일",
-      "author": "박 베로니카",
-      "date": "2026-10-21",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2246",
-      "mass_date": "2026-10-21",
-      "priest": "양승국",
-      "excerpt": "보다 중요하고 본질적인 준비!"
-    },
-    {
-      "id": "2139137",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-21",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139137&menu=4770",
-      "mass_date": "2026-10-21",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

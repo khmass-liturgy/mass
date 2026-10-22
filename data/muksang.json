@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22 14:55",
+  "updated": "2026-10-22 23:27",
   "cutoff": "2026-10-21",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7435",
+      "title": "전삼용 요셉 신부 / 연중 제29주간 금요일 - 따를 법칙을 갖고 싶다면 예외를 인정할 수 없을 때까지 실험하",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-22",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7435",
+      "mass_date": "2026-10-23",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 금요일 루카 12,54-59 따를…"
+    },
+    {
+      "id": "daum_bbadaking_7972",
+      "title": "2026년 10월 23일 연중 제29주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-22",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7972",
+      "mass_date": "2026-10-23",
+      "priest": "조명연",
+      "excerpt": "어느 숲속에 버섯이 자라고 있었습니다."
+    },
     {
       "id": "daum_catholicsb_7434",
       "title": "전삼용 요셉 신부 / 가해 연중 제29주간 목요일 - 불이 붙으면 불을 붙게 함",

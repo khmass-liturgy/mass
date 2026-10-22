@@ -1,8 +1,8 @@
 {
-  "updated": "2026-10-22 07:16",
+  "updated": "2026-10-22 10:26",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
-  "count": 4,
+  "count": 10,
   "videos": [
     {
       "videoId": "asrUc74YAas",
@@ -27,6 +27,42 @@
       "date": "2026-10-19",
       "title": "연중 제29주간 월요일",
       "url": "https://www.youtube.com/watch?v=4kugWMzAjms"
+    },
+    {
+      "videoId": "cPc3fJ5XrjA",
+      "date": "2026-10-18",
+      "title": "연중 제29주일",
+      "url": "https://www.youtube.com/watch?v=cPc3fJ5XrjA"
+    },
+    {
+      "videoId": "ufDaWAtBzoI",
+      "date": "2026-10-17",
+      "title": "안티오키아의 성 이냐시오 주교 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=ufDaWAtBzoI"
+    },
+    {
+      "videoId": "7P_HKHj7n_E",
+      "date": "2026-10-16",
+      "title": "연중 제28주간 금요일",
+      "url": "https://www.youtube.com/watch?v=7P_HKHj7n_E"
+    },
+    {
+      "videoId": "M3lNoy_21Pk",
+      "date": "2026-10-15",
+      "title": "예수의 성녀 데레사 동정 학자 기념일",
+      "url": "https://www.youtube.com/watch?v=M3lNoy_21Pk"
+    },
+    {
+      "videoId": "Rj3Am2bpvFg",
+      "date": "2026-10-14",
+      "title": "연중 제28주간 수요일",
+      "url": "https://www.youtube.com/watch?v=Rj3Am2bpvFg"
+    },
+    {
+      "videoId": "4x_Zi8eT3wo",
+      "date": "2026-10-13",
+      "title": "연중 제28주간 화요일",
+      "url": "https://www.youtube.com/watch?v=4x_Zi8eT3wo"
     }
   ]
 }

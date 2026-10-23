@@ -3,7 +3,7 @@
 룩스챔버콰이어(@luxchamberchoir7964) 유튜브 채널의 가톨릭 성가 영상을 모아
 data/meditation_music.json 으로 저장한다 ('오늘의 묵상성가' 카드용).
 
-영상마다 어느 시기(대림·성탄·사순·부활·성모성월·성심성월·순교자성월·로사리오성월)에
+영상마다 어느 시기(대림·성탄·사순·부활·성모성월·성심성월·순교자성월·로사리오성월·위령성월)에
 어울리는지 seasons 를 붙여 둔다. 화면(index.html)은 지금 시기에 맞는 영상을
 먼저 보여 주고, 해당하는 영상이 없으면 시기를 타지 않는 영상(general)을 보여 준다.
 
@@ -23,6 +23,16 @@ from zoneinfo import ZoneInfo
 import requests
 
 HANDLE_URL = "https://www.youtube.com/@luxchamberchoir7964/videos"
+# (주소, 이 목록의 영상에 일괄로 붙일 시기). 시기가 None 이면 성가집의 전례별 분류로 정한다.
+# 같은 채널의 모음 재생목록은 채널 '동영상' 탭에 없는 영상이 있어 따로 읽고, 재생목록
+# 이름이 곧 시기라서 그 시기로 확정한다.
+SOURCES = [
+    (HANDLE_URL, None),
+    ("https://www.youtube.com/playlist?list=PLN9m430-p-ezAEEL1ORONtBtalaY3Pzk_", "souls"),     # 위령성가
+    ("https://www.youtube.com/playlist?list=PLN9m430-p-ewyB8Tj020Hbz1jpOD_ghEz", "general"),   # 연중시기
+    ("https://www.youtube.com/playlist?list=PLN9m430-p-ewtvJ5j9uxdv5OT1c1PkcAz", "christmas"), # 성탄시기
+]
+
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "meditation_music.json"
 
@@ -36,6 +46,17 @@ HEADERS = {
 INITIAL_DATA_RE = re.compile(r"var ytInitialData = (\{.*?\});</script>", re.S)
 HYMN_NO_RE = re.compile(r"가톨릭\s*성가\s*(\d+)\s*번")
 MAX_PAGES = 20
+
+def fetch_all_videos() -> tuple:
+    """(영상 id → 제목, 영상 id → 확정된 시기) 를 돌려준다."""
+    videos, forced = {}, {}
+    for url, season in SOURCES:
+        for vid, title in fetch_videos(url).items():
+            videos.setdefault(vid, title)
+            if season:
+                forced[vid] = season
+    return videos, forced
+
 
 # 채널 밖에서 직접 고른 영상. 매번 목록 끝에 붙인다.
 MANUAL_ITEMS = [
@@ -64,8 +85,8 @@ def walk(node, videos, tokens):
             walk(v, videos, tokens)
 
 
-def fetch_all_videos() -> dict:
-    r = requests.get(HANDLE_URL, headers=HEADERS, timeout=30)
+def fetch_videos(url: str) -> dict:
+    r = requests.get(url, headers=HEADERS, timeout=30)
     r.raise_for_status()
     m = INITIAL_DATA_RE.search(r.text)
     if not m:
@@ -94,7 +115,7 @@ HYMN_PAGE = "https://maria.catholic.or.kr/sungga/search/sungga_view.asp?ctxtInde
 LITURGY_RE = re.compile(r'전례별</th>\s*<td class="al">(.*?)</td>', re.S)
 SEASON_BY_CATEGORY = {
     "대림": "advent", "성탄": "christmas", "사순": "lent", "부활": "easter",
-    "성모": "marian", "성심": "sacredheart",
+    "성모": "marian", "성심": "sacredheart", "위령": "souls",
 }
 # 분류만으로는 못 정하는 곡을 직접 적는다. 성가 번호 → 시기 목록.
 SEASON_OVERRIDES = {
@@ -131,14 +152,15 @@ def classify(title: str) -> list:
 
 def main() -> int:
     try:
-        videos = fetch_all_videos()
+        videos, forced = fetch_all_videos()
         if not videos:
             raise ValueError("영상을 하나도 찾지 못했습니다.")
     except Exception as e:
         print("meditation_music fetch failed:", e, file=sys.stderr)
         return 1
 
-    items = [{"videoId": vid, "title": title, "seasons": classify(title)}
+    items = [{"videoId": vid, "title": title,
+              "seasons": [forced[vid]] if vid in forced else classify(title)}
              for vid, title in videos.items()]
     items += [m for m in MANUAL_ITEMS if m["videoId"] not in videos]
     data = {

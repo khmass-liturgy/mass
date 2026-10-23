@@ -467,16 +467,26 @@
   .link-more-summary:hover{border-left-color:var(--navy);box-shadow:0 6px 20px rgba(26,39,68,.12);}
   .link-more-summary::-webkit-details-marker{display:none;}
   .link-more-summary .lc-icon{font-size:1.1rem;color:var(--gold);}
-  .link-more-summary::after{content:'▾';margin-left:auto;color:var(--muted);font-size:.8rem;transition:transform .15s;}
-  .link-more[open] .link-more-summary::after{transform:rotate(180deg);}
+  /* 묶인 카드를 펼치고 접는 버튼 — 작은 화살표만으로는 안 보여서 글자가 든 알약 모양으로 키웠다 */
+  .link-more-summary::after,.section-arrow{
+    margin-left:auto;flex-shrink:0;white-space:nowrap;
+    background:var(--navy);color:var(--cream);
+    font-family:'Noto Sans KR',sans-serif;font-size:.72rem;font-weight:700;line-height:1;
+    padding:7px 12px;border-radius:999px;box-shadow:0 2px 6px rgba(26,39,68,.25);
+    transition:background .15s,transform .15s;
+  }
+  .link-more-summary::after{content:'펼치기 ▾';}
+  .link-more[open] .link-more-summary::after{content:'접기 ▴';}
+  .link-more-summary:hover::after,.section-toggle > summary:hover .section-arrow{background:var(--gold);color:var(--navy);}
 
   .section-toggle{border:none;}
   .section-toggle > summary{cursor:pointer;list-style:none;-webkit-tap-highlight-color:transparent;}
   .section-toggle > summary::-webkit-details-marker{display:none;}
   .section-toggle > summary .group-header{transition:border-color .15s;}
   .section-toggle > summary:hover .group-title{color:var(--gold);}
-  .section-arrow{margin-left:auto;color:var(--muted);font-size:.85rem;transition:transform .15s;}
-  .section-toggle[open] .section-arrow{transform:rotate(180deg);}
+  .section-arrow{font-size:0;}  /* 안의 ▾ 글자는 숨기고 아래 글자로 대신한다 */
+  .section-arrow::before{content:'펼치기 ▾';font-size:.72rem;}
+  .section-toggle[open] .section-arrow::before{content:'접기 ▴';}
 
   footer{background:var(--navy);color:var(--muted);text-align:center;padding:24px;font-size:.75rem;}
   footer a{color:var(--gold);text-decoration:none;}

@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-23 23:13",
+  "updated": "2026-10-24 08:51",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "ltGoBdDNq_A",
+      "date": "2026-10-24",
+      "liturgy": "연중 제29주간 토요일",
+      "priest": "김종연 야고보 신부",
+      "url": "https://www.youtube.com/watch?v=ltGoBdDNq_A&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "pQG4KocfBmQ",
       "date": "2026-10-23",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제28주일 (군인 주일)",
       "priest": "한승호 베드로 신부",
       "url": "https://www.youtube.com/watch?v=WAWAMeHCLFM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "hTtlQtpmCpk",
-      "date": "2026-10-10",
-      "liturgy": "연중 제27주간 토요일",
-      "priest": "정재건 마르티노 신부",
-      "url": "https://www.youtube.com/watch?v=hTtlQtpmCpk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

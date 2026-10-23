@@ -711,6 +711,97 @@
   .badge-kyoha{background:var(--moss);}
   .badge-muksang{background:var(--ginkgo);color:#4A2418;}
   .gold-bar{background:linear-gradient(90deg,#B8412B,#D2691E 35%,#E8B33A 70%,#6B7A3A);}
+  /* ══ 겨울 테마 — 입동(11월 7일 무렵)부터 입춘 전까지 ══
+     위 가을 테마 뒤에서 한 번 더 덮어쓴다. html 에 winter 클래스가 붙을 때만 적용되며
+     (본문 첫머리 스크립트가 절기를 보고 붙인다), 단풍색 변수와 하드코딩 색을
+     눈·얼음·솔잎색으로 바꾼다. 되돌리려면 이 블록과 그 스크립트만 지우면 된다. */
+  html.winter{
+    --navy:#16233A; --navy-lt:#243556;
+    --gold:#6F9BC4; --gold-lt:#BFD9EE;
+    --cream:#EEF3F8; --card:#FBFDFF;
+    --border:#CBD9E6; --text:#16212E;
+    --muted:#5E7186; --vatican:#2F4A73;
+    --maple:#34628F; --pumpkin:#5B8DB8; --ginkgo:#8DB9D8; --moss:#4A7A70;
+  }
+  html.winter body{background:
+    radial-gradient(circle at 8% 0%, rgba(150,195,230,.22), transparent 40%),
+    radial-gradient(circle at 100% 30%, rgba(52,98,143,.08), transparent 45%),
+    var(--cream);}
+  html.winter .missa-card{
+    background:linear-gradient(160deg,#142238 0%,#24406A 55%,#4C7BAA 100%);
+    box-shadow:0 12px 32px rgba(20,40,70,.35);
+  }
+  html.winter .missa-card:hover{box-shadow:0 18px 44px rgba(20,40,70,.45);}
+  html.winter .missa-card::before{
+    background:
+      radial-gradient(circle at 12% 105%, rgba(190,220,245,.35), transparent 55%),
+      radial-gradient(circle at 95% -10%, rgba(225,240,255,.2), transparent 45%);
+  }
+  html.winter .missa-card::after{content:'❄️';}
+  html.winter .missa-date-box{
+    background:radial-gradient(circle at 35% 30%, #F3FAFF, #7FB0DA 62%, #2F4A73 100%);
+  }
+  html.winter .missa-sub{color:#D3E3F2;}
+  html.winter .missa-title{color:#F4F9FF;}
+  html.winter .missa-card:hover .missa-arrow{color:#142238;}
+  html.winter .missa-season.season-ordinary{background:rgba(150,200,190,.22);color:#D5EEE8;border-color:rgba(160,210,200,.5);}
+  html.winter .wyd-card,html.winter .prayer-details{
+    background:linear-gradient(135deg,#1E2F4D 0%,#2E4A75 100%);
+    box-shadow:0 8px 26px rgba(20,40,70,.25);
+  }
+  html.winter .wyd-body{color:#E3EEF8;}
+  html.winter .wyd-fiat{color:#D2E2F0;}
+  html.winter .prayer-body{border-top-color:rgba(190,220,245,.3);}
+  html.winter .dday-card{
+    background:linear-gradient(135deg,#223A5E 0%,#3F6A9A 100%);
+    box-shadow:0 8px 24px rgba(20,40,70,.25);
+  }
+  html.winter .dday-card:hover{box-shadow:0 14px 32px rgba(20,40,70,.35);}
+  html.winter .dday-badge{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
+  html.winter .term-card{background:linear-gradient(135deg,#2C5A5A 0%,#5E9690 100%);}
+  html.winter .term-card:hover{box-shadow:0 8px 24px rgba(20,40,70,.25);}
+  html.winter .term-card .dday-date{color:#E4F6F2;}
+  html.winter .term-meaning{color:#EAF8F5;}
+  html.winter .term-meaning .term-hanja{color:#C6EAE2;}
+  html.winter .season-card{background:linear-gradient(135deg,#2C4468 0%,#16233A 100%);}
+  html.winter .season-now{color:#CFE0F0;}
+  html.winter .pope-card{
+    background:linear-gradient(135deg,#FBFDFF 0%,#E6EFF8 100%);
+    border-color:#8DB9D8;box-shadow:0 4px 16px rgba(52,98,143,.2);
+  }
+  html.winter .muksang-all-card{
+    background:linear-gradient(135deg,#1E3050 0%,#3A5F90 100%);
+    box-shadow:0 6px 22px rgba(20,40,70,.25);
+  }
+  html.winter .muksang-all-card:hover{box-shadow:0 12px 32px rgba(20,40,70,.35);}
+  html.winter .muksang-all-card::before{
+    background:radial-gradient(circle at 92% -20%, rgba(190,220,245,.28), transparent 55%),
+               radial-gradient(circle at -5% 120%, rgba(190,220,245,.14), transparent 50%);
+  }
+  html.winter .muksang-all-icon{background:linear-gradient(135deg,#BFD9EE,#7FB0DA);}
+  html.winter .muksang-all-sub{color:#D3E3F2;}
+  html.winter .saltjar-card{background:linear-gradient(135deg,#3A5A78 0%,#7FA6C4 100%);box-shadow:0 6px 22px rgba(40,70,100,.28);}
+  html.winter .vincent-card{background:linear-gradient(135deg,#1F4A48 0%,#4F8A82 100%);}
+  html.winter .vincent-card .muksang-all-eyebrow{color:#C8F0E8;}
+  html.winter .vincent-card .muksang-all-sub{color:#E2F6F2;}
+  html.winter .lauds-morning{background:linear-gradient(135deg,#4F7FAF 0%,#9CC3E0 100%);}
+  html.winter .lauds-evening{background:linear-gradient(135deg,#142238 0%,#3A4F82 100%);}
+  html.winter .link-card,html.winter .link-more-summary,html.winter .muksang-box{
+    background:linear-gradient(160deg,var(--card) 0%,#E9F1F8 100%);
+    box-shadow:0 2px 8px rgba(40,70,110,.07);
+  }
+  html.winter .link-card::after{content:'❄️';}
+  html.winter .link-card:hover{
+    box-shadow:0 10px 24px rgba(52,98,143,.2);
+    background:linear-gradient(160deg,#F4F9FE 0%,#DCEAF6 100%);
+  }
+  html.winter .link-card .lc-name,html.winter .link-more-summary{color:#1E3150;}
+  html.winter .link-more-summary:hover{box-shadow:0 8px 20px rgba(52,98,143,.15);}
+  html.winter .muksang-item:hover{background:#E9F1F8;}
+  html.winter .group-title{color:#1E3150;}
+  html.winter .badge-muksang{color:#142238;}
+  html.winter .lauds-morning .wyd-eyebrow{color:#16233A;}
+  html.winter .gold-bar{background:linear-gradient(90deg,#34628F,#5B8DB8 35%,#9CC3DE 70%,#4A7A70);}
 </style>
 </head>
 <body>
@@ -718,6 +809,22 @@
 <!-- kstNow / Liturgy / SolarTerms 는 liturgy-lib.js 로 옮겨 liturgy 프로젝트와 함께 쓴다.
      (주의: 같은 함수가 feastday.html 에는 아직 인라인으로 남아있다 — 고칠 때 함께 확인) -->
 <script src="liturgy-lib.js"></script>
+<script>
+// 입동~입춘 전(입동·소설·대설·동지·소한·대한 절기)에는 겨울 테마(html.winter)를 켠다.
+// 절기가 드는 시각은 하루 중 아무 때나라, 오늘 안에 입동이 들면 낮에도 겨울로 친다.
+(function(){
+  try {
+    var n = window.kstNow(), t = window.SolarTerms;
+    var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };
+    var today = n.date.getFullYear() + '-' + String(n.date.getMonth() + 1).padStart(2, '0') + '-' + String(n.date.getDate()).padStart(2, '0');
+    var cur = t.current(n.date), nxt = t.next(n.date);
+    var term = ymd(nxt.date) === today ? nxt : cur;
+    if (['입동', '소설', '대설', '동지', '소한', '대한'].indexOf(term.name) >= 0) {
+      document.documentElement.classList.add('winter');
+    }
+  } catch (e) { /* 계산이 안 되면 기본(가을) 테마를 그대로 둔다 */ }
+})();
+</script>
 
 <header>
   <div class="header-inner">
@@ -2737,8 +2844,11 @@ window.MISSA_TARGET_DATE = (function(){
     const cards = grid.querySelectorAll(':scope > .link-card');
     const n = cards.length;
     cards.forEach(function(card, i){
-      const hue = 30 + (n > 1 ? (i / (n - 1)) * 200 : 0);
-      card.style.borderLeftColor = 'hsl(' + hue.toFixed(0) + ', 45%, 32%)';
+      // 겨울(html.winter)에는 골드~인디고 대신 청록~남색 구간을 쓴다.
+      const winter = document.documentElement.classList.contains('winter');
+      const t = n > 1 ? i / (n - 1) : 0;
+      const hue = winter ? 190 + t * 70 : 30 + t * 200;
+      card.style.borderLeftColor = 'hsl(' + hue.toFixed(0) + ', 45%, ' + (winter ? 38 : 32) + '%)';
     });
   });
 })();

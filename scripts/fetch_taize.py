@@ -31,7 +31,7 @@ import json
 import re
 import sys
 import time
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -83,8 +83,15 @@ BLOCKED_VIDEO_IDS = {
 # 등)나 점검 자체의 실패는 영상 문제가 아닐 수 있으므로 막힌 것으로 치지 않는다.
 UNPLAYABLE_STATUSES = {"UNPLAYABLE", "ERROR"}
 # 점검에 걸린 영상이 이 비율을 넘으면 영상이 아니라 점검 쪽 문제로 보고 되돌린다.
-MAX_DROP_RATIO = 0.5
+RECHECK_DAYS = 14   # 같은 영상의 재생 가능 여부를 다시 확인하는 주기
+MAX_CHECKS = 200    # 한 번 실행에 확인할 영상 수 상한(요청이 몰려 429 를 받지 않도록)
 PLAYABILITY_RE = re.compile(r'"playabilityStatus":\{"status":"([A-Z_]+)"')
+# 영상마다 '재생되는 나라' 목록이 들어 있다. Topic 채널 음원은 권리 사정으로 2~4개국에서만
+# 재생되는 영상이 많은데, 이런 영상은 재생목록에는 정상으로 올라와 있고 GitHub Actions 서버
+# (미국 등)에서 열면 playabilityStatus 도 OK 로 나온다. 그래서 상태만 보면 한국에서 막힌
+# 영상을 못 거르고, 나라 목록에 한국이 없는지를 따로 확인해야 한다.
+AVAILABLE_COUNTRIES_RE = re.compile(r'"availableCountries":\[([^\]]*)\]')
+PLAY_COUNTRY = "KR"
 
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "taize.json"
@@ -197,41 +204,79 @@ def fetch_album_tracks(playlist_id: str, album_title: str) -> list:
     return tracks
 
 
-def is_unplayable(video_id: str) -> bool:
-    """재생 페이지의 playabilityStatus 가 UNPLAYABLE/ERROR 면 True.
+def check_playable(video_id: str):
+    """한국에서 재생되는 영상이면 True, 안 되면 False, 확인이 안 되면 None.
 
-    페이지를 못 읽거나 상태를 못 찾으면 False(= 일단 살려 둔다)."""
-    try:
-        r = requests.get(
-            f"{BASE}/watch?v={video_id}",
-            headers={**HEADERS, "Cookie": "CONSENT=YES+1; SOCS=CAI"},
-            timeout=30,
-        )
+    YouTube 가 요청을 몰아서 보내면 429(너무 많은 요청)를 돌려준다. 이걸 '문제 없음'으로
+    넘기면 막힌 영상이 그대로 추천되므로, 잠시 기다렸다 다시 해 보고 그래도 안 되면
+    None 으로 돌려 호출한 쪽이 지난 판정을 쓰게 한다."""
+    for wait in (0, 6, 20):
+        time.sleep(wait)
+        try:
+            r = requests.get(
+                f"{BASE}/watch?v={video_id}",
+                headers={**HEADERS, "Cookie": "CONSENT=YES+1; SOCS=CAI"},
+                timeout=30,
+            )
+        except requests.RequestException:
+            continue
         if r.status_code == 404:
-            return True
-        r.raise_for_status()
-    except requests.RequestException as e:
-        print(f"  playability check skipped ({video_id}): {e}", file=sys.stderr)
-        return False
-    m = PLAYABILITY_RE.search(r.text)
-    return bool(m and m.group(1) in UNPLAYABLE_STATUSES)
+            return False
+        if r.status_code != 200:
+            continue
+        c = AVAILABLE_COUNTRIES_RE.search(r.text)
+        if c:
+            return f'"{PLAY_COUNTRY}"' in c.group(1)
+        m = PLAYABILITY_RE.search(r.text)
+        if m:
+            return m.group(1) not in UNPLAYABLE_STATUSES
+        return None
+    return None
 
 
-def drop_unplayable(by_video_id: dict) -> dict:
-    kept = dict(by_video_id)
-    dropped = []
+def drop_unplayable(by_video_id: dict, checked: dict, today: str) -> dict:
+    """한국에서 재생이 안 되는 영상을 뺀다.
+
+    영상 한 편의 재생 가능 여부는 좀처럼 바뀌지 않으므로, 판정을 checked 에 날짜와 함께
+    남겨 두고 RECHECK_DAYS 가 지났거나 판정이 없는 영상만 다시 확인한다(한 번에
+    MAX_CHECKS 편까지, 오래된 것부터). 이렇게 해야 요청이 적어 429 를 피하고,
+    확인이 일시적으로 실패해도 지난 판정이 남아 막힌 영상이 되살아나지 않는다."""
+    def age(vid):
+        rec = checked.get(vid)
+        return (today_ord - date.fromisoformat(rec["at"]).toordinal()) if rec else 10**6
+
+    today_ord = date.fromisoformat(today).toordinal()
+    due = sorted((v for v in by_video_id if age(v) >= RECHECK_DAYS), key=age, reverse=True)
+    failed = 0
+    for vid in due[:MAX_CHECKS]:
+        ok = check_playable(vid)
+        if ok is None:
+            failed += 1
+        else:
+            checked[vid] = {"ok": ok, "at": today}
+        time.sleep(0.5)
+    if due:
+        print(f"재생 확인: 대상 {len(due)}편 중 {min(len(due), MAX_CHECKS)}편 확인, 실패 {failed}편",
+              file=sys.stderr)
+
+    kept = {}
     for vid, t in by_video_id.items():
-        if is_unplayable(vid):
-            dropped.append(vid)
-            print(f"  재생 불가로 제외: {vid} {t['title']}")
-        time.sleep(0.3)
-    if dropped and len(dropped) > len(by_video_id) * MAX_DROP_RATIO:
-        print(f"재생 점검에서 {len(dropped)}/{len(by_video_id)} 곡이 걸렸습니다 — "
-              "점검 오류로 보고 모두 유지합니다.", file=sys.stderr)
-        return kept
-    for vid in dropped:
-        del kept[vid]
+        if checked.get(vid, {}).get("ok", True):
+            kept[vid] = t
+        else:
+            print(f"  재생 불가로 제외: {vid} {t['title'].encode('ascii', 'replace').decode()}")
+    # 판정 기록은 지금 목록에 있는 영상 것만 남긴다.
+    for vid in list(checked):
+        if vid not in by_video_id:
+            del checked[vid]
     return kept
+
+
+def load_checked() -> dict:
+    try:
+        return json.loads(OUT.read_text(encoding="utf-8")).get("checked", {})
+    except (OSError, ValueError):
+        return {}
 
 
 def main() -> int:
@@ -249,7 +294,8 @@ def main() -> int:
         if not by_video_id:
             raise ValueError("3~5분가량의 성가 영상을 하나도 찾지 못했습니다.")
 
-        by_video_id = drop_unplayable(by_video_id)
+        checked = load_checked()
+        by_video_id = drop_unplayable(by_video_id, checked, datetime.now(KST).strftime('%Y-%m-%d'))
         if not by_video_id:
             raise ValueError("재생 가능한 성가 영상이 하나도 없습니다.")
 
@@ -266,6 +312,7 @@ def main() -> int:
         "source": PLAYLISTS_URL,
         "count": len(items),
         "items": items,
+        "checked": checked,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)

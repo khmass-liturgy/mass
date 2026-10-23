@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-24 06:31",
+  "updated": "2026-10-24 06:32",
   "source": "https://www.youtube.com/@luxchamberchoir7964/videos",
-  "count": 51,
+  "count": 53,
   "items": [
     {
       "videoId": "F-ZktWCXWGE",
@@ -353,6 +353,20 @@
       "title": "대림성가 모음곡 - 룩스챔버콰이어 Lux chamber choir",
       "seasons": [
         "advent"
+      ]
+    },
+    {
+      "videoId": "X5AJK6puUYA",
+      "title": "가톨릭성가 138번 만왕의 왕 - 룩스챔버콰이어 Lux chamber choir",
+      "seasons": [
+        "easter"
+      ]
+    },
+    {
+      "videoId": "iO50gHjnYO8",
+      "title": "가톨릭성가 129번 알렐루야 노래하자 - 룩스챔버콰이어 Lux chamber choir",
+      "seasons": [
+        "easter"
       ]
     },
     {

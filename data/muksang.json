@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23 14:53",
+  "updated": "2026-10-23 23:10",
   "cutoff": "2026-10-22",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7436",
+      "title": "전삼용 요셉 신부 / 연중 제29주간 토요일 - ​회개는 내가 주님의 것임을 고백하는 봉헌으로부터 시작된다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-23",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7436",
+      "mass_date": "2026-10-24",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 연중 제29주간 토요일 루카 13,1-9 ​회개는 내가…"
+    },
+    {
+      "id": "daum_bbadaking_7973",
+      "title": "2026년 10월 24일 연중 제29주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-23",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7973",
+      "mass_date": "2026-10-24",
+      "priest": "조명연",
+      "excerpt": "건강한 사회는 서로에 대한 신뢰가 높은 곳이라고 합니다."
+    },
     {
       "id": "daum_catholicsb_7435",
       "title": "전삼용 요셉 신부 / 연중 제29주간 금요일 - 따를 법칙을 갖고 싶다면 예외를 인정할 수 없을 때까지 실험하",

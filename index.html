@@ -713,10 +713,183 @@
   .badge-kyoha{background:var(--moss);}
   .badge-muksang{background:var(--ginkgo);color:#4A2418;}
   .gold-bar{background:linear-gradient(90deg,#B8412B,#D2691E 35%,#E8B33A 70%,#6B7A3A);}
-  /* ══ 겨울 테마 — 입동(11월 7일 무렵)부터 입춘 전까지 ══
-     위 가을 테마 뒤에서 한 번 더 덮어쓴다. html 에 winter 클래스가 붙을 때만 적용되며
-     (본문 첫머리 스크립트가 절기를 보고 붙인다), 단풍색 변수와 하드코딩 색을
-     눈·얼음·솔잎색으로 바꾼다. 되돌리려면 이 블록과 그 스크립트만 지우면 된다. */
+  /* ══ 계절 테마 — 절기에 따라 html 에 spring / summer / winter 클래스가 붙는다 ══
+     클래스가 없으면 위의 가을 테마가 그대로 보인다. 본문 첫머리 스크립트가 절기를 보고 붙인다.
+       봄  : 입춘 ~ 입하 전      여름: 입하 ~ 입추 전
+       가을: 입추 ~ 입동 전(기본) 겨울: 입동 ~ 입춘 전
+     테마마다 같은 틀(변수 + 하드코딩 색 덮어쓰기)이라, 색을 고치려면 해당 블록만 보면 된다. */
+  html.spring{
+    --navy:#3A2A3E; --navy-lt:#533E58;
+    --gold:#D9809D; --gold-lt:#F6C6D4;
+    --cream:#FFF5F7; --card:#FFFDFD;
+    --border:#F0D3DB; --text:#2A2024;
+    --muted:#85707A; --vatican:#A63F62;
+    --maple:#CC4F78; --pumpkin:#E57F9B; --ginkgo:#9CC878; --moss:#5E9E58;
+  }
+  html.spring body{background:
+    radial-gradient(circle at 8% 0%, rgba(246,170,195,.22), transparent 40%),
+    radial-gradient(circle at 100% 30%, rgba(140,200,120,.10), transparent 45%),
+    var(--cream);}
+  html.spring .missa-card{
+    background:linear-gradient(160deg,#46264A 0%,#92487A 55%,#DE8AA6 100%);
+    box-shadow:0 12px 32px rgba(90,40,70,.32);
+  }
+  html.spring .missa-card:hover{box-shadow:0 18px 44px rgba(90,40,70,.42);}
+  html.spring .missa-card::before{
+    background:
+      radial-gradient(circle at 12% 105%, rgba(255,205,220,.38), transparent 55%),
+      radial-gradient(circle at 95% -10%, rgba(255,235,240,.22), transparent 45%);
+  }
+  html.spring .missa-card::after{content:'🌸';}
+  html.spring .missa-date-box{background:radial-gradient(circle at 35% 30%, #FFF1F5, #E8809F 62%, #A63F62 100%);}
+  html.spring .missa-sub{color:#F6DCE5;}
+  html.spring .missa-title{color:#FFF6F9;}
+  html.spring .missa-card:hover .missa-arrow{color:#46264A;}
+  html.spring .missa-season.season-ordinary{background:rgba(150,205,120,.24);color:#E8F6D6;border-color:rgba(170,220,140,.55);}
+  html.spring .wyd-card,html.spring .prayer-details{
+    background:linear-gradient(135deg,#573356 0%,#8A4F80 100%);
+    box-shadow:0 8px 26px rgba(90,40,70,.25);
+  }
+  html.spring .wyd-body{color:#F8E8EE;}
+  html.spring .wyd-fiat{color:#EFD8E2;}
+  html.spring .prayer-body{border-top-color:rgba(246,198,212,.32);}
+  html.spring .dday-card{
+    background:linear-gradient(135deg,#6E3A66 0%,#B86A8E 100%);
+    box-shadow:0 8px 24px rgba(90,40,70,.25);
+  }
+  html.spring .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,70,.42);}
+  html.spring .dday-badge{color:#46264A;background:linear-gradient(135deg,#F6C6D4,#FFF1F5);}
+  html.spring .term-card{background:linear-gradient(135deg,#3F7A3A 0%,#86BC72 100%);}
+  html.spring .term-card:hover{box-shadow:0 8px 24px rgba(90,40,70,.25);}
+  html.spring .term-card .dday-date{color:#F0FAE4;}
+  html.spring .term-meaning{color:#F4FBEA;}
+  html.spring .term-meaning .term-hanja{color:#DDF2C4;}
+  html.spring .season-card{background:linear-gradient(135deg,#5A3A5C 0%,#3A2A3E 100%);}
+  html.spring .season-now{color:#F0D8E4;}
+  html.spring .pope-card{
+    background:linear-gradient(135deg,#FFFDFD 0%,#FDE9EF 100%);
+    border-color:#E8A0B8;box-shadow:0 4px 16px rgba(204,79,120,.2);
+  }
+  html.spring .muksang-all-card{
+    background:linear-gradient(135deg,#45284A 0%,#9A4F7E 100%);
+    box-shadow:0 6px 22px rgba(90,40,70,.25);
+  }
+  html.spring .muksang-all-card:hover{box-shadow:0 12px 32px rgba(90,40,70,.42);}
+  html.spring .muksang-all-card::before{
+    background:radial-gradient(circle at 92% -20%, rgba(255,205,220,.28), transparent 55%),
+               radial-gradient(circle at -5% 120%, rgba(255,205,220,.14), transparent 50%);
+  }
+  html.spring .muksang-all-icon{background:linear-gradient(135deg,#F6C6D4,#E88AA6);}
+  html.spring .muksang-all-sub{color:#F6DCE5;}
+  html.spring .saltjar-card{background:linear-gradient(135deg,#B8803A 0%,#E8BE72 100%);box-shadow:0 6px 22px rgba(160,110,50,.28);}
+  html.spring .vincent-card{background:linear-gradient(135deg,#3A7036 0%,#82B86E 100%);}
+  html.spring .vincent-card .muksang-all-eyebrow{color:#EAF8D2;}
+  html.spring .vincent-card .muksang-all-sub{color:#F4FBE6;}
+  html.spring .lauds-morning{background:linear-gradient(135deg,#E57F9B 0%,#F6C6D4 100%);}
+  html.spring .lauds-evening{background:linear-gradient(135deg,#3A2A3E 0%,#7A4A86 100%);}
+  html.spring .link-card,html.spring .link-more-summary,html.spring .muksang-box{
+    background:linear-gradient(160deg,var(--card) 0%,#FDEEF2 100%);
+    box-shadow:0 2px 8px rgba(150,60,90,.07);
+  }
+  html.spring .link-card::after{content:'🌸';}
+  html.spring .link-card:hover{
+    box-shadow:0 10px 24px rgba(204,79,120,.2);
+    background:linear-gradient(160deg,#FFF6F8 0%,#FADCE5 100%);
+  }
+  html.spring .link-card .lc-name,html.spring .link-more-summary{color:#4A2A3A;}
+  html.spring .link-more-summary:hover{box-shadow:0 8px 20px rgba(204,79,120,.2);}
+  html.spring .muksang-item:hover{background:#FDEEF2;}
+  html.spring .group-title{color:#4A2A3A;}
+  html.spring .badge-muksang{color:#46264A;}
+  html.spring .lauds-morning .wyd-eyebrow{color:#46264A;}
+  html.spring .gold-bar{background:linear-gradient(90deg,#CC4F78,#E57F9B 35%,#F2C97A 65%,#5E9E58);}
+
+  html.summer{
+    --navy:#0F3A4A; --navy-lt:#1B5568;
+    --gold:#E89A2B; --gold-lt:#FFD27A;
+    --cream:#F2FAF8; --card:#FFFFFF;
+    --border:#CCE5E0; --text:#10272E;
+    --muted:#587478; --vatican:#0E6B7A;
+    --maple:#0A8397; --pumpkin:#EE8128; --ginkgo:#F2C03A; --moss:#3A9A66;
+  }
+  html.summer body{background:
+    radial-gradient(circle at 8% 0%, rgba(255,210,100,.18), transparent 40%),
+    radial-gradient(circle at 100% 30%, rgba(40,170,190,.10), transparent 45%),
+    var(--cream);}
+  html.summer .missa-card{
+    background:linear-gradient(160deg,#0B3A52 0%,#0F6F8A 55%,#2FB5C4 100%);
+    box-shadow:0 12px 32px rgba(10,60,80,.32);
+  }
+  html.summer .missa-card:hover{box-shadow:0 18px 44px rgba(10,60,80,.42);}
+  html.summer .missa-card::before{
+    background:
+      radial-gradient(circle at 12% 105%, rgba(255,230,150,.35), transparent 55%),
+      radial-gradient(circle at 95% -10%, rgba(200,245,250,.22), transparent 45%);
+  }
+  html.summer .missa-card::after{content:'☀️';}
+  html.summer .missa-date-box{background:radial-gradient(circle at 35% 30%, #FFF6D6, #F2A93B 62%, #D2691E 100%);}
+  html.summer .missa-sub{color:#D8F0F2;}
+  html.summer .missa-title{color:#F4FEFF;}
+  html.summer .missa-card:hover .missa-arrow{color:#0B3A52;}
+  html.summer .missa-season.season-ordinary{background:rgba(120,210,150,.24);color:#DDF7E6;border-color:rgba(140,220,170,.55);}
+  html.summer .wyd-card,html.summer .prayer-details{
+    background:linear-gradient(135deg,#0F4A5E 0%,#1E7A8E 100%);
+    box-shadow:0 8px 26px rgba(10,60,80,.25);
+  }
+  html.summer .wyd-body{color:#E4F5F6;}
+  html.summer .wyd-fiat{color:#D4ECEE;}
+  html.summer .prayer-body{border-top-color:rgba(255,210,122,.32);}
+  html.summer .dday-card{
+    background:linear-gradient(135deg,#0F5F73 0%,#2A9AAE 100%);
+    box-shadow:0 8px 24px rgba(10,60,80,.25);
+  }
+  html.summer .dday-card:hover{box-shadow:0 14px 32px rgba(10,60,80,.42);}
+  html.summer .dday-badge{color:#0B3A52;background:linear-gradient(135deg,#FFD27A,#FFF1C4);}
+  html.summer .term-card{background:linear-gradient(135deg,#1F7A55 0%,#58BF8A 100%);}
+  html.summer .term-card:hover{box-shadow:0 8px 24px rgba(10,60,80,.25);}
+  html.summer .term-card .dday-date{color:#E6FAEF;}
+  html.summer .term-meaning{color:#EBFBF2;}
+  html.summer .term-meaning .term-hanja{color:#C8F0DA;}
+  html.summer .season-card{background:linear-gradient(135deg,#135468 0%,#0F3A4A 100%);}
+  html.summer .season-now{color:#D2ECEF;}
+  html.summer .pope-card{
+    background:linear-gradient(135deg,#FFFFFF 0%,#E6F6F4 100%);
+    border-color:#F2C03A;box-shadow:0 4px 16px rgba(10,131,151,.2);
+  }
+  html.summer .muksang-all-card{
+    background:linear-gradient(135deg,#0F4A5E 0%,#1F8AA0 100%);
+    box-shadow:0 6px 22px rgba(10,60,80,.25);
+  }
+  html.summer .muksang-all-card:hover{box-shadow:0 12px 32px rgba(10,60,80,.42);}
+  html.summer .muksang-all-card::before{
+    background:radial-gradient(circle at 92% -20%, rgba(255,230,150,.28), transparent 55%),
+               radial-gradient(circle at -5% 120%, rgba(255,230,150,.14), transparent 50%);
+  }
+  html.summer .muksang-all-icon{background:linear-gradient(135deg,#FFD27A,#F2A93B);}
+  html.summer .muksang-all-sub{color:#D8F0F2;}
+  html.summer .saltjar-card{background:linear-gradient(135deg,#C77A12 0%,#F0B63A 100%);box-shadow:0 6px 22px rgba(180,110,20,.28);}
+  html.summer .vincent-card{background:linear-gradient(135deg,#1F7A55 0%,#58BF8A 100%);}
+  html.summer .vincent-card .muksang-all-eyebrow{color:#DDF8EA;}
+  html.summer .vincent-card .muksang-all-sub{color:#EDFBF3;}
+  html.summer .lauds-morning{background:linear-gradient(135deg,#EE8128 0%,#F7C14A 100%);}
+  html.summer .lauds-evening{background:linear-gradient(135deg,#0F3A4A 0%,#2A5C8A 100%);}
+  html.summer .link-card,html.summer .link-more-summary,html.summer .muksang-box{
+    background:linear-gradient(160deg,var(--card) 0%,#EAF7F5 100%);
+    box-shadow:0 2px 8px rgba(10,100,110,.07);
+  }
+  html.summer .link-card::after{content:'☀️';}
+  html.summer .link-card:hover{
+    box-shadow:0 10px 24px rgba(10,131,151,.2);
+    background:linear-gradient(160deg,#F4FCFB 0%,#D6F0EC 100%);
+  }
+  html.summer .link-card .lc-name,html.summer .link-more-summary{color:#0F3340;}
+  html.summer .link-more-summary:hover{box-shadow:0 8px 20px rgba(10,131,151,.2);}
+  html.summer .muksang-item:hover{background:#EAF7F5;}
+  html.summer .group-title{color:#0F3340;}
+  html.summer .badge-muksang{color:#0B3A52;}
+  html.summer .lauds-morning .wyd-eyebrow{color:#0B3A52;}
+  html.summer .gold-bar{background:linear-gradient(90deg,#0A8397,#2FB5C4 35%,#F2C03A 70%,#EE8128);}
+
   html.winter{
     --navy:#16233A; --navy-lt:#243556;
     --gold:#6F9BC4; --gold-lt:#BFD9EE;
@@ -740,9 +913,7 @@
       radial-gradient(circle at 95% -10%, rgba(225,240,255,.2), transparent 45%);
   }
   html.winter .missa-card::after{content:'❄️';}
-  html.winter .missa-date-box{
-    background:radial-gradient(circle at 35% 30%, #F3FAFF, #7FB0DA 62%, #2F4A73 100%);
-  }
+  html.winter .missa-date-box{background:radial-gradient(circle at 35% 30%, #F3FAFF, #7FB0DA 62%, #2F4A73 100%);}
   html.winter .missa-sub{color:#D3E3F2;}
   html.winter .missa-title{color:#F4F9FF;}
   html.winter .missa-card:hover .missa-arrow{color:#142238;}
@@ -758,7 +929,7 @@
     background:linear-gradient(135deg,#223A5E 0%,#3F6A9A 100%);
     box-shadow:0 8px 24px rgba(20,40,70,.25);
   }
-  html.winter .dday-card:hover{box-shadow:0 14px 32px rgba(20,40,70,.35);}
+  html.winter .dday-card:hover{box-shadow:0 14px 32px rgba(20,40,70,.45);}
   html.winter .dday-badge{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
   html.winter .term-card{background:linear-gradient(135deg,#2C5A5A 0%,#5E9690 100%);}
   html.winter .term-card:hover{box-shadow:0 8px 24px rgba(20,40,70,.25);}
@@ -775,7 +946,7 @@
     background:linear-gradient(135deg,#1E3050 0%,#3A5F90 100%);
     box-shadow:0 6px 22px rgba(20,40,70,.25);
   }
-  html.winter .muksang-all-card:hover{box-shadow:0 12px 32px rgba(20,40,70,.35);}
+  html.winter .muksang-all-card:hover{box-shadow:0 12px 32px rgba(20,40,70,.45);}
   html.winter .muksang-all-card::before{
     background:radial-gradient(circle at 92% -20%, rgba(190,220,245,.28), transparent 55%),
                radial-gradient(circle at -5% 120%, rgba(190,220,245,.14), transparent 50%);
@@ -798,7 +969,7 @@
     background:linear-gradient(160deg,#F4F9FE 0%,#DCEAF6 100%);
   }
   html.winter .link-card .lc-name,html.winter .link-more-summary{color:#1E3150;}
-  html.winter .link-more-summary:hover{box-shadow:0 8px 20px rgba(52,98,143,.15);}
+  html.winter .link-more-summary:hover{box-shadow:0 8px 20px rgba(52,98,143,.2);}
   html.winter .muksang-item:hover{background:#E9F1F8;}
   html.winter .group-title{color:#1E3150;}
   html.winter .badge-muksang{color:#142238;}
@@ -812,18 +983,24 @@
      (주의: 같은 함수가 feastday.html 에는 아직 인라인으로 남아있다 — 고칠 때 함께 확인) -->
 <script src="liturgy-lib.js"></script>
 <script>
-// 입동~입춘 전(입동·소설·대설·동지·소한·대한 절기)에는 겨울 테마(html.winter)를 켠다.
-// 절기가 드는 시각은 하루 중 아무 때나라, 오늘 안에 입동이 들면 낮에도 겨울로 친다.
+// 절기에 따라 계절 테마를 정한다(봄·여름·겨울은 html 에 클래스를 붙이고, 가을은 기본이라 붙이지 않는다).
+//   입춘~입하 전 봄 / 입하~입추 전 여름 / 입추~입동 전 가을 / 입동~입춘 전 겨울
+// 절기가 드는 시각은 하루 중 아무 때나라, 오늘 안에 절기가 들면 낮에도 그 절기로 친다.
 (function(){
   try {
     var n = window.kstNow(), t = window.SolarTerms;
     var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };
     var today = n.date.getFullYear() + '-' + String(n.date.getMonth() + 1).padStart(2, '0') + '-' + String(n.date.getDate()).padStart(2, '0');
     var cur = t.current(n.date), nxt = t.next(n.date);
-    var term = ymd(nxt.date) === today ? nxt : cur;
-    if (['입동', '소설', '대설', '동지', '소한', '대한'].indexOf(term.name) >= 0) {
-      document.documentElement.classList.add('winter');
-    }
+    var name = (ymd(nxt.date) === today ? nxt : cur).name;
+    var bySeason = {
+      spring: ['입춘', '우수', '경칩', '춘분', '청명', '곡우'],
+      summer: ['입하', '소만', '망종', '하지', '소서', '대서'],
+      winter: ['입동', '소설', '대설', '동지', '소한', '대한']
+    };
+    Object.keys(bySeason).forEach(function(k){
+      if (bySeason[k].indexOf(name) >= 0) document.documentElement.classList.add(k);
+    });
   } catch (e) { /* 계산이 안 되면 기본(가을) 테마를 그대로 둔다 */ }
 })();
 </script>
@@ -2850,11 +3027,16 @@ window.MISSA_TARGET_DATE = (function(){
     const cards = grid.querySelectorAll(':scope > .link-card');
     const n = cards.length;
     cards.forEach(function(card, i){
-      // 겨울(html.winter)에는 골드~인디고 대신 청록~남색 구간을 쓴다.
-      const winter = document.documentElement.classList.contains('winter');
+      // 계절마다 띠 색 구간이 다르다: 봄 분홍→복숭아→노랑→연두, 여름 청록→초록→노랑,
+      // 겨울 청록→남색, 가을(기본) 골드→인디고.
+      const cl = document.documentElement.classList;
       const t = n > 1 ? i / (n - 1) : 0;
-      const hue = winter ? 190 + t * 70 : 30 + t * 200;
-      card.style.borderLeftColor = 'hsl(' + hue.toFixed(0) + ', 45%, ' + (winter ? 38 : 32) + '%)';
+      let hue, sat = 45, light = 32;
+      if (cl.contains('winter')) { hue = 190 + t * 70; light = 38; }
+      else if (cl.contains('spring')) { hue = (345 + t * 125) % 360; sat = 50; light = 42; }
+      else if (cl.contains('summer')) { hue = 190 - t * 150; sat = 55; light = 36; }
+      else { hue = 30 + t * 200; }
+      card.style.borderLeftColor = 'hsl(' + hue.toFixed(0) + ', ' + sat + '%, ' + light + '%)';
     });
   });
 })();

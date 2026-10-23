@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24 06:32",
+  "updated": "2026-10-24 06:33",
   "source": "https://www.youtube.com/@luxchamberchoir7964/videos",
   "count": 55,
   "items": [
@@ -140,6 +140,7 @@
       "videoId": "hgGVG-Mk1Zg",
       "title": "가톨릭성가 255번 하늘의 여왕 - 룩스챔버콰이어 Lux Chamber Choir",
       "seasons": [
+        "easter",
         "marian"
       ]
     },
@@ -147,6 +148,7 @@
       "videoId": "v3rcTBnilt8",
       "title": "가톨릭성가 271번 로사리오 기도드릴때 - 룩스챔버콰이어 Lux Chamber Choir",
       "seasons": [
+        "rosary",
         "marian"
       ]
     },

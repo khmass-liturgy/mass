@@ -153,6 +153,14 @@ def classify(title: str) -> list:
     return [SEASON_BY_CATEGORY.get(cat, "general")]
 
 
+def seasons_for(vid: str, title: str, forced: dict) -> list:
+    """직접 적어 둔 예외(SEASON_OVERRIDES) → 재생목록이 정한 시기 → 성가집 분류 순서로 정한다."""
+    m = HYMN_NO_RE.search(title)
+    if m and int(m.group(1)) in SEASON_OVERRIDES:
+        return SEASON_OVERRIDES[int(m.group(1))]
+    return [forced[vid]] if vid in forced else classify(title)
+
+
 def main() -> int:
     try:
         videos, forced = fetch_all_videos()
@@ -163,7 +171,7 @@ def main() -> int:
         return 1
 
     items = [{"videoId": vid, "title": title,
-              "seasons": [forced[vid]] if vid in forced else classify(title)}
+              "seasons": seasons_for(vid, title, forced)}
              for vid, title in videos.items()]
     items += [m for m in MANUAL_ITEMS if m["videoId"] not in videos]
     data = {

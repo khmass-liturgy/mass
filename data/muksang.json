@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-23 23:10",
-  "cutoff": "2026-10-22",
+  "updated": "2026-10-24 08:48",
+  "cutoff": "2026-10-23",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 12,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7436",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-24",
       "priest": "조명연",
       "excerpt": "건강한 사회는 서로에 대한 신뢰가 높은 곳이라고 합니다."
+    },
+    {
+      "id": "daum_bbadaking_2249",
+      "title": "2026년 10월 24일 연중 제29주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-10-24",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2249",
+      "mass_date": "2026-10-24",
+      "priest": "양승국",
+      "excerpt": "우리의 영원한 지주요 보루, 변호인이신 예수님!"
+    },
+    {
+      "id": "daum_bbadaking_205",
+      "title": "주님의 자비가 우리의 회개를 앞섭니다.",
+      "author": "환희 평화",
+      "date": "2026-10-24",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/205",
+      "mass_date": "2026-10-24",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7435",
@@ -86,56 +106,6 @@
       "date": "2026-10-23",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139218&menu=4770",
       "mass_date": "2026-10-23",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7434",
-      "title": "전삼용 요셉 신부 / 가해 연중 제29주간 목요일 - 불이 붙으면 불을 붙게 함",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-21",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7434",
-      "mass_date": "2026-10-22",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제29주간 목요일 복음: 루카 12,49-53…"
-    },
-    {
-      "id": "daum_bbadaking_7971",
-      "title": "2026년 10월 22일 연중 제29주간 목요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-21",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7971",
-      "mass_date": "2026-10-22",
-      "priest": "조명연",
-      "excerpt": "“우리를 괴롭게 하는 것은 우리에게 일어난 일이 아니라, 그 일에 대해 우리…"
-    },
-    {
-      "id": "daum_bbadaking_2247",
-      "title": "2026년 10월 22일 연중 제29주간 목요일",
-      "author": "박 베로니카",
-      "date": "2026-10-22",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2247",
-      "mass_date": "2026-10-22",
-      "priest": "양승국",
-      "excerpt": "평화로운 세상 건설을 위한 순교자의 삶!"
-    },
-    {
-      "id": "daum_bbadaking_203",
-      "title": "불은 이기심과 무사안일을 태우고 정화합니다.",
-      "author": "환희 평화",
-      "date": "2026-10-22",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/203",
-      "mass_date": "2026-10-22",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139173",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-22",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139173&menu=4770",
-      "mass_date": "2026-10-22",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

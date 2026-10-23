@@ -23,7 +23,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 HANDLE_URL = "https://www.youtube.com/@luxchamberchoir7964/videos"
-# (주소, 이 목록의 영상에 일괄로 붙일 시기). 시기가 None 이면 성가집의 전례별 분류로 정한다.
+# (주소, 이 목록의 영상에 일괄로 붙일 시기 — 하나 또는 목록). 시기가 None 이면 성가집의 전례별 분류로 정한다.
 # 같은 채널의 모음 재생목록은 채널 '동영상' 탭에 없는 영상이 있어 따로 읽고, 재생목록
 # 이름이 곧 시기라서 그 시기로 확정한다.
 SOURCES = [
@@ -35,6 +35,7 @@ SOURCES = [
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ezTvBM1q1Vq9vIE0WdMTWrt", "easter"),    # 부활시기
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ewSuNztPB8Hf6229cxsktSp", "marian"),    # 성모시기
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ew2U8hhkwCURqnJqj7CHJSx", "lent"),      # 사순시기
+    ("https://www.youtube.com/playlist?list=PLN9m430-p-exQAOWaaaVDzlZlhzACm0W6", ["eucharist", "general"]),  # 성체성가
 ]
 
 KST = ZoneInfo("Asia/Seoul")
@@ -159,7 +160,10 @@ def seasons_for(vid: str, title: str, forced: dict) -> list:
     m = HYMN_NO_RE.search(title)
     if m and int(m.group(1)) in SEASON_OVERRIDES:
         return SEASON_OVERRIDES[int(m.group(1))]
-    return [forced[vid]] if vid in forced else classify(title)
+    if vid in forced:
+        f = forced[vid]
+        return list(f) if isinstance(f, list) else [f]
+    return classify(title)
 
 
 def main() -> int:

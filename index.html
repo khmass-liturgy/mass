@@ -1601,8 +1601,10 @@
     </script>
 
     <script>
-    // 오늘의 묵상성가 — 가톨릭 묵상 음악 링크를 일주일(월~일, 한국 시간)에 한 곡씩 순서대로 돌려 보여 준다.
-    // 곡 목록은 data/meditation_music.json 의 items 에서 관리한다.
+    // 오늘의 묵상성가 — 지금 시기에 어울리는 성가 영상을 일주일(월~일, 한국 시간)에 한 곡씩 돌려 보여 준다.
+    // 곡 목록과 시기 분류는 data/meditation_music.json (scripts/fetch_meditation_music.py 가 갱신).
+    // 우선순위: 달(5월 성모성월·6월 성심성월·9월 순교자성월·10월 묵주기도성월)
+    //          → 전례 시기(대림·성탄·사순·부활) → 시기를 타지 않는 곡(general).
     (function(){
       var card = document.getElementById('meditationCard');
       var desc = document.getElementById('meditationDesc');
@@ -1615,20 +1617,36 @@
         return Math.floor((day - 4) / 7);
       }
 
+      // 지금 어울리는 시기 키를 우선순위 순서로 돌려준다.
+      function seasonKeys(){
+        var now = window.kstNow();
+        var byMonth = { 4: ['marian'], 5: ['sacredheart'], 8: ['martyrs'], 9: ['rosary', 'marian'] }[now.month];
+        if (byMonth) return byMonth;
+        var s = window.Liturgy && window.Liturgy.seasonAt(now.date);
+        if (s && ['advent', 'christmas', 'lent', 'easter'].indexOf(s.key) >= 0) return [s.key];
+        return [];
+      }
+
+      function cleanTitle(t){
+        return (t || '').replace(/\s*-\s*룩스\s*챔버\s*콰이어.*$/i, '').replace(/\s+/g, ' ').trim();
+      }
+
       fetch('data/meditation_music.json', {cache:'no-store'})
         .then(function(r){ return r.json(); })
         .then(function(d){
-          var items = ((d && d.items) || []).filter(function(it){ return it && it.videoId; });
-          if (!items.length) return;
+          var all = ((d && d.items) || []).filter(function(it){ return it && it.videoId; });
+          if (!all.length) return;
+          function pool(keys){
+            return all.filter(function(it){
+              return (it.seasons || ['general']).some(function(k){ return keys.indexOf(k) >= 0; });
+            });
+          }
+          var items = pool(seasonKeys());
+          if (!items.length) items = pool(['general']);
+          if (!items.length) items = all;
           var it = items[kstWeekNumber() % items.length];
-          var url = 'https://youtu.be/' + it.videoId;
-          card.href = url;
-          desc.textContent = it.title || '이번 주 묵상성가';
-          // 영상 제목을 YouTube 에서 받아올 수 있으면 그 제목으로 바꿔 보여 준다.
-          fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent(url))
-            .then(function(r){ return r.ok ? r.json() : null; })
-            .then(function(o){ if (o && o.title) desc.textContent = o.title; })
-            .catch(function(){ /* 제목을 못 받으면 JSON 의 제목을 그대로 둔다 */ });
+          card.href = 'https://youtu.be/' + it.videoId;
+          desc.textContent = cleanTitle(it.title) || '이번 주 묵상성가';
         })
         .catch(function(){ /* 못 불러오면 첫 곡 링크를 그대로 둔다 */ });
     })();

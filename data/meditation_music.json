@@ -1,9 +1,226 @@
 {
-  "note": "오늘의 묵상성가 — 한 주(월~일)에 한 곡씩 순서대로 돌려 보여 줍니다. 곡을 늘리려면 items 에 { \"videoId\": \"유튜브 영상 id\", \"title\": \"제목(선택)\" } 를 추가하세요.",
+  "updated": "2026-10-24 06:26",
+  "source": "https://www.youtube.com/@luxchamberchoir7964/videos",
+  "count": 31,
   "items": [
     {
+      "videoId": "F-ZktWCXWGE",
+      "title": "가톨릭성가 130번 예수 부활하셨네 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "easter"
+      ]
+    },
+    {
+      "videoId": "QDOQyssWjjA",
+      "title": "가톨릭성가 122번 구원의 십자가 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "lent"
+      ]
+    },
+    {
+      "videoId": "I3H1xY2kHaQ",
+      "title": "가톨릭성가21번 지극히 전능하신 주여 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "SsNKQ4x7mmw",
+      "title": "가톨릭성가107번 천사의 찬송 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "christmas"
+      ]
+    },
+    {
+      "videoId": "-WX2umGXFPA",
+      "title": "가톨릭성가 29번 주 예수 따르기로  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "6wwbH3u1UAE",
+      "title": "가톨릭성가 34번  길이요 진리요 생명이신  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "z6hKY9clWn0",
+      "title": "O Salutaris Hostia - Alexandre Guilmant(1827-1911)",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "UWSzHdvs_jA",
+      "title": "가톨릭성가 238번 자모신 마리아 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "marian"
+      ]
+    },
+    {
+      "videoId": "eQzU1J21ZCc",
+      "title": "가톨릭성가 119번 주님은 우리 위해 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "lent"
+      ]
+    },
+    {
+      "videoId": "MZm969zoqgk",
+      "title": "기억하라, Deborah Govenor - 소프라노 백자현, 오르간 채희영",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "mh7BU8Ac9YU",
+      "title": "가톨릭성가 116번 주 예수 바라보라 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "lent"
+      ]
+    },
+    {
+      "videoId": "QBaH-8PboX0",
+      "title": "가톨릭성가 262번 고통의 어머니 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "marian"
+      ]
+    },
+    {
+      "videoId": "5bIGlTszMzQ",
+      "title": "가톨릭성가 26번 이끌어 주소서 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "KfJoXJf-9GA",
+      "title": "가톨릭성가 32번 언제나 주님과 함께  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "AmM2gU7ivm0",
+      "title": "가톨릭성가 100번 동방의 별  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "christmas"
+      ]
+    },
+    {
+      "videoId": "B2BYOx8ub54",
+      "title": "가톨릭성가 89번 주 하느님 자비로이  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "advent"
+      ]
+    },
+    {
+      "videoId": "SZ7zftdygHs",
+      "title": "가톨릭성가 481번 요르단강에서  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "advent"
+      ]
+    },
+    {
+      "videoId": "PeHqGxWdEWQ",
+      "title": "가톨릭성가 77번 주 천주의 권능과  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "6Tupa1vvJ7M",
+      "title": "가톨릭성가 24번 내맘의 천주여 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "hgGVG-Mk1Zg",
+      "title": "가톨릭성가 255번 하늘의 여왕 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "easter",
+        "marian"
+      ]
+    },
+    {
+      "videoId": "v3rcTBnilt8",
+      "title": "가톨릭성가 271번 로사리오 기도드릴때 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "rosary",
+        "marian"
+      ]
+    },
+    {
+      "videoId": "n11U7lxLRZ0",
+      "title": "가톨릭성가 285번 103위 순교 성인  - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "martyrs"
+      ]
+    },
+    {
+      "videoId": "Dp-z3Ra5gqE",
+      "title": "가톨릭성가 286번 순교자의 믿음 -룩스챔버콰이어Lux Chamber Choir",
+      "seasons": [
+        "martyrs"
+      ]
+    },
+    {
+      "videoId": "lymiRRUYaHo",
+      "title": "가톨릭성가 283번 순교자 찬가 -룩스챔버콰이어Lux Chamber Choir",
+      "seasons": [
+        "martyrs"
+      ]
+    },
+    {
+      "videoId": "eBCfjDeJkb0",
+      "title": "가톨릭성가 172번 그리스도의 영혼 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "hs5wW_TC6JQ",
+      "title": "가톨릭성가 173번 사랑의 주여 오소서 Veni Jesu Amor Mi - 룩스챔버콰이어Lux Chamber Choir",
+      "seasons": [
+        "general"
+      ]
+    },
+    {
+      "videoId": "DoN7Thd2ODs",
+      "title": "가톨릭성가 200번 열절하신 주의 사랑 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "sacredheart"
+      ]
+    },
+    {
+      "videoId": "CbR8SJUEm04",
+      "title": "가톨릭성가 201번 은총의 샘 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "sacredheart"
+      ]
+    },
+    {
+      "videoId": "7MqFvLR6gT8",
+      "title": "가톨릭성가 209번 사랑하올 예수 성심이여 - 룩스챔버콰이어 Lux Chamber Choir",
+      "seasons": [
+        "sacredheart"
+      ]
+    },
+    {
+      "videoId": "SAlemeliYbY",
+      "title": "성모성월  가톨릭성가 모음곡 한시간연속듣기 - 룩스챔버콰이어 Lux chamber choir",
+      "seasons": [
+        "marian"
+      ]
+    },
+    {
       "videoId": "Tpwp1OZEoZY",
-      "title": "가톨릭 묵상 성가"
+      "title": "가톨릭 묵상 성가",
+      "seasons": [
+        "general"
+      ]
     }
   ]
 }

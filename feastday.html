@@ -124,7 +124,66 @@ footer{text-align:center;font-size:11.5px;color:var(--muted);padding:26px 16px 1
 @media (prefers-reduced-motion:no-preference){
   .card{transition:box-shadow .15s,border-color .15s}
 }
+
+/* ── 계절 테마 — 메인 화면과 같은 절기 기준(입춘·입하·입추·입동)으로 색이 바뀐다 ──
+   위 :root 의 파랑은 계절을 못 정했을 때의 기본값이다. */
+html.spring{--marian:#8A4F80;--marian-dark:#5A2F55;--gold:#D2587F;--gold-soft:#F6C6D4;--ink:#2A2024;--muted:#85707A;--bg:#FFF5F7;--line:#F0D3DB}
+html.spring header p,html.spring header .home{color:#F6DCE5}
+html.spring .week-item.is-today{background:#FDE9EF}
+html.spring .medallion{background:radial-gradient(circle at 32% 28%,#FFF1F5, #F6C6D4)}
+html.spring .datebadge{background:#FDEEF2;border-color:#F0CBD6}
+html.spring .datebadge span{color:#A06A86}
+html.spring .card .note,html.spring .ics-guide .tip{color:#8A4A62;background:#FDEEF2}
+html.spring .today,html.spring .week-list{box-shadow:0 6px 20px rgba(138,79,128,.12)}
+
+html.summer{--marian:#0F6F8A;--marian-dark:#0B3A52;--gold:#E89A2B;--gold-soft:#FFD27A;--ink:#10272E;--muted:#587478;--bg:#F2FAF8;--line:#CCE5E0}
+html.summer header p,html.summer header .home{color:#D8F0F2}
+html.summer .week-item.is-today{background:#FFF3D6}
+html.summer .medallion{background:radial-gradient(circle at 32% 28%,#FFF6D6, #FFD27A)}
+html.summer .datebadge{background:#E6F6F4;border-color:#BFE0DC}
+html.summer .datebadge span{color:#3F7F86}
+html.summer .card .note,html.summer .ics-guide .tip{color:#8A5A12;background:#FFF4DC}
+html.summer .today,html.summer .week-list{box-shadow:0 6px 20px rgba(15,111,138,.12)}
+
+html.autumn{--marian:#7B3A22;--marian-dark:#4A2418;--gold:#D58A1F;--gold-soft:#F2C46B;--ink:#2B1E16;--muted:#8A7157;--bg:#FBF3E4;--line:#E8D5B5}
+html.autumn header p,html.autumn header .home{color:#F0D9BE}
+html.autumn .week-item.is-today{background:#FBE9C6}
+html.autumn .medallion{background:radial-gradient(circle at 32% 28%,#FFF1D6, #F2C46B)}
+html.autumn .datebadge{background:#FBEFD9;border-color:#EBD3A8}
+html.autumn .datebadge span{color:#9A6B3C}
+html.autumn .card .note,html.autumn .ics-guide .tip{color:#8A5A12;background:#FBF0D8}
+html.autumn .today,html.autumn .week-list{box-shadow:0 6px 20px rgba(123,58,34,.12)}
+
+html.winter{--marian:#2E4A75;--marian-dark:#16233A;--gold:#6F9BC4;--gold-soft:#BFD9EE;--ink:#16212E;--muted:#5E7186;--bg:#EEF3F8;--line:#CBD9E6}
+html.winter header p,html.winter header .home{color:#D3E3F2}
+html.winter .week-item.is-today{background:#E3EEF8}
+html.winter .medallion{background:radial-gradient(circle at 32% 28%,#F3FAFF, #BFD9EE)}
+html.winter .datebadge{background:#E9F1F8;border-color:#C4D6E8}
+html.winter .datebadge span{color:#5A7A9C}
+html.winter .card .note,html.winter .ics-guide .tip{color:#3F5F85;background:#E6EFF8}
+html.winter .today,html.winter .week-list{box-shadow:0 6px 20px rgba(46,74,117,.12)}
 </style>
+<script src="liturgy-lib.js"></script>
+<script>
+// 절기에 따라 계절 클래스(spring/summer/autumn/winter)를 html 에 붙인다. 기준은 index.html 과 같다.
+(function(){
+  try {
+    var n = window.kstNow(), t = window.SolarTerms;
+    var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };
+    var today = n.date.getFullYear() + '-' + String(n.date.getMonth() + 1).padStart(2, '0') + '-' + String(n.date.getDate()).padStart(2, '0');
+    var cur = t.current(n.date), nxt = t.next(n.date);
+    var name = (ymd(nxt.date) === today ? nxt : cur).name;
+    var by = {
+      spring: ['입춘', '우수', '경칩', '춘분', '청명', '곡우'],
+      summer: ['입하', '소만', '망종', '하지', '소서', '대서'],
+      winter: ['입동', '소설', '대설', '동지', '소한', '대한']
+    };
+    var season = 'autumn';
+    Object.keys(by).forEach(function(k){ if (by[k].indexOf(name) >= 0) season = k; });
+    document.documentElement.classList.add(season);
+  } catch (e) { /* 계산이 안 되면 기본(파랑) 색을 그대로 둔다 */ }
+})();
+</script>
 </head>
 <body>
 

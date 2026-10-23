@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-23 17:26",
+  "updated": "2026-10-23 23:11",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "XIdu--LC_4k",
+      "date": "2026-10-24",
+      "title": "연중 제29주간 토요일",
+      "url": "https://www.youtube.com/watch?v=XIdu--LC_4k"
+    },
     {
       "videoId": "xizTZjBPCjo",
       "date": "2026-10-23",
@@ -57,12 +63,6 @@
       "date": "2026-10-15",
       "title": "예수의 성녀 데레사 동정 학자 기념일",
       "url": "https://www.youtube.com/watch?v=M3lNoy_21Pk"
-    },
-    {
-      "videoId": "Rj3Am2bpvFg",
-      "date": "2026-10-14",
-      "title": "연중 제28주간 수요일",
-      "url": "https://www.youtube.com/watch?v=Rj3Am2bpvFg"
     }
   ]
 }

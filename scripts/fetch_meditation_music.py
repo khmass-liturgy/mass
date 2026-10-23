@@ -34,6 +34,7 @@ SOURCES = [
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ezvhmCClAp_oovuqkecojG-", "advent"),    # 대림시기
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ezTvBM1q1Vq9vIE0WdMTWrt", "easter"),    # 부활시기
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ewSuNztPB8Hf6229cxsktSp", "marian"),    # 성모시기
+    ("https://www.youtube.com/playlist?list=PLN9m430-p-ew2U8hhkwCURqnJqj7CHJSx", "lent"),      # 사순시기
 ]
 
 KST = ZoneInfo("Asia/Seoul")

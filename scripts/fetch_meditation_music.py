@@ -28,6 +28,7 @@ HANDLE_URL = "https://www.youtube.com/@luxchamberchoir7964/videos"
 # 이름이 곧 시기라서 그 시기로 확정한다.
 SOURCES = [
     (HANDLE_URL, None),
+    ("https://www.youtube.com/@candido_vocale/videos", None),   # 칸디도 보칼레 — 제목에 시기가 적혀 있다
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ezAEEL1ORONtBtalaY3Pzk_", "souls"),     # 위령성가
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ewyB8Tj020Hbz1jpOD_ghEz", "general"),   # 연중시기
     ("https://www.youtube.com/playlist?list=PLN9m430-p-ewtvJ5j9uxdv5OT1c1PkcAz", "christmas"), # 성탄시기
@@ -75,7 +76,7 @@ def walk(node, videos, tokens):
         if isinstance(lv, dict) and lv.get("contentType") == "LOCKUP_CONTENT_TYPE_VIDEO":
             title = (lv.get("metadata", {}).get("lockupMetadataViewModel", {})
                        .get("title", {}).get("content", "")).strip()
-            if lv.get("contentId") and title:
+            if lv.get("contentId") and title and "보너스" not in title:
                 videos.setdefault(lv["contentId"], title)
         item = node.get("continuationItemRenderer")
         if isinstance(item, dict):
@@ -105,7 +106,7 @@ def fetch_videos(url: str) -> dict:
             break
         body = {"context": {"client": {"clientName": "WEB", "clientVersion": ver,
                                        "hl": "ko", "gl": "KR"}},
-                "continuation": tokens.pop()}
+                "continuation": tokens.pop(0)}
         tokens.clear()
         rr = requests.post(f"https://www.youtube.com/youtubei/v1/browse?key={key}",
                            json=body, headers=HEADERS, timeout=30)

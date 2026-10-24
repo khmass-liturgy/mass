@@ -1932,7 +1932,11 @@
       }
 
       function cleanTitle(t){
-        return (t || '').replace(/\s*-\s*룩스\s*챔버\s*콰이어.*$/i, '').replace(/\s+/g, ' ').trim();
+        return (t || '')
+          .replace(/\s*-\s*룩스\s*챔버\s*콰이어.*$/i, '')   // 룩스챔버콰이어: '… - 룩스챔버콰이어 Lux Chamber Choir'
+          .replace(/\s*\/\s*칸디도\s*보칼레.*$/i, '')       // 칸디도 보칼레: '… / 칸디도 보칼레 / 연중 / SATB …'
+          .replace(/\s*-\s*칸디도\s*보칼레.*$/i, '')
+          .replace(/\s+/g, ' ').trim();
       }
 
       fetch('data/meditation_music.json', {cache:'no-store'})

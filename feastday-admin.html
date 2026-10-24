@@ -98,7 +98,54 @@ button{font-family:var(--sans);cursor:pointer;border:none;border-radius:9px;font
 .who.show{display:flex}
 .who img{width:22px;height:22px;border-radius:50%}
 .who button{background:none;color:var(--wine);text-decoration:underline;font-size:12px;padding:2px}
+
+/* ── 계절 테마 — 메인·축일 달력과 같은 절기 기준으로 색이 바뀐다 ──
+   위 :root 의 와인색은 계절을 못 정했을 때의 기본값이다. */
+html.spring{--wine:#8A4F80;--wine-dark:#5A2F55;--gold:#D2587F;--gold-soft:#F6C6D4;--ink:#2A2024;--muted:#85707A;--bg:#FFF5F7;--line:#F0D3DB}
+html.spring header p,html.spring header .back{color:#F6DCE5}
+html.spring .btn-discard{color:#F6DCE5}
+html.spring .btn-cancel{background:#F6E6EB}
+html.spring .mini.edit{background:#FDEEF2;color:#8A4F80}
+
+html.summer{--wine:#0F6F8A;--wine-dark:#0B3A52;--gold:#E89A2B;--gold-soft:#FFD27A;--ink:#10272E;--muted:#587478;--bg:#F2FAF8;--line:#CCE5E0}
+html.summer header p,html.summer header .back{color:#D8F0F2}
+html.summer .btn-discard{color:#D8F0F2}
+html.summer .btn-cancel{background:#E3F1EE}
+html.summer .mini.edit{background:#E6F6F4;color:#0F6F8A}
+
+html.autumn{--wine:#7B3A22;--wine-dark:#4A2418;--gold:#D58A1F;--gold-soft:#F2C46B;--ink:#2B1E16;--muted:#8A7157;--bg:#FBF3E4;--line:#E8D5B5}
+html.autumn header p,html.autumn header .back{color:#F0D9BE}
+html.autumn .btn-discard{color:#F0D9BE}
+html.autumn .btn-cancel{background:#F3E8D4}
+html.autumn .mini.edit{background:#FBEFD9;color:#7B3A22}
+
+html.winter{--wine:#2E4A75;--wine-dark:#16233A;--gold:#6F9BC4;--gold-soft:#BFD9EE;--ink:#16212E;--muted:#5E7186;--bg:#EEF3F8;--line:#CBD9E6}
+html.winter header p,html.winter header .back{color:#D3E3F2}
+html.winter .btn-discard{color:#D3E3F2}
+html.winter .btn-cancel{background:#E3EBF3}
+html.winter .mini.edit{background:#E9F1F8;color:#2E4A75}
 </style>
+<script src="liturgy-lib.js"></script>
+<script>
+// 절기에 따라 계절 클래스(spring/summer/autumn/winter)를 html 에 붙인다. 기준은 index.html 과 같다.
+(function(){
+  try {
+    var n = window.kstNow(), t = window.SolarTerms;
+    var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };
+    var today = n.date.getFullYear() + '-' + String(n.date.getMonth() + 1).padStart(2, '0') + '-' + String(n.date.getDate()).padStart(2, '0');
+    var cur = t.current(n.date), nxt = t.next(n.date);
+    var name = (ymd(nxt.date) === today ? nxt : cur).name;
+    var by = {
+      spring: ['입춘', '우수', '경칩', '춘분', '청명', '곡우'],
+      summer: ['입하', '소만', '망종', '하지', '소서', '대서'],
+      winter: ['입동', '소설', '대설', '동지', '소한', '대한']
+    };
+    var season = 'autumn';
+    Object.keys(by).forEach(function(k){ if (by[k].indexOf(name) >= 0) season = k; });
+    document.documentElement.classList.add(season);
+  } catch (e) { /* 계산이 안 되면 기본 색을 그대로 둔다 */ }
+})();
+</script>
 </head>
 <body>
 

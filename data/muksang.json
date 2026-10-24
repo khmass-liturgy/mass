@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24 14:37",
+  "updated": "2026-10-24 22:13",
   "cutoff": "2026-10-23",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7437",
+      "title": "전삼용 요셉 신부 / 가해 연중 제30주일 - 우리는 끊임없이 해고한다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-24",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7437",
+      "mass_date": "2026-10-25",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주일 복음: 마태오 22,34-40 우리…"
+    },
+    {
+      "id": "daum_bbadaking_7974",
+      "title": "2026년 10월 25일 연중 제30주일",
+      "author": "빠다킹신부",
+      "date": "2026-10-24",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7974",
+      "mass_date": "2026-10-25",
+      "priest": "조명연",
+      "excerpt": "멍게는 유년 시절에 바닷속을 헤엄치며 삽니다."
+    },
     {
       "id": "daum_catholicsb_7436",
       "title": "전삼용 요셉 신부 / 연중 제29주간 토요일 - ​회개는 내가 주님의 것임을 고백하는 봉헌으로부터 시작된다",

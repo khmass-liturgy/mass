@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-25 02:26",
+  "updated": "2026-10-25 08:12",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "3oBXkysHK-Y",
+      "date": "2026-10-25",
+      "liturgy": "연중 제30주일",
+      "priest": "이용현 베드로 신부",
+      "url": "https://www.youtube.com/watch?v=3oBXkysHK-Y&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "ltGoBdDNq_A",
       "date": "2026-10-24",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제28주간 월요일",
       "priest": "성기헌 바오로 신부",
       "url": "https://www.youtube.com/watch?v=53KrYAHN9jQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "WAWAMeHCLFM",
-      "date": "2026-10-11",
-      "liturgy": "연중 제28주일 (군인 주일)",
-      "priest": "한승호 베드로 신부",
-      "url": "https://www.youtube.com/watch?v=WAWAMeHCLFM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

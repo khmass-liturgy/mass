@@ -2,8 +2,8 @@ name: Sync 축일 데이터 (Firebase → feast_days.json)
 
 on:
   schedule:
-    # UTC 기준 → KST 04:23 (하루 1회). 정각을 피해 다른 워크플로와 분을 달리한다.
-  - cron: '23 19 * * *'
+    # UTC 기준 → KST 04:23 (주 2회: 월·목) — Actions 사용량을 아끼려고 매일에서 줄였다. 정각을 피해 다른 워크플로와 분을 달리한다.
+  - cron: '23 19 * * 1,4'
   workflow_dispatch: {}
 
 permissions:

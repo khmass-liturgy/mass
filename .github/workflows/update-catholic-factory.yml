@@ -2,9 +2,9 @@ name: Update 미니다큐 가톨릭발전소
 
 on:
   schedule:
-    # UTC 기준 → KST 21:20 (하루 1회)
+    # UTC 기준 → KST 21:20 (주 2회: 월·목) — Actions 사용량을 아끼려고 매일에서 줄였다
     # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
-  - cron: '20 12 * * *'
+  - cron: '20 12 * * 1,4'
   workflow_dispatch: {}
 
 permissions:

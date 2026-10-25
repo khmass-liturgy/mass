@@ -2,8 +2,8 @@ name: Update 오늘의 묵상성가
 
 on:
   schedule:
-    # UTC 기준 → KST 22:41 (하루 1회). 영상이 자주 늘지 않으므로 하루 한 번이면 충분하다.
-  - cron: '41 13 * * *'
+    # UTC 기준 → KST 22:41 (주 2회: 월·목) — Actions 사용량을 아끼려고 매일에서 줄였다. 영상이 자주 늘지 않으므로 하루 한 번이면 충분하다.
+  - cron: '41 13 * * 1,4'
   workflow_dispatch: {}
 
 permissions:

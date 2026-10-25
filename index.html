@@ -577,6 +577,15 @@
   @media (max-width:380px){
     .video-grid{grid-template-columns:1fr;}
   }
+  /* 아침·삼종·저녁기도는 한 줄에 세 장. 좁은 화면에서도 한 줄을 유지하고 펼치면 전체 폭을 쓴다 */
+  .prayer-grid.prayer-grid-3{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;}
+  .prayer-grid-3 .prayer-summary{padding:14px 12px;}
+  .prayer-grid-3 .prayer-summary-inner{gap:8px;}
+  .prayer-grid-3 .wyd-title{font-size:.9rem;}
+  .prayer-grid-3 .lauds-icon{display:none;}
+  .prayer-grid-3 .prayer-details[open] .lauds-icon{display:flex;}
+  .prayer-grid-3 .missa-section.is-open .prayer-summary{padding:20px 28px;}
+  .prayer-grid-3 .missa-section.is-open .lauds-icon{display:flex;}
   /* ── 아침·저녁기도 (반절 카드 2개, 눌러서 기도문을 바로 펼쳐 본다) ── */
   .lauds-morning{background:linear-gradient(135deg,#8A5A1E 0%,#C08A2E 100%);}
   .lauds-evening{background:linear-gradient(135deg,#241C4A 0%,#463880 100%);}
@@ -1515,8 +1524,8 @@
     </details>
   </section>
 
-  <!-- ── 아침·저녁기도 (반절 카드 2개, 눌러서 기도문을 바로 펼쳐 본다) ── -->
-  <div class="prayer-grid">
+  <!-- ── 아침·삼종·저녁기도 (한 줄 3장, 눌러서 기도문을 바로 펼쳐 본다) ── -->
+  <div class="prayer-grid prayer-grid-3">
   <section class="missa-section">
     <details class="prayer-details lauds-morning">
       <summary class="prayer-summary">

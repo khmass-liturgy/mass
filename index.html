@@ -2029,6 +2029,85 @@
   </section>
 
   <script>
+  // 상단 흐르는 띠 — 묵상 글·오늘의 복음 말씀·축일·전례 시기·절기를 한 줄로 흘린다.
+  // 출처마다 따로 채워 두고, 채울 때마다 paintMarquee()로 다시 그린다.
+  window.__marqueeSrc = { muksang: [], gospel: [], feast: [], season: [], base: [] };
+  window.__mqEsc = function(t){
+    return String(t||'').replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  };
+  window.paintMarquee = function(){
+    var mq = document.getElementById('marqueeInner');
+    if (!mq) return;
+    var S = window.__marqueeSrc;
+    if (!S.base.length) {
+      S.base = [
+        '<span>✦ <strong>매일미사</strong> 오늘의 말씀과 기도</span>',
+        '<span>✦ <strong>전국 주보</strong> 전국 교구·본당 주보 모아보기</span>',
+        '<span>✦ <strong>교황청</strong> Vatican News 한국어 공식 서비스</span>',
+        '<span>✦ <strong>국내 가톨릭</strong> 가톨릭신문 · 주교회의 · 굿뉴스 · 마리아사랑넷</span>'
+      ];
+    }
+    var items = [].concat(S.muksang, S.gospel, S.feast, S.season, S.base);
+    // 끊김 없는 반복을 위해 두 번 이어 붙인다(애니메이션이 -50% 이동)
+    mq.innerHTML = items.join('') + items.join('');
+    mq.style.animationDuration = Math.max(6, mq.scrollWidth / 2 / 200) + 's';
+  };
+
+  (function(){
+    var esc = window.__mqEsc;
+    var now = window.kstNow();
+    var pad = function(n){ return String(n).padStart(2, '0'); };
+    var key = now.year + '-' + pad(now.month + 1) + '-' + pad(now.day);
+    var mmdd = pad(now.month + 1) + '-' + pad(now.day);
+
+    // 복음 대표 말씀
+    fetch('data/gospel_summary.json', {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        var e = d && d.days && d.days[key];
+        if (!e || !e.verse) return;
+        window.__marqueeSrc.gospel = ['<span>✦ <strong>오늘의 복음</strong> “' + esc(e.verse) + '”'
+          + (e.ref ? ' <span style="opacity:.7">(' + esc(e.ref) + ')</span>' : '') + '</span>'];
+        window.paintMarquee();
+      }).catch(function(){});
+
+    // 오늘의 축일
+    fetch('data/feast_days.json', {cache:'no-store'})
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        var list = (d && (d.saints || d)) || [];
+        var names = list.filter(function(x){ return x.date === mmdd; }).map(function(x){ return x.name; });
+        if (!names.length) return;
+        window.__marqueeSrc.feast = ['<span>✦ <strong>오늘의 축일</strong> ' + esc(names.join(' · ')) + '</span>'];
+        window.paintMarquee();
+      }).catch(function(){});
+
+    // 전례 시기와 다음 절기까지 남은 날
+    if (window.Liturgy && window.SolarTerms) {
+      var today = now.date;
+      var msDay = 86400000;
+      var parts = [];
+      var cur = window.Liturgy.seasonAt(today);
+      var nxtS = window.Liturgy.nextSeasonAfter(today);
+      if (cur) parts.push('지금은 <strong>' + esc(cur.name) + '</strong>');
+      if (nxtS) {
+        var dS = Math.round((nxtS.start - today) / msDay);
+        parts.push('다음 ' + esc(nxtS.name) + ' D-' + dS);
+      }
+      var nt = window.SolarTerms.next(new Date());
+      var todayUtc = Date.UTC(now.year, now.month, now.day);
+      var ntp = nt.date.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}).split('-');
+      var dT = Math.round((Date.UTC(+ntp[0], +ntp[1]-1, +ntp[2]) - todayUtc) / msDay);
+      parts.push('다음 절기 ' + esc(nt.name) + (dT === 0 ? ' 오늘' : ' D-' + dT));
+      window.__marqueeSrc.season = ['<span>✦ <strong>전례력</strong> ' + parts.join(' · ') + '</span>'];
+    }
+  })();
+  window.paintMarquee();
+  </script>
+
+  <script>
   (function(){
     var box = document.getElementById('muksangBox');
     var upd = document.getElementById('muksangUpdated');
@@ -2075,23 +2154,18 @@
         }
         if(d.updated){ upd.textContent = '업데이트: ' + d.updated + ' (자동 수집)'; }
 
-        // ── 상단 흐르는 띠에 최신 묵상 글 반영 ──
-        var mq = document.getElementById('marqueeInner');
-        if(mq && posts.length > 0){
-          var items = posts.slice(0, 8).map(function(p){
-            var dt = (p.mass_date || p.date || '').slice(5);
-            return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">'
-              + '✦ <strong>' + esc(p.priest) + ' 신부님</strong> ' + esc(p.title)
-              + (dt ? ' <span style="opacity:.7">(' + esc(dt) + ')</span>' : '')
-              + '</a>';
-          });
-          items.unshift('<span>✦ <strong>신부님 묵상</strong> 오늘의 묵상 글 (자동 업데이트)</span>');
-          // 끊김 없는 반복을 위해 내용을 정확히 2번 이어 붙인다 (애니메이션이 -50% 이동)
-          mq.innerHTML = items.join('') + items.join('');
-          // 내용 길이와 무관하게 픽셀 속도를 일정하게 고정 (초당 200px)
-          var half = mq.scrollWidth / 2;
-          mq.style.animationDuration = Math.max(6, half / 200) + 's';
+        // ── 상단 흐르는 띠: 묵상 글을 여러 출처와 함께 합쳐 그린다 ──
+        window.__marqueeSrc.muksang = posts.slice(0, 8).map(function(p){
+          var dt = (p.mass_date || p.date || '').slice(5);
+          return '<span><a href="' + esc(p.url) + '" target="_blank" rel="noopener">'
+            + '✦ <strong>' + esc(p.priest) + ' 신부님</strong> ' + esc(p.title)
+            + (dt ? ' <span style="opacity:.7">(' + esc(dt) + ')</span>' : '')
+            + '</a></span>';
+        });
+        if(posts.length > 0){
+          window.__marqueeSrc.muksang.unshift('<span>✦ <strong>신부님 묵상</strong> 오늘의 묵상 글 (자동 업데이트)</span>');
         }
+        window.paintMarquee();
       })
       .catch(function(){
         box.innerHTML = '<div class="muksang-empty">묵상 목록을 불러오지 못했습니다. 아래 게시판 링크를 이용해 주세요.</div>';

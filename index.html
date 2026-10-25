@@ -115,10 +115,10 @@
   /* 전례 시기(절기) 배지 — 그 시기의 전례색에 맞춰 색을 달리한다 */
   .missa-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px;}
   .missa-badges .missa-liturgy{margin-bottom:0;}
-  /* 다가오는 전례 시기·절기까지 남은 날 — 아래 D-day 카드와 같은 금빛 알약 */
+  /* 다가오는 전례 시기·절기까지 남은 날 — 옆 '연중 시기' 배지와 같은 투명 바탕·얇은 테두리 */
   .missa-dday{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:10px;
-    font-family:'Cinzel','Noto Serif KR',serif;font-size:.66rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;
-    color:var(--navy);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);}
+    font-size:.66rem;font-weight:700;letter-spacing:.02em;white-space:nowrap;
+    background:rgba(255,255,255,.12);color:#F3E3C2;border:1px solid rgba(242,196,107,.42);}
   /* 24절기(입춘·처서 …) 배지 — 전례 시기 배지와 구분되도록 초록 계열 */
   .missa-term{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:10px;
     font-size:.66rem;font-weight:700;letter-spacing:.02em;
@@ -660,7 +660,6 @@
   }
   .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,20,.35);}
   .dday-badge{color:#4A2418;background:linear-gradient(135deg,#F2C46B,#FFE29A);}
-  .missa-dday{color:#4A2418;background:linear-gradient(135deg,#F2C46B,#FFE29A);}
   .term-card{background:linear-gradient(135deg,#4F5A2A 0%,#7A8440 100%);}
   .term-card:hover{box-shadow:0 8px 24px rgba(90,40,20,.25);}
   .term-card .dday-date{color:#F0F0C0;}
@@ -780,7 +779,6 @@
   }
   html.spring .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,70,.42);}
   html.spring .dday-badge{color:#46264A;background:linear-gradient(135deg,#F6C6D4,#FFF1F5);}
-  html.spring .missa-dday{color:#46264A;background:linear-gradient(135deg,#F6C6D4,#FFF1F5);}
   html.spring .term-card{background:linear-gradient(135deg,#3F7A3A 0%,#86BC72 100%);}
   html.spring .term-card:hover{box-shadow:0 8px 24px rgba(90,40,70,.25);}
   html.spring .term-card .dday-date{color:#F0FAE4;}
@@ -867,7 +865,6 @@
   }
   html.summer .dday-card:hover{box-shadow:0 14px 32px rgba(10,60,80,.42);}
   html.summer .dday-badge{color:#0B3A52;background:linear-gradient(135deg,#FFD27A,#FFF1C4);}
-  html.summer .missa-dday{color:#0B3A52;background:linear-gradient(135deg,#FFD27A,#FFF1C4);}
   html.summer .term-card{background:linear-gradient(135deg,#1F7A55 0%,#58BF8A 100%);}
   html.summer .term-card:hover{box-shadow:0 8px 24px rgba(10,60,80,.25);}
   html.summer .term-card .dday-date{color:#E6FAEF;}
@@ -954,7 +951,6 @@
   }
   html.winter .dday-card:hover{box-shadow:0 14px 32px rgba(20,40,70,.45);}
   html.winter .dday-badge{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
-  html.winter .missa-dday{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
   html.winter .term-card{background:linear-gradient(135deg,#2C5A5A 0%,#5E9690 100%);}
   html.winter .term-card:hover{box-shadow:0 8px 24px rgba(20,40,70,.25);}
   html.winter .term-card .dday-date{color:#E4F6F2;}

@@ -115,6 +115,10 @@
   /* 전례 시기(절기) 배지 — 그 시기의 전례색에 맞춰 색을 달리한다 */
   .missa-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:6px;}
   .missa-badges .missa-liturgy{margin-bottom:0;}
+  /* 다가오는 전례 시기·절기까지 남은 날 — 아래 D-day 카드와 같은 금빛 알약 */
+  .missa-dday{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:10px;
+    font-family:'Cinzel','Noto Serif KR',serif;font-size:.66rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;
+    color:var(--navy);background:linear-gradient(135deg,var(--gold) 0%,var(--gold-lt) 100%);}
   /* 24절기(입춘·처서 …) 배지 — 전례 시기 배지와 구분되도록 초록 계열 */
   .missa-term{display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:10px;
     font-size:.66rem;font-weight:700;letter-spacing:.02em;
@@ -646,6 +650,7 @@
   }
   .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,20,.35);}
   .dday-badge{color:#4A2418;background:linear-gradient(135deg,#F2C46B,#FFE29A);}
+  .missa-dday{color:#4A2418;background:linear-gradient(135deg,#F2C46B,#FFE29A);}
   .term-card{background:linear-gradient(135deg,#4F5A2A 0%,#7A8440 100%);}
   .term-card:hover{box-shadow:0 8px 24px rgba(90,40,20,.25);}
   .term-card .dday-date{color:#F0F0C0;}
@@ -765,6 +770,7 @@
   }
   html.spring .dday-card:hover{box-shadow:0 14px 32px rgba(90,40,70,.42);}
   html.spring .dday-badge{color:#46264A;background:linear-gradient(135deg,#F6C6D4,#FFF1F5);}
+  html.spring .missa-dday{color:#46264A;background:linear-gradient(135deg,#F6C6D4,#FFF1F5);}
   html.spring .term-card{background:linear-gradient(135deg,#3F7A3A 0%,#86BC72 100%);}
   html.spring .term-card:hover{box-shadow:0 8px 24px rgba(90,40,70,.25);}
   html.spring .term-card .dday-date{color:#F0FAE4;}
@@ -851,6 +857,7 @@
   }
   html.summer .dday-card:hover{box-shadow:0 14px 32px rgba(10,60,80,.42);}
   html.summer .dday-badge{color:#0B3A52;background:linear-gradient(135deg,#FFD27A,#FFF1C4);}
+  html.summer .missa-dday{color:#0B3A52;background:linear-gradient(135deg,#FFD27A,#FFF1C4);}
   html.summer .term-card{background:linear-gradient(135deg,#1F7A55 0%,#58BF8A 100%);}
   html.summer .term-card:hover{box-shadow:0 8px 24px rgba(10,60,80,.25);}
   html.summer .term-card .dday-date{color:#E6FAEF;}
@@ -937,6 +944,7 @@
   }
   html.winter .dday-card:hover{box-shadow:0 14px 32px rgba(20,40,70,.45);}
   html.winter .dday-badge{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
+  html.winter .missa-dday{color:#142238;background:linear-gradient(135deg,#BFD9EE,#F3FAFF);}
   html.winter .term-card{background:linear-gradient(135deg,#2C5A5A 0%,#5E9690 100%);}
   html.winter .term-card:hover{box-shadow:0 8px 24px rgba(20,40,70,.25);}
   html.winter .term-card .dday-date{color:#E4F6F2;}
@@ -1058,6 +1066,8 @@
           <span class="missa-season" id="missaSeason" style="display:none;"></span>
           <span class="missa-term" id="missaTerm" style="display:none;"></span>
           <div class="missa-liturgy" id="missaLiturgy" style="display:none;"></div>
+          <span class="missa-dday" id="missaSeasonDday" style="display:none;"></span>
+          <span class="missa-dday" id="missaTermDday" style="display:none;"></span>
         </div>
         <div class="missa-title">오늘의 매일미사 보기</div>
         <div class="missa-sub">오늘의 말씀, 독서, 복음, 강론을 한국천주교주교회의 공식 사이트에서 확인하세요</div>
@@ -2641,6 +2651,12 @@
       nowEl.textContent = '지금은 ' + cur.name + (end ? ' · ' + end : '');
     }
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
+    // 맨 위 매일미사 카드의 배지 줄에도 같은 D-day 를 짧게 보여 준다
+    var topSeason = document.getElementById('missaSeasonDday');
+    if (topSeason) {
+      topSeason.textContent = next.name.replace(/\s*시기$/, '') + ' ' + (diff === 0 ? '오늘' : 'D-' + diff);
+      topSeason.style.display = '';
+    }
     if (dotEl) dotEl.className = 'season-dot color-' + next.dot;
     if (card) {
       var ymd = next.start.getFullYear()
@@ -2677,6 +2693,11 @@
     titleEl.textContent = next.name;
     if (dateEl) dateEl.textContent = next.date.toLocaleDateString('ko-KR', fmt);
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
+    var topTerm = document.getElementById('missaTermDday');
+    if (topTerm) {
+      topTerm.textContent = next.name + ' ' + (diff === 0 ? '오늘' : 'D-' + diff);
+      topTerm.style.display = '';
+    }
 
     var meaningEl = document.getElementById('termMeaning');
     var mean = window.SolarTerms.meaningOf(next.name);

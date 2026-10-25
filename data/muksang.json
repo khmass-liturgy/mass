@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25 08:02",
+  "updated": "2026-10-25 17:18",
   "cutoff": "2026-10-24",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7437",
@@ -48,6 +48,26 @@
       "mass_date": "2026-10-25",
       "priest": "양승국",
       "excerpt": "촌철살인의 한 마디 말씀으로 사악한 입을 닫아버리시는 예수님!"
+    },
+    {
+      "id": "daum_bbadaking_206",
+      "title": "우리는 서로 사랑하는 법을 모를 때가 참 많습니다.",
+      "author": "환희 평화",
+      "date": "2026-10-25",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/206",
+      "mass_date": "2026-10-25",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2139321",
+      "title": "조욱현 신부님_김건태 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-25",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139321&menu=4770",
+      "mass_date": "2026-10-25",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7436",

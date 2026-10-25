@@ -1,0 +1,48 @@
+name: Update 오늘 복음 대표 말씀
+
+on:
+  schedule:
+    # UTC 기준 → KST 00:07 / 05:07 / 12:07 (하루 3회)
+    # 오늘부터 7일 앞까지 받아 두므로 한 번 걸러도 괜찮다. 정각을 피해 분을 달리한다.
+  - cron: '7 15,20,3 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 복음 대표 말씀
+        run: python scripts/fetch_gospel_summary.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/gospel_summary.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: update 복음 대표 말씀 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
+          fi

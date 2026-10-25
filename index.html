@@ -135,6 +135,7 @@
   .missa-season.season-triduum{background:rgba(208,106,106,.20);color:#F2C3C3;border-color:rgba(208,106,106,.48);}
   .missa-title{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700;color:#F5EFE3;margin-bottom:6px;line-height:1.4;}
   .missa-sub{font-size:.85rem;color:#C7B8D8;}
+  .missa-sub-ref{white-space:nowrap;opacity:.8;font-size:.9em;}
   .missa-special{margin-top:7px;font-size:.8rem;color:var(--gold-lt);font-weight:600;}
   /* 매일미사 카드 하단의 '오늘의 축일' — 카드 전체는 매일미사 사이트로 열리는
      링크이므로, <a> 를 겹쳐 넣을 수 없다. 이 자리만 클릭을 가로채 축일
@@ -2991,6 +2992,30 @@ window.MISSA_TARGET_DATE = (function(){
     link.href = base + '?year=' + kst.year + '&month=' + month;
     card.style.display = '';
   }
+})();
+
+// 매일미사 카드의 한 줄 글귀 — 카드가 가리키는 날(MISSA_TARGET_DATE)의 복음 대표 말씀으로 바꾼다.
+// 데이터(data/gospel_summary.json)는 GitHub Actions 가 한국천주교주교회의 매일미사에서 받아 둔다.
+// 못 불러오거나 그날 자료가 없으면 원래 안내 문구를 그대로 둔다.
+(function(){
+  const sub = document.querySelector('.missa-card .missa-sub');
+  if (!sub) return;
+  const d = window.MISSA_TARGET_DATE || new Date();
+  const key = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  fetch('data/gospel_summary.json', { cache: 'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      const e = data && data.days && data.days[key];
+      if (!e || !e.verse) return;
+      sub.textContent = '“' + e.verse + '”';
+      if (e.ref) {
+        const ref = document.createElement('span');
+        ref.className = 'missa-sub-ref';
+        ref.textContent = ' — ' + e.ref;
+        sub.appendChild(ref);
+      }
+    })
+    .catch(function(){ /* 못 불러오면 원래 문구를 그대로 둔다 */ });
 })();
 
 // 매일미사 카드 안, 월별 특별 미사 일정 안내

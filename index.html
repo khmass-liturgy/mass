@@ -332,6 +332,21 @@
   .prayer-grid.has-open .missa-section:not(.is-open){display:none;}
 
   /* ── 다가오는 대축일 카드 ── */
+  /* 다가오는 대축일: 카드를 펼치면 남은 대축일 목록 */
+  .dday-details{height:auto;}
+  .dday-details > summary.dday-card{height:auto;}
+  summary.term-card{cursor:pointer;}
+  .dday-details[open]{grid-column:1 / -1;}
+  summary.dday-card{cursor:pointer;list-style:none;position:relative;}
+  summary.dday-card::-webkit-details-marker{display:none;}
+  .dday-arrow{position:absolute;right:16px;bottom:12px;transition:transform .25s;}
+  .dday-details[open] .dday-arrow{transform:rotate(180deg);}
+  .dday-list{margin-top:8px;background:var(--card,#fff);border-radius:6px;padding:4px 14px;box-shadow:0 8px 30px rgba(26,39,68,.12);}
+  .dday-row{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line,#E3DCCD);font-size:.86rem;color:var(--ink,#22303F);}
+  .dday-row:last-child{border-bottom:none;}
+  .dday-row .dday-when{flex:none;min-width:84px;font-weight:700;color:var(--navy,#1A2744);}
+  .dday-row.is-next{color:var(--navy,#1A2744);font-weight:700;}
+  .dday-empty{font-size:.86rem;color:var(--muted,#6B7A8C);padding:10px 0;}
   /* 배지를 flex 칸으로 두면 카드 오른쪽에 세로 띠가 생겨 배지 아래 줄까지
      좁아진다. 블록으로 두고 배지를 띄워(float) 첫 줄만 비켜 가고 그 아래는
      카드 폭을 끝까지 쓰게 한다. */
@@ -2543,14 +2558,18 @@
   </section>
 
   <section class="missa-section">
-    <a class="dday-card" id="ddayCard" href="https://missa.cbck.or.kr/DailyMissa" target="_blank" rel="noopener">
-      <span class="dday-badge" id="ddayBadge"></span>
-      <div class="dday-body">
-        <div class="wyd-eyebrow">다가오는 대축일</div>
-        <div class="wyd-title" id="ddayTitle">전례력을 계산하고 있습니다…</div>
-        <div class="dday-date" id="ddayDate"></div>
-      </div>
-    </a>
+    <details class="dday-details">
+      <summary class="dday-card" id="ddayCard">
+        <span class="dday-badge" id="ddayBadge"></span>
+        <div class="dday-body">
+          <div class="wyd-eyebrow" id="ddayEyebrow">다가오는 대축일</div>
+          <div class="wyd-title" id="ddayTitle">전례력을 계산하고 있습니다…</div>
+          <div class="dday-date" id="ddayDate"></div>
+        </div>
+        <span class="prayer-arrow dday-arrow">▼</span>
+      </summary>
+      <div class="dday-list" id="ddayList"></div>
+    </details>
   </section>
 
   </div>
@@ -2572,15 +2591,19 @@
   </section>
 
   <section class="missa-section">
-    <div class="dday-card term-card" id="termCard">
-      <span class="dday-badge" id="termBadge"></span>
-      <div class="dday-body">
-        <div class="wyd-eyebrow">다가오는 절기</div>
-        <div class="wyd-title" id="termTitle">절기를 계산하고 있습니다…</div>
-        <div class="dday-date" id="termDate"></div>
-        <div class="term-meaning" id="termMeaning"></div>
-      </div>
-    </div>
+    <details class="dday-details term-details">
+      <summary class="dday-card term-card" id="termCard">
+        <span class="dday-badge" id="termBadge"></span>
+        <div class="dday-body">
+          <div class="wyd-eyebrow">다가오는 절기 · 3개월 안</div>
+          <div class="wyd-title" id="termTitle">절기를 계산하고 있습니다…</div>
+          <div class="dday-date" id="termDate"></div>
+          <div class="term-meaning" id="termMeaning"></div>
+        </div>
+        <span class="prayer-arrow dday-arrow">▼</span>
+      </summary>
+      <div class="dday-list" id="termList"></div>
+    </details>
   </section>
 
   </div>
@@ -2694,34 +2717,53 @@
     var titleEl = document.getElementById('ddayTitle');
     var dateEl = document.getElementById('ddayDate');
     var badgeEl = document.getElementById('ddayBadge');
-    var card = document.getElementById('ddayCard');
+    var eyebrowEl = document.getElementById('ddayEyebrow');
+    var listEl = document.getElementById('ddayList');
     if (!titleEl || !window.Liturgy) return;
 
     var today = window.kstNow().date;   // 한국 날짜 기준
     var year = today.getFullYear();
-    // 연말에는 내년 대축일(1월 1일 등)까지 봐야 하므로 두 해를 합쳐서 찾는다
-    var list = window.Liturgy.solemnitiesOf(year).concat(window.Liturgy.solemnitiesOf(year + 1));
-    var next = null;
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].date.getTime() >= today.getTime()) { next = list[i]; break; }
-    }
-    if (!next) return;
-
-    var diff = Math.round((next.date - today) / 86400000);
     var DOW = ['주일','월','화','수','목','금','토'];
-    titleEl.textContent = next.name;
-    if (dateEl) {
-      dateEl.textContent = (next.date.getMonth() + 1) + '월 ' + next.date.getDate() + '일 ('
-        + DOW[next.date.getDay()] + ')';
+    function fmt(d){ return (d.getMonth() + 1) + '월 ' + d.getDate() + '일 (' + DOW[d.getDay()] + ')'; }
+
+    // 올해 대축일 중 아직 지나지 않은 것. 올해 것이 모두 지나면 다음 해 전체를 보여 준다.
+    var thisYear = window.Liturgy.solemnitiesOf(year).filter(function(x){ return x.date.getTime() >= today.getTime(); });
+    var listYear = year;
+    var list = thisYear;
+    if (!list.length) {
+      listYear = year + 1;
+      list = window.Liturgy.solemnitiesOf(listYear);
     }
+    if (!list.length) return;
+
+    // 카드에는 바로 다음 대축일을 보여 준다.
+    var next = list[0];
+    var diff = Math.round((next.date - today) / 86400000);
+    titleEl.textContent = next.name;
+    if (dateEl) dateEl.textContent = fmt(next.date);
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
-    if (card) {
-      var ymd = next.date.getFullYear()
-        + ('0' + (next.date.getMonth() + 1)).slice(-2)
-        + ('0' + next.date.getDate()).slice(-2);
-      card.href = 'https://missa.cbck.or.kr/DailyMissa/' + ymd;
+    if (eyebrowEl) eyebrowEl.textContent = '다가오는 대축일 · ' + listYear + '년';
+
+    if (listEl) {
+      listEl.innerHTML = list.map(function(x, i){
+        var cls = 'dday-row' + (i === 0 ? ' is-next' : '');
+        return '<div class="' + cls + '"><span class="dday-when">' + fmt(x.date) + '</span><span>' + x.name + '</span></div>';
+      }).join('');
     }
   }
+
+  // 펼치면 한 줄 전체를 쓰고 옆 기도 카드는 잠시 감춘다(기도 카드와 같은 방식)
+  (function(){
+    Array.prototype.forEach.call(document.querySelectorAll('.dday-details'), function(det){
+      var sec = det.closest('.missa-section');
+      var grid = sec && sec.parentElement;
+      det.addEventListener('toggle', function(){
+        if (!sec) return;
+        sec.classList.toggle('is-open', det.open);
+        if (grid && grid.classList.contains('prayer-grid')) grid.classList.toggle('has-open', det.open);
+      });
+    });
+  })();
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', renderNextSolemnity);
   } else {
@@ -2814,6 +2856,31 @@
       topTerm.style.display = '';
     }
 
+    var listEl = document.getElementById('termList');
+    if (listEl) {
+      // 지금부터 석 달(3개월) 안에 남아 있는 절기를 날짜순으로 보여 준다
+      var lim = new Date(now.getTime());
+      lim.setMonth(lim.getMonth() + 3);
+      var rows = [];
+      var cur = now;
+      for (var g = 0; g < 8; g++) {
+        var nx = window.SolarTerms.next(cur);
+        if (nx.date > lim) break;
+        rows.push(nx);
+        cur = new Date(nx.date.getTime() + 86400000);
+      }
+      var TDOW = ['일','월','화','수','목','금','토'];
+      var tfmt = function(d){
+        var k = new Date(d.getTime() + 9 * 3600000);
+        return (k.getUTCMonth() + 1) + '월 ' + k.getUTCDate() + '일 (' + TDOW[k.getUTCDay()] + ')';
+      };
+      listEl.innerHTML = rows.length
+        ? rows.map(function(x, i){
+            return '<div class="dday-row' + (i === 0 ? ' is-next' : '') + '"><span class="dday-when">'
+              + tfmt(x.date) + '</span><span>' + x.name + '</span></div>';
+          }).join('')
+        : '<div class="dday-empty">석 달 안에 남은 절기가 없습니다</div>';
+    }
     var meaningEl = document.getElementById('termMeaning');
     var mean = window.SolarTerms.meaningOf(next.name);
     if (meaningEl && mean) {

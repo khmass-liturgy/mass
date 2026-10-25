@@ -9,8 +9,8 @@ data/gospel_summary.json 으로 저장한다 (초기화면 매일미사 카드�
   ✠ 마태오가 전한 거룩한 복음입니다.  22,34-40
 이 글귀와 복음서 이름·장절만 가져오고, 복음 본문은 가져오지 않는다.
 
-오늘부터 며칠 앞까지 한꺼번에 받아 둔다. 토요일 오후에는 카드가 주일로 넘어가므로
-미리 있어야 하고, 한 번 실패해도 다음 실행 때까지 며칠치가 남아 있게 하기 위해서다.
+오늘부터 10일 앞까지 한꺼번에 받아 둔다. 워크플로가 3일에 한 번만 돌기 때문이고,
+토요일 오후에는 카드가 주일로 넘어가므로 미리 있어야 하기도 하다. 한 번 실패해도 다음 실행 때까지 남아 있게 하는 여유이기도 하다.
 
 GitHub Actions에서 주기적으로 실행됨.
 """
@@ -29,7 +29,7 @@ import requests
 KST = ZoneInfo("Asia/Seoul")
 OUT = Path(__file__).resolve().parent.parent / "data" / "gospel_summary.json"
 URL = "https://missa.cbck.or.kr/DailyMissa/{}"
-DAYS_AHEAD = 7
+DAYS_AHEAD = 10   # 워크플로가 3일에 한 번 돌아도 한 번 건너뛸 여유가 남는 길이
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

@@ -2519,7 +2519,7 @@
               <span class="rosary-yt-play">▶</span>
             </span>
             <div style="min-width:0;">
-              <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;">오늘의 묵주기도</div>
+              <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;"><span id="rosaryDowText">오늘의 묵주기도</span> · <a href="rosary-guide.html" class="rosary-guide-link" style="color:inherit;text-decoration:underline;">묵주기도 바치는 요령</a></div>
               <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
             </div>
           </div>
@@ -2660,7 +2660,8 @@
 
     var dow = window.kstNow().dow;   // 요일도 한국 시간 기준
     var today = BY_DAY[dow];
-    if (eyebrowEl) eyebrowEl.textContent = '오늘의 묵주기도 · ' + DOW[dow];
+    var dowEl = document.getElementById('rosaryDowText');
+    if (dowEl) dowEl.textContent = '오늘의 묵주기도 · ' + DOW[dow];
     titleEl.textContent = today.name;
     listEl.innerHTML = today.decades.map(function(t, i){
       return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';

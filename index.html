@@ -317,6 +317,10 @@
   .prayer-grid .missa-section{margin-bottom:0;}
   /* 한 줄에 놓인 카드들의 상자 높이를 서로 맞춘다 */
   .prayer-grid .prayer-details{height:100%;box-sizing:border-box;}
+  /* 같은 줄의 카드는 높이를 맞춘다: 칸(섹션)을 세로로 늘리고 카드가 남은 칸을 채운다 */
+  .prayer-grid > .missa-section{display:flex;flex-direction:column;}
+  .prayer-grid > .missa-section > .prayer-details,
+  .prayer-grid > .missa-section > .dday-details{flex:1 1 auto;}
   .prayer-grid .prayer-summary{padding:16px 18px;}
   .prayer-grid .wyd-eyebrow{font-size:.56rem;}
   .prayer-grid .wyd-title{font-size:1rem;}
@@ -2530,10 +2534,6 @@
       <summary class="prayer-summary">
         <div class="prayer-summary-inner">
           <div style="display:flex;align-items:center;gap:10px;min-width:0;">
-            <span class="rosary-yt-thumb-wrap" id="rosaryYoutubeThumbWrap" style="display:none;" aria-hidden="true">
-              <img class="rosary-yt-thumb" id="rosaryYoutubeThumb" alt="" />
-              <span class="rosary-yt-play">▶</span>
-            </span>
             <div style="min-width:0;">
               <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;"><span id="rosaryDowText">오늘의 묵주기도</span> · <a href="rosary-guide.html" class="rosary-guide-link" style="color:inherit;text-decoration:underline;">묵주기도 바치는 요령</a></div>
               <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
@@ -2703,16 +2703,6 @@
       ytLink.href = 'https://www.youtube.com/watch?v=' + ytId + '&list=' + YOUTUBE_LIST;
     }
 
-    // 카드를 펼치기 전에도 오늘의 신비 영상임을 알 수 있도록,
-    // 접힌 요약(summary) 줄에 유튜브 썸네일을 미리 보여 준다.
-    // 유튜브가 공식으로 내려주는 썸네일 주소라 별도 수집 없이 바로 쓸 수 있다.
-    var ytThumbWrap = document.getElementById('rosaryYoutubeThumbWrap');
-    var ytThumb = document.getElementById('rosaryYoutubeThumb');
-    if (ytThumbWrap && ytThumb && ytId) {
-      ytThumb.src = 'https://i.ytimg.com/vi/' + ytId + '/mqdefault.jpg';
-      ytThumb.alt = today.name + ' 낭독 영상 미리보기';
-      ytThumbWrap.style.display = '';
-    }
   })();
 
   // ── 다가오는 대축일 (D-day) ────────────────────────────────

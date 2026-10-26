@@ -2114,7 +2114,7 @@
     var items = [].concat(S.muksang, S.gospel, S.feast, S.season, S.base);
     // 끊김 없는 반복을 위해 두 번 이어 붙인다(애니메이션이 -50% 이동)
     mq.innerHTML = items.join('') + items.join('');
-    mq.style.animationDuration = Math.max(6, mq.scrollWidth / 2 / 200) + 's';
+    mq.style.animationDuration = Math.max(6, mq.scrollWidth / 2 / 260) + 's';
   };
 
   (function(){
@@ -2176,7 +2176,7 @@
 
     // 페이지 로드 직후 정적 문구에도 동일한 픽셀 속도(초당 200px) 적용
     var mq0 = document.getElementById('marqueeInner');
-    if(mq0){ mq0.style.animationDuration = Math.max(6, mq0.scrollWidth / 2 / 200) + 's'; }
+    if(mq0){ mq0.style.animationDuration = Math.max(6, mq0.scrollWidth / 2 / 260) + 's'; }
 
     function esc(t){
       return String(t||'').replace(/[&<>"']/g, function(c){

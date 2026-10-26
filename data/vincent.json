@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-26 15:10",
+  "updated": "2026-10-27 01:06",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "uECTQ6AiMkA",
+      "date": "2026-10-27",
+      "title": "연중 제30주간 화요일",
+      "url": "https://www.youtube.com/watch?v=uECTQ6AiMkA"
+    },
     {
       "videoId": "R2aYviAI_e0",
       "date": "2026-10-26",
@@ -57,12 +63,6 @@
       "date": "2026-10-18",
       "title": "연중 제29주일",
       "url": "https://www.youtube.com/watch?v=cPc3fJ5XrjA"
-    },
-    {
-      "videoId": "ufDaWAtBzoI",
-      "date": "2026-10-17",
-      "title": "안티오키아의 성 이냐시오 주교 순교자 기념일",
-      "url": "https://www.youtube.com/watch?v=ufDaWAtBzoI"
     }
   ]
 }

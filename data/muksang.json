@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-26 17:45",
-  "cutoff": "2026-10-25",
+  "updated": "2026-10-27 03:37",
+  "cutoff": "2026-10-26",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7439",
@@ -28,6 +28,16 @@
       "mass_date": "2026-10-27",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 연중 제30주간 화요일 에페소 5,21-33 루카 13,…"
+    },
+    {
+      "id": "daum_bbadaking_7976",
+      "title": "2026년 10월 27일 연중 제30주간 화요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-26",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7976",
+      "mass_date": "2026-10-27",
+      "priest": "조명연",
+      "excerpt": "초등학교 다닐 때, 제일 힘든 숙제가 하나 있었습니다."
     },
     {
       "id": "daum_catholicsb_7438",
@@ -76,56 +86,6 @@
       "date": "2026-10-26",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139388&menu=4770",
       "mass_date": "2026-10-26",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7437",
-      "title": "전삼용 요셉 신부 / 가해 연중 제30주일 - 우리는 끊임없이 해고한다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-24",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7437",
-      "mass_date": "2026-10-25",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주일 복음: 마태오 22,34-40 우리…"
-    },
-    {
-      "id": "daum_bbadaking_7974",
-      "title": "2026년 10월 25일 연중 제30주일",
-      "author": "빠다킹신부",
-      "date": "2026-10-24",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7974",
-      "mass_date": "2026-10-25",
-      "priest": "조명연",
-      "excerpt": "멍게는 유년 시절에 바닷속을 헤엄치며 삽니다."
-    },
-    {
-      "id": "daum_bbadaking_2250",
-      "title": "2026년 10월 25일 연중 제30주일",
-      "author": "박 베로니카",
-      "date": "2026-10-24",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2250",
-      "mass_date": "2026-10-25",
-      "priest": "양승국",
-      "excerpt": "촌철살인의 한 마디 말씀으로 사악한 입을 닫아버리시는 예수님!"
-    },
-    {
-      "id": "daum_bbadaking_206",
-      "title": "우리는 서로 사랑하는 법을 모를 때가 참 많습니다.",
-      "author": "환희 평화",
-      "date": "2026-10-25",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/206",
-      "mass_date": "2026-10-25",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139321",
-      "title": "조욱현 신부님_김건태 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139321&menu=4770",
-      "mass_date": "2026-10-25",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

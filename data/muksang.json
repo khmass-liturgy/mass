@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 09:20",
+  "updated": "2026-10-27 17:51",
   "cutoff": "2026-10-26",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7440",
+      "title": "전삼용 요셉 신부 / 성 시몬과 성 유다(타대오) 사도 축일 - 배우는 만큼? 사랑하는 만큼",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-27",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7440",
+      "mass_date": "2026-10-27",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 10월28일 성 시몬과 성 유다(타대오) 사도 축일…"
+    },
     {
       "id": "daum_catholicsb_7439",
       "title": "전삼용 요셉 신부 / 연중 제30주간 화요일 - 하느님 나라와 파스카:겨자씨는 양의 살, 누룩은 피",
@@ -48,6 +58,16 @@
       "mass_date": "2026-10-27",
       "priest": "양승국",
       "excerpt": "하늘나라는 지금 이 곳에서 부터 준비해야 합니다!"
+    },
+    {
+      "id": "2139418",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139418&menu=4770",
+      "mass_date": "2026-10-27",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7438",

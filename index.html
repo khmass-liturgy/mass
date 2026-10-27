@@ -1179,8 +1179,18 @@
   <script>
   (function(){
     const kst = window.kstNow();
-    if (kst.day > 3) return; // 매월 1~3일까지 표시 (한국 날짜 기준)
-    const y = String(kst.year), m = String(kst.month + 1);
+    // 한국 날짜 기준: 매월 1~3일은 이번 달, 그 달 마지막 3일(다음 달 1일 3일 전부터)은 다음 달 기도지향을 보여 준다.
+    const last = new Date(kst.year, kst.month + 1, 0).getDate();
+    let ty = kst.year, tm = kst.month + 1; // tm: 1~12
+    if (kst.day <= 3) {
+      // 이번 달
+    } else if (last - kst.day < 3) {
+      tm += 1;
+      if (tm > 12) { tm = 1; ty += 1; }
+    } else {
+      return;
+    }
+    const y = String(ty), m = String(tm);
     fetch('data/pope_intentions.json', { cache: 'no-store' })
       .then(function(r){ return r.json(); })
       .then(function(data){

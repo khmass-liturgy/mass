@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27 03:37",
+  "updated": "2026-10-27 09:20",
   "cutoff": "2026-10-26",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7439",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-27",
       "priest": "조명연",
       "excerpt": "초등학교 다닐 때, 제일 힘든 숙제가 하나 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2252",
+      "title": "2026년 10월 27일 연중 제30주간 화요일",
+      "author": "박 베로니카",
+      "date": "2026-10-27",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2252",
+      "mass_date": "2026-10-27",
+      "priest": "양승국",
+      "excerpt": "하늘나라는 지금 이 곳에서 부터 준비해야 합니다!"
     },
     {
       "id": "daum_catholicsb_7438",

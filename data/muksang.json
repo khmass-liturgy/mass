@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28 02:52",
+  "updated": "2026-10-28 09:24",
   "cutoff": "2026-10-27",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_bbadaking_7977",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-28",
       "priest": "양승국",
       "excerpt": "천국을 앞당겨 사는 사람들!"
+    },
+    {
+      "id": "daum_bbadaking_208",
+      "title": "사도(제자:예수를 따름) 다르지만 함께한다는 것이 중요합니다. 예수님께서 그…",
+      "author": "환희 평화",
+      "date": "2026-10-28",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/208",
+      "mass_date": "2026-10-28",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7440",

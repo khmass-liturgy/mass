@@ -1,10 +1,31 @@
 {
-  "updated": "2026-10-28 09:31",
+  "updated": "2026-10-29 01:02",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "YhEjTVYwvTM",
+      "date": "2026-10-28",
+      "liturgy": "성 시몬과 성 유다(타대오) 사도 축일",
+      "priest": "응웬 반 호아  신부",
+      "url": "https://www.youtube.com/watch?v=YhEjTVYwvTM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "hKGmtzLF6uE",
+      "date": "2026-10-27",
+      "liturgy": "연중 제30주간 화요일",
+      "priest": "최강민 알퐁소 신부",
+      "url": "https://www.youtube.com/watch?v=hKGmtzLF6uE&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "QQ4_hLQLpqo",
+      "date": "2026-10-26",
+      "liturgy": "연중 제30주간 월요일",
+      "priest": "백종호 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=QQ4_hLQLpqo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "3oBXkysHK-Y",
       "date": "2026-10-25",
@@ -27,11 +48,46 @@
       "url": "https://www.youtube.com/watch?v=pQG4KocfBmQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     },
     {
+      "videoId": "noozJMmIeek",
+      "date": "2026-10-22",
+      "liturgy": "연중 제29주간 목요일",
+      "priest": "김종연 야고보 신부",
+      "url": "https://www.youtube.com/watch?v=noozJMmIeek&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "L1FVEwvvDU8",
+      "date": "2026-10-21",
+      "liturgy": "연중 제29주간 수요일",
+      "priest": "",
+      "url": "https://www.youtube.com/watch?v=L1FVEwvvDU8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "NHTHctUzxSU",
+      "date": "2026-10-20",
+      "liturgy": "연중 제29주간 화요일",
+      "priest": "조용준 니콜라오 신부",
+      "url": "https://www.youtube.com/watch?v=NHTHctUzxSU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "Hz__uFsu12A",
+      "date": "2026-10-19",
+      "liturgy": "연중 제29주간 월요일",
+      "priest": "",
+      "url": "https://www.youtube.com/watch?v=Hz__uFsu12A&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
       "videoId": "iZN1pbvdhjs",
       "date": "2026-10-18",
       "liturgy": "연중 제29주일 민족들의 복음화를 위한 미사ㅣ김동원 베드로 신부님 집전",
       "priest": "",
       "url": "https://www.youtube.com/watch?v=iZN1pbvdhjs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
+    {
+      "videoId": "dodBlZEb2YM",
+      "date": "2026-10-17",
+      "liturgy": "안티오키아의 성 이냐시오 주교 순교자 기념일",
+      "priest": "조용준 니콜라오 신부",
+      "url": "https://www.youtube.com/watch?v=dodBlZEb2YM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     },
     {
       "videoId": "EHH4ZHOrLmA",
@@ -46,62 +102,6 @@
       "liturgy": "예수의 성녀 데레사 동정 학자 기념일",
       "priest": "양창우 요셉 신부",
       "url": "https://www.youtube.com/watch?v=MRmDvqSMj6Y&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "Da5WvlKKHvU",
-      "date": "2026-10-13",
-      "liturgy": "연중 제28주간 화요일",
-      "priest": "양창우 요셉 신부",
-      "url": "https://www.youtube.com/watch?v=Da5WvlKKHvU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "zEb1oKa61Ao",
-      "date": "2026-10-09",
-      "liturgy": "연중 제27주간 금요일",
-      "priest": "김성진 시몬 신부",
-      "url": "https://www.youtube.com/watch?v=zEb1oKa61Ao&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "KU-NeNlJGGk",
-      "date": "2026-10-05",
-      "liturgy": "연중 제27주간 월요일",
-      "priest": "최영섭 후고 신부",
-      "url": "https://www.youtube.com/watch?v=KU-NeNlJGGk&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "B7SzW0rFlwg",
-      "date": "2026-10-03",
-      "liturgy": "연중 제26주간 토요일",
-      "priest": "노 수안 투 요셉 신부",
-      "url": "https://www.youtube.com/watch?v=B7SzW0rFlwg&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "deCe09WWFhs",
-      "date": "2026-10-02",
-      "liturgy": "수호천사 기념일",
-      "priest": "정호영 요셉 신부",
-      "url": "https://www.youtube.com/watch?v=deCe09WWFhs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "Cg90SzIhhR8",
-      "date": "2026-09-28",
-      "liturgy": "연중 제26주간 월요일",
-      "priest": "최재영 세례자 요한 신부",
-      "url": "https://www.youtube.com/watch?v=Cg90SzIhhR8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "4_IITP6zpH8",
-      "date": "2026-09-25",
-      "liturgy": "한가위",
-      "priest": "성기헌 바오로 신부",
-      "url": "https://www.youtube.com/watch?v=4_IITP6zpH8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "15wklfMnh-c",
-      "date": "2026-09-24",
-      "liturgy": "연중 제25주간 목요일",
-      "priest": "최재영 세례자 요한 신부",
-      "url": "https://www.youtube.com/watch?v=15wklfMnh-c&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

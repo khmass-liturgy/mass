@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28 09:24",
+  "updated": "2026-10-28 18:31",
   "cutoff": "2026-10-27",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7441",
+      "title": "전삼용 요셉 신부 / 연중 제30주간 목요일 - 우리가 죽음 앞에서도 평화로울 수 있는 이유는?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-28",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7441",
+      "mass_date": "2026-10-29",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 목요일 복음: 루카 13,31-35…"
+    },
     {
       "id": "daum_bbadaking_7977",
       "title": "2026년 10월 28일 성 시몬과 성 유다 사도 축일",
@@ -48,6 +58,16 @@
       "mass_date": "2026-10-28",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2139456",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-28",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139456&menu=4770",
+      "mass_date": "2026-10-28",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7440",

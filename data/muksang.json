@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-28 18:31",
-  "cutoff": "2026-10-27",
+  "updated": "2026-10-29 03:17",
+  "cutoff": "2026-10-28",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7441",
@@ -28,6 +28,16 @@
       "mass_date": "2026-10-29",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 목요일 복음: 루카 13,31-35…"
+    },
+    {
+      "id": "daum_bbadaking_7978",
+      "title": "2026년 10월 29일 연중 제30주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-28",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7978",
+      "mass_date": "2026-10-29",
+      "priest": "조명연",
+      "excerpt": "몇 주 전의 일입니다."
     },
     {
       "id": "daum_bbadaking_7977",
@@ -66,56 +76,6 @@
       "date": "2026-10-28",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139456&menu=4770",
       "mass_date": "2026-10-28",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7440",
-      "title": "전삼용 요셉 신부 / 성 시몬과 성 유다(타대오) 사도 축일 - 배우는 만큼? 사랑하는 만큼",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-27",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7440",
-      "mass_date": "2026-10-27",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 10월28일 성 시몬과 성 유다(타대오) 사도 축일…"
-    },
-    {
-      "id": "daum_catholicsb_7439",
-      "title": "전삼용 요셉 신부 / 연중 제30주간 화요일 - 하느님 나라와 파스카:겨자씨는 양의 살, 누룩은 피",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-26",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7439",
-      "mass_date": "2026-10-27",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 연중 제30주간 화요일 에페소 5,21-33 루카 13,…"
-    },
-    {
-      "id": "daum_bbadaking_7976",
-      "title": "2026년 10월 27일 연중 제30주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-26",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7976",
-      "mass_date": "2026-10-27",
-      "priest": "조명연",
-      "excerpt": "초등학교 다닐 때, 제일 힘든 숙제가 하나 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2252",
-      "title": "2026년 10월 27일 연중 제30주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-10-27",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2252",
-      "mass_date": "2026-10-27",
-      "priest": "양승국",
-      "excerpt": "하늘나라는 지금 이 곳에서 부터 준비해야 합니다!"
-    },
-    {
-      "id": "2139418",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-27",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139418&menu=4770",
-      "mass_date": "2026-10-27",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

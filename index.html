@@ -2048,8 +2048,12 @@
           var items = pool(seasonKeys());
           if (!items.length) items = pool(['general']);
           if (!items.length) items = all;
+          // 하루에 한 곡씩 순서대로 보여 주고, 목록이 끝나면 처음부터 다시 돌린다.
+          // 5월·10월·11월·12월은 매달 1일에 첫 곡부터 시작한다.
           var m = window.kstNow().month;
-          var n = (m === 10 || m === 11) ? kstDayNumber() : kstWeekNumber();
+          var n = [4, 9, 10, 11].indexOf(m) >= 0
+            ? +new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }).split('-')[2] - 1
+            : kstDayNumber();
           var it = items[n % items.length];
           card.href = 'https://youtu.be/' + it.videoId;
           desc.textContent = cleanTitle(it.title) || '이번 주 묵상성가';

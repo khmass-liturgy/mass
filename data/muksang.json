@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29 03:17",
+  "updated": "2026-10-29 09:45",
   "cutoff": "2026-10-28",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7441",
@@ -38,6 +38,26 @@
       "mass_date": "2026-10-29",
       "priest": "조명연",
       "excerpt": "몇 주 전의 일입니다."
+    },
+    {
+      "id": "daum_bbadaking_2254",
+      "title": "2026년 10월 29일 연중 제30주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-10-29",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2254",
+      "mass_date": "2026-10-29",
+      "priest": "양승국",
+      "excerpt": "우리 역시 계속 걸어가야겠습니다!"
+    },
+    {
+      "id": "daum_bbadaking_209",
+      "title": "‘하느님의 무기로 무장을 갖추고, 진리로 허리에 띠를 두르며, 의로움의 갑옷…",
+      "author": "환희 평화",
+      "date": "2026-10-29",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/209",
+      "mass_date": "2026-10-29",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_bbadaking_7977",

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-29 18:45",
-  "cutoff": "2026-10-28",
+  "updated": "2026-10-30 03:22",
+  "cutoff": "2026-10-29",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
+    {
+      "id": "daum_catholicsb_7442",
+      "title": "전삼용 요셉 신부 / 연중 제30주간 금요일 - 바리사이, 율법학자의 꼰대 근성에서 벗어나려면",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-29",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7442",
+      "mass_date": "2026-10-30",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 금요일 복음: 루카 14,1-6 바…"
+    },
+    {
+      "id": "daum_bbadaking_7979",
+      "title": "2026년 10월 30일 연중 제31주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-29",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7979",
+      "mass_date": "2026-10-30",
+      "priest": "조명연",
+      "excerpt": "요한 크리소스토모 성인은 성경 읽는 것을 신자들에게 늘 강조하셨다고 합니다."
+    },
     {
       "id": "daum_catholicsb_7441",
       "title": "전삼용 요셉 신부 / 연중 제30주간 목요일 - 우리가 죽음 앞에서도 평화로울 수 있는 이유는?",
@@ -66,46 +86,6 @@
       "date": "2026-10-29",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139485&menu=4770",
       "mass_date": "2026-10-29",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_bbadaking_7977",
-      "title": "2026년 10월 28일 성 시몬과 성 유다 사도 축일",
-      "author": "빠다킹신부",
-      "date": "2026-10-27",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7977",
-      "mass_date": "2026-10-28",
-      "priest": "조명연",
-      "excerpt": "어떤 자매님께서 너무 힘든 시간을 보내고 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2253",
-      "title": "2026년 10월 28일 성 시몬과 성 유다 사도 축일",
-      "author": "박 베로니카",
-      "date": "2026-10-28",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2253",
-      "mass_date": "2026-10-28",
-      "priest": "양승국",
-      "excerpt": "천국을 앞당겨 사는 사람들!"
-    },
-    {
-      "id": "daum_bbadaking_208",
-      "title": "사도(제자:예수를 따름) 다르지만 함께한다는 것이 중요합니다. 예수님께서 그…",
-      "author": "환희 평화",
-      "date": "2026-10-28",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/208",
-      "mass_date": "2026-10-28",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139456",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-28",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139456&menu=4770",
-      "mass_date": "2026-10-28",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

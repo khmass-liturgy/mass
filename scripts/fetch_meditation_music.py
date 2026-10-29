@@ -143,7 +143,7 @@ def hymn_category(no: int):
 def classify(title: str) -> list:
     """영상 제목으로 어울리는 시기 목록을 돌려준다. 어디에도 안 걸리면 ['general']."""
     if "성모성월" in title:
-        return ["marian"]
+        return ["marianmonth"]   # 5월 성모성월에만 쓴다. 10월 등 그냥 성모 주제 달에는 안 나온다.
     m = HYMN_NO_RE.search(title)
     if not m:
         return ["general"]

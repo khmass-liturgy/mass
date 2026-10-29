@@ -1989,7 +1989,7 @@
     <script>
     // 오늘의 묵상성가 — 지금 시기에 어울리는 성가 영상을 일주일(월~일, 한국 시간)에 한 곡씩 돌려 보여 준다.
     // 곡 목록과 시기 분류는 data/meditation_music.json (scripts/fetch_meditation_music.py 가 갱신).
-    // 우선순위: 달(5월 성모성월·6월 성심성월·9월 순교자성월·10월 묵주기도성월·11월 성모 성가(매일 한 곡)·12월 성탄 성가(매일 한 곡))
+    // 우선순위: 달(5월 성모성월·6월 성심성월·9월 순교자성월·10월 묵주기도성월·11월 위령 성가(매일 한 곡)·12월 성탄 성가(매일 한 곡))
     //          성체 성혈 대축일이 든 주에는 성체성가.
     //          → 전례 시기(대림·성탄·사순·부활) → 시기를 타지 않는 곡(general).
     (function(){
@@ -2020,7 +2020,7 @@
           var sun = new Date(easter.getFullYear(), easter.getMonth(), easter.getDate() + 63).getTime();
           if (t >= sun - 6 * DAY && t <= sun) return ['eucharist'];
         }
-        var byMonth = { 4: ['marian'], 5: ['sacredheart'], 8: ['martyrs'], 9: ['rosary', 'marian'], 10: ['marian'], 11: ['christmas'] }[now.month];
+        var byMonth = { 4: ['marian'], 5: ['sacredheart'], 8: ['martyrs'], 9: ['rosary', 'marian'], 10: ['souls'], 11: ['christmas'] }[now.month];
         if (byMonth) return byMonth;
         var s = window.Liturgy && window.Liturgy.seasonAt(now.date);
         if (s && ['advent', 'christmas', 'lent', 'easter'].indexOf(s.key) >= 0) return [s.key];

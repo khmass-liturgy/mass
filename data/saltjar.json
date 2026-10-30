@@ -1,15 +1,23 @@
 {
-  "updated": "2026-10-30 18:59",
+  "updated": "2026-10-31 04:20",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "l7OLFmWn7w4",
-  "date": "2026-10-30",
-  "label": "2026년 10월 30일연중 제30주간 금요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 10월 30일 연중 제30주간 금요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "dhR3T0xmb7c",
+  "date": "2026-10-31",
+  "label": "2026년 10월 31일연중 제30주간 토요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 10월 31일 연중 제30주간 토요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=l7OLFmWn7w4",
+  "url": "https://www.youtube.com/watch?v=dhR3T0xmb7c",
   "count": 10,
   "videos": [
+    {
+      "videoId": "dhR3T0xmb7c",
+      "date": "2026-10-31",
+      "label": "2026년 10월 31일연중 제30주간 토요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 10월 31일 연중 제30주간 토요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=dhR3T0xmb7c"
+    },
     {
       "videoId": "l7OLFmWn7w4",
       "date": "2026-10-30",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 22일 연중 제29주간 목요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=GgWS39ht8DI"
-    },
-    {
-      "videoId": "kO9NSxv9IdY",
-      "date": "2026-10-21",
-      "label": "2026년 10월 21일연중 제29주간 수요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 21일 연중 제29주간 수요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=kO9NSxv9IdY"
     }
   ]
 }

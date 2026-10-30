@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-30 18:51",
-  "cutoff": "2026-10-29",
+  "updated": "2026-10-31 02:56",
+  "cutoff": "2026-10-30",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7443",
@@ -28,6 +28,16 @@
       "mass_date": "2026-10-31",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 토요일 복음: 루카 14,1.7-1…"
+    },
+    {
+      "id": "daum_bbadaking_7980",
+      "title": "2026년 10월 31일 연중 제30주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-10-30",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7980",
+      "mass_date": "2026-10-31",
+      "priest": "조명연",
+      "excerpt": "어느 신부의 앨범을 우연히 볼 수 있었습니다."
     },
     {
       "id": "daum_catholicsb_7442",
@@ -60,62 +70,22 @@
       "excerpt": "치유행위는 안식일 정신에 가장 합당한 일입니다!"
     },
     {
+      "id": "daum_bbadaking_210",
+      "title": "나의 바람과 원의가 우선인지 주님의 뜻이 우선인지를 먼저 살피는 것이 그리스…",
+      "author": "환희 평화",
+      "date": "2026-10-30",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/210",
+      "mass_date": "2026-10-30",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
       "id": "2139545",
       "title": "김건태 신부님_조욱현 신부님 묵상",
       "author": "최원석",
       "date": "2026-10-30",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139545&menu=4770",
       "mass_date": "2026-10-30",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7441",
-      "title": "전삼용 요셉 신부 / 연중 제30주간 목요일 - 우리가 죽음 앞에서도 평화로울 수 있는 이유는?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-28",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7441",
-      "mass_date": "2026-10-29",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 목요일 복음: 루카 13,31-35…"
-    },
-    {
-      "id": "daum_bbadaking_7978",
-      "title": "2026년 10월 29일 연중 제30주간 목요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-28",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7978",
-      "mass_date": "2026-10-29",
-      "priest": "조명연",
-      "excerpt": "몇 주 전의 일입니다."
-    },
-    {
-      "id": "daum_bbadaking_2254",
-      "title": "2026년 10월 29일 연중 제30주간 목요일",
-      "author": "박 베로니카",
-      "date": "2026-10-29",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2254",
-      "mass_date": "2026-10-29",
-      "priest": "양승국",
-      "excerpt": "우리 역시 계속 걸어가야겠습니다!"
-    },
-    {
-      "id": "daum_bbadaking_209",
-      "title": "‘하느님의 무기로 무장을 갖추고, 진리로 허리에 띠를 두르며, 의로움의 갑옷…",
-      "author": "환희 평화",
-      "date": "2026-10-29",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/209",
-      "mass_date": "2026-10-29",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139485",
-      "title": "김건태 신부님_조욱현 신부님_묵상",
-      "author": "최원석",
-      "date": "2026-10-29",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139485&menu=4770",
-      "mass_date": "2026-10-29",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30 03:22",
+  "updated": "2026-10-30 09:46",
   "cutoff": "2026-10-29",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7442",
@@ -38,6 +38,16 @@
       "mass_date": "2026-10-30",
       "priest": "조명연",
       "excerpt": "요한 크리소스토모 성인은 성경 읽는 것을 신자들에게 늘 강조하셨다고 합니다."
+    },
+    {
+      "id": "daum_bbadaking_2255",
+      "title": "2026년 10월 30일 연중 제31주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-10-30",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2255",
+      "mass_date": "2026-10-30",
+      "priest": "양승국",
+      "excerpt": "치유행위는 안식일 정신에 가장 합당한 일입니다!"
     },
     {
       "id": "daum_catholicsb_7441",

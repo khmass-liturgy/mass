@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31 02:56",
+  "updated": "2026-10-31 09:38",
   "cutoff": "2026-10-30",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 10,
   "posts": [
     {
       "id": "daum_catholicsb_7443",
@@ -38,6 +38,36 @@
       "mass_date": "2026-10-31",
       "priest": "조명연",
       "excerpt": "어느 신부의 앨범을 우연히 볼 수 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2256",
+      "title": "2026년 10월 31일 연중 제30주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-10-31",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2256",
+      "mass_date": "2026-10-31",
+      "priest": "양승국",
+      "excerpt": "이 세상에 머물지만, 이 세상을 초월하는..."
+    },
+    {
+      "id": "daum_bbadaking_211",
+      "title": "참다운 권력은 ‘섬김’에서 나오는 것입니다.",
+      "author": "환희 평화",
+      "date": "2026-10-31",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/211",
+      "mass_date": "2026-10-31",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2139588",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-10-31",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139588&menu=4770",
+      "mass_date": "2026-10-31",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7442",

@@ -1,0 +1,50 @@
+name: Update 가톨릭대사전 인기 표제어
+
+on:
+  schedule:
+    # UTC 기준 → KST 06:23 (매일)
+    # 주간 인기는 주마다, 월간 인기는 달마다 바뀐다. 카드는 이 목록을 하루 한 개씩
+    # 돌리므로 아침 일찍 받아 두면 그날 새 목록이 반영된다.
+    # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
+  - cron: '23 21 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch 가톨릭대사전 주간·월간 인기
+        run: python scripts/fetch_encyclopedia_popular.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/encyclopedia_popular.json
+          # 갱신 시각만 바뀐 경우는 커밋하지 않는다.
+          if git diff --cached -U0 | grep -E '^[+-] ' | grep -vq '"updated"'; then
+            git commit -m "chore: update 가톨릭대사전 인기 표제어 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+            for i in 1 2 3 4 5; do
+              if git push; then
+                break
+              fi
+              echo "push 실패, origin/main으로 rebase 후 재시도 ($i/5)"
+              git fetch origin main
+              git rebase origin/main
+              sleep 5
+            done
+          else
+            echo "No changes."
+          fi

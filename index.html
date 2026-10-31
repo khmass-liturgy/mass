@@ -2224,7 +2224,8 @@
         '<span>✦ <strong>떼제·묵상성가</strong> 떼제 성가와 묵상 성가를 날마다 또는 주마다 한 곡씩 골라 줍니다</span>',
         '<span>✦ <strong>미니다큐 가톨릭발전소</strong> 시기에 맞는 가톨릭 미니 다큐멘터리 영상을 한 편씩 골라 줍니다</span>',
         '<span>✦ <strong>성경공부</strong> 구약·신약 성경과 성경과외 해주는 신부 자료를 모아 두었습니다</span>',
-        '<span>✦ <strong>축일 달력</strong> 축일 목록을 날짜별로 보며, 계절에 따라 색이 바뀝니다</span>'
+        '<span>✦ <strong>축일 달력</strong> 축일 목록을 날짜별로 보며, 계절에 따라 색이 바뀝니다</span>',
+        '<span>✦ <strong>가톨릭대사전</strong> 주간·월간 인기 표제어를 날마다 하나씩 골라 바로 이어 줍니다</span>'
       ];
     }
     var items = [].concat(S.guide, S.muksang, S.gospel, S.feast, S.season, S.base);
@@ -2383,11 +2384,41 @@
         <div class="lc-desc">대축일·축일·기념일·평일 등급과 거행 우선순위</div>
       </a>
 
-      <a class="link-card" href="https://encyclopedia.catholic.or.kr/" target="_blank" rel="noopener">
+      <a class="link-card" id="encyCard" href="https://encyclopedia.catholic.or.kr/" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">📚</span><span class="lc-go">→</span></div>
         <div class="lc-name">가톨릭대사전</div>
-        <div class="lc-desc">가톨릭 용어·인물·역사를 총망라한 종합 사전</div>
+        <div class="lc-desc" id="encyDesc">가톨릭 용어·인물·역사를 총망라한 종합 사전</div>
       </a>
+      <script>
+      // 가톨릭대사전 — 첫 화면의 주간·월간 인기 표제어를 하루 한 개씩 돌려 가며
+      // 그 표제어 화면으로 바로 연결한다. 목록을 못 읽으면 사전 첫 화면 링크 그대로 둔다.
+      (function(){
+        var card = document.getElementById('encyCard');
+        var desc = document.getElementById('encyDesc');
+        if (!card || !desc) return;
+        fetch('data/encyclopedia_popular.json', {cache:'no-store'})
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            var pool = [], seen = {};
+            [['weekly', '주간'], ['monthly', '월간']].forEach(function(k){
+              var sec = d && d[k[0]];
+              (sec && sec.items || []).forEach(function(it, i){
+                if (!it.url || seen[it.url]) return;   // 주간·월간에 겹치는 표제어는 한 번만
+                seen[it.url] = true;
+                pool.push({ title: it.title, url: it.url, rank: k[1] + ' 인기 ' + (i + 1) + '위' });
+              });
+            });
+            if (!pool.length) return;
+            var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+            var p = today.split('-');
+            var day = Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000);
+            var it = pool[day % pool.length];
+            card.href = it.url;
+            desc.textContent = '오늘의 표제어: ' + it.title + ' (' + it.rank + ')';
+          })
+          .catch(function(){});
+      })();
+      </script>
 
     </div>
 

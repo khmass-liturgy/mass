@@ -2238,7 +2238,7 @@
       }).catch(function(){});
 
     // 오늘의 축일
-    fetch('data/feast_days.json', {cache:'no-store'})
+    fetch('feast_days.json', {cache:'no-store'})
       .then(function(r){ return r.json(); })
       .then(function(d){
         var list = (d && (d.saints || d)) || [];

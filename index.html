@@ -1827,6 +1827,13 @@
         <div class="lc-desc" id="gospeltoonDesc">주일 복음을 만화로 풀어낸 가스펠툰 (가톨릭프레스)</div>
       </a>
 
+      <a class="link-card" id="faithCutCard" style="display:none;" href="https://www.catholictimes.org/list/96" target="_blank" rel="noopener">
+        <div class="lc-top"><span class="lc-icon">🖼️</span><span class="lc-go">→</span></div>
+        <img id="faithCutImg" alt="" style="display:none;width:100%;border-radius:8px;margin:4px 0 8px;">
+        <div class="lc-name">가톨릭신문 신앙 한 컷</div>
+        <div class="lc-desc" id="faithCutDesc">주일 신앙 한 컷 그림 (가톨릭신문)</div>
+      </a>
+
     </div>
     <script>
     // 가톨릭신문 대표기사 — 첫 화면 톱기사 한 건을 제목만 보여 주고 읽기는 원문으로 넘긴다.
@@ -2101,6 +2108,52 @@
           var head = parseInt(p[1],10) + '월 ' + parseInt(p[2],10) + '일';
           if (d.label) head += ' · ' + d.label;
           desc.textContent = head + ' — ' + (d.title || '가스펠툰');
+          card.style.display = '';
+        })
+        .catch(function(){ /* 못 불러오면 카드를 숨긴 채로 둔다 */ });
+    })();
+    </script>
+
+    <script>
+    // 가톨릭신문 신앙 한 컷 — 주간 연재(일요일 발행)라서 토·일에만 카드를 보여 준다.
+    // 토요일엔 다음 날 일요일 발행분을, 일요일엔 오늘 발행분을 고른다.
+    // 그 편이 아직 목록에 없으면 가장 최근에 나온 편을 보여 준다.
+    (function(){
+      var card = document.getElementById('faithCutCard');
+      var img = document.getElementById('faithCutImg');
+      var desc = document.getElementById('faithCutDesc');
+      if (!card || !img || !desc) return;
+      var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+      var dow = new Date(today + 'T00:00:00').getDay();   // 0=일, 6=토
+      if (dow !== 0 && dow !== 6) return;
+      function shift(ymd, days){
+        var p = ymd.split('-');
+        var dt = new Date(+p[0], +p[1] - 1, +p[2]);
+        dt.setDate(dt.getDate() + days);
+        return dt.getFullYear() + '-' + ('0' + (dt.getMonth() + 1)).slice(-2)
+               + '-' + ('0' + dt.getDate()).slice(-2);
+      }
+      var target = dow === 6 ? shift(today, 1) : today;
+      fetch('data/faith_cut.json', {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          var items = (d && d.items) ? d.items : [];
+          var it = null;
+          for (var i = 0; i < items.length; i++){      // 목록은 최신순이다
+            if (items[i].date === target) { it = items[i]; break; }
+          }
+          if (!it) {
+            for (var j = 0; j < items.length; j++){
+              if (items[j].date <= target) { it = items[j]; break; }
+            }
+          }
+          if (!it || !it.image) return;
+          if (it.url) card.href = it.url;
+          img.onerror = function(){ img.style.display = 'none'; };
+          img.src = it.image;
+          img.alt = it.title || '신앙 한 컷';
+          img.style.display = '';
+          desc.textContent = it.title || '신앙 한 컷';
           card.style.display = '';
         })
         .catch(function(){ /* 못 불러오면 카드를 숨긴 채로 둔다 */ });

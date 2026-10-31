@@ -1,9 +1,15 @@
 {
-  "updated": "2026-10-31 15:58",
+  "updated": "2026-11-01 00:18",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "nwScW-OYpss",
+      "date": "2026-11-01",
+      "title": "모든 성인 대축일",
+      "url": "https://www.youtube.com/watch?v=nwScW-OYpss"
+    },
     {
       "videoId": "0lCoCCfZJ7c",
       "date": "2026-10-31",
@@ -57,12 +63,6 @@
       "date": "2026-10-23",
       "title": "연중 제29주간 금요일",
       "url": "https://www.youtube.com/watch?v=xizTZjBPCjo"
-    },
-    {
-      "videoId": "asrUc74YAas",
-      "date": "2026-10-22",
-      "title": "연중 제29주간 목요일",
-      "url": "https://www.youtube.com/watch?v=asrUc74YAas"
     }
   ]
 }

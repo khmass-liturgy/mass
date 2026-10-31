@@ -1,10 +1,17 @@
 {
-  "updated": "2026-10-31 00:56",
+  "updated": "2026-10-31 09:48",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "3bxM4R9PJCI",
+      "date": "2026-10-31",
+      "liturgy": "연중 제30주간 토요일",
+      "priest": "문주석 레오 신부",
+      "url": "https://www.youtube.com/watch?v=3bxM4R9PJCI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "aAyRMzS4ksw",
       "date": "2026-10-30",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제29주일 민족들의 복음화를 위한 미사ㅣ김동원 베드로 신부님 집전",
       "priest": "",
       "url": "https://www.youtube.com/watch?v=iZN1pbvdhjs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "dodBlZEb2YM",
-      "date": "2026-10-17",
-      "liturgy": "안티오키아의 성 이냐시오 주교 순교자 기념일",
-      "priest": "조용준 니콜라오 신부",
-      "url": "https://www.youtube.com/watch?v=dodBlZEb2YM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

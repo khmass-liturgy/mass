@@ -3279,7 +3279,8 @@ window.MISSA_TARGET_DATE = (function(){
   const wyd = document.getElementById('wydSection');
   if (!martyrs || !rosary || !wyd) return;
   const souls = document.getElementById('allSoulsMonthSection');
-  const month = window.kstNow().month; // 0-indexed
+  // 토요일 15시 이후에는 매일미사 카드가 주일을 가리키므로, 월별 기도도 그 날짜 기준으로 고른다
+  const month = (window.MISSA_TARGET_DATE || window.kstNow().date).getMonth(); // 0-indexed
   const isSeptember = month === 8;
   const isOctober = month === 9;
   const isNovember = month === 10;
@@ -3292,7 +3293,7 @@ window.MISSA_TARGET_DATE = (function(){
 // 5월(성모성월)에만 성모성월 기도 표시
 (function(){
   const monthSections = { 4: 'marianMonthSection' };
-  const id = monthSections[window.kstNow().month];
+  const id = monthSections[(window.MISSA_TARGET_DATE || window.kstNow().date).getMonth()];
   if (id) {
     const el = document.getElementById(id);
     if (el) el.style.display = '';

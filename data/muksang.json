@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-31 18:29",
-  "cutoff": "2026-10-30",
+  "updated": "2026-11-01 02:10",
+  "cutoff": "2026-10-31",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 8,
   "posts": [
+    {
+      "id": "daum_catholicsb_7444",
+      "title": "전삼용 요셉 신부 / 11월1일 모든 성인 대축일 - 꿈을 찾지 못한 모든 사람에게",
+      "author": "효재마리아(수풀)",
+      "date": "2026-10-31",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7444",
+      "mass_date": "2026-11-01",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 모든 성인 대축일 복음: 마태오 5,1-12ㄴ 꿈을…"
+    },
+    {
+      "id": "daum_bbadaking_7981",
+      "title": "2026년 11월 1일 모든 성인 대축일",
+      "author": "빠다킹신부",
+      "date": "2026-10-31",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7981",
+      "mass_date": "2026-11-01",
+      "priest": "조명연",
+      "excerpt": "어제는 기분이 매우 좋았습니다."
+    },
+    {
+      "id": "daum_bbadaking_2257",
+      "title": "2026년 11월 1일 모든 성인 대축일",
+      "author": "박 베로니카",
+      "date": "2026-10-31",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2257",
+      "mass_date": "2026-11-01",
+      "priest": "양승국",
+      "excerpt": "우리도 성인이 되어야 합니다!"
+    },
     {
       "id": "daum_catholicsb_7443",
       "title": "전삼용 요셉 신부 / 연중 제30주간 토요일 - 주위 사람을 겸손하게 만드는",
@@ -66,56 +96,6 @@
       "date": "2026-10-31",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139588&menu=4770",
       "mass_date": "2026-10-31",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7442",
-      "title": "전삼용 요셉 신부 / 연중 제30주간 금요일 - 바리사이, 율법학자의 꼰대 근성에서 벗어나려면",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-29",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7442",
-      "mass_date": "2026-10-30",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 금요일 복음: 루카 14,1-6 바…"
-    },
-    {
-      "id": "daum_bbadaking_7979",
-      "title": "2026년 10월 30일 연중 제31주간 금요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-29",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7979",
-      "mass_date": "2026-10-30",
-      "priest": "조명연",
-      "excerpt": "요한 크리소스토모 성인은 성경 읽는 것을 신자들에게 늘 강조하셨다고 합니다."
-    },
-    {
-      "id": "daum_bbadaking_2255",
-      "title": "2026년 10월 30일 연중 제31주간 금요일",
-      "author": "박 베로니카",
-      "date": "2026-10-30",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2255",
-      "mass_date": "2026-10-30",
-      "priest": "양승국",
-      "excerpt": "치유행위는 안식일 정신에 가장 합당한 일입니다!"
-    },
-    {
-      "id": "daum_bbadaking_210",
-      "title": "나의 바람과 원의가 우선인지 주님의 뜻이 우선인지를 먼저 살피는 것이 그리스…",
-      "author": "환희 평화",
-      "date": "2026-10-30",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/210",
-      "mass_date": "2026-10-30",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139545",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-30",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139545&menu=4770",
-      "mass_date": "2026-10-30",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

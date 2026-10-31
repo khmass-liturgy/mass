@@ -167,6 +167,9 @@ html.winter .today,html.winter .week-list{box-shadow:0 6px 20px rgba(46,74,117,.
 <script>
 // 절기에 따라 계절 클래스(spring/summer/autumn/winter)를 html 에 붙인다. 기준은 index.html 과 같다.
 (function(){
+  // 미리보기: 주소에 ?season=winter 처럼 붙이면 절기와 상관없이 그 계절 테마로 보인다.
+  var m = /[?&]season=(spring|summer|autumn|winter)\b/.exec(location.search);
+  if (m) { document.documentElement.classList.add(m[1]); return; }
   try {
     var n = window.kstNow(), t = window.SolarTerms;
     var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };

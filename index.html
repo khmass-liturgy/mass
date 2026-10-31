@@ -1031,6 +1031,12 @@
 //   입춘~입하 전 봄 / 입하~입추 전 여름 / 입추~입동 전 가을 / 입동~입춘 전 겨울
 // 절기가 드는 시각은 하루 중 아무 때나라, 오늘 안에 절기가 들면 낮에도 그 절기로 친다.
 (function(){
+  // 미리보기: 주소에 ?season=winter 처럼 붙이면 절기와 상관없이 그 계절 테마로 보인다.
+  var m = /[?&]season=(spring|summer|autumn|winter)\b/.exec(location.search);
+  if (m) {
+    if (m[1] !== 'autumn') document.documentElement.classList.add(m[1]);
+    return;
+  }
   try {
     var n = window.kstNow(), t = window.SolarTerms;
     var ymd = function(d){ return d.toLocaleDateString('sv-SE', {timeZone:'Asia/Seoul'}); };

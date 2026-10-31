@@ -2219,8 +2219,13 @@
     mq.style.animationDuration = Math.max(6, mq.scrollWidth / 2 / 700) + 's';
   };
 
+  // 아래 출처들을 채우다 오류가 나도 기본 문구·카드 안내는 먼저 흐르게 한다.
+  // (예전엔 맨 끝에서만 그려서, 중간 오류 하나로 띠 전체가 HTML 기본 5줄에 머물렀다)
+  window.paintMarquee();
+
   (function(){
     var esc = window.__mqEsc;
+    if (typeof window.kstNow !== 'function') return;
     var now = window.kstNow();
     var pad = function(n){ return String(n).padStart(2, '0'); };
     var key = now.year + '-' + pad(now.month + 1) + '-' + pad(now.day);
@@ -2249,7 +2254,7 @@
       }).catch(function(){});
 
     // 전례 시기와 다음 절기까지 남은 날
-    if (window.Liturgy && window.SolarTerms) {
+    try { if (window.Liturgy && window.SolarTerms) {
       var today = now.date;
       var msDay = 86400000;
       var parts = [];
@@ -2266,7 +2271,7 @@
       var dT = Math.round((Date.UTC(+ntp[0], +ntp[1]-1, +ntp[2]) - todayUtc) / msDay);
       parts.push('다음 절기 ' + esc(nt.name) + (dT === 0 ? ' 오늘' : ' D-' + dT));
       window.__marqueeSrc.season = ['<span>✦ <strong>전례력</strong> ' + parts.join(' · ') + '</span>'];
-    }
+    } } catch (e) { /* 전례력 계산이 안 되면 그 항목만 빼고 흐른다 */ }
   })();
   window.paintMarquee();
   </script>

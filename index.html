@@ -3269,7 +3269,7 @@ window.MISSA_TARGET_DATE = (function(){
   }
 })();
 
-// 11월엔 WYD 기도문 옆에 위령성월 기도를 한 장 더 보여 준다(WYD 는 그대로 둔다).
+// 10월 말부터 11월까지는 위령성월 기도를 보여 준다. 11월에는 WYD 기도문도 함께 보인다.
 // 9월(순교자 성월)엔 순교자 성월 기도를, 10월(묵주기도성월)엔 묵주기도성월
 // 기도(성모찬송)를 WYD 기도문 자리에 대신 보여 준다. 세 카드가 같은 칸을
 // 나눠 쓰므로, 하나를 켜면 나머지 둘은 반드시 끈다.
@@ -3286,7 +3286,7 @@ window.MISSA_TARGET_DATE = (function(){
   martyrs.style.display = isSeptember ? '' : 'none';
   rosary.style.display = isOctober ? '' : 'none';
   wyd.style.display = (isSeptember || isOctober) ? 'none' : '';
-  if (souls) souls.style.display = isNovember ? '' : 'none';
+  if (souls) souls.style.display = (isOctober || isNovember) ? '' : 'none';
 })();
 
 // 5월(성모성월)에만 성모성월 기도 표시

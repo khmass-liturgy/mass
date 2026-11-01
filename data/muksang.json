@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-01 19:19",
-  "cutoff": "2026-10-31",
+  "updated": "2026-11-02 02:51",
+  "cutoff": "2026-11-01",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7445",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-02",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 11월2일 위령의 날 마태오 11,25-30 연옥의 존재…"
+    },
+    {
+      "id": "daum_bbadaking_7982",
+      "title": "2026년 11월 2일 위령의 날",
+      "author": "빠다킹신부",
+      "date": "2026-11-01",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7982",
+      "mass_date": "2026-11-02",
+      "priest": "조명연",
+      "excerpt": "노벨 문학상 수상자인 ‘주제 사라마구’의 ‘죽음의 중지’라는 책을 읽고 있습…"
+    },
+    {
+      "id": "daum_bbadaking_2258",
+      "title": "2026년 11월 2일 위령의 날",
+      "author": "박 베로니카",
+      "date": "2026-11-01",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2258",
+      "mass_date": "2026-11-02",
+      "priest": "양승국",
+      "excerpt": "죽음 안에 삶이 있고 삶 안에 죽음이 있습니다!"
     },
     {
       "id": "daum_catholicsb_7444",
@@ -66,56 +86,6 @@
       "date": "2026-11-01",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139648&menu=4770",
       "mass_date": "2026-11-01",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7443",
-      "title": "전삼용 요셉 신부 / 연중 제30주간 토요일 - 주위 사람을 겸손하게 만드는",
-      "author": "효재마리아(수풀)",
-      "date": "2026-10-30",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7443",
-      "mass_date": "2026-10-31",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제30주간 토요일 복음: 루카 14,1.7-1…"
-    },
-    {
-      "id": "daum_bbadaking_7980",
-      "title": "2026년 10월 31일 연중 제30주간 토요일",
-      "author": "빠다킹신부",
-      "date": "2026-10-30",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7980",
-      "mass_date": "2026-10-31",
-      "priest": "조명연",
-      "excerpt": "어느 신부의 앨범을 우연히 볼 수 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2256",
-      "title": "2026년 10월 31일 연중 제30주간 토요일",
-      "author": "박 베로니카",
-      "date": "2026-10-31",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2256",
-      "mass_date": "2026-10-31",
-      "priest": "양승국",
-      "excerpt": "이 세상에 머물지만, 이 세상을 초월하는..."
-    },
-    {
-      "id": "daum_bbadaking_211",
-      "title": "참다운 권력은 ‘섬김’에서 나오는 것입니다.",
-      "author": "환희 평화",
-      "date": "2026-10-31",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/211",
-      "mass_date": "2026-10-31",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139588",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-10-31",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139588&menu=4770",
-      "mass_date": "2026-10-31",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가톨릭 성가집 ✚ 듣기·악보</title>
+<meta name="description" content="가톨릭 성가 528곡 — 번호·제목으로 찾아 듣고 악보를 봅니다. 재생 버튼을 누를 때만 소리가 납니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marian:#274B77;
+  --marian-dark:#1B3557;
+  --gold:#B98A2F;
+  --gold-soft:#E4CE96;
+  --ink:#22303F;
+  --muted:#6B7A8C;
+  --bg:#F4F6F9;
+  --card:#FFFFFF;
+  --line:#DDE4EC;
+  --radius:14px;
+  --serif:'Noto Serif KR', serif;
+  --sans:'Noto Sans KR', -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:24px}
+a{color:var(--marian)}
+
+header{background:linear-gradient(160deg,var(--marian-dark),var(--marian));color:#fff;padding:26px 18px 30px;text-align:center;position:relative}
+header .cross{font-size:15px;letter-spacing:8px;color:var(--gold-soft);margin-bottom:8px}
+header h1{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:1px}
+header p{font-size:13px;color:#C7D4E4;margin-top:6px;word-break:keep-all}
+header .home{position:absolute;top:14px;right:14px;font-size:12px;color:#C7D4E4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+
+main{max-width:680px;margin:0 auto;padding:18px 16px}
+.searchbox{position:relative}
+.searchbox input{width:100%;padding:13px 44px 13px 16px;font-size:16px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--card);outline:none}
+.searchbox input:focus{border-color:var(--marian)}
+.searchbox .icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:17px;color:var(--muted)}
+.chips{display:flex;gap:6px;margin:12px 0 4px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:20px;padding:5px 13px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+.chip.on{background:var(--marian);border-color:var(--marian);color:#fff;font-weight:500}
+.count{font-size:12.5px;color:var(--muted);margin:8px 2px}
+
+.list{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 3px 10px rgba(30,53,87,.06)}
+.song{border-bottom:1px solid var(--line)}
+.song:last-child{border-bottom:none}
+.song-row{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 14px}
+.song-n{flex:none;width:40px;font-family:var(--serif);font-weight:700;font-size:16px;color:var(--marian);text-align:center}
+.song-main{flex:1;min-width:0}
+.song-t{font-size:15px;font-weight:500;word-break:keep-all}
+.song-k{font-size:11.5px;color:var(--muted);margin-top:1px}
+.play{flex:none;width:40px;height:40px;border-radius:50%;border:none;background:var(--marian);color:#fff;font-size:15px;cursor:pointer}
+.play.on{background:var(--gold)}
+.play:disabled{background:var(--line);color:var(--muted);cursor:default}
+.song.open{background:#FBF7EC}
+.song-more{padding:0 14px 12px 66px}
+.song-more audio{width:100%;height:40px}
+.sheets{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.sheets a{font-size:13px;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:16px;padding:4px 12px}
+.empty{padding:28px 16px;text-align:center;color:var(--muted);font-size:14px}
+.more-btn{display:block;width:100%;margin-top:12px;padding:12px;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--card);font-family:var(--sans);font-size:14px;color:var(--marian);cursor:pointer}
+footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var(--muted);text-align:center;word-break:keep-all}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
+  <div class="cross">✚ ✚ ✚</div>
+  <h1>가톨릭 성가집</h1>
+  <p>번호나 제목으로 찾아 듣고 악보를 봅니다 · ▶를 누를 때만 소리가 납니다</p>
+</header>
+
+<main>
+  <div class="searchbox">
+    <input type="search" id="q" placeholder="성가 번호 또는 제목 (예: 27, 성모)" autocomplete="off">
+    <span class="icon">🔍</span>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="count" id="count">성가 목록을 불러오는 중…</div>
+  <div class="list" id="list"></div>
+  <button class="more-btn" id="moreBtn" type="button" hidden>더 보기</button>
+</main>
+
+<footer>
+  음원·악보 출처: <a href="https://m.mariasarang.net/page/catholic.asp" target="_blank" rel="noopener">마리아사랑넷 가톨릭 성가집</a>
+</footer>
+
+<script>
+// 마리아사랑넷 곡 화면은 열리자마자 음악을 자동 재생한다(일부 폰에서는 목록을 다시
+// 열어도 그 곡이 다시 나온다). 이 화면은 목록만 보여 주고, ▶를 눌러야 그 곡을 튼다.
+// 한 번에 한 곡만 재생된다. 목록은 scripts/build_holy_songs.py 가 만든다.
+(function(){
+  var PAGE = 60;   // 한 번에 그리는 곡 수 (528곡을 한꺼번에 그리지 않는다)
+  var songs = [], filtered = [], shown = 0, cat = '', openEl = null;
+  var listEl = document.getElementById('list');
+  var countEl = document.getElementById('count');
+  var moreBtn = document.getElementById('moreBtn');
+  var qEl = document.getElementById('q');
+  var chipsEl = document.getElementById('chips');
+  var audio = document.createElement('audio');
+  audio.controls = true;
+  audio.preload = 'none';
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function norm(s){ return String(s).replace(/\s+/g, '').toLowerCase(); }
+
+  function closeOpen(){
+    if (!openEl) return;
+    audio.pause();
+    openEl.classList.remove('open');
+    var btn = openEl.querySelector('.play');
+    if (btn) { btn.classList.remove('on'); btn.textContent = '▶'; btn.setAttribute('aria-label', '듣기'); }
+    var more = openEl.querySelector('.song-more');
+    if (more) more.remove();
+    openEl = null;
+  }
+
+  function toggle(el, s){
+    if (openEl === el) { closeOpen(); return; }
+    closeOpen();
+    openEl = el;
+    el.classList.add('open');
+    var btn = el.querySelector('.play');
+    btn.classList.add('on'); btn.textContent = '■'; btn.setAttribute('aria-label', '그만 듣기');
+    var more = document.createElement('div');
+    more.className = 'song-more';
+    var sheets = '';
+    if (s.jpg) sheets += '<a href="' + esc(s.jpg) + '" target="_blank" rel="noopener">🧾 악보(단성)</a>';
+    if (s.jpg_m) sheets += '<a href="' + esc(s.jpg_m) + '" target="_blank" rel="noopener">🧾 악보(혼성)</a>';
+    more.innerHTML = sheets ? '<div class="sheets">' + sheets + '</div>' : '';
+    if (s.mp3) {
+      more.insertBefore(audio, more.firstChild);
+      audio.src = s.mp3;
+      // 사용자가 ▶를 눌렀을 때에만 여기까지 온다.
+      var p = audio.play();
+      if (p && p.catch) p.catch(function(){});
+    }
+    el.appendChild(more);
+  }
+
+  function rowHtml(s){
+    var hasSheet = s.jpg || s.jpg_m;
+    var label = s.mp3 ? '듣기' : (hasSheet ? '악보 보기' : '');
+    return '<div class="song-row"><span class="song-n">' + s.n + '</span>'
+      + '<div class="song-main"><div class="song-t">' + esc(s.t) + '</div><div class="song-k">' + esc(s.k) + '</div></div>'
+      + '<button class="play" type="button" aria-label="' + label + '"' + (s.mp3 || hasSheet ? '' : ' disabled') + '>'
+      + (s.mp3 ? '▶' : '🧾') + '</button></div>';
+  }
+
+  function renderMore(){
+    var frag = document.createDocumentFragment();
+    filtered.slice(shown, shown + PAGE).forEach(function(s){
+      var el = document.createElement('div');
+      el.className = 'song';
+      el.innerHTML = rowHtml(s);
+      el.querySelector('.play').addEventListener('click', function(){ toggle(el, s); });
+      frag.appendChild(el);
+    });
+    listEl.appendChild(frag);
+    shown = Math.min(filtered.length, shown + PAGE);
+    moreBtn.hidden = shown >= filtered.length;
+    moreBtn.textContent = '더 보기 (' + (filtered.length - shown) + '곡 남음)';
+  }
+
+  function apply(){
+    closeOpen();
+    var q = norm(qEl.value);
+    filtered = songs.filter(function(s){
+      if (cat && s.k !== cat) return false;
+      if (!q) return true;
+      if (/^\d+$/.test(q)) return String(s.n).indexOf(q) === 0;
+      return norm(s.t).indexOf(q) >= 0;
+    });
+    // 번호로 찾으면 정확히 그 번호를 맨 위에
+    if (/^\d+$/.test(q)) filtered.sort(function(a, b){ return (b.n === +q) - (a.n === +q) || a.n - b.n; });
+    listEl.innerHTML = '';
+    shown = 0;
+    countEl.textContent = filtered.length + '곡' + (cat ? ' · ' + cat : '') + (q ? ' · "' + qEl.value.trim() + '" 검색' : '');
+    if (!filtered.length) { listEl.innerHTML = '<div class="empty">찾는 성가가 없습니다.</div>'; moreBtn.hidden = true; return; }
+    renderMore();
+  }
+
+  function buildChips(){
+    var counts = {};
+    songs.forEach(function(s){ if (s.k) counts[s.k] = (counts[s.k] || 0) + 1; });
+    var cats = Object.keys(counts).sort(function(a, b){ return counts[b] - counts[a]; });
+    chipsEl.innerHTML = ['<button class="chip on" type="button" data-k="">전체</button>'].concat(cats.map(function(k){
+      return '<button class="chip" type="button" data-k="' + esc(k) + '">' + esc(k) + '</button>';
+    })).join('');
+    chipsEl.addEventListener('click', function(e){
+      var b = e.target.closest('.chip');
+      if (!b) return;
+      cat = b.getAttribute('data-k');
+      Array.prototype.forEach.call(chipsEl.children, function(c){ c.classList.toggle('on', c === b); });
+      apply();
+    });
+  }
+
+  moreBtn.addEventListener('click', renderMore);
+  var t;
+  qEl.addEventListener('input', function(){ clearTimeout(t); t = setTimeout(apply, 150); });
+  audio.addEventListener('ended', closeOpen);
+
+  fetch('data/holy_songs.json', {cache:'no-store'})
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      songs = (d && d.songs) || [];
+      buildChips();
+      var m = /[?&]n=(\d+)/.exec(location.search);
+      if (m) qEl.value = m[1];
+      apply();
+    })
+    .catch(function(){ countEl.textContent = '성가 목록을 불러오지 못했습니다. 잠시 뒤 다시 열어 주세요.'; });
+})();
+</script>
+</body>
+</html>

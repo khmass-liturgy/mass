@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-01 00:19",
+  "updated": "2026-11-01 09:07",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "J6IkJIGFFu0",
+      "date": "2026-11-01",
+      "liturgy": "모든 성인 대축일",
+      "priest": "신교선 가브리엘 신부",
+      "url": "https://www.youtube.com/watch?v=J6IkJIGFFu0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "3bxM4R9PJCI",
       "date": "2026-10-31",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제29주간 월요일",
       "priest": "",
       "url": "https://www.youtube.com/watch?v=Hz__uFsu12A&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "iZN1pbvdhjs",
-      "date": "2026-10-18",
-      "liturgy": "연중 제29주일 민족들의 복음화를 위한 미사ㅣ김동원 베드로 신부님 집전",
-      "priest": "",
-      "url": "https://www.youtube.com/watch?v=iZN1pbvdhjs&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

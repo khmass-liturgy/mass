@@ -2252,7 +2252,7 @@
   };
   // 띠 속도(초당 px). 폰은 화면이 좁아 같은 속도도 느리게 느껴져 조금 더 빠르게 둔다.
   window.marqueeSpeed = function(){
-    return window.matchMedia('(max-width: 767px)').matches ? 110 : 80;
+    return window.matchMedia('(max-width: 767px)').matches ? 55 : 40;
   };
   window.paintMarquee = function(){
     var mq = document.getElementById('marqueeInner');

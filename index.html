@@ -41,7 +41,13 @@
 
   header{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
   .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px;height:72px;}
-  .header-title{flex:1;}
+  .header-title{flex:1;display:flex;align-items:center;gap:12px;min-width:0;}
+  /* 제목 오른쪽 오늘 최고·최저 기온 (Open-Meteo) */
+  .header-weather{display:none;flex-shrink:0;align-items:center;gap:5px;font-size:.78rem;color:var(--cream);white-space:nowrap;line-height:1.2;}
+  .header-weather .hw-icon{font-size:1.05rem;}
+  .header-weather .hw-hi{color:#ffb38a;font-weight:700;}
+  .header-weather .hw-lo{color:#9fd3ff;font-weight:700;}
+  .header-weather .hw-place{display:block;font-size:.66rem;color:var(--gold-lt);opacity:.85;}
   .header-title h1{font-family:'Noto Serif KR',serif;font-size:1.2rem;font-weight:700;color:var(--cream);}
   .title-rose{font-size:.85em;vertical-align:-0.05em;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25));}
   .header-title p{font-family:'Cinzel',serif;font-size:.62rem;color:var(--gold);letter-spacing:.16em;text-transform:uppercase;margin-top:1px;}
@@ -532,6 +538,8 @@
   @media (max-width:600px){
     .header-inner{height:60px;}
     .header-title h1{font-size:1rem;}
+    .header-title{gap:8px;}
+    .header-weather{font-size:.72rem;}
     .header-date{display:none;}
     .missa-card{flex-wrap:wrap;padding:22px;}
     .missa-arrow{display:none;}
@@ -1059,6 +1067,7 @@
   <div class="header-inner">
     <div class="header-title">
       <h1><span class="title-rose" aria-hidden="true">🌹</span> 가톨릭 신앙생활 포털 <span class="title-rose" aria-hidden="true">🌹</span></h1>
+      <div class="header-weather" id="headerWeather" aria-live="polite"></div>
     </div>
     <button id="shareBtn" type="button" aria-label="공유하기" title="공유하기">
       <span class="share-icon" aria-hidden="true">🔗</span>
@@ -1069,6 +1078,54 @@
     <div class="header-date" id="headerDate"></div>
   </div>
 </header>
+<script>
+// 제목 오른쪽에 오늘 최고·최저 기온을 보여 준다 (Open-Meteo, 키 없이 쓰는 무료 API).
+// 위치 권한을 이미 허락한 기기면 그 위치를, 아니면 성당이 있는 파주 교하를 쓴다.
+// 권한을 새로 묻지는 않는다. 못 불러오면 아무것도 보이지 않는다.
+(function(){
+  var box = document.getElementById('headerWeather');
+  if (!box || !window.fetch) return;
+  var HOME = { lat: 37.7556, lon: 126.7470, name: '파주 교하' };
+  function icon(code){
+    if (code === 0) return '☀️';
+    if (code <= 2) return '🌤️';
+    if (code === 3) return '☁️';
+    if (code === 45 || code === 48) return '🌫️';
+    if ((code >= 71 && code <= 77) || code === 85 || code === 86) return '❄️';
+    if (code >= 95) return '⛈️';
+    if (code >= 51) return '🌧️';
+    return '🌤️';
+  }
+  function show(lat, lon, name){
+    var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(2)
+      + '&longitude=' + lon.toFixed(2)
+      + '&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Asia%2FSeoul&forecast_days=1';
+    fetch(url).then(function(r){ return r.json(); }).then(function(d){
+      var dl = d && d.daily;
+      if (!dl || dl.temperature_2m_max == null) return;
+      var hi = Math.round(dl.temperature_2m_max[0]), lo = Math.round(dl.temperature_2m_min[0]);
+      if (isNaN(hi) || isNaN(lo)) return;
+      box.innerHTML = '<span class="hw-icon" aria-hidden="true">' + icon(dl.weather_code[0]) + '</span>'
+        + '<span><span class="hw-hi">' + hi + '°</span> / <span class="hw-lo">' + lo + '°</span>'
+        + '<span class="hw-place">' + name + '</span></span>';
+      box.title = name + ' 오늘 최고 ' + hi + '° · 최저 ' + lo + '°';
+      box.setAttribute('aria-label', box.title);
+      box.style.display = 'flex';
+    }).catch(function(){});
+  }
+  function home(){ show(HOME.lat, HOME.lon, HOME.name); }
+  try {
+    if (navigator.geolocation && navigator.permissions && navigator.permissions.query) {
+      navigator.permissions.query({ name: 'geolocation' }).then(function(p){
+        if (p.state !== 'granted') return home();
+        navigator.geolocation.getCurrentPosition(function(pos){
+          show(pos.coords.latitude, pos.coords.longitude, '현재 위치');
+        }, home, { timeout: 5000, maximumAge: 3600000 });
+      }, home);
+    } else home();
+  } catch (e) { home(); }
+})();
+</script>
 <div id="shareToast">링크가 복사되었습니다</div>
 <div class="gold-bar"></div>
 

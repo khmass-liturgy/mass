@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-01 19:25",
+  "updated": "2026-11-02 03:55",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "XcSpG0GVxV4",
-  "date": "2026-11-01",
-  "label": "2026년 11월 1일모든 성인 대축일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 1일 모든 성인 대축일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "DugSrfPtMxQ",
+  "date": "2026-11-02",
+  "label": "2026년 11월 2일죽은 모든 이를 기억하는 위령의 날 - 둘째 미사",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 2일 죽은 모든 이를 기억하는 위령의 날 - 둘째 미사](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=XcSpG0GVxV4",
+  "url": "https://www.youtube.com/watch?v=DugSrfPtMxQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "DugSrfPtMxQ",
+      "date": "2026-11-02",
+      "label": "2026년 11월 2일죽은 모든 이를 기억하는 위령의 날 - 둘째 미사",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 2일 죽은 모든 이를 기억하는 위령의 날 - 둘째 미사](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=DugSrfPtMxQ"
+    },
     {
       "videoId": "XcSpG0GVxV4",
       "date": "2026-11-01",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 24일 연중 제29주간 토요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=HLrwOV2I02M"
-    },
-    {
-      "videoId": "yNl2VG4tEJw",
-      "date": "2026-10-23",
-      "label": "2026년 10월 23일연중 제29주간 금요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 23일 연중 제29주간 금요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=yNl2VG4tEJw"
     }
   ]
 }

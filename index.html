@@ -381,6 +381,9 @@
   .dday-body{min-width:0;}
   .dday-card .wyd-title{font-size:1rem;line-height:1.35;margin:0;}
   .dday-date{margin-top:6px;font-size:.78rem;color:var(--gold-lt);}
+  .dday-info{margin-top:8px;font-size:.8rem;line-height:1.55;color:rgba(255,248,235,.88);word-break:keep-all;}
+  .dday-info:empty{display:none;}
+  .dday-row-info{display:block;margin-top:2px;font-size:.76rem;font-weight:400;line-height:1.5;color:var(--muted,#6B7A8C);word-break:keep-all;}
   .dday-badge{
     float:right;margin:0 0 4px 8px;
     font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;
@@ -2789,6 +2792,7 @@
           <div class="wyd-eyebrow" id="ddayEyebrow">다가오는 대축일</div>
           <div class="wyd-title" id="ddayTitle">전례력을 계산하고 있습니다…</div>
           <div class="dday-date" id="ddayDate"></div>
+          <div class="dday-info" id="ddayInfo"></div>
         </div>
         <span class="prayer-arrow dday-arrow">▼</span>
       </summary>
@@ -2931,6 +2935,27 @@
   // ── 다가오는 대축일 (D-day) ────────────────────────────────
   // window.Liturgy 는 이 스크립트보다 아래에서 정의되므로 문서 파싱이 끝난 뒤 실행한다.
   (function(){
+  // 대축일마다 무엇을 기념하는지 한두 문장으로 덧붙인다. 이름은 liturgy-lib.js 와 같아야 한다.
+  var SOLEMNITY_INFO = {
+    '천주의 성모 마리아 대축일': '마리아께서 하느님이신 예수님의 어머니이심을 기리는 날입니다. 새해 첫날이자 세계 평화의 날이기도 합니다.',
+    '주님 공현 대축일': '동방 박사들의 경배로 아기 예수님께서 온 세상에 구세주로 드러나셨음을 기념합니다.',
+    '성 요셉 대축일': '성모 마리아의 배필이자 예수님의 양부로서 성가정을 지킨 성 요셉을 기립니다. 보편 교회의 수호성인입니다.',
+    '주님 탄생 예고 대축일': '천사 가브리엘이 마리아에게 구세주의 잉태를 알리고 마리아가 "예" 하고 응답한 일을 기념합니다.',
+    '주님 부활 대축일': '십자가에서 돌아가신 예수님께서 사흘 만에 다시 살아나신 것을 기리는, 전례력에서 가장 큰 축일입니다.',
+    '주님 승천 대축일': '부활하신 예수님께서 40일 동안 제자들과 함께 계시다가 하늘로 오르신 일을 기념합니다. 한국은 부활 제7주일에 지냅니다.',
+    '성령 강림 대축일': '부활 50일째 되는 날 제자들에게 성령이 내려오신 일을 기념합니다. 교회의 탄생일로 불립니다.',
+    '삼위일체 대축일': '성부·성자·성령, 한 분이신 하느님의 신비를 기리는 날입니다. 성령 강림 다음 주일에 지냅니다.',
+    '그리스도의 성체 성혈 대축일': '성체성사 안에 계신 그리스도의 몸과 피를 공경하는 날입니다. 성체 거동(행렬)을 하기도 합니다.',
+    '예수 성심 대축일': '인류를 향한 예수님의 사랑을 그분의 거룩한 마음(성심)으로 기리는 날입니다. 사제 성화의 날이기도 합니다.',
+    '성 요한 세례자 탄생 대축일': '예수님의 길을 준비한 세례자 요한의 탄생을 기념합니다. 성인 가운데 성모님과 함께 탄생을 기리는 드문 경우입니다.',
+    '성 베드로와 성 바오로 사도 대축일': '로마에서 순교한 두 기둥 사도, 교회의 반석 베드로와 이방인의 사도 바오로를 함께 기립니다. 교황 주일이기도 합니다.',
+    '성모 승천 대축일': '성모 마리아께서 지상 생애를 마치고 영혼과 육신이 함께 하늘로 들어 올려지셨음을 기념합니다. 한국의 광복절과 같은 날입니다.',
+    '성 김대건 안드레아 사제와 성 정하상 바오로와 동료 순교자 대축일': '신앙을 지키다 순교한 한국의 103위 성인을 기리는 날입니다. 9월은 순교자 성월입니다.',
+    '모든 성인 대축일': '천상의 모든 성인, 이름이 알려지지 않은 성인들까지 함께 기리는 날입니다. 다음 날은 위령의 날입니다.',
+    '그리스도 왕 대축일': '전례력의 마지막 주일에 그리스도께서 온 우주의 왕이심을 고백합니다. 다음 주부터 대림 시기가 시작됩니다.',
+    '원죄 없이 잉태되신 성모 마리아 대축일': '마리아께서 잉태되신 순간부터 원죄에 물들지 않으셨음을 기념합니다. 한국 교회의 수호 축일입니다.',
+    '주님 성탄 대축일': '하느님의 아들이 사람이 되어 베들레헴에서 태어나신 것을 기리는 날입니다.'
+  };
   function renderNextSolemnity(){
     var titleEl = document.getElementById('ddayTitle');
     var dateEl = document.getElementById('ddayDate');
@@ -2961,11 +2986,15 @@
     if (dateEl) dateEl.textContent = fmt(next.date);
     if (badgeEl) badgeEl.textContent = diff === 0 ? '오늘' : 'D-' + diff;
     if (eyebrowEl) eyebrowEl.textContent = '다가오는 대축일 · ' + listYear + '년';
+    var infoEl = document.getElementById('ddayInfo');
+    if (infoEl) infoEl.textContent = SOLEMNITY_INFO[next.name] || '';
 
     if (listEl) {
       listEl.innerHTML = list.map(function(x, i){
         var cls = 'dday-row' + (i === 0 ? ' is-next' : '');
-        return '<div class="' + cls + '"><span class="dday-when">' + fmt(x.date) + '</span><span>' + x.name + '</span></div>';
+        var info = SOLEMNITY_INFO[x.name];
+        return '<div class="' + cls + '"><span class="dday-when">' + fmt(x.date) + '</span><span>' + x.name
+          + (info ? '<span class="dday-row-info">' + info + '</span>' : '') + '</span></div>';
       }).join('');
     }
   }

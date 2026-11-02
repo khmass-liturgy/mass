@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-02 16:39",
+  "updated": "2026-11-03 04:27",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "fEt9PF7IwEc",
+      "date": "2026-11-03",
+      "title": "연중 제31주간 화요일",
+      "url": "https://www.youtube.com/watch?v=fEt9PF7IwEc"
+    },
     {
       "videoId": "v63Ty8jkyxs",
       "date": "2026-11-02",
@@ -57,12 +63,6 @@
       "date": "2026-10-25",
       "title": "연중 제30주일",
       "url": "https://www.youtube.com/watch?v=8CjVp_2UyMg"
-    },
-    {
-      "videoId": "XIdu--LC_4k",
-      "date": "2026-10-24",
-      "title": "연중 제29주간 토요일",
-      "url": "https://www.youtube.com/watch?v=XIdu--LC_4k"
     }
   ]
 }

@@ -2,7 +2,7 @@
 // 네트워크 우선(신선한 콘텐츠 우선) + 실패 시 캐시로 대체하는 전략
 // 매일미사·묵상글·축일 등 자주 바뀌는 콘텐츠 특성에 맞춤
 
-const CACHE_NAME = 'khmass-liturgy-v4';
+const CACHE_NAME = 'khmass-liturgy-v5';
 
 // 설치 시 미리 담아둘 핵심 파일 (오프라인 최소 보장)
 const PRECACHE_URLS = [
@@ -43,8 +43,10 @@ self.addEventListener('fetch', (event) => {
   // 외부 도메인(구글 캘린더, 가톨릭굿뉴스 등)은 서비스 워커가 관여하지 않고 그대로 통과
   if (new URL(req.url).origin !== self.location.origin) return;
 
+  // GitHub Pages 는 Cache-Control: max-age=600 을 보내므로, 그냥 fetch 하면 배포 뒤 최대 10분
+  // 동안 브라우저 HTTP 캐시의 옛 화면이 나온다. no-cache 로 매번 서버에 확인한다(바뀌지 않았으면 304라 가볍다).
   event.respondWith(
-    fetch(req)
+    fetch(req, { cache: 'no-cache' })
       .then((response) => {
         // 성공하면 최신 응답을 캐시에 갱신 저장
         const resClone = response.clone();

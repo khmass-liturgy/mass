@@ -54,6 +54,30 @@ main{max-width:680px;margin:0 auto;padding:18px 16px}
 .verse .vt{flex:1;white-space:pre-line}
 .verse.cur,.head.cur{background:#FBF1D6}
 .empty{padding:28px 16px;text-align:center;color:var(--muted);font-size:14px;word-break:keep-all}
+.achv{background:var(--card);border:1px solid var(--gold-soft);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
+.achv summary{list-style:none;cursor:pointer;padding:11px 14px;font-size:14px;font-weight:500;color:var(--ink);word-break:keep-all}
+.achv summary::-webkit-details-marker{display:none}
+.achv summary::after{content:'▼';float:right;font-size:11px;color:var(--muted);margin-top:3px}
+.achv[open] summary::after{content:'▲'}
+.achv summary .hl{color:var(--gold);font-weight:700}
+#achvBody{padding:2px 14px 14px;border-top:1px solid var(--line)}
+.prog{margin-top:10px;font-size:12.5px;color:var(--muted)}
+.bar{height:10px;border-radius:5px;background:#EEF1F5;overflow:hidden;margin:5px 0 2px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#D9B25C);border-radius:5px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.stat{background:#F8F5EC;border-radius:10px;padding:8px 4px;text-align:center}
+.stat b{display:block;font-family:var(--serif);font-size:19px;color:var(--marian)}
+.stat span{font-size:11.5px;color:var(--muted)}
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-top:12px}
+.badge{border:1px solid var(--line);border-radius:10px;padding:8px 4px;text-align:center;font-size:11.5px;color:var(--muted);line-height:1.35;word-break:keep-all}
+.badge .bi{display:block;font-size:22px;filter:grayscale(1);opacity:.35}
+.badge.on{border-color:var(--gold-soft);background:#FBF6E8;color:var(--ink);font-weight:500}
+.badge.on .bi{filter:none;opacity:1}
+.done-btn{display:block;width:100%;margin-top:12px;padding:13px;border:none;border-radius:var(--radius);background:var(--marian);color:#fff;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer}
+.done-btn.on{background:#fff;color:var(--gold);border:1.5px solid var(--gold-soft);cursor:default}
+.done-btn[hidden]{display:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);max-width:calc(100% - 32px);background:var(--marian-dark);color:#fff;font-size:14px;padding:11px 18px;border-radius:22px;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;text-align:center;word-break:keep-all;z-index:20}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var(--muted);text-align:center;word-break:keep-all}
 </style>
 </head>
@@ -63,7 +87,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
   <div class="cross">✚ ✚ ✚</div>
   <h1>오늘의 성경 한 장</h1>
-  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터</p>
+  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터 · 다 읽으면 🏅 기록</p>
 </header>
 
 <main>
@@ -83,14 +107,139 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     <span class="pstate" id="pstate"></span>
   </div>
   <div class="notice" id="notice" hidden></div>
+  <details class="achv" id="achv">
+    <summary id="achvSum">🏅 나의 성경 읽기</summary>
+    <div id="achvBody"></div>
+  </details>
   <div class="text" id="text"><div class="empty">오늘의 본문을 불러오는 중…</div></div>
+  <button class="done-btn" id="doneBtn" type="button" hidden>✓ 오늘의 한 장 다 읽었어요</button>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer>
   본문 출처: 한국천주교주교회의 「성경」 · <a id="srcLink" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">bible.cbck.or.kr</a><br>
   녹음 음성은 날마다 자동으로 만든 음성(Microsoft 음성 합성)이며, 화면이 꺼져도 계속 들립니다.<br>
   기기 음성은 이 폰에 들어 있는 목소리로 읽으며, 화면이 꺼지면 멈출 수 있습니다.
 </footer>
+
+<script>
+// 나의 성경 읽기 기록 — 읽은 장과 읽은 날을 이 기기(localStorage 'bibleReadLog')에 저장하고,
+// 진행률·연속 일수·배지로 보여 준다. 끝까지 들으면 저절로, 눈으로 읽었으면 '다 읽었어요'로 기록한다.
+// 메인 화면(index.html)의 성경 읽어주기 카드도 같은 기록을 읽어 요약을 보여 준다.
+window.BibleLog = (function(){
+  var KEY = 'bibleReadLog';
+  // bible.cbck.or.kr/Knb 목차 순서의 장 수 (구약 46권, 신약 27권)
+  var CODES = 'Gn Ex Lv Nm Dt Jos Jgs Ru 1Sm 2Sm 1Kgs 2Kgs 1Chr 2Chr Ezr Neh Tb Jdt Est 1Mc 2Mc Jb Ps Prv Eccl Sng Wis Sir Is Jer Lam Bar Ez Dn Hos Jl Am Ob Jon Mi Na Hb Zep Hg Zec Mal Mt Mk Lk Jn Acts Rom 1Cor 2Cor Gal Eph Phil Col 1Thes 2Thes 1Tm 2Tm Ti Phlm Heb Jas 1Pt 2Pt 1Jn 2Jn 3Jn Jude Rv'.split(' ');
+  var COUNTS = [50,40,27,36,34,24,21,4,31,24,22,25,29,36,10,13,14,16,10,16,15,42,150,31,12,8,19,51,66,52,5,6,48,14,14,4,9,1,4,7,3,3,3,2,14,3,28,16,24,21,28,16,16,13,6,6,4,4,5,3,6,4,3,1,13,5,5,3,5,1,1,1,22];
+  var OT = 46, TOTAL = 1328;
+  var sumEl = document.getElementById('achvSum');
+  var bodyEl = document.getElementById('achvBody');
+  var doneBtn = document.getElementById('doneBtn');
+  var toastEl = document.getElementById('toast');
+  var day = null, toastTimer = null;
+
+  function load(){
+    var d = null;
+    try { d = JSON.parse(localStorage.getItem(KEY)); } catch (e) {}
+    if (!d || typeof d !== 'object') d = {};
+    if (!d.ch || typeof d.ch !== 'object') d.ch = {};
+    if (!Array.isArray(d.days)) d.days = [];
+    return d;
+  }
+  function save(d){ try { localStorage.setItem(KEY, JSON.stringify(d)); return true; } catch (e) { return false; } }
+  function todayKST(){ return new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }); }
+  function dayNum(s){ var p = s.split('-'); return Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000); }
+  function key(d){ return d.code + '/' + d.chapter; }
+
+  function stats(d){
+    var nums = d.days.map(dayNum).sort(function(a, b){ return a - b; });
+    var best = 0, run = 0, prev = null;
+    nums.forEach(function(n){ run = (prev !== null && n === prev + 1) ? run + 1 : (n === prev ? run : 1); prev = n; if (run > best) best = run; });
+    var set = {}; nums.forEach(function(n){ set[n] = true; });
+    var t = dayNum(todayKST()), cur = 0, s = set[t] ? t : t - 1;
+    while (set[s]) { cur++; s--; }
+    var booksDone = {}, doneCount = 0;
+    CODES.forEach(function(c, i){
+      var all = true;
+      for (var k = 1; k <= COUNTS[i]; k++) if (!d.ch[c + '/' + k]) { all = false; break; }
+      if (all) { booksDone[i] = true; doneCount++; }
+    });
+    return { total: Object.keys(d.ch).length, cur: cur, best: best, booksDone: booksDone, doneCount: doneCount };
+  }
+  function range(st, a, b){ for (var i = a; i <= b; i++) if (!st.booksDone[i]) return false; return true; }
+
+  var BADGES = [
+    ['🌱', '첫걸음', function(s){ return s.total >= 1; }],
+    ['🔥', '3일 연속', function(s){ return s.best >= 3; }],
+    ['⭐', '7일 연속', function(s){ return s.best >= 7; }],
+    ['🌙', '30일 연속', function(s){ return s.best >= 30; }],
+    ['👑', '100일 연속', function(s){ return s.best >= 100; }],
+    ['📗', '10장', function(s){ return s.total >= 10; }],
+    ['📘', '50장', function(s){ return s.total >= 50; }],
+    ['📙', '100장', function(s){ return s.total >= 100; }],
+    ['🗓️', '365장', function(s){ return s.total >= 365; }],
+    ['📜', '창세기 완독', function(s){ return range(s, 0, 0); }],
+    ['⛰️', '모세오경 완독', function(s){ return range(s, 0, 4); }],
+    ['🎵', '시편 완독', function(s){ return range(s, 22, 22); }],
+    ['🕯️', '구약 완독', function(s){ return range(s, 0, OT - 1); }],
+    ['✝️', '4복음서 완독', function(s){ return range(s, OT, OT + 3); }],
+    ['🕊️', '신약 완독', function(s){ return range(s, OT, CODES.length - 1); }],
+    ['🏆', '성경 전체 완독', function(s){ return s.total >= TOTAL; }]
+  ];
+  function earned(st){ return BADGES.filter(function(b){ return b[2](st); }).map(function(b){ return b[1]; }); }
+
+  function render(){
+    var d = load(), st = stats(d), got = earned(st);
+    sumEl.innerHTML = st.total
+      ? '🏅 나의 성경 읽기 · <span class="hl">' + st.total + '장</span> · 🔥 ' + st.cur + '일 연속 · 배지 ' + got.length + '개'
+      : '🏅 나의 성경 읽기 · 오늘의 한 장부터 시작해 보세요';
+    var pct = Math.round(st.total / TOTAL * 1000) / 10;
+    var html = '<div class="prog">성경 전체 ' + st.total + ' / ' + TOTAL + '장 (' + pct + '%)' +
+      '<div class="bar"><i style="width:' + Math.min(100, st.total / TOTAL * 100) + '%"></i></div></div>' +
+      '<div class="stats"><div class="stat"><b>' + st.cur + '일</b><span>지금 연속</span></div>' +
+      '<div class="stat"><b>' + st.best + '일</b><span>최장 연속</span></div>' +
+      '<div class="stat"><b>' + st.doneCount + '권</b><span>완독한 책</span></div></div><div class="badges">';
+    BADGES.forEach(function(b){
+      var on = got.indexOf(b[1]) >= 0;
+      html += '<div class="badge' + (on ? ' on' : '') + '"><span class="bi">' + b[0] + '</span>' + b[1] + '</div>';
+    });
+    bodyEl.innerHTML = html + '</div><div class="prog">기록은 이 기기(브라우저)에만 저장됩니다.</div>';
+    if (day) {
+      var done = !!d.ch[key(day)];
+      doneBtn.hidden = false;
+      doneBtn.classList.toggle('on', done);
+      doneBtn.textContent = done ? '✓ ' + day.book + ' ' + day.chapter + '장 읽기 완료' : '✓ 오늘의 한 장 다 읽었어요';
+    }
+  }
+
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 4000);
+  }
+
+  function mark(){
+    if (!day) return;
+    var d = load(), k = key(day);
+    if (d.ch[k]) return;
+    var before = earned(stats(d));
+    var t = todayKST();
+    d.ch[k] = t;
+    if (d.days.indexOf(t) < 0) d.days.push(t);
+    if (!save(d)) { toast('이 브라우저에서는 기록을 저장할 수 없습니다.'); return; }
+    var st = stats(d);
+    var fresh = earned(st).filter(function(n){ return before.indexOf(n) < 0; });
+    render();
+    toast('🎉 ' + day.book + ' ' + day.chapter + '장 완료! 모두 ' + st.total + '장 · 🔥 ' + st.cur + '일 연속' +
+      (fresh.length ? ' · 🏅 새 배지: ' + fresh.join(', ') : ''));
+  }
+
+  doneBtn.addEventListener('click', mark);
+  render();
+  return { attach: function(d){ day = d; render(); }, mark: mark };
+})();
+</script>
 
 <script>
 // 본문은 scripts/fetch_bible_today.py 가 날마다 data/bible_today.json 에 받아 둔다(오늘·내일 두 장).
@@ -186,6 +335,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   function finished(){
     playing = false; pos = 0; setCur(-1); keepAwake(false); render();
     stateEl.textContent = '다 읽었습니다 ✚';
+    if (window.BibleLog) BibleLog.mark();   // 끝까지 들으면 읽은 장으로 기록
   }
 
   // ── 녹음 음성 ──
@@ -308,6 +458,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     textEl.innerHTML = html;
     textEl.querySelectorAll('[data-i]').forEach(function(el){ parts[+el.getAttribute('data-i')].el = el; });
     document.title = day.book + ' ' + day.chapter + '장 ✚ 오늘의 성경 읽어주기';
+    if (window.BibleLog) BibleLog.attach(day);
 
     var hasFile = !!(day.audio && day.audio.url && day.audio.marks && day.audio.marks.length === parts.length);
     if (hasFile) marks = day.audio.marks;

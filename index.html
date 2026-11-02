@@ -2469,7 +2469,23 @@
         card.href = 'https://bible.cbck.or.kr/Knb/' + b[0] + '/' + ch;
         desc.textContent = '오늘의 한 장: ' + b[1] + ' ' + ch + '장 (' + (i < OT ? '구약' : '신약') + ' · ' + seq + '/' + total + ')';
         var readDesc = document.getElementById('bibleReadDesc');
-        if (readDesc) readDesc.textContent = b[1] + ' ' + ch + '장을 본문과 함께 소리로 듣기';
+        if (readDesc) {
+          var text = b[1] + ' ' + ch + '장을 본문과 함께 소리로 듣기';
+          // 성경 읽어주기 화면(bible_read.html)이 이 기기에 남긴 읽기 기록 요약
+          try {
+            var log = JSON.parse(localStorage.getItem('bibleReadLog'));
+            var cnt = log && log.ch ? Object.keys(log.ch).length : 0;
+            if (cnt) {
+              var set = {}, tn = day + Math.floor(Date.UTC(2026, 10, 2) / 86400000);
+              (log.days || []).forEach(function(s){ var q = s.split('-'); set[Math.floor(Date.UTC(+q[0], +q[1] - 1, +q[2]) / 86400000)] = true; });
+              var streak = 0, s = set[tn] ? tn : tn - 1;
+              while (set[s]) { streak++; s--; }
+              text = (log.ch[b[0] + '/' + ch] ? '✓ 오늘 완료 · ' : b[1] + ' ' + ch + '장 듣기 · ') +
+                '🏅 ' + cnt + '장 · 🔥 ' + streak + '일 연속';
+            }
+          } catch (e) {}
+          readDesc.textContent = text;
+        }
       })();
       </script>
 

@@ -2284,7 +2284,8 @@
         '<span>✦ <strong>미니다큐 가톨릭발전소</strong> 시기에 맞는 가톨릭 미니 다큐멘터리 영상을 한 편씩 골라 줍니다</span>',
         '<span>✦ <strong>성경공부</strong> 구약·신약 성경과 성경과외 해주는 신부 자료를 모아 두었습니다</span>',
         '<span>✦ <strong>축일 달력</strong> 축일 목록을 날짜별로 보며, 계절에 따라 색이 바뀝니다</span>',
-        '<span>✦ <strong>가톨릭대사전</strong> 주간·월간 인기 표제어를 날마다 하나씩 골라 바로 이어 줍니다</span>'
+        '<span>✦ <strong>가톨릭대사전</strong> 주간·월간 인기 표제어를 날마다 하나씩 골라 바로 이어 줍니다</span>',
+        '<span>✦ <strong>성경</strong> 창세기부터 요한 묵시록까지 날마다 한 장씩 차례로 이어 줍니다</span>'
       ];
     }
     var items = [].concat(S.guide, S.muksang, S.gospel, S.feast, S.season, S.base);
@@ -2431,11 +2432,36 @@
         <div class="lc-desc">교황청 공식 뉴스 서비스</div>
       </a>
 
-      <a class="link-card" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">
+      <a class="link-card" id="bibleCard" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">✝️</span><span class="lc-go">→</span></div>
         <div class="lc-name">성경</div>
-        <div class="lc-desc">한국천주교주교회의 새 번역 성경 (온라인)</div>
+        <div class="lc-desc" id="bibleDesc">한국천주교주교회의 새 번역 성경 (온라인)</div>
       </a>
+      <script>
+      // 성경 — 날마다 한 장씩, 창세기 1장부터 요한 묵시록 22장까지 차례로 연결한다.
+      // 2026-11-02(KST)이 창세기 1장이고, 1328장을 다 읽으면 다시 창세기부터 돈다.
+      // 책 순서·장 수는 bible.cbck.or.kr/Knb 목차 그대로 (구약 46권, 신약 27권).
+      (function(){
+        var card = document.getElementById('bibleCard');
+        var desc = document.getElementById('bibleDesc');
+        if (!card || !desc) return;
+        var BOOKS = [["Gn","창세기",50],["Ex","탈출기",40],["Lv","레위기",27],["Nm","민수기",36],["Dt","신명기",34],["Jos","여호수아기",24],["Jgs","판관기",21],["Ru","룻기",4],["1Sm","사무엘기 상권",31],["2Sm","사무엘기 하권",24],["1Kgs","열왕기 상권",22],["2Kgs","열왕기 하권",25],["1Chr","역대기 상권",29],["2Chr","역대기 하권",36],["Ezr","에즈라기",10],["Neh","느헤미야기",13],["Tb","토빗기",14],["Jdt","유딧기",16],["Est","에스테르기",10],["1Mc","마카베오기 상권",16],["2Mc","마카베오기 하권",15],["Jb","욥기",42],["Ps","시편",150],["Prv","잠언",31],["Eccl","코헬렛",12],["Sng","아가",8],["Wis","지혜서",19],["Sir","집회서",51],["Is","이사야서",66],["Jer","예레미야서",52],["Lam","애가",5],["Bar","바룩서",6],["Ez","에제키엘서",48],["Dn","다니엘서",14],["Hos","호세아서",14],["Jl","요엘서",4],["Am","아모스서",9],["Ob","오바드야서",1],["Jon","요나서",4],["Mi","미카서",7],["Na","나훔서",3],["Hb","하바쿡서",3],["Zep","스바니야서",3],["Hg","하까이서",2],["Zec","즈카르야서",14],["Mal","말라키서",3],["Mt","마태오 복음서",28],["Mk","마르코 복음서",16],["Lk","루카 복음서",24],["Jn","요한 복음서",21],["Acts","사도행전",28],["Rom","로마 신자들에게 보낸 서간",16],["1Cor","코린토 신자들에게 보낸 첫째 서간",16],["2Cor","코린토 신자들에게 보낸 둘째 서간",13],["Gal","갈라티아 신자들에게 보낸 서간",6],["Eph","에페소 신자들에게 보낸 서간",6],["Phil","필리피 신자들에게 보낸 서간",4],["Col","콜로새 신자들에게 보낸 서간",4],["1Thes","테살로니카 신자들에게 보낸 첫째 서간",5],["2Thes","테살로니카 신자들에게 보낸 둘째 서간",3],["1Tm","티모테오에게 보낸 첫째 서간",6],["2Tm","티모테오에게 보낸 둘째 서간",4],["Ti","티토에게 보낸 서간",3],["Phlm","필레몬에게 보낸 서간",1],["Heb","히브리인들에게 보낸 서간",13],["Jas","야고보 서간",5],["1Pt","베드로의 첫째 서간",5],["2Pt","베드로의 둘째 서간",3],["1Jn","요한의 첫째 서간",5],["2Jn","요한의 둘째 서간",1],["3Jn","요한의 셋째 서간",1],["Jude","유다 서간",1],["Rv","요한 묵시록",22]];
+        var OT = 46, total = 0;
+        BOOKS.forEach(function(b){ total += b[2]; });
+        var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+        var p = today.split('-');
+        var day = Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000) - Math.floor(Date.UTC(2026, 10, 2) / 86400000);
+        var n = ((day % total) + total) % total;   // 시작일 이전 날짜도 안전하게
+        var seq = n + 1;
+        for (var i = 0; i < BOOKS.length; i++) {
+          if (n < BOOKS[i][2]) break;
+          n -= BOOKS[i][2];
+        }
+        var b = BOOKS[i], ch = n + 1;
+        card.href = 'https://bible.cbck.or.kr/Knb/' + b[0] + '/' + ch;
+        desc.textContent = '오늘의 한 장: ' + b[1] + ' ' + ch + '장 (' + (i < OT ? '구약' : '신약') + ' · ' + seq + '/' + total + ')';
+      })();
+      </script>
 
       <a class="link-card" href="mass-grade-cards.html">
         <div class="lc-top"><span class="lc-icon">🎖️</span><span class="lc-go">→</span></div>

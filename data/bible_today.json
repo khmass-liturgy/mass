@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02 21:33",
+ "updated": "2026-11-02 21:43",
  "source": "https://bible.cbck.or.kr/Knb",
  "days": [
   {
@@ -141,8 +141,8 @@
     }
    ],
    "audio": {
-    "ver": 2,
-    "url": "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/2026-11-02.mp3",
+    "ver": 3,
+    "file": "2026-11-02.mp3",
     "duration": 279.9,
     "marks": [
      0.0,
@@ -178,7 +178,8 @@
      250.18,
      261.58,
      271.25
-    ]
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@42d6346b779fef04b4660e572aa6e33bd96cdfa9/2026-11-02.mp3"
    }
   },
   {
@@ -300,8 +301,8 @@
     }
    ],
    "audio": {
-    "ver": 2,
-    "url": "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/2026-11-03.mp3",
+    "ver": 3,
+    "file": "2026-11-03.mp3",
     "duration": 217.4,
     "marks": [
      0.0,
@@ -332,7 +333,8 @@
      195.0,
      205.9,
      212.26
-    ]
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@42d6346b779fef04b4660e572aa6e33bd96cdfa9/2026-11-03.mp3"
    }
   }
  ]

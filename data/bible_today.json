@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02 21:31",
+ "updated": "2026-11-02 21:33",
  "source": "https://bible.cbck.or.kr/Knb",
  "days": [
   {
@@ -141,6 +141,7 @@
     }
    ],
    "audio": {
+    "ver": 2,
     "url": "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/2026-11-02.mp3",
     "duration": 279.9,
     "marks": [
@@ -299,6 +300,7 @@
     }
    ],
    "audio": {
+    "ver": 2,
     "url": "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/2026-11-03.mp3",
     "duration": 217.4,
     "marks": [

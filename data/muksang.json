@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02 09:30",
+  "updated": "2026-11-02 19:51",
   "cutoff": "2026-11-01",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7447",
+      "title": "전삼용 요셉 신부 / 연중 제31주간 화요일 - 우리가 오래 살아야 하는 이유; 더 많이 실망하기 위해",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-02",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7447",
+      "mass_date": "2026-11-03",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 화요일 복음: 루카 14,15-24…"
+    },
     {
       "id": "daum_catholicsb_7445",
       "title": "전삼용 요셉 신부 / 11월02일 위령의 날 둘째 미사- 연옥의 존재 이유: 우리 안에 다 자라지 못한 십자가가 있다",
@@ -48,6 +58,16 @@
       "mass_date": "2026-11-02",
       "priest": "양승국",
       "excerpt": "죽음 안에 삶이 있고 삶 안에 죽음이 있습니다!"
+    },
+    {
+      "id": "daum_bbadaking_212",
+      "title": "죽은 후에 어떻게 되느냐를 묻기보다 지금 어떻게 하느님과 함께 살아갈 것인지…",
+      "author": "환희 평화",
+      "date": "2026-11-02",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/212",
+      "mass_date": "2026-11-02",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "2139696",

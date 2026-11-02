@@ -46,9 +46,18 @@ jobs:
           gh release view bible-audio >/dev/null 2>&1 || \
             gh release create bible-audio --title "성경 읽어주기 음성" \
               --notes "오늘의 성경 한 장 읽어주기 음성 (자동 생성, 오늘·내일 두 장만 보관)" --latest=false
-          if ls build/bible_audio/*.mp3 >/dev/null 2>&1; then
-            gh release upload bible-audio build/bible_audio/*.mp3 --clobber
-          fi
+          # gh release upload 는 mp3 를 application/octet-stream 으로 올려 아이폰 사파리가
+          # 재생하지 못할 수 있다. API 로 직접 올려 Content-Type: audio/mpeg 을 붙인다.
+          rel_id=$(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/bible-audio" -q .id)
+          for f in build/bible_audio/*.mp3; do
+            [ -e "$f" ] || continue
+            name=$(basename "$f")
+            gh release delete-asset bible-audio "$name" -y 2>/dev/null || true
+            curl -sSf -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H "Content-Type: audio/mpeg" \
+              --data-binary @"$f" \
+              "https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${rel_id}/assets?name=${name}" >/dev/null
+            echo "uploaded $name"
+          done
           keep=$(python -c "import json;print(' '.join(d['date']+'.mp3' for d in json.load(open('data/bible_today.json',encoding='utf-8'))['days']))")
           for a in $(gh release view bible-audio --json assets -q '.assets[].name'); do
             case " $keep " in *" $a "*) ;; *) gh release delete-asset bible-audio "$a" -y ;; esac

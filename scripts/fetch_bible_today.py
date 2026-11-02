@@ -45,6 +45,8 @@ AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
 AUDIO_URL = "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/{date}.mp3"
 VOICE = "ko-KR-SunHiNeural"
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
+# 음성 만드는 방식(목소리·업로드 형식 등)을 바꾸면 올린다 — 이미 올라간 음성도 다시 만든다.
+AUDIO_VER = 2
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -147,7 +149,7 @@ async def build_audio(day: dict) -> dict:
         out += await synth(text)
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     (AUDIO_DIR / f"{day['date']}.mp3").write_bytes(out)
-    return {"url": AUDIO_URL.format(date=day["date"]),
+    return {"ver": AUDIO_VER, "url": AUDIO_URL.format(date=day["date"]),
             "duration": round(len(out) / BYTES_PER_SEC, 1), "marks": marks}
 
 
@@ -170,7 +172,8 @@ def main() -> int:
             pass
         for day in days:
             prev = old.get(day["date"])
-            if prev and prev.get("audio") and prev.get("items") == day["items"]:
+            if (prev and prev.get("audio", {}).get("ver") == AUDIO_VER
+                    and prev.get("items") == day["items"]):
                 day["audio"] = prev["audio"]
                 continue
             try:

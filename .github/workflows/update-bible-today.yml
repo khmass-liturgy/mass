@@ -37,31 +37,45 @@ jobs:
       - name: Fetch 오늘·내일 성경 본문 + 읽어주기 음성
         run: python scripts/fetch_bible_today.py --audio
 
-      # 음성 mp3 는 저장소를 키우지 않도록 Release 'bible-audio' 에 올리고,
-      # 오늘·내일 것 말고는 지운다. 업로드가 끝난 뒤에야 JSON 을 커밋한다.
-      - name: Upload 음성 to Release
+      # 음성 mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 오늘·내일 두 파일만 담은
+      # 커밋 하나로 덮어쓴다(이전 파일은 이력에 남지 않는다). 재생은 그 커밋에 고정한
+      # jsDelivr 주소로 한다 — 올바른 audio/mpeg 형식이고, 새 커밋이라 캐시가 꼬이지 않는다.
+      # 올리고 jsDelivr 에서 받아지는 것을 확인한 뒤에야 JSON 을 커밋한다.
+      - name: Publish 음성 to bible-audio branch
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view bible-audio >/dev/null 2>&1 || \
-            gh release create bible-audio --title "성경 읽어주기 음성" \
-              --notes "오늘의 성경 한 장 읽어주기 음성 (자동 생성, 오늘·내일 두 장만 보관)" --latest=false
-          # gh release upload 는 mp3 를 application/octet-stream 으로 올려 아이폰 사파리가
-          # 재생하지 못할 수 있다. API 로 직접 올려 Content-Type: audio/mpeg 을 붙인다.
-          rel_id=$(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/bible-audio" -q .id)
-          for f in build/bible_audio/*.mp3; do
-            [ -e "$f" ] || continue
-            name=$(basename "$f")
-            gh release delete-asset bible-audio "$name" -y 2>/dev/null || true
-            curl -sSf -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H "Content-Type: audio/mpeg" \
-              --data-binary @"$f" \
-              "https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${rel_id}/assets?name=${name}" >/dev/null
-            echo "uploaded $name"
+          ls build/bible_audio/*.mp3 >/dev/null 2>&1 || { echo "음성 없음"; exit 0; }
+          cd build/bible_audio
+          git init -q -b bible-audio
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.mp3
+          git commit -q -m "성경 읽어주기 음성 ($(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M KST'))"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" bible-audio
+          sha=$(git rev-parse HEAD)
+          cd "$GITHUB_WORKSPACE"
+          python - "$sha" <<'EOF'
+          import json, sys, os
+          p = "data/bible_today.json"
+          d = json.load(open(p, encoding="utf-8"))
+          for day in d["days"]:
+              a = day.get("audio")
+              if a:
+                  a["url"] = f"https://cdn.jsdelivr.net/gh/{os.environ['GITHUB_REPOSITORY']}@{sys.argv[1]}/{a['file']}"
+                  print(a["url"])
+          with open(p, "w", encoding="utf-8", newline="\n") as f:
+              json.dump(d, f, ensure_ascii=False, indent=1)
+              f.write("\n")
+          EOF
+          for u in $(python -c "import json;print(' '.join(x['audio']['url'] for x in json.load(open('data/bible_today.json',encoding='utf-8'))['days'] if x.get('audio')))"); do
+            for i in 1 2 3 4 5 6; do
+              curl -sfI "$u" | grep -qi '^content-type: audio/mpeg' && { echo "ok $u"; break; }
+              sleep 10
+            done
           done
-          keep=$(python -c "import json;print(' '.join(d['date']+'.mp3' for d in json.load(open('data/bible_today.json',encoding='utf-8'))['days']))")
-          for a in $(gh release view bible-audio --json assets -q '.assets[].name'); do
-            case " $keep " in *" $a "*) ;; *) gh release delete-asset bible-audio "$a" -y ;; esac
-          done
+          # 예전에 쓰던 Release 저장소는 지운다.
+          gh release delete bible-audio --cleanup-tag -y 2>/dev/null || true
 
       - name: Commit & push if changed
         run: |

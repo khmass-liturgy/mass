@@ -23,7 +23,9 @@ Actions 실행이 늦어져도 자정을 넘기면 바로 쓸 수 있게 오늘�
 edge-tts(ko-KR-SunHiNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
 시작하는 시각(marks)을 함께 적어 둔다 — 화면이 읽는 절을 따라가고, 절을 누르면 그리로 간다.
 edge-tts 출력은 고정 48kbps(CBR) mp3 라 바이트 수로 길이를 바로 계산한다.
-mp3 는 저장소를 키우지 않도록 GitHub Release 'bible-audio' 에 올린다(워크플로가 업로드).
+mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 오늘·내일 두 파일만 커밋 하나로
+덮어써 올리고(워크플로), jsDelivr(커밋 고정 주소, audio/mpeg)로 재생한다.
+GitHub Release 파일은 늘 application/octet-stream 으로 내려와 아이폰에서 못 틀 수 있어 쓰지 않는다.
 """
 
 import asyncio
@@ -42,11 +44,10 @@ KST = ZoneInfo("Asia/Seoul")
 EPOCH = date(2026, 11, 2)
 OUT = Path(__file__).resolve().parent.parent / "data" / "bible_today.json"
 AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
-AUDIO_URL = "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/{date}.mp3"
 VOICE = "ko-KR-SunHiNeural"
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
-# 음성 만드는 방식(목소리·업로드 형식 등)을 바꾸면 올린다 — 이미 올라간 음성도 다시 만든다.
-AUDIO_VER = 2
+# JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
+AUDIO_VER = 3
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -149,7 +150,8 @@ async def build_audio(day: dict) -> dict:
         out += await synth(text)
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     (AUDIO_DIR / f"{day['date']}.mp3").write_bytes(out)
-    return {"ver": AUDIO_VER, "url": AUDIO_URL.format(date=day["date"]),
+    # url 은 워크플로가 bible-audio 브랜치에 올린 뒤 그 커밋으로 채운다.
+    return {"ver": AUDIO_VER, "file": f"{day['date']}.mp3",
             "duration": round(len(out) / BYTES_PER_SEC, 1), "marks": marks}
 
 
@@ -163,19 +165,9 @@ def main() -> int:
         return 1
 
     if want_audio:
-        # 어제 받아 둔 '내일' 장의 음성이 이미 올라가 있으면 다시 만들지 않는다.
-        old = {}
-        try:
-            for d in json.loads(OUT.read_text(encoding="utf-8")).get("days", []):
-                old[d["date"]] = d
-        except Exception:
-            pass
+        # 오늘·내일 두 장을 매번 새로 만든다. 'bible-audio' 브랜치를 이 두 파일로 통째로
+        # 덮어쓰므로(워크플로), 이전에 만든 파일을 다시 쓰지 않는다.
         for day in days:
-            prev = old.get(day["date"])
-            if (prev and prev.get("audio", {}).get("ver") == AUDIO_VER
-                    and prev.get("items") == day["items"]):
-                day["audio"] = prev["audio"]
-                continue
             try:
                 day["audio"] = asyncio.run(build_audio(day))
                 print("  audio:", day["date"], day["audio"]["duration"], "s")

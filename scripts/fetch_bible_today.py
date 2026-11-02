@@ -6,7 +6,8 @@ data/bible_today.json 으로 저장한다. bible_read.html 이 이 본문을 보
 
 날짜 → 장 계산은 index.html 성경 카드와 같다: 2026-11-02(KST)이 창세기 1장이고
 하루 한 장씩 요한 묵시록 22장까지 간 뒤 다시 처음으로 돈다.
-Actions 실행이 늦어져도 자정을 넘기면 바로 쓸 수 있게 오늘과 내일 두 장을 받는다.
+지난 7일(다시 읽기)·오늘·내일(미리 읽기, 자정이 지나면 바로 오늘 장) 아홉 장을 받는다.
+2026-11-02 이전 날짜는 없으므로 처음 며칠은 그보다 적다.
 
 장 화면 구조 (서버에서 그려 내려오는 HTML)
 ------------------------------------------
@@ -23,8 +24,9 @@ Actions 실행이 늦어져도 자정을 넘기면 바로 쓸 수 있게 오늘�
 edge-tts(ko-KR-HyunsuMultilingualNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
 시작하는 시각(marks)을 함께 적어 둔다 — 화면이 읽는 절을 따라가고, 절을 누르면 그리로 간다.
 edge-tts 출력은 고정 48kbps(CBR) mp3 라 바이트 수로 길이를 바로 계산한다.
-mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 오늘·내일 두 파일만 커밋 하나로
+mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 받은 날짜의 파일만 커밋 하나로
 덮어써 올리고(워크플로), jsDelivr(커밋 고정 주소, audio/mpeg)로 재생한다.
+이미 만든 날의 음성은 지난 JSON 의 주소에서 내려받아 다시 쓰고, 못 받으면 새로 만든다.
 GitHub Release 파일은 늘 application/octet-stream 으로 내려와 아이폰에서 못 틀 수 있어 쓰지 않는다.
 """
 
@@ -48,6 +50,7 @@ VOICE = "ko-KR-HyunsuMultilingualNeural"   # 한국어 음성 셋(선희·인준
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
 # JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
 AUDIO_VER = 5
+PAST_DAYS = 7   # 다시 읽을 수 있게 남겨 두는 지난 날 수
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -167,21 +170,53 @@ async def build_audio(day: dict) -> dict:
             "duration": round(len(out) / BYTES_PER_SEC, 1), "marks": marks}
 
 
+def reuse_audio(old: dict | None, day: dict) -> dict | None:
+    """지난번에 만든 같은 장의 음성을 그 주소에서 내려받아 다시 쓴다. 못 쓰면 None."""
+    a = (old or {}).get("audio")
+    if not a or a.get("ver") != AUDIO_VER or not a.get("url") or old.get("code") != day["code"] \
+            or old.get("chapter") != day["chapter"] or old.get("items") != day["items"]:
+        return None
+    try:
+        r = requests.get(a["url"], timeout=60)
+        r.raise_for_status()
+        if abs(len(r.content) / BYTES_PER_SEC - a["duration"]) > 1:
+            return None
+    except Exception as e:
+        print("  audio reuse failed:", day["date"], e, file=sys.stderr)
+        return None
+    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    (AUDIO_DIR / a["file"]).write_bytes(r.content)
+    return {k: v for k, v in a.items() if k != "url"}   # url 은 워크플로가 새 커밋으로 채운다
+
+
 def main() -> int:
     want_audio = "--audio" in sys.argv
     today = datetime.now(KST).date()
     try:
-        days = [fetch_chapter(today + timedelta(days=k)) for k in (0, 1)]
-    except Exception as e:
-        print("bible chapter fetch/parse failed:", e, file=sys.stderr)
-        return 1
+        old = {d["date"]: d for d in json.loads(OUT.read_text(encoding="utf-8")).get("days", [])}
+    except Exception:
+        old = {}
+
+    days = []
+    for k in range(-PAST_DAYS, 2):
+        d = today + timedelta(days=k)
+        if d < EPOCH:
+            continue
+        try:
+            days.append(fetch_chapter(d))
+        except Exception as e:
+            print("bible chapter fetch/parse failed:", d, e, file=sys.stderr)
+            if k >= 0:
+                return 1          # 오늘·내일은 꼭 있어야 한다
+            if d.isoformat() in old:
+                days.append({x: v for x, v in old[d.isoformat()].items() if x != "audio"})
 
     if want_audio:
-        # 오늘·내일 두 장을 매번 새로 만든다. 'bible-audio' 브랜치를 이 두 파일로 통째로
-        # 덮어쓰므로(워크플로), 이전에 만든 파일을 다시 쓰지 않는다.
+        # 'bible-audio' 브랜치를 이번 파일들로 통째로 덮어쓰므로(워크플로), 날마다 모든 날의
+        # mp3 가 build/bible_audio 에 있어야 한다 — 지난번 것을 내려받거나 새로 만든다.
         for day in days:
             try:
-                day["audio"] = asyncio.run(build_audio(day))
+                day["audio"] = reuse_audio(old.get(day["date"]), day) or asyncio.run(build_audio(day))
                 print("  audio:", day["date"], day["audio"]["duration"], "s")
             except Exception as e:
                 print("bible audio failed:", e, file=sys.stderr)   # 음성 없이도 본문은 저장한다

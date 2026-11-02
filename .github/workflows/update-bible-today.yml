@@ -3,7 +3,7 @@ name: Update 오늘의 성경 한 장
 on:
   schedule:
     # UTC 기준 → KST 21:17 (매일)
-    # 오늘·내일 두 장을 받아 두므로, 저녁에 받아 두면 자정이 지나도 바로 읽을 수 있다.
+    # 지난 7일·오늘·내일 장을 받아 두므로, 저녁에 받아 두면 자정이 지나도 바로 읽을 수 있다.
     # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
   - cron: '17 12 * * *'
   workflow_dispatch: {}
@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies
         run: pip install requests edge-tts
 
-      - name: Fetch 오늘·내일 성경 본문 + 읽어주기 음성
+      - name: Fetch 지난 7일·오늘·내일 성경 본문 + 읽어주기 음성
         run: python scripts/fetch_bible_today.py --audio
 
-      # 음성 mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 오늘·내일 두 파일만 담은
+      # 음성 mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 받은 날짜(최대 9일)의 파일만 담은
       # 커밋 하나로 덮어쓴다(이전 파일은 이력에 남지 않는다). 재생은 그 커밋에 고정한
       # jsDelivr 주소로 한다 — 올바른 audio/mpeg 형식이고, 새 커밋이라 캐시가 꼬이지 않는다.
       # 올리고 jsDelivr 에서 받아지는 것을 확인한 뒤에야 JSON 을 커밋한다.

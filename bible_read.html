@@ -53,6 +53,14 @@ main{max-width:680px;margin:0 auto;padding:18px 16px}
 .verse .vn{flex:none;min-width:22px;font-family:var(--sans);font-size:11.5px;font-weight:700;color:var(--gold);padding-top:6px;text-align:right}
 .verse .vt{flex:1;white-space:pre-line}
 .verse.cur,.head.cur{background:#FBF1D6}
+.days{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:2px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.days[hidden]{display:none}
+.day{flex:none;min-width:74px;padding:6px 8px;border:1.5px solid var(--line);border-radius:12px;background:#fff;text-align:center;text-decoration:none;color:var(--muted);font-size:11px;line-height:1.35;word-break:keep-all}
+.day b{display:block;font-size:12.5px;font-weight:500;color:var(--ink)}
+.day.read{border-color:var(--gold-soft);background:#FBF6E8}
+.day.sel{border-color:var(--marian);background:var(--marian);color:#C7D4E4}
+.day.sel b{color:#fff}
 .empty{padding:28px 16px;text-align:center;color:var(--muted);font-size:14px;word-break:keep-all}
 .achv{background:var(--card);border:1px solid var(--gold-soft);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
 .achv summary{list-style:none;cursor:pointer;padding:11px 14px;font-size:14px;font-weight:500;color:var(--ink);word-break:keep-all}
@@ -87,7 +95,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
   <div class="cross">✚ ✚ ✚</div>
   <h1>오늘의 성경 한 장</h1>
-  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터 · 다 읽으면 🏅 기록</p>
+  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터 · 다 읽으면 🏅 기록 · 지난 7일 다시 읽기 · 내일 장 미리 읽기</p>
 </header>
 
 <main>
@@ -107,6 +115,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     <span class="pstate" id="pstate"></span>
   </div>
   <div class="notice" id="notice" hidden></div>
+  <nav class="days" id="days" aria-label="읽을 날 고르기" hidden></nav>
   <details class="achv" id="achv">
     <summary id="achvSum">🏅 나의 성경 읽기</summary>
     <div id="achvBody"></div>
@@ -136,7 +145,8 @@ window.BibleLog = (function(){
   var bodyEl = document.getElementById('achvBody');
   var doneBtn = document.getElementById('doneBtn');
   var toastEl = document.getElementById('toast');
-  var day = null, toastTimer = null;
+  var daysEl = document.getElementById('days');
+  var day = null, list = [], toastTimer = null;
 
   function load(){
     var d = null;
@@ -208,8 +218,33 @@ window.BibleLog = (function(){
       var done = !!d.ch[key(day)];
       doneBtn.hidden = false;
       doneBtn.classList.toggle('on', done);
-      doneBtn.textContent = done ? '✓ ' + day.book + ' ' + day.chapter + '장 읽기 완료' : '✓ 오늘의 한 장 다 읽었어요';
+      doneBtn.textContent = done ? '✓ ' + day.book + ' ' + day.chapter + '장 읽기 완료'
+        : (day.date === todayKST() ? '✓ 오늘의 한 장 다 읽었어요' : '✓ 이 장 다 읽었어요');
     }
+    renderDays(d);
+  }
+
+  // 칸에 들어가게 책 이름을 줄인다: '사무엘기 상권' → '사무엘기 상', '코린토 신자들에게 보낸 첫째 서간' → '코린토 1서'
+  function shortBook(b){
+    var n = /첫째/.test(b) ? 1 : /둘째/.test(b) ? 2 : /셋째/.test(b) ? 3 : 0;
+    return b.split(' ')[0] + (/ 상권$/.test(b) ? ' 상' : / 하권$/.test(b) ? ' 하' : n ? ' ' + n + '서' : '');
+  }
+
+  // 지난 7일 · 오늘 · 내일 고르는 칸. 읽은 장은 ✓ 로, 보고 있는 장은 진하게.
+  function renderDays(d){
+    if (!list.length) return;
+    var t = dayNum(todayKST()), html = '';
+    list.forEach(function(x){
+      var n = dayNum(x.date) - t, p = x.date.split('-');
+      var label = n === 0 ? '오늘' : n === 1 ? '내일 미리' : n === -1 ? '어제' : (+p[1]) + '/' + (+p[2]);
+      var cls = 'day' + (d.ch[key(x)] ? ' read' : '') + (day && x.date === day.date ? ' sel' : '');
+      html += '<a class="' + cls + '" href="bible_read.html' + (n === 0 ? '' : '?d=' + x.date) + '">' +
+        (d.ch[key(x)] ? '✓ ' : '') + label + '<b>' + shortBook(x.book) + ' ' + x.chapter + '장</b></a>';
+    });
+    daysEl.innerHTML = html;
+    daysEl.hidden = false;
+    var sel = daysEl.querySelector('.sel');
+    if (sel) daysEl.scrollLeft = sel.offsetLeft - daysEl.clientWidth / 2 + sel.offsetWidth / 2;
   }
 
   function toast(msg){
@@ -237,7 +272,7 @@ window.BibleLog = (function(){
 
   doneBtn.addEventListener('click', mark);
   render();
-  return { attach: function(d){ day = d; render(); }, mark: mark };
+  return { attach: function(d, all){ day = d; list = all || [d]; render(); }, mark: mark };
 })();
 </script>
 
@@ -439,11 +474,14 @@ window.BibleLog = (function(){
   });
   window.addEventListener('pagehide', function(){ if (synth) synth.cancel(); });
 
-  function show(d){
+  function show(d, all){
     day = d;
     document.getElementById('srcLink').href = day.url;
+    var p = day.date.split('-');
+    var when = day.date < today ? '지난 장 · ' + (+p[1]) + '월 ' + (+p[2]) + '일 · '
+      : day.date > today ? '미리 읽기 · 내일(' + (+p[1]) + '월 ' + (+p[2]) + '일) · ' : '';
     var html = '<div class="chap" data-i="0">' + esc(day.book) + ' ' + day.chapter + '장' +
-      '<small>' + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
+      '<small>' + when + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
     parts = [{ say: day.book + ' ' + sino(day.chapter) + '장' }];
     day.items.forEach(function(it){
       var i = parts.length;
@@ -458,7 +496,7 @@ window.BibleLog = (function(){
     textEl.innerHTML = html;
     textEl.querySelectorAll('[data-i]').forEach(function(el){ parts[+el.getAttribute('data-i')].el = el; });
     document.title = day.book + ' ' + day.chapter + '장 ✚ 오늘의 성경 읽어주기';
-    if (window.BibleLog) BibleLog.attach(day);
+    if (window.BibleLog) BibleLog.attach(day, all);
 
     var hasFile = !!(day.audio && day.audio.url && day.audio.marks && day.audio.marks.length === parts.length);
     if (hasFile) marks = day.audio.marks;
@@ -476,13 +514,19 @@ window.BibleLog = (function(){
     render();
   }
 
+  // ?d=YYYY-MM-DD 로 지난 7일 · 내일 장을 고른다. 없거나 범위 밖이면 오늘 장.
   var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+  function shift(s, n){ var p = s.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n)).toISOString().slice(0, 10); }
+  var want = (location.search.match(/[?&]d=(\d{4}-\d{2}-\d{2})/) || [])[1] || today;
   fetch('data/bible_today.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var found = (d.days || []).filter(function(x){ return x.date === today; })[0];
+      var lo = shift(today, -7), hi = shift(today, 1);
+      var all = (d.days || []).filter(function(x){ return x.date >= lo && x.date <= hi; });
+      var pick = function(s){ return all.filter(function(x){ return x.date === s; })[0]; };
+      var found = pick(want) || pick(today);
       if (!found) throw new Error('stale');
-      show(found);
+      show(found, all);
     })
     .catch(function(){
       textEl.innerHTML = '<div class="empty">오늘의 본문을 아직 받아 오지 못했습니다.<br>' +

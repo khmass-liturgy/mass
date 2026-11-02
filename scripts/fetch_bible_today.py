@@ -20,7 +20,7 @@ Actions 실행이 늦어져도 자정을 넘기면 바로 쓸 수 있게 오늘�
 읽어주기 음성 (--audio)
 -----------------------
 기기에 음성 합성(TTS)이 없는 폰(일부 앱 안 브라우저 등)을 위해, 장마다 mp3 를 미리 만든다.
-edge-tts(ko-KR-SunHiNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
+edge-tts(ko-KR-HyunsuMultilingualNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
 시작하는 시각(marks)을 함께 적어 둔다 — 화면이 읽는 절을 따라가고, 절을 누르면 그리로 간다.
 edge-tts 출력은 고정 48kbps(CBR) mp3 라 바이트 수로 길이를 바로 계산한다.
 mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 오늘·내일 두 파일만 커밋 하나로
@@ -44,10 +44,10 @@ KST = ZoneInfo("Asia/Seoul")
 EPOCH = date(2026, 11, 2)
 OUT = Path(__file__).resolve().parent.parent / "data" / "bible_today.json"
 AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
-VOICE = "ko-KR-SunHiNeural"
+VOICE = "ko-KR-HyunsuMultilingualNeural"   # 한국어 음성 셋(선희·인준·현수) 중 억양이 가장 자연스러움
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
 # JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
-AUDIO_VER = 3
+AUDIO_VER = 4
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

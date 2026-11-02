@@ -47,7 +47,7 @@ AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
 VOICE = "ko-KR-HyunsuMultilingualNeural"   # 한국어 음성 셋(선희·인준·현수) 중 억양이 가장 자연스러움
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
 # JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
-AUDIO_VER = 4
+AUDIO_VER = 5
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -119,9 +119,21 @@ def say_text(t: str) -> str:
     return re.sub(r'[\[\]]', '', t).replace('\n', ' ').strip()
 
 
+def sino(n: int) -> str:
+    """장 번호를 한자어 수사로 (1 → 일, 23 → 이십삼, 150 → 백오십).
+    숫자 그대로 두면 음성이 '1장'을 '한 장'으로 읽는다."""
+    d = "영일이삼사오육칠팔구"
+    out = ""
+    for unit, place in ((100, "백"), (10, "십")):
+        q, n = divmod(n, unit)
+        if q:
+            out += ("" if q == 1 else d[q]) + place
+    return out + (d[n] if n else "")
+
+
 def speech_parts(day: dict) -> list:
     """읽는 차례 — bible_read.html 의 parts 와 같은 순서(장 제목, 소제목·절)."""
-    parts = [f"{day['book']} {day['chapter']}장"]
+    parts = [f"{day['book']} {sino(day['chapter'])}장"]
     for it in day["items"]:
         parts.append(it["h"] if "h" in it else say_text(it["t"]))
     return parts

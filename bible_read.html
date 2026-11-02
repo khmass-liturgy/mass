@@ -136,6 +136,17 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     return t.replace(/^\(\d+\)\s*/, '').replace(/[\[\]]/g, '').replace(/\n/g, ' ').trim();
   }
 
+  // 장 번호를 한자어 수사로 (1 → 일, 150 → 백오십). 숫자 그대로면 '1장'을 '한 장'으로 읽는다.
+  // scripts/fetch_bible_today.py 의 sino 와 같다.
+  function sino(n){
+    var d = '영일이삼사오육칠팔구', out = '';
+    [[100, '백'], [10, '십']].forEach(function(u){
+      var q = Math.floor(n / u[0]); n %= u[0];
+      if (q) out += (q === 1 ? '' : d[q]) + u[1];
+    });
+    return out + (n ? d[n] : '');
+  }
+
   function pickVoice(){
     if (!synth) return;
     var vs = synth.getVoices().filter(function(v){ return /^ko/i.test(v.lang); });
@@ -283,7 +294,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     document.getElementById('srcLink').href = day.url;
     var html = '<div class="chap" data-i="0">' + esc(day.book) + ' ' + day.chapter + '장' +
       '<small>' + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
-    parts = [{ say: day.book + ' ' + day.chapter + '장' }];
+    parts = [{ say: day.book + ' ' + sino(day.chapter) + '장' }];
     day.items.forEach(function(it){
       var i = parts.length;
       if (it.h) {

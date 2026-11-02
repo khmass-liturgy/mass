@@ -2285,7 +2285,8 @@
         '<span>✦ <strong>성경공부</strong> 구약·신약 성경과 성경과외 해주는 신부 자료를 모아 두었습니다</span>',
         '<span>✦ <strong>축일 달력</strong> 축일 목록을 날짜별로 보며, 계절에 따라 색이 바뀝니다</span>',
         '<span>✦ <strong>가톨릭대사전</strong> 주간·월간 인기 표제어를 날마다 하나씩 골라 바로 이어 줍니다</span>',
-        '<span>✦ <strong>성경</strong> 창세기부터 요한 묵시록까지 날마다 한 장씩 차례로 이어 줍니다</span>'
+        '<span>✦ <strong>성경</strong> 창세기부터 요한 묵시록까지 날마다 한 장씩 차례로 이어 줍니다</span>',
+        '<span>✦ <strong>성경 읽어주기</strong> 오늘의 한 장을 본문과 함께 기기 음성으로 읽어 드립니다</span>'
       ];
     }
     var items = [].concat(S.guide, S.muksang, S.gospel, S.feast, S.season, S.base);
@@ -2437,6 +2438,11 @@
         <div class="lc-name">성경</div>
         <div class="lc-desc" id="bibleDesc">한국천주교주교회의 새 번역 성경 (온라인)</div>
       </a>
+      <a class="link-card" href="bible_read.html">
+        <div class="lc-top"><span class="lc-icon">🔊</span><span class="lc-go">→</span></div>
+        <div class="lc-name">성경 읽어주기</div>
+        <div class="lc-desc" id="bibleReadDesc">오늘의 한 장을 본문과 함께 소리로 듣기</div>
+      </a>
       <script>
       // 성경 — 날마다 한 장씩, 창세기 1장부터 요한 묵시록 22장까지 차례로 연결한다.
       // 2026-11-02(KST)이 창세기 1장이고, 1328장을 다 읽으면 다시 창세기부터 돈다.
@@ -2460,6 +2466,8 @@
         var b = BOOKS[i], ch = n + 1;
         card.href = 'https://bible.cbck.or.kr/Knb/' + b[0] + '/' + ch;
         desc.textContent = '오늘의 한 장: ' + b[1] + ' ' + ch + '장 (' + (i < OT ? '구약' : '신약') + ' · ' + seq + '/' + total + ')';
+        var readDesc = document.getElementById('bibleReadDesc');
+        if (readDesc) readDesc.textContent = b[1] + ' ' + ch + '장을 본문과 함께 소리로 듣기';
       })();
       </script>
 

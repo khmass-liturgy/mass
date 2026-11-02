@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 성경 한 장 ✚ 읽어주기</title>
+<meta name="description" content="창세기부터 요한 묵시록까지 날마다 한 장 — 본문을 보며 기기의 음성으로 들을 수 있습니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marian:#274B77;
+  --marian-dark:#1B3557;
+  --gold:#B98A2F;
+  --gold-soft:#E4CE96;
+  --ink:#22303F;
+  --muted:#6B7A8C;
+  --bg:#F4F6F9;
+  --card:#FFFFFF;
+  --line:#DDE4EC;
+  --radius:14px;
+  --serif:'Noto Serif KR', serif;
+  --sans:'Noto Sans KR', -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:24px}
+a{color:var(--marian)}
+
+header{background:linear-gradient(160deg,var(--marian-dark),var(--marian));color:#fff;padding:26px 18px 30px;text-align:center;position:relative}
+header .cross{font-size:15px;letter-spacing:8px;color:var(--gold-soft);margin-bottom:8px}
+header h1{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:1px}
+header p{font-size:13px;color:#C7D4E4;margin-top:6px;word-break:keep-all}
+header .home{position:absolute;top:14px;right:14px;font-size:12px;color:#C7D4E4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+
+main{max-width:680px;margin:0 auto;padding:18px 16px}
+.player{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;box-shadow:0 3px 10px rgba(30,53,87,.08);margin-bottom:12px}
+.pbtn{flex:none;height:40px;border:none;border-radius:20px;padding:0 16px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;background:var(--marian);color:#fff}
+.pbtn.ghost{background:#fff;color:var(--marian);border:1.5px solid var(--line)}
+.pbtn.on{background:var(--gold)}
+.pbtn:disabled{background:var(--line);color:var(--muted);cursor:default}
+.rate{flex:none;height:36px;border:1.5px solid var(--line);border-radius:18px;padding:0 10px;font-family:var(--sans);font-size:13px;color:var(--ink);background:#fff}
+.pstate{flex:1;min-width:120px;font-size:12.5px;color:var(--muted);text-align:right;word-break:keep-all}
+.notice{font-size:13px;color:#8A5A12;background:#FBF3E0;border:1px solid var(--gold-soft);border-radius:10px;padding:9px 12px;margin-bottom:12px;word-break:keep-all}
+.notice[hidden]{display:none}
+
+.text{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:8px 16px 14px;box-shadow:0 3px 10px rgba(30,53,87,.06)}
+.chap{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--marian);text-align:center;margin:12px 0 4px}
+.chap small{display:block;font-family:var(--sans);font-weight:400;font-size:12px;color:var(--muted);margin-top:2px}
+.head{font-family:var(--serif);font-weight:600;font-size:15.5px;color:var(--gold);margin:16px 0 4px;cursor:pointer}
+.verse{display:flex;gap:10px;padding:5px 6px;margin:0 -6px;border-radius:8px;cursor:pointer;font-family:var(--serif);font-size:16.5px;line-height:1.8;word-break:keep-all;transition:background .2s}
+.verse .vn{flex:none;min-width:22px;font-family:var(--sans);font-size:11.5px;font-weight:700;color:var(--gold);padding-top:6px;text-align:right}
+.verse .vt{flex:1;white-space:pre-line}
+.verse.cur,.head.cur{background:#FBF1D6}
+.empty{padding:28px 16px;text-align:center;color:var(--muted);font-size:14px;word-break:keep-all}
+footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var(--muted);text-align:center;word-break:keep-all}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
+  <div class="cross">✚ ✚ ✚</div>
+  <h1>오늘의 성경 한 장</h1>
+  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터</p>
+</header>
+
+<main>
+  <div class="player">
+    <button class="pbtn" id="playBtn" type="button" disabled>▶ 읽기</button>
+    <button class="pbtn ghost" id="stopBtn" type="button" disabled>■ 처음으로</button>
+    <select class="rate" id="rate" aria-label="읽는 빠르기">
+      <option value="0.8">느리게</option>
+      <option value="1" selected>보통</option>
+      <option value="1.2">조금 빠르게</option>
+      <option value="1.5">빠르게</option>
+    </select>
+    <span class="pstate" id="pstate"></span>
+  </div>
+  <div class="notice" id="notice" hidden></div>
+  <div class="text" id="text"><div class="empty">오늘의 본문을 불러오는 중…</div></div>
+</main>
+
+<footer>
+  본문 출처: 한국천주교주교회의 「성경」 · <a id="srcLink" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">bible.cbck.or.kr</a><br>
+  읽어 주는 목소리는 이 기기에 들어 있는 음성입니다. 화면이 꺼지면 멈출 수 있습니다.
+</footer>
+
+<script>
+// 본문은 scripts/fetch_bible_today.py 가 날마다 data/bible_today.json 에 받아 둔다(오늘·내일 두 장).
+// 소리는 기기의 음성 합성(speechSynthesis)으로 낸다. 한 절씩 차례로 읽으며 그 절을 표시한다.
+// 안드로이드 크롬은 pause()/resume() 이 잘 듣지 않아, 멈춤은 cancel 후 그 절부터 다시 읽는 방식이다.
+(function(){
+  var RATE_KEY = 'bibleReadRate';
+  var textEl = document.getElementById('text');
+  var playBtn = document.getElementById('playBtn');
+  var stopBtn = document.getElementById('stopBtn');
+  var rateEl = document.getElementById('rate');
+  var stateEl = document.getElementById('pstate');
+  var noticeEl = document.getElementById('notice');
+  var synth = window.speechSynthesis;
+  var parts = [];      // [{el, say}] 읽을 차례 (장 제목·소제목·절)
+  var pos = 0, playing = false, token = 0, voice = null, wakeLock = null;
+
+  try { var r = localStorage.getItem(RATE_KEY); if (r) rateEl.value = r; } catch (e) {}
+  rateEl.addEventListener('change', function(){
+    try { localStorage.setItem(RATE_KEY, rateEl.value); } catch (e) {}
+    if (playing) speakFrom(pos);   // 빠르기를 바꾸면 지금 절부터 새 빠르기로
+  });
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function notice(msg){ noticeEl.textContent = msg; noticeEl.hidden = !msg; }
+
+  // 소리 내어 읽을 문장: 시편의 그리스어 번호 '(22)'와 '[ ]' 괄호, 행 바꿈을 정리한다.
+  function sayText(t){
+    return t.replace(/^\(\d+\)\s*/, '').replace(/[\[\]]/g, '').replace(/\n/g, ' ').trim();
+  }
+
+  function pickVoice(){
+    if (!synth) return;
+    var vs = synth.getVoices().filter(function(v){ return /^ko/i.test(v.lang); });
+    voice = vs.filter(function(v){ return v.localService; })[0] || vs[0] || null;
+  }
+  if (synth) {
+    pickVoice();
+    if (synth.addEventListener) synth.addEventListener('voiceschanged', pickVoice);
+  }
+
+  function setCur(i){
+    var old = textEl.querySelector('.cur');
+    if (old) old.classList.remove('cur');
+    var p = parts[i];
+    if (!p) return;
+    p.el.classList.add('cur');
+    var r = p.el.getBoundingClientRect();
+    if (r.top < 90 || r.bottom > window.innerHeight - 20) p.el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+
+  function keepAwake(on){
+    try {
+      if (on && !wakeLock && navigator.wakeLock) {
+        navigator.wakeLock.request('screen').then(function(l){ wakeLock = l; l.addEventListener('release', function(){ wakeLock = null; }); }).catch(function(){});
+      } else if (!on && wakeLock) { wakeLock.release(); wakeLock = null; }
+    } catch (e) {}
+  }
+  document.addEventListener('visibilitychange', function(){ if (playing && document.visibilityState === 'visible') keepAwake(true); });
+
+  function render(){
+    playBtn.textContent = playing ? '❚❚ 멈춤' : (pos > 0 ? '▶ 이어 읽기' : '▶ 읽기');
+    playBtn.classList.toggle('on', playing);
+    stateEl.textContent = parts.length ? (pos > 0 || playing ? (pos + 1) + ' / ' + parts.length : '') : '';
+  }
+
+  function speakFrom(i){
+    if (!synth) return;
+    var my = ++token;
+    synth.cancel();
+    pos = i; playing = true; keepAwake(true); render();
+    (function next(){
+      if (my !== token) return;
+      if (pos >= parts.length) { playing = false; pos = 0; setCur(-1); keepAwake(false); render(); stateEl.textContent = '다 읽었습니다 ✚'; return; }
+      setCur(pos); render();
+      var u = new SpeechSynthesisUtterance(parts[pos].say);
+      u.lang = 'ko-KR';
+      if (voice) u.voice = voice;
+      u.rate = parseFloat(rateEl.value) || 1;
+      u.onend = function(){ if (my !== token) return; pos++; setTimeout(next, 250); };
+      u.onerror = function(e){
+        if (my !== token || e.error === 'interrupted' || e.error === 'canceled') return;
+        playing = false; keepAwake(false); render();
+        notice('이 기기에서 음성을 낼 수 없습니다 (' + e.error + '). 기기 설정의 음성 출력(TTS)에 한국어가 있는지 확인해 주세요.');
+      };
+      synth.speak(u);
+    })();
+  }
+
+  function stop(resetPos){
+    token++;
+    if (synth) synth.cancel();
+    playing = false; keepAwake(false);
+    if (resetPos) { pos = 0; setCur(-1); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    render();
+  }
+
+  playBtn.addEventListener('click', function(){ playing ? stop(false) : speakFrom(pos); });
+  stopBtn.addEventListener('click', function(){ stop(true); });
+  textEl.addEventListener('click', function(e){
+    var el = e.target.closest('[data-i]');
+    if (el && synth) speakFrom(+el.getAttribute('data-i'));
+  });
+  window.addEventListener('pagehide', function(){ if (synth) synth.cancel(); });
+
+  function show(day){
+    document.getElementById('srcLink').href = day.url;
+    var html = '<div class="chap" data-i="0">' + esc(day.book) + ' ' + day.chapter + '장' +
+      '<small>' + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
+    parts = [{ say: day.book + ' ' + day.chapter + '장' }];
+    day.items.forEach(function(it){
+      var i = parts.length;
+      if (it.h) {
+        html += '<div class="head" data-i="' + i + '">' + esc(it.h) + '</div>';
+        parts.push({ say: it.h });
+      } else {
+        html += '<div class="verse" data-i="' + i + '"><span class="vn">' + esc(it.v) + '</span><span class="vt">' + esc(it.t) + '</span></div>';
+        parts.push({ say: sayText(it.t) });
+      }
+    });
+    textEl.innerHTML = html;
+    textEl.querySelectorAll('[data-i]').forEach(function(el){ parts[+el.getAttribute('data-i')].el = el; });
+    document.title = day.book + ' ' + day.chapter + '장 ✚ 오늘의 성경 읽어주기';
+    if (synth) { playBtn.disabled = false; stopBtn.disabled = false; }
+    else notice('이 브라우저는 읽어주기(음성 합성)를 지원하지 않습니다. 본문은 그대로 보실 수 있습니다.');
+    render();
+  }
+
+  var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+  fetch('data/bible_today.json', { cache: 'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var day = (d.days || []).filter(function(x){ return x.date === today; })[0];
+      if (!day) throw new Error('stale');
+      show(day);
+    })
+    .catch(function(){
+      textEl.innerHTML = '<div class="empty">오늘의 본문을 아직 받아 오지 못했습니다.<br>' +
+        '<a href="https://khmass-liturgy.github.io/mass/">메인 화면</a>의 성경 카드로 원문을 보실 수 있습니다.</div>';
+    });
+})();
+</script>
+</body>
+</html>

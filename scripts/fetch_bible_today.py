@@ -16,8 +16,17 @@ Actions 실행이 늦어져도 자정을 넘기면 바로 쓸 수 있게 오늘�
     <div class="text-justify"><p>한처음에 ...<sup ...>2)</sup></p></div>  ← 절
   ...
   <!-- 성경 Menu -->
+
+읽어주기 음성 (--audio)
+-----------------------
+기기에 음성 합성(TTS)이 없는 폰(일부 앱 안 브라우저 등)을 위해, 장마다 mp3 를 미리 만든다.
+edge-tts(ko-KR-SunHiNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
+시작하는 시각(marks)을 함께 적어 둔다 — 화면이 읽는 절을 따라가고, 절을 누르면 그리로 간다.
+edge-tts 출력은 고정 48kbps(CBR) mp3 라 바이트 수로 길이를 바로 계산한다.
+mp3 는 저장소를 키우지 않도록 GitHub Release 'bible-audio' 에 올린다(워크플로가 업로드).
 """
 
+import asyncio
 import html
 import json
 import re
@@ -32,6 +41,10 @@ BASE = "https://bible.cbck.or.kr/Knb"
 KST = ZoneInfo("Asia/Seoul")
 EPOCH = date(2026, 11, 2)
 OUT = Path(__file__).resolve().parent.parent / "data" / "bible_today.json"
+AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
+AUDIO_URL = "https://github.com/khmass-liturgy/mass/releases/download/bible-audio/{date}.mp3"
+VOICE = "ko-KR-SunHiNeural"
+BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -97,13 +110,74 @@ def fetch_chapter(d: date) -> dict:
     return {"date": d.isoformat(), **ch, "total": TOTAL, "url": url, "items": items}
 
 
+def say_text(t: str) -> str:
+    """bible_read.html 의 sayText 와 같다: 시편 번호 '(22)'·대괄호·행 바꿈 정리."""
+    t = re.sub(r'^\(\d+\)\s*', '', t)
+    return re.sub(r'[\[\]]', '', t).replace('\n', ' ').strip()
+
+
+def speech_parts(day: dict) -> list:
+    """읽는 차례 — bible_read.html 의 parts 와 같은 순서(장 제목, 소제목·절)."""
+    parts = [f"{day['book']} {day['chapter']}장"]
+    for it in day["items"]:
+        parts.append(it["h"] if "h" in it else say_text(it["t"]))
+    return parts
+
+
+async def synth(text: str) -> bytes:
+    import edge_tts
+    for attempt in range(3):
+        try:
+            data = b""
+            async for ch in edge_tts.Communicate(text, VOICE).stream():
+                if ch["type"] == "audio":
+                    data += ch["data"]
+            if data:
+                return data
+        except Exception as e:
+            print("  tts retry:", e, file=sys.stderr)
+        await asyncio.sleep(2 + attempt * 3)
+    raise RuntimeError(f"TTS 실패: {text[:30]}")
+
+
+async def build_audio(day: dict) -> dict:
+    out, marks = b"", []
+    for text in speech_parts(day):
+        marks.append(round(len(out) / BYTES_PER_SEC, 2))
+        out += await synth(text)
+    AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    (AUDIO_DIR / f"{day['date']}.mp3").write_bytes(out)
+    return {"url": AUDIO_URL.format(date=day["date"]),
+            "duration": round(len(out) / BYTES_PER_SEC, 1), "marks": marks}
+
+
 def main() -> int:
+    want_audio = "--audio" in sys.argv
     today = datetime.now(KST).date()
     try:
         days = [fetch_chapter(today + timedelta(days=k)) for k in (0, 1)]
     except Exception as e:
         print("bible chapter fetch/parse failed:", e, file=sys.stderr)
         return 1
+
+    if want_audio:
+        # 어제 받아 둔 '내일' 장의 음성이 이미 올라가 있으면 다시 만들지 않는다.
+        old = {}
+        try:
+            for d in json.loads(OUT.read_text(encoding="utf-8")).get("days", []):
+                old[d["date"]] = d
+        except Exception:
+            pass
+        for day in days:
+            prev = old.get(day["date"])
+            if prev and prev.get("audio") and prev.get("items") == day["items"]:
+                day["audio"] = prev["audio"]
+                continue
+            try:
+                day["audio"] = asyncio.run(build_audio(day))
+                print("  audio:", day["date"], day["audio"]["duration"], "s")
+            except Exception as e:
+                print("bible audio failed:", e, file=sys.stderr)   # 음성 없이도 본문은 저장한다
 
     data = {
         "updated": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),

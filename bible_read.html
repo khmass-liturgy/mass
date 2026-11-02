@@ -39,6 +39,7 @@ main{max-width:680px;margin:0 auto;padding:18px 16px}
 .pbtn.ghost{background:#fff;color:var(--marian);border:1.5px solid var(--line)}
 .pbtn.on{background:var(--gold)}
 .pbtn:disabled{background:var(--line);color:var(--muted);cursor:default}
+.rate[hidden]{display:none}
 .rate{flex:none;height:36px;border:1.5px solid var(--line);border-radius:18px;padding:0 10px;font-family:var(--sans);font-size:13px;color:var(--ink);background:#fff}
 .pstate{flex:1;min-width:120px;font-size:12.5px;color:var(--muted);text-align:right;word-break:keep-all}
 .notice{font-size:13px;color:#8A5A12;background:#FBF3E0;border:1px solid var(--gold-soft);border-radius:10px;padding:9px 12px;margin-bottom:12px;word-break:keep-all}
@@ -75,6 +76,10 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
       <option value="1.2">조금 빠르게</option>
       <option value="1.5">빠르게</option>
     </select>
+    <select class="rate" id="mode" aria-label="목소리" hidden>
+      <option value="file">녹음 음성</option>
+      <option value="tts">기기 음성</option>
+    </select>
     <span class="pstate" id="pstate"></span>
   </div>
   <div class="notice" id="notice" hidden></div>
@@ -83,29 +88,44 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
 
 <footer>
   본문 출처: 한국천주교주교회의 「성경」 · <a id="srcLink" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">bible.cbck.or.kr</a><br>
-  읽어 주는 목소리는 이 기기에 들어 있는 음성입니다. 화면이 꺼지면 멈출 수 있습니다.
+  녹음 음성은 날마다 자동으로 만든 음성(Microsoft 음성 합성)이며, 화면이 꺼져도 계속 들립니다.<br>
+  기기 음성은 이 폰에 들어 있는 목소리로 읽으며, 화면이 꺼지면 멈출 수 있습니다.
 </footer>
 
 <script>
 // 본문은 scripts/fetch_bible_today.py 가 날마다 data/bible_today.json 에 받아 둔다(오늘·내일 두 장).
-// 소리는 기기의 음성 합성(speechSynthesis)으로 낸다. 한 절씩 차례로 읽으며 그 절을 표시한다.
-// 안드로이드 크롬은 pause()/resume() 이 잘 듣지 않아, 멈춤은 cancel 후 그 절부터 다시 읽는 방식이다.
+// 소리는 두 가지 방식이다.
+//  · 녹음 음성(file): 같은 스크립트가 만든 장 전체 mp3. 부분마다 시작 시각(marks)이 있어
+//    재생 위치로 읽는 절을 표시하고, 절을 누르면 그 시각으로 간다. 화면이 꺼져도 계속 재생된다.
+//  · 기기 음성(tts): 기기의 음성 합성(speechSynthesis)으로 한 절씩 읽는다. 기기에 없으면 못 쓴다.
+//    안드로이드 크롬은 pause()/resume() 이 잘 듣지 않아, 멈춤은 cancel 후 그 절부터 다시 읽는 방식이다.
+// 녹음 음성이 있으면 그것이 기본이고, 둘 다 있을 때만 고르는 칸을 보여 준다.
 (function(){
-  var RATE_KEY = 'bibleReadRate';
+  var RATE_KEY = 'bibleReadRate', MODE_KEY = 'bibleReadMode';
   var textEl = document.getElementById('text');
   var playBtn = document.getElementById('playBtn');
   var stopBtn = document.getElementById('stopBtn');
   var rateEl = document.getElementById('rate');
+  var modeEl = document.getElementById('mode');
   var stateEl = document.getElementById('pstate');
   var noticeEl = document.getElementById('notice');
-  var synth = window.speechSynthesis;
+  var synth = window.speechSynthesis && window.SpeechSynthesisUtterance ? window.speechSynthesis : null;
   var parts = [];      // [{el, say}] 읽을 차례 (장 제목·소제목·절)
-  var pos = 0, playing = false, token = 0, voice = null, wakeLock = null;
+  var marks = [];      // 녹음 음성에서 각 부분이 시작하는 시각(초)
+  var pos = 0, playing = false, token = 0, voice = null, wakeLock = null, mode = 'tts', day = null;
+  var audio = null;
 
   try { var r = localStorage.getItem(RATE_KEY); if (r) rateEl.value = r; } catch (e) {}
+  function rate(){ return parseFloat(rateEl.value) || 1; }
   rateEl.addEventListener('change', function(){
     try { localStorage.setItem(RATE_KEY, rateEl.value); } catch (e) {}
-    if (playing) speakFrom(pos);   // 빠르기를 바꾸면 지금 절부터 새 빠르기로
+    if (mode === 'file') { if (audio) audio.playbackRate = rate(); }
+    else if (playing) speakFrom(pos);   // 빠르기를 바꾸면 지금 절부터 새 빠르기로
+  });
+  modeEl.addEventListener('change', function(){
+    stop(false);
+    mode = modeEl.value;
+    try { localStorage.setItem(MODE_KEY, mode); } catch (e) {}
   });
 
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
@@ -132,6 +152,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     var p = parts[i];
     if (!p) return;
     p.el.classList.add('cur');
+    if (document.visibilityState !== 'visible') return;
     var r = p.el.getBoundingClientRect();
     if (r.top < 90 || r.bottom > window.innerHeight - 20) p.el.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }
@@ -143,7 +164,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
       } else if (!on && wakeLock) { wakeLock.release(); wakeLock = null; }
     } catch (e) {}
   }
-  document.addEventListener('visibilitychange', function(){ if (playing && document.visibilityState === 'visible') keepAwake(true); });
+  document.addEventListener('visibilitychange', function(){ if (playing && mode === 'tts' && document.visibilityState === 'visible') keepAwake(true); });
 
   function render(){
     playBtn.textContent = playing ? '❚❚ 멈춤' : (pos > 0 ? '▶ 이어 읽기' : '▶ 읽기');
@@ -151,24 +172,85 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     stateEl.textContent = parts.length ? (pos > 0 || playing ? (pos + 1) + ' / ' + parts.length : '') : '';
   }
 
+  function finished(){
+    playing = false; pos = 0; setCur(-1); keepAwake(false); render();
+    stateEl.textContent = '다 읽었습니다 ✚';
+  }
+
+  // ── 녹음 음성 ──
+  function partAt(t){
+    var i = 0;
+    while (i + 1 < marks.length && marks[i + 1] <= t + 0.05) i++;
+    return i;
+  }
+  function ensureAudio(){
+    if (audio) return audio;
+    audio = new Audio();
+    audio.preload = 'none';
+    audio.src = day.audio.url;
+    audio.addEventListener('timeupdate', function(){
+      if (!playing) return;
+      var i = partAt(audio.currentTime);
+      if (i !== pos) { pos = i; setCur(i); render(); }
+    });
+    audio.addEventListener('ended', finished);
+    audio.addEventListener('pause', function(){ if (playing && !audio.ended) { playing = false; render(); } });   // 잠금 화면 등에서 멈춘 경우
+    audio.addEventListener('play', function(){ if (!playing) { playing = true; render(); } });
+    audio.addEventListener('error', function(){
+      if (mode !== 'file') return;
+      playing = false; render();
+      if (synth) {
+        mode = 'tts'; modeEl.value = 'tts'; modeEl.hidden = true;
+        notice('녹음 음성을 불러오지 못해 기기 음성으로 읽습니다.');
+        speakFrom(pos);
+      } else {
+        notice('녹음 음성을 불러오지 못했습니다. 잠시 뒤 다시 눌러 주세요.');
+        audio = null;
+      }
+    });
+    if ('mediaSession' in navigator && window.MediaMetadata) {
+      try {
+        navigator.mediaSession.metadata = new MediaMetadata({ title: day.book + ' ' + day.chapter + '장', artist: '오늘의 성경 한 장', album: '가톨릭 신앙생활 포털' });
+      } catch (e) {}
+    }
+    return audio;
+  }
+  function playFile(i){
+    var a = ensureAudio();
+    pos = i; playing = true; setCur(i); render();
+    a.playbackRate = rate();
+    var seek = function(){ try { a.currentTime = marks[i] || 0; } catch (e) {} };
+    if (a.readyState >= 1) seek(); else a.addEventListener('loadedmetadata', seek, { once: true });
+    var p = a.play();
+    if (p && p.catch) p.catch(function(){ playing = false; render(); });
+  }
+
+  // ── 기기 음성 ──
   function speakFrom(i){
+    if (mode === 'file') { playFile(i); return; }
     if (!synth) return;
     var my = ++token;
     synth.cancel();
     pos = i; playing = true; keepAwake(true); render();
     (function next(){
       if (my !== token) return;
-      if (pos >= parts.length) { playing = false; pos = 0; setCur(-1); keepAwake(false); render(); stateEl.textContent = '다 읽었습니다 ✚'; return; }
+      if (pos >= parts.length) { finished(); return; }
       setCur(pos); render();
       var u = new SpeechSynthesisUtterance(parts[pos].say);
       u.lang = 'ko-KR';
       if (voice) u.voice = voice;
-      u.rate = parseFloat(rateEl.value) || 1;
+      u.rate = rate();
       u.onend = function(){ if (my !== token) return; pos++; setTimeout(next, 250); };
       u.onerror = function(e){
         if (my !== token || e.error === 'interrupted' || e.error === 'canceled') return;
         playing = false; keepAwake(false); render();
-        notice('이 기기에서 음성을 낼 수 없습니다 (' + e.error + '). 기기 설정의 음성 출력(TTS)에 한국어가 있는지 확인해 주세요.');
+        if (day && day.audio) {
+          mode = 'file'; modeEl.value = 'file'; modeEl.hidden = true;
+          notice('이 기기 음성으로 읽을 수 없어 녹음 음성으로 바꿉니다.');
+          playFile(pos);
+        } else {
+          notice('이 기기에서 음성을 낼 수 없습니다 (' + e.error + '). 기기 설정의 음성 출력(TTS)에 한국어가 있는지 확인해 주세요.');
+        }
       };
       synth.speak(u);
     })();
@@ -177,20 +259,27 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   function stop(resetPos){
     token++;
     if (synth) synth.cancel();
+    if (audio) audio.pause();
     playing = false; keepAwake(false);
-    if (resetPos) { pos = 0; setCur(-1); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    if (resetPos) {
+      pos = 0; setCur(-1);
+      if (audio) { try { audio.currentTime = 0; } catch (e) {} }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     render();
   }
 
   playBtn.addEventListener('click', function(){ playing ? stop(false) : speakFrom(pos); });
   stopBtn.addEventListener('click', function(){ stop(true); });
   textEl.addEventListener('click', function(e){
+    if (e.target.closest('a')) return;
     var el = e.target.closest('[data-i]');
-    if (el && synth) speakFrom(+el.getAttribute('data-i'));
+    if (el && !playBtn.disabled) speakFrom(+el.getAttribute('data-i'));
   });
   window.addEventListener('pagehide', function(){ if (synth) synth.cancel(); });
 
-  function show(day){
+  function show(d){
+    day = d;
     document.getElementById('srcLink').href = day.url;
     var html = '<div class="chap" data-i="0">' + esc(day.book) + ' ' + day.chapter + '장' +
       '<small>' + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
@@ -208,8 +297,20 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
     textEl.innerHTML = html;
     textEl.querySelectorAll('[data-i]').forEach(function(el){ parts[+el.getAttribute('data-i')].el = el; });
     document.title = day.book + ' ' + day.chapter + '장 ✚ 오늘의 성경 읽어주기';
-    if (synth) { playBtn.disabled = false; stopBtn.disabled = false; }
-    else notice('이 브라우저는 읽어주기(음성 합성)를 지원하지 않습니다. 본문은 그대로 보실 수 있습니다.');
+
+    var hasFile = !!(day.audio && day.audio.url && day.audio.marks && day.audio.marks.length === parts.length);
+    if (hasFile) marks = day.audio.marks;
+    var saved = null;
+    try { saved = localStorage.getItem(MODE_KEY); } catch (e) {}
+    if (hasFile && synth) {
+      modeEl.hidden = false;
+      mode = saved === 'tts' ? 'tts' : 'file';
+    } else {
+      mode = hasFile ? 'file' : 'tts';
+    }
+    modeEl.value = mode;
+    if (hasFile || synth) { playBtn.disabled = false; stopBtn.disabled = false; }
+    else notice('읽어주기 음성을 준비하지 못했습니다. 본문은 그대로 보실 수 있습니다.');
     render();
   }
 
@@ -217,9 +318,9 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   fetch('data/bible_today.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
     .then(function(d){
-      var day = (d.days || []).filter(function(x){ return x.date === today; })[0];
-      if (!day) throw new Error('stale');
-      show(day);
+      var found = (d.days || []).filter(function(x){ return x.date === today; })[0];
+      if (!found) throw new Error('stale');
+      show(found);
     })
     .catch(function(){
       textEl.innerHTML = '<div class="empty">오늘의 본문을 아직 받아 오지 못했습니다.<br>' +

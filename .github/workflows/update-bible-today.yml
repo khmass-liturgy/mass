@@ -7,9 +7,19 @@ on:
     # 정각을 피하고 다른 워크플로와 분을 달리해 지연·push 충돌을 줄인다.
   - cron: '17 12 * * *'
   workflow_dispatch: {}
+  # 스크립트나 이 워크플로를 고치면 바로 한 번 돌려 본문·음성을 다시 만든다.
+  push:
+    branches: [main]
+    paths:
+      - scripts/fetch_bible_today.py
+      - .github/workflows/update-bible-today.yml
 
 permissions:
   contents: write
+
+concurrency:
+  group: bible-today
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -22,10 +32,27 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests edge-tts
 
-      - name: Fetch 오늘·내일 성경 본문
-        run: python scripts/fetch_bible_today.py
+      - name: Fetch 오늘·내일 성경 본문 + 읽어주기 음성
+        run: python scripts/fetch_bible_today.py --audio
+
+      # 음성 mp3 는 저장소를 키우지 않도록 Release 'bible-audio' 에 올리고,
+      # 오늘·내일 것 말고는 지운다. 업로드가 끝난 뒤에야 JSON 을 커밋한다.
+      - name: Upload 음성 to Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view bible-audio >/dev/null 2>&1 || \
+            gh release create bible-audio --title "성경 읽어주기 음성" \
+              --notes "오늘의 성경 한 장 읽어주기 음성 (자동 생성, 오늘·내일 두 장만 보관)" --latest=false
+          if ls build/bible_audio/*.mp3 >/dev/null 2>&1; then
+            gh release upload bible-audio build/bible_audio/*.mp3 --clobber
+          fi
+          keep=$(python -c "import json;print(' '.join(d['date']+'.mp3' for d in json.load(open('data/bible_today.json',encoding='utf-8'))['days']))")
+          for a in $(gh release view bible-audio --json assets -q '.assets[].name'); do
+            case " $keep " in *" $a "*) ;; *) gh release delete-asset bible-audio "$a" -y ;; esac
+          done
 
       - name: Commit & push if changed
         run: |

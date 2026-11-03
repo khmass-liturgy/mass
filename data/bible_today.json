@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 08:53",
+ "updated": "2026-11-03 10:27",
  "source": "https://bible.cbck.or.kr/Knb",
  "days": [
   {
@@ -179,7 +179,9 @@
      258.22,
      268.44
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@7b71b0923744408a95f2e8b7032c5c900bfd7cfd/2026-11-02.mp3"
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "voice_name": "현수",
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@786a7a9ee25d8ca994da8f143c029a7accb12caf/2026-11-02.mp3"
    }
   },
   {
@@ -334,7 +336,9 @@
      205.97,
      212.33
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@7b71b0923744408a95f2e8b7032c5c900bfd7cfd/2026-11-03.mp3"
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "voice_name": "현수",
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@786a7a9ee25d8ca994da8f143c029a7accb12caf/2026-11-03.mp3"
    }
   },
   {
@@ -479,7 +483,9 @@
      235.78,
      243.19
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@7b71b0923744408a95f2e8b7032c5c900bfd7cfd/2026-11-04.mp3"
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "voice_name": "현수",
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@786a7a9ee25d8ca994da8f143c029a7accb12caf/2026-11-04.mp3"
    }
   }
  ]

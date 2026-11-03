@@ -128,6 +128,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
 <footer>
   본문 출처: 한국천주교주교회의 「성경」 · <a id="srcLink" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">bible.cbck.or.kr</a><br>
   녹음 음성은 날마다 자동으로 만든 음성(Microsoft 음성 합성)이며, 화면이 꺼져도 계속 들립니다.<br>
+  녹음 목소리는 3일마다 현수 → 선희 → 인준 차례로 바뀝니다.<br>
   기기 음성은 이 폰에 들어 있는 목소리로 읽으며, 화면이 꺼지면 멈출 수 있습니다.
 </footer>
 
@@ -499,7 +500,13 @@ window.BibleLog = (function(){
     if (window.BibleLog) BibleLog.attach(day, all);
 
     var hasFile = !!(day.audio && day.audio.url && day.audio.marks && day.audio.marks.length === parts.length);
-    if (hasFile) marks = day.audio.marks;
+    if (hasFile) {
+      marks = day.audio.marks;
+      // 녹음 목소리는 3일마다 바뀐다(현수·선희·인준) — 누구 목소리인지 보여 준다.
+      var vn = day.audio.voice_name || '현수';
+      modeEl.options[0].textContent = '녹음 음성 (' + vn + ')';
+      textEl.querySelector('.chap small').insertAdjacentHTML('beforeend', '<br>🎙 ' + esc(vn) + ' 목소리로 읽습니다');
+    }
     var saved = null;
     try { saved = localStorage.getItem(MODE_KEY); } catch (e) {}
     if (hasFile && synth) {

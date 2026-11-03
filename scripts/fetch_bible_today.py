@@ -21,7 +21,7 @@ data/bible_today.json 으로 저장한다. bible_read.html 이 이 본문을 보
 읽어주기 음성 (--audio)
 -----------------------
 기기에 음성 합성(TTS)이 없는 폰(일부 앱 안 브라우저 등)을 위해, 장마다 mp3 를 미리 만든다.
-edge-tts(ko-KR-HyunsuMultilingualNeural)로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
+edge-tts 한국어 음성(3일마다 현수·선희·인준 차례로)으로 장 제목·소제목·절을 하나씩 합성해 이어 붙이고, 각 부분이
 시작하는 시각(marks)을 함께 적어 둔다 — 화면이 읽는 절을 따라가고, 절을 누르면 그리로 간다.
 edge-tts 출력은 고정 48kbps(CBR) mp3 라 바이트 수로 길이를 바로 계산한다.
 mp3 는 main 을 키우지 않도록 'bible-audio' 브랜치에 받은 날짜의 파일만 커밋 하나로
@@ -46,7 +46,13 @@ KST = ZoneInfo("Asia/Seoul")
 EPOCH = date(2026, 11, 2)
 OUT = Path(__file__).resolve().parent.parent / "data" / "bible_today.json"
 AUDIO_DIR = Path(__file__).resolve().parent.parent / "build" / "bible_audio"
-VOICE = "ko-KR-HyunsuMultilingualNeural"   # 한국어 음성 셋(선희·인준·현수) 중 억양이 가장 자연스러움
+# 한국어 음성 셋을 3일마다 돌아가며 쓴다 (2026-11-02부터 현수 → 선희 → 인준 → 현수 …).
+VOICES = [("ko-KR-HyunsuMultilingualNeural", "현수"), ("ko-KR-SunHiNeural", "선희"), ("ko-KR-InJoonNeural", "인준")]
+VOICE_DAYS = 3
+
+
+def voice_for(d: date):
+    return VOICES[(d - EPOCH).days // VOICE_DAYS % len(VOICES)]
 BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mono-mp3
 # JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
 AUDIO_VER = 5
@@ -142,12 +148,12 @@ def speech_parts(day: dict) -> list:
     return parts
 
 
-async def synth(text: str) -> bytes:
+async def synth(text: str, voice: str) -> bytes:
     import edge_tts
     for attempt in range(3):
         try:
             data = b""
-            async for ch in edge_tts.Communicate(text, VOICE).stream():
+            async for ch in edge_tts.Communicate(text, voice).stream():
                 if ch["type"] == "audio":
                     data += ch["data"]
             if data:
@@ -159,22 +165,25 @@ async def synth(text: str) -> bytes:
 
 
 async def build_audio(day: dict) -> dict:
+    voice, name = voice_for(date.fromisoformat(day["date"]))
     out, marks = b"", []
     for text in speech_parts(day):
         marks.append(round(len(out) / BYTES_PER_SEC, 2))
-        out += await synth(text)
+        out += await synth(text, voice)
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     (AUDIO_DIR / f"{day['date']}.mp3").write_bytes(out)
     # url 은 워크플로가 bible-audio 브랜치에 올린 뒤 그 커밋으로 채운다.
-    return {"ver": AUDIO_VER, "file": f"{day['date']}.mp3",
+    return {"ver": AUDIO_VER, "file": f"{day['date']}.mp3", "voice": voice, "voice_name": name,
             "duration": round(len(out) / BYTES_PER_SEC, 1), "marks": marks}
 
 
 def reuse_audio(old: dict | None, day: dict) -> dict | None:
     """지난번에 만든 같은 장의 음성을 그 주소에서 내려받아 다시 쓴다. 못 쓰면 None."""
     a = (old or {}).get("audio")
+    voice, name = voice_for(date.fromisoformat(day["date"]))
     if not a or a.get("ver") != AUDIO_VER or not a.get("url") or old.get("code") != day["code"] \
-            or old.get("chapter") != day["chapter"] or old.get("items") != day["items"]:
+            or old.get("chapter") != day["chapter"] or old.get("items") != day["items"] \
+            or a.get("voice", VOICES[0][0]) != voice:   # 목소리를 적기 전 파일은 모두 현수
         return None
     try:
         r = requests.get(a["url"], timeout=60)
@@ -186,7 +195,9 @@ def reuse_audio(old: dict | None, day: dict) -> dict | None:
         return None
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     (AUDIO_DIR / a["file"]).write_bytes(r.content)
-    return {k: v for k, v in a.items() if k != "url"}   # url 은 워크플로가 새 커밋으로 채운다
+    a = {k: v for k, v in a.items() if k != "url"}   # url 은 워크플로가 새 커밋으로 채운다
+    a.update(voice=voice, voice_name=name)
+    return a
 
 
 def main() -> int:

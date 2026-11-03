@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03 11:51",
+ "updated": "2026-11-04 04:32",
  "source": "https://bible.cbck.or.kr/Knb",
  "days": [
   {
@@ -181,7 +181,7 @@
     ],
     "voice": "ko-KR-HyunsuMultilingualNeural",
     "voice_name": "현수",
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-02.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-02.mp3"
    }
   },
   {
@@ -338,7 +338,7 @@
     ],
     "voice": "ko-KR-HyunsuMultilingualNeural",
     "voice_name": "현수",
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-03.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-03.mp3"
    }
   },
   {
@@ -485,7 +485,7 @@
     ],
     "voice": "ko-KR-HyunsuMultilingualNeural",
     "voice_name": "현수",
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-04.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-04.mp3"
    }
   },
   {
@@ -650,7 +650,7 @@
      242.42,
      256.27
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-05.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-05.mp3"
    }
   },
   {
@@ -837,7 +837,7 @@
      173.14,
      177.46
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-06.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-06.mp3"
    }
   },
   {
@@ -982,7 +982,7 @@
      199.3,
      206.21
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-07.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-07.mp3"
    }
   },
   {
@@ -1129,7 +1129,7 @@
      175.51,
      193.49
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-08.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-08.mp3"
    }
   },
   {
@@ -1274,7 +1274,7 @@
      169.58,
      187.27
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-09.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-09.mp3"
    }
   },
   {
@@ -1450,7 +1450,194 @@
      250.63,
      255.41
     ],
-    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@1a6f4aa03d7ff92991bbd7a4d482e7c618af3702/2026-11-10.mp3"
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-10.mp3"
+   }
+  },
+  {
+   "date": "2026-11-11",
+   "code": "Gn",
+   "book": "창세기",
+   "chapter": 10,
+   "seq": 10,
+   "testament": "구약",
+   "total": 1328,
+   "url": "https://bible.cbck.or.kr/Knb/Gn/10",
+   "items": [
+    {
+     "h": "노아의 자손들"
+    },
+    {
+     "v": "1",
+     "t": "노아의 아들 셈과 함과 야펫의 족보는 이러하다. 홍수가 있은 뒤에 그들에게서 자식들이 태어났다."
+    },
+    {
+     "v": "2",
+     "t": "야펫의 아들은 고메르, 마곡, 마다이, 야완, 투발, 메섹, 티라스이다."
+    },
+    {
+     "v": "3",
+     "t": "고메르의 아들은 아스크나즈, 리팟, 토가르마이고,"
+    },
+    {
+     "v": "4",
+     "t": "야완의 아들은 엘리사아, 타르시스, 키팀, 도다님이다."
+    },
+    {
+     "v": "5",
+     "t": "이들에게서 바닷가 민족들이 퍼져 나갔다. 이들이 지방과 각 언어와 씨족과 민족에 따라 본 야펫의 자손들이다."
+    },
+    {
+     "v": "6",
+     "t": "함의 아들은 에티오피아, 이집트, 풋, 가나안이다."
+    },
+    {
+     "v": "7",
+     "t": "에티오피아의 아들은 스바, 하윌라, 삽타, 라아마, 삽트카이다. 라아마의 아들은 세바와 드단이다."
+    },
+    {
+     "v": "8",
+     "t": "에티오피아는 니므롯을 낳았는데, 그가 세상의 첫 장사이다."
+    },
+    {
+     "v": "9",
+     "t": "그는 주님 앞에도 알려진 용맹한 사냥꾼이었다. 그래서 ‘니므롯처럼 주님 앞에도 알려진 용맹한 사냥꾼’이라는 말이 생겼다."
+    },
+    {
+     "v": "10",
+     "t": "그의 왕국은 신아르 지방의 바벨과 에렉과 아카드와 칼네에서 시작되었다."
+    },
+    {
+     "v": "11",
+     "t": "그는 그 지방을 떠나 아시리아로 가서 니네베와 르호봇 이르와 켈라를 세우고,"
+    },
+    {
+     "v": "12",
+     "t": "니네베와 큰 성읍 켈라 사이에 레센을 세웠다."
+    },
+    {
+     "v": "13",
+     "t": "이집트는 루드인, 아남인, 르합인, 납투인,"
+    },
+    {
+     "v": "14",
+     "t": "파트로스인, 후에 필리스티아족이 나온 카슬루인, 캅토르인을 낳았다."
+    },
+    {
+     "v": "15",
+     "t": "가나안은 맏아들 시돈, 히타이트,"
+    },
+    {
+     "v": "16",
+     "t": "여부스족, 아모리족, 기르가스족,"
+    },
+    {
+     "v": "17",
+     "t": "히위족, 아르케족, 신족,"
+    },
+    {
+     "v": "18",
+     "t": "아르왓족, 체메르족, 하맛족을 낳았다. 그 뒤에 가나안족의 씨족들이 사방으로 흩어져 나갔다."
+    },
+    {
+     "v": "19",
+     "t": "가나안족의 경계는 시돈에서 그라르 쪽으로 가자까지 이르고, 소돔과 고모라와 아드마와 츠보임 쪽으로는 레사에 이르렀다."
+    },
+    {
+     "v": "20",
+     "t": "이들이 씨족과 언어와 지방과 민족에 따라 본 함의 자손들이다."
+    },
+    {
+     "v": "21",
+     "t": "셈에게서도 자식들이 태어났는데, 그는 에베르의 모든 아들들의 조상이며 야펫의 맏형이다."
+    },
+    {
+     "v": "22",
+     "t": "셈의 아들은 엘람, 아시리아, 아르팍삿, 루드, 아람이다."
+    },
+    {
+     "v": "23",
+     "t": "아람의 아들은 우츠, 훌, 게테르, 마스이다."
+    },
+    {
+     "v": "24",
+     "t": "그리고 아르팍삿은 셀라흐를 낳고 셀라흐는 에베르를 낳았다."
+    },
+    {
+     "v": "25",
+     "t": "에베르에게서는 아들 둘이 태어났는데, 한 아들의 이름은 펠렉이다. 그의 시대에 세상이 나뉘었기 때문이다. 그 동생의 이름은 욕탄이다."
+    },
+    {
+     "v": "26",
+     "t": "욕탄은 알모닷, 셀렙, 하차르마웻, 예라,"
+    },
+    {
+     "v": "27",
+     "t": "하도람, 우잘, 디클라,"
+    },
+    {
+     "v": "28",
+     "t": "오발, 아비마엘, 스바,"
+    },
+    {
+     "v": "29",
+     "t": "오피르, 하윌라, 요밥을 낳았다. 이들이 모두 욕탄의 아들들이다."
+    },
+    {
+     "v": "30",
+     "t": "그들의 거주지는 메사에서 동부 산악 지방인 스파르 쪽까지였다."
+    },
+    {
+     "v": "31",
+     "t": "이들이 씨족과 언어와 지방과 민족에 따라 본 셈의 자손들이다."
+    },
+    {
+     "v": "32",
+     "t": "이것이 민족 계보에 따라 본 노아 자손들의 씨족들이다. 홍수가 있은 뒤에, 이들에게서 민족들이 세상으로 갈라져 나갔다."
+    }
+   ],
+   "audio": {
+    "ver": 5,
+    "file": "2026-11-11.mp3",
+    "voice": "ko-KR-HyunsuMultilingualNeural",
+    "voice_name": "현수",
+    "duration": 207.3,
+    "marks": [
+     0.0,
+     1.87,
+     3.82,
+     12.36,
+     20.3,
+     25.01,
+     30.77,
+     40.8,
+     46.25,
+     56.11,
+     61.34,
+     71.54,
+     77.66,
+     83.93,
+     87.91,
+     92.9,
+     98.35,
+     101.81,
+     105.43,
+     108.6,
+     116.93,
+     126.0,
+     131.66,
+     138.96,
+     145.37,
+     150.5,
+     155.83,
+     167.71,
+     172.34,
+     175.63,
+     178.87,
+     185.71,
+     191.09,
+     196.75
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/khmass-liturgy/mass@c4b454b9eeb173d7f4a8c62e6dcbf3b93b0fb6d6/2026-11-11.mp3"
    }
   }
  ]

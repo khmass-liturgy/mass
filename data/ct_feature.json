@@ -1,8 +1,14 @@
 {
-  "updated": "2026-11-03 07:50",
+  "updated": "2026-11-04 05:33",
   "source": "https://www.catholictimes.org/list/108",
   "count": 10,
   "items": [
+    {
+      "title": "[순례 걷고 기도하고] 의정부교구 남양주 마재성지",
+      "url": "https://www.catholictimes.org/article/20261030500185",
+      "date": "2026-11-08",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/30/.cache/512/20261030500168.jpg"
+    },
     {
       "title": "대전교구 아산 온양용화동본당, 친환경 소재로 건축 환경 개선",
       "url": "https://www.catholictimes.org/article/20261026500116",
@@ -56,12 +62,6 @@
       "url": "https://www.catholictimes.org/article/20261012500205",
       "date": "2026-10-18",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/12/.cache/512/20261012500187.jpg"
-    },
-    {
-      "title": "[칼럼 - ‘공동의 집’ 지구를 위해] (28) 기후위기 극복에 필요한 대안 개념들 - ⑤전환마을",
-      "url": "https://www.catholictimes.org/article/20261008500054",
-      "date": "2026-10-18",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/13/.cache/512/20261013500108.jpg"
     }
   ]
 }

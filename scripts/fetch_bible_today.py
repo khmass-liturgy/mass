@@ -6,8 +6,8 @@ data/bible_today.json 으로 저장한다. bible_read.html 이 이 본문을 보
 
 날짜 → 장 계산은 index.html 성경 카드와 같다: 2026-11-02(KST)이 창세기 1장이고
 하루 한 장씩 요한 묵시록 22장까지 간 뒤 다시 처음으로 돈다.
-지난 7일(다시 읽기)·오늘·내일(미리 읽기, 자정이 지나면 바로 오늘 장) 아홉 장을 받는다.
-2026-11-02 이전 날짜는 없으므로 처음 며칠은 그보다 적다.
+지난 7일(다시 읽기)·오늘·앞으로 7일(내일 미리 읽기, 이번 주 7장 한꺼번에 읽기) 열다섯 장을 받는다.
+앞으로 7일이면 일요일 저녁에도 다음 주 월~일이 다 있다. 2026-11-02 이전 날짜는 없으므로 처음 며칠은 그보다 적다.
 
 장 화면 구조 (서버에서 그려 내려오는 HTML)
 ------------------------------------------
@@ -57,6 +57,7 @@ BYTES_PER_SEC = 48000 / 8   # edge-tts 기본 출력: audio-24khz-48kbitrate-mon
 # JSON 의 audio 형식 표시. 음성 만드는 방식(목소리·저장 위치 등)을 바꾸면 올린다.
 AUDIO_VER = 5
 PAST_DAYS = 7   # 다시 읽을 수 있게 남겨 두는 지난 날 수
+AHEAD_DAYS = 7  # 미리 받아 두는 앞날 수 (이번 주 월~일이 늘 다 있게)
 
 HEADERS = {
     "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -209,7 +210,7 @@ def main() -> int:
         old = {}
 
     days = []
-    for k in range(-PAST_DAYS, 2):
+    for k in range(-PAST_DAYS, AHEAD_DAYS + 1):
         d = today + timedelta(days=k)
         if d < EPOCH:
             continue
@@ -217,7 +218,7 @@ def main() -> int:
             days.append(fetch_chapter(d))
         except Exception as e:
             print("bible chapter fetch/parse failed:", d, e, file=sys.stderr)
-            if k >= 0:
+            if k in (0, 1):
                 return 1          # 오늘·내일은 꼭 있어야 한다
             if d.isoformat() in old:
                 days.append({x: v for x, v in old[d.isoformat()].items() if x != "audio"})

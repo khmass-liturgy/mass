@@ -84,6 +84,11 @@ main{max-width:680px;margin:0 auto;padding:18px 16px}
 .done-btn{display:block;width:100%;margin-top:12px;padding:13px;border:none;border-radius:var(--radius);background:var(--marian);color:#fff;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer}
 .done-btn.on{background:#fff;color:var(--gold);border:1.5px solid var(--gold-soft);cursor:default}
 .done-btn[hidden]{display:none}
+.chap.next{border-top:2px dashed var(--gold-soft);margin-top:22px;padding-top:18px}
+.cdone{display:block;width:100%;margin:12px 0 4px;padding:10px;border:none;border-radius:10px;background:var(--marian);color:#fff;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;word-break:keep-all}
+.cdone.on{background:#fff;color:var(--gold);border:1.5px solid var(--gold-soft);cursor:default}
+.day.wk{border-color:var(--gold-soft);background:#FBF6E8}
+.day.wk.sel{border-color:var(--marian);background:var(--marian)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);max-width:calc(100% - 32px);background:var(--marian-dark);color:#fff;font-size:14px;padding:11px 18px;border-radius:22px;box-shadow:0 6px 18px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;text-align:center;word-break:keep-all;z-index:20}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var(--muted);text-align:center;word-break:keep-all}
@@ -95,7 +100,7 @@ footer{max-width:680px;margin:8px auto 0;padding:0 16px;font-size:12px;color:var
   <a class="home" href="https://khmass-liturgy.github.io/mass/">⛪ 메인으로</a>
   <div class="cross">✚ ✚ ✚</div>
   <h1>오늘의 성경 한 장</h1>
-  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터 · 다 읽으면 🏅 기록 · 지난 7일 다시 읽기 · 내일 장 미리 읽기</p>
+  <p>창세기부터 요한 묵시록까지 날마다 한 장 · ▶를 누르면 읽어 드립니다 · 절을 누르면 거기서부터 · 다 읽으면 🏅 기록 · 지난 7일 다시 읽기 · 내일 장 미리 읽기 · 이번 주 7장 한꺼번에</p>
 </header>
 
 <main>
@@ -147,7 +152,7 @@ window.BibleLog = (function(){
   var doneBtn = document.getElementById('doneBtn');
   var toastEl = document.getElementById('toast');
   var daysEl = document.getElementById('days');
-  var day = null, list = [], toastTimer = null;
+  var sel = [], list = [], week = [], toastTimer = null;
 
   function load(){
     var d = null;
@@ -215,12 +220,22 @@ window.BibleLog = (function(){
       html += '<div class="badge' + (on ? ' on' : '') + '"><span class="bi">' + b[0] + '</span>' + b[1] + '</div>';
     });
     bodyEl.innerHTML = html + '</div><div class="prog">기록은 이 기기(브라우저)에만 저장됩니다.</div>';
-    if (day) {
-      var done = !!d.ch[key(day)];
+    if (sel.length === 1) {
+      var day = sel[0], done = !!d.ch[key(day)];
       doneBtn.hidden = false;
       doneBtn.classList.toggle('on', done);
       doneBtn.textContent = done ? '✓ ' + day.book + ' ' + day.chapter + '장 읽기 완료'
         : (day.date === todayKST() ? '✓ 오늘의 한 장 다 읽었어요' : '✓ 이 장 다 읽었어요');
+    } else {
+      // 한 주 보기: 장마다 끝에 붙은 '다 읽었어요' 버튼(.cdone)을 쓴다.
+      doneBtn.hidden = true;
+      document.querySelectorAll('.cdone').forEach(function(b){
+        var x = sel.filter(function(s){ return key(s) === b.getAttribute('data-k'); })[0];
+        if (!x) return;
+        var on = !!d.ch[key(x)];
+        b.classList.toggle('on', on);
+        b.textContent = on ? '✓ ' + x.book + ' ' + x.chapter + '장 읽기 완료' : '✓ ' + x.book + ' ' + x.chapter + '장 다 읽었어요';
+      });
     }
     renderDays(d);
   }
@@ -231,21 +246,26 @@ window.BibleLog = (function(){
     return b.split(' ')[0] + (/ 상권$/.test(b) ? ' 상' : / 하권$/.test(b) ? ' 하' : n ? ' ' + n + '서' : '');
   }
 
-  // 지난 7일 · 오늘 · 내일 고르는 칸. 읽은 장은 ✓ 로, 보고 있는 장은 진하게.
+  // 이번 주 7장 · 지난 7일 · 오늘 · 내일 고르는 칸. 읽은 장은 ✓ 로, 보고 있는 칸은 진하게.
   function renderDays(d){
     if (!list.length) return;
     var t = dayNum(todayKST()), html = '';
+    var wkRead = week.filter(function(x){ return d.ch[key(x)]; }).length;
+    if (week.length > 1) {
+      html += '<a class="day wk' + (sel.length > 1 ? ' sel' : '') + '" href="bible_read.html?w=1">' +
+        '이번 주 ' + (wkRead ? wkRead + '/' : '') + week.length + '장<b>📖 한꺼번에</b></a>';
+    }
     list.forEach(function(x){
       var n = dayNum(x.date) - t, p = x.date.split('-');
       var label = n === 0 ? '오늘' : n === 1 ? '내일 미리' : n === -1 ? '어제' : (+p[1]) + '/' + (+p[2]);
-      var cls = 'day' + (d.ch[key(x)] ? ' read' : '') + (day && x.date === day.date ? ' sel' : '');
+      var cls = 'day' + (d.ch[key(x)] ? ' read' : '') + (sel.length === 1 && x.date === sel[0].date ? ' sel' : '');
       html += '<a class="' + cls + '" href="bible_read.html' + (n === 0 ? '' : '?d=' + x.date) + '">' +
         (d.ch[key(x)] ? '✓ ' : '') + label + '<b>' + shortBook(x.book) + ' ' + x.chapter + '장</b></a>';
     });
     daysEl.innerHTML = html;
     daysEl.hidden = false;
-    var sel = daysEl.querySelector('.sel');
-    if (sel) daysEl.scrollLeft = sel.offsetLeft - daysEl.clientWidth / 2 + sel.offsetWidth / 2;
+    var on = daysEl.querySelector('.sel');
+    if (on) daysEl.scrollLeft = on.offsetLeft - daysEl.clientWidth / 2 + on.offsetWidth / 2;
   }
 
   function toast(msg){
@@ -255,7 +275,8 @@ window.BibleLog = (function(){
     toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 4000);
   }
 
-  function mark(){
+  function mark(day){
+    day = day || sel[0];
     if (!day) return;
     var d = load(), k = key(day);
     if (d.ch[k]) return;
@@ -271,20 +292,32 @@ window.BibleLog = (function(){
       (fresh.length ? ' · 🏅 새 배지: ' + fresh.join(', ') : ''));
   }
 
-  doneBtn.addEventListener('click', mark);
+  doneBtn.addEventListener('click', function(){ mark(); });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('.cdone');
+    if (!b) return;
+    mark(sel.filter(function(s){ return key(s) === b.getAttribute('data-k'); })[0]);
+  });
   render();
-  return { attach: function(d, all){ day = d; list = all || [d]; render(); }, mark: mark };
+  // shown: 지금 화면의 장들(하루 보기면 하나), chips: 날짜 칸, wk: 이번 주 월~일 장들
+  return {
+    attach: function(shown, chips, wk){ sel = shown; list = chips || shown; week = wk || []; render(); },
+    mark: mark, key: key
+  };
 })();
 </script>
 
 <script>
-// 본문은 scripts/fetch_bible_today.py 가 날마다 data/bible_today.json 에 받아 둔다(오늘·내일 두 장).
+// 본문은 scripts/fetch_bible_today.py 가 날마다 data/bible_today.json 에 받아 둔다(지난 7일 · 오늘 · 앞으로 7일).
+// 하루 보기는 한 장, 한 주 보기(?w=1)는 이번 주 월~일 일곱 장을 한 화면에 이어 보여 주고 차례로 읽는다.
 // 소리는 두 가지 방식이다.
 //  · 녹음 음성(file): 같은 스크립트가 만든 장 전체 mp3. 부분마다 시작 시각(marks)이 있어
 //    재생 위치로 읽는 절을 표시하고, 절을 누르면 그 시각으로 간다. 화면이 꺼져도 계속 재생된다.
+//    한 주 보기에서는 한 장이 끝나면 다음 장 파일로 이어 간다.
 //  · 기기 음성(tts): 기기의 음성 합성(speechSynthesis)으로 한 절씩 읽는다. 기기에 없으면 못 쓴다.
 //    안드로이드 크롬은 pause()/resume() 이 잘 듣지 않아, 멈춤은 cancel 후 그 절부터 다시 읽는 방식이다.
 // 녹음 음성이 있으면 그것이 기본이고, 둘 다 있을 때만 고르는 칸을 보여 준다.
+// 한 장을 끝까지 들으면 그 장을 읽은 장으로 기록한다(BibleLog).
 (function(){
   var RATE_KEY = 'bibleReadRate', MODE_KEY = 'bibleReadMode';
   var textEl = document.getElementById('text');
@@ -295,10 +328,11 @@ window.BibleLog = (function(){
   var stateEl = document.getElementById('pstate');
   var noticeEl = document.getElementById('notice');
   var synth = window.speechSynthesis && window.SpeechSynthesisUtterance ? window.speechSynthesis : null;
-  var parts = [];      // [{el, say}] 읽을 차례 (장 제목·소제목·절)
-  var marks = [];      // 녹음 음성에서 각 부분이 시작하는 시각(초)
-  var pos = 0, playing = false, token = 0, voice = null, wakeLock = null, mode = 'tts', day = null;
-  var audio = null;
+  var segs = [];       // 화면에 보이는 장들 (하루 보기면 하나)
+  var segStart = [];   // 각 장의 첫 부분이 parts 에서 몇 번째인지
+  var parts = [];      // [{el, say, seg}] 읽을 차례 (장 제목·소제목·절, 장들을 이어서)
+  var pos = 0, playing = false, token = 0, voice = null, wakeLock = null, mode = 'tts', hasFile = false;
+  var audio = null, aSeg = -1;
 
   try { var r = localStorage.getItem(RATE_KEY); if (r) rateEl.value = r; } catch (e) {}
   function rate(){ return parseFloat(rateEl.value) || 1; }
@@ -365,58 +399,69 @@ window.BibleLog = (function(){
   function render(){
     playBtn.textContent = playing ? '❚❚ 멈춤' : (pos > 0 ? '▶ 이어 읽기' : '▶ 읽기');
     playBtn.classList.toggle('on', playing);
-    stateEl.textContent = parts.length ? (pos > 0 || playing ? (pos + 1) + ' / ' + parts.length : '') : '';
+    if (!parts.length || !(pos > 0 || playing)) { stateEl.textContent = ''; return; }
+    var s = parts[pos].seg, n = (segStart[s + 1] || parts.length) - segStart[s];
+    stateEl.textContent = (segs.length > 1 ? segs[s].book + ' ' + segs[s].chapter + '장 · ' : '') + (pos - segStart[s] + 1) + ' / ' + n;
   }
 
+  function segDone(s){ if (window.BibleLog && segs[s]) BibleLog.mark(segs[s]); }   // 한 장을 끝까지 들으면 기록
   function finished(){
     playing = false; pos = 0; setCur(-1); keepAwake(false); render();
     stateEl.textContent = '다 읽었습니다 ✚';
-    if (window.BibleLog) BibleLog.mark();   // 끝까지 들으면 읽은 장으로 기록
   }
 
   // ── 녹음 음성 ──
-  function partAt(t){
-    var i = 0;
-    while (i + 1 < marks.length && marks[i + 1] <= t + 0.05) i++;
-    return i;
+  function partAt(s, t){
+    var m = segs[s].audio.marks, i = 0;
+    while (i + 1 < m.length && m[i + 1] <= t + 0.05) i++;
+    return segStart[s] + i;
   }
-  function ensureAudio(){
-    if (audio) return audio;
-    audio = new Audio();
-    audio.preload = 'none';
-    audio.src = day.audio.url;
-    audio.addEventListener('timeupdate', function(){
-      if (!playing) return;
-      var i = partAt(audio.currentTime);
-      if (i !== pos) { pos = i; setCur(i); render(); }
-    });
-    audio.addEventListener('ended', finished);
-    audio.addEventListener('pause', function(){ if (playing && !audio.ended) { playing = false; render(); } });   // 잠금 화면 등에서 멈춘 경우
-    audio.addEventListener('play', function(){ if (!playing) { playing = true; render(); } });
-    audio.addEventListener('error', function(){
-      if (mode !== 'file') return;
-      playing = false; render();
-      if (synth) {
-        mode = 'tts'; modeEl.value = 'tts'; modeEl.hidden = true;
-        notice('녹음 음성을 불러오지 못해 기기 음성으로 읽습니다.');
-        speakFrom(pos);
-      } else {
-        notice('녹음 음성을 불러오지 못했습니다. 잠시 뒤 다시 눌러 주세요.');
-        audio = null;
+  function ensureAudio(s){
+    if (!audio) {
+      audio = new Audio();
+      audio.preload = 'none';
+      audio.addEventListener('timeupdate', function(){
+        if (!playing) return;
+        var i = partAt(aSeg, audio.currentTime);
+        if (i !== pos) { pos = i; setCur(i); render(); }
+      });
+      audio.addEventListener('ended', function(){
+        var s = aSeg;
+        segDone(s);
+        if (s + 1 < segs.length) playFile(segStart[s + 1]); else finished();
+      });
+      audio.addEventListener('pause', function(){ if (playing && !audio.ended) { playing = false; render(); } });   // 잠금 화면 등에서 멈춘 경우
+      audio.addEventListener('play', function(){ if (!playing) { playing = true; render(); } });
+      audio.addEventListener('error', function(){
+        if (mode !== 'file' || !audio.src) return;
+        playing = false; render();
+        if (synth) {
+          mode = 'tts'; modeEl.value = 'tts'; modeEl.hidden = true;
+          notice('녹음 음성을 불러오지 못해 기기 음성으로 읽습니다.');
+          speakFrom(pos);
+        } else {
+          notice('녹음 음성을 불러오지 못했습니다. 잠시 뒤 다시 눌러 주세요.');
+          aSeg = -1;
+        }
+      });
+    }
+    if (aSeg !== s) {
+      aSeg = s;
+      audio.src = segs[s].audio.url;
+      if ('mediaSession' in navigator && window.MediaMetadata) {
+        try {
+          navigator.mediaSession.metadata = new MediaMetadata({ title: segs[s].book + ' ' + segs[s].chapter + '장', artist: '오늘의 성경 한 장', album: '가톨릭 신앙생활 포털' });
+        } catch (e) {}
       }
-    });
-    if ('mediaSession' in navigator && window.MediaMetadata) {
-      try {
-        navigator.mediaSession.metadata = new MediaMetadata({ title: day.book + ' ' + day.chapter + '장', artist: '오늘의 성경 한 장', album: '가톨릭 신앙생활 포털' });
-      } catch (e) {}
     }
     return audio;
   }
   function playFile(i){
-    var a = ensureAudio();
+    var s = parts[i].seg, a = ensureAudio(s);
     pos = i; playing = true; setCur(i); render();
     a.playbackRate = rate();
-    var seek = function(){ try { a.currentTime = marks[i] || 0; } catch (e) {} };
+    var at = segs[s].audio.marks[i - segStart[s]] || 0;
+    var seek = function(){ try { a.currentTime = at; } catch (e) {} };
     if (a.readyState >= 1) seek(); else a.addEventListener('loadedmetadata', seek, { once: true });
     var p = a.play();
     if (p && p.catch) p.catch(function(){ playing = false; render(); });
@@ -431,6 +476,7 @@ window.BibleLog = (function(){
     pos = i; playing = true; keepAwake(true); render();
     (function next(){
       if (my !== token) return;
+      if (pos > 0 && (pos >= parts.length || parts[pos].seg !== parts[pos - 1].seg)) segDone(parts[pos - 1].seg);
       if (pos >= parts.length) { finished(); return; }
       setCur(pos); render();
       var u = new SpeechSynthesisUtterance(parts[pos].say);
@@ -441,7 +487,7 @@ window.BibleLog = (function(){
       u.onerror = function(e){
         if (my !== token || e.error === 'interrupted' || e.error === 'canceled') return;
         playing = false; keepAwake(false); render();
-        if (day && day.audio) {
+        if (hasFile) {
           mode = 'file'; modeEl.value = 'file'; modeEl.hidden = true;
           notice('이 기기 음성으로 읽을 수 없어 녹음 음성으로 바꿉니다.');
           playFile(pos);
@@ -460,7 +506,7 @@ window.BibleLog = (function(){
     playing = false; keepAwake(false);
     if (resetPos) {
       pos = 0; setCur(-1);
-      if (audio) { try { audio.currentTime = 0; } catch (e) {} }
+      if (audio && aSeg === 0) { try { audio.currentTime = 0; } catch (e) {} }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     render();
@@ -469,44 +515,56 @@ window.BibleLog = (function(){
   playBtn.addEventListener('click', function(){ playing ? stop(false) : speakFrom(pos); });
   stopBtn.addEventListener('click', function(){ stop(true); });
   textEl.addEventListener('click', function(e){
-    if (e.target.closest('a')) return;
+    if (e.target.closest('a, button')) return;
     var el = e.target.closest('[data-i]');
     if (el && !playBtn.disabled) speakFrom(+el.getAttribute('data-i'));
   });
   window.addEventListener('pagehide', function(){ if (synth) synth.cancel(); });
 
-  function show(d, all){
-    day = d;
-    document.getElementById('srcLink').href = day.url;
-    var p = day.date.split('-');
-    var when = day.date < today ? '지난 장 · ' + (+p[1]) + '월 ' + (+p[2]) + '일 · '
-      : day.date > today ? '미리 읽기 · 내일(' + (+p[1]) + '월 ' + (+p[2]) + '일) · ' : '';
-    var html = '<div class="chap" data-i="0">' + esc(day.book) + ' ' + day.chapter + '장' +
-      '<small>' + when + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a></small></div>';
-    parts = [{ say: day.book + ' ' + sino(day.chapter) + '장' }];
-    day.items.forEach(function(it){
-      var i = parts.length;
-      if (it.h) {
-        html += '<div class="head" data-i="' + i + '">' + esc(it.h) + '</div>';
-        parts.push({ say: it.h });
-      } else {
-        html += '<div class="verse" data-i="' + i + '"><span class="vn">' + esc(it.v) + '</span><span class="vt">' + esc(it.t) + '</span></div>';
-        parts.push({ say: sayText(it.t) });
-      }
+  var WD = '일월화수목금토';
+  function dateLabel(s){
+    var p = s.split('-');
+    return (+p[1]) + '월 ' + (+p[2]) + '일 (' + WD[new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])).getUTCDay()] + ')';
+  }
+
+  // shown: 보여 줄 장들, chips: 날짜 칸, wk: 이번 주 장들
+  function show(shown, chips, wk){
+    segs = shown; parts = []; segStart = [];
+    var multi = segs.length > 1, html = '';
+    hasFile = segs.every(function(day){
+      var a = day.audio;
+      return !!(a && a.url && a.marks && a.marks.length === day.items.length + 1);
+    });
+    segs.forEach(function(day, s){
+      var i0 = parts.length;
+      segStart.push(i0);
+      var when = multi ? dateLabel(day.date) + (day.date === today ? ' · 오늘' : '') + ' · '
+        : day.date < today ? '지난 장 · ' + dateLabel(day.date) + ' · '
+        : day.date > today ? '미리 읽기 · ' + dateLabel(day.date) + ' · ' : '';
+      var vn = hasFile ? '<br>🎙 ' + esc(day.audio.voice_name || '현수') + ' 목소리로 읽습니다' : '';
+      html += '<div class="chap' + (multi && s ? ' next' : '') + '" data-i="' + i0 + '">' + esc(day.book) + ' ' + day.chapter + '장' +
+        '<small>' + when + esc(day.testament) + ' · ' + day.seq + ' / ' + day.total + ' · <a href="' + esc(day.url) + '" target="_blank" rel="noopener">원문 보기</a>' + vn + '</small></div>';
+      parts.push({ say: day.book + ' ' + sino(day.chapter) + '장', seg: s });
+      day.items.forEach(function(it){
+        var i = parts.length;
+        if (it.h) {
+          html += '<div class="head" data-i="' + i + '">' + esc(it.h) + '</div>';
+          parts.push({ say: it.h, seg: s });
+        } else {
+          html += '<div class="verse" data-i="' + i + '"><span class="vn">' + esc(it.v) + '</span><span class="vt">' + esc(it.t) + '</span></div>';
+          parts.push({ say: sayText(it.t), seg: s });
+        }
+      });
+      if (multi && window.BibleLog) html += '<button class="cdone" type="button" data-k="' + esc(BibleLog.key(day)) + '"></button>';
     });
     textEl.innerHTML = html;
     textEl.querySelectorAll('[data-i]').forEach(function(el){ parts[+el.getAttribute('data-i')].el = el; });
-    document.title = day.book + ' ' + day.chapter + '장 ✚ 오늘의 성경 읽어주기';
-    if (window.BibleLog) BibleLog.attach(day, all);
+    document.getElementById('srcLink').href = segs[0].url;
+    document.title = (multi ? '이번 주 ' + segs.length + '장' : segs[0].book + ' ' + segs[0].chapter + '장') + ' ✚ 오늘의 성경 읽어주기';
+    if (window.BibleLog) BibleLog.attach(segs, chips, wk);
 
-    var hasFile = !!(day.audio && day.audio.url && day.audio.marks && day.audio.marks.length === parts.length);
-    if (hasFile) {
-      marks = day.audio.marks;
-      // 녹음 목소리는 3일마다 바뀐다(현수·선희·인준) — 누구 목소리인지 보여 준다.
-      var vn = day.audio.voice_name || '현수';
-      modeEl.options[0].textContent = '녹음 음성 (' + vn + ')';
-      textEl.querySelector('.chap small').insertAdjacentHTML('beforeend', '<br>🎙 ' + esc(vn) + ' 목소리로 읽습니다');
-    }
+    // 녹음 목소리는 3일마다 바뀐다(현수·선희·인준) — 하루 보기면 고르는 칸에도 누구 목소리인지 적는다.
+    if (hasFile && !multi) modeEl.options[0].textContent = '녹음 음성 (' + (segs[0].audio.voice_name || '현수') + ')';
     var saved = null;
     try { saved = localStorage.getItem(MODE_KEY); } catch (e) {}
     if (hasFile && synth) {
@@ -521,19 +579,24 @@ window.BibleLog = (function(){
     render();
   }
 
-  // ?d=YYYY-MM-DD 로 지난 7일 · 내일 장을 고른다. 없거나 범위 밖이면 오늘 장.
+  // ?d=YYYY-MM-DD 로 지난 7일 · 내일 장을, ?w=1 로 이번 주(월~일) 일곱 장을 고른다. 없으면 오늘 장.
   var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
   function shift(s, n){ var p = s.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] + n)).toISOString().slice(0, 10); }
   var want = (location.search.match(/[?&]d=(\d{4}-\d{2}-\d{2})/) || [])[1] || today;
+  var wantWeek = /[?&]w=1\b/.test(location.search);
   fetch('data/bible_today.json', { cache: 'no-store' })
     .then(function(r){ return r.json(); })
     .then(function(d){
+      var days = d.days || [];
       var lo = shift(today, -7), hi = shift(today, 1);
-      var all = (d.days || []).filter(function(x){ return x.date >= lo && x.date <= hi; });
-      var pick = function(s){ return all.filter(function(x){ return x.date === s; })[0]; };
+      var chips = days.filter(function(x){ return x.date >= lo && x.date <= hi; });
+      var t = today.split('-'), mon = shift(today, -((new Date(Date.UTC(+t[0], +t[1] - 1, +t[2])).getUTCDay() + 6) % 7));
+      var wk = days.filter(function(x){ return x.date >= mon && x.date <= shift(mon, 6); });
+      var pick = function(s){ return chips.filter(function(x){ return x.date === s; })[0]; };
+      if (wantWeek && wk.length) { show(wk, chips, wk); return; }
       var found = pick(want) || pick(today);
       if (!found) throw new Error('stale');
-      show(found, all);
+      show([found], chips, wk);
     })
     .catch(function(){
       textEl.innerHTML = '<div class="empty">오늘의 본문을 아직 받아 오지 못했습니다.<br>' +

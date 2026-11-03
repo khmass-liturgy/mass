@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 build/
+
+# OneDrive 동기화 충돌 사본
+*-DaeHanPoultryClinic*

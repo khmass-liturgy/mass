@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-03 11:53",
+  "updated": "2026-11-04 02:01",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "Wg-9YKJHR44",
+      "date": "2026-11-04",
+      "title": "성 가롤로 보로메오 주교 기념일",
+      "url": "https://www.youtube.com/watch?v=Wg-9YKJHR44"
+    },
     {
       "videoId": "fEt9PF7IwEc",
       "date": "2026-11-03",
@@ -57,12 +63,6 @@
       "date": "2026-10-26",
       "title": "연중 제30주간 월요일",
       "url": "https://www.youtube.com/watch?v=R2aYviAI_e0"
-    },
-    {
-      "videoId": "8CjVp_2UyMg",
-      "date": "2026-10-25",
-      "title": "연중 제30주일",
-      "url": "https://www.youtube.com/watch?v=8CjVp_2UyMg"
     }
   ]
 }

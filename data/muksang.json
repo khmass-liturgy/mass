@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04 04:24",
+  "updated": "2026-11-04 10:12",
   "cutoff": "2026-11-03",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7448",
@@ -38,6 +38,16 @@
       "mass_date": "2026-11-04",
       "priest": "조명연",
       "excerpt": "제2차 세계대전을 일으킨 독일의 히틀러가 주장한 나치즘의 핵심은 이것입니다."
+    },
+    {
+      "id": "daum_bbadaking_2260",
+      "title": "2026년 11월 4일 성 가를로 보로메오 주교 기념일",
+      "author": "박 베로니카",
+      "date": "2026-11-04",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2260",
+      "mass_date": "2026-11-04",
+      "priest": "양승국",
+      "excerpt": "매사에 하느님께 최 우선권을!"
     },
     {
       "id": "daum_catholicsb_7447",

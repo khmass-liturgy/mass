@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04 05:33",
+  "updated": "2026-11-05 05:52",
   "source": "https://www.catholictimes.org/list/108",
   "count": 10,
   "items": [
@@ -8,6 +8,12 @@
       "url": "https://www.catholictimes.org/article/20261030500185",
       "date": "2026-11-08",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/30/.cache/512/20261030500168.jpg"
+    },
+    {
+      "title": "[YOUTH] ‘우정과 신앙, 청춘의 기적’…성균관대 가톨릭학생회 ‘반촌’ 이야기",
+      "url": "https://www.catholictimes.org/article/20261030500009",
+      "date": "2026-11-08",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/22/.cache/512/20261022500069.jpg"
     },
     {
       "title": "대전교구 아산 온양용화동본당, 친환경 소재로 건축 환경 개선",
@@ -56,12 +62,6 @@
       "url": "https://www.catholictimes.org/article/20261018500015",
       "date": "2026-10-25",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/18/.cache/512/20261018500011.jpg"
-    },
-    {
-      "title": "청년 안중근의 시선으로 오늘의 평화를 고민하다",
-      "url": "https://www.catholictimes.org/article/20261012500205",
-      "date": "2026-10-18",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/12/.cache/512/20261012500187.jpg"
     }
   ]
 }

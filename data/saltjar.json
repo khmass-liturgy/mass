@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-04 19:53",
+  "updated": "2026-11-05 05:49",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "cAKaX-48BI8",
-  "date": "2026-11-04",
-  "label": "2026년 11월 4일성 가롤로 보로메오 주교 기념일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 4일 성 가롤로 보로메오 주교 기념일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "dUZFHDkBiJE",
+  "date": "2026-11-05",
+  "label": "2026년 11월 5일연중 제31주간 목요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 5일 연중 제31주간 목요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=cAKaX-48BI8",
+  "url": "https://www.youtube.com/watch?v=dUZFHDkBiJE",
   "count": 10,
   "videos": [
+    {
+      "videoId": "dUZFHDkBiJE",
+      "date": "2026-11-05",
+      "label": "2026년 11월 5일연중 제31주간 목요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 5일 연중 제31주간 목요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=dUZFHDkBiJE"
+    },
     {
       "videoId": "cAKaX-48BI8",
       "date": "2026-11-04",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 27일 연중 제30주간 화요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=QeIeUR3_9q0"
-    },
-    {
-      "videoId": "IgMTgmsvUnU",
-      "date": "2026-10-26",
-      "label": "2026년 10월 26일연중 제30주간 월요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 26일 연중 제30주간 월요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=IgMTgmsvUnU"
     }
   ]
 }

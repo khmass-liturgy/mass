@@ -167,11 +167,30 @@ window.BibleLog = (function(){
   function dayNum(s){ var p = s.split('-'); return Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000); }
   function key(d){ return d.code + '/' + d.chapter; }
 
+  // 날짜(일 번호)에 정해진 장의 기록 키 — 2026-11-02 이 창세기 1장 (index.html 성경 카드와 같다)
+  var EPOCH = dayNum('2026-11-02');
+  function keyFor(n){
+    var r = ((n - EPOCH) % TOTAL + TOTAL) % TOTAL, i = 0;
+    while (r >= COUNTS[i]) { r -= COUNTS[i]; i++; }
+    return CODES[i] + '/' + (r + 1);
+  }
+  // 읽은 날: 실제로 무언가 읽은 날(days) + 그날의 장을 그날이나 그 전에 미리 읽어 둔 날.
+  // 미리 읽은 장은 그날 다시 '새로' 읽을 것이 없어, 이것을 빼면 연속 일수가 끊겨 보인다.
+  function readDays(d){
+    var set = {}, t = dayNum(todayKST()), first = t;
+    d.days.forEach(function(s){ var n = dayNum(s); set[n] = true; if (n < first) first = n; });
+    for (var n = Math.max(first, EPOCH); n <= t; n++) {
+      var r = d.ch[keyFor(n)];
+      if (r && dayNum(r) <= n) set[n] = true;
+    }
+    return set;
+  }
+
   function stats(d){
-    var nums = d.days.map(dayNum).sort(function(a, b){ return a - b; });
+    var set = readDays(d);
+    var nums = Object.keys(set).map(Number).sort(function(a, b){ return a - b; });
     var best = 0, run = 0, prev = null;
     nums.forEach(function(n){ run = (prev !== null && n === prev + 1) ? run + 1 : (n === prev ? run : 1); prev = n; if (run > best) best = run; });
-    var set = {}; nums.forEach(function(n){ set[n] = true; });
     var t = dayNum(todayKST()), cur = 0, s = set[t] ? t : t - 1;
     while (set[s]) { cur++; s--; }
     var booksDone = {}, doneCount = 0;
@@ -278,10 +297,16 @@ window.BibleLog = (function(){
   function mark(day){
     day = day || sel[0];
     if (!day) return;
-    var d = load(), k = key(day);
-    if (d.ch[k]) return;
+    var d = load(), k = key(day), t = todayKST();
+    if (d.ch[k]) {
+      // 전에 읽은 장을 다시 끝까지 들은 날도 읽은 날로 센다.
+      if (d.days.indexOf(t) < 0 && !readDays(d)[dayNum(t)]) {
+        d.days.push(t);
+        if (save(d)) { render(); toast('📖 오늘도 읽었습니다 · 🔥 ' + stats(d).cur + '일 연속'); }
+      }
+      return;
+    }
     var before = earned(stats(d));
-    var t = todayKST();
     d.ch[k] = t;
     if (d.days.indexOf(t) < 0) d.days.push(t);
     if (!save(d)) { toast('이 브라우저에서는 기록을 저장할 수 없습니다.'); return; }

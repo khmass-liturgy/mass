@@ -2476,8 +2476,16 @@
             var log = JSON.parse(localStorage.getItem('bibleReadLog'));
             var cnt = log && log.ch ? Object.keys(log.ch).length : 0;
             if (cnt) {
-              var set = {}, tn = day + Math.floor(Date.UTC(2026, 10, 2) / 86400000);
-              (log.days || []).forEach(function(s){ var q = s.split('-'); set[Math.floor(Date.UTC(+q[0], +q[1] - 1, +q[2]) / 86400000)] = true; });
+              var e0 = Math.floor(Date.UTC(2026, 10, 2) / 86400000), set = {}, tn = day + e0, first = tn;
+              var dn = function(s){ var q = s.split('-'); return Math.floor(Date.UTC(+q[0], +q[1] - 1, +q[2]) / 86400000); };
+              (log.days || []).forEach(function(s){ var x = dn(s); set[x] = true; if (x < first) first = x; });
+              // 그날의 장을 그날이나 그 전에 미리 읽어 둔 날도 읽은 날 (bible_read.html readDays 와 같다)
+              for (var x = Math.max(first, e0); x <= tn; x++) {
+                var r = ((x - e0) % total + total) % total, j = 0;
+                while (r >= BOOKS[j][2]) { r -= BOOKS[j][2]; j++; }
+                var at = log.ch[BOOKS[j][0] + '/' + (r + 1)];
+                if (at && dn(at) <= x) set[x] = true;
+              }
               var streak = 0, s = set[tn] ? tn : tn - 1;
               while (set[s]) { streak++; s--; }
               text = (log.ch[b[0] + '/' + ch] ? '✓ 오늘 완료 · ' : b[1] + ' ' + ch + '장 듣기 · ') +

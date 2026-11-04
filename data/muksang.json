@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-04 19:44",
-  "cutoff": "2026-11-03",
+  "updated": "2026-11-05 04:39",
+  "cutoff": "2026-11-04",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7449",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-05",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 목요일 복음: 루카 15,1-10…"
+    },
+    {
+      "id": "daum_bbadaking_7985",
+      "title": "2026년 11월 5일 연중 제31주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-04",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7985",
+      "mass_date": "2026-11-05",
+      "priest": "조명연",
+      "excerpt": "영국 철학자 제러미 벤담의 공리주의를 기억할 것입니다."
+    },
+    {
+      "id": "daum_bbadaking_2261",
+      "title": "2026년 11월 5일 연중 제31주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-11-05",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2261",
+      "mass_date": "2026-11-05",
+      "priest": "양승국",
+      "excerpt": "죄인들에게 새로운 삶의 청사진을 펼쳐주시는 주님!"
     },
     {
       "id": "daum_catholicsb_7448",
@@ -66,46 +86,6 @@
       "date": "2026-11-04",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139785&menu=4770",
       "mass_date": "2026-11-04",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7447",
-      "title": "전삼용 요셉 신부 / 연중 제31주간 화요일 - 우리가 오래 살아야 하는 이유; 더 많이 실망하기 위해",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-02",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7447",
-      "mass_date": "2026-11-03",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 화요일 복음: 루카 14,15-24…"
-    },
-    {
-      "id": "daum_bbadaking_7983",
-      "title": "2026년 11월 3일 연중 제31주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-02",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7983",
-      "mass_date": "2026-11-03",
-      "priest": "조명연",
-      "excerpt": "1888년, 알프레드 노벨의 동생 루드비그가 사망했을 때, 한 프랑스 신문은…"
-    },
-    {
-      "id": "daum_bbadaking_2259",
-      "title": "2026년 11월 3일 연중 제31주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-11-03",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2259",
-      "mass_date": "2026-11-03",
-      "priest": "양승국",
-      "excerpt": "가장 본질적이고 가장 중요한 것은 무료입니다!"
-    },
-    {
-      "id": "2139738",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-03",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139738&menu=4770",
-      "mass_date": "2026-11-03",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

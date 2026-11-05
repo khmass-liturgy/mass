@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-05 19:40",
-  "cutoff": "2026-11-04",
+  "updated": "2026-11-06 04:49",
+  "cutoff": "2026-11-05",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7450",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-06",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 금요일 복음: 루카 16,1-8 ​…"
+    },
+    {
+      "id": "daum_bbadaking_7986",
+      "title": "2026년 11월 6일 연중 제31주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-05",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7986",
+      "mass_date": "2026-11-06",
+      "priest": "조명연",
+      "excerpt": "레오나르도 다빈치의 ‘모나리자’를 떠올려보십시오."
     },
     {
       "id": "daum_catholicsb_7449",
@@ -66,46 +76,6 @@
       "date": "2026-11-05",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139836&menu=4770",
       "mass_date": "2026-11-05",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7448",
-      "title": "전삼용 요셉 신부 / 연중 제31주간 수요일 - 맛있는 사람, 맛없는 사람",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-03",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7448",
-      "mass_date": "2026-11-04",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 수요일 복음: 루카 14,25-33…"
-    },
-    {
-      "id": "daum_bbadaking_7984",
-      "title": "2026년 11월 4일 성 가를로 보로메오 주교 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-11-03",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7984",
-      "mass_date": "2026-11-04",
-      "priest": "조명연",
-      "excerpt": "제2차 세계대전을 일으킨 독일의 히틀러가 주장한 나치즘의 핵심은 이것입니다."
-    },
-    {
-      "id": "daum_bbadaking_2260",
-      "title": "2026년 11월 4일 성 가를로 보로메오 주교 기념일",
-      "author": "박 베로니카",
-      "date": "2026-11-04",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2260",
-      "mass_date": "2026-11-04",
-      "priest": "양승국",
-      "excerpt": "매사에 하느님께 최 우선권을!"
-    },
-    {
-      "id": "2139785",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-04",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139785&menu=4770",
-      "mass_date": "2026-11-04",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

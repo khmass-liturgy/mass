@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-05 10:26",
+  "updated": "2026-11-06 02:22",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "hBtG5DH6qWc",
+      "date": "2026-11-06",
+      "title": "연중 제31주간 금요일",
+      "url": "https://www.youtube.com/watch?v=hBtG5DH6qWc"
+    },
     {
       "videoId": "ALtwZyTbiMI",
       "date": "2026-11-05",
@@ -57,12 +63,6 @@
       "date": "2026-10-28",
       "title": "성 시몬과 성 유다(타대오) 사도 축일",
       "url": "https://www.youtube.com/watch?v=y0tkJiGSdIA"
-    },
-    {
-      "videoId": "uECTQ6AiMkA",
-      "date": "2026-10-27",
-      "title": "연중 제30주간 화요일",
-      "url": "https://www.youtube.com/watch?v=uECTQ6AiMkA"
     }
   ]
 }

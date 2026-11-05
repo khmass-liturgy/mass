@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-05 19:53",
+  "updated": "2026-11-06 06:04",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "dUZFHDkBiJE",
-  "date": "2026-11-05",
-  "label": "2026년 11월 5일연중 제31주간 목요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 5일 연중 제31주간 목요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "V4O2sE9LnjE",
+  "date": "2026-11-06",
+  "label": "2026년 11월 6일연중 제31주간 금요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 6일 연중 제31주간 금요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=dUZFHDkBiJE",
+  "url": "https://www.youtube.com/watch?v=V4O2sE9LnjE",
   "count": 10,
   "videos": [
+    {
+      "videoId": "V4O2sE9LnjE",
+      "date": "2026-11-06",
+      "label": "2026년 11월 6일연중 제31주간 금요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 6일 연중 제31주간 금요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=V4O2sE9LnjE"
+    },
     {
       "videoId": "dUZFHDkBiJE",
       "date": "2026-11-05",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 28일 성 시몬과 성 유다(타대오) 사도 축일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=VKMiPZkrt1I"
-    },
-    {
-      "videoId": "QeIeUR3_9q0",
-      "date": "2026-10-27",
-      "label": "2026년 10월 27일연중 제30주간 화요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 27일 연중 제30주간 화요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=QeIeUR3_9q0"
     }
   ]
 }

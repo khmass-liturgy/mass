@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-06 10:31",
+  "updated": "2026-11-07 01:44",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "krqwMReI7kY",
+      "date": "2026-11-07",
+      "title": "복되신 동정 마리아 신심 미사",
+      "url": "https://www.youtube.com/watch?v=krqwMReI7kY"
+    },
     {
       "videoId": "hBtG5DH6qWc",
       "date": "2026-11-06",
@@ -57,12 +63,6 @@
       "date": "2026-10-29",
       "title": "연중 제30주간 목요일",
       "url": "https://www.youtube.com/watch?v=XP_av2isND4"
-    },
-    {
-      "videoId": "y0tkJiGSdIA",
-      "date": "2026-10-28",
-      "title": "성 시몬과 성 유다(타대오) 사도 축일",
-      "url": "https://www.youtube.com/watch?v=y0tkJiGSdIA"
     }
   ]
 }

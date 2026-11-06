@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06 04:49",
+  "updated": "2026-11-06 10:28",
   "cutoff": "2026-11-05",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7450",
@@ -38,6 +38,26 @@
       "mass_date": "2026-11-06",
       "priest": "조명연",
       "excerpt": "레오나르도 다빈치의 ‘모나리자’를 떠올려보십시오."
+    },
+    {
+      "id": "daum_bbadaking_2262",
+      "title": "2026년 11월 6일 연중 제31주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-11-06",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2262",
+      "mass_date": "2026-11-06",
+      "priest": "양승국",
+      "excerpt": "정작 중요한 것은 외면해버리는 우리!"
+    },
+    {
+      "id": "2139881",
+      "title": "김건테 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-06",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139881&menu=4770",
+      "mass_date": "2026-11-06",
+      "priest": "조욱현",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7449",

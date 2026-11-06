@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-06 19:40",
-  "cutoff": "2026-11-05",
+  "updated": "2026-11-07 04:14",
+  "cutoff": "2026-11-06",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7451",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-07",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 토요일 복음: 루카 16,9ㄴ-15…"
+    },
+    {
+      "id": "daum_bbadaking_7987",
+      "title": "2026년 11월 7일 연중 제31주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-06",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7987",
+      "mass_date": "2026-11-07",
+      "priest": "조명연",
+      "excerpt": "1976년부터 1996년까지 미국 프로야구 명문인 LA 다저스의 감독인 토미…"
     },
     {
       "id": "daum_catholicsb_7450",
@@ -67,46 +77,6 @@
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139881&menu=4770",
       "mass_date": "2026-11-06",
       "priest": "조욱현",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7449",
-      "title": "전삼용 요셉 신부 / 연중 제31주간 목요일 - 행위에 집중하는 사람들은 내버려 둬라",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-04",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7449",
-      "mass_date": "2026-11-05",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 목요일 복음: 루카 15,1-10…"
-    },
-    {
-      "id": "daum_bbadaking_7985",
-      "title": "2026년 11월 5일 연중 제31주간 목요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-04",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7985",
-      "mass_date": "2026-11-05",
-      "priest": "조명연",
-      "excerpt": "영국 철학자 제러미 벤담의 공리주의를 기억할 것입니다."
-    },
-    {
-      "id": "daum_bbadaking_2261",
-      "title": "2026년 11월 5일 연중 제31주간 목요일",
-      "author": "박 베로니카",
-      "date": "2026-11-05",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2261",
-      "mass_date": "2026-11-05",
-      "priest": "양승국",
-      "excerpt": "죄인들에게 새로운 삶의 청사진을 펼쳐주시는 주님!"
-    },
-    {
-      "id": "2139836",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-05",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139836&menu=4770",
-      "mass_date": "2026-11-05",
-      "priest": "김건태",
       "excerpt": "안녕하세요."
     }
   ]

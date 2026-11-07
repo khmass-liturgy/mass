@@ -509,13 +509,13 @@
   .link-card:hover .lc-go{color:var(--navy);transform:translateX(3px);}
   .link-card .lc-name{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;color:var(--navy);}
   .link-card .lc-desc{font-size:.73rem;color:var(--muted);line-height:1.4;}
-  /* 찬미받으소서 — 공동의 집 지구를 떠올리게 초록 바탕 (계절 꾸밈보다 id 가 앞선다) */
-  #laudatoCard{background:linear-gradient(135deg,#2F6B3C,#4C8A4F 60%,#7AA45A);border-color:#3E7A47;border-left-color:#C9E2A8;}
-  #laudatoCard:hover{border-left-color:#fff;box-shadow:0 6px 20px rgba(40,90,50,.3);}
-  #laudatoCard .lc-name{color:#fff;}
-  #laudatoCard .lc-desc{color:#E3F1D8;}
-  #laudatoCard .lc-go{color:#CFE6C0;}
-  #laudatoCard:hover .lc-go{color:#fff;}
+  /* 찬미받으소서 — 새 카드 알림으로 2026-11-07~11-13(7일)만 초록 바탕 (.fresh 는 아래 스크립트가 붙인다) */
+  #laudatoCard.fresh{background:linear-gradient(135deg,#2F6B3C,#4C8A4F 60%,#7AA45A);border-color:#3E7A47;border-left-color:#C9E2A8;}
+  #laudatoCard.fresh:hover{border-left-color:#fff;box-shadow:0 6px 20px rgba(40,90,50,.3);}
+  #laudatoCard.fresh .lc-name{color:#fff;}
+  #laudatoCard.fresh .lc-desc{color:#E3F1D8;}
+  #laudatoCard.fresh .lc-go{color:#CFE6C0;}
+  #laudatoCard.fresh:hover .lc-go{color:#fff;}
 
   .link-more{margin-bottom:10px;}
   .link-more .link-grid{margin-top:14px;margin-bottom:0;}
@@ -2815,6 +2815,8 @@ window.WeatherFx = (function(){
         var p = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }).split('-');
         var i = Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000) % T.length;
         desc.textContent = '오늘의 주제: ' + T[i] + ' · 영상과 회칙 요약';
+        // 새로 생긴 카드라 7일 동안(11/7~11/13)만 초록 바탕으로 눈에 띄게 한다
+        if (p.join('-') <= '2026-11-13') document.getElementById('laudatoCard').classList.add('fresh');
       })();
       </script>
 

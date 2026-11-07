@@ -1064,10 +1064,10 @@ window.WeatherFx = (function(){
   var SKY = {
     sun:    { tint: 'rgba(255,205,120,.18)', sun: .95, clouds: 0 },
     partly: { tint: 'rgba(255,215,150,.10)', sun: .6,  clouds: 3 },
-    cloud:  { tint: 'rgba(100,112,130,.13)', sun: 0,   clouds: 7 },
-    fog:    { tint: 'rgba(196,202,210,.30)', sun: 0,   clouds: 0, haze: 5 },
-    rain:   { tint: 'rgba(70,88,112,.14)',   sun: 0,   clouds: 4 },
-    snow:   { tint: 'rgba(200,214,234,.16)', sun: 0,   clouds: 3 }
+    cloud:  { tint: 'rgba(100,112,130,.16)', sun: 0,   clouds: 9, sky: '82,94,114', skyA: .6 },
+    fog:    { tint: 'rgba(196,202,210,.30)', sun: 0,   clouds: 0, haze: 5, sky: '170,178,190', skyA: .45 },
+    rain:   { tint: 'rgba(70,88,112,.16)',   sun: 0,   clouds: 6, sky: '62,76,98', skyA: .55 },
+    snow:   { tint: 'rgba(200,214,234,.16)', sun: 0,   clouds: 4, sky: '150,165,188', skyA: .45 }
   };
   function reduced(){ try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
   function size(){
@@ -1082,13 +1082,14 @@ window.WeatherFx = (function(){
     var c = document.createElement('canvas'), ch = cw * .5;
     c.width = cw; c.height = ch;
     var g = c.getContext('2d');
-    var col = dark ? '120,130,148' : '235,240,247';
+    var col = dark ? '96,106,124' : '235,240,247';
     for (var i = 0; i < 7; i++) {
       var r = ch * (.22 + Math.random() * .18);
       var x = cw * (.18 + i * .11) + (Math.random() - .5) * cw * .05;
       var y = ch * (.55 + (Math.random() - .5) * .25) - (i > 1 && i < 5 ? ch * .12 : 0);
       var rg = g.createRadialGradient(x, y, 0, x, y, r);
-      rg.addColorStop(0, 'rgba(' + col + ',.55)');
+      rg.addColorStop(0, 'rgba(' + col + ',' + (dark ? .8 : .6) + ')');
+      rg.addColorStop(.55, 'rgba(' + col + ',' + (dark ? .45 : .3) + ')');
       rg.addColorStop(1, 'rgba(' + col + ',0)');
       g.fillStyle = rg;
       g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
@@ -1101,7 +1102,7 @@ window.WeatherFx = (function(){
     for (var i = 0; i < n; i++) {
       var cw = Math.max(220, Math.min(w * (.35 + Math.random() * .3), 620));
       clouds.push({ img: cloudSprite(Math.round(cw), dark), x: Math.random() * (w + cw) - cw,
-                    y: Math.random() * h * .85 - cw * .1, v: 6 + Math.random() * 10, a: .55 + Math.random() * .35 });
+                    y: Math.random() * h * .85 - cw * .1, v: 6 + Math.random() * 10, a: (dark ? .75 : .6) + Math.random() * .25 });
     }
   }
   function makeHaze(n){
@@ -1116,6 +1117,14 @@ window.WeatherFx = (function(){
     var S = SKY[kind];
     ctx.globalAlpha = 1;
     ctx.fillStyle = S.tint; ctx.fillRect(0, 0, w, h);
+    if (S.sky) {
+      // 흐린 하늘: 위가 짙고 아래로 갈수록 옅어지는 구름빛 그라데이션 (맑은 날 햇살처럼)
+      var sg = ctx.createLinearGradient(0, 0, 0, h);
+      sg.addColorStop(0, 'rgba(' + S.sky + ',' + S.skyA + ')');
+      sg.addColorStop(.45, 'rgba(' + S.sky + ',' + (S.skyA * .45) + ')');
+      sg.addColorStop(1, 'rgba(' + S.sky + ',' + (S.skyA * .12) + ')');
+      ctx.fillStyle = sg; ctx.fillRect(0, 0, w, h);
+    }
     if (S.sun) {
       // 오른쪽 위에서 비치는 햇살: 둥근 빛 + 천천히 도는 빛줄기
       var sx = w * .92, sy = -h * .04, R = Math.max(w, h) * .9;

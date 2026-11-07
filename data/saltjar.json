@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-07 19:05",
+  "updated": "2026-11-08 03:46",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "DGln0zc0Wsc",
-  "date": "2026-11-07",
-  "label": "2026년 11월 7일연중 제31주간 토요일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 7일 연중 제31주간 토요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "F6lAMtY2jFk",
+  "date": "2026-11-08",
+  "label": "2026년 11월 8일연중 제32주일(평신도 주일)",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 8일 연중 제32주일(평신도 주일)](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=DGln0zc0Wsc",
+  "url": "https://www.youtube.com/watch?v=F6lAMtY2jFk",
   "count": 10,
   "videos": [
+    {
+      "videoId": "F6lAMtY2jFk",
+      "date": "2026-11-08",
+      "label": "2026년 11월 8일연중 제32주일(평신도 주일)",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 8일 연중 제32주일(평신도 주일)](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=F6lAMtY2jFk"
+    },
     {
       "videoId": "DGln0zc0Wsc",
       "date": "2026-11-07",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 10월 30일 연중 제30주간 금요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=l7OLFmWn7w4"
-    },
-    {
-      "videoId": "qhn8twZ55RA",
-      "date": "2026-10-29",
-      "label": "2026년 10월 29일연중 제30주간 목요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 10월 29일 연중 제30주간 목요일](한재호 루카신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=qhn8twZ55RA"
     }
   ]
 }

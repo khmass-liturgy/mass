@@ -1043,19 +1043,31 @@
 </head>
 <body>
 
-<!-- 눈·비 오는 날 배경에 내리는 눈송이·빗방울. 카드들 뒤(z-index:-1)에서 그리고 누르기는 막지 않는다.
-     머리글 날씨 스크립트가 오늘 날씨를 받아 WeatherFx.start('snow' | 'rain') 을 부른다.
-     주소에 ?wx=snow / ?wx=rain 을 붙이면 날씨와 상관없이 미리 볼 수 있다. -->
+<!-- 날씨에 따라 바뀌는 배경: 맑음(햇살) · 구름 조금 · 흐림(구름) · 안개 · 비 · 눈.
+     카드들 뒤(z-index:-1) 캔버스에 그리므로 글을 가리지 않고 누르기도 막지 않는다.
+     머리글 날씨 스크립트가 오늘 날씨를 받아 WeatherFx.start(종류, 비의 세기) 를 부른다.
+     주소에 ?wx=sun / partly / cloud / fog / rain1 / rain / rain3 / snow 를 붙이면 날씨와 상관없이 미리 볼 수 있다.
+     '동작 줄이기' 설정이면 움직이지 않는 배경(햇살·구름 색조)만 한 번 그린다. -->
 <canvas id="wxFx" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:none;"></canvas>
 <script>
 window.WeatherFx = (function(){
   var cv = document.getElementById('wxFx'), ctx = cv && cv.getContext && cv.getContext('2d');
-  var kind = null, level = 2, ps = [], w = 0, h = 0, dpr = 1, last = 0;
+  var KINDS = { sun: 1, partly: 1, cloud: 1, fog: 1, rain: 1, snow: 1 };
+  var kind = null, level = 2, ps = [], clouds = [], w = 0, h = 0, dpr = 1, last = 0, still = false, running = false;
   // 비의 세기(1 약한 비 · 2 보통 비 · 3 강한 비)에 따라 빗줄기 속도·길이·개수·기울기를 달리한다.
   var RAIN = {
     1: { vy: 300, vr: 200, len: 7,  lr: 8,  area: 14000, max: 90,  wind: .08 },
     2: { vy: 520, vr: 380, len: 10, lr: 14, area: 7000,  max: 180, wind: .18 },
     3: { vy: 850, vr: 500, len: 16, lr: 18, area: 3500,  max: 320, wind: .3 }
+  };
+  // 날씨마다 화면 전체에 옅게 덮는 색조와 구름 수
+  var SKY = {
+    sun:    { tint: 'rgba(255,214,140,.10)', sun: .55, clouds: 0 },
+    partly: { tint: 'rgba(255,225,170,.06)', sun: .35, clouds: 3 },
+    cloud:  { tint: 'rgba(100,112,130,.13)', sun: 0,   clouds: 7 },
+    fog:    { tint: 'rgba(196,202,210,.30)', sun: 0,   clouds: 0, haze: 5 },
+    rain:   { tint: 'rgba(70,88,112,.14)',   sun: 0,   clouds: 4 },
+    snow:   { tint: 'rgba(200,214,234,.16)', sun: 0,   clouds: 3 }
   };
   function reduced(){ try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
   function size(){
@@ -1064,6 +1076,83 @@ window.WeatherFx = (function(){
     cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
+
+  // 구름 한 덩이를 미리 작은 캔버스에 그려 두고 매 프레임 옮겨 그리기만 한다(폰에서도 가볍게).
+  function cloudSprite(cw, dark){
+    var c = document.createElement('canvas'), ch = cw * .5;
+    c.width = cw; c.height = ch;
+    var g = c.getContext('2d');
+    var col = dark ? '120,130,148' : '235,240,247';
+    for (var i = 0; i < 7; i++) {
+      var r = ch * (.22 + Math.random() * .18);
+      var x = cw * (.18 + i * .11) + (Math.random() - .5) * cw * .05;
+      var y = ch * (.55 + (Math.random() - .5) * .25) - (i > 1 && i < 5 ? ch * .12 : 0);
+      var rg = g.createRadialGradient(x, y, 0, x, y, r);
+      rg.addColorStop(0, 'rgba(' + col + ',.55)');
+      rg.addColorStop(1, 'rgba(' + col + ',0)');
+      g.fillStyle = rg;
+      g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+    }
+    return c;
+  }
+  function makeClouds(n){
+    clouds = [];
+    var dark = kind === 'cloud' || kind === 'rain';
+    for (var i = 0; i < n; i++) {
+      var cw = Math.max(220, Math.min(w * (.35 + Math.random() * .3), 620));
+      clouds.push({ img: cloudSprite(Math.round(cw), dark), x: Math.random() * (w + cw) - cw,
+                    y: Math.random() * h * .85 - cw * .1, v: 6 + Math.random() * 10, a: .55 + Math.random() * .35 });
+    }
+  }
+  function makeHaze(n){
+    clouds = [];
+    for (var i = 0; i < n; i++) {
+      clouds.push({ haze: true, x: Math.random() * w, y: (i + .5) / n * h, v: 8 + Math.random() * 10,
+                    rw: w * (.6 + Math.random() * .5), rh: 40 + Math.random() * 60 });
+    }
+  }
+
+  function backdrop(t){
+    var S = SKY[kind];
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = S.tint; ctx.fillRect(0, 0, w, h);
+    if (S.sun) {
+      // 오른쪽 위에서 비치는 햇살: 둥근 빛 + 천천히 도는 빛줄기
+      var sx = w * .92, sy = -h * .04, R = Math.max(w, h) * .75;
+      var g = ctx.createRadialGradient(sx, sy, 0, sx, sy, R);
+      g.addColorStop(0, 'rgba(255,214,120,' + S.sun + ')');
+      g.addColorStop(.25, 'rgba(255,200,110,' + (S.sun * .45) + ')');
+      g.addColorStop(1, 'rgba(255,200,110,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+      ctx.save(); ctx.translate(sx, sy); ctx.rotate(t / 1000 * .03);
+      ctx.fillStyle = 'rgba(255,215,140,' + (S.sun * .16) + ')';
+      for (var i = 0; i < 12; i++) {
+        ctx.rotate(Math.PI / 6);
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(R, -R * .07); ctx.lineTo(R, R * .07); ctx.closePath(); ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+  function drawClouds(dt){
+    for (var i = 0; i < clouds.length; i++) {
+      var c = clouds[i];
+      c.x += c.v * dt;
+      if (c.haze) {
+        if (c.x - c.rw > w) c.x = -c.rw;
+        var g = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, c.rw);
+        g.addColorStop(0, 'rgba(225,229,235,.45)'); g.addColorStop(1, 'rgba(225,229,235,0)');
+        ctx.save(); ctx.translate(0, c.y); ctx.scale(1, c.rh / c.rw); ctx.translate(0, -c.y);
+        ctx.fillStyle = g; ctx.fillRect(c.x - c.rw, c.y - c.rw, c.rw * 2, c.rw * 2);
+        ctx.restore();
+      } else {
+        if (c.x > w) { c.x = -c.img.width; c.y = Math.random() * h * .85; }
+        ctx.globalAlpha = c.a;
+        ctx.drawImage(c.img, c.x, c.y);
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
   function make(top){
     var p = { x: Math.random() * w, y: top ? -10 - Math.random() * 40 : Math.random() * h };
     if (kind === 'snow') {
@@ -1079,10 +1168,8 @@ window.WeatherFx = (function(){
     }
     return p;
   }
-  function frame(t){
-    if (!kind) return;
-    var dt = Math.min((t - (last || t)) / 1000, .05); last = t;
-    ctx.clearRect(0, 0, w, h);
+  function drawParticles(dt){
+    if (!ps.length) return;
     var wind = kind === 'rain' ? RAIN[level].wind : 0;   // 비는 비스듬히 (셀수록 더)
     if (kind === 'snow') ctx.fillStyle = '#fff';
     else { ctx.strokeStyle = 'rgb(85,120,170)'; ctx.lineWidth = 1.3; ctx.lineCap = 'round'; }
@@ -1103,26 +1190,49 @@ window.WeatherFx = (function(){
       if (p.y - 30 > h || p.x > w + 30) ps[i] = make(true);
     }
     ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+  }
+
+  function draw(t, dt){
+    ctx.clearRect(0, 0, w, h);
+    backdrop(t);
+    drawClouds(dt);
+    drawParticles(dt);
+  }
+  function frame(t){
+    if (!kind || still) { running = false; return; }
+    var dt = Math.min((t - (last || t)) / 1000, .05); last = t;
+    draw(t, dt);
     requestAnimationFrame(frame);
+  }
+  function setup(){
+    size();
+    var S = SKY[kind];
+    if (S.haze) makeHaze(S.haze); else makeClouds(S.clouds);
+    ps = [];
+    if (still) return;
+    if (kind === 'snow' || kind === 'rain') {
+      // 눈은 화면이 좁은 폰에서도 넉넉히(최소 120개) 내리게 한다
+      var n = kind === 'snow' ? Math.round(Math.max(120, Math.min(w * h / 3500, 320)))
+                              : Math.round(Math.min(w * h / RAIN[level].area, RAIN[level].max));
+      for (var i = 0; i < n; i++) ps.push(make(false));
+    }
   }
   function start(k, lv){
     lv = RAIN[lv] ? lv : 2;
-    if (!ctx || (kind === k && level === lv) || reduced() || (k !== 'snow' && k !== 'rain')) return;
-    level = lv;
-    var first = !kind;
-    kind = k;
+    if (!ctx || !KINDS[k] || (kind === k && level === lv)) return;
+    kind = k; level = lv; still = reduced();
     cv.style.display = 'block';
-    size();
-    // 눈은 화면이 좁은 폰에서도 넉넉히(최소 120개) 내리게 한다
-    var n = k === 'snow' ? Math.round(Math.max(120, Math.min(w * h / 3500, 320)))
-                         : Math.round(Math.min(w * h / RAIN[level].area, RAIN[level].max));
-    ps = [];
-    for (var i = 0; i < n; i++) ps.push(make(false));
-    if (first) { last = 0; requestAnimationFrame(frame); }
+    setup();
+    if (still) { draw(0, 0); return; }          // 움직임 없이 한 번만
+    if (!running) { running = true; last = 0; requestAnimationFrame(frame); }
   }
-  window.addEventListener('resize', function(){ if (kind) size(); });
-  // 미리 보기: ?wx=snow, ?wx=rain (보통), ?wx=rain1 (약한 비) · ?wx=rain3 (강한 비)
-  var m = location.search.match(/[?&]wx=(snow|rain)([123])?\b/), q = m && m[1];
+  // 폰은 스크롤만 해도 주소창 때문에 높이가 바뀐다 — 너비가 바뀔 때만 구름·눈비를 새로 깐다.
+  window.addEventListener('resize', function(){
+    if (!kind) return;
+    if (Math.abs(cv.clientWidth - w) > 40) setup(); else size();
+    if (still) draw(0, 0);
+  });
+  var m = location.search.match(/[?&]wx=(sun|partly|cloud|fog|snow|rain)([123])?\b/), q = m && m[1];
   if (q) start(q, m[2] ? +m[2] : 2);
   return { start: start, preview: !!q };
 })();
@@ -1200,6 +1310,14 @@ window.WeatherFx = (function(){
     if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95) return 'rain';
     return null;
   }
+  // 눈·비가 아닌 날의 하늘: 맑음 'sun' · 구름 조금 'partly' · 흐림 'cloud' · 안개 'fog'
+  function sky(code, night){
+    if (code === 0) return night ? null : 'sun';
+    if (code === 1 || code === 2) return night ? 'cloud' : 'partly';
+    if (code === 3) return 'cloud';
+    if (code === 45 || code === 48) return 'fog';
+    return null;
+  }
   // 비의 세기: 약한 이슬비·비·소나기 1, 보통 2, 강한 비·소나기·뇌우 3
   function rainLevel(code){
     if ([51, 56, 61, 66, 80].indexOf(code) >= 0) return 1;
@@ -1209,7 +1327,7 @@ window.WeatherFx = (function(){
   function show(lat, lon, name){
     var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(2)
       + '&longitude=' + lon.toFixed(2)
-      + '&current=weather_code'
+      + '&current=weather_code,is_day'
       + '&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Asia%2FSeoul&forecast_days=1';
     fetch(url).then(function(r){ return r.json(); }).then(function(d){
       var dl = d && d.daily;
@@ -1223,8 +1341,12 @@ window.WeatherFx = (function(){
       box.setAttribute('aria-label', box.title);
       box.style.display = 'flex';
       // 배경 눈·비: 지금 내리는 것을 먼저 보고, 아니면 오늘 예보로 정한다.
-      var cc = d.current && d.current.weather_code;
-      var code = precip(cc) ? cc : dl.weather_code[0], fx = precip(code);
+      // 배경: 눈·비는 지금 내리는 것을 먼저, 아니면 오늘 예보로 정한다.
+      // 눈·비가 없으면 지금 하늘(맑음·구름·흐림·안개)로 정한다. 밤에는 햇살을 그리지 않는다.
+      var cc = d.current && d.current.weather_code, dc = dl.weather_code[0];
+      var code = precip(cc) ? cc : precip(dc) ? dc : (cc != null ? cc : dc);
+      var night = d.current && d.current.is_day === 0;
+      var fx = precip(code) || sky(code, night);
       if (fx && window.WeatherFx && !WeatherFx.preview) WeatherFx.start(fx, rainLevel(code));
     }).catch(function(){});
   }

@@ -317,6 +317,10 @@
     font-size:1.1rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);
     background:rgba(0,0,0,.15);
   }
+  .rosary-peek{margin-top:8px;font-size:.8rem;line-height:1.55;color:rgba(255,248,235,.88);word-break:keep-all;}
+  .rosary-peek p{margin:0 0 3px;}
+  .rosary-peek .wyd-leader{margin-right:2px;}
+  .rosary-peek:empty,.prayer-details[open] .rosary-peek{display:none;}
   .prayer-body{
     padding:0 28px 24px;
     border-top:1px solid rgba(201,168,76,.2);
@@ -2823,6 +2827,8 @@
             <div style="min-width:0;">
               <div class="wyd-eyebrow" id="rosaryEyebrow" style="margin-bottom:4px;"><span id="rosaryDowText">오늘의 묵주기도</span> · <a href="rosary-guide.html" class="rosary-guide-link" style="color:inherit;text-decoration:underline;">묵주기도 바치는 요령</a></div>
               <div class="wyd-title" id="rosaryTitle" style="margin-bottom:0;">묵주기도 신비</div>
+              <!-- 접힌 카드에도 1·2단을 미리 보여 옆 대축일 카드와 높이를 맞춘다(펼치면 감추고 아래 전체 목록) -->
+              <div class="rosary-peek" id="rosaryPeek"></div>
             </div>
           </div>
           <span class="prayer-arrow">▼</span>
@@ -2979,6 +2985,10 @@
     if (dowEl) dowEl.textContent = '오늘의 묵주기도 · ' + DOW[dow];
     titleEl.textContent = today.name;
     listEl.innerHTML = today.decades.map(function(t, i){
+      return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';
+    }).join('');
+    var peekEl = document.getElementById('rosaryPeek');
+    if (peekEl) peekEl.innerHTML = today.decades.slice(0, 2).map(function(t, i){
       return '<p><span class="wyd-leader">' + (i+1) + '단</span> ' + t + '</p>';
     }).join('');
 

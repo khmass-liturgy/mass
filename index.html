@@ -1062,8 +1062,8 @@ window.WeatherFx = (function(){
   };
   // 날씨마다 화면 전체에 옅게 덮는 색조와 구름 수
   var SKY = {
-    sun:    { tint: 'rgba(255,214,140,.10)', sun: .55, clouds: 0 },
-    partly: { tint: 'rgba(255,225,170,.06)', sun: .35, clouds: 3 },
+    sun:    { tint: 'rgba(255,205,120,.18)', sun: .95, clouds: 0 },
+    partly: { tint: 'rgba(255,215,150,.10)', sun: .6,  clouds: 3 },
     cloud:  { tint: 'rgba(100,112,130,.13)', sun: 0,   clouds: 7 },
     fog:    { tint: 'rgba(196,202,210,.30)', sun: 0,   clouds: 0, haze: 5 },
     rain:   { tint: 'rgba(70,88,112,.14)',   sun: 0,   clouds: 4 },
@@ -1118,17 +1118,22 @@ window.WeatherFx = (function(){
     ctx.fillStyle = S.tint; ctx.fillRect(0, 0, w, h);
     if (S.sun) {
       // 오른쪽 위에서 비치는 햇살: 둥근 빛 + 천천히 도는 빛줄기
-      var sx = w * .92, sy = -h * .04, R = Math.max(w, h) * .75;
+      var sx = w * .92, sy = -h * .04, R = Math.max(w, h) * .9;
       var g = ctx.createRadialGradient(sx, sy, 0, sx, sy, R);
-      g.addColorStop(0, 'rgba(255,214,120,' + S.sun + ')');
-      g.addColorStop(.25, 'rgba(255,200,110,' + (S.sun * .45) + ')');
-      g.addColorStop(1, 'rgba(255,200,110,0)');
+      g.addColorStop(0, 'rgba(255,236,170,' + S.sun + ')');
+      g.addColorStop(.12, 'rgba(255,200,90,' + (S.sun * .85) + ')');
+      g.addColorStop(.4, 'rgba(255,180,80,' + (S.sun * .4) + ')');
+      g.addColorStop(1, 'rgba(255,180,80,0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
       ctx.save(); ctx.translate(sx, sy); ctx.rotate(t / 1000 * .03);
-      ctx.fillStyle = 'rgba(255,215,140,' + (S.sun * .16) + ')';
+      // 빛줄기는 해에서 멀어질수록 옅어지게 (둥근 그라데이션으로 칠한다)
+      var rg = ctx.createRadialGradient(0, 0, 0, 0, 0, R);
+      rg.addColorStop(0, 'rgba(255,210,110,' + (S.sun * .35) + ')');
+      rg.addColorStop(1, 'rgba(255,210,110,0)');
+      ctx.fillStyle = rg;
       for (var i = 0; i < 12; i++) {
         ctx.rotate(Math.PI / 6);
-        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(R, -R * .07); ctx.lineTo(R, R * .07); ctx.closePath(); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(R, -R * .09); ctx.lineTo(R, R * .09); ctx.closePath(); ctx.fill();
       }
       ctx.restore();
     }

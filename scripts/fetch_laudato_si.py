@@ -2,12 +2,12 @@
 """
 '찬미받으소서' 카드·화면(laudato_si.html)에 보여 줄 오늘의 유튜브 영상을 고른다.
 
-찬미받으소서 회칙과 이어지는 주제 16가지(기후위기, 빙하 감소, 쓰레기 줄이기 …
-아시시의 성 프란치스코, 모든 피조물의 모후·성 요셉)를 하루에 하나씩 돌려 가며,
+찬미받으소서 회칙과 이어지는 주제 22가지(기후위기, 빙하 감소, 쓰레기 줄이기 …
+생태적 회개, 기후 난민, 미래 세대)를 하루에 하나씩 돌려 가며,
 그날 주제로 유튜브를 검색해 영상 한 편(+ 더 볼 영상 몇 편)을 골라
 data/laudato_si.json 으로 저장한다.
 
-- 주제 순서는 화면(laudato_si.html, index.html)과 같다: 1970-01-01 부터 센 날수 % 16 (한국 날짜).
+- 주제 순서는 화면(laudato_si.html, index.html)과 같다: 1970-01-01 부터 센 날수 % 주제 수(22) (한국 날짜).
 - 가톨릭 채널·제목의 영상을 앞세우고, 한글 제목·1~40분 길이만 남긴다.
 - 최근 60일 안에 보여 준 영상은 다시 고르지 않는다(history).
 - 고른 영상이 한국에서 재생되고 다른 사이트에 넣어 재생(임베드)할 수 있는지 확인한다.
@@ -48,6 +48,12 @@ TOPICS = [
     ("창조주 하느님을 찬미함", ["창조주 하느님 찬미 가톨릭 강론", "창조 신앙 천주교"]),
     ("아시시의 성 프란치스코", ["아시시의 성 프란치스코 태양의 찬가", "성 프란치스코 가톨릭"]),
     ("모든 피조물의 모후와 성 요셉", ["모든 피조물의 모후 찬미받으소서", "성 요셉 찬미받으소서", "성 요셉 가톨릭 강론"]),
+    ("물은 생명입니다", ["물 부족 찬미받으소서", "물 아끼기 가톨릭 생태"]),
+    ("생태적 회개", ["생태적 회개 찬미받으소서", "생태적 회개 가톨릭 강의"]),
+    ("음식 낭비 줄이기", ["음식물 쓰레기 줄이기 가톨릭", "음식 낭비 프란치스코 교황"]),
+    ("기후 난민과 이웃", ["기후 난민 가톨릭", "기후난민 프란치스코 교황"]),
+    ("미래 세대를 위한 정의", ["미래 세대 기후위기 가톨릭", "다음 세대 지구 찬미받으소서"]),
+    ("주일의 쉼과 감사의 식탁", ["식사 전 감사 기도 가톨릭", "주일 거룩하게 지내기 가톨릭 강론"]),
 ]
 
 HISTORY_DAYS = 60
@@ -118,8 +124,12 @@ def search(query: str) -> list:
     return out
 
 
+# 성가 연습·반주용 영상 등 주제와 상관없는 것은 뺀다
+SKIP_RE = re.compile(r"파트\s*연습|반주|\bMR\b|노래방|악보|가사\s*연습|shorts", re.I)
+
+
 def usable(v) -> bool:
-    return (bool(HANGUL_RE.search(v["title"])) and v["duration"] is not None
+    return (bool(HANGUL_RE.search(v["title"])) and not SKIP_RE.search(v["title"]) and v["duration"] is not None
             and MIN_SEC <= v["duration"] <= MAX_SEC)
 
 
@@ -206,8 +216,10 @@ def main() -> int:
         return {k: v[k] for k in ("videoId", "title", "channel", "duration", "published")}
 
     history.append({"date": today.isoformat(), "videoId": pick["videoId"]})
-    by_topic = old.get("byTopic", {})
-    by_topic[str(idx)] = {"date": today.isoformat(), "video": slim(pick), "more": [slim(v) for v in rest]}
+    # 주제 이름으로 남긴다 — 주제를 더하거나 순서를 바꿔도 엉뚱한 주제의 영상이 붙지 않게
+    titles = {t for t, _ in TOPICS}
+    by_topic = {k: v for k, v in old.get("byTopic", {}).items() if k in titles}
+    by_topic[topic] = {"date": today.isoformat(), "video": slim(pick), "more": [slim(v) for v in rest]}
 
     data = {
         "updated": datetime.now(KST).strftime("%Y-%m-%d %H:%M"),
@@ -218,7 +230,7 @@ def main() -> int:
         "video": slim(pick),
         "more": [slim(v) for v in rest],
         "topics": [{"title": t, "query": q[0]} for t, q in TOPICS],
-        "byTopic": dict(sorted(by_topic.items(), key=lambda kv: int(kv[0]))),
+        "byTopic": {t: by_topic[t] for t, _ in TOPICS if t in by_topic},
         "history": history,
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)

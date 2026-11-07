@@ -73,7 +73,7 @@ details[open] summary::after{content:'▴'}
 .chap h4 small{color:var(--muted);font-weight:400;font-size:11.5px;margin-left:4px}
 .chap p{font-size:14px}
 
-/* 주제 16 */
+/* 주제 22 */
 .topics{list-style:none;display:grid;grid-template-columns:1fr;gap:8px}
 @media (min-width:600px){.topics{grid-template-columns:1fr 1fr}}
 .topic{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}
@@ -270,8 +270,8 @@ details[open] summary::after{content:'▴'}
   <p class="muted">두 기도문의 전문은 회칙 246항에 실려 있습니다. 오늘의 영상에서 기도문 영상이 나오는 날도 있습니다.</p>
 </div>
 
-<!-- ───── 16가지 주제 ───── -->
-<h2>🌍 날마다 돌아가는 16가지 주제</h2>
+<!-- ───── 22가지 주제 ───── -->
+<h2>🌍 날마다 돌아가는 22가지 주제</h2>
 <p class="muted" style="margin:-4px 0 10px">하루에 한 주제씩 돌아가며, 그날 주제로 유튜브를 새로 찾아 영상을 바꿉니다.</p>
 <ol class="topics" id="topics"></ol>
 
@@ -282,7 +282,7 @@ details[open] summary::after{content:'▴'}
 
 <script>
 (function(){
-  // 주제 순서는 scripts/fetch_laudato_si.py 의 TOPICS 와 같아야 한다 (1970-01-01부터 센 날수 % 16).
+  // 주제 순서는 scripts/fetch_laudato_si.py 의 TOPICS 와 같아야 한다 (1970-01-01부터 센 날수 % 주제 수).
   var TOPICS = [
     { t: '지구온난화와 기후위기', ic: '🌡️', p: '23–26항', w: '기후는 모두의 공동선입니다. 온난화의 피해는 가난한 이들이 가장 먼저 겪습니다.', a: '오늘 냉난방 온도를 1도만 조절해 보세요.' },
     { t: '녹아내리는 빙하', ic: '🧊', p: '24항', w: '극지방의 얼음이 녹고 바다가 차오르면 해안의 수많은 사람이 삶의 터전을 잃습니다.', a: '가까운 거리는 걷거나 대중교통을 이용해 보세요.' },
@@ -299,7 +299,13 @@ details[open] summary::after{content:'▴'}
     { t: '삼위일체와 피조물의 관계', ic: '✨', p: '238–240항', w: '삼위일체 하느님의 사랑으로 지어진 세상, 모든 것은 관계 속에 있습니다.', a: '성호를 그을 때 창조주·구원자·성화자 하느님을 떠올려 보세요.' },
     { t: '창조주 하느님을 찬미함', ic: '🌅', p: '65, 76–83항', w: '모든 것은 하느님 아버지의 사랑에서 나온 선물입니다.', a: '하늘과 해를 바라보며 짧은 찬미의 기도를 바쳐 보세요.' },
     { t: '아시시의 성 프란치스코', ic: '☀️', p: '10–12항', w: '해와 달과 작은 생명까지 형제자매로 부르며 하느님을 찬미한 성인입니다.', a: '「태양의 찬가」를 한 번 소리 내어 읽거나 들어 보세요.' },
-    { t: '모든 피조물의 모후와 성 요셉', ic: '💐', p: '241–242항', w: '성모님은 상처 입은 세상을 어머니의 마음으로 돌보시고, 성 요셉은 맡겨진 것을 지키는 삶을 가르쳐 줍니다.', a: '성모송을 바치며 지구와 가난한 이들을 성모님께 맡겨 보세요.' }
+    { t: '모든 피조물의 모후와 성 요셉', ic: '💐', p: '241–242항', w: '성모님은 상처 입은 세상을 어머니의 마음으로 돌보시고, 성 요셉은 맡겨진 것을 지키는 삶을 가르쳐 줍니다.', a: '성모송을 바치며 지구와 가난한 이들을 성모님께 맡겨 보세요.' },
+    { t: '물은 생명입니다', ic: '💧', p: '27–31항', w: '깨끗한 물을 마시는 것은 생존에 꼭 필요한 기본 인권입니다. 물은 상품이 아니라 모두의 선물입니다.', a: '양치할 때 컵을 쓰고, 샤워 시간을 조금 줄여 보세요.' },
+    { t: '생태적 회개', ic: '🙏', p: '216–221항', w: '그리스도와의 만남이 피조물을 대하는 태도로 드러나도록 삶 전체가 바뀌는 것이 생태적 회개입니다.', a: '오늘 성찰 때 자연과 이웃에게 지은 잘못도 돌아보세요.' },
+    { t: '음식 낭비 줄이기', ic: '🍚', p: '50, 211항', w: '버려지는 음식은 가난한 이들의 식탁에서 빼앗은 것과 같습니다.', a: '먹을 만큼만 덜고, 남은 음식은 다음 끼니에 활용해 보세요.' },
+    { t: '기후 난민과 이웃', ic: '🧳', p: '25항', w: '기후 변화로 삶의 터전을 잃고 떠나는 이들이 늘고 있지만, 세상은 그들의 고통에 무관심합니다.', a: '이주민·난민을 돕는 단체를 위해 기도하거나 작은 후원을 해 보세요.' },
+    { t: '미래 세대를 위한 정의', ic: '👶', p: '159–162항', w: '우리 뒤에 올 세대에게 어떤 세상을 남겨 주고 싶습니까? 지구는 다음 세대의 것이기도 합니다.', a: '아이들과 함께 자연을 걷거나 생태 이야기를 나눠 보세요.' },
+    { t: '주일의 쉼과 감사의 식탁', ic: '🍞', p: '227, 233–237항', w: '식사 전 감사 기도와 주일의 쉼은 모든 것이 하느님의 선물임을 일깨워 줍니다.', a: '오늘 식사 전에 감사 기도를 꼭 바쳐 보세요.' }
   ];
   var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
   var p = today.split('-');
@@ -316,7 +322,7 @@ details[open] summary::after{content:'▴'}
   $('tAct').innerHTML = '<b>오늘의 실천</b> · ' + esc(T.a);
   $('tSearch').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(T.t.replace(/ — .*/, '') + ' 찬미받으소서 가톨릭');
 
-  // 16가지 주제 목록
+  // 22가지 주제 목록
   $('topics').innerHTML = TOPICS.map(function(x, i){
     return '<li class="topic' + (i === idx ? ' on' : '') + '"><span class="n">' + (i + 1) + '</span><div class="body">' +
       '<b>' + x.ic + ' ' + esc(x.t) + '</b><span class="p">' + x.p + '</span>' + (i === idx ? '<span class="on-tag">오늘</span>' : '') +
@@ -340,7 +346,7 @@ details[open] summary::after{content:'▴'}
     .then(function(r){ return r.json(); })
     .then(function(d){
       // 오늘 갱신분이 있으면 그것을, 갱신이 늦었으면 이 주제로 지난번에 찾아 둔 영상을 쓴다
-      var e = d.date === today ? d : (d.byTopic && d.byTopic[idx]);
+      var e = d.date === today ? d : (d.byTopic && d.byTopic[T.t]);
       if (!e || !e.video) throw 0;
       var v = e.video, box = $('tVideo');
       box.innerHTML = '';

@@ -1063,7 +1063,7 @@ window.WeatherFx = (function(){
   // 날씨마다 화면 전체에 옅게 덮는 색조와 구름 수
   var SKY = {
     sun:    { tint: 'rgba(255,205,120,.18)', sun: .95, clouds: 0 },
-    partly: { tint: 'rgba(255,215,150,.10)', sun: .6,  clouds: 3 },
+    partly: { tint: 'rgba(255,215,150,.08)', sun: .55, clouds: 4, sky: '120,165,215', skyA: .4 },
     cloud:  { tint: 'rgba(100,112,130,.16)', sun: 0,   clouds: 9, sky: '82,94,114', skyA: .6 },
     fog:    { tint: 'rgba(196,202,210,.30)', sun: 0,   clouds: 0, haze: 5, sky: '170,178,190', skyA: .45 },
     rain:   { tint: 'rgba(70,88,112,.16)',   sun: 0,   clouds: 6, sky: '62,76,98', skyA: .55 },
@@ -1082,18 +1082,24 @@ window.WeatherFx = (function(){
     var c = document.createElement('canvas'), ch = cw * .5;
     c.width = cw; c.height = ch;
     var g = c.getContext('2d');
-    var col = dark ? '96,106,124' : '235,240,247';
+    var col = dark ? '96,106,124' : '255,255,255';
+    var puffs = [];
     for (var i = 0; i < 7; i++) {
-      var r = ch * (.22 + Math.random() * .18);
-      var x = cw * (.18 + i * .11) + (Math.random() - .5) * cw * .05;
-      var y = ch * (.55 + (Math.random() - .5) * .25) - (i > 1 && i < 5 ? ch * .12 : 0);
-      var rg = g.createRadialGradient(x, y, 0, x, y, r);
-      rg.addColorStop(0, 'rgba(' + col + ',' + (dark ? .8 : .6) + ')');
-      rg.addColorStop(.55, 'rgba(' + col + ',' + (dark ? .45 : .3) + ')');
-      rg.addColorStop(1, 'rgba(' + col + ',0)');
-      g.fillStyle = rg;
-      g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+      puffs.push({ r: ch * (.22 + Math.random() * .18),
+                   x: cw * (.18 + i * .11) + (Math.random() - .5) * cw * .05,
+                   y: ch * (.55 + (Math.random() - .5) * .25) - (i > 1 && i < 5 ? ch * .12 : 0) });
     }
+    function puff(p, dy, color, a0, a1){
+      var rg = g.createRadialGradient(p.x, p.y + dy, 0, p.x, p.y + dy, p.r);
+      rg.addColorStop(0, 'rgba(' + color + ',' + a0 + ')');
+      rg.addColorStop(.55, 'rgba(' + color + ',' + a1 + ')');
+      rg.addColorStop(1, 'rgba(' + color + ',0)');
+      g.fillStyle = rg;
+      g.beginPath(); g.arc(p.x, p.y + dy, p.r, 0, Math.PI * 2); g.fill();
+    }
+    // 흰 구름은 밝은 바탕에 묻히므로 아래쪽에 회청색 그늘을 먼저 깔아 모양을 또렷하게 한다
+    if (!dark) puffs.forEach(function(p){ puff(p, ch * .07, '120,145,180', .55, .3); });
+    puffs.forEach(function(p){ puff(p, 0, col, dark ? .8 : .95, dark ? .45 : .6); });
     return c;
   }
   function makeClouds(n){
@@ -1102,7 +1108,7 @@ window.WeatherFx = (function(){
     for (var i = 0; i < n; i++) {
       var cw = Math.max(220, Math.min(w * (.35 + Math.random() * .3), 620));
       clouds.push({ img: cloudSprite(Math.round(cw), dark), x: Math.random() * (w + cw) - cw,
-                    y: Math.random() * h * .85 - cw * .1, v: 6 + Math.random() * 10, a: (dark ? .75 : .6) + Math.random() * .25 });
+                    y: Math.random() * h * .85 - cw * .1, v: 6 + Math.random() * 10, a: (dark ? .75 : .8) + Math.random() * .2 });
     }
   }
   function makeHaze(n){

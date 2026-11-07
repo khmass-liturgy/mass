@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-07 21:16",
-  "date": "2026-11-07",
-  "topicIndex": 18,
-  "topic": "음식 낭비 줄이기",
-  "query": "음식물 쓰레기 줄이기 가톨릭",
+  "updated": "2026-11-08 04:25",
+  "date": "2026-11-08",
+  "topicIndex": 19,
+  "topic": "기후 난민과 이웃",
+  "query": "기후 난민 가톨릭",
   "video": {
-    "videoId": "53VSO7aFWNQ",
-    "title": "결식아동과 결손가정 지원을 위한 잔반줄이기 퍼네이션 캠페인",
-    "channel": "가톨릭대학교 성빈센트병원",
-    "duration": 103,
-    "published": "6년 전"
+    "videoId": "Uh-L9qmh0hA",
+    "title": "기후 난민 현실 직시하고 함께 행동해야",
+    "channel": "cpbc 뉴스",
+    "duration": 211,
+    "published": "3년 전"
   },
   "more": [
     {
-      "videoId": "tjfzh9W7rH8",
-      "title": "\"단결 ESG!\" 무지개 식판으로 잔반 줄이는 육군25사단",
-      "channel": "cpbc 뉴스",
-      "duration": 165,
-      "published": "2년 전"
+      "videoId": "CQOJGLUUlHk",
+      "title": "기후난민 - 교황 회칙 \"찬미받으소서\"와 함께하는 생태영성 40주간 6강의",
+      "channel": "천주교대구대교구",
+      "duration": 847,
+      "published": "3년 전"
     },
     {
-      "videoId": "UKNYhhSP3cg",
-      "title": "제로 웨이스트 (Zero Waste) ! 쓰레기를 줄이는 방법은 바로 친환경 제품 적극 사용│토크콘서트 For You 94회 껍데기는 가라 편",
-      "channel": "cpbcTV가톨릭콘텐츠의모든것",
-      "duration": 2339,
+      "videoId": "DiP49OhmUIU",
+      "title": "찬미받으소서, 2021년 성금요일, 기후생태 십자가의 길 기도 | 가톨릭기후행동",
+      "channel": "가톨릭기후행동 LSM KOREA",
+      "duration": 438,
       "published": "5년 전"
     },
     {
-      "videoId": "MfFxc3Acpxc",
-      "title": "버려질 빵·음식 할인 판매…'푸드 로스' 줄이기 첫 걸음",
-      "channel": "cpbc 뉴스",
-      "duration": 161,
-      "published": "4개월 전"
+      "videoId": "4kep9hk0nI0",
+      "title": "우리의 새로운 이웃, 이주민_연중 제26주일 이민의 날_오늘 다시 주님께",
+      "channel": "cpbcTV가톨릭콘텐츠의모든것",
+      "duration": 771,
+      "published": "6년 전"
     },
     {
-      "videoId": "wDyX6MxB68w",
-      "title": "대형 축제 '쓰레기' 몸살, 일회용품 줄이기 등 바람직한 해법은 - 오현화 가톨릭기후행동 공동대표  | 함께하는 세상, 오늘 (2025.10.23.목)",
-      "channel": "광주가톨릭평화방송",
-      "duration": 1303,
-      "published": "스트리밍 시간: 1년 전"
+      "videoId": "07j4s1xK5CM",
+      "title": "교황, 이민과 환경문제 언급",
+      "channel": "la18primenews",
+      "duration": 202,
+      "published": "11년 전"
     }
   ],
   "topics": [
@@ -882,25 +882,11 @@
       },
       "more": [
         {
-          "videoId": "eKK_pm-aLHA",
-          "title": "[대한난민 정착기] ① 난민 인정, 그 후···밥벌이는 나아지지 않았다",
-          "channel": "cpbc 뉴스",
-          "duration": 230,
-          "published": "4년 전"
-        },
-        {
-          "videoId": "HCo-PS7izTM",
-          "title": "강우일 주교 \"평화를 위한 기후행동에 동참합시다\"",
-          "channel": "cpbc 뉴스",
-          "duration": 171,
-          "published": "7년 전"
-        },
-        {
-          "videoId": "EiRTsOjok5E",
-          "title": "[대한난민 정착기] ② 주경야독 한국어 공부···일부 난민 '교육 기회' 부족",
-          "channel": "cpbc 뉴스",
-          "duration": 237,
-          "published": "4년 전"
+          "videoId": "CQOJGLUUlHk",
+          "title": "기후난민 - 교황 회칙 \"찬미받으소서\"와 함께하는 생태영성 40주간 6강의",
+          "channel": "천주교대구대교구",
+          "duration": 847,
+          "published": "3년 전"
         },
         {
           "videoId": "DiP49OhmUIU",
@@ -908,6 +894,20 @@
           "channel": "가톨릭기후행동 LSM KOREA",
           "duration": 438,
           "published": "5년 전"
+        },
+        {
+          "videoId": "4kep9hk0nI0",
+          "title": "우리의 새로운 이웃, 이주민_연중 제26주일 이민의 날_오늘 다시 주님께",
+          "channel": "cpbcTV가톨릭콘텐츠의모든것",
+          "duration": 771,
+          "published": "6년 전"
+        },
+        {
+          "videoId": "07j4s1xK5CM",
+          "title": "교황, 이민과 환경문제 언급",
+          "channel": "la18primenews",
+          "duration": 202,
+          "published": "11년 전"
         }
       ]
     },
@@ -996,6 +996,10 @@
     {
       "date": "2026-11-07",
       "videoId": "53VSO7aFWNQ"
+    },
+    {
+      "date": "2026-11-08",
+      "videoId": "Uh-L9qmh0hA"
     }
   ]
 }

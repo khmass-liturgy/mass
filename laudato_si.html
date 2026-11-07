@@ -74,12 +74,16 @@ details[open] summary::after{content:'▴'}
 .chap p{font-size:14px}
 
 /* 주제 16 */
-.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
-.topic{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}
-.topic.on{border-color:var(--green2);box-shadow:0 0 0 2px var(--leaf)}
-.topic b{display:block;color:var(--green);font-size:13.5px}
-.topic .p{color:var(--gold);font-size:11.5px;font-weight:700}
-.topic .on-tag{float:right;font-size:11px;background:var(--green);color:#fff;border-radius:10px;padding:0 7px}
+.topics{list-style:none;display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:600px){.topics{grid-template-columns:1fr 1fr}}
+.topic{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.55}
+.topic.on{border-color:var(--green2);box-shadow:0 0 0 2px var(--leaf);background:#F6FBF2}
+.topic .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--leaf);color:var(--green);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.topic.on .n{background:var(--green);color:#fff}
+.topic .body{flex:1;min-width:0}
+.topic b{color:var(--green);font-size:13.5px}
+.topic .p{color:var(--gold);font-size:11.5px;font-weight:700;margin-left:4px}
+.topic .on-tag{font-size:11px;background:var(--green);color:#fff;border-radius:10px;padding:0 7px;margin-left:4px;vertical-align:1px}
 .prayer p{font-size:14px;margin-bottom:6px}
 .src{font-size:12px;color:var(--muted);margin-top:18px}
 </style>
@@ -269,7 +273,7 @@ details[open] summary::after{content:'▴'}
 <!-- ───── 16가지 주제 ───── -->
 <h2>🌍 날마다 돌아가는 16가지 주제</h2>
 <p class="muted" style="margin:-4px 0 10px">하루에 한 주제씩 돌아가며, 그날 주제로 유튜브를 새로 찾아 영상을 바꿉니다.</p>
-<div class="topics" id="topics"></div>
+<ol class="topics" id="topics"></ol>
 
 <p class="src">요약: 회칙 원문(교황청 누리집, 영문)을 바탕으로 쉽게 풀어 옮겼습니다. 정확한 표현은 원문이나 한국천주교주교회의 공식 번역본을 참고하세요.<br>
 <a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html" target="_blank" rel="noopener">회칙 원문 보기 (vatican.va) →</a></p>
@@ -314,8 +318,9 @@ details[open] summary::after{content:'▴'}
 
   // 16가지 주제 목록
   $('topics').innerHTML = TOPICS.map(function(x, i){
-    return '<div class="topic' + (i === idx ? ' on' : '') + '">' + (i === idx ? '<span class="on-tag">오늘</span>' : '') +
-      '<b>' + x.ic + ' ' + esc(x.t) + '</b><span class="p">' + x.p + '</span><div>' + esc(x.a) + '</div></div>';
+    return '<li class="topic' + (i === idx ? ' on' : '') + '"><span class="n">' + (i + 1) + '</span><div class="body">' +
+      '<b>' + x.ic + ' ' + esc(x.t) + '</b><span class="p">' + x.p + '</span>' + (i === idx ? '<span class="on-tag">오늘</span>' : '') +
+      '<div>' + esc(x.a) + '</div></div></li>';
   }).join('');
 
   function player(v){

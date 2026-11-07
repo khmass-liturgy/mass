@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07 04:14",
+  "updated": "2026-11-07 09:49",
   "cutoff": "2026-11-06",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7451",
@@ -38,6 +38,26 @@
       "mass_date": "2026-11-07",
       "priest": "조명연",
       "excerpt": "1976년부터 1996년까지 미국 프로야구 명문인 LA 다저스의 감독인 토미…"
+    },
+    {
+      "id": "daum_bbadaking_2263",
+      "title": "2026년 11월 7일 연중 제31주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-11-07",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2263",
+      "mass_date": "2026-11-07",
+      "priest": "양승국",
+      "excerpt": "언제 어디서든 항상 만족하며 살아갑시다!"
+    },
+    {
+      "id": "daum_bbadaking_213",
+      "title": "오직 하느님께만 시선이 고정되고 단단히 매여 있는 처지가 되어 나의 관점과…",
+      "author": "환희 평화",
+      "date": "2026-11-07",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/213",
+      "mass_date": "2026-11-07",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7450",

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>찬미받으소서 — 우리 공동의 집</title>
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2F5D3A; --green2:#4C7F4F; --leaf:#DCEBD5; --gold:#B98A2F; --gold-soft:#E4CE96;
+  --ink:#22303F; --muted:#6B7A8C; --bg:#F5F6EF; --card:#FFFFFF; --line:#DFE3D3;
+  --serif:'Noto Serif KR', serif; --sans:'Noto Sans KR', -apple-system, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;padding:0 0 40px}
+a{color:var(--green)}
+header{background:linear-gradient(160deg,#1F3F2A,#3E6B47 60%,#6E8F4E);color:#fff;padding:30px 18px 24px;text-align:center;position:relative}
+header .back{position:absolute;top:14px;left:14px;font-size:12px;color:#DDEBD7;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 12px}
+header .latin{font-size:12px;letter-spacing:.2em;color:#CFE3C5;margin-top:10px}
+header h1{font-family:var(--serif);font-size:24px;font-weight:700;margin-top:2px}
+header p{font-size:12.5px;color:#DDEBD7;margin-top:4px}
+main{max-width:760px;margin:0 auto;padding:18px 16px}
+h2{font-family:var(--serif);font-size:17.5px;color:var(--green);margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--gold-soft);display:flex;align-items:center;gap:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;box-shadow:0 2px 8px rgba(40,70,40,.05)}
+.muted{color:var(--muted);font-size:12.5px}
+
+/* 오늘의 영상 */
+.today-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.today-tag{display:inline-block;background:var(--leaf);color:var(--green);font-size:12px;font-weight:700;border-radius:20px;padding:2px 10px}
+.today-title{font-family:var(--serif);font-size:18px;color:var(--green);margin:6px 0 2px}
+.today-word{font-size:14px;margin:4px 0 10px}
+.player{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#1d2a20;cursor:pointer}
+.player img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
+.player .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.player .play span{width:66px;height:46px;border-radius:12px;background:rgba(204,0,0,.92);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vtitle{font-size:14px;font-weight:700;margin-top:10px;line-height:1.5}
+.vmeta{font-size:12px;color:var(--muted)}
+.act{margin-top:12px;background:#F3F8EE;border-left:4px solid var(--green2);border-radius:8px;padding:9px 12px;font-size:13.5px}
+.act b{color:var(--green)}
+.more{margin-top:12px}
+.more h4{font-size:13px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.more a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--ink);padding:6px 0;border-top:1px dashed var(--line);font-size:13px;line-height:1.45}
+.more img{width:96px;aspect-ratio:16/9;object-fit:cover;border-radius:6px;flex:none;background:#ddd}
+.more small{display:block;color:var(--muted);font-size:11.5px}
+.search-link{display:inline-block;margin-top:10px;font-size:12.5px}
+
+/* 한눈에 */
+.keys{list-style:none;display:grid;gap:8px}
+.keys li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.keys .ic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--leaf);display:flex;align-items:center;justify-content:center;font-size:16px}
+.keys b{color:var(--green)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.facts b{display:block;font-family:var(--serif);font-size:19px;color:var(--green)}
+.facts span{font-size:11.5px;color:var(--muted)}
+
+/* 장별 요약 */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+details summary{cursor:pointer;list-style:none;padding:13px 16px;display:flex;gap:10px;align-items:center}
+details summary::-webkit-details-marker{display:none}
+details summary .no{flex:none;width:34px;height:34px;border-radius:10px;background:var(--green);color:#fff;font-family:var(--serif);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+details summary .tt{flex:1;min-width:0}
+details summary .tt b{display:block;font-family:var(--serif);color:var(--green);font-size:15px;line-height:1.4}
+details summary .tt small{color:var(--muted);font-size:12px}
+details summary::after{content:'▾';color:var(--gold);font-weight:700}
+details[open] summary::after{content:'▴'}
+.chap{padding:0 16px 14px}
+.chap .one{background:#F3F8EE;border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:10px}
+.chap .one b{color:var(--green)}
+.chap h4{font-size:14px;color:var(--green);margin:12px 0 2px}
+.chap h4 small{color:var(--muted);font-weight:400;font-size:11.5px;margin-left:4px}
+.chap p{font-size:14px}
+
+/* 주제 16 */
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.topic{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px}
+.topic.on{border-color:var(--green2);box-shadow:0 0 0 2px var(--leaf)}
+.topic b{display:block;color:var(--green);font-size:13.5px}
+.topic .p{color:var(--gold);font-size:11.5px;font-weight:700}
+.topic .on-tag{float:right;font-size:11px;background:var(--green);color:#fff;border-radius:10px;padding:0 7px}
+.prayer p{font-size:14px;margin-bottom:6px}
+.src{font-size:12px;color:var(--muted);margin-top:18px}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← 홈</a>
+  <div class="latin">LAUDATO SI'</div>
+  <h1>찬미받으소서</h1>
+  <p>우리 공동의 집을 돌보는 것에 관한 프란치스코 교황 회칙</p>
+</header>
+
+<main>
+
+<!-- ───── 오늘의 영상 ───── -->
+<h2>🌱 오늘의 주제 영상</h2>
+<div class="card" id="today">
+  <div class="today-top"><span class="today-tag" id="tDay">오늘의 주제</span><span class="muted" id="tNo"></span></div>
+  <div class="today-title" id="tTitle">…</div>
+  <div class="today-word" id="tWord"></div>
+  <div id="tVideo"><p class="muted">영상을 불러오는 중입니다…</p></div>
+  <div class="act" id="tAct"></div>
+  <div class="more" id="tMore"></div>
+  <a class="search-link" id="tSearch" target="_blank" rel="noopener">유튜브에서 이 주제 더 찾아보기 →</a>
+</div>
+
+<!-- ───── 한눈에 ───── -->
+<h2>📌 회칙 한눈에 보기</h2>
+<div class="facts">
+  <div><b>2015</b><span>5월 24일 성령 강림 대축일</span></div>
+  <div><b>6장</b><span>246항 · 기도 2편</span></div>
+  <div><b>공동의 집</b><span>지구를 부르는 이름</span></div>
+</div>
+<div class="card">
+  <p style="font-size:14px;margin-bottom:10px">회칙의 제목 ‘찬미받으소서(Laudato si’)’는 아시시의 성 프란치스코가 지은 <b>「태양의 찬가」</b>의 첫 구절에서 왔습니다. 교황님은 지구를 우리와 삶을 나누는 <b>누이</b>이자 우리를 품어 주는 <b>어머니</b>라고 부르며, 신자만이 아니라 이 행성에 사는 <b>모든 사람</b>에게 말을 건넵니다.</p>
+  <ul class="keys">
+    <li><span class="ic">🔗</span><span><b>모든 것은 서로 연결되어 있습니다.</b> 자연의 위기와 사회의 위기는 따로 있는 두 위기가 아니라 하나의 복합적인 위기입니다.</span></li>
+    <li><span class="ic">👂</span><span><b>지구의 부르짖음과 가난한 이들의 부르짖음</b>을 함께 들어야 합니다. 환경 파괴의 피해는 가장 약한 이들이 먼저 입습니다.</span></li>
+    <li><span class="ic">⚙️</span><span>모든 것을 이용하고 지배하려는 <b>기술 만능의 사고방식</b>과 끝없는 소비가 위기의 뿌리입니다.</span></li>
+    <li><span class="ic">🌍</span><span>환경·경제·사회·문화·일상을 함께 보는 <b>통합 생태론</b>이 필요합니다.</span></li>
+    <li><span class="ic">💚</span><span>마음을 바꾸는 <b>생태적 회개</b>와 ‘적을수록 풍요로운’ <b>절제하는 삶</b>으로 나아가라고 초대합니다.</span></li>
+  </ul>
+</div>
+
+<!-- ───── 장별 요약 ───── -->
+<h2>📖 장별로 읽는 요약</h2>
+<p class="muted" style="margin:-4px 0 10px">눌러서 펼쳐 보세요. 괄호 안 숫자는 회칙의 항 번호입니다.</p>
+
+<details>
+  <summary><span class="no">서</span><span class="tt"><b>서론 — 우리 공동의 집</b><small>1–16항</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 우리가 학대해 온 누이 지구가 울부짖고 있으니, 온 인류가 함께 대화하며 공동의 집을 돌보자.</div>
+    <h4>누이이자 어머니인 지구 <small>1–2항</small></h4>
+    <p>지구는 우리를 기르고 다스리는 누이이자 어머니입니다. 그런데 우리가 무책임하게 쓰고 남용해 상처를 입혀, 이제 땅과 물과 공기와 생명 속에서 병든 징후가 드러나고 있습니다.</p>
+    <h4>앞선 교황들의 가르침 <small>3–9항</small></h4>
+    <p>성 요한 23세, 성 바오로 6세, 성 요한 바오로 2세, 베네딕토 16세 교황이 이미 생태 위기를 경고했고, 정교회 바르톨로메오 총대주교도 환경을 해치는 것은 죄라고 일깨웠습니다.</p>
+    <h4>아시시의 성 프란치스코 <small>10–12항</small></h4>
+    <p>프란치스코 성인은 통합 생태론의 본보기입니다. 해와 달, 작은 생명들까지 형제자매로 부르며 하느님을 찬미했고, 가난한 이들에 대한 사랑과 자연에 대한 사랑을 하나로 살았습니다.</p>
+    <h4>모두에게 보내는 호소 <small>13–16항</small></h4>
+    <p>공동의 집을 보호하려면 온 인류 가족이 하나 되어 지속 가능하고 온전한 발전을 찾아야 합니다. 무관심이나 체념, 기술만 믿는 태도를 넘어 새로운 대화가 필요합니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">1</span><span class="tt"><b>우리 공동의 집에 무슨 일이 일어나고 있는가</b><small>17–61항 · 현실 진단</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 오염·기후변화·물 부족·생물 멸종·불평등이 겹쳐 지구와 가난한 이들이 함께 고통받고 있다.</div>
+    <h4>오염과 ‘버리는 문화’ <small>20–22항</small></h4>
+    <p>공기와 땅과 물의 오염으로 해마다 수많은 사람이 일찍 목숨을 잃습니다. 지구가 거대한 쓰레기 더미처럼 변해 가는 것은 쓰고 바로 버리는 문화 때문입니다. 자연처럼 다시 쓰고 순환하는 방식을 배워야 합니다.</p>
+    <h4>공공재인 기후 <small>23–26항</small></h4>
+    <p>기후는 모두의 공동선입니다. 온난화의 상당 부분은 화석 연료를 태우는 인간 활동 때문이며, 극지방의 얼음이 녹고 해수면이 오르고 있습니다. 그 피해는 가난한 나라와 사람들이 가장 크게 겪고, 많은 이가 기후 난민이 됩니다. 온실가스 배출을 시급히 줄여야 합니다.</p>
+    <h4>물 문제 <small>27–31항</small></h4>
+    <p>깨끗한 물을 마시는 것은 생존에 꼭 필요한 기본 인권입니다. 그런데 많은 가난한 이들이 안전한 물을 얻지 못하고, 물마저 시장 상품처럼 다뤄지고 있습니다.</p>
+    <h4>생물 다양성의 상실 <small>32–42항</small></h4>
+    <p>해마다 수천 종의 동식물이 사라져, 우리 후손은 그들을 다시는 보지 못합니다. 모든 생명은 쓸모와 상관없이 그 자체로 가치가 있습니다. 숲과 습지, 바다와 산호초를 지켜야 합니다.</p>
+    <h4>삶의 질 저하와 사회 붕괴 <small>43–47항</small></h4>
+    <p>무질서하게 커진 도시, 소음과 공해, 인간관계의 단절이 삶을 메마르게 합니다. 디지털 세상의 정보 홍수는 참된 지혜와 깊은 만남을 대신하지 못합니다.</p>
+    <h4>세계적 불평등 <small>48–52항</small></h4>
+    <p>환경 문제와 가난의 문제는 하나입니다. 참된 생태적 접근은 언제나 사회적 접근이 되어야 하며, <b>지구의 부르짖음과 가난한 이들의 부르짖음</b>을 함께 들어야 합니다. 부유한 나라는 가난한 나라에 ‘생태적 빚’을 지고 있습니다.</p>
+    <h4>미약한 대응과 다양한 의견 <small>53–61항</small></h4>
+    <p>정치와 경제는 문제를 알면서도 이익에 묶여 제대로 응답하지 못하고 있습니다. 모든 것을 해결해 줄 하나의 정답은 없지만, 지금의 생활 방식이 지속될 수 없다는 사실만은 분명합니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">2</span><span class="tt"><b>창조의 복음</b><small>62–100항 · 신앙의 빛</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 세상은 하느님 사랑의 선물이며, 우리는 피조물을 지배하는 주인이 아니라 돌보고 지키는 관리자다.</div>
+    <h4>신앙이 주는 빛 <small>62–64항</small></h4>
+    <p>신앙은 생태 위기를 이해하고 돌보는 일에 깊은 동기를 줍니다. 그리스도인에게 피조물을 돌보는 책임은 신앙의 본질적인 부분입니다.</p>
+    <h4>성경의 지혜 <small>65–75항</small></h4>
+    <p>인간은 하느님, 이웃, 땅과의 세 관계 안에서 살도록 지어졌으나 죄로 이 관계들이 깨졌습니다. ‘땅을 정복하라’는 말씀은 마음대로 착취하라는 뜻이 아니라, 동산을 <b>일구고 돌보라</b>(창세 2,15)는 책임의 뜻입니다.</p>
+    <h4>우주의 신비 <small>76–83항</small></h4>
+    <p>성경에서 ‘창조’는 ‘자연’보다 깊은 말입니다. 모든 것이 하느님 아버지의 사랑에서 나왔고, 모든 피조물은 하느님의 충만함을 향해 함께 나아갑니다.</p>
+    <h4>피조물 하나하나의 메시지 <small>84–88항</small></h4>
+    <p>풀 한 포기, 새 한 마리도 하느님에 대해 무언가를 말해 줍니다. 피조물 하나하나는 하느님의 무한한 아름다움과 선하심을 비추는 작은 빛입니다.</p>
+    <h4>보편적 친교 <small>89–92항</small></h4>
+    <p>우리는 모든 피조물과 함께 보이지 않는 끈으로 묶인 한 가족입니다. 그러나 자연에 대한 다정함은 가난하고 고통받는 이웃에 대한 사랑과 함께 가야 참됩니다.</p>
+    <h4>재화의 보편 목적 <small>93–95항</small></h4>
+    <p>땅은 본디 모두의 것이며 그 열매는 모두를 위한 것입니다. 사유 재산에는 언제나 ‘사회적 저당’이 걸려 있습니다.</p>
+    <h4>예수님의 눈길 <small>96–100항</small></h4>
+    <p>예수님은 들의 백합과 하늘의 새를 다정하게 바라보셨고, 목수로 일하며 피조물과 어울려 사셨습니다. 부활하신 그리스도는 모든 피조물 안에 현존하시며 그들을 완성으로 이끄십니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">3</span><span class="tt"><b>생태 위기의 인간적 뿌리</b><small>101–136항 · 원인 분석</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 위기의 뿌리는 모든 것을 이익과 효율로만 재는 기술 만능의 사고방식과 인간 중심주의에 있다.</div>
+    <h4>기술: 창의성과 힘 <small>102–105항</small></h4>
+    <p>과학 기술은 많은 선을 이루었지만, 그 엄청난 힘이 누구의 손에 어떻게 쓰이는지가 문제입니다. 힘은 커졌는데 그 힘을 쓰는 책임과 양심은 함께 자라지 못했습니다.</p>
+    <h4>기술 관료적 패러다임 <small>106–114항</small></h4>
+    <p>자연을 무한히 뽑아 쓸 수 있는 자원으로 보고, 기술과 시장이 모든 문제를 풀어 줄 것이라 믿는 사고방식이 경제와 정치를 지배하고 있습니다. 속도를 늦추고 다른 눈으로 현실을 보는 ‘문화적 혁명’이 필요합니다.</p>
+    <h4>현대 인간 중심주의의 위기 <small>115–136항</small></h4>
+    <p>인간이 스스로를 절대 주인으로 여기면 모든 것이 상대적이 되어, 쓸모없다고 여기는 생명과 사람을 쉽게 버리게 됩니다. 노동의 존엄을 지키고, 생명을 다루는 기술은 신중하게 판단해야 합니다. 자연을 지키자면서 태아의 생명을 지키지 않는 것은 모순입니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">4</span><span class="tt"><b>통합 생태론</b><small>137–162항 · 새로운 관점</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 환경·경제·사회·문화·일상의 삶, 그리고 미래 세대까지 한데 아우르는 생태론이 필요하다.</div>
+    <h4>환경·경제·사회 생태론 <small>138–142항</small></h4>
+    <p>모든 것은 연결되어 있기에, 환경 위기와 사회 위기는 따로 있는 두 위기가 아니라 하나의 복합적인 위기입니다. 해결책도 가난 퇴치, 소외된 이들의 존엄 회복, 자연 보호를 함께 이루는 통합적인 길이어야 합니다.</p>
+    <h4>문화 생태론 <small>143–146항</small></h4>
+    <p>지역 공동체의 역사와 문화 유산, 특히 원주민 공동체의 지혜를 존중해야 합니다. 그들에게 땅은 상품이 아니라 조상과 하느님의 선물입니다.</p>
+    <h4>일상의 생태론 <small>147–155항</small></h4>
+    <p>집과 동네, 대중교통, 공공장소처럼 우리가 매일 사는 환경도 존엄해야 합니다. 우리 몸을 하느님의 선물로 받아들이는 것도 생태론의 한 부분입니다.</p>
+    <h4>공동선의 원리 <small>156–158항</small></h4>
+    <p>공동선은 사회 윤리의 중심이며, 오늘날 그것은 무엇보다 <b>가장 가난한 이들을 우선으로 선택</b>하는 연대를 요구합니다.</p>
+    <h4>세대 간 정의 <small>159–162항</small></h4>
+    <p>우리 뒤에 올 세대에게 어떤 세상을 남겨 주고 싶습니까? 지구는 우리가 물려받은 선물이며 다음 세대의 것이기도 합니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">5</span><span class="tt"><b>방향 제시와 행동 방침</b><small>163–201항 · 대화의 길</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 국제 사회·국가·지역·종교와 과학이 정직하게 대화하며 함께 해결책을 찾아야 한다.</div>
+    <h4>국제 사회의 대화 <small>164–175항</small></h4>
+    <p>하나의 세계, 하나의 공동 계획이 필요합니다. 화석 연료를 점차 재생 에너지로 바꾸고, 기후 협약을 실제로 지키며, 가난한 나라를 도와야 합니다.</p>
+    <h4>국가와 지역의 새 정책 <small>176–181항</small></h4>
+    <p>정치는 눈앞의 선거와 이익을 넘어 멀리 보아야 합니다. 협동조합과 지역 공동체가 재생 에너지와 지속 가능한 삶의 방식을 앞서 실천할 수 있습니다.</p>
+    <h4>투명한 결정 과정 <small>182–188항</small></h4>
+    <p>개발 사업은 처음부터 환경 영향을 정직하게 평가하고 지역 주민의 목소리를 들어야 합니다. 확실하지 않을 때에는 신중함의 원칙을 따라야 합니다.</p>
+    <h4>인간의 충만함을 위한 정치와 경제 <small>189–198항</small></h4>
+    <p>정치가 경제에, 경제가 효율 지상주의에 끌려가서는 안 됩니다. 은행만 살리고 사람은 버리는 방식이 아니라, 성장의 속도를 조금 늦추더라도 모두가 함께 사는 길을 찾아야 합니다.</p>
+    <h4>과학과 대화하는 종교 <small>199–201항</small></h4>
+    <p>과학과 종교는 서로 다른 방식으로 실재를 이해하며 함께 대화할 수 있습니다. 여러 종교와 그리스도교 교파들도 공동의 집을 위해 협력해야 합니다.</p>
+  </div>
+</details>
+
+<details>
+  <summary><span class="no">6</span><span class="tt"><b>생태 교육과 영성</b><small>202–246항 · 회개와 실천</small></span></summary>
+  <div class="chap">
+    <div class="one"><b>한 줄 요약</b> · 마음이 바뀌어야 삶이 바뀐다. 절제와 감사, 작은 실천으로 피조물과 하나 되는 기쁨을 누리자.</div>
+    <h4>새로운 생활 양식 <small>203–208항</small></h4>
+    <p>필요하지 않은 것까지 사게 만드는 강박적 소비주의가 마음을 공허하게 합니다. 소비자로서 무엇을 사고 무엇을 사지 않을지 선택하는 것도 사회를 바꾸는 힘이 됩니다.</p>
+    <h4>인간과 환경의 계약을 위한 교육 <small>209–215항</small></h4>
+    <p>플라스틱과 종이 덜 쓰기, 물 아끼기, 분리배출, 먹을 만큼만 요리하기, 대중교통 이용, 나무 심기, 불필요한 전등 끄기 — 이런 <b>작은 일상의 실천</b>이 세상을 바꿉니다. 가정과 학교, 본당이 그 배움터입니다.</p>
+    <h4>생태적 회개 <small>216–221항</small></h4>
+    <p>그리스도와의 만남이 피조물과의 관계에 드러나도록 삶 전체가 바뀌는 것이 <b>생태적 회개</b>입니다. 감사와 무상의 마음, 모든 피조물과 이어져 있다는 자각이 그 출발점입니다.</p>
+    <h4>기쁨과 평화 <small>222–227항</small></h4>
+    <p>그리스도교 영성은 <b>‘적을수록 풍요롭다’</b>고 가르칩니다. 절제는 삶을 줄이는 것이 아니라 작은 것을 누리는 자유입니다. 탐욕에서 벗어난 소박한 삶에 참 행복이 있습니다. 식사 전 감사 기도 같은 작은 습관부터 시작해 봅시다.</p>
+    <h4>시민적·정치적 사랑 <small>228–232항</small></h4>
+    <p>서로를 돌보는 작은 친절과 함께 공동선을 위한 사회 참여도 사랑의 표현입니다. 우리는 서로를 필요로 하며, 다른 이들과 세상에 대해 책임이 있습니다.</p>
+    <h4>성사의 표징과 안식 <small>233–237항</small></h4>
+    <p>물과 기름, 빵과 포도주 같은 피조물이 성사 안에서 은총의 통로가 됩니다. 특히 성체성사 안에서 온 우주가 하느님께 감사를 드립니다. 주일의 쉼은 우리 자신과 세상을 돌아보게 합니다.</p>
+    <h4>삼위일체와 피조물의 관계 <small>238–240항</small></h4>
+    <p>세상은 성부와 성자와 성령, 삼위일체 하느님의 사랑으로 지어졌기에 모든 피조물 안에는 삼위일체의 흔적이 있습니다. 모든 것이 관계 속에 있으며, 우리도 서로 관계를 맺을 때 더 온전해집니다.</p>
+    <h4>모든 피조물의 모후 <small>241–242항</small></h4>
+    <p>성모 마리아는 예수님을 돌보셨듯 상처 입은 세상을 어머니의 마음으로 아파하십니다. <b>성 요셉</b>은 성가정을 지키며 일하신 분으로, 하느님께서 맡기신 것을 정성껏 보호하고 돌보는 삶을 가르쳐 줍니다.</p>
+    <h4>태양 너머에 <small>243–245항</small></h4>
+    <p>마지막에 우리는 하느님의 무한한 아름다움을 마주할 것입니다. 그 희망 속에서, 기쁨을 앗아 가는 근심 없이 지금 이 땅을 돌보는 일을 계속해 갑니다.</p>
+  </div>
+</details>
+
+<!-- ───── 두 기도 ───── -->
+<h2>🙏 회칙을 맺는 두 기도</h2>
+<div class="card prayer">
+  <p><b>1. 우리 지구를 위한 기도</b> — 창조주 하느님을 믿는 모든 이가 함께 바칠 수 있는 기도입니다. 온 우주와 작은 피조물 안에 계신 하느님께 가난한 이들과 지구를 돌볼 힘을 청합니다.</p>
+  <p><b>2. 그리스도인들이 피조물과 함께 드리는 기도</b> — 성부·성자·성령께 차례로 찬미를 드리며, 모든 피조물과 한마음으로 하느님을 찬양하고 생태적 회개의 은총을 청합니다.</p>
+  <p class="muted">두 기도문의 전문은 회칙 246항에 실려 있습니다. 오늘의 영상에서 기도문 영상이 나오는 날도 있습니다.</p>
+</div>
+
+<!-- ───── 16가지 주제 ───── -->
+<h2>🌍 날마다 돌아가는 16가지 주제</h2>
+<p class="muted" style="margin:-4px 0 10px">하루에 한 주제씩 돌아가며, 그날 주제로 유튜브를 새로 찾아 영상을 바꿉니다.</p>
+<div class="topics" id="topics"></div>
+
+<p class="src">요약: 회칙 원문(교황청 누리집, 영문)을 바탕으로 쉽게 풀어 옮겼습니다. 정확한 표현은 원문이나 한국천주교주교회의 공식 번역본을 참고하세요.<br>
+<a href="https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html" target="_blank" rel="noopener">회칙 원문 보기 (vatican.va) →</a></p>
+
+</main>
+
+<script>
+(function(){
+  // 주제 순서는 scripts/fetch_laudato_si.py 의 TOPICS 와 같아야 한다 (1970-01-01부터 센 날수 % 16).
+  var TOPICS = [
+    { t: '지구온난화와 기후위기', ic: '🌡️', p: '23–26항', w: '기후는 모두의 공동선입니다. 온난화의 피해는 가난한 이들이 가장 먼저 겪습니다.', a: '오늘 냉난방 온도를 1도만 조절해 보세요.' },
+    { t: '녹아내리는 빙하', ic: '🧊', p: '24항', w: '극지방의 얼음이 녹고 바다가 차오르면 해안의 수많은 사람이 삶의 터전을 잃습니다.', a: '가까운 거리는 걷거나 대중교통을 이용해 보세요.' },
+    { t: '쓰레기 줄이기', ic: '♻️', p: '20–22항', w: '지구가 쓰레기 더미처럼 변해 가는 것은 쓰고 바로 버리는 문화 때문입니다.', a: '분리배출을 꼼꼼히 하고, 버리기 전에 다시 쓸 수 있는지 생각해 보세요.' },
+    { t: '소비 절제 — 과소비 줄이기', ic: '🛒', p: '203–208항', w: '필요하지 않은 것까지 사게 만드는 소비주의는 마음을 공허하게 합니다.', a: '사기 전에 “정말 필요한가?” 한 번 더 물어보세요.' },
+    { t: '탐욕에서의 자유', ic: '🕊️', p: '222–223항', w: '적을수록 풍요롭습니다. 절제는 작은 것을 누리는 자유입니다.', a: '오늘 하루, 가진 것에 감사하는 기도를 바쳐 보세요.' },
+    { t: '우리 공동의 집, 지구 살리기', ic: '🏡', p: '1–2, 13–14항', w: '지구는 우리와 삶을 나누는 누이이며 우리를 품어 주는 어머니입니다.', a: '집 주변이나 성당 주변의 쓰레기를 하나 주워 보세요.' },
+    { t: '탄소 배출 줄이기', ic: '🌫️', p: '26, 165항', w: '화석 연료를 줄이고 재생 에너지로 바꾸는 일이 시급합니다.', a: '쓰지 않는 전등과 플러그를 뽑아 대기 전력을 줄여 보세요.' },
+    { t: '일회용품 줄이기', ic: '🥤', p: '22, 211항', w: '플라스틱과 종이를 덜 쓰는 작은 실천이 세상을 바꿉니다.', a: '텀블러와 장바구니를 챙겨 나가세요.' },
+    { t: '자연 보호와 창조 질서 보전', ic: '🌳', p: '67–68항', w: '땅을 정복하라는 말씀은 착취가 아니라 일구고 돌보라는 책임입니다.', a: '화분이나 나무 한 그루를 정성껏 돌봐 보세요.' },
+    { t: '모든 생명은 소중합니다', ic: '🐝', p: '33, 84–88항', w: '모든 생명은 쓸모와 상관없이 그 자체로 하느님의 선하심을 비춥니다.', a: '오늘 만나는 작은 생명을 천천히 바라보며 하느님을 찬미해 보세요.' },
+    { t: '가난한 이를 돌보는 형제애', ic: '🤝', p: '48–52, 158항', w: '지구의 부르짖음과 가난한 이들의 부르짖음을 함께 들어야 합니다.', a: '도움이 필요한 이웃에게 작은 나눔을 실천해 보세요.' },
+    { t: '서로를 필요로 하는 우리', ic: '🔗', p: '89–92, 138–142항', w: '모든 것은 연결되어 있고, 우리는 서로를 필요로 하는 한 가족입니다.', a: '오늘 고마운 사람에게 감사의 말을 전해 보세요.' },
+    { t: '삼위일체와 피조물의 관계', ic: '✨', p: '238–240항', w: '삼위일체 하느님의 사랑으로 지어진 세상, 모든 것은 관계 속에 있습니다.', a: '성호를 그을 때 창조주·구원자·성화자 하느님을 떠올려 보세요.' },
+    { t: '창조주 하느님을 찬미함', ic: '🌅', p: '65, 76–83항', w: '모든 것은 하느님 아버지의 사랑에서 나온 선물입니다.', a: '하늘과 해를 바라보며 짧은 찬미의 기도를 바쳐 보세요.' },
+    { t: '아시시의 성 프란치스코', ic: '☀️', p: '10–12항', w: '해와 달과 작은 생명까지 형제자매로 부르며 하느님을 찬미한 성인입니다.', a: '「태양의 찬가」를 한 번 소리 내어 읽거나 들어 보세요.' },
+    { t: '모든 피조물의 모후와 성 요셉', ic: '💐', p: '241–242항', w: '성모님은 상처 입은 세상을 어머니의 마음으로 돌보시고, 성 요셉은 맡겨진 것을 지키는 삶을 가르쳐 줍니다.', a: '성모송을 바치며 지구와 가난한 이들을 성모님께 맡겨 보세요.' }
+  ];
+  var today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+  var p = today.split('-');
+  var idx = Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000) % TOPICS.length;
+  var T = TOPICS[idx];
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function dur(s){ if (!s) return ''; var m = Math.floor(s / 60); return m >= 60 ? Math.floor(m / 60) + '시간 ' + (m % 60) + '분' : m + '분 ' + (s % 60) + '초'; }
+
+  $('tDay').textContent = (+p[1]) + '월 ' + (+p[2]) + '일 오늘의 주제';
+  $('tNo').textContent = (idx + 1) + ' / ' + TOPICS.length;
+  $('tTitle').textContent = T.ic + ' ' + T.t;
+  $('tWord').textContent = T.w + ' (' + T.p + ')';
+  $('tAct').innerHTML = '<b>오늘의 실천</b> · ' + esc(T.a);
+  $('tSearch').href = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(T.t.replace(/ — .*/, '') + ' 찬미받으소서 가톨릭');
+
+  // 16가지 주제 목록
+  $('topics').innerHTML = TOPICS.map(function(x, i){
+    return '<div class="topic' + (i === idx ? ' on' : '') + '">' + (i === idx ? '<span class="on-tag">오늘</span>' : '') +
+      '<b>' + x.ic + ' ' + esc(x.t) + '</b><span class="p">' + x.p + '</span><div>' + esc(x.a) + '</div></div>';
+  }).join('');
+
+  function player(v){
+    // 처음엔 썸네일만 보여 주고, 누르면 그때 영상을 불러온다 (데이터 절약)
+    var box = document.createElement('div');
+    box.className = 'player';
+    box.setAttribute('role', 'button');
+    box.setAttribute('aria-label', '영상 재생: ' + v.title);
+    box.innerHTML = '<img src="https://i.ytimg.com/vi/' + v.videoId + '/hqdefault.jpg" alt=""><div class="play"><span>▶</span></div>';
+    box.addEventListener('click', function(){
+      box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + v.videoId + '?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="' + esc(v.title) + '"></iframe>';
+    }, { once: true });
+    return box;
+  }
+
+  fetch('data/laudato_si.json', { cache: 'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      // 오늘 갱신분이 있으면 그것을, 갱신이 늦었으면 이 주제로 지난번에 찾아 둔 영상을 쓴다
+      var e = d.date === today ? d : (d.byTopic && d.byTopic[idx]);
+      if (!e || !e.video) throw 0;
+      var v = e.video, box = $('tVideo');
+      box.innerHTML = '';
+      box.appendChild(player(v));
+      var t = document.createElement('div');
+      t.innerHTML = '<div class="vtitle">' + esc(v.title) + '</div><div class="vmeta">' + esc(v.channel) + (v.duration ? ' · ' + dur(v.duration) : '') +
+        ' · <a href="https://www.youtube.com/watch?v=' + v.videoId + '" target="_blank" rel="noopener">유튜브에서 보기</a></div>';
+      box.appendChild(t);
+      var more = (e.more || []).slice(0, 4);
+      if (more.length) {
+        $('tMore').innerHTML = '<h4>이 주제의 다른 영상</h4>' + more.map(function(m){
+          return '<a href="https://www.youtube.com/watch?v=' + m.videoId + '" target="_blank" rel="noopener"><img loading="lazy" src="https://i.ytimg.com/vi/' + m.videoId + '/mqdefault.jpg" alt=""><span>' +
+            esc(m.title) + '<small>' + esc(m.channel) + (m.duration ? ' · ' + dur(m.duration) : '') + '</small></span></a>';
+        }).join('');
+      }
+    })
+    .catch(function(){
+      $('tVideo').innerHTML = '<p class="muted">오늘의 영상을 불러오지 못했습니다. 아래 링크로 유튜브에서 찾아보세요.</p>';
+    });
+
+  // 주소 끝이 #summary 이면 장별 요약의 첫 장을 펼쳐 보여 준다
+  if (location.hash === '#summary') { var s = document.querySelector('details'); if (s) { s.open = true; s.scrollIntoView(); } }
+})();
+</script>
+</body>
+</html>

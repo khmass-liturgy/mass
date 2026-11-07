@@ -1050,7 +1050,13 @@
 <script>
 window.WeatherFx = (function(){
   var cv = document.getElementById('wxFx'), ctx = cv && cv.getContext && cv.getContext('2d');
-  var kind = null, ps = [], w = 0, h = 0, dpr = 1, last = 0;
+  var kind = null, level = 2, ps = [], w = 0, h = 0, dpr = 1, last = 0;
+  // 비의 세기(1 약한 비 · 2 보통 비 · 3 강한 비)에 따라 빗줄기 속도·길이·개수·기울기를 달리한다.
+  var RAIN = {
+    1: { vy: 300, vr: 200, len: 7,  lr: 8,  area: 14000, max: 90,  wind: .08 },
+    2: { vy: 520, vr: 380, len: 10, lr: 14, area: 7000,  max: 180, wind: .18 },
+    3: { vy: 850, vr: 500, len: 16, lr: 18, area: 3500,  max: 320, wind: .3 }
+  };
   function reduced(){ try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
   function size(){
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -1066,8 +1072,9 @@ window.WeatherFx = (function(){
       p.sw = Math.random() * Math.PI * 2;          // 좌우 흔들림 위상
       p.a = .5 + p.r / 8;
     } else {
-      p.len = 10 + Math.random() * 14;
-      p.vy = 520 + Math.random() * 380;
+      var R = RAIN[level];
+      p.len = R.len + Math.random() * R.lr;
+      p.vy = R.vy + Math.random() * R.vr;
       p.a = .35 + Math.random() * .3;
     }
     return p;
@@ -1076,7 +1083,7 @@ window.WeatherFx = (function(){
     if (!kind) return;
     var dt = Math.min((t - (last || t)) / 1000, .05); last = t;
     ctx.clearRect(0, 0, w, h);
-    var wind = kind === 'rain' ? .18 : 0;          // 비는 살짝 비스듬히
+    var wind = kind === 'rain' ? RAIN[level].wind : 0;   // 비는 비스듬히 (셀수록 더)
     if (kind === 'snow') ctx.fillStyle = '#fff';
     else { ctx.strokeStyle = 'rgb(85,120,170)'; ctx.lineWidth = 1.3; ctx.lineCap = 'round'; }
     for (var i = 0; i < ps.length; i++) {
@@ -1098,22 +1105,25 @@ window.WeatherFx = (function(){
     ctx.globalAlpha = 1; ctx.shadowBlur = 0;
     requestAnimationFrame(frame);
   }
-  function start(k){
-    if (!ctx || kind === k || reduced() || (k !== 'snow' && k !== 'rain')) return;
+  function start(k, lv){
+    lv = RAIN[lv] ? lv : 2;
+    if (!ctx || (kind === k && level === lv) || reduced() || (k !== 'snow' && k !== 'rain')) return;
+    level = lv;
     var first = !kind;
     kind = k;
     cv.style.display = 'block';
     size();
     // 눈은 화면이 좁은 폰에서도 넉넉히(최소 120개) 내리게 한다
     var n = k === 'snow' ? Math.round(Math.max(120, Math.min(w * h / 3500, 320)))
-                         : Math.round(Math.min(w * h / 7000, 180));
+                         : Math.round(Math.min(w * h / RAIN[level].area, RAIN[level].max));
     ps = [];
     for (var i = 0; i < n; i++) ps.push(make(false));
     if (first) { last = 0; requestAnimationFrame(frame); }
   }
   window.addEventListener('resize', function(){ if (kind) size(); });
-  var q = (location.search.match(/[?&]wx=(snow|rain)\b/) || [])[1];
-  if (q) start(q);
+  // 미리 보기: ?wx=snow, ?wx=rain (보통), ?wx=rain1 (약한 비) · ?wx=rain3 (강한 비)
+  var m = location.search.match(/[?&]wx=(snow|rain)([123])?\b/), q = m && m[1];
+  if (q) start(q, m[2] ? +m[2] : 2);
   return { start: start, preview: !!q };
 })();
 </script>
@@ -1190,6 +1200,12 @@ window.WeatherFx = (function(){
     if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82) || code >= 95) return 'rain';
     return null;
   }
+  // 비의 세기: 약한 이슬비·비·소나기 1, 보통 2, 강한 비·소나기·뇌우 3
+  function rainLevel(code){
+    if ([51, 56, 61, 66, 80].indexOf(code) >= 0) return 1;
+    if ([55, 57, 65, 67, 82, 95, 96, 99].indexOf(code) >= 0) return 3;
+    return 2;
+  }
   function show(lat, lon, name){
     var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(2)
       + '&longitude=' + lon.toFixed(2)
@@ -1207,8 +1223,9 @@ window.WeatherFx = (function(){
       box.setAttribute('aria-label', box.title);
       box.style.display = 'flex';
       // 배경 눈·비: 지금 내리는 것을 먼저 보고, 아니면 오늘 예보로 정한다.
-      var fx = precip(d.current && d.current.weather_code) || precip(dl.weather_code[0]);
-      if (fx && window.WeatherFx && !WeatherFx.preview) WeatherFx.start(fx);
+      var cc = d.current && d.current.weather_code;
+      var code = precip(cc) ? cc : dl.weather_code[0], fx = precip(code);
+      if (fx && window.WeatherFx && !WeatherFx.preview) WeatherFx.start(fx, rainLevel(code));
     }).catch(function(){});
   }
   function home(){ show(HOME.lat, HOME.lon, HOME.name); }

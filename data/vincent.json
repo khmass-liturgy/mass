@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-08 16:17",
+  "updated": "2026-11-09 00:57",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "-HSZU6SmTeQ",
+      "date": "2026-11-09",
+      "title": "라테라노 대성전 봉헌 축일",
+      "url": "https://www.youtube.com/watch?v=-HSZU6SmTeQ"
+    },
     {
       "videoId": "YcjPumXz7MY",
       "date": "2026-11-08",
@@ -57,12 +63,6 @@
       "date": "2026-10-31",
       "title": "연중 제30주간 토요일",
       "url": "https://www.youtube.com/watch?v=0lCoCCfZJ7c"
-    },
-    {
-      "videoId": "7eCFRMzBVEM",
-      "date": "2026-10-30",
-      "title": "연중 제30주간 금요일",
-      "url": "https://www.youtube.com/watch?v=7eCFRMzBVEM"
     }
   ]
 }

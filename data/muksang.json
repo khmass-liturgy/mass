@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-08 19:07",
-  "cutoff": "2026-11-07",
+  "updated": "2026-11-09 02:51",
+  "cutoff": "2026-11-08",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7453",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-09",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 라테라노 대성전 봉헌 축일 복음: 요한 2,13-2…"
+    },
+    {
+      "id": "daum_bbadaking_7989",
+      "title": "2026년 11월 9일 라테라노 대성전 봉헌 축일",
+      "author": "빠다킹신부",
+      "date": "2026-11-08",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7989",
+      "mass_date": "2026-11-09",
+      "priest": "조명연",
+      "excerpt": "고등학생 때 학생들 사이에서 엄청난 인기가 있었던 그룹이 있었습니다."
     },
     {
       "id": "daum_catholicsb_7452",
@@ -66,56 +76,6 @@
       "date": "2026-11-08",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140000&menu=4770",
       "mass_date": "2026-11-08",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7451",
-      "title": "전삼용 요셉 신부 / 연중 제31주간 토요일 - 나의 영광을 주님께 돌린다고?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-06",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7451",
-      "mass_date": "2026-11-07",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제31주간 토요일 복음: 루카 16,9ㄴ-15…"
-    },
-    {
-      "id": "daum_bbadaking_7987",
-      "title": "2026년 11월 7일 연중 제31주간 토요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-06",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7987",
-      "mass_date": "2026-11-07",
-      "priest": "조명연",
-      "excerpt": "1976년부터 1996년까지 미국 프로야구 명문인 LA 다저스의 감독인 토미…"
-    },
-    {
-      "id": "daum_bbadaking_2263",
-      "title": "2026년 11월 7일 연중 제31주간 토요일",
-      "author": "박 베로니카",
-      "date": "2026-11-07",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2263",
-      "mass_date": "2026-11-07",
-      "priest": "양승국",
-      "excerpt": "언제 어디서든 항상 만족하며 살아갑시다!"
-    },
-    {
-      "id": "daum_bbadaking_213",
-      "title": "오직 하느님께만 시선이 고정되고 단단히 매여 있는 처지가 되어 나의 관점과…",
-      "author": "환희 평화",
-      "date": "2026-11-07",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/213",
-      "mass_date": "2026-11-07",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2139973",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-07",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2139973&menu=4770",
-      "mass_date": "2026-11-07",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

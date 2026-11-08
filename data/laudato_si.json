@@ -1,23 +1,30 @@
 {
-  "updated": "2026-11-08 04:25",
-  "date": "2026-11-08",
-  "topicIndex": 19,
-  "topic": "기후 난민과 이웃",
-  "query": "기후 난민 가톨릭",
+  "updated": "2026-11-09 04:40",
+  "date": "2026-11-09",
+  "topicIndex": 20,
+  "topic": "미래 세대를 위한 정의",
+  "query": "미래 세대 기후위기 가톨릭",
   "video": {
-    "videoId": "Uh-L9qmh0hA",
-    "title": "기후 난민 현실 직시하고 함께 행동해야",
+    "videoId": "ocpWtSrkuwg",
+    "title": "가톨릭기후행동, 가톨릭 환경상 대상 수상",
     "channel": "cpbc 뉴스",
-    "duration": 211,
-    "published": "3년 전"
+    "duration": 155,
+    "published": "4년 전"
   },
   "more": [
     {
-      "videoId": "CQOJGLUUlHk",
-      "title": "기후난민 - 교황 회칙 \"찬미받으소서\"와 함께하는 생태영성 40주간 6강의",
-      "channel": "천주교대구대교구",
-      "duration": 847,
-      "published": "3년 전"
+      "videoId": "TKFg-USy7vs",
+      "title": "인권 침해하는 환경위기···교회가 제시한 해법 ‘생태적 연대’",
+      "channel": "cpbc 뉴스",
+      "duration": 158,
+      "published": "4년 전"
+    },
+    {
+      "videoId": "tFpac5FTC_k",
+      "title": "교황 등 기독교 세 수장 '기후위기' 메시지 / JTBC 아침&",
+      "channel": "JTBC News",
+      "duration": 71,
+      "published": "5년 전"
     },
     {
       "videoId": "DiP49OhmUIU",
@@ -27,18 +34,11 @@
       "published": "5년 전"
     },
     {
-      "videoId": "4kep9hk0nI0",
-      "title": "우리의 새로운 이웃, 이주민_연중 제26주일 이민의 날_오늘 다시 주님께",
-      "channel": "cpbcTV가톨릭콘텐츠의모든것",
-      "duration": 771,
+      "videoId": "Vw_zN50wVC8",
+      "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
+      "channel": "cpbc 뉴스",
+      "duration": 213,
       "published": "6년 전"
-    },
-    {
-      "videoId": "07j4s1xK5CM",
-      "title": "교황, 이민과 환경문제 언급",
-      "channel": "la18primenews",
-      "duration": 202,
-      "published": "11년 전"
     }
   ],
   "topics": [
@@ -929,25 +929,25 @@
           "published": "4년 전"
         },
         {
-          "videoId": "yTS2RrRM7gI",
-          "title": "기후위기 다큐 ‘바로, 지금’ 제작 모금 운동",
-          "channel": "cpbc 뉴스",
-          "duration": 153,
-          "published": "4년 전"
+          "videoId": "tFpac5FTC_k",
+          "title": "교황 등 기독교 세 수장 '기후위기' 메시지 / JTBC 아침&",
+          "channel": "JTBC News",
+          "duration": 71,
+          "published": "5년 전"
         },
         {
-          "videoId": "mV0rQsEyPUw",
-          "title": "기후위기 막을 밥상 어벤저스 ‘비건’",
+          "videoId": "DiP49OhmUIU",
+          "title": "찬미받으소서, 2021년 성금요일, 기후생태 십자가의 길 기도 | 가톨릭기후행동",
+          "channel": "가톨릭기후행동 LSM KOREA",
+          "duration": 438,
+          "published": "5년 전"
+        },
+        {
+          "videoId": "Vw_zN50wVC8",
+          "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
           "channel": "cpbc 뉴스",
-          "duration": 233,
+          "duration": 213,
           "published": "6년 전"
-        },
-        {
-          "videoId": "Q_n8SxEii-o",
-          "title": "생존위협하는 기후위기, 지금 같은 노력만으로 안돼!",
-          "channel": "cpbc 뉴스",
-          "duration": 225,
-          "published": "3년 전"
         }
       ]
     },
@@ -1000,6 +1000,10 @@
     {
       "date": "2026-11-08",
       "videoId": "Uh-L9qmh0hA"
+    },
+    {
+      "date": "2026-11-09",
+      "videoId": "ocpWtSrkuwg"
     }
   ]
 }

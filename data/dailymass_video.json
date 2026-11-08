@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-07 09:56",
+  "updated": "2026-11-08 09:35",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "iJW8ipxRZqw",
+      "date": "2026-11-08",
+      "liturgy": "연중 제32주일",
+      "priest": "이승화 시몬 신부",
+      "url": "https://www.youtube.com/watch?v=iJW8ipxRZqw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "OeDkZWHGIr0",
       "date": "2026-11-07",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제30주간 월요일",
       "priest": "백종호 요셉 신부",
       "url": "https://www.youtube.com/watch?v=QQ4_hLQLpqo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "3oBXkysHK-Y",
-      "date": "2026-10-25",
-      "liturgy": "연중 제30주일",
-      "priest": "이용현 베드로 신부",
-      "url": "https://www.youtube.com/watch?v=3oBXkysHK-Y&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

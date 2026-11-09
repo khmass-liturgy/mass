@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-09 00:58",
+  "updated": "2026-11-09 09:55",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "vmMOcrg9SPI",
+      "date": "2026-11-09",
+      "liturgy": "라테라노 대성전 봉헌 축일",
+      "priest": "응웬 반 호아",
+      "url": "https://www.youtube.com/watch?v=vmMOcrg9SPI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "iJW8ipxRZqw",
       "date": "2026-11-08",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제30주간 화요일",
       "priest": "최강민 알퐁소 신부",
       "url": "https://www.youtube.com/watch?v=hKGmtzLF6uE&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "QQ4_hLQLpqo",
-      "date": "2026-10-26",
-      "liturgy": "연중 제30주간 월요일",
-      "priest": "백종호 요셉 신부",
-      "url": "https://www.youtube.com/watch?v=QQ4_hLQLpqo&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

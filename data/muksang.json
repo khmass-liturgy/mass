@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-09 20:16",
-  "cutoff": "2026-11-08",
+  "updated": "2026-11-10 07:13",
+  "cutoff": "2026-11-09",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7454",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-10",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제32주간 화요일 복음: 루카 17,7-10…"
+    },
+    {
+      "id": "daum_bbadaking_7990",
+      "title": "2026년 11월 10일 성 대 레오 교황 학자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-11-09",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7990",
+      "mass_date": "2026-11-10",
+      "priest": "조명연",
+      "excerpt": "종종 사람들이 묻습니다."
+    },
+    {
+      "id": "daum_bbadaking_2266",
+      "title": "2026년 11월 10일 성 대 레오 교황 학자 기념일",
+      "author": "박 베로니카",
+      "date": "2026-11-10",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2266",
+      "mass_date": "2026-11-10",
+      "priest": "양승국",
+      "excerpt": "성장에 성장을 거듭한 겸손한 성인, 마르티노 주교!"
     },
     {
       "id": "daum_catholicsb_7453",
@@ -66,46 +86,6 @@
       "date": "2026-11-09",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140052&menu=4770",
       "mass_date": "2026-11-09",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7452",
-      "title": "전삼용 요셉 신부 / 연중 제32주일 - 지옥까지 가겠다고?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-07",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7452",
-      "mass_date": "2026-11-08",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제32주일 복음: 마태오 25,1-13 지옥까…"
-    },
-    {
-      "id": "daum_bbadaking_7988",
-      "title": "2026년 11월 8일 연중 제32주일",
-      "author": "빠다킹신부",
-      "date": "2026-11-07",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7988",
-      "mass_date": "2026-11-08",
-      "priest": "조명연",
-      "excerpt": "세상은 공평하지 않습니다."
-    },
-    {
-      "id": "daum_bbadaking_2264",
-      "title": "2026년 11월 8일 연중 제32주일",
-      "author": "박 베로니카",
-      "date": "2026-11-07",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2264",
-      "mass_date": "2026-11-08",
-      "priest": "양승국",
-      "excerpt": "평신도들은 2중대가 아닙니다!"
-    },
-    {
-      "id": "2140000",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-08",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140000&menu=4770",
-      "mass_date": "2026-11-08",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

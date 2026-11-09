@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-09 16:55",
+  "updated": "2026-11-10 04:46",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "moEzcaWyR6k",
+      "date": "2026-11-10",
+      "title": "성 대 레오 교황 학자 기념일",
+      "url": "https://www.youtube.com/watch?v=moEzcaWyR6k"
+    },
     {
       "videoId": "-HSZU6SmTeQ",
       "date": "2026-11-09",
@@ -57,12 +63,6 @@
       "date": "2026-11-01",
       "title": "모든 성인 대축일",
       "url": "https://www.youtube.com/watch?v=nwScW-OYpss"
-    },
-    {
-      "videoId": "0lCoCCfZJ7c",
-      "date": "2026-10-31",
-      "title": "연중 제30주간 토요일",
-      "url": "https://www.youtube.com/watch?v=0lCoCCfZJ7c"
     }
   ]
 }

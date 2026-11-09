@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09 02:51",
+  "updated": "2026-11-09 09:42",
   "cutoff": "2026-11-08",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7453",
@@ -38,6 +38,16 @@
       "mass_date": "2026-11-09",
       "priest": "조명연",
       "excerpt": "고등학생 때 학생들 사이에서 엄청난 인기가 있었던 그룹이 있었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2265",
+      "title": "2026년 11월 9일 라테라노 대성전 봉헌 축일",
+      "author": "박 베로니카",
+      "date": "2026-11-09",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2265",
+      "mass_date": "2026-11-09",
+      "priest": "양승국",
+      "excerpt": "우리 모두 살아있는 감실입니다!"
     },
     {
       "id": "daum_catholicsb_7452",

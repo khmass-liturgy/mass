@@ -1,8 +1,14 @@
 {
-  "updated": "2026-11-10 08:29",
+  "updated": "2026-11-11 05:56",
   "source": "https://www.catholictimes.org/list/108",
   "count": 10,
   "items": [
+    {
+      "title": "[세상살이 복음살이] 기후 불평등, 가장 적게 배출한 이들이 가장 먼저 무너진다",
+      "url": "https://www.catholictimes.org/article/20261106500013",
+      "date": "2026-11-15",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/11/06/.cache/512/20261106500004.jpg"
+    },
     {
       "title": "[순례, 걷고 기도하고] 의정부교구 남양주 마재성지",
       "url": "https://www.catholictimes.org/article/20261030500185",
@@ -16,16 +22,16 @@
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/22/.cache/512/20261022500069.jpg"
     },
     {
-      "title": "대전교구 아산 온양용화동본당, 친환경 소재로 건축 환경 개선",
-      "url": "https://www.catholictimes.org/article/20261026500116",
-      "date": "2026-11-01",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/26/.cache/512/20261026500065.jpg"
-    },
-    {
       "title": "서울 WYD 조직위, 전 세계 평화 위한 ‘평화의 기도 숲’ 축복",
       "url": "https://www.catholictimes.org/article/20261026500117",
       "date": "2026-11-01",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/26/.cache/512/20261026500106.jpg"
+    },
+    {
+      "title": "대전교구 아산 온양용화동본당, 친환경 소재로 건축 환경 개선",
+      "url": "https://www.catholictimes.org/article/20261026500116",
+      "date": "2026-11-01",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/26/.cache/512/20261026500065.jpg"
     },
     {
       "title": "[가톨릭 쉼터] ‘봉금의 뜰’ 추수하는 날…“알알이 영근 결실 함께 나눠요”",
@@ -56,12 +62,6 @@
       "url": "https://www.catholictimes.org/article/20261016500001",
       "date": "2026-10-25",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/15/.cache/512/20261015500219.jpg"
-    },
-    {
-      "title": "[세상살이 복음살이] 인공지능에게 의식이 있을까?…‘센티언트 AI’ 논쟁, 교회의 가르침은?",
-      "url": "https://www.catholictimes.org/article/20261018500015",
-      "date": "2026-10-25",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/10/18/.cache/512/20261018500011.jpg"
     }
   ]
 }

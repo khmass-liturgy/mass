@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10 07:13",
+  "updated": "2026-11-10 19:57",
   "cutoff": "2026-11-09",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7454",
@@ -48,6 +48,26 @@
       "mass_date": "2026-11-10",
       "priest": "양승국",
       "excerpt": "성장에 성장을 거듭한 겸손한 성인, 마르티노 주교!"
+    },
+    {
+      "id": "daum_bbadaking_214",
+      "title": "‘저희는 쓸모없는 종입니다.",
+      "author": "환희 평화",
+      "date": "2026-11-10",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/214",
+      "mass_date": "2026-11-10",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2140087",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-10",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140087&menu=4770",
+      "mass_date": "2026-11-10",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7453",

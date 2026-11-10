@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-10 19:57",
-  "cutoff": "2026-11-09",
+  "updated": "2026-11-11 04:36",
+  "cutoff": "2026-11-10",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
+    {
+      "id": "daum_catholicsb_7455",
+      "title": "전삼용 요셉 신부 / 연중 제32주간 수요일 - 봉사하면 감사할 수밖에 없는 이유",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-10",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7455",
+      "mass_date": "2026-11-11",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제32주간 수요일 복음: 루카 17,11-19…"
+    },
+    {
+      "id": "daum_bbadaking_7991",
+      "title": "2026년 11월 11일 투르의 성 마르티노 주교 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-11-10",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7991",
+      "mass_date": "2026-11-11",
+      "priest": "조명연",
+      "excerpt": "어렸을 때, 가끔 신부님께서 우리 집에 방문하셨습니다."
+    },
     {
       "id": "daum_catholicsb_7454",
       "title": "전삼용 요셉 신부 / 연중 제32주간 화요일 - 봉사에 대한 보상은 하느님 자신",
@@ -66,46 +86,6 @@
       "date": "2026-11-10",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140087&menu=4770",
       "mass_date": "2026-11-10",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7453",
-      "title": "전삼용 요셉 신부 / 11월 9일 라테라노 대성전 봉헌 축일 - 가난한 이들을 위한 교회를 넘어",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-08",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7453",
-      "mass_date": "2026-11-09",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 라테라노 대성전 봉헌 축일 복음: 요한 2,13-2…"
-    },
-    {
-      "id": "daum_bbadaking_7989",
-      "title": "2026년 11월 9일 라테라노 대성전 봉헌 축일",
-      "author": "빠다킹신부",
-      "date": "2026-11-08",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7989",
-      "mass_date": "2026-11-09",
-      "priest": "조명연",
-      "excerpt": "고등학생 때 학생들 사이에서 엄청난 인기가 있었던 그룹이 있었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2265",
-      "title": "2026년 11월 9일 라테라노 대성전 봉헌 축일",
-      "author": "박 베로니카",
-      "date": "2026-11-09",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2265",
-      "mass_date": "2026-11-09",
-      "priest": "양승국",
-      "excerpt": "우리 모두 살아있는 감실입니다!"
-    },
-    {
-      "id": "2140052",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-09",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140052&menu=4770",
-      "mass_date": "2026-11-09",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

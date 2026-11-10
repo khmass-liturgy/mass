@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-10 08:46",
-  "date": "2026-11-10",
-  "topicIndex": 21,
-  "topic": "주일의 쉼과 감사의 식탁",
-  "query": "식사 전 감사 기도 가톨릭",
+  "updated": "2026-11-11 06:17",
+  "date": "2026-11-11",
+  "topicIndex": 0,
+  "topic": "지구온난화와 기후위기",
+  "query": "찬미받으소서 기후위기 가톨릭",
   "video": {
-    "videoId": "1JtZPn8IsG4",
-    "title": "[가톨릭 기도문] 마음이 너무 힘들 때 위로가 되는 감사의 기도 (배경음악 있음)",
-    "channel": "제이슨티비",
-    "duration": 391,
+    "videoId": "xLJjFErAuKc",
+    "title": "'찬미받으소서' - 가톨릭기후행동송 / 에코노마드(기후버스킹팀) / 가톨릭기후행동",
+    "channel": "가톨릭기후행동 LSM KOREA",
+    "duration": 178,
     "published": "6년 전"
   },
   "more": [
     {
-      "videoId": "ACuGeHAVSdk",
-      "title": "[가톨릭 기도 성가] 식사 전 기도, 식사 후 기도",
-      "channel": "가톨릭 기도성가",
-      "duration": 135,
-      "published": "1년 전"
+      "videoId": "KQjwl9WhNOk",
+      "title": "[교육영상]찬미받으소서 12 기후악당에서 기후천사로",
+      "channel": "CBCK 한국천주교주교회의",
+      "duration": 181,
+      "published": "9년 전"
     },
     {
-      "videoId": "nZ8AylKktE0",
-      "title": "[바오로딸키즈] #13 식사 후 기도(Thanksgiving after Meals) | Basic Catholic Prayers (Pauline Kids) | 첫영성체 준비",
-      "channel": "가톨릭음악채널 바오로딸뮤직앤PaulineMusic&",
-      "duration": 69,
-      "published": "5년 전"
-    },
-    {
-      "videoId": "jbOg2EXlCEg",
-      "title": "[가톨릭 기도문] 치유의기도 by 치유자 로버트 캔톤 (배경음악 있음)",
-      "channel": "제이슨티비",
-      "duration": 179,
+      "videoId": "Vw_zN50wVC8",
+      "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
+      "channel": "cpbc 뉴스",
+      "duration": 213,
       "published": "6년 전"
     },
     {
-      "videoId": "srnFcddxbns",
-      "title": "[박민서 신부와 수어로 대화해요] ep.7 식사 전ㆍ후 기도",
-      "channel": "가톨릭신문",
-      "duration": 161,
+      "videoId": "nR6_xVY16vY",
+      "title": "「찬미받으소서」 주간, 온실가스 줄이려면?",
+      "channel": "cpbc 뉴스",
+      "duration": 160,
       "published": "6년 전"
+    },
+    {
+      "videoId": "mKMCZJQx2HU",
+      "title": "기후위기 극복을 위한 ‘파리 협정’과회칙 ‘찬미받으소서’의 요소 비교 (오형훈 미카엘 신부, 2022년 9월 구역반장 월례연수) #천주교서울대교구사목국",
+      "channel": "천주교 서울대교구 사목국",
+      "duration": 1421,
+      "published": "4년 전"
     }
   ],
   "topics": [
@@ -150,6 +150,13 @@
           "published": "9년 전"
         },
         {
+          "videoId": "Vw_zN50wVC8",
+          "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
+          "channel": "cpbc 뉴스",
+          "duration": 213,
+          "published": "6년 전"
+        },
+        {
           "videoId": "nR6_xVY16vY",
           "title": "「찬미받으소서」 주간, 온실가스 줄이려면?",
           "channel": "cpbc 뉴스",
@@ -157,18 +164,11 @@
           "published": "6년 전"
         },
         {
-          "videoId": "DiP49OhmUIU",
-          "title": "찬미받으소서, 2021년 성금요일, 기후생태 십자가의 길 기도 | 가톨릭기후행동",
-          "channel": "가톨릭기후행동 LSM KOREA",
-          "duration": 438,
-          "published": "5년 전"
-        },
-        {
-          "videoId": "Vw_zN50wVC8",
-          "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
-          "channel": "cpbc 뉴스",
-          "duration": 213,
-          "published": "6년 전"
+          "videoId": "mKMCZJQx2HU",
+          "title": "기후위기 극복을 위한 ‘파리 협정’과회칙 ‘찬미받으소서’의 요소 비교 (오형훈 미카엘 신부, 2022년 9월 구역반장 월례연수) #천주교서울대교구사목국",
+          "channel": "천주교 서울대교구 사목국",
+          "duration": 1421,
+          "published": "4년 전"
         }
       ]
     },
@@ -1008,6 +1008,10 @@
     {
       "date": "2026-11-10",
       "videoId": "1JtZPn8IsG4"
+    },
+    {
+      "date": "2026-11-11",
+      "videoId": "xLJjFErAuKc"
     }
   ]
 }

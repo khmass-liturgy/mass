@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-10 04:48",
+  "updated": "2026-11-10 12:34",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "N9NnsmbqpUM",
+      "date": "2026-11-10",
+      "liturgy": "성 대 레오 교황 학자 기념일",
+      "priest": "이상진 아모스 신부",
+      "url": "https://www.youtube.com/watch?v=N9NnsmbqpUM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "vmMOcrg9SPI",
       "date": "2026-11-09",
@@ -95,13 +102,6 @@
       "liturgy": "성 시몬과 성 유다(타대오) 사도 축일",
       "priest": "응웬 반 호아  신부",
       "url": "https://www.youtube.com/watch?v=YhEjTVYwvTM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "hKGmtzLF6uE",
-      "date": "2026-10-27",
-      "liturgy": "연중 제30주간 화요일",
-      "priest": "최강민 알퐁소 신부",
-      "url": "https://www.youtube.com/watch?v=hKGmtzLF6uE&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

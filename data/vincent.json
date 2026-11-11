@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-11 10:14",
+  "updated": "2026-11-12 02:05",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "T2VBQnf3_CE",
+      "date": "2026-11-12",
+      "title": "성 요사팟 주교 순교자 기념일",
+      "url": "https://www.youtube.com/watch?v=T2VBQnf3_CE"
+    },
     {
       "videoId": "VMijmLOtoG4",
       "date": "2026-11-11",
@@ -57,12 +63,6 @@
       "date": "2026-11-03",
       "title": "연중 제31주간 화요일",
       "url": "https://www.youtube.com/watch?v=fEt9PF7IwEc"
-    },
-    {
-      "videoId": "v63Ty8jkyxs",
-      "date": "2026-11-02",
-      "title": "죽은 모든 이를 기억하는 위령의 날",
-      "url": "https://www.youtube.com/watch?v=v63Ty8jkyxs"
     }
   ]
 }

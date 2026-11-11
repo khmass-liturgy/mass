@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10 11:57",
+  "updated": "2026-11-11 09:56",
   "note": "지금은 sd.uca.or.kr(의정부교구 공용 플랫폼) 성당만 자동으로 읽어 온다. 다른 플랫폼은 성당마다 구조가 달라 일반화된 파서를 만들 수 없었다 — unsupported 항목 참고.",
   "supported_platform": "sd.uca.or.kr",
   "count": 42,
@@ -477,7 +477,16 @@
     "http://sd.uca.or.kr/goeup56": {
       "name": "고읍동",
       "diocese": "의정부교구",
-      "events": []
+      "events": [
+        {
+          "date": "2026-11-12",
+          "title": "성당김장"
+        },
+        {
+          "date": "2026-11-15",
+          "title": "신임 사목회장,사목위원,구역장,반장 임명장 수여식 : 교중미사중"
+        }
+      ]
     },
     "http://sd.uca.or.kr/dgdsd": {
       "name": "덕계동",

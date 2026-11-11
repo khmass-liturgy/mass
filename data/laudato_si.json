@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-11 06:17",
-  "date": "2026-11-11",
-  "topicIndex": 0,
-  "topic": "지구온난화와 기후위기",
-  "query": "찬미받으소서 기후위기 가톨릭",
+  "updated": "2026-11-12 06:55",
+  "date": "2026-11-12",
+  "topicIndex": 1,
+  "topic": "녹아내리는 빙하",
+  "query": "빙하 기후위기 가톨릭 생태",
   "video": {
-    "videoId": "xLJjFErAuKc",
-    "title": "'찬미받으소서' - 가톨릭기후행동송 / 에코노마드(기후버스킹팀) / 가톨릭기후행동",
-    "channel": "가톨릭기후행동 LSM KOREA",
-    "duration": 178,
+    "videoId": "jshvyXegKZk",
+    "title": "주교단의 호소 \"기후위기 비상사태 선포하십시오\"",
+    "channel": "cpbc 뉴스",
+    "duration": 170,
     "published": "6년 전"
   },
   "more": [
     {
-      "videoId": "KQjwl9WhNOk",
-      "title": "[교육영상]찬미받으소서 12 기후악당에서 기후천사로",
-      "channel": "CBCK 한국천주교주교회의",
-      "duration": 181,
-      "published": "9년 전"
-    },
-    {
-      "videoId": "Vw_zN50wVC8",
-      "title": "교황청이 주는 「찬미받으소서」 상 받으려면?",
-      "channel": "cpbc 뉴스",
-      "duration": 213,
+      "videoId": "8DmDabRpvn4",
+      "title": "[녹색신앙] 토크콘서트 For You_eco",
+      "channel": "cpbcTV가톨릭콘텐츠의모든것",
+      "duration": 1931,
       "published": "6년 전"
     },
     {
-      "videoId": "nR6_xVY16vY",
-      "title": "「찬미받으소서」 주간, 온실가스 줄이려면?",
+      "videoId": "-xfeJLSblwU",
+      "title": "환경문제! 남의 일이 아닙니다 | 북극곰! 어디로 가야하나? | 바오로딸출판사 | 황창연 베네딕토 신부 | 김선경마리로사수녀 | 오늘 다시 주님께 [오늘, 따뜻한 책 한 권]",
+      "channel": "cpbcTV가톨릭콘텐츠의모든것",
+      "duration": 790,
+      "published": "5년 전"
+    },
+    {
+      "videoId": "Pe5CEuEn1Iw",
+      "title": "성경 속 재앙 ‘메뚜기떼’···기후변화로 현실화",
       "channel": "cpbc 뉴스",
-      "duration": 160,
+      "duration": 222,
       "published": "6년 전"
     },
     {
-      "videoId": "mKMCZJQx2HU",
-      "title": "기후위기 극복을 위한 ‘파리 협정’과회칙 ‘찬미받으소서’의 요소 비교 (오형훈 미카엘 신부, 2022년 9월 구역반장 월례연수) #천주교서울대교구사목국",
-      "channel": "천주교 서울대교구 사목국",
-      "duration": 1421,
-      "published": "4년 전"
+      "videoId": "B3D3wVkTUUg",
+      "title": "가짜 '장마'의 진실은? | 정수용 이냐시오 신부 | 사제앵커 | cpbc주간종합뉴스 - 오프닝",
+      "channel": "cpbc 뉴스",
+      "duration": 149,
+      "published": "5년 전"
     }
   ],
   "topics": [
@@ -1012,6 +1012,10 @@
     {
       "date": "2026-11-11",
       "videoId": "xLJjFErAuKc"
+    },
+    {
+      "date": "2026-11-12",
+      "videoId": "jshvyXegKZk"
     }
   ]
 }

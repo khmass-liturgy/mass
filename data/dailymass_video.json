@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-10 12:34",
+  "updated": "2026-11-11 10:14",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "5p-Vb2V2aIw",
+      "date": "2026-11-11",
+      "liturgy": "투르의 성 마르티노 주교 기념일",
+      "priest": "이정훈 사도요한 신부",
+      "url": "https://www.youtube.com/watch?v=5p-Vb2V2aIw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "N9NnsmbqpUM",
       "date": "2026-11-10",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제30주간 목요일",
       "priest": "문주석 레오 신부",
       "url": "https://www.youtube.com/watch?v=3TAYCLJbjDI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "YhEjTVYwvTM",
-      "date": "2026-10-28",
-      "liturgy": "성 시몬과 성 유다(타대오) 사도 축일",
-      "priest": "응웬 반 호아  신부",
-      "url": "https://www.youtube.com/watch?v=YhEjTVYwvTM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

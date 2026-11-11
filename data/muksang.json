@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-11 19:39",
-  "cutoff": "2026-11-10",
+  "updated": "2026-11-12 04:29",
+  "cutoff": "2026-11-11",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7456",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-12",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제32주간 목요일 복음: 루카 17,26-37…"
+    },
+    {
+      "id": "daum_bbadaking_7992",
+      "title": "2026년 11월 12일 성 요사팟 주교 순교자 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-11-11",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7992",
+      "mass_date": "2026-11-12",
+      "priest": "조명연",
+      "excerpt": "언젠가 서울로 특강하러 갔다가 시간이 남아서 평소처럼 카페에 들어갔습니다."
     },
     {
       "id": "daum_catholicsb_7455",
@@ -76,56 +86,6 @@
       "date": "2026-11-11",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140129&menu=4770",
       "mass_date": "2026-11-11",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7454",
-      "title": "전삼용 요셉 신부 / 연중 제32주간 화요일 - 봉사에 대한 보상은 하느님 자신",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-09",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7454",
-      "mass_date": "2026-11-10",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제32주간 화요일 복음: 루카 17,7-10…"
-    },
-    {
-      "id": "daum_bbadaking_7990",
-      "title": "2026년 11월 10일 성 대 레오 교황 학자 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-11-09",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7990",
-      "mass_date": "2026-11-10",
-      "priest": "조명연",
-      "excerpt": "종종 사람들이 묻습니다."
-    },
-    {
-      "id": "daum_bbadaking_2266",
-      "title": "2026년 11월 10일 성 대 레오 교황 학자 기념일",
-      "author": "박 베로니카",
-      "date": "2026-11-10",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2266",
-      "mass_date": "2026-11-10",
-      "priest": "양승국",
-      "excerpt": "성장에 성장을 거듭한 겸손한 성인, 마르티노 주교!"
-    },
-    {
-      "id": "daum_bbadaking_214",
-      "title": "‘저희는 쓸모없는 종입니다.",
-      "author": "환희 평화",
-      "date": "2026-11-10",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/214",
-      "mass_date": "2026-11-10",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140087",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-10",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140087&menu=4770",
-      "mass_date": "2026-11-10",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

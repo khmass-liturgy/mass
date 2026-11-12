@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-12 02:07",
+  "updated": "2026-11-12 11:16",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "pgPKMokc3Bw",
+      "date": "2026-11-12",
+      "liturgy": "성 요사팟 주교 순교자 기념일",
+      "priest": "최두헌 요한 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=pgPKMokc3Bw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "5p-Vb2V2aIw",
       "date": "2026-11-11",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제30주간 금요일",
       "priest": "최강민 알퐁소 신부",
       "url": "https://www.youtube.com/watch?v=aAyRMzS4ksw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "3TAYCLJbjDI",
-      "date": "2026-10-29",
-      "liturgy": "연중 제30주간 목요일",
-      "priest": "문주석 레오 신부",
-      "url": "https://www.youtube.com/watch?v=3TAYCLJbjDI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

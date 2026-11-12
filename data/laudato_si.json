@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-12 06:55",
-  "date": "2026-11-12",
-  "topicIndex": 1,
-  "topic": "녹아내리는 빙하",
-  "query": "빙하 기후위기 가톨릭 생태",
+  "updated": "2026-11-13 06:50",
+  "date": "2026-11-13",
+  "topicIndex": 2,
+  "topic": "쓰레기 줄이기",
+  "query": "쓰레기 줄이기 가톨릭 생태 실천",
   "video": {
-    "videoId": "jshvyXegKZk",
-    "title": "주교단의 호소 \"기후위기 비상사태 선포하십시오\"",
+    "videoId": "LSQIGxWKZo0",
+    "title": "플라스틱 사용 줄이기 \"본당부터 실천합시다\"",
     "channel": "cpbc 뉴스",
-    "duration": 170,
+    "duration": 138,
     "published": "6년 전"
   },
   "more": [
     {
-      "videoId": "8DmDabRpvn4",
-      "title": "[녹색신앙] 토크콘서트 For You_eco",
-      "channel": "cpbcTV가톨릭콘텐츠의모든것",
-      "duration": 1931,
+      "videoId": "lNbJcBxF6IM",
+      "title": "찬미받으소서 교리 영상 _ 네 번째",
+      "channel": "천주교 춘천교구",
+      "duration": 515,
+      "published": "4년 전"
+    },
+    {
+      "videoId": "nR6_xVY16vY",
+      "title": "「찬미받으소서」 주간, 온실가스 줄이려면?",
+      "channel": "cpbc 뉴스",
+      "duration": 160,
       "published": "6년 전"
     },
     {
-      "videoId": "-xfeJLSblwU",
-      "title": "환경문제! 남의 일이 아닙니다 | 북극곰! 어디로 가야하나? | 바오로딸출판사 | 황창연 베네딕토 신부 | 김선경마리로사수녀 | 오늘 다시 주님께 [오늘, 따뜻한 책 한 권]",
-      "channel": "cpbcTV가톨릭콘텐츠의모든것",
-      "duration": 790,
-      "published": "5년 전"
+      "videoId": "KQjwl9WhNOk",
+      "title": "[교육영상]찬미받으소서 12 기후악당에서 기후천사로",
+      "channel": "CBCK 한국천주교주교회의",
+      "duration": 181,
+      "published": "9년 전"
     },
     {
-      "videoId": "Pe5CEuEn1Iw",
-      "title": "성경 속 재앙 ‘메뚜기떼’···기후변화로 현실화",
-      "channel": "cpbc 뉴스",
-      "duration": 222,
-      "published": "6년 전"
-    },
-    {
-      "videoId": "B3D3wVkTUUg",
-      "title": "가짜 '장마'의 진실은? | 정수용 이냐시오 신부 | 사제앵커 | cpbc주간종합뉴스 - 오프닝",
-      "channel": "cpbc 뉴스",
-      "duration": 149,
-      "published": "5년 전"
+      "videoId": "6QARyNQNGVg",
+      "title": "[교육영상]찬미받으소서 2 스마트폰 사용 줄이기",
+      "channel": "CBCK 한국천주교주교회의",
+      "duration": 181,
+      "published": "9년 전"
     }
   ],
   "topics": [
@@ -215,11 +215,11 @@
     "쓰레기 줄이기": {
       "date": "2026-11-13",
       "video": {
-        "videoId": "1B6Fx-P2rGs",
-        "title": "박현동 아빠스 \"탄소 중립·폐기물 줄이기 실천합시다\"",
+        "videoId": "LSQIGxWKZo0",
+        "title": "플라스틱 사용 줄이기 \"본당부터 실천합시다\"",
         "channel": "cpbc 뉴스",
-        "duration": 193,
-        "published": "5년 전"
+        "duration": 138,
+        "published": "6년 전"
       },
       "more": [
         {
@@ -237,15 +237,15 @@
           "published": "6년 전"
         },
         {
-          "videoId": "LSQIGxWKZo0",
-          "title": "플라스틱 사용 줄이기 \"본당부터 실천합시다\"",
-          "channel": "cpbc 뉴스",
-          "duration": 138,
-          "published": "6년 전"
+          "videoId": "KQjwl9WhNOk",
+          "title": "[교육영상]찬미받으소서 12 기후악당에서 기후천사로",
+          "channel": "CBCK 한국천주교주교회의",
+          "duration": 181,
+          "published": "9년 전"
         },
         {
-          "videoId": "4uGkrWVthxY",
-          "title": "[교육영상]찬미받으소서 4 분리배출 열심히",
+          "videoId": "6QARyNQNGVg",
+          "title": "[교육영상]찬미받으소서 2 스마트폰 사용 줄이기",
           "channel": "CBCK 한국천주교주교회의",
           "duration": 181,
           "published": "9년 전"
@@ -1016,6 +1016,10 @@
     {
       "date": "2026-11-12",
       "videoId": "jshvyXegKZk"
+    },
+    {
+      "date": "2026-11-13",
+      "videoId": "LSQIGxWKZo0"
     }
   ]
 }

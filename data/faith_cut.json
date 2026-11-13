@@ -1,8 +1,14 @@
 {
-  "updated": "2026-11-08 15:15",
+  "updated": "2026-11-13 15:54",
   "source": "https://www.catholictimes.org/list/96",
   "count": 10,
   "items": [
+    {
+      "title": "연중 제33주일",
+      "url": "https://www.catholictimes.org/article/20261105500144",
+      "date": "2026-11-15",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/11/05/.cache/512/20261105500142.png"
+    },
     {
       "title": "연중 제32주일",
       "url": "https://www.catholictimes.org/article/20261030500002",
@@ -56,12 +62,6 @@
       "url": "https://www.catholictimes.org/article/20260827500053",
       "date": "2026-09-06",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/08/27/.cache/512/20260827500051.png"
-    },
-    {
-      "title": "연중 제22주일",
-      "url": "https://www.catholictimes.org/article/20260820500079",
-      "date": "2026-08-30",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/08/20/.cache/512/20260820500077.png"
     }
   ]
 }

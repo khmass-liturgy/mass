@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13 10:45",
+  "updated": "2026-11-13 19:48",
   "cutoff": "2026-11-12",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 12,
   "posts": [
+    {
+      "id": "daum_catholicsb_7458",
+      "title": "전삼용 요셉 신부 / 연중 제32주간 토요일 - 믿음의 열매인 의지와 인내",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-13",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7458",
+      "mass_date": "2026-11-14",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 연중 제32주간 토요일 루카 18,1-8 믿음의 열매인…"
+    },
+    {
+      "id": "daum_bbadaking_7994",
+      "title": "2026년 11월 14일 연중 제32주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-13",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7994",
+      "mass_date": "2026-11-14",
+      "priest": "조명연",
+      "excerpt": "어렸을 때의 저를 떠올리면 아주 산만한 아이였던 것 같습니다."
+    },
     {
       "id": "daum_catholicsb_7457",
       "title": "전삼용 요셉 신부 / 연중 제32주간 금요일 - 소돔에서 탈출했더라도 노아의 방주에 들어가지 못한다면?",
@@ -58,6 +78,16 @@
       "mass_date": "2026-11-13",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2140236",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-13",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140236&menu=4770",
+      "mass_date": "2026-11-13",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7456",

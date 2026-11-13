@@ -1,44 +1,23 @@
 {
-  "updated": "2026-11-13 06:50",
-  "date": "2026-11-13",
-  "topicIndex": 2,
-  "topic": "쓰레기 줄이기",
-  "query": "쓰레기 줄이기 가톨릭 생태 실천",
+  "updated": "2026-11-14 06:25",
+  "date": "2026-11-14",
+  "topicIndex": 3,
+  "topic": "소비 절제 — 과소비 줄이기",
+  "query": "소비 절제 찬미받으소서",
   "video": {
-    "videoId": "LSQIGxWKZo0",
-    "title": "플라스틱 사용 줄이기 \"본당부터 실천합시다\"",
-    "channel": "cpbc 뉴스",
-    "duration": 138,
-    "published": "6년 전"
+    "videoId": "ydmWrGpPKl0",
+    "title": "아름다운 절제가 필요하다 - 교황 회칙 \"찬미받으소서\"와 함께하는 생태영성 40주간 36강의",
+    "channel": "천주교대구대교구",
+    "duration": 736,
+    "published": "2년 전"
   },
   "more": [
     {
-      "videoId": "lNbJcBxF6IM",
-      "title": "찬미받으소서 교리 영상 _ 네 번째",
-      "channel": "천주교 춘천교구",
-      "duration": 515,
-      "published": "4년 전"
-    },
-    {
-      "videoId": "nR6_xVY16vY",
-      "title": "「찬미받으소서」 주간, 온실가스 줄이려면?",
+      "videoId": "a3tfGsBZb6A",
+      "title": "사제의 눈 \"극한 폭염\"",
       "channel": "cpbc 뉴스",
-      "duration": 160,
-      "published": "6년 전"
-    },
-    {
-      "videoId": "KQjwl9WhNOk",
-      "title": "[교육영상]찬미받으소서 12 기후악당에서 기후천사로",
-      "channel": "CBCK 한국천주교주교회의",
-      "duration": 181,
-      "published": "9년 전"
-    },
-    {
-      "videoId": "6QARyNQNGVg",
-      "title": "[교육영상]찬미받으소서 2 스마트폰 사용 줄이기",
-      "channel": "CBCK 한국천주교주교회의",
-      "duration": 181,
-      "published": "9년 전"
+      "duration": 219,
+      "published": "3개월 전"
     }
   ],
   "topics": [
@@ -267,7 +246,7 @@
           "title": "사제의 눈 \"극한 폭염\"",
           "channel": "cpbc 뉴스",
           "duration": 219,
-          "published": "2개월 전"
+          "published": "3개월 전"
         }
       ]
     },
@@ -1020,6 +999,10 @@
     {
       "date": "2026-11-13",
       "videoId": "LSQIGxWKZo0"
+    },
+    {
+      "date": "2026-11-14",
+      "videoId": "ydmWrGpPKl0"
     }
   ]
 }

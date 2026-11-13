@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13 04:48",
+  "updated": "2026-11-13 10:45",
   "cutoff": "2026-11-12",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7457",
@@ -38,6 +38,26 @@
       "mass_date": "2026-11-13",
       "priest": "조명연",
       "excerpt": "훈련 잘 받은 개가 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_2269",
+      "title": "2026년 11월 13일 연중 제32주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-11-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2269",
+      "mass_date": "2026-11-13",
+      "priest": "양승국",
+      "excerpt": "살아있음을 가장 큰 축복으로 여기십시오!"
+    },
+    {
+      "id": "daum_bbadaking_217",
+      "title": "몇몇 나라의 경우를 보면 사람이 죽으면 그 시체와 함께 여러 부장품들을 함께…",
+      "author": "환희 평화",
+      "date": "2026-11-13",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/217",
+      "mass_date": "2026-11-13",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7456",

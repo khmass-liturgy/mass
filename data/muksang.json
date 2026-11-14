@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14 10:23",
+  "updated": "2026-11-14 19:03",
   "cutoff": "2026-11-13",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7459",
+      "title": "전삼용 요셉 신부 / 연중 제33주일 - 불가능한 일을 할 수 있는 유일한 방법은 가능하다고 믿는 것뿐입",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-14",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7459",
+      "mass_date": "2026-11-15",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주일 잠언 31,10-13.19-20.3…"
+    },
     {
       "id": "daum_catholicsb_7458",
       "title": "전삼용 요셉 신부 / 연중 제32주간 토요일 - 믿음의 열매인 의지와 인내",
@@ -51,7 +61,7 @@
     },
     {
       "id": "2140280",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
       "author": "최원석",
       "date": "2026-11-14",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140280&menu=4770",

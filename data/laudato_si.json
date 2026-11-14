@@ -1,23 +1,44 @@
 {
-  "updated": "2026-11-14 06:25",
-  "date": "2026-11-14",
-  "topicIndex": 3,
-  "topic": "소비 절제 — 과소비 줄이기",
-  "query": "소비 절제 찬미받으소서",
+  "updated": "2026-11-15 04:55",
+  "date": "2026-11-15",
+  "topicIndex": 4,
+  "topic": "탐욕에서의 자유",
+  "query": "탐욕 프란치스코 교황 찬미받으소서",
   "video": {
-    "videoId": "ydmWrGpPKl0",
-    "title": "아름다운 절제가 필요하다 - 교황 회칙 \"찬미받으소서\"와 함께하는 생태영성 40주간 36강의",
-    "channel": "천주교대구대교구",
-    "duration": 736,
-    "published": "2년 전"
+    "videoId": "iKUceph68-4",
+    "title": "5년 전 프란치스코 교황이 던진 경고",
+    "channel": "cpbc 뉴스",
+    "duration": 143,
+    "published": "6년 전"
   },
   "more": [
     {
-      "videoId": "a3tfGsBZb6A",
-      "title": "사제의 눈 \"극한 폭염\"",
+      "videoId": "cgstKMDUUSg",
+      "title": "[생활성가] 교황 회칙 '찬미받으소서' 반포 5주년 기념 뮤직비디오 (Laudato Si')",
+      "channel": "열일곱이다 - 가톨릭 찬양크루",
+      "duration": 254,
+      "published": "6년 전"
+    },
+    {
+      "videoId": "zKLPD4Btte8",
+      "title": "「찬미받으소서」 반포 5주년 기념미사 봉헌",
       "channel": "cpbc 뉴스",
-      "duration": 219,
-      "published": "3개월 전"
+      "duration": 244,
+      "published": "6년 전"
+    },
+    {
+      "videoId": "XHlxqTWMcUY",
+      "title": "프란치스코 교황 \"식량을 무기로 사용하지 마세요\"",
+      "channel": "cpbc 뉴스",
+      "duration": 167,
+      "published": "4년 전"
+    },
+    {
+      "videoId": "dode8MGG7zw",
+      "title": "교황 회칙 \"당장 '지구 구하기' 나서야\"...기후 변화 대응에 경종 / YTN",
+      "channel": " YTN",
+      "duration": 118,
+      "published": "11년 전"
     }
   ],
   "topics": [
@@ -253,39 +274,39 @@
     "탐욕에서의 자유": {
       "date": "2026-11-15",
       "video": {
-        "videoId": "TIwNE7asSYc",
-        "title": "교황어록7편",
-        "channel": "i Kolbe",
-        "duration": 90,
-        "published": "11년 전"
+        "videoId": "iKUceph68-4",
+        "title": "5년 전 프란치스코 교황이 던진 경고",
+        "channel": "cpbc 뉴스",
+        "duration": 143,
+        "published": "6년 전"
       },
       "more": [
         {
-          "videoId": "2QDALucikPY",
-          "title": "​✝️ 2023 사순 성찰: 찬미받으소서를 통해 배우는 생태적 지혜_(3월 6-12일 )",
-          "channel": "가톨릭기후행동 LSM KOREA",
-          "duration": 61,
-          "published": "3년 전"
+          "videoId": "cgstKMDUUSg",
+          "title": "[생활성가] 교황 회칙 '찬미받으소서' 반포 5주년 기념 뮤직비디오 (Laudato Si')",
+          "channel": "열일곱이다 - 가톨릭 찬양크루",
+          "duration": 254,
+          "published": "6년 전"
+        },
+        {
+          "videoId": "zKLPD4Btte8",
+          "title": "「찬미받으소서」 반포 5주년 기념미사 봉헌",
+          "channel": "cpbc 뉴스",
+          "duration": 244,
+          "published": "6년 전"
+        },
+        {
+          "videoId": "XHlxqTWMcUY",
+          "title": "프란치스코 교황 \"식량을 무기로 사용하지 마세요\"",
+          "channel": "cpbc 뉴스",
+          "duration": 167,
+          "published": "4년 전"
         },
         {
           "videoId": "dode8MGG7zw",
           "title": "교황 회칙 \"당장 '지구 구하기' 나서야\"...기후 변화 대응에 경종 / YTN",
           "channel": " YTN",
           "duration": 118,
-          "published": "11년 전"
-        },
-        {
-          "videoId": "oLJ3gMbh9Fc",
-          "title": "교황, 동아프리카 ‘화해의 여정’ 시작 “빈곤․환경 연대 호소\"",
-          "channel": "cpbc 뉴스",
-          "duration": 127,
-          "published": "7년 전"
-        },
-        {
-          "videoId": "g8tbSBp5Vg0",
-          "title": "교황 회칙 \"기후 변화 막아 지구 구해야\"...환경문제 첫 제기 / YTN",
-          "channel": " YTN",
-          "duration": 117,
           "published": "11년 전"
         }
       ]
@@ -1003,6 +1024,10 @@
     {
       "date": "2026-11-14",
       "videoId": "ydmWrGpPKl0"
+    },
+    {
+      "date": "2026-11-15",
+      "videoId": "iKUceph68-4"
     }
   ]
 }

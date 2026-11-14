@@ -66,6 +66,32 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .links a{display:inline-block;font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);border:1.5px solid var(--gold);border-radius:20px;padding:6px 14px;background:var(--card)}
 .note{font-size:12.5px;color:var(--muted);margin-top:16px}
+
+/* 묵상글 세트 선택 */
+.sticky{position:sticky;top:0;z-index:5;background:var(--bg);padding-top:8px}
+.sets{display:grid;grid-template-columns:1fr 1fr;background:#ECE5D6;border-radius:12px;padding:3px;gap:3px}
+.set{appearance:none;border:0;background:transparent;border-radius:9px;padding:7px 4px;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--muted);line-height:1.3}
+.set small{display:block;font-weight:400;font-size:11px}
+.set[aria-pressed="true"]{background:var(--card);color:var(--navy);box-shadow:0 1px 4px rgba(30,53,87,.12)}
+.sticky .tabs{position:static}
+
+/* 성바오로딸 세트: 묵주알 타임라인 + 성경 말씀 카드 */
+.order{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:12px}
+.order h3{font-family:var(--serif);font-size:14px;color:var(--navy);margin-bottom:8px}
+.order ol{list-style:none;display:flex;flex-wrap:wrap;gap:5px 4px;align-items:center}
+.order li{font-size:12px;background:#F4EFE3;border-radius:12px;padding:2px 9px;white-space:nowrap}
+.order li.rep{background:var(--pc);color:#fff}
+.order li.sep{background:none;padding:0 1px;color:var(--gold)}
+.order .loop{font-size:11.5px;color:var(--muted);margin-top:6px}
+.beads{position:relative;padding-left:34px}
+.beads::before{content:'';position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--pc),var(--gold-soft))}
+.bead{position:relative;margin-bottom:14px}
+.bead .dot{position:absolute;left:-34px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--pc);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--bg)}
+.bead .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px 13px;box-shadow:0 2px 8px rgba(30,53,87,.05)}
+.bead h3{font-family:var(--serif);font-size:15px;color:var(--navy);margin-bottom:8px;line-height:1.5}
+.bead blockquote{position:relative;font-family:var(--serif);font-size:14.5px;line-height:1.9;color:var(--ink);padding:2px 0 0 14px;border-left:3px solid var(--gold-soft)}
+.bead .src{margin-top:6px;text-align:right;font-size:12.5px;font-weight:700;color:var(--pc)}
+.bead .trad{font-size:13.5px;color:var(--muted);background:#FBF7EC;border:1px dashed var(--gold-soft);border-radius:10px;padding:8px 11px}
 @media (max-width:380px){.tab{font-size:13px}}
 </style>
 </head>
@@ -74,11 +100,17 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 <header>
   <a class="back" href="index.html">← 홈</a>
   <h1>묵주기도 묵상글</h1>
-  <p>환희 · 빛 · 고통 · 영광의 신비 — 각 단의 성경 말씀과 묵상</p>
+  <p>환희 · 빛 · 고통 · 영광의 신비 — 성경 말씀 묵상 · 해설 묵상</p>
 </header>
 
 <main>
-  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="sticky">
+    <div class="sets" id="sets" role="group" aria-label="묵상글 종류">
+      <button type="button" class="set" data-set="pauline">📜 성경 말씀 묵상<small>성바오로딸수도회</small></button>
+      <button type="button" class="set" data-set="basic">📖 해설 묵상<small>묵상 해설 · 묵상의 열매</small></button>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+  </div>
   <div class="tools"><button type="button" id="toggleAll">모두 펼치기</button></div>
   <div id="panels"></div>
 
@@ -87,7 +119,8 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
     <a id="ytLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">▶ 이 신비 함께 바치기</a>
   </div>
 
-  <p class="note">※ 각 단의 제목은 한국 천주교 『가톨릭 기도서』를 따랐고, 요일 배분은 교황 성 요한 바오로 2세의 교서 『동정 마리아의 묵주기도(Rosarium Virginis Mariae)』를 참조하였습니다. ‘묵상의 열매’는 전통적으로 각 신비에서 청하는 은총입니다.</p>
+  <p class="note" id="notePauline">※ 성경 말씀 묵상은 성바오로딸수도회 누리집 「가톨릭마당 › 기도 › 묵주기도」의 묵상 말씀을 정리한 것입니다(<a href="https://fsp.pauline.or.kr/?c=catechesis&amp;p=pray" target="_blank" rel="noopener">원문 보기</a>). 각 단의 제목은 『가톨릭 기도서』 표기로 맞추었고, 성경 본문은 원문 그대로 옮겼습니다.</p>
+  <p class="note" id="noteBasic">※ 각 단의 제목은 한국 천주교 『가톨릭 기도서』를 따랐고, 요일 배분은 교황 성 요한 바오로 2세의 교서 『동정 마리아의 묵주기도(Rosarium Virginis Mariae)』를 참조하였습니다. ‘묵상의 열매’는 전통적으로 각 신비에서 청하는 은총입니다.</p>
 </main>
 
 <script>
@@ -176,12 +209,57 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   ];
   var YT_LIST = 'PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR';
 
+  // ── 성바오로딸수도회 묵주기도 묵상 (성경 말씀) ──
+  // 출처: https://fsp.pauline.or.kr/?c=catechesis&p=pray (가톨릭마당 › 기도 › 묵주기도)
+  var PAULINE = {
+    joyful:[
+      { q:'천사가 다시 마리아에게 말하였다. “두려워하지 마라, 마리아야. 너는 하느님의 총애를 받았다. 보라, 이제 네가 잉태하여 아들을 낳을 터이니 그 이름을 예수라 하여라.” … “성령께서 너에게 내려오시고 지극히 높으신 분의 힘이 너를 덮을 것이다. 그러므로 태어날 아기는 거룩하신 분, 하느님의 아드님이라고 불릴 것이다. 네 친척 엘리사벳을 보아라. 그 늙은 나이에도 아들을 잉태하였다. 아이를 못 낳는 여자라고 불리던 그가 임신한 지 여섯 달이 되었다. 하느님께는 불가능한 일이 없다.” 마리아가 말하였다. “보십시오, 저는 주님의 종입니다. 말씀하신 대로 저에게 이루어지기를 바랍니다.”', ref:'루카 1,30-31.35-38' },
+      { q:'그 무렵에 마리아는 길을 떠나, 서둘러 유다 산악 지방에 있는 한 고을로 갔다. 그리고 즈카르야의 집에 들어가 엘리사벳에게 인사하였다. 엘리사벳이 마리아의 인사말을 들을 때 그의 태 안에서 아기가 뛰놀았다. 엘리사벳은 성령으로 가득 차 큰 소리로 외쳤다. “당신은 여인들 가운데에서 가장 복되시며 당신 태중의 아기도 복되십니다. 내 주님의 어머니께서 저에게 오시다니 어찌 된 일입니까? 보십시오, 당신의 인사말 소리가 제 귀에 들리자 저의 태 안에서 아기가 즐거워 뛰놀았습니다. 행복하십니다, 주님께서 하신 말씀이 이루어지리라고 믿으신 분!”', ref:'루카 1,39-45' },
+      { q:'요셉은 자기와 약혼한 마리아와 함께 호적 등록을 하러 갔는데, 마리아는 임신 중이었다. 그들이 거기에 머무르는 동안 마리아는 해산 날이 되어, 첫아들을 낳았다. 그들은 아기를 포대기에 싸서 구유에 뉘었다. 여관에는 그들이 들어갈 자리가 없었던 것이다.', ref:'루카 2,5-7' },
+      { q:'모세의 율법에 따라 정결례를 거행할 날이 되자, 그들은 아기를 예루살렘으로 데리고 올라가 주님께 바쳤다. 주님의 율법에 “태를 열고 나온 사내아이는 모두 주님께 봉헌해야 한다.”고 기록된 대로 한 것이다. 그들은 또한 주님의 율법에서 “산비둘기 한 쌍이나 어린 집비둘기 두 마리를” 바치라고 명령한 대로 제물을 바쳤다.', ref:'루카 2,22-24' },
+      { q:'예수님의 부모는 예루살렘으로 돌아가 그를 찾아다녔다. 사흘 뒤에야 성전에서 그를 찾아냈는데, 그는 율법 교사들 가운데에 앉아 그들의 말을 듣기도 하고 그들에게 묻기도 하고 있었다. 그의 말을 듣는 이들은 모두 그의 슬기로운 답변에 경탄하였다. 예수님의 부모는 그를 보고 무척 놀랐다.', ref:'루카 2,45-48' }
+    ],
+    luminous:[
+      { q:'그 무렵에 예수님께서 갈릴래아 나자렛에서 오시어, 요르단에서 요한에게 세례를 받으셨다. 그리고 물에서 올라오신 예수님께서는 곧 하늘이 갈라지며 성령께서 비둘기처럼 당신께 내려오시는 것을 보셨다. 이어 하늘에서 소리가 들려왔다. “너는 내가 사랑하는 아들, 내 마음에 드는 아들이다.”', ref:'마르 1,9-11' },
+      { q:'그분의 어머니는 일꾼들에게 “무엇이든지 그가 시키는 대로 하여라.” 하고 말하였다. 예수님께서 일꾼들에게 “물독에 물을 채워라.” 하고 말씀하셨다. 그들이 물독마다 가득 채우자, 예수님께서 그들에게 다시, “이제는 그것을 퍼서 과방장에게 날라다 주어라.” 하셨다. 그들은 곧 그것을 날라 갔다. 과방장은 포도주가 된 물을 맛보고 그것이 어디에서 났는지 알지 못하였지만, 물을 퍼 간 일꾼들은 알고 있었다. 이렇게 예수님께서는 처음으로 갈릴래아 카나에서 표징을 일으키시어, 당신의 영광을 드러내셨다.', ref:'요한 2,5-11' },
+      { q:'요한이 잡힌 뒤에 예수님께서는 갈릴래아에 가시어, 하느님의 복음을 선포하시며 이렇게 말씀하셨다. “때가 차서 하느님의 나라가 가까이 왔다. 회개하고 복음을 믿어라.”', ref:'마르 1,14-15' },
+      { q:'예수님께서 베드로와 야고보와 그의 동생 요한만 따로 데리고 높은 산에 오르셨다. 그리고 그들 앞에서 모습이 변하셨는데, 그분의 얼굴은 해처럼 빛나고 그분의 옷은 빛처럼 하얘졌다. 그때에 모세와 엘리야가 그들 앞에 나타나 예수님과 이야기를 나누었다.', ref:'마태 17,1-3' },
+      { q:'예수님께서는 또 빵을 들고 감사를 드리신 다음, 그것을 떼어 사도들에게 주시며 말씀하셨다. “이는 너희를 위하여 내어 주는 내 몸이다. 너희는 나를 기억하여 이를 행하여라.” 또 만찬을 드신 뒤에 같은 방식으로 잔을 들어 말씀하셨다. “이 잔은 너희를 위하여 흘리는 내 피로 맺는 새 계약이다.”', ref:'루카 22,19-20' }
+    ],
+    sorrowful:[
+      { q:'예수님께서는 제자들에게, “유혹에 빠지지 않도록 기도하여라.” 하고 말씀하셨다. 그러고 나서 돌을 던지면 닿을 만한 곳에 혼자 가시어 무릎을 꿇고 기도하셨다. “아버지, 아버지께서 원하시면 이 잔을 저에게서 거두어 주십시오. 그러나 제 뜻이 아니라 아버지의 뜻이 이루어지게 하십시오.” 그때에 천사가 하늘에서 나타나 그분의 기운을 북돋아 드렸다. 예수님께서 고뇌에 싸여 더욱 간절히 기도하시니, 땀이 핏방울처럼 되어 땅에 떨어졌다. 그리고 기도를 마치고 일어나시어 제자들에게 와서 보시니, 그들은 슬픔에 지쳐 잠들어 있었다. 예수님께서 그들에게 이르셨다. “왜 자고 있느냐? 유혹에 빠지지 않도록 일어나 기도하여라.”', ref:'루카 22,40-46' },
+      { q:'그때에 그들은 예수님의 얼굴에 침을 뱉고 그분을 주먹으로 쳤다. 더러는 손찌검을 하면서, “메시아야, 알아맞혀 보아라. 너를 친 사람이 누구냐?” 하였다.', ref:'마태 26,67-68' },
+      { q:'군사들은 그분께 자주색 옷을 입히고 가시관을 엮어 머리에 씌우고서는, “유다인들의 임금님, 만세!” 하며 인사하기 시작하였다. 또 갈대로 그분의 머리를 때리고 침을 뱉고서는, 무릎을 꿇고 엎드려 예수님께 절하였다.', ref:'마르 15,17-19' },
+      { q:'빌라도는 예수님을 십자가에 못 박으라고 그들에게 넘겨주었다. 그들은 예수님을 넘겨받았다. 예수님께서는 몸소 십자가를 지시고 ‘해골 터’라는 곳으로 나가셨다. 그곳은 히브리 말로 골고타라고 한다.', ref:'요한 19,16-17' },
+      { q:'낮 열두 시쯤 되자 어둠이 온 땅에 덮여 오후 세 시까지 계속되었다. 해가 어두워진 것이다. 그때에 성전 휘장 한가운데가 두 갈래로 찢어졌다. 그리고 예수님께서 큰 소리로 외치셨다. “아버지, ‘제 영을 아버지 손에 맡깁니다.’” 이 말씀을 하시고 숨을 거두셨다.', ref:'루카 23,44-46' }
+    ],
+    glorious:[
+      { q:'천사가 여자들에게 말하였다. “두려워하지 마라. 너희가 십자가에 못 박히신 예수님을 찾는 줄을 나는 안다. 그분께서는 여기에 계시지 않는다. 말씀하신 대로 그분께서는 되살아나셨다. 와서 그분께서 누워 계셨던 곳을 보아라. 그러니 서둘러 그분의 제자들에게 가서 이렇게 일러라. ‘그분께서는 죽은 이들 가운데에서 되살아나셨습니다. 이제 여러분보다 먼저 갈릴래아로 가실 터이니, 여러분은 그분을 거기에서 뵙게 될 것입니다.’ 이것이 내가 너희에게 알리는 말이다.” 그 여자들은 두려워하면서도 크게 기뻐하며 서둘러 무덤을 떠나, 제자들에게 소식을 전하러 달려갔다.', ref:'마태 28,5-8' },
+      { q:'예수님께서는 그들을 베타니아 근처까지 데리고 나가신 다음, 손을 드시어 그들에게 강복하셨다. 이렇게 강복하시며 그들을 떠나 하늘로 올라가셨다. 그들은 예수님께 경배하고 나서 크게 기뻐하며 예루살렘으로 돌아갔다. 그리고 줄곧 성전에서 하느님을 찬미하며 지냈다.', ref:'루카 24,50-53' },
+      { q:'오순절이 되었을 때 그들은 모두 한자리에 모여 있었다. 그런데 갑자기 하늘에서 거센 바람이 부는 듯한 소리가 나더니, 그들이 앉아 있는 온 집 안을 가득 채웠다. 그리고 불꽃 모양의 혀들이 나타나 갈라지면서 각 사람 위에 내려앉았다. 그러자 그들은 모두 성령으로 가득 차, 성령께서 표현의 능력을 주시는 대로 다른 언어들로 말하기 시작하였다.', ref:'사도 2,1-4' },
+      { trad:true },
+      { trad:true }
+    ]
+  };
+  var PAULINE_INTRO = '묵주기도는 예수 그리스도의 일생을 묵상하며 성모 마리아와 함께 하느님의 구원 계획에 감사드리고 우리도 주님의 영광에 참여하기를 비는 기도로서, 우리를 예수님과 일치시켜 주는 좋은 기도입니다.';
+  // 성바오로딸수도회가 안내하는 묵주기도 순서
+  var ORDER_START = ['성호경','십자가 친구','사도신경','주님의 기도','성모송 3번','영광송','구원의 기도'];
+  var ORDER_DECADE = ['신비 묵상','주님의 기도','성모송 10번','영광송','구원의 기도'];
+
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 
   // 한국 시간 기준 요일
   var kst = new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
   var dow = kst.getDay();
   var todayKey = MYSTERIES.filter(function(m){ return m.days.indexOf(dow) >= 0; })[0].key;
+
+  // 세트 선택은 이 기기에만 기억한다(실패해도 기본값으로 동작).
+  var SET_KEY = 'rosaryMeditationSet';
+  var curSet = 'pauline';
+  try { var saved = localStorage.getItem(SET_KEY); if (saved === 'basic' || saved === 'pauline') curSet = saved; } catch (e) {}
+  var qs = (location.search.match(/[?&]set=(basic|pauline)/) || [])[1];
+  if (qs) curSet = qs;
+  var curKey = todayKey;
 
   var tabsEl = document.getElementById('tabs');
   var panelsEl = document.getElementById('panels');
@@ -190,30 +268,75 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
       esc(m.name.replace(' 신비','')) + '<small>' + esc(m.day) + '</small>' +
       (m.key === todayKey ? '<span class="today">오늘</span>' : '') + '</button>';
   }).join('');
-  panelsEl.innerHTML = MYSTERIES.map(function(m){
-    return '<section class="panel" role="tabpanel" id="p-' + m.key + '" data-key="' + m.key + '">' +
-      '<div class="intro"><h2>' + esc(m.name) + '</h2><div class="day">' + esc(m.day) + '요일에 바칩니다' +
+
+  function introHtml(m, paras){
+    return '<div class="intro"><h2>' + esc(m.name) + '</h2><div class="day">' + esc(m.day) + '요일에 바칩니다' +
       (m.key === todayKey ? ' · <b style="color:var(--gold)">오늘의 신비</b>' : '') + '</div>' +
-      m.intro.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' +
+      paras.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') + '</div>';
+  }
+  function chips(list){
+    return list.map(function(t){
+      return '<li' + (/10번|신비 묵상/.test(t) ? ' class="rep"' : '') + '>' + esc(t) + '</li>';
+    }).join('<li class="sep" aria-hidden="true">›</li>');
+  }
+
+  // 해설 묵상: 단별 접이식 카드
+  function renderBasic(m){
+    return introHtml(m, m.intro) +
       m.decades.map(function(d, i){
         return '<details class="decade"' + (i === 0 ? ' open' : '') + '><summary>' +
           '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(d.t) + '</span><span class="ar">▼</span></summary>' +
           '<div class="bd"><div class="ref">📖 ' + esc(d.ref) + '</div><p>' + esc(d.m) + '</p>' +
           '<div class="fruit"><b>묵상의 열매</b> · ' + esc(d.f) + '</div></div></details>';
-      }).join('') + '</section>';
-  }).join('');
+      }).join('');
+  }
+  // 성경 말씀 묵상: 묵주알 타임라인에 성경 본문을 모두 펼쳐 보여 준다.
+  function renderPauline(m){
+    return introHtml(m, [PAULINE_INTRO]) +
+      '<div class="order"><h3>🙏 묵주기도 순서</h3><ol>' + chips(ORDER_START) + '</ol>' +
+      '<div class="loop">각 단마다 ↓ 다섯 번 되풀이</div><ol style="margin-top:4px">' + chips(ORDER_DECADE) + '</ol>' +
+      '<div class="loop">다섯 단을 마친 뒤 성모찬송 · 성호경</div></div>' +
+      '<div class="beads">' + PAULINE[m.key].map(function(d, i){
+        var title = m.decades[i].t;
+        var body = d.trad
+          ? '<div class="trad">성경에 직접 기록된 사건이 아니라 교회 <b>전승으로 이어져 내려온</b> 신비입니다. 성모님과 함께 하늘의 영광을 바라보며 조용히 묵상합니다.</div>'
+          : '<blockquote>' + esc(d.q) + '</blockquote><div class="src">— ' + esc(d.ref) + '</div>';
+        return '<div class="bead"><span class="dot">' + (i + 1) + '</span><div class="card"><h3>' + esc(title) + '</h3>' + body + '</div></div>';
+      }).join('') + '</div>';
+  }
+
+  function render(){
+    panelsEl.innerHTML = MYSTERIES.map(function(m){
+      return '<section class="panel" role="tabpanel" id="p-' + m.key + '" data-key="' + m.key + '">' +
+        (curSet === 'pauline' ? renderPauline(m) : renderBasic(m)) + '</section>';
+    }).join('');
+    Array.prototype.forEach.call(document.querySelectorAll('.set'), function(b){
+      b.setAttribute('aria-pressed', b.dataset.set === curSet ? 'true' : 'false');
+    });
+    document.getElementById('notePauline').style.display = curSet === 'pauline' ? '' : 'none';
+    document.getElementById('noteBasic').style.display = curSet === 'basic' ? '' : 'none';
+    toggleBtn.parentNode.style.display = curSet === 'basic' ? '' : 'none';
+    select(curKey, false);
+  }
 
   var ytLink = document.getElementById('ytLink');
   function select(key, push){
     var m = MYSTERIES.filter(function(x){ return x.key === key; })[0] || MYSTERIES[0];
+    curKey = m.key;
     Array.prototype.forEach.call(tabsEl.children, function(b){ b.setAttribute('aria-selected', b.dataset.key === m.key ? 'true' : 'false'); });
     Array.prototype.forEach.call(panelsEl.children, function(p){ p.classList.toggle('on', p.dataset.key === m.key); });
     ytLink.href = 'https://www.youtube.com/watch?v=' + m.yt + '&list=' + YT_LIST;
-    if (push && history.replaceState) history.replaceState(null, '', '#' + m.key);
+    if (push && history.replaceState) history.replaceState(null, '', location.pathname + location.search + '#' + m.key);
     updateToggle();
   }
   tabsEl.addEventListener('click', function(e){
     var b = e.target.closest('.tab'); if (b) select(b.dataset.key, true);
+  });
+  document.getElementById('sets').addEventListener('click', function(e){
+    var b = e.target.closest('.set'); if (!b || b.dataset.set === curSet) return;
+    curSet = b.dataset.set;
+    try { localStorage.setItem(SET_KEY, curSet); } catch (e2) {}
+    render();
   });
 
   var toggleBtn = document.getElementById('toggleAll');
@@ -221,7 +344,7 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   function updateToggle(){
     var p = current(); if (!p) return;
     var all = p.querySelectorAll('.decade'), open = p.querySelectorAll('.decade[open]');
-    toggleBtn.textContent = open.length === all.length ? '모두 접기' : '모두 펼치기';
+    toggleBtn.textContent = all.length && open.length === all.length ? '모두 접기' : '모두 펼치기';
   }
   toggleBtn.addEventListener('click', function(){
     var p = current(); if (!p) return;
@@ -233,7 +356,8 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   panelsEl.addEventListener('toggle', updateToggle, true);
 
   var hash = (location.hash || '').slice(1);
-  select(MYSTERIES.some(function(m){ return m.key === hash; }) ? hash : todayKey, false);
+  if (MYSTERIES.some(function(m){ return m.key === hash; })) curKey = hash;
+  render();
   window.addEventListener('hashchange', function(){ select(location.hash.slice(1), false); });
 })();
 </script>

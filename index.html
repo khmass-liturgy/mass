@@ -1324,7 +1324,8 @@ window.WeatherFx = (function(){
 <script>
 // 제목 오른쪽에 오늘 최고·최저 기온을 보여 준다 (Open-Meteo, 키 없이 쓰는 무료 API).
 // 위치 권한을 이미 허락한 기기면 그 위치를, 아니면 성당이 있는 파주 교하를 쓴다.
-// 권한을 새로 묻지는 않는다. 못 불러오면 아무것도 보이지 않는다.
+// 권한을 새로 묻지는 않는다. 현재 위치 날씨를 못 받으면 파주 교하로, 그것도 안 되면
+// 오늘 이미 받아 둔 날씨를 보여 준다. 오늘 받은 적도 없으면 아무것도 보이지 않는다.
 (function(){
   var box = document.getElementById('headerWeather');
   if (!box || !window.fetch) return;
@@ -1360,39 +1361,68 @@ window.WeatherFx = (function(){
     if ([55, 57, 65, 67, 82, 95, 96, 99].indexOf(code) >= 0) return 3;
     return 2;
   }
-  function show(lat, lon, name){
-    var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(2)
-      + '&longitude=' + lon.toFixed(2)
+  // 마지막으로 받은 날씨를 이 기기에 기억해 둔다(같은 날짜에만 다시 쓴다).
+  // Open-Meteo 무료 API는 IP마다 하루 요청 수가 정해져 있어, 통신사 공용 IP에서는
+  // 한도가 차서 429(오늘 한도 초과)를 돌려줄 때가 있다. 그럴 때도 칸이 비지 않게 한다.
+  var CACHE_KEY = 'headerWeatherV1';
+  function today(){ return new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10); } // 한국 날짜
+  function readCache(){
+    try { var c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null'); return c && c.day === today() ? c : null; }
+    catch (e) { return null; }
+  }
+  function saveCache(d, name){
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ day: today(), name: name, d: d })); } catch (e) {}
+  }
+  function valid(d){
+    var dl = d && d.daily;
+    return !!(dl && dl.temperature_2m_max && dl.temperature_2m_min && dl.weather_code &&
+      !isNaN(Math.round(dl.temperature_2m_max[0])) && !isNaN(Math.round(dl.temperature_2m_min[0])));
+  }
+  function paint(d, name){
+    var dl = d.daily;
+    var hi = Math.round(dl.temperature_2m_max[0]), lo = Math.round(dl.temperature_2m_min[0]);
+    box.innerHTML = '<span class="hw-icon" aria-hidden="true">' + icon(dl.weather_code[0]) + '</span>'
+      + '<span><span class="hw-hi">' + hi + '°</span> / <span class="hw-lo">' + lo + '°</span>'
+      + '<span class="hw-place">' + name + '</span></span>';
+    box.title = name + ' 오늘 최고 ' + hi + '° · 최저 ' + lo + '°';
+    box.setAttribute('aria-label', box.title);
+    box.style.display = 'flex';
+    // 배경: 눈·비는 지금 내리는 것을 먼저, 아니면 오늘 예보로 정한다.
+    // 눈·비가 없으면 지금 하늘(맑음·구름·흐림·안개)로 정한다. 밤에는 햇살을 그리지 않는다.
+    var cc = d.current && d.current.weather_code, dc = dl.weather_code[0];
+    var code = precip(cc) ? cc : precip(dc) ? dc : (cc != null ? cc : dc);
+    var night = d.current && d.current.is_day === 0;
+    var fx = precip(code) || sky(code, night);
+    if (fx && window.WeatherFx && !WeatherFx.preview) WeatherFx.start(fx, rainLevel(code));
+  }
+  // digits: 좌표 소수 자릿수. 현재 위치는 1자리(약 10km)로 줄여 서버 캐시를 함께 쓰게 한다.
+  function load(lat, lon, name, digits, onFail){
+    var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + lat.toFixed(digits)
+      + '&longitude=' + lon.toFixed(digits)
       + '&current=weather_code,is_day'
       + '&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=Asia%2FSeoul&forecast_days=1';
-    fetch(url).then(function(r){ return r.json(); }).then(function(d){
-      var dl = d && d.daily;
-      if (!dl || dl.temperature_2m_max == null) return;
-      var hi = Math.round(dl.temperature_2m_max[0]), lo = Math.round(dl.temperature_2m_min[0]);
-      if (isNaN(hi) || isNaN(lo)) return;
-      box.innerHTML = '<span class="hw-icon" aria-hidden="true">' + icon(dl.weather_code[0]) + '</span>'
-        + '<span><span class="hw-hi">' + hi + '°</span> / <span class="hw-lo">' + lo + '°</span>'
-        + '<span class="hw-place">' + name + '</span></span>';
-      box.title = name + ' 오늘 최고 ' + hi + '° · 최저 ' + lo + '°';
-      box.setAttribute('aria-label', box.title);
-      box.style.display = 'flex';
-      // 배경 눈·비: 지금 내리는 것을 먼저 보고, 아니면 오늘 예보로 정한다.
-      // 배경: 눈·비는 지금 내리는 것을 먼저, 아니면 오늘 예보로 정한다.
-      // 눈·비가 없으면 지금 하늘(맑음·구름·흐림·안개)로 정한다. 밤에는 햇살을 그리지 않는다.
-      var cc = d.current && d.current.weather_code, dc = dl.weather_code[0];
-      var code = precip(cc) ? cc : precip(dc) ? dc : (cc != null ? cc : dc);
-      var night = d.current && d.current.is_day === 0;
-      var fx = precip(code) || sky(code, night);
-      if (fx && window.WeatherFx && !WeatherFx.preview) WeatherFx.start(fx, rainLevel(code));
-    }).catch(function(){});
+    fetch(url).then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);   // 429(한도 초과) 등
+      return r.json();
+    }).then(function(d){
+      if (!valid(d)) throw new Error('bad data');
+      paint(d, name);
+      saveCache(d, name);
+    }).catch(function(){ if (onFail) onFail(); });
   }
-  function home(){ show(HOME.lat, HOME.lon, HOME.name); }
+
+  // 1) 오늘 받아 둔 날씨가 있으면 먼저 보여 주고, 2) 새로 받아 바꾼다.
+  var cached = readCache();
+  if (cached && valid(cached.d)) paint(cached.d, cached.name);
+  // 파주 교하는 좌표가 늘 같아 서버 캐시에 남아 있을 때가 많다 — 실패하면 기억해 둔 날씨를 그대로 둔다.
+  function home(){ load(HOME.lat, HOME.lon, HOME.name, 2, null); }
   try {
     if (navigator.geolocation && navigator.permissions && navigator.permissions.query) {
       navigator.permissions.query({ name: 'geolocation' }).then(function(p){
         if (p.state !== 'granted') return home();
         navigator.geolocation.getCurrentPosition(function(pos){
-          show(pos.coords.latitude, pos.coords.longitude, '현재 위치');
+          // 현재 위치 날씨를 못 받으면(한도 초과 등) 파주 교하 날씨로 대신한다.
+          load(pos.coords.latitude, pos.coords.longitude, '현재 위치', 1, home);
         }, home, { timeout: 5000, maximumAge: 3600000 });
       }, home);
     } else home();

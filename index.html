@@ -279,6 +279,9 @@
   }
   .wyd-link:hover{background:var(--gold);color:var(--navy);}
   .rosary-link-pair{display:contents;}
+  /* 묵주기도 카드 하단 버튼: 흰 글씨 (마우스를 올리면 기존처럼 금색 바탕에 남색 글씨) */
+  .rosary-actions .wyd-link{color:#FFFFFF;}
+  .rosary-actions .wyd-link:hover{color:var(--navy);}
   @media (max-width:520px){
     .rosary-link-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;}
     .rosary-link-pair .wyd-link{text-align:center;letter-spacing:.02em;padding:6px 4px;white-space:nowrap;}
@@ -3121,18 +3124,18 @@ window.WeatherFx = (function(){
         <div class="wyd-body" style="color:#FFFFFF;">
           <div class="antiphon" id="rosaryDecades"></div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <div class="rosary-actions" style="display:flex;flex-wrap:wrap;gap:8px;">
           <!-- 바치는 요령 · 묵상글은 좁은 화면에서도 한 줄에 나란히 -->
           <div class="rosary-link-pair">
             <a class="wyd-link" href="rosary-guide.html">
-              묵주기도 바치는 요령<span class="arr"> →</span>
+              📿 묵주기도 바치는 요령<span class="arr"> →</span>
             </a>
             <a class="wyd-link" id="rosaryMeditationLink" href="rosary-meditation.html">
               📖 묵주기도 묵상글<span class="arr"> →</span>
             </a>
           </div>
           <a class="wyd-link" id="rosaryYoutubeLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">
-            ▶ 오늘의 신비 함께 바치기
+            ▶️ 오늘의 신비 함께 바치기
           </a>
         </div>
       </div>

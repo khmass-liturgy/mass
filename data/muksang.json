@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14 04:30",
+  "updated": "2026-11-14 10:23",
   "cutoff": "2026-11-13",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7458",
@@ -48,6 +48,16 @@
       "mass_date": "2026-11-14",
       "priest": "양승국",
       "excerpt": "무엇에 낙심하지 말고?"
+    },
+    {
+      "id": "2140280",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-14",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140280&menu=4770",
+      "mass_date": "2026-11-14",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7457",

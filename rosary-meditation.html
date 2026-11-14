@@ -69,7 +69,8 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 
 /* 묵상글 세트 선택 */
 .sticky{position:sticky;top:0;z-index:5;background:var(--bg);padding-top:8px}
-.sets{display:grid;grid-template-columns:1fr 1fr;background:#ECE5D6;border-radius:12px;padding:3px;gap:3px}
+.sets{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(140px,1fr);overflow-x:auto;scrollbar-width:none;background:#ECE5D6;border-radius:12px;padding:3px;gap:3px}
+.sets::-webkit-scrollbar{display:none}
 .set{appearance:none;border:0;background:transparent;border-radius:9px;padding:7px 4px;cursor:pointer;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--muted);line-height:1.3}
 .set small{display:block;font-weight:400;font-size:11px}
 .set[aria-pressed="true"]{background:var(--card);color:var(--navy);box-shadow:0 1px 4px rgba(30,53,87,.12)}
@@ -91,6 +92,10 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 .bead h3{font-family:var(--serif);font-size:15px;color:var(--navy);margin-bottom:8px;line-height:1.5}
 .bead blockquote{position:relative;font-family:var(--serif);font-size:14.5px;line-height:1.9;color:var(--ink);padding:2px 0 0 14px;border-left:3px solid var(--gold-soft)}
 .bead .src{margin-top:6px;text-align:right;font-size:12.5px;font-weight:700;color:var(--pc)}
+.bead .card p{font-size:14.5px;margin-top:6px}
+.bead .ref{font-size:12.5px;color:var(--pc);font-weight:700;margin-bottom:4px}
+.bead .fruit{margin-top:10px;font-size:13px;background:#FBF7EC;border:1px dashed var(--gold-soft);border-radius:10px;padding:7px 11px}
+.bead .fruit b{color:var(--gold)}
 .bead .trad{font-size:13.5px;color:var(--muted);background:#FBF7EC;border:1px dashed var(--gold-soft);border-radius:10px;padding:8px 11px}
 @media (max-width:380px){.tab{font-size:13px}}
 </style>
@@ -100,15 +105,12 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 <header>
   <a class="back" href="index.html">← 홈</a>
   <h1>묵주기도 묵상글</h1>
-  <p>환희 · 빛 · 고통 · 영광의 신비 — 성경 말씀 묵상 · 해설 묵상</p>
+  <p>환희 · 빛 · 고통 · 영광의 신비 — 여러 단체의 묵상글 모음</p>
 </header>
 
 <main>
   <div class="sticky">
-    <div class="sets" id="sets" role="group" aria-label="묵상글 종류">
-      <button type="button" class="set" data-set="pauline">📜 성경 말씀 묵상<small>성바오로딸수도회</small></button>
-      <button type="button" class="set" data-set="basic">📖 해설 묵상<small>묵상 해설 · 묵상의 열매</small></button>
-    </div>
+    <div class="sets" id="sets" role="group" aria-label="묵상글 종류"></div>
     <div class="tabs" role="tablist" id="tabs"></div>
   </div>
   <div class="tools"><button type="button" id="toggleAll">모두 펼치기</button></div>
@@ -119,8 +121,7 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
     <a id="ytLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">▶ 이 신비 함께 바치기</a>
   </div>
 
-  <p class="note" id="notePauline">※ 성경 말씀 묵상은 성바오로딸수도회 누리집 「가톨릭마당 › 기도 › 묵주기도」의 묵상 말씀을 정리한 것입니다(<a href="https://fsp.pauline.or.kr/?c=catechesis&amp;p=pray" target="_blank" rel="noopener">원문 보기</a>). 각 단의 제목은 『가톨릭 기도서』 표기로 맞추었고, 성경 본문은 원문 그대로 옮겼습니다.</p>
-  <p class="note" id="noteBasic">※ 각 단의 제목은 한국 천주교 『가톨릭 기도서』를 따랐고, 요일 배분은 교황 성 요한 바오로 2세의 교서 『동정 마리아의 묵주기도(Rosarium Virginis Mariae)』를 참조하였습니다. ‘묵상의 열매’는 전통적으로 각 신비에서 청하는 은총입니다.</p>
+  <p class="note" id="setNote"></p>
 </main>
 
 <script>
@@ -242,7 +243,33 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
     ]
   };
   var PAULINE_INTRO = '묵주기도는 예수 그리스도의 일생을 묵상하며 성모 마리아와 함께 하느님의 구원 계획에 감사드리고 우리도 주님의 영광에 참여하기를 비는 기도로서, 우리를 예수님과 일치시켜 주는 좋은 기도입니다.';
-  // 묵주기도 순서 (성바오로딸수도회 안내 기준, 두 세트 공통)
+
+  // 기본 해설 묵상 데이터는 MYSTERIES 안의 글에서 만든다.
+  var BASIC = {};
+  MYSTERIES.forEach(function(m){
+    BASIC[m.key] = m.decades.map(function(d){ return { ref:d.ref, text:d.m, fruit:d.f }; });
+  });
+
+  // ── 묵상글 세트 목록 ─────────────────────────────────────────
+  // 다른 단체의 묵상글을 더하려면 위처럼 신비별 데이터(joyful·luminous·sorrowful·glorious
+  // 각 5단)를 만들고 아래 배열에 항목 하나를 추가하면 된다. 첫 항목이 기본 세트다.
+  //   id     : 영문 식별자(주소 ?set=id 로 바로 열기)
+  //   icon/label/org : 상단 선택 버튼에 보이는 글
+  //   layout : 'beads' = 묵주알 타임라인(모두 펼침) · 'cards' = 단별 접이식 카드
+  //   intro  : 모든 신비에 공통인 소개 글(문자열). 없으면 각 신비의 기본 소개를 쓴다.
+  //   data   : { 신비key: [ {q:성경 인용, text:해설, ref:출처 구절, fruit:묵상의 열매, trad:true(전승 신비)} ×5 ] }
+  //   note   : 페이지 아래 출처 안내(HTML)
+  var SETS = [
+    { id:'pauline', icon:'📜', label:'성경 말씀 묵상', org:'성바오로딸수도회', layout:'beads',
+      intro:PAULINE_INTRO, data:PAULINE,
+      note:'※ 성경 말씀 묵상은 성바오로딸수도회 누리집 「가톨릭마당 › 기도 › 묵주기도」의 묵상 말씀을 정리한 것입니다(<a href="https://fsp.pauline.or.kr/?c=catechesis&amp;p=pray" target="_blank" rel="noopener">원문 보기</a>). 각 단의 제목은 『가톨릭 기도서』 표기로 맞추었고, 성경 본문은 원문 그대로 옮겼습니다.' },
+    { id:'basic', icon:'📖', label:'해설 묵상', org:'묵상 해설 · 묵상의 열매', layout:'cards',
+      data:BASIC,
+      note:'※ 각 단의 제목은 한국 천주교 『가톨릭 기도서』를 따랐고, 요일 배분은 교황 성 요한 바오로 2세의 교서 『동정 마리아의 묵주기도(Rosarium Virginis Mariae)』를 참조하였습니다. ‘묵상의 열매’는 전통적으로 각 신비에서 청하는 은총입니다.' }
+  ];
+  function getSet(id){ return SETS.filter(function(x){ return x.id === id; })[0]; }
+
+  // 묵주기도 순서 (성바오로딸수도회 안내 기준, 모든 세트 공통)
   var ORDER_START = ['성호경','십자가 친구','사도신경','주님의 기도','성모송 3번','영광송','구원의 기도'];
   var ORDER_DECADE = ['신비 묵상','주님의 기도','성모송 10번','영광송','구원의 기도'];
 
@@ -255,10 +282,10 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 
   // 세트 선택은 이 기기에만 기억한다(실패해도 기본값으로 동작).
   var SET_KEY = 'rosaryMeditationSet';
-  var curSet = 'pauline';
-  try { var saved = localStorage.getItem(SET_KEY); if (saved === 'basic' || saved === 'pauline') curSet = saved; } catch (e) {}
-  var qs = (location.search.match(/[?&]set=(basic|pauline)/) || [])[1];
-  if (qs) curSet = qs;
+  var curSet = SETS[0].id;
+  try { var saved = localStorage.getItem(SET_KEY); if (getSet(saved)) curSet = saved; } catch (e) {}
+  var qs = (location.search.match(/[?&]set=([\w-]+)/) || [])[1];
+  if (getSet(qs)) curSet = qs;
   var curKey = todayKey;
 
   var tabsEl = document.getElementById('tabs');
@@ -287,39 +314,54 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
       '<div class="loop">다섯 단을 마친 뒤 성모찬송 · 성호경</div></div>';
   }
 
-  // 해설 묵상: 단별 접이식 카드
-  function renderBasic(m){
-    return introHtml(m, m.intro) + orderHtml() +
-      m.decades.map(function(d, i){
-        return '<details class="decade" open><summary>' +
-          '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(d.t) + '</span><span class="ar">▼</span></summary>' +
-          '<div class="bd"><div class="ref">📖 ' + esc(d.ref) + '</div><p>' + esc(d.m) + '</p>' +
-          '<div class="fruit"><b>묵상의 열매</b> · ' + esc(d.f) + '</div></div></details>';
-      }).join('');
+  var TRAD_HTML = '<div class="trad">성경에 직접 기록된 사건이 아니라 교회 <b>전승으로 이어져 내려온</b> 신비입니다. 성모님과 함께 하늘의 영광을 바라보며 조용히 묵상합니다.</div>';
+  function decadeBody(d, refIcon){
+    if (d.trad) return TRAD_HTML;
+    var h = '';
+    if (d.ref && !d.q) h += '<div class="ref">' + refIcon + esc(d.ref) + '</div>';
+    if (d.q) h += '<blockquote>' + esc(d.q) + '</blockquote>' + (d.ref ? '<div class="src">— ' + esc(d.ref) + '</div>' : '');
+    if (d.text) h += '<p>' + esc(d.text) + '</p>';
+    if (d.fruit) h += '<div class="fruit"><b>묵상의 열매</b> · ' + esc(d.fruit) + '</div>';
+    return h;
   }
-  // 성경 말씀 묵상: 묵주알 타임라인에 성경 본문을 모두 펼쳐 보여 준다.
-  function renderPauline(m){
-    return introHtml(m, [PAULINE_INTRO]) + orderHtml() +
-      '<div class="beads">'  + PAULINE[m.key].map(function(d, i){
-        var title = m.decades[i].t;
-        var body = d.trad
-          ? '<div class="trad">성경에 직접 기록된 사건이 아니라 교회 <b>전승으로 이어져 내려온</b> 신비입니다. 성모님과 함께 하늘의 영광을 바라보며 조용히 묵상합니다.</div>'
-          : '<blockquote>' + esc(d.q) + '</blockquote><div class="src">— ' + esc(d.ref) + '</div>';
-        return '<div class="bead"><span class="dot">' + (i + 1) + '</span><div class="card"><h3>' + esc(title) + '</h3>' + body + '</div></div>';
-      }).join('') + '</div>';
+  // 'cards': 단별 접이식 카드(처음엔 모두 펼침)
+  function layoutCards(m, list){
+    return list.map(function(d, i){
+      return '<details class="decade" open><summary>' +
+        '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(m.decades[i].t) + '</span><span class="ar">▼</span></summary>' +
+        '<div class="bd">' + decadeBody(d, '📖 ') + '</div></details>';
+    }).join('');
+  }
+  // 'beads': 묵주알 타임라인에 모두 펼쳐 보여 준다.
+  function layoutBeads(m, list){
+    return '<div class="beads">' + list.map(function(d, i){
+      return '<div class="bead"><span class="dot">' + (i + 1) + '</span><div class="card"><h3>' + esc(m.decades[i].t) + '</h3>' +
+        decadeBody(d, '📖 ') + '</div></div>';
+    }).join('') + '</div>';
+  }
+  function renderSet(set, m){
+    var list = set.data[m.key] || [];
+    return introHtml(m, set.intro ? [set.intro] : m.intro) + orderHtml() +
+      (set.layout === 'beads' ? layoutBeads(m, list) : layoutCards(m, list));
   }
 
+  var setsEl = document.getElementById('sets');
+  setsEl.innerHTML = SETS.map(function(x){
+    return '<button type="button" class="set" data-set="' + esc(x.id) + '">' + esc(x.icon + ' ' + x.label) + '<small>' + esc(x.org) + '</small></button>';
+  }).join('');
+
   function render(){
+    var set = getSet(curSet);
     panelsEl.innerHTML = MYSTERIES.map(function(m){
-      return '<section class="panel" role="tabpanel" id="p-' + m.key + '" data-key="' + m.key + '">' +
-        (curSet === 'pauline' ? renderPauline(m) : renderBasic(m)) + '</section>';
+      return '<section class="panel" role="tabpanel" id="p-' + m.key + '" data-key="' + m.key + '">' + renderSet(set, m) + '</section>';
     }).join('');
-    Array.prototype.forEach.call(document.querySelectorAll('.set'), function(b){
-      b.setAttribute('aria-pressed', b.dataset.set === curSet ? 'true' : 'false');
+    Array.prototype.forEach.call(setsEl.children, function(b){
+      var on = b.dataset.set === curSet;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (on && b.scrollIntoView && setsEl.scrollWidth > setsEl.clientWidth) b.scrollIntoView({ block:'nearest', inline:'nearest' });
     });
-    document.getElementById('notePauline').style.display = curSet === 'pauline' ? '' : 'none';
-    document.getElementById('noteBasic').style.display = curSet === 'basic' ? '' : 'none';
-    toggleBtn.parentNode.style.display = curSet === 'basic' ? '' : 'none';
+    document.getElementById('setNote').innerHTML = set.note || '';
+    toggleBtn.parentNode.style.display = set.layout === 'cards' ? '' : 'none';
     select(curKey, false);
   }
 
@@ -336,7 +378,7 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   tabsEl.addEventListener('click', function(e){
     var b = e.target.closest('.tab'); if (b) select(b.dataset.key, true);
   });
-  document.getElementById('sets').addEventListener('click', function(e){
+  setsEl.addEventListener('click', function(e){
     var b = e.target.closest('.set'); if (!b || b.dataset.set === curSet) return;
     curSet = b.dataset.set;
     try { localStorage.setItem(SET_KEY, curSet); } catch (e2) {}

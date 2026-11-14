@@ -291,7 +291,7 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   function renderBasic(m){
     return introHtml(m, m.intro) + orderHtml() +
       m.decades.map(function(d, i){
-        return '<details class="decade"' + (i === 0 ? ' open' : '') + '><summary>' +
+        return '<details class="decade" open><summary>' +
           '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(d.t) + '</span><span class="ar">▼</span></summary>' +
           '<div class="bd"><div class="ref">📖 ' + esc(d.ref) + '</div><p>' + esc(d.m) + '</p>' +
           '<div class="fruit"><b>묵상의 열매</b> · ' + esc(d.f) + '</div></div></details>';

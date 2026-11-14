@@ -242,7 +242,7 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
     ]
   };
   var PAULINE_INTRO = '묵주기도는 예수 그리스도의 일생을 묵상하며 성모 마리아와 함께 하느님의 구원 계획에 감사드리고 우리도 주님의 영광에 참여하기를 비는 기도로서, 우리를 예수님과 일치시켜 주는 좋은 기도입니다.';
-  // 성바오로딸수도회가 안내하는 묵주기도 순서
+  // 묵주기도 순서 (성바오로딸수도회 안내 기준, 두 세트 공통)
   var ORDER_START = ['성호경','십자가 친구','사도신경','주님의 기도','성모송 3번','영광송','구원의 기도'];
   var ORDER_DECADE = ['신비 묵상','주님의 기도','성모송 10번','영광송','구원의 기도'];
 
@@ -280,9 +280,16 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
     }).join('<li class="sep" aria-hidden="true">›</li>');
   }
 
+  // 묵주기도 순서 안내 (두 세트 공통)
+  function orderHtml(){
+    return '<div class="order"><h3>🙏 묵주기도 순서</h3><ol>' + chips(ORDER_START) + '</ol>' +
+      '<div class="loop">각 단마다 ↓ 다섯 번 되풀이</div><ol style="margin-top:4px">' + chips(ORDER_DECADE) + '</ol>' +
+      '<div class="loop">다섯 단을 마친 뒤 성모찬송 · 성호경</div></div>';
+  }
+
   // 해설 묵상: 단별 접이식 카드
   function renderBasic(m){
-    return introHtml(m, m.intro) +
+    return introHtml(m, m.intro) + orderHtml() +
       m.decades.map(function(d, i){
         return '<details class="decade"' + (i === 0 ? ' open' : '') + '><summary>' +
           '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(d.t) + '</span><span class="ar">▼</span></summary>' +
@@ -292,11 +299,8 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
   }
   // 성경 말씀 묵상: 묵주알 타임라인에 성경 본문을 모두 펼쳐 보여 준다.
   function renderPauline(m){
-    return introHtml(m, [PAULINE_INTRO]) +
-      '<div class="order"><h3>🙏 묵주기도 순서</h3><ol>' + chips(ORDER_START) + '</ol>' +
-      '<div class="loop">각 단마다 ↓ 다섯 번 되풀이</div><ol style="margin-top:4px">' + chips(ORDER_DECADE) + '</ol>' +
-      '<div class="loop">다섯 단을 마친 뒤 성모찬송 · 성호경</div></div>' +
-      '<div class="beads">' + PAULINE[m.key].map(function(d, i){
+    return introHtml(m, [PAULINE_INTRO]) + orderHtml() +
+      '<div class="beads">'  + PAULINE[m.key].map(function(d, i){
         var title = m.decades[i].t;
         var body = d.trad
           ? '<div class="trad">성경에 직접 기록된 사건이 아니라 교회 <b>전승으로 이어져 내려온</b> 신비입니다. 성모님과 함께 하늘의 영광을 바라보며 조용히 묵상합니다.</div>'

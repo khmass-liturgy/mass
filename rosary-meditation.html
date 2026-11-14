@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>묵주기도 묵상글</title>
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2744; --gold:#B98A2F; --gold-soft:#E4CE96;
+  --ink:#22303F; --muted:#6B7A8C; --bg:#F7F4EE; --card:#FFFFFF; --line:#E3DCCD;
+  --serif:'Noto Serif KR', serif; --sans:'Noto Sans KR', -apple-system, sans-serif;
+  --c-joyful:#3F7FBF; --c-luminous:#C9971C; --c-sorrowful:#7B3B8F; --c-glorious:#B5452F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;padding:0 0 40px}
+a{color:var(--navy)}
+header{background:linear-gradient(160deg,#1A2744,#2B3F6B);color:#fff;padding:26px 18px 22px;text-align:center;position:relative}
+header h1{font-family:var(--serif);font-size:21px;font-weight:700}
+header p{font-size:12.5px;color:#C7D4E4;margin-top:4px}
+header .back{position:absolute;top:14px;left:14px;font-size:12px;color:#C7D4E4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+main{max-width:720px;margin:0 auto;padding:18px 16px}
+
+/* 신비 종류 탭 */
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0 10px}
+.tab{appearance:none;border:1.5px solid var(--line);background:var(--card);border-radius:12px;padding:8px 4px 6px;cursor:pointer;font-family:var(--serif);font-weight:700;font-size:14px;color:var(--ink);line-height:1.3;position:relative}
+.tab small{display:block;font-family:var(--sans);font-weight:400;font-size:11px;color:var(--muted)}
+.tab[aria-selected="true"]{color:#fff;border-color:transparent;background:var(--tc)}
+.tab[aria-selected="true"] small{color:rgba(255,255,255,.85)}
+.tab .today{position:absolute;top:-7px;right:-4px;background:var(--gold);color:#fff;font-family:var(--sans);font-size:10px;font-weight:700;border-radius:10px;padding:0 6px;line-height:16px}
+.tab[data-key="joyful"]{--tc:var(--c-joyful)}
+.tab[data-key="luminous"]{--tc:var(--c-luminous)}
+.tab[data-key="sorrowful"]{--tc:var(--c-sorrowful)}
+.tab[data-key="glorious"]{--tc:var(--c-glorious)}
+
+.panel{display:none}
+.panel.on{display:block}
+.intro{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--pc);border-radius:14px;padding:14px 16px;margin-bottom:12px;font-size:14px}
+.intro h2{font-family:var(--serif);font-size:18px;color:var(--pc);margin-bottom:4px}
+.intro .day{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.intro p+p{margin-top:6px}
+
+.decade{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 8px rgba(30,53,87,.05)}
+.decade summary{cursor:pointer;list-style:none;padding:13px 16px;display:flex;gap:10px;align-items:flex-start}
+.decade summary::-webkit-details-marker{display:none}
+.decade .no{flex:0 0 auto;background:var(--pc);color:#fff;font-size:12px;font-weight:700;border-radius:8px;padding:1px 8px;margin-top:2px}
+.decade .tt{flex:1;font-family:var(--serif);font-weight:700;color:var(--navy);font-size:15px}
+.decade .ar{flex:0 0 auto;font-size:12px;color:var(--gold);font-weight:700;margin-top:3px}
+.decade[open] .ar{transform:rotate(180deg)}
+.decade .bd{padding:0 16px 14px}
+.decade .ref{font-size:12.5px;color:var(--pc);font-weight:700;margin-bottom:4px}
+.decade .bd p{font-size:14.5px}
+.decade .fruit{margin-top:10px;font-size:13px;color:var(--ink);background:#FBF7EC;border:1px dashed var(--gold-soft);border-radius:10px;padding:7px 11px}
+.decade .fruit b{color:var(--gold)}
+
+.panel[data-key="joyful"]{--pc:var(--c-joyful)}
+.panel[data-key="luminous"]{--pc:var(--c-luminous)}
+.panel[data-key="sorrowful"]{--pc:var(--c-sorrowful)}
+.panel[data-key="glorious"]{--pc:var(--c-glorious)}
+
+.tools{display:flex;justify-content:flex-end;gap:8px;margin:2px 0 8px}
+.tools button{appearance:none;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:3px 12px;font-size:12px;color:var(--muted);cursor:pointer;font-family:var(--sans)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.links a{display:inline-block;font-size:13px;font-weight:700;text-decoration:none;color:var(--navy);border:1.5px solid var(--gold);border-radius:20px;padding:6px 14px;background:var(--card)}
+.note{font-size:12.5px;color:var(--muted);margin-top:16px}
+@media (max-width:380px){.tab{font-size:13px}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← 홈</a>
+  <h1>묵주기도 묵상글</h1>
+  <p>환희 · 빛 · 고통 · 영광의 신비 — 각 단의 성경 말씀과 묵상</p>
+</header>
+
+<main>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="tools"><button type="button" id="toggleAll">모두 펼치기</button></div>
+  <div id="panels"></div>
+
+  <div class="links">
+    <a href="rosary-guide.html">묵주기도 바치는 요령 →</a>
+    <a id="ytLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">▶ 이 신비 함께 바치기</a>
+  </div>
+
+  <p class="note">※ 각 단의 제목은 한국 천주교 『가톨릭 기도서』를 따랐고, 요일 배분은 교황 성 요한 바오로 2세의 교서 『동정 마리아의 묵주기도(Rosarium Virginis Mariae)』를 참조하였습니다. ‘묵상의 열매’는 전통적으로 각 신비에서 청하는 은총입니다.</p>
+</main>
+
+<script>
+(function(){
+  var MYSTERIES = [
+    { key:'joyful', name:'환희의 신비', day:'월·토', days:[1,6], yt:'8Q4Jet8BEL4',
+      intro:['예수님의 잉태와 탄생, 그리고 어린 시절의 예수님을 묵상합니다.',
+             '하느님께서 사람이 되어 우리 가운데 오신 구원의 기쁜 소식을 성모님과 함께 맞아들이는 신비입니다.'],
+      decades:[
+        { t:'마리아께서 예수님을 잉태하심을 묵상합시다', ref:'루카 1,26-38',
+          m:'하느님께서 가브리엘 천사를 보내시어 마리아에게 그리스도의 어머니가 될 것이라는 소식을 전했을 때, 마리아는 “보십시오, 저는 주님의 종입니다. 말씀하신 대로 저에게 이루어지기를 바랍니다.”(루카 1,38)라는 응답으로 구세주의 잉태를 수락하십니다. 이는 인류 구원이 이루어지는 크나큰 사건의 순간입니다.',
+          f:'겸손' },
+        { t:'마리아께서 엘리사벳을 찾아보심을 묵상합시다', ref:'루카 1,39-56',
+          m:'엘리사벳은 마리아의 친척이었습니다. 마리아께서는 자신이 예수님의 어머니가 될 것이라는 천사의 소식을 듣고 서둘러 엘리사벳을 방문하였는데, 그때 엘리사벳은 성모님의 방문을 크게 기뻐하며 “당신은 여인들 가운데에서 가장 복되시며 당신 태중의 아기도 복되십니다.”(루카 1,42) 하고 축하 인사를 드렸습니다.',
+          f:'이웃 사랑' },
+        { t:'마리아께서 예수님을 낳으심을 묵상합시다', ref:'루카 2,1-20',
+          m:'마리아는 인류의 구원자를 낳으셨습니다. 하늘과 땅의 주인이신 하느님의 아들이 베들레헴의 한 구유에 너무나 초라하고 가난하게 오심을 묵상하면서, 우리가 지나치게 물질에 마음을 두고 살지 않았는지 돌아봅니다.',
+          f:'가난의 정신' },
+        { t:'마리아께서 예수님을 성전에 바치심을 묵상합시다', ref:'루카 2,22-40',
+          m:'예수님 당시 유다인들은 율법에 따라 첫아들을 하느님께 봉헌하고 산모를 깨끗하게 하는 정결 예식을 행했습니다. 마리아도 율법에 따라 아기 예수님을 성전에 봉헌하셨고, 시메온은 아기를 받아 안고 “제 눈이 당신의 구원을 보았습니다.”(루카 2,30) 하며 하느님을 찬미하였습니다.',
+          f:'순명과 정결' },
+        { t:'마리아께서 잃으셨던 예수님을 성전에서 찾으심을 묵상합시다', ref:'루카 2,41-52',
+          m:'예수님께서 열두 살이 되셨을 때 마리아와 요셉은 파스카 축제를 지내러 예루살렘으로 올라갔습니다. 돌아오는 길에 예수님이 보이지 않자 사흘 동안 애타게 찾다가 성전에서 학자들과 묻고 대답하시는 예수님을 찾았습니다. “저는 제 아버지의 집에 있어야 하는 줄을 모르셨습니까?”(루카 2,49) 우리도 잃어버린 주님을 다시 찾는 마음을 청합니다.',
+          f:'예수님을 찾는 마음' }
+      ]},
+    { key:'luminous', name:'빛의 신비', day:'목', days:[4], yt:'zWoqjhXSSPc',
+      intro:['‘세상의 빛’(요한 9,5)이신 예수님의 공생활 가운데 다섯 가지 주요 사건을 묵상합니다.',
+             '성 요한 바오로 2세 교황께서 2002년 교서 『동정 마리아의 묵주기도』에서 새로 더하신 신비로, 묵주기도를 통해 그리스도의 전 생애를 온전히 묵상하도록 이끌어 줍니다.'],
+      decades:[
+        { t:'예수님께서 세례받으심을 묵상합시다', ref:'마태 3,13-17',
+          m:'예수님께서는 공생활을 시작하시며 요르단 강에서 세례자 요한에게 세례를 받으셨습니다. 물에서 올라오시자 하늘이 열리고 성령께서 비둘기처럼 내려오셨으며, 하늘에서 “이는 내가 사랑하는 아들, 내 마음에 드는 아들이다.”(마태 3,17) 하는 소리가 들려왔습니다. 우리가 받은 세례의 은총을 새롭게 기억합니다.',
+          f:'성령께 대한 순종' },
+        { t:'예수님께서 카나에서 첫 기적을 행하심을 묵상합시다', ref:'요한 2,1-12',
+          m:'갈릴래아 카나의 혼인 잔치에서 포도주가 떨어지자 성모님께서는 일꾼들에게 “무엇이든지 그가 시키는 대로 하여라.”(요한 2,5) 하고 이르셨습니다. 예수님께서는 물을 포도주로 바꾸시어 당신의 영광을 드러내셨고, 제자들은 그분을 믿게 되었습니다.',
+          f:'성모님을 통하여 예수님께' },
+        { t:'예수님께서 하느님 나라를 선포하심을 묵상합시다', ref:'마르 1,14-15',
+          m:'예수님께서는 갈릴래아로 가시어 “때가 차서 하느님의 나라가 가까이 왔다. 회개하고 복음을 믿어라.”(마르 1,15) 하고 선포하셨습니다. 어둠 속에 앉아 있던 백성이 큰 빛을 보게 되었고, 예수님께서는 제자들을 불러 하느님 나라의 일꾼으로 삼으셨습니다.',
+          f:'회개' },
+        { t:'예수님께서 거룩하게 변모하심을 묵상합시다', ref:'루카 9,28-36',
+          m:'예수님께서는 베드로와 야고보와 요한을 데리고 높은 산에 오르셨습니다. 기도하시는 동안 얼굴 모습이 달라지고 옷은 하얗게 번쩍였습니다. 구름 속에서 “이는 내가 선택한 아들이니 너희는 그의 말을 들어라.”(루카 9,35) 하는 소리가 들렸습니다. 주님께서는 장차 우리가 누릴 영광을 미리 보여 주셨습니다.',
+          f:'거룩함을 향한 갈망' },
+        { t:'예수님께서 성체성사를 세우심을 묵상합시다', ref:'마태 26,26-29',
+          m:'수난을 앞두신 예수님께서는 제자들과 파스카 만찬을 드시며 빵과 포도주를 들고 감사의 기도를 드리신 다음 “받아먹어라. 이는 내 몸이다.” “이는 죄를 용서해 주려고 많은 사람을 위하여 흘리는 내 계약의 피다.”(마태 26,26-28) 하시며 당신 자신을 내어 주셨습니다.',
+          f:'성체 신심' }
+      ]},
+    { key:'sorrowful', name:'고통의 신비', day:'화·금', days:[2,5], yt:'IIb7jEGtRaE',
+      intro:['예수님께서 우리 인간의 구원을 위하여 고통을 당하시고 십자가에서 돌아가심을 묵상합니다.',
+             '죄 없으신 분께서 우리 대신 짊어지신 사랑의 무게를 성모님의 눈물과 함께 바라봅니다.'],
+      decades:[
+        { t:'예수님께서 우리를 위하여 피땀 흘리심을 묵상합시다', ref:'루카 22,39-46',
+          m:'최후의 만찬을 마치신 예수님께서는 겟세마니 동산에 오르시어 앞으로 당하실 고통으로 번민하시며 “아버지, 하실 수만 있으시면 이 잔이 저를 비켜 가게 해 주십시오. 그러나 제가 원하는 대로 하지 마시고 아버지께서 원하시는 대로 하십시오.”(마태 26,39) 하고 기도하셨습니다. 인류 구원을 위해 성부의 뜻에 온전히 순명하셨습니다.',
+          f:'죄의 통회' },
+        { t:'예수님께서 우리를 위하여 매 맞으심을 묵상합시다', ref:'요한 19,1',
+          m:'빌라도는 예수님을 데려다가 군사들에게 채찍질하게 하였습니다. 죄 없으신 분께서 우리를 대신하여 죄인처럼 모진 매를 맞으셨습니다. “그는 우리의 악행 때문에 으스러졌다. 그의 상처로 우리는 나았다.”(이사 53,5)',
+          f:'극기와 정결' },
+        { t:'예수님께서 우리를 위하여 가시관 쓰심을 묵상합시다', ref:'마태 27,27-31',
+          m:'군사들은 예수님의 옷을 벗기고 진홍색 외투를 입힌 다음 가시나무로 관을 엮어 머리에 씌우고 “유다인들의 임금님, 만세!”(마태 27,29) 하며 조롱하였습니다. 만왕의 왕이신 주님께서 우리의 교만과 죄 때문에 참으로 비참한 대우를 받으셨습니다.',
+          f:'겸손과 세속의 영광을 멀리함' },
+        { t:'예수님께서 우리를 위하여 십자가 지심을 묵상합시다', ref:'요한 19,16-17',
+          m:'사형 선고를 받으신 예수님께서는 당신이 못 박히실 십자가를 지고 골고타 언덕을 오르셨습니다. 거듭 넘어지시는 극심한 고통 중에서도 끝까지 우리를 대신해 십자가를 지셨습니다. “누구든지 내 뒤를 따라오려면, 자신을 버리고 제 십자가를 지고 나를 따라야 한다.”(마태 16,24)',
+          f:'인내' },
+        { t:'예수님께서 우리를 위하여 십자가에 못 박혀 돌아가심을 묵상합시다', ref:'루카 23,33-46',
+          m:'예수님께서는 십자가에 못 박히시는 순간에도 “아버지, 저들을 용서해 주십시오. 저들은 자기들이 무슨 일을 하는지 모릅니다.”(루카 23,34) 하고 기도하셨습니다. 그리고 “아버지, 제 영을 아버지 손에 맡깁니다.”(루카 23,46) 하시며 숨을 거두셨습니다. 십자가 아래에는 어머니 마리아께서 서 계셨습니다.',
+          f:'구원과 자기 봉헌' }
+      ]},
+    { key:'glorious', name:'영광의 신비', day:'수·일', days:[0,3], yt:'yzA8VK896u4',
+      intro:['예수님의 부활과 승천, 성령 강림을 묵상하고, 성모 마리아를 하늘에 불러올리시어 천상 모후의 관을 씌워 주셨음을 묵상합니다.',
+             '죽음을 이기신 주님의 승리 안에서 우리에게 약속된 영원한 생명의 희망을 바라봅니다.'],
+      decades:[
+        { t:'예수님께서 부활하심을 묵상합시다', ref:'루카 24,1-12',
+          m:'예수님께서는 사흗날에 무덤에서 부활하셨습니다. 천사는 여인들에게 “어찌하여 살아 계신 분을 죽은 이들 가운데에서 찾고 있느냐? 그분께서는 여기에 계시지 않는다. 되살아나셨다.”(루카 24,5-6) 하고 알렸습니다. 주님의 부활은 죽음과 죄에 대한 완전한 승리이며 우리 믿음의 근거입니다.',
+          f:'믿음' },
+        { t:'예수님께서 승천하심을 묵상합시다', ref:'사도 1,6-11',
+          m:'부활하신 주님께서는 제자들이 보는 앞에서 하늘로 오르시어 하느님 오른편에 앉으셨습니다. 예수님의 승천은 그리스도를 통해 구원된 우리도 하늘 나라에 들어갈 수 있음을 보여 주는 희망의 사건이며, 다시 오실 주님을 기다리게 합니다.',
+          f:'희망과 하늘을 향한 마음' },
+        { t:'예수님께서 성령을 보내심을 묵상합시다', ref:'사도 2,1-13',
+          m:'오순절에 성모님과 함께 기도하던 제자들 위로 불꽃 모양의 혀들이 내려앉으며 모두 성령으로 가득 찼습니다. 성령의 힘을 받은 제자들은 두려움을 떨치고 세상에 나가 용감하게 복음을 선포하였습니다. 교회가 태어난 순간입니다.',
+          f:'성령의 은사와 사랑' },
+        { t:'예수님께서 마리아를 하늘에 불러올리심을 묵상합시다', ref:'묵시 12,1 · 교회의 전승',
+          m:'하느님께서는 원죄 없이 잉태되신 동정 마리아께서 지상 생애를 마치셨을 때 그 영혼과 육신을 함께 하늘의 영광으로 들어 올리셨습니다(성모 승천 교의, 1950). 그리스도께서는 당신 어머니를 무덤 속에 버려두지 않으셨으니, 이는 우리 모두가 누릴 부활의 영광을 미리 보여 줍니다.',
+          f:'행복한 죽음과 성모 신심' },
+        { t:'예수님께서 마리아께 천상 모후의 관을 씌우심을 묵상합시다', ref:'묵시 12,1',
+          m:'“하늘에 큰 표징이 나타났습니다. 태양을 입고 발밑에 달을 두고 머리에 열두 개의 별로 된 관을 쓴 여인이었습니다.”(묵시 12,1) 성모님께서는 하늘과 땅의 모후로서 늘 아드님 곁에서 우리를 위해 빌어 주십니다. 주님을 굳게 믿고 따르면 하늘 나라에 이를 수 있다는 희망을 몸소 보여 주십니다.',
+          f:'성모님께 대한 신뢰와 항구함' }
+      ]}
+  ];
+  var YT_LIST = 'PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR';
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  // 한국 시간 기준 요일
+  var kst = new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
+  var dow = kst.getDay();
+  var todayKey = MYSTERIES.filter(function(m){ return m.days.indexOf(dow) >= 0; })[0].key;
+
+  var tabsEl = document.getElementById('tabs');
+  var panelsEl = document.getElementById('panels');
+  tabsEl.innerHTML = MYSTERIES.map(function(m){
+    return '<button type="button" class="tab" role="tab" data-key="' + m.key + '" aria-controls="p-' + m.key + '">' +
+      esc(m.name.replace(' 신비','')) + '<small>' + esc(m.day) + '</small>' +
+      (m.key === todayKey ? '<span class="today">오늘</span>' : '') + '</button>';
+  }).join('');
+  panelsEl.innerHTML = MYSTERIES.map(function(m){
+    return '<section class="panel" role="tabpanel" id="p-' + m.key + '" data-key="' + m.key + '">' +
+      '<div class="intro"><h2>' + esc(m.name) + '</h2><div class="day">' + esc(m.day) + '요일에 바칩니다' +
+      (m.key === todayKey ? ' · <b style="color:var(--gold)">오늘의 신비</b>' : '') + '</div>' +
+      m.intro.map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' +
+      m.decades.map(function(d, i){
+        return '<details class="decade"' + (i === 0 ? ' open' : '') + '><summary>' +
+          '<span class="no">' + (i + 1) + '단</span><span class="tt">' + esc(d.t) + '</span><span class="ar">▼</span></summary>' +
+          '<div class="bd"><div class="ref">📖 ' + esc(d.ref) + '</div><p>' + esc(d.m) + '</p>' +
+          '<div class="fruit"><b>묵상의 열매</b> · ' + esc(d.f) + '</div></div></details>';
+      }).join('') + '</section>';
+  }).join('');
+
+  var ytLink = document.getElementById('ytLink');
+  function select(key, push){
+    var m = MYSTERIES.filter(function(x){ return x.key === key; })[0] || MYSTERIES[0];
+    Array.prototype.forEach.call(tabsEl.children, function(b){ b.setAttribute('aria-selected', b.dataset.key === m.key ? 'true' : 'false'); });
+    Array.prototype.forEach.call(panelsEl.children, function(p){ p.classList.toggle('on', p.dataset.key === m.key); });
+    ytLink.href = 'https://www.youtube.com/watch?v=' + m.yt + '&list=' + YT_LIST;
+    if (push && history.replaceState) history.replaceState(null, '', '#' + m.key);
+    updateToggle();
+  }
+  tabsEl.addEventListener('click', function(e){
+    var b = e.target.closest('.tab'); if (b) select(b.dataset.key, true);
+  });
+
+  var toggleBtn = document.getElementById('toggleAll');
+  function current(){ return panelsEl.querySelector('.panel.on'); }
+  function updateToggle(){
+    var p = current(); if (!p) return;
+    var all = p.querySelectorAll('.decade'), open = p.querySelectorAll('.decade[open]');
+    toggleBtn.textContent = open.length === all.length ? '모두 접기' : '모두 펼치기';
+  }
+  toggleBtn.addEventListener('click', function(){
+    var p = current(); if (!p) return;
+    var all = p.querySelectorAll('.decade');
+    var openAll = p.querySelectorAll('.decade[open]').length !== all.length;
+    Array.prototype.forEach.call(all, function(d){ d.open = openAll; });
+    updateToggle();
+  });
+  panelsEl.addEventListener('toggle', updateToggle, true);
+
+  var hash = (location.hash || '').slice(1);
+  select(MYSTERIES.some(function(m){ return m.key === hash; }) ? hash : todayKey, false);
+  window.addEventListener('hashchange', function(){ select(location.hash.slice(1), false); });
+})();
+</script>
+</body>
+</html>

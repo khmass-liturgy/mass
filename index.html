@@ -278,6 +278,12 @@
     transition:all .2s;position:relative;
   }
   .wyd-link:hover{background:var(--gold);color:var(--navy);}
+  .rosary-link-pair{display:contents;}
+  @media (max-width:520px){
+    .rosary-link-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;}
+    .rosary-link-pair .wyd-link{text-align:center;letter-spacing:.02em;padding:6px 4px;white-space:nowrap;}
+    .rosary-link-pair .arr{display:none;}
+  }
 
   /* ── 접기/펼치기 기도문 ── */
   .prayer-details{
@@ -3116,9 +3122,15 @@ window.WeatherFx = (function(){
           <div class="antiphon" id="rosaryDecades"></div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;">
-          <a class="wyd-link" href="rosary-guide.html">
-            묵주기도 바치는 요령 →
-          </a>
+          <!-- 바치는 요령 · 묵상글은 좁은 화면에서도 한 줄에 나란히 -->
+          <div class="rosary-link-pair">
+            <a class="wyd-link" href="rosary-guide.html">
+              묵주기도 바치는 요령<span class="arr"> →</span>
+            </a>
+            <a class="wyd-link" id="rosaryMeditationLink" href="rosary-meditation.html">
+              📖 묵주기도 묵상글<span class="arr"> →</span>
+            </a>
+          </div>
           <a class="wyd-link" id="rosaryYoutubeLink" href="https://youtube.com/playlist?list=PLpB9z9SOeZQc92kRSSNEqKXf1VeNhmkyR" target="_blank" rel="noopener">
             ▶ 오늘의 신비 함께 바치기
           </a>
@@ -3271,6 +3283,11 @@ window.WeatherFx = (function(){
 
     // 유튜브 링크: 오늘 신비에 맞는 영상으로 바꿔 끼운다.
     // 이름이 매핑에 없는 경우엔 마크업 기본값(재생목록 전체 링크)을 그대로 둔다.
+    // 묵상글 링크: 오늘 신비 탭이 바로 열리도록 해시를 붙인다.
+    var MED_KEY = { '환희의 신비':'joyful', '빛의 신비':'luminous', '고통의 신비':'sorrowful', '영광의 신비':'glorious' };
+    var medLink = document.getElementById('rosaryMeditationLink');
+    if (medLink && MED_KEY[today.name]) medLink.href = 'rosary-meditation.html#' + MED_KEY[today.name];
+
     var ytLink = document.getElementById('rosaryYoutubeLink');
     var ytId = YOUTUBE_ID[today.name];
     if (ytLink && ytId) {

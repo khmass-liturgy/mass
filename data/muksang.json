@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-14 19:03",
-  "cutoff": "2026-11-13",
+  "updated": "2026-11-15 02:53",
+  "cutoff": "2026-11-14",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7459",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-15",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제33주일 잠언 31,10-13.19-20.3…"
+    },
+    {
+      "id": "daum_bbadaking_7995",
+      "title": "2026년 11월 15일 연중 제33주일",
+      "author": "빠다킹신부",
+      "date": "2026-11-14",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7995",
+      "mass_date": "2026-11-15",
+      "priest": "조명연",
+      "excerpt": "예수님께서는 자주 병자에게, 또 제자들에게 “용기를 내어라.”라고 말씀하셨습…"
+    },
+    {
+      "id": "daum_bbadaking_2271",
+      "title": "2026년 11월 15일 연중 제33주일",
+      "author": "박 베로니카",
+      "date": "2026-11-15",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2271",
+      "mass_date": "2026-11-15",
+      "priest": "양승국",
+      "excerpt": "영양가 만점의 하루를 살아갑시다!"
     },
     {
       "id": "daum_catholicsb_7458",
@@ -66,56 +86,6 @@
       "date": "2026-11-14",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140280&menu=4770",
       "mass_date": "2026-11-14",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7457",
-      "title": "전삼용 요셉 신부 / 연중 제32주간 금요일 - 소돔에서 탈출했더라도 노아의 방주에 들어가지 못한다면?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-12",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7457",
-      "mass_date": "2026-11-13",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 연중 제32주간 금요일 루카 17,26-37 소돔에서 탈…"
-    },
-    {
-      "id": "daum_bbadaking_7993",
-      "title": "2026년 11월 13일 연중 제32주간 금요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-12",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7993",
-      "mass_date": "2026-11-13",
-      "priest": "조명연",
-      "excerpt": "훈련 잘 받은 개가 있습니다."
-    },
-    {
-      "id": "daum_bbadaking_2269",
-      "title": "2026년 11월 13일 연중 제32주간 금요일",
-      "author": "박 베로니카",
-      "date": "2026-11-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2269",
-      "mass_date": "2026-11-13",
-      "priest": "양승국",
-      "excerpt": "살아있음을 가장 큰 축복으로 여기십시오!"
-    },
-    {
-      "id": "daum_bbadaking_217",
-      "title": "몇몇 나라의 경우를 보면 사람이 죽으면 그 시체와 함께 여러 부장품들을 함께…",
-      "author": "환희 평화",
-      "date": "2026-11-13",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/217",
-      "mass_date": "2026-11-13",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140236",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-13",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140236&menu=4770",
-      "mass_date": "2026-11-13",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

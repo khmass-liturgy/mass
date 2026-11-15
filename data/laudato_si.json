@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-15 04:55",
-  "date": "2026-11-15",
-  "topicIndex": 4,
-  "topic": "탐욕에서의 자유",
-  "query": "탐욕 프란치스코 교황 찬미받으소서",
+  "updated": "2026-11-16 05:23",
+  "date": "2026-11-16",
+  "topicIndex": 5,
+  "topic": "우리 공동의 집, 지구 살리기",
+  "query": "우리 공동의 집 찬미받으소서",
   "video": {
-    "videoId": "iKUceph68-4",
-    "title": "5년 전 프란치스코 교황이 던진 경고",
-    "channel": "cpbc 뉴스",
-    "duration": 143,
-    "published": "6년 전"
+    "videoId": "vtznRqqvCug",
+    "title": "cpbc 라디오 기후특집  \"공동의 집에 무슨 일이 벌어지고 있습니까  _ 찬미받으소서\" (1)",
+    "channel": "cpbc라디오",
+    "duration": 651,
+    "published": "5년 전"
   },
   "more": [
     {
-      "videoId": "cgstKMDUUSg",
-      "title": "[생활성가] 교황 회칙 '찬미받으소서' 반포 5주년 기념 뮤직비디오 (Laudato Si')",
-      "channel": "열일곱이다 - 가톨릭 찬양크루",
-      "duration": 254,
-      "published": "6년 전"
+      "videoId": "kwsYGnQ5FWk",
+      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까 - 찬미받으소서\" (2)",
+      "channel": "cpbc라디오",
+      "duration": 829,
+      "published": "5년 전"
     },
     {
-      "videoId": "zKLPD4Btte8",
-      "title": "「찬미받으소서」 반포 5주년 기념미사 봉헌",
-      "channel": "cpbc 뉴스",
-      "duration": 244,
-      "published": "6년 전"
+      "videoId": "uUdY2MTkTXE",
+      "title": "\"주님! 찬미받으소서!\"  찬미받으소서 묵상 1  평화의 메세지 임 파우스티나 수녀 04102021",
+      "channel": "Comunità Mariana Oasi della Pace - Generale",
+      "duration": 890,
+      "published": "5년 전"
     },
     {
-      "videoId": "XHlxqTWMcUY",
-      "title": "프란치스코 교황 \"식량을 무기로 사용하지 마세요\"",
-      "channel": "cpbc 뉴스",
-      "duration": 167,
-      "published": "4년 전"
+      "videoId": "SfEzz9j6y7Q",
+      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까-찬미받으소서\" (4)",
+      "channel": "cpbc라디오",
+      "duration": 699,
+      "published": "5년 전"
     },
     {
-      "videoId": "dode8MGG7zw",
-      "title": "교황 회칙 \"당장 '지구 구하기' 나서야\"...기후 변화 대응에 경종 / YTN",
-      "channel": " YTN",
-      "duration": 118,
-      "published": "11년 전"
+      "videoId": "lvq6MBx5Wr8",
+      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까-찬미받으소서\" (3)",
+      "channel": "cpbc라디오",
+      "duration": 897,
+      "published": "5년 전"
     }
   ],
   "topics": [
@@ -1028,6 +1028,10 @@
     {
       "date": "2026-11-15",
       "videoId": "iKUceph68-4"
+    },
+    {
+      "date": "2026-11-16",
+      "videoId": "vtznRqqvCug"
     }
   ]
 }

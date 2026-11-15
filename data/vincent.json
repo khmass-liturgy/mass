@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-15 16:49",
+  "updated": "2026-11-16 01:19",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "dsMdQ5uZHa8",
+      "date": "2026-11-16",
+      "title": "연중 제33주간 월요일",
+      "url": "https://www.youtube.com/watch?v=dsMdQ5uZHa8"
+    },
     {
       "videoId": "aXsVY3c1tbQ",
       "date": "2026-11-15",
@@ -57,12 +63,6 @@
       "date": "2026-11-07",
       "title": "복되신 동정 마리아 신심 미사",
       "url": "https://www.youtube.com/watch?v=krqwMReI7kY"
-    },
-    {
-      "videoId": "hBtG5DH6qWc",
-      "date": "2026-11-06",
-      "title": "연중 제31주간 금요일",
-      "url": "https://www.youtube.com/watch?v=hBtG5DH6qWc"
     }
   ]
 }

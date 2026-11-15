@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-15 00:48",
+  "updated": "2026-11-15 10:03",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "JSarXGF272E",
+      "date": "2026-11-15",
+      "liturgy": "연중 제33주일",
+      "priest": "박기석 사도요한 신부",
+      "url": "https://www.youtube.com/watch?v=JSarXGF272E&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "NQFVOrXfE7U",
       "date": "2026-11-14",
@@ -95,13 +102,6 @@
       "liturgy": "죽은 모든 이를 기억하는 위령의 날",
       "priest": "박동환 사도요한 신부",
       "url": "https://www.youtube.com/watch?v=rt72APve2-0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "J6IkJIGFFu0",
-      "date": "2026-11-01",
-      "liturgy": "모든 성인 대축일",
-      "priest": "신교선 가브리엘 신부",
-      "url": "https://www.youtube.com/watch?v=J6IkJIGFFu0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

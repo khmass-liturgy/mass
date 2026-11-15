@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-15 19:50",
+  "updated": "2026-11-16 04:45",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "dRSU_mZfer0",
-  "date": "2026-11-15",
-  "label": "2026년 11월 15일연중 제33주일(세계 가난한 이의 날)",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 15일 연중 제33주일(세계 가난한 이의 날)](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "wEGq-OTywvU",
+  "date": "2026-11-16",
+  "label": "2026년 11월 16일연중 제33주간 월요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 16일 연중 제33주간 월요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=dRSU_mZfer0",
+  "url": "https://www.youtube.com/watch?v=wEGq-OTywvU",
   "count": 10,
   "videos": [
+    {
+      "videoId": "wEGq-OTywvU",
+      "date": "2026-11-16",
+      "label": "2026년 11월 16일연중 제33주간 월요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 16일 연중 제33주간 월요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=wEGq-OTywvU"
+    },
     {
       "videoId": "dRSU_mZfer0",
       "date": "2026-11-15",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 11월 7일 연중 제31주간 토요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=DGln0zc0Wsc"
-    },
-    {
-      "videoId": "V4O2sE9LnjE",
-      "date": "2026-11-06",
-      "label": "2026년 11월 6일연중 제31주간 금요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 11월 6일 연중 제31주간 금요일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=V4O2sE9LnjE"
     }
   ]
 }

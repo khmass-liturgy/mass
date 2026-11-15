@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15 02:53",
+  "updated": "2026-11-15 09:56",
   "cutoff": "2026-11-14",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7459",
@@ -48,6 +48,16 @@
       "mass_date": "2026-11-15",
       "priest": "양승국",
       "excerpt": "영양가 만점의 하루를 살아갑시다!"
+    },
+    {
+      "id": "daum_bbadaking_218",
+      "title": "두려움은 달란트를 묻게 하고 용기는 달란트를 자라게 합니다. 게으름은 달란트…",
+      "author": "환희 평화",
+      "date": "2026-11-15",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/218",
+      "mass_date": "2026-11-15",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7458",

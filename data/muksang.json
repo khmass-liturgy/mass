@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16 03:43",
+  "updated": "2026-11-16 09:54",
   "cutoff": "2026-11-15",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7460",
@@ -38,6 +38,16 @@
       "mass_date": "2026-11-16",
       "priest": "조명연",
       "excerpt": "어떤 분이 갑자기 배가 아파서 견딜 수 없는 상황에 닥쳤습니다."
+    },
+    {
+      "id": "daum_bbadaking_2272",
+      "title": "2026년 11월 16일 연중 제33주간 월요일",
+      "author": "박 베로니카",
+      "date": "2026-11-16",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2272",
+      "mass_date": "2026-11-16",
+      "priest": "양승국",
+      "excerpt": "하느님은 절대 멀리 계시는 분이 아닙니다!"
     },
     {
       "id": "daum_catholicsb_7459",

@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-16 16:57",
+  "updated": "2026-11-17 04:33",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "5sLq5MMTFNE",
+      "date": "2026-11-17",
+      "title": "화요일 헝가리의 성녀 엘리사벳 수도자 기념일",
+      "url": "https://www.youtube.com/watch?v=5sLq5MMTFNE"
+    },
     {
       "videoId": "dsMdQ5uZHa8",
       "date": "2026-11-16",
@@ -57,12 +63,6 @@
       "date": "2026-11-08",
       "title": "연중 제32주일",
       "url": "https://www.youtube.com/watch?v=YcjPumXz7MY"
-    },
-    {
-      "videoId": "krqwMReI7kY",
-      "date": "2026-11-07",
-      "title": "복되신 동정 마리아 신심 미사",
-      "url": "https://www.youtube.com/watch?v=krqwMReI7kY"
     }
   ]
 }

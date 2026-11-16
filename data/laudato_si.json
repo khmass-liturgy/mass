@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-16 05:23",
-  "date": "2026-11-16",
-  "topicIndex": 5,
-  "topic": "우리 공동의 집, 지구 살리기",
-  "query": "우리 공동의 집 찬미받으소서",
+  "updated": "2026-11-17 08:44",
+  "date": "2026-11-17",
+  "topicIndex": 6,
+  "topic": "탄소 배출 줄이기",
+  "query": "탄소중립 가톨릭 생태",
   "video": {
-    "videoId": "vtznRqqvCug",
-    "title": "cpbc 라디오 기후특집  \"공동의 집에 무슨 일이 벌어지고 있습니까  _ 찬미받으소서\" (1)",
-    "channel": "cpbc라디오",
-    "duration": 651,
-    "published": "5년 전"
+    "videoId": "QcxxX5A_VZc",
+    "title": "생태운동 길잡이 대천동본당 \"탄소중립 어렵지 않아요\"",
+    "channel": "cpbc 뉴스",
+    "duration": 230,
+    "published": "1년 전"
   },
   "more": [
     {
-      "videoId": "kwsYGnQ5FWk",
-      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까 - 찬미받으소서\" (2)",
-      "channel": "cpbc라디오",
-      "duration": 829,
+      "videoId": "D6zhZMuWaXU",
+      "title": "| 가톨릭신문 | 서울대교구-기후에너지환경부기후행동 실천 확산 MOU 체결 |",
+      "channel": "가톨릭신문",
+      "duration": 154,
+      "published": "2개월 전"
+    },
+    {
+      "videoId": "fLu4G3mziyA",
+      "title": "어서 오세요 | 2050 탄소중립 시나리오 문제점은?···양기석 신부",
+      "channel": "cpbc 뉴스",
+      "duration": 488,
       "published": "5년 전"
     },
     {
-      "videoId": "uUdY2MTkTXE",
-      "title": "\"주님! 찬미받으소서!\"  찬미받으소서 묵상 1  평화의 메세지 임 파우스티나 수녀 04102021",
-      "channel": "Comunità Mariana Oasi della Pace - Generale",
-      "duration": 890,
-      "published": "5년 전"
+      "videoId": "8jTZ2LEnAXs",
+      "title": "3년 차 '찬미받으소서 7년 여정'…교구, 본당, 신자까지 '한뜻'",
+      "channel": "cpbc 뉴스",
+      "duration": 189,
+      "published": "3년 전"
     },
     {
-      "videoId": "SfEzz9j6y7Q",
-      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까-찬미받으소서\" (4)",
-      "channel": "cpbc라디오",
-      "duration": 699,
-      "published": "5년 전"
-    },
-    {
-      "videoId": "lvq6MBx5Wr8",
-      "title": "cpbc 라디오 기후특집 \"공동의 집에 무슨 일이 벌어지고 있습니까-찬미받으소서\" (3)",
-      "channel": "cpbc라디오",
-      "duration": 897,
-      "published": "5년 전"
+      "videoId": "M2N_N-PtdHo",
+      "title": "\"생태적 회개는 각자의 생활양식을 바꾸는 실천\"",
+      "channel": "cpbc 뉴스",
+      "duration": 251,
+      "published": "3년 전"
     }
   ],
   "topics": [
@@ -354,19 +354,33 @@
     "탄소 배출 줄이기": {
       "date": "2026-11-17",
       "video": {
-        "videoId": "D6zhZMuWaXU",
-        "title": "| 가톨릭신문 | 서울대교구-기후에너지환경부기후행동 실천 확산 MOU 체결 |",
-        "channel": "가톨릭신문",
-        "duration": 154,
-        "published": "1개월 전"
+        "videoId": "QcxxX5A_VZc",
+        "title": "생태운동 길잡이 대천동본당 \"탄소중립 어렵지 않아요\"",
+        "channel": "cpbc 뉴스",
+        "duration": 230,
+        "published": "1년 전"
       },
       "more": [
         {
-          "videoId": "QcxxX5A_VZc",
-          "title": "생태운동 길잡이 대천동본당 \"탄소중립 어렵지 않아요\"",
+          "videoId": "D6zhZMuWaXU",
+          "title": "| 가톨릭신문 | 서울대교구-기후에너지환경부기후행동 실천 확산 MOU 체결 |",
+          "channel": "가톨릭신문",
+          "duration": 154,
+          "published": "2개월 전"
+        },
+        {
+          "videoId": "fLu4G3mziyA",
+          "title": "어서 오세요 | 2050 탄소중립 시나리오 문제점은?···양기석 신부",
           "channel": "cpbc 뉴스",
-          "duration": 230,
-          "published": "1년 전"
+          "duration": 488,
+          "published": "5년 전"
+        },
+        {
+          "videoId": "8jTZ2LEnAXs",
+          "title": "3년 차 '찬미받으소서 7년 여정'…교구, 본당, 신자까지 '한뜻'",
+          "channel": "cpbc 뉴스",
+          "duration": 189,
+          "published": "3년 전"
         },
         {
           "videoId": "M2N_N-PtdHo",
@@ -374,20 +388,6 @@
           "channel": "cpbc 뉴스",
           "duration": 251,
           "published": "3년 전"
-        },
-        {
-          "videoId": "PWT0jkIB7Ok",
-          "title": "수원교구, 7월부터 탄소 제로 캠페인",
-          "channel": "cpbc 뉴스",
-          "duration": 243,
-          "published": "6년 전"
-        },
-        {
-          "videoId": "A60vFMSuaxs",
-          "title": "'기후재앙' 지금이 골든타임입니다. 생태환경 전문기자의 절규(지구 온도 임계점 1.5도 넘었다. 지구를 식혀라!) | 기후위기에서 지구를 지키는 실천",
-          "channel": "불휘햇빛TV",
-          "duration": 828,
-          "published": "1년 전"
         }
       ]
     },
@@ -1032,6 +1032,10 @@
     {
       "date": "2026-11-16",
       "videoId": "vtznRqqvCug"
+    },
+    {
+      "date": "2026-11-17",
+      "videoId": "QcxxX5A_VZc"
     }
   ]
 }

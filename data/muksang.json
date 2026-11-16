@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-16 19:55",
-  "cutoff": "2026-11-15",
+  "updated": "2026-11-17 06:54",
+  "cutoff": "2026-11-16",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7461",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-17",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 화요일 복음: 루카 19,1-10…"
+    },
+    {
+      "id": "daum_bbadaking_7997",
+      "title": "2026년 11월 17일 연중 제33주간 화요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-16",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7997",
+      "mass_date": "2026-11-17",
+      "priest": "조명연",
+      "excerpt": "2026년 11월 17일 헝가리의 성녀 엘리사벳 수도자 기념일 고등학생 때,…"
+    },
+    {
+      "id": "daum_bbadaking_2273",
+      "title": "2026년 11월 17일 연중 제33주간 화요일",
+      "author": "박 베로니카",
+      "date": "2026-11-17",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2273",
+      "mass_date": "2026-11-17",
+      "priest": "양승국",
+      "excerpt": "티 없음에서 더러움으로, 더러움에서 다시 티 없음으로!"
     },
     {
       "id": "daum_catholicsb_7460",
@@ -68,46 +88,6 @@
       "mass_date": "2026-11-16",
       "priest": "김건태",
       "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7459",
-      "title": "전삼용 요셉 신부 / 연중 제33주일 - 불가능한 일을 할 수 있는 유일한 방법은 가능하다고 믿는 것뿐입",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-14",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7459",
-      "mass_date": "2026-11-15",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주일 잠언 31,10-13.19-20.3…"
-    },
-    {
-      "id": "daum_bbadaking_7995",
-      "title": "2026년 11월 15일 연중 제33주일",
-      "author": "빠다킹신부",
-      "date": "2026-11-14",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7995",
-      "mass_date": "2026-11-15",
-      "priest": "조명연",
-      "excerpt": "예수님께서는 자주 병자에게, 또 제자들에게 “용기를 내어라.”라고 말씀하셨습…"
-    },
-    {
-      "id": "daum_bbadaking_2271",
-      "title": "2026년 11월 15일 연중 제33주일",
-      "author": "박 베로니카",
-      "date": "2026-11-15",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2271",
-      "mass_date": "2026-11-15",
-      "priest": "양승국",
-      "excerpt": "영양가 만점의 하루를 살아갑시다!"
-    },
-    {
-      "id": "daum_bbadaking_218",
-      "title": "두려움은 달란트를 묻게 하고 용기는 달란트를 자라게 합니다. 게으름은 달란트…",
-      "author": "환희 평화",
-      "date": "2026-11-15",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/218",
-      "mass_date": "2026-11-15",
-      "priest": "김경진",
-      "excerpt": ""
     }
   ]
 }

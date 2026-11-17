@@ -530,6 +530,15 @@
   .music-duo .duo-row .lc-desc{flex:1;min-width:0;}
   .music-duo #faithCutCard{flex-wrap:wrap;}
   .music-duo #faithCutImg{flex:0 0 100%;order:9;}
+  /* 카드 설명은 최대 두 줄 — 넘치면 '…'로 줄여 카드 높이를 고르게 한다 */
+  .link-card .lc-desc{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden;}
+  /* 폰(두 칸 배치)에서는 묶음 카드 꼬리표를 설명 위로 올려 설명이 카드 너비를 다 쓰게 한다 */
+  @media (max-width:600px){
+    .music-duo .duo-row{flex-wrap:wrap;gap:3px 6px;}
+    .music-duo .duo-tag{order:1;}
+    .music-duo .duo-go{order:2;margin-left:auto;}
+    .music-duo .duo-row .lc-desc{order:3;flex:0 0 100%;}
+  }
   .music-duo .duo-go{flex:0 0 auto;font-size:.8rem;color:#C8C0AE;transition:transform .2s, color .2s;}
   .music-duo .duo-row:hover .duo-go{color:var(--navy);transform:translateX(3px);}
   /* 찬미받으소서 — 새 카드 알림으로 2026-11-07~11-13(7일)만 초록 바탕 (.fresh 는 아래 스크립트가 붙인다) */

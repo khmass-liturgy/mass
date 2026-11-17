@@ -528,6 +528,8 @@
   .music-duo .duo-row + .duo-row .duo-tag{background:#B5452F;}
   .music-duo .duo-row + .duo-row + .duo-row .duo-tag{background:#3E7A47;}
   .music-duo .duo-row .lc-desc{flex:1;min-width:0;}
+  .music-duo #faithCutCard{flex-wrap:wrap;}
+  .music-duo #faithCutImg{flex:0 0 100%;order:9;}
   .music-duo .duo-go{flex:0 0 auto;font-size:.8rem;color:#C8C0AE;transition:transform .2s, color .2s;}
   .music-duo .duo-row:hover .duo-go{color:var(--navy);transform:translateX(3px);}
   /* 찬미받으소서 — 새 카드 알림으로 2026-11-07~11-13(7일)만 초록 바탕 (.fresh 는 아래 스크립트가 붙인다) */
@@ -2143,11 +2145,21 @@ window.WeatherFx = (function(){
     </div>
     <div class="link-grid">
 
-      <a class="link-card" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🙏</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭 기도서</div>
-        <div class="lc-desc">성호경·주님의 기도·묵주기도 등 주요 기도문 모음 (굿뉴스)</div>
-      </a>
+      <!-- 기도문과 성경 소리로 듣기 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="prayerBibleDuo">
+        <div class="lc-top"><span class="lc-icon">🙏</span></div>
+        <div class="lc-name">기도 · 성경 듣기</div>
+        <a class="duo-row" href="https://maria.catholic.or.kr/mobile/prayer/prayer.asp?pgubun=3&amp;ingld=1" target="_blank" rel="noopener">
+          <span class="duo-tag">기도서</span>
+          <span class="lc-desc">성호경·주님의 기도·묵주기도 등 주요 기도문 모음 (굿뉴스)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="bible_read.html">
+          <span class="duo-tag">성경 듣기</span>
+          <span class="lc-desc" id="bibleReadDesc">오늘의 한 장을 본문과 함께 소리로 듣기</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
       <!-- 가톨릭신문 대표기사와 기획특집을 한 카드에 (떼제 · 생활성가 카드와 같은 모양) -->
       <div class="link-card music-duo" id="ctimesDuo">
@@ -2165,11 +2177,27 @@ window.WeatherFx = (function(){
         </a>
       </div>
 
-      <a class="link-card" id="gcFactoryCard" href="https://youtube.com/playlist?list=PL3MR_mHrWxazXvh82RdqRF774UdygRE0q&si=eUcp7Qcijmp6UGlo" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎬</span><span class="lc-go">→</span></div>
-        <div class="lc-name">미니다큐 가톨릭발전소</div>
-        <div class="lc-desc" id="gcFactoryDesc">가톨릭 미니 다큐멘터리 재생목록</div>
-      </a>
+      <!-- 보면서 묵상하는 신앙 콘텐츠 — 만화 복음·신앙 한 컷 줄은 주말에만 스크립트가 보이게 한다 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="seeFaithDuo">
+        <div class="lc-top"><span class="lc-icon">🎬</span></div>
+        <div class="lc-name">영상 · 만화 · 그림으로 보는 신앙</div>
+        <a class="duo-row" id="gcFactoryCard" href="https://youtube.com/playlist?list=PL3MR_mHrWxazXvh82RdqRF774UdygRE0q&si=eUcp7Qcijmp6UGlo" target="_blank" rel="noopener">
+          <span class="duo-tag">미니다큐</span>
+          <span class="lc-desc" id="gcFactoryDesc">가톨릭 미니 다큐멘터리 재생목록</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" id="gospeltoonCard" style="display:none;" href="https://www.catholicpress.kr/m/list.php?mcode=m96sroz" target="_blank" rel="noopener">
+          <span class="duo-tag">만화 복음</span>
+          <span class="lc-desc" id="gospeltoonDesc">주일 복음을 만화로 풀어낸 가스펠툰 (가톨릭프레스)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" id="faithCutCard" style="display:none;" href="https://www.catholictimes.org/list/96" target="_blank" rel="noopener">
+          <span class="duo-tag">신앙 한 컷</span>
+          <span class="lc-desc" id="faithCutDesc">주일 신앙 한 컷 그림 (가톨릭신문)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+          <img id="faithCutImg" alt="" style="display:none;width:100%;border-radius:8px;margin:4px 0 8px;">
+        </a>
+      </div>
 
       <script>
       // 미니다큐 가톨릭발전소 — 9월(순교자 성월)·사순시기·대림시기엔 그 시기에 맞는
@@ -2278,24 +2306,6 @@ window.WeatherFx = (function(){
       </div>
 
       <!-- 설명(bibleReadDesc)은 아래 '성경' 카드 스크립트가 오늘의 장으로 채운다. -->
-      <a class="link-card" href="bible_read.html">
-        <div class="lc-top"><span class="lc-icon">🔊</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성경 읽어주기</div>
-        <div class="lc-desc" id="bibleReadDesc">오늘의 한 장을 본문과 함께 소리로 듣기</div>
-      </a>
-
-      <a class="link-card" id="gospeltoonCard" style="display:none;" href="https://www.catholicpress.kr/m/list.php?mcode=m96sroz" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🖍</span><span class="lc-go">→</span></div>
-        <div class="lc-name">만화로 보는 복음</div>
-        <div class="lc-desc" id="gospeltoonDesc">주일 복음을 만화로 풀어낸 가스펠툰 (가톨릭프레스)</div>
-      </a>
-
-      <a class="link-card" id="faithCutCard" style="display:none;" href="https://www.catholictimes.org/list/96" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🖼️</span><span class="lc-go">→</span></div>
-        <img id="faithCutImg" alt="" style="display:none;width:100%;border-radius:8px;margin:4px 0 8px;">
-        <div class="lc-name">가톨릭신문 신앙 한 컷</div>
-        <div class="lc-desc" id="faithCutDesc">주일 신앙 한 컷 그림 (가톨릭신문)</div>
-      </a>
 
     </div>
     <script>

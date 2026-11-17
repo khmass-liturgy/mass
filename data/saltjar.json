@@ -1,15 +1,23 @@
 {
-  "updated": "2026-11-17 20:49",
+  "updated": "2026-11-18 07:21",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
-  "videoId": "GFgmI5g5A7U",
-  "date": "2026-11-17",
-  "label": "2026년 11월 17일헝가리의 성녀 엘리사벳 수도자 기념일",
-  "title": "생활성서 듣는 #소금항아리 [2026년 11월 17일 헝가리의 성녀 엘리사벳 수도자 기념일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
+  "videoId": "Nd4gsqgwDaA",
+  "date": "2026-11-18",
+  "label": "2026년 11월 18일연중 제33주간 수요일",
+  "title": "생활성서 듣는 #소금항아리 [2026년 11월 18일 연중 제33주간 수요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
   "published": "",
-  "url": "https://www.youtube.com/watch?v=GFgmI5g5A7U",
+  "url": "https://www.youtube.com/watch?v=Nd4gsqgwDaA",
   "count": 10,
   "videos": [
+    {
+      "videoId": "Nd4gsqgwDaA",
+      "date": "2026-11-18",
+      "label": "2026년 11월 18일연중 제33주간 수요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 18일 연중 제33주간 수요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=Nd4gsqgwDaA"
+    },
     {
       "videoId": "GFgmI5g5A7U",
       "date": "2026-11-17",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 11월 9일 라테라노 대성전 봉헌 축일](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=GUjLesJynTQ"
-    },
-    {
-      "videoId": "F6lAMtY2jFk",
-      "date": "2026-11-08",
-      "label": "2026년 11월 8일연중 제32주일(평신도 주일)",
-      "title": "생활성서 듣는 #소금항아리 [2026년 11월 8일 연중 제32주일(평신도 주일)](김희경 성심수녀) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=F6lAMtY2jFk"
     }
   ]
 }

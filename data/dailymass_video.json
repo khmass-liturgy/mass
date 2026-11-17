@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-17 04:36",
+  "updated": "2026-11-17 12:53",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "rGOay5dF1Z8",
+      "date": "2026-11-17",
+      "liturgy": "헝가리의 성녀 엘리사벳 수도자 기념일",
+      "priest": "이현우 마르코 신부",
+      "url": "https://www.youtube.com/watch?v=rGOay5dF1Z8&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "b8GoOEnma_o",
       "date": "2026-11-16",
@@ -95,13 +102,6 @@
       "liturgy": "성 가롤로 보로메오 주교 기념일",
       "priest": "한요한 요한 신부",
       "url": "https://www.youtube.com/watch?v=QKvTyxTbTsY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "29s6DZgUQrw",
-      "date": "2026-11-03",
-      "liturgy": "연중 제31주간 화요일",
-      "priest": "김용수 미카엘 신부",
-      "url": "https://www.youtube.com/watch?v=29s6DZgUQrw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

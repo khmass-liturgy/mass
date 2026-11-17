@@ -518,7 +518,7 @@
   .link-card:hover .lc-go{color:var(--navy);transform:translateX(3px);}
   .link-card .lc-name{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;color:var(--navy);}
   .link-card .lc-desc{font-size:.73rem;color:var(--muted);line-height:1.4;}
-  /* 두 줄 묶음 카드(떼제·생활성가, 성가집·묵상성가, 신문 대표기사·기획특집, 구약·신약): 카드 안의 두 줄이 각각 링크 */
+  /* 두 줄 묶음 카드(떼제·생활성가, 성가집·묵상성가, 신문 대표기사·기획특집, 구약·신약, 성경과외 신부): 카드 안의 두 줄이 각각 링크 */
   .music-duo .duo-row{display:flex;align-items:flex-start;gap:7px;text-decoration:none;color:inherit;
     margin:0 -6px;padding:5px 6px;border-radius:8px;transition:background .15s;position:relative;z-index:1;}
   .music-duo .duo-row + .duo-row{border-top:1px dashed rgba(160,110,60,.25);border-radius:0 0 8px 8px;}
@@ -3078,17 +3078,21 @@ window.WeatherFx = (function(){
         </a>
       </div>
 
-      <a class="link-card" href="https://youtube.com/playlist?list=PL4c107IszdpNh0_qW7W8aHQQ3cNiHWRIM&si=BVAqnsnLCBpRQFBv" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📓</span><span class="lc-go">→</span></div>
-        <div class="lc-name">구약성경통독 꿀팁가이드</div>
-        <div class="lc-desc">성경과외 해주는 신부님의 구약성경통독 꿀팁가이드</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@studybible?si=Um0Hw1BRQdZVSmVR" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">✏️</span><span class="lc-go">→</span></div>
+      <!-- 성경과외 해주는 신부님의 통독 가이드와 채널을 한 카드에 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="studyBibleDuo">
+        <div class="lc-top"><span class="lc-icon">✏️</span></div>
         <div class="lc-name">성경과외 해주는 신부</div>
-        <div class="lc-desc">알기 쉬운 성경 해설 유튜브</div>
-      </a>
+        <a class="duo-row" href="https://youtube.com/playlist?list=PL4c107IszdpNh0_qW7W8aHQQ3cNiHWRIM&amp;si=BVAqnsnLCBpRQFBv" target="_blank" rel="noopener">
+          <span class="duo-tag">통독 가이드</span>
+          <span class="lc-desc">구약성경통독 꿀팁가이드 재생목록</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://youtube.com/@studybible?si=Um0Hw1BRQdZVSmVR" target="_blank" rel="noopener">
+          <span class="duo-tag">채널</span>
+          <span class="lc-desc">알기 쉬운 성경 해설 유튜브</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
     </div>
   </section>

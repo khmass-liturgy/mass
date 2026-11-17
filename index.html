@@ -518,7 +518,7 @@
   .link-card:hover .lc-go{color:var(--navy);transform:translateX(3px);}
   .link-card .lc-name{font-family:'Noto Serif KR',serif;font-size:.92rem;font-weight:700;color:var(--navy);}
   .link-card .lc-desc{font-size:.73rem;color:var(--muted);line-height:1.4;}
-  /* 두 줄 묶음 카드(떼제·생활성가, 성가집·묵상성가, 신문 대표기사·기획특집, 구약·신약, 성경과외 신부): 카드 안의 두 줄이 각각 링크 */
+  /* 두 줄 묶음 카드(떼제·생활성가, 성가집·묵상성가, 신문 대표기사·기획특집, 구약·신약, 성경과외 신부, 영상·언론·누리집·도서 묶음): 카드 안의 두 줄이 각각 링크 */
   .music-duo .duo-row{display:flex;align-items:flex-start;gap:7px;text-decoration:none;color:inherit;
     margin:0 -6px;padding:5px 6px;border-radius:8px;transition:background .15s;position:relative;z-index:1;}
   .music-duo .duo-row + .duo-row{border-top:1px dashed rgba(160,110,60,.25);border-radius:0 0 8px 8px;}
@@ -526,6 +526,7 @@
   .music-duo .duo-tag{flex:0 0 auto;font-size:.66rem;font-weight:700;line-height:1.6;color:#fff;
     background:var(--gold);border-radius:9px;padding:0 7px;margin-top:1px;}
   .music-duo .duo-row + .duo-row .duo-tag{background:#B5452F;}
+  .music-duo .duo-row + .duo-row + .duo-row .duo-tag{background:#3E7A47;}
   .music-duo .duo-row .lc-desc{flex:1;min-width:0;}
   .music-duo .duo-go{flex:0 0 auto;font-size:.8rem;color:#C8C0AE;transition:transform .2s, color .2s;}
   .music-duo .duo-row:hover .duo-go{color:var(--navy);transform:translateX(3px);}
@@ -3122,11 +3123,21 @@ window.WeatherFx = (function(){
         <div class="lc-desc" id="massVideoDesc">매일 새벽 5시 봉헌되는 미사 영상</div>
       </a>
 
-      <a class="link-card" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📺</span><span class="lc-go">→</span></div>
-        <div class="lc-name">cpbc TV</div>
-        <div class="lc-desc">가톨릭평화방송 공식 유튜브</div>
-      </a>
+      <!-- 가톨릭 방송·신문 유튜브 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="mediaNewsDuo">
+        <div class="lc-top"><span class="lc-icon">📺</span></div>
+        <div class="lc-name">cpbc TV · 가톨릭신문 유튜브</div>
+        <a class="duo-row" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
+          <span class="duo-tag">cpbc TV</span>
+          <span class="lc-desc">가톨릭평화방송 공식 유튜브</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://youtube.com/@koreacatholictimes?si=-AiXmzyxecVY3WIo" target="_blank" rel="noopener">
+          <span class="duo-tag">가톨릭신문</span>
+          <span class="lc-desc">가톨릭신문 공식 유튜브 채널</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
       <a class="link-card" href="https://youtube.com/@fspmusic?si=ceRKxp_sDfxc_CPW" target="_blank" rel="noopener">
         <div class="lc-top"><span class="lc-icon">🎵</span><span class="lc-go">→</span></div>
@@ -3144,12 +3155,6 @@ window.WeatherFx = (function(){
         <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
         <div class="lc-name">성경듣기</div>
         <div class="lc-desc">가톨릭 성경 낭독 유튜브</div>
-      </a>
-
-      <a class="link-card" href="https://youtube.com/@koreacatholictimes?si=-AiXmzyxecVY3WIo" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭신문 유튜브</div>
-        <div class="lc-desc">가톨릭신문 공식 유튜브 채널</div>
       </a>
 
       </div>
@@ -3197,53 +3202,63 @@ window.WeatherFx = (function(){
       </summary>
       <div class="link-grid">
 
-      <a class="link-card" href="https://www.catholictimes.org" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📰</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭신문</div>
-        <div class="lc-desc">국내 대표 가톨릭 신문</div>
-      </a>
+      <!-- 가톨릭 신문·언론 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="pressDuo">
+        <div class="lc-top"><span class="lc-icon">📰</span></div>
+        <div class="lc-name">가톨릭 언론</div>
+        <a class="duo-row" href="https://www.catholictimes.org" target="_blank" rel="noopener">
+          <span class="duo-tag">가톨릭신문</span>
+          <span class="lc-desc">국내 대표 가톨릭 신문</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://www.catholicpress.kr" target="_blank" rel="noopener">
+          <span class="duo-tag">언론협의회</span>
+          <span class="lc-desc">가톨릭 언론 종합 소식</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" href="https://www.cbck.or.kr" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">⛪</span><span class="lc-go">→</span></div>
-        <div class="lc-name">한국천주교주교회의</div>
-        <div class="lc-desc">CBCK 공식 홈페이지</div>
-      </a>
+      <!-- 교회 공식·종합 누리집 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="churchSiteDuo">
+        <div class="lc-top"><span class="lc-icon">⛪</span></div>
+        <div class="lc-name">교회 누리집</div>
+        <a class="duo-row" href="https://www.cbck.or.kr" target="_blank" rel="noopener">
+          <span class="duo-tag">주교회의</span>
+          <span class="lc-desc">CBCK 공식 홈페이지</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://maria.catholic.or.kr" target="_blank" rel="noopener">
+          <span class="duo-tag">굿뉴스</span>
+          <span class="lc-desc">서울대교구 운영 종합 포털</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://m.mariasarang.net/" target="_blank" rel="noopener">
+          <span class="duo-tag">마리아사랑넷</span>
+          <span class="lc-desc">성가 · 기도 · 성경 · 가톨릭 종합 모바일 포털</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" href="https://maria.catholic.or.kr" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">💬</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭굿뉴스</div>
-        <div class="lc-desc">서울대교구 운영 종합 포털</div>
-      </a>
-
-      <a class="link-card" href="https://www.catholicpress.kr" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🗞</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭언론인협의회</div>
-        <div class="lc-desc">가톨릭 언론 종합 소식</div>
-      </a>
-
-      <a class="link-card" href="https://m.mariasarang.net/" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">💒</span><span class="lc-go">→</span></div>
-        <div class="lc-name">마리아사랑넷</div>
-        <div class="lc-desc">성가 · 기도 · 성경 · 가톨릭 종합 모바일 포털</div>
-      </a>
-
-      <a class="link-card" href="https://directory.cbck.or.kr/OnlineAddress/SearchList.aspx?cgubn=g&amp;gubn=16&amp;gyogu=all&amp;tbxSearch=&amp;start=1&amp;paged=10&amp;char=all" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🕊</span><span class="lc-go">→</span></div>
-        <div class="lc-name">국내성지</div>
-        <div class="lc-desc">전국 성지 목록 · 주소 검색 (한국천주교주교회의)</div>
-      </a>
-
-      <a class="link-card" href="nearby.html">
-        <div class="lc-top"><span class="lc-icon">📍</span><span class="lc-go">→</span></div>
-        <div class="lc-name">주변 성당 찾기</div>
-        <div class="lc-desc">내 위치에서 가까운 성당 10곳을 거리순으로 (CBCK 공식 주소록 기반)</div>
-      </a>
-
-      <a class="link-card" href="https://maria.catholic.or.kr/mobile/jubo/jubo_list.asp" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📄</span><span class="lc-go">→</span></div>
-        <div class="lc-name">전국 주보</div>
-        <div class="lc-desc">전국 교구·본당 주보를 주일별로 모아 보기 (가톨릭굿뉴스 모바일)</div>
-      </a>
+      <!-- 성당·성지 찾기와 주보 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="placeDuo">
+        <div class="lc-top"><span class="lc-icon">📍</span></div>
+        <div class="lc-name">성당 · 성지 · 주보</div>
+        <a class="duo-row" href="nearby.html">
+          <span class="duo-tag">성당 찾기</span>
+          <span class="lc-desc">내 위치에서 가까운 성당 10곳을 거리순으로 (CBCK 공식 주소록 기반)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://directory.cbck.or.kr/OnlineAddress/SearchList.aspx?cgubn=g&amp;gubn=16&amp;gyogu=all&amp;tbxSearch=&amp;start=1&amp;paged=10&amp;char=all" target="_blank" rel="noopener">
+          <span class="duo-tag">국내성지</span>
+          <span class="lc-desc">전국 성지 목록 · 주소 검색 (한국천주교주교회의)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://maria.catholic.or.kr/mobile/jubo/jubo_list.asp" target="_blank" rel="noopener">
+          <span class="duo-tag">전국 주보</span>
+          <span class="lc-desc">전국 교구·본당 주보를 주일별로 모아 보기 (가톨릭굿뉴스 모바일)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
       </div>
     </details>
@@ -3262,41 +3277,47 @@ window.WeatherFx = (function(){
       </summary>
       <div class="link-grid">
 
-      <a class="link-card" href="https://m.pauline.or.kr" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📚</span><span class="lc-go">→</span></div>
-        <div class="lc-name">바오로딸</div>
-        <div class="lc-desc">성경·영성·신앙 도서 및 콘텐츠</div>
-      </a>
+      <!-- 도서·성물 구매처 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="bookShopDuo">
+        <div class="lc-top"><span class="lc-icon">📚</span></div>
+        <div class="lc-name">가톨릭 도서 · 성물</div>
+        <a class="duo-row" href="https://m.pauline.or.kr" target="_blank" rel="noopener">
+          <span class="duo-tag">바오로딸</span>
+          <span class="lc-desc">성경·영성·신앙 도서 (바오로딸 인터넷서점)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://www.paolo.kr/" target="_blank" rel="noopener">
+          <span class="duo-tag">바오로 서원</span>
+          <span class="lc-desc">성바오로수도회 운영 — 가톨릭 서적·음반·성물 구매</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://catholicbookplus.kr/shop/hallows" target="_blank" rel="noopener">
+          <span class="duo-tag">성물</span>
+          <span class="lc-desc">서울대교구 가톨릭출판사 공식몰 — 묵주·십자가·성상 등 성물과 도서</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" href="https://www.podbbang.com/channels/15677/" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎧</span><span class="lc-go">→</span></div>
-        <div class="lc-name">책읽어주는 수녀</div>
-        <div class="lc-desc">바오로딸 수녀회 팟캐스트</div>
-      </a>
-
-      <a class="link-card" href="https://contents.pauline.or.kr/" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎬</span><span class="lc-go">→</span></div>
-        <div class="lc-name">바오로딸 콘텐츠</div>
-        <div class="lc-desc">영상·음원·전자책 신앙 콘텐츠</div>
-      </a>
-
-      <a class="link-card" href="https://maria.catholic.or.kr/audio/book/audiobook_list.asp" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🔊</span><span class="lc-go">→</span></div>
-        <div class="lc-name">소리로 읽은 책</div>
-        <div class="lc-desc">저자·출판사 승인받아 녹음한 가톨릭 소리도서 모음</div>
-      </a>
-
-      <a class="link-card" href="https://catholicbookplus.kr/shop/hallows" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon" role="img" aria-label="묵주"><svg width="1.6em" height="1.6em" viewBox="0 0 24 24" style="display:block" aria-hidden="true"><circle cx="12" cy="7" r="5.4" fill="none" stroke="#7A4A22" stroke-width=".7"/><g fill="#7A4A22"><circle cx="8.8" cy="11.4" r="1.55"/><circle cx="6.9" cy="8.7" r="1.55"/><circle cx="6.9" cy="5.3" r="1.55"/><circle cx="8.8" cy="2.6" r="1.55"/><circle cx="12.0" cy="1.6" r="1.55"/><circle cx="15.2" cy="2.6" r="1.55"/><circle cx="17.1" cy="5.3" r="1.55"/><circle cx="17.1" cy="8.7" r="1.55"/><circle cx="15.2" cy="11.4" r="1.55"/></g><path d="M12 12.4V16" stroke="#7A4A22" stroke-width=".8"/><circle cx="12" cy="12.6" r="1.7" fill="#C9A84C"/><g fill="#C9A84C" stroke="#8a6d1f" stroke-width=".3"><rect x="11" y="15" width="2" height="9" rx=".4"/><rect x="8.6" y="17.3" width="6.8" height="2" rx=".4"/></g></svg></span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭출판사 성물</div>
-        <div class="lc-desc">서울대교구 가톨릭출판사 공식몰 — 묵주·십자가·성상 등 성물과 도서</div>
-      </a>
-
-      <a class="link-card" href="https://www.paolo.kr/" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">✝️</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성바오로 서원</div>
-        <div class="lc-desc">성바오로수도회 운영 — 가톨릭 서적·음반·성물 구매</div>
-      </a>
+      <!-- 소리책·영상 콘텐츠 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="audioBookDuo">
+        <div class="lc-top"><span class="lc-icon">🎧</span></div>
+        <div class="lc-name">소리책 · 신앙 콘텐츠</div>
+        <a class="duo-row" href="https://www.podbbang.com/channels/15677/" target="_blank" rel="noopener">
+          <span class="duo-tag">팟캐스트</span>
+          <span class="lc-desc">책읽어주는 수녀 — 바오로딸 수녀회 팟캐스트</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://maria.catholic.or.kr/audio/book/audiobook_list.asp" target="_blank" rel="noopener">
+          <span class="duo-tag">소리책</span>
+          <span class="lc-desc">소리로 읽은 책 — 저자·출판사 승인받아 녹음한 가톨릭 소리도서 모음</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://contents.pauline.or.kr/" target="_blank" rel="noopener">
+          <span class="duo-tag">콘텐츠</span>
+          <span class="lc-desc">바오로딸 콘텐츠 — 영상·음원·전자책 신앙 콘텐츠</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
       </div>
     </details>

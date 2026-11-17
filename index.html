@@ -607,6 +607,11 @@
   .muksang-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px;}
   .muksang-excerpt{font-size:.76rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .muksang-empty{padding:18px 16px;font-size:.85rem;color:var(--muted);text-align:center;}
+  /* 신부님 묵상: 묶음 카드 한 장 — PC에서는 두 칸 너비, 폰에서는 한 줄 전체 */
+  .muksang-grid{margin-bottom:6px;}
+  .muksang-grid .muksang-duo{grid-column:span 2;}
+  .muksang-duo .muksang-empty{padding:6px 0;text-align:left;font-size:.8rem;}
+  @media (max-width:600px){ .muksang-grid .muksang-duo{grid-column:1 / -1;} }
   .muksang-foot{display:flex;justify-content:flex-end;align-items:center;gap:10px;margin-bottom:10px;font-size:.75rem;color:var(--muted);flex-wrap:wrap;}
   /* ── 묵상 게시판 전체 보기 가로형 카드 ── */
   .muksang-all-card{
@@ -2717,8 +2722,15 @@ window.WeatherFx = (function(){
       <h2 class="group-title"><a href="https://bbs.catholic.or.kr/bbsm/bbs_list.asp?menu=4770" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><span class="gt-icon" aria-hidden="true">🌹</span>신부님 묵상글 모음</a></h2>
       <span class="group-sub">오늘 복음을 신부님들의 묵상으로</span>
     </div>
-    <div id="muksangBox" class="muksang-box">
-      <div class="muksang-empty">묵상 글을 불러오는 중입니다…</div>
+    <!-- 오늘 글을 묶음 카드 한 장에 한 줄씩 (떼제 · 생활성가 카드와 같은 모양) -->
+    <div class="link-grid muksang-grid">
+      <div class="link-card music-duo muksang-duo" id="muksangCard">
+        <div class="lc-top"><span class="lc-icon">🌹</span></div>
+        <div class="lc-name" id="muksangName">오늘의 신부님 묵상</div>
+        <div id="muksangBox">
+          <div class="muksang-empty">묵상 글을 불러오는 중입니다…</div>
+        </div>
+      </div>
     </div>
     <div class="muksang-foot">
       <span id="muksangUpdated"></span>
@@ -2862,19 +2874,30 @@ window.WeatherFx = (function(){
         if(posts.length === 0){
           box.innerHTML = '<div class="muksang-empty">오늘 등록된 묵상 글이 아직 없습니다.</div>';
         } else {
+          // 묶음 카드 한 줄 = 글 한 편: 꼬리표는 신부님 이름, 설명은 핵심 제목.
+          // 제목 앞에 붙는 'OOO 요셉 신부 / ', '연중 제33주간 수요일 - ' 같은 머리말은 덜어 낸다.
+          // 제목이 '2026년 11월 17일 연중 제33주간 화요일'처럼 날짜뿐이면 발췌문 첫머리(앞 날짜는 덜어 냄)로 대신한다.
+          var DATE_HEAD = /^\s*\d{4}년\s*\d{1,2}월\s*\d{1,2}일\s*/;
+          var shortTitle = function(t, excerpt){
+            var x = String(t || '').trim();
+            var y = x.replace(/^.{0,30}?신부님?\s*[\/|:·]\s*/, '');
+            y = y.replace(/^[^-–—]{0,30}(주간|주일|대축일|축일|기념일|성탄|부활|사순|대림)[^-–—]{0,20}\s*[-–—]\s*/, '');
+            if (DATE_HEAD.test(y) && excerpt) {
+              var e = String(excerpt).replace(DATE_HEAD, '').trim();
+              if (e) return e;
+            }
+            return y || x;
+          };
+          var mp = todayKst.split('-');
+          var nameEl = document.getElementById('muksangName');
+          if (nameEl) nameEl.textContent = '오늘의 신부님 묵상 · ' + (+mp[1]) + '월 ' + (+mp[2]) + '일 (' + posts.length + '편)';
           box.innerHTML = posts.map(function(p){
-            var excerptHtml = p.excerpt
-              ? '<span class="muksang-excerpt">' + esc(p.excerpt) + '</span>'
-              : '';
             // 원문을 새 창으로 바로 연다 — 모바일 브라우저의 "읽기 모드"를 그대로 활용할 수 있도록.
-            return '<a class="muksang-item" href="' + esc(p.url) + '" target="_blank" rel="noopener">'
-              + '<span class="muksang-date">' + esc((p.mass_date || p.date || '').slice(5)) + '</span>'
-              + '<span class="muksang-priest">' + esc(p.priest) + ' 신부님</span>'
-              + '<span class="muksang-main">'
-                + '<span class="muksang-title">' + esc(p.title) + '</span>'
-                + excerptHtml
-              + '</span>'
-              + '<span class="muksang-author">' + esc(p.author) + '</span>'
+            return '<a class="duo-row" href="' + esc(p.url) + '" target="_blank" rel="noopener"'
+              + (p.excerpt ? ' title="' + esc(p.excerpt) + '"' : '') + '>'
+              + '<span class="duo-tag">' + esc(p.priest) + ' 신부</span>'
+              + '<span class="lc-desc">' + esc(shortTitle(p.title, p.excerpt)) + '</span>'
+              + '<span class="duo-go" aria-hidden="true">→</span>'
               + '</a>';
           }).join('');
         }

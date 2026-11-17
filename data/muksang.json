@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-17 20:39",
-  "cutoff": "2026-11-16",
+  "updated": "2026-11-18 05:44",
+  "cutoff": "2026-11-17",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7462",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-18",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 수요일 복음: 루카 19,11ㄴ-2…"
+    },
+    {
+      "id": "daum_bbadaking_7998",
+      "title": "2026년 11월 18일 연중 제33주간 수요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-17",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7998",
+      "mass_date": "2026-11-18",
+      "priest": "조명연",
+      "excerpt": "전 세계 어린이들에게 사랑받는 동화 작가가 있습니다."
     },
     {
       "id": "daum_catholicsb_7461",
@@ -66,46 +76,6 @@
       "date": "2026-11-17",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140451&menu=4770",
       "mass_date": "2026-11-17",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7460",
-      "title": "전삼용 요셉 신부 / 연중 제33주간 월요일 - 세상을 거스르고 있어야 믿음이다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-15",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7460",
-      "mass_date": "2026-11-16",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 연중 제33주간 월요일 복음: 루카 18,35-43 세상…"
-    },
-    {
-      "id": "daum_bbadaking_7996",
-      "title": "2026년 11월 16일 연중 제33주간 월요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-15",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7996",
-      "mass_date": "2026-11-16",
-      "priest": "조명연",
-      "excerpt": "어떤 분이 갑자기 배가 아파서 견딜 수 없는 상황에 닥쳤습니다."
-    },
-    {
-      "id": "daum_bbadaking_2272",
-      "title": "2026년 11월 16일 연중 제33주간 월요일",
-      "author": "박 베로니카",
-      "date": "2026-11-16",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2272",
-      "mass_date": "2026-11-16",
-      "priest": "양승국",
-      "excerpt": "하느님은 절대 멀리 계시는 분이 아닙니다!"
-    },
-    {
-      "id": "2140386",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-11-16",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140386&menu=4770",
-      "mass_date": "2026-11-16",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

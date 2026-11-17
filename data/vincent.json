@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-17 12:49",
+  "updated": "2026-11-18 03:32",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "yP5xGpgAb2Q",
+      "date": "2026-11-18",
+      "title": "연중 제33주간 수요일",
+      "url": "https://www.youtube.com/watch?v=yP5xGpgAb2Q"
+    },
     {
       "videoId": "5sLq5MMTFNE",
       "date": "2026-11-17",
@@ -57,12 +63,6 @@
       "date": "2026-11-09",
       "title": "라테라노 대성전 봉헌 축일",
       "url": "https://www.youtube.com/watch?v=-HSZU6SmTeQ"
-    },
-    {
-      "videoId": "YcjPumXz7MY",
-      "date": "2026-11-08",
-      "title": "연중 제32주일",
-      "url": "https://www.youtube.com/watch?v=YcjPumXz7MY"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17 06:54",
+  "updated": "2026-11-17 20:39",
   "cutoff": "2026-11-16",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
+    {
+      "id": "daum_catholicsb_7462",
+      "title": "전삼용 요셉 신부 / 연중 제33주간 수요일 - 변명은 원망이다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-17",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7462",
+      "mass_date": "2026-11-18",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 수요일 복음: 루카 19,11ㄴ-2…"
+    },
     {
       "id": "daum_catholicsb_7461",
       "title": "전삼용 요셉 신부 / 연중 제33주간 화요일 - 세상이 만만해 보여야 믿음이다",
@@ -48,6 +58,16 @@
       "mass_date": "2026-11-17",
       "priest": "양승국",
       "excerpt": "티 없음에서 더러움으로, 더러움에서 다시 티 없음으로!"
+    },
+    {
+      "id": "2140451",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-17",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140451&menu=4770",
+      "mass_date": "2026-11-17",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7460",

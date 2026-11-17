@@ -2898,17 +2898,37 @@ window.WeatherFx = (function(){
     </div>
     <div class="link-grid">
 
-      <a class="link-card" href="https://www.vaticannews.va/ko.html" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
-        <div class="lc-name">Vatican News</div>
-        <div class="lc-desc">교황청 공식 뉴스 서비스</div>
-      </a>
+      <!-- 교황청 소식과 교황 회칙 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="vaticanDuo">
+        <div class="lc-top"><span class="lc-icon">🏛</span></div>
+        <div class="lc-name">교황청 · 교황 회칙</div>
+        <a class="duo-row" href="https://www.vaticannews.va/ko.html" target="_blank" rel="noopener">
+          <span class="duo-tag">Vatican News</span>
+          <span class="lc-desc">교황청 공식 뉴스 서비스</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" id="laudatoCard" href="laudato_si.html">
+          <span class="duo-tag">찬미받으소서</span>
+          <span class="lc-desc" id="laudatoDesc">공동의 집 지구를 돌보는 교황 회칙 · 쉬운 요약과 오늘의 영상</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" id="bibleCard" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">✝️</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성경</div>
-        <div class="lc-desc" id="bibleDesc">한국천주교주교회의 새 번역 성경 (온라인)</div>
-      </a>
+      <!-- 성경 오늘의 한 장과 가톨릭대사전 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="bibleDictDuo">
+        <div class="lc-top"><span class="lc-icon">✝️</span></div>
+        <div class="lc-name">성경 · 가톨릭대사전</div>
+        <a class="duo-row" id="bibleCard" href="https://bible.cbck.or.kr/Knb" target="_blank" rel="noopener">
+          <span class="duo-tag">성경</span>
+          <span class="lc-desc" id="bibleDesc">한국천주교주교회의 새 번역 성경 (온라인)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" id="encyCard" href="https://encyclopedia.catholic.or.kr/" target="_blank" rel="noopener">
+          <span class="duo-tag">대사전</span>
+          <span class="lc-desc" id="encyDesc">가톨릭 용어·인물·역사를 총망라한 종합 사전</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
       <script>
       // 성경 — 날마다 한 장씩, 창세기 1장부터 요한 묵시록 22장까지 차례로 연결한다.
       // 2026-11-02(KST)이 창세기 1장이고, 1328장을 다 읽으면 다시 창세기부터 돈다.
@@ -2961,17 +2981,38 @@ window.WeatherFx = (function(){
       })();
       </script>
 
-      <a class="link-card" href="mass-grade-cards.html">
-        <div class="lc-top"><span class="lc-icon">🎖️</span><span class="lc-go">→</span></div>
-        <div class="lc-name">전례력 미사 등급 분류</div>
-        <div class="lc-desc">대축일·축일·기념일·평일 등급과 거행 우선순위</div>
-      </a>
+      <!-- 전례력 등급과 미사 지침 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="liturgyDuo">
+        <div class="lc-top"><span class="lc-icon">🎖️</span></div>
+        <div class="lc-name">전례 · 미사</div>
+        <a class="duo-row" href="mass-grade-cards.html">
+          <span class="duo-tag">미사 등급</span>
+          <span class="lc-desc">대축일·축일·기념일·평일 등급과 거행 우선순위</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://missale.cbck.or.kr/Ebook" target="_blank" rel="noopener">
+          <span class="duo-tag">미사경본</span>
+          <span class="lc-desc">로마 미사경본 총지침 — 한국천주교주교회의 공식 전자책</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" id="encyCard" href="https://encyclopedia.catholic.or.kr/" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📚</span><span class="lc-go">→</span></div>
-        <div class="lc-name">가톨릭대사전</div>
-        <div class="lc-desc" id="encyDesc">가톨릭 용어·인물·역사를 총망라한 종합 사전</div>
-      </a>
+      <!-- 교회 교리서와 법전 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="doctrineDuo">
+        <div class="lc-top"><span class="lc-icon">📜</span></div>
+        <div class="lc-name">교리서 · 교회법전</div>
+        <a class="duo-row" href="https://www.cbck.or.kr/Documents/Catechism" target="_blank" rel="noopener">
+          <span class="duo-tag">교리서</span>
+          <span class="lc-desc">한국천주교주교회의 공식 교리서 전문</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://www.cbck.or.kr/Documents/Canon" target="_blank" rel="noopener">
+          <span class="duo-tag">교회법전</span>
+          <span class="lc-desc">한국천주교주교회의 공식 교회법전 전문</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
+
       <script>
       // 가톨릭대사전 — 첫 화면의 주간·월간 인기 표제어를 하루 한 개씩 돌려 가며
       // 그 표제어 화면으로 바로 연결한다. 목록을 못 읽으면 사전 첫 화면 링크 그대로 둔다.
@@ -3003,11 +3044,6 @@ window.WeatherFx = (function(){
       })();
       </script>
 
-      <a class="link-card" id="laudatoCard" href="laudato_si.html">
-        <div class="lc-top"><span class="lc-icon">🌱</span><span class="lc-go">→</span></div>
-        <div class="lc-name">찬미받으소서</div>
-        <div class="lc-desc" id="laudatoDesc">공동의 집 지구를 돌보는 교황 회칙 · 쉬운 요약과 오늘의 영상</div>
-      </a>
       <script>
       // 찬미받으소서 — 22가지 주제를 하루에 하나씩(laudato_si.html, scripts/fetch_laudato_si.py 와 같은 순서) 보여 준다.
       (function(){
@@ -3024,34 +3060,6 @@ window.WeatherFx = (function(){
 
     </div>
 
-    <details class="link-more">
-      <summary class="link-more-summary">
-        <span class="lc-icon">📜</span>
-        <span>가톨릭 교리서 · 교회법전 등 더보기 (3)</span>
-      </summary>
-      <div class="link-grid">
-
-        <a class="link-card" href="https://www.cbck.or.kr/Documents/Catechism" target="_blank" rel="noopener">
-          <div class="lc-top"><span class="lc-icon">📜</span><span class="lc-go">→</span></div>
-          <div class="lc-name">가톨릭 교회 교리서</div>
-          <div class="lc-desc">한국천주교주교회의 공식 교리서 전문</div>
-        </a>
-
-        <a class="link-card" href="https://www.cbck.or.kr/Documents/Canon" target="_blank" rel="noopener">
-          <div class="lc-top"><span class="lc-icon">⚖️</span><span class="lc-go">→</span></div>
-          <div class="lc-name">교회법전</div>
-          <div class="lc-desc">한국천주교주교회의 공식 교회법전 전문</div>
-        </a>
-
-
-        <a class="link-card" href="https://missale.cbck.or.kr/Ebook" target="_blank" rel="noopener">
-          <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
-          <div class="lc-name">로마 미사경본 총지침</div>
-          <div class="lc-desc">한국천주교주교회의 공식 전자책 (새 주소)</div>
-        </a>
-
-      </div>
-    </details>
   </section>
 
   <!-- ── 성경공부 (유튜브 구약·신약 성경 강의 재생목록) ── -->
@@ -3111,22 +3119,31 @@ window.WeatherFx = (function(){
       </summary>
       <div class="link-grid">
 
-      <a class="link-card" href="https://www.youtube.com/@VaticanNews" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🏛</span><span class="lc-go">→</span></div>
-        <div class="lc-name">Vatican News</div>
-        <div class="lc-desc">교황님 활동과 바티칸 소식 · 교황청 공식 채널 (다국어)</div>
-      </a>
+      <!-- 매일미사 영상과 성경 낭독 (떼제 · 생활성가 카드와 같은 모양) -->
+      <div class="link-card music-duo" id="massBibleAudioDuo">
+        <div class="lc-top"><span class="lc-icon">🎥</span></div>
+        <div class="lc-name">매일미사 · 성경듣기</div>
+        <a class="duo-row" id="massVideoCard" href="https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C" target="_blank" rel="noopener">
+          <span class="duo-tag">매일미사</span>
+          <span class="lc-desc" id="massVideoDesc">매일 새벽 5시 봉헌되는 미사 영상</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+        <a class="duo-row" href="https://youtube.com/@hymnscatholic?si=xE17s-e0foOyWiil" target="_blank" rel="noopener">
+          <span class="duo-tag">성경듣기</span>
+          <span class="lc-desc">가톨릭 성경 낭독 유튜브</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <a class="link-card" id="massVideoCard" href="https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">🎥</span><span class="lc-go">→</span></div>
-        <div class="lc-name">cpbc 오늘의 매일미사</div>
-        <div class="lc-desc" id="massVideoDesc">매일 새벽 5시 봉헌되는 미사 영상</div>
-      </a>
-
-      <!-- 가톨릭 방송·신문 유튜브 (떼제 · 생활성가 카드와 같은 모양) -->
+      <!-- 가톨릭 방송·뉴스 유튜브 채널 (떼제 · 생활성가 카드와 같은 모양) -->
       <div class="link-card music-duo" id="mediaNewsDuo">
         <div class="lc-top"><span class="lc-icon">📺</span></div>
-        <div class="lc-name">cpbc TV · 가톨릭신문 유튜브</div>
+        <div class="lc-name">가톨릭 방송 · 뉴스 채널</div>
+        <a class="duo-row" href="https://www.youtube.com/@VaticanNews" target="_blank" rel="noopener">
+          <span class="duo-tag">Vatican News</span>
+          <span class="lc-desc">교황님 활동과 바티칸 소식 · 교황청 공식 채널 (다국어)</span>
+          <span class="duo-go" aria-hidden="true">→</span>
+        </a>
         <a class="duo-row" href="https://youtube.com/@cpbc?si=bGabV2JrH9w7pZgK" target="_blank" rel="noopener">
           <span class="duo-tag">cpbc TV</span>
           <span class="lc-desc">가톨릭평화방송 공식 유튜브</span>
@@ -3154,12 +3171,6 @@ window.WeatherFx = (function(){
           <span class="duo-go" aria-hidden="true">→</span>
         </a>
       </div>
-
-      <a class="link-card" href="https://youtube.com/@hymnscatholic?si=xE17s-e0foOyWiil" target="_blank" rel="noopener">
-        <div class="lc-top"><span class="lc-icon">📖</span><span class="lc-go">→</span></div>
-        <div class="lc-name">성경듣기</div>
-        <div class="lc-desc">가톨릭 성경 낭독 유튜브</div>
-      </a>
 
       </div>
     </details>

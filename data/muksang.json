@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18 05:44",
+  "updated": "2026-11-18 11:49",
   "cutoff": "2026-11-17",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7462",
@@ -38,6 +38,26 @@
       "mass_date": "2026-11-18",
       "priest": "조명연",
       "excerpt": "전 세계 어린이들에게 사랑받는 동화 작가가 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_2274",
+      "title": "2026년 11월 18일 연중 제33주간 수요일",
+      "author": "박 베로니카",
+      "date": "2026-11-18",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2274",
+      "mass_date": "2026-11-18",
+      "priest": "양승국",
+      "excerpt": "영광스럽게 변모된 구성원들이 하느님 어좌 앞에 모여 영광과 찬미와 감사를 드…"
+    },
+    {
+      "id": "daum_bbadaking_219",
+      "title": "누구든지 가진 자는 더 받고, 가진 것이 없는 자는 가진 것마저 빼앗길 것이…",
+      "author": "환희 평화",
+      "date": "2026-11-18",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/219",
+      "mass_date": "2026-11-18",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7461",

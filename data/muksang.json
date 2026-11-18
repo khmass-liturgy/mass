@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18 11:49",
+  "updated": "2026-11-18 20:27",
   "cutoff": "2026-11-17",
   "days": 2,
   "names": [
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7463",
+      "title": "전삼용 요셉 신부 / 연중 제33주간 목요일 - 그리스도를 알아보는 눈, ‘나는 누구인가?’",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-18",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7463",
+      "mass_date": "2026-11-19",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 목요일 복음: 루카 19,41-44…"
+    },
+    {
+      "id": "daum_bbadaking_7999",
+      "title": "2026년 11월 19일 연중 제33주간 목요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-18",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7999",
+      "mass_date": "2026-11-19",
+      "priest": "조명연",
+      "excerpt": "책에서 윌리엄 골딩의 ‘파리 대왕’을 이야기하는 글을 읽었습니다."
+    },
     {
       "id": "daum_catholicsb_7462",
       "title": "전삼용 요셉 신부 / 연중 제33주간 수요일 - 변명은 원망이다",
@@ -58,6 +78,16 @@
       "mass_date": "2026-11-18",
       "priest": "김경진",
       "excerpt": ""
+    },
+    {
+      "id": "2140497",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-18",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140497&menu=4770",
+      "mass_date": "2026-11-18",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7461",

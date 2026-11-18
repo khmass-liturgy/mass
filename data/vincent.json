@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-18 11:53",
+  "updated": "2026-11-19 03:01",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "QEH99j0XUgI",
+      "date": "2026-11-19",
+      "title": "연중 제33주간 목요일",
+      "url": "https://www.youtube.com/watch?v=QEH99j0XUgI"
+    },
     {
       "videoId": "yP5xGpgAb2Q",
       "date": "2026-11-18",
@@ -57,12 +63,6 @@
       "date": "2026-11-10",
       "title": "성 대 레오 교황 학자 기념일",
       "url": "https://www.youtube.com/watch?v=moEzcaWyR6k"
-    },
-    {
-      "videoId": "-HSZU6SmTeQ",
-      "date": "2026-11-09",
-      "title": "라테라노 대성전 봉헌 축일",
-      "url": "https://www.youtube.com/watch?v=-HSZU6SmTeQ"
     }
   ]
 }

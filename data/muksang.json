@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-18 20:27",
-  "cutoff": "2026-11-17",
+  "updated": "2026-11-19 05:20",
+  "cutoff": "2026-11-18",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7463",
@@ -38,6 +38,16 @@
       "mass_date": "2026-11-19",
       "priest": "조명연",
       "excerpt": "책에서 윌리엄 골딩의 ‘파리 대왕’을 이야기하는 글을 읽었습니다."
+    },
+    {
+      "id": "daum_bbadaking_2275",
+      "title": "2026년 11월 19일 연중 제33주간 목요일",
+      "author": "박 베로니카",
+      "date": "2026-11-19",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2275",
+      "mass_date": "2026-11-19",
+      "priest": "양승국",
+      "excerpt": "오늘도 우리때문에 우시는 하느님!"
     },
     {
       "id": "daum_catholicsb_7462",
@@ -86,46 +96,6 @@
       "date": "2026-11-18",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140497&menu=4770",
       "mass_date": "2026-11-18",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7461",
-      "title": "전삼용 요셉 신부 / 연중 제33주간 화요일 - 세상이 만만해 보여야 믿음이다",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-16",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7461",
-      "mass_date": "2026-11-17",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 화요일 복음: 루카 19,1-10…"
-    },
-    {
-      "id": "daum_bbadaking_7997",
-      "title": "2026년 11월 17일 연중 제33주간 화요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-16",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7997",
-      "mass_date": "2026-11-17",
-      "priest": "조명연",
-      "excerpt": "2026년 11월 17일 헝가리의 성녀 엘리사벳 수도자 기념일 고등학생 때,…"
-    },
-    {
-      "id": "daum_bbadaking_2273",
-      "title": "2026년 11월 17일 연중 제33주간 화요일",
-      "author": "박 베로니카",
-      "date": "2026-11-17",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2273",
-      "mass_date": "2026-11-17",
-      "priest": "양승국",
-      "excerpt": "티 없음에서 더러움으로, 더러움에서 다시 티 없음으로!"
-    },
-    {
-      "id": "2140451",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-17",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140451&menu=4770",
-      "mass_date": "2026-11-17",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

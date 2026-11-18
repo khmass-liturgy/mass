@@ -1,43 +1,43 @@
 {
-  "updated": "2026-11-18 07:52",
-  "date": "2026-11-18",
-  "topicIndex": 7,
-  "topic": "일회용품 줄이기",
-  "query": "일회용품 줄이기 가톨릭",
+  "updated": "2026-11-19 07:35",
+  "date": "2026-11-19",
+  "topicIndex": 8,
+  "topic": "자연 보호와 창조 질서 보전",
+  "query": "창조질서 보전 가톨릭",
   "video": {
-    "videoId": "1KzJgLyf2ys",
-    "title": "플라스틱 다이어트를 위한 첫걸음, 올바른 분리배출방법 [가톨릭대 Save-GG]",
-    "channel": "한국소비자원 대학생 서포터즈",
-    "duration": 218,
-    "published": "5년 전"
+    "videoId": "cT4Lb8mhVpc",
+    "title": "창조질서 위기…해답은 `오래된 미래`",
+    "channel": "cpbc 뉴스",
+    "duration": 191,
+    "published": "7년 전"
   },
   "more": [
     {
-      "videoId": "UKNYhhSP3cg",
-      "title": "제로 웨이스트 (Zero Waste) ! 쓰레기를 줄이는 방법은 바로 친환경 제품 적극 사용│토크콘서트 For You 94회 껍데기는 가라 편",
-      "channel": "cpbcTV가톨릭콘텐츠의모든것",
-      "duration": 2339,
-      "published": "5년 전"
+      "videoId": "CFqW7iyr13E",
+      "title": "김유정유스티노 : 2024년 9월 1일 연중 제22주일 ＜창조 질서 보전을 위한 세계 기도의 날＞",
+      "channel": "김유정 유스티노 신부님의  \"오늘의 강론\"",
+      "duration": 651,
+      "published": "2년 전"
     },
     {
-      "videoId": "wDyX6MxB68w",
-      "title": "대형 축제 '쓰레기' 몸살, 일회용품 줄이기 등 바람직한 해법은 - 오현화 가톨릭기후행동 공동대표  | 함께하는 세상, 오늘 (2025.10.23.목)",
-      "channel": "광주가톨릭평화방송",
-      "duration": 1303,
-      "published": "스트리밍 시간: 1년 전"
+      "videoId": "bMaXCI6FmFw",
+      "title": "정의․평화․창조보전 양성학교 개설 신입생 모집 26일까지",
+      "channel": "cpbc 뉴스",
+      "duration": 66,
+      "published": "7년 전"
     },
     {
-      "videoId": "Ku3Ux8nCsKc",
-      "title": "DCU도 '1회용품 제로 챌린지'에 동참합니다😊",
-      "channel": "대구가톨릭대학교",
-      "duration": 119,
+      "videoId": "xIkk0VH-E10",
+      "title": "제18회 가톨릭 환경상 공모",
+      "channel": "cpbc 뉴스",
+      "duration": 74,
       "published": "3년 전"
     },
     {
-      "videoId": "XJ7_rbBrF98",
-      "title": "텀블러를 사용해 환경을 보호해요~",
-      "channel": "원주가톨릭종합사회복지관",
-      "duration": 75,
+      "videoId": "_ImQp8aQhBc",
+      "title": "2023 창조시기를 준비하며: 정의와 평화를 흐르게 하여라 (Prepare for Season of Creation 2023: Let Justice and Peace Flow)",
+      "channel": "가톨릭기후행동 LSM KOREA",
+      "duration": 109,
       "published": "3년 전"
     }
   ],
@@ -456,18 +456,18 @@
           "published": "7년 전"
         },
         {
+          "videoId": "xIkk0VH-E10",
+          "title": "제18회 가톨릭 환경상 공모",
+          "channel": "cpbc 뉴스",
+          "duration": 74,
+          "published": "3년 전"
+        },
+        {
           "videoId": "_ImQp8aQhBc",
           "title": "2023 창조시기를 준비하며: 정의와 평화를 흐르게 하여라 (Prepare for Season of Creation 2023: Let Justice and Peace Flow)",
           "channel": "가톨릭기후행동 LSM KOREA",
           "duration": 109,
           "published": "3년 전"
-        },
-        {
-          "videoId": "Zx4mR03tYuc",
-          "title": "JPIC, 환경을 지킨다는 이 말이 무슨 의미인가요? [중세라이브 시즌2_초이스] 황중호 베드로 신부 | 이영준 모이세 신부 | 한국천주교여자수도회장상연합회 JPIC 분과 |",
-          "channel": "cpbcTV가톨릭콘텐츠의모든것",
-          "duration": 1224,
-          "published": "4년 전"
         }
       ]
     },
@@ -1040,6 +1040,10 @@
     {
       "date": "2026-11-18",
       "videoId": "1KzJgLyf2ys"
+    },
+    {
+      "date": "2026-11-19",
+      "videoId": "cT4Lb8mhVpc"
     }
   ]
 }

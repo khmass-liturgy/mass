@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-18 03:34",
+  "updated": "2026-11-18 11:54",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "7qTNFTnSZlY",
+      "date": "2026-11-18",
+      "liturgy": "연중 제33주간 수요일",
+      "priest": "정택진 베드로 신부",
+      "url": "https://www.youtube.com/watch?v=7qTNFTnSZlY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "rGOay5dF1Z8",
       "date": "2026-11-17",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제31주간 목요일",
       "priest": "김용수 미카엘 신부",
       "url": "https://www.youtube.com/watch?v=AY6TAqismX4&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "QKvTyxTbTsY",
-      "date": "2026-11-04",
-      "liturgy": "성 가롤로 보로메오 주교 기념일",
-      "priest": "한요한 요한 신부",
-      "url": "https://www.youtube.com/watch?v=QKvTyxTbTsY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

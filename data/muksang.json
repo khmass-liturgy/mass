@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19 05:20",
+  "updated": "2026-11-19 11:27",
   "cutoff": "2026-11-18",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 9,
   "posts": [
     {
       "id": "daum_catholicsb_7463",
@@ -48,6 +48,16 @@
       "mass_date": "2026-11-19",
       "priest": "양승국",
       "excerpt": "오늘도 우리때문에 우시는 하느님!"
+    },
+    {
+      "id": "daum_bbadaking_220",
+      "title": "우리가 만나고 싶어 하는 하느님은 과연 어떤 모습으로 우리에게 찾아오실까요…",
+      "author": "환희 평화",
+      "date": "2026-11-19",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/220",
+      "mass_date": "2026-11-19",
+      "priest": "김경진",
+      "excerpt": ""
     },
     {
       "id": "daum_catholicsb_7462",

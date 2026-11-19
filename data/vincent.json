@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-19 11:32",
+  "updated": "2026-11-20 03:14",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "DiehMaTYf2Q",
+      "date": "2026-11-20",
+      "title": "연중 제33주간 금요일",
+      "url": "https://www.youtube.com/watch?v=DiehMaTYf2Q"
+    },
     {
       "videoId": "QEH99j0XUgI",
       "date": "2026-11-19",
@@ -57,12 +63,6 @@
       "date": "2026-11-11",
       "title": "투르의 성 마르티노 주교 기념일",
       "url": "https://www.youtube.com/watch?v=VMijmLOtoG4"
-    },
-    {
-      "videoId": "moEzcaWyR6k",
-      "date": "2026-11-10",
-      "title": "성 대 레오 교황 학자 기념일",
-      "url": "https://www.youtube.com/watch?v=moEzcaWyR6k"
     }
   ]
 }

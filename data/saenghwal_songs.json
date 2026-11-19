@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-17 21:09",
+  "updated": "2026-11-19 11:07",
   "source": "YouTube 가톨릭 생활성가 (조회수 많은 곡을 골라 정리)",
-  "count": 48,
+  "count": 45,
   "items": [
     {
       "title": "성모님께 바치는 노래",
@@ -36,14 +36,6 @@
       "url": "https://www.youtube.com/watch?v=DUiuHoBmm1k"
     },
     {
-      "title": "하느님은 너를 지키시는 분",
-      "artist": "노래해주리",
-      "videoId": "AJUMwcZNLwk",
-      "duration": 239,
-      "views": 1062361,
-      "url": "https://www.youtube.com/watch?v=AJUMwcZNLwk"
-    },
-    {
       "title": "사랑하는 그대에게",
       "artist": "열일곱이다",
       "videoId": "pewjD1abYXg",
@@ -66,14 +58,6 @@
       "duration": 307,
       "views": 926725,
       "url": "https://www.youtube.com/watch?v=-WbbwEyJ3KQ"
-    },
-    {
-      "title": "임마누엘",
-      "artist": "노래해주리",
-      "videoId": "gQLNCRykJbU",
-      "duration": 239,
-      "views": 907700,
-      "url": "https://www.youtube.com/watch?v=gQLNCRykJbU"
     },
     {
       "title": "꽃",
@@ -100,14 +84,6 @@
       "url": "https://www.youtube.com/watch?v=mnGc9Pf_8S4"
     },
     {
-      "title": "누군가 널 위해 기도하네",
-      "artist": "노래해주리",
-      "videoId": "buvLW0ULuj0",
-      "duration": 249,
-      "views": 654253,
-      "url": "https://www.youtube.com/watch?v=buvLW0ULuj0"
-    },
-    {
       "title": "소중한 사람을 위한 기도",
       "artist": "열일곱이다",
       "videoId": "KA0D0IfVFvg",
@@ -116,28 +92,12 @@
       "url": "https://www.youtube.com/watch?v=KA0D0IfVFvg"
     },
     {
-      "title": "아버지",
-      "artist": "노래해주리",
-      "videoId": "TEwf7gAICZI",
-      "duration": 216,
-      "views": 546166,
-      "url": "https://www.youtube.com/watch?v=TEwf7gAICZI"
-    },
-    {
       "title": "기대",
       "artist": "기도를 켜다",
       "videoId": "Bg5GECvt7nE",
       "duration": 302,
       "views": 542095,
       "url": "https://www.youtube.com/watch?v=Bg5GECvt7nE"
-    },
-    {
-      "title": "이는 내 사랑하는 아들이니",
-      "artist": "노래해주리",
-      "videoId": "4-sbfU7Fw2Y",
-      "duration": 285,
-      "views": 523682,
-      "url": "https://www.youtube.com/watch?v=4-sbfU7Fw2Y"
     },
     {
       "title": "사랑의 송가",
@@ -204,6 +164,14 @@
       "url": "https://www.youtube.com/watch?v=DhCrO_hoWfs"
     },
     {
+      "title": "아버지",
+      "artist": "열일곱이다",
+      "videoId": "pz2Fw-j8V60",
+      "duration": 230,
+      "views": 287563,
+      "url": "https://www.youtube.com/watch?v=pz2Fw-j8V60"
+    },
+    {
       "title": "삼위일체",
       "artist": "기도를 켜다",
       "videoId": "6Ujog13ouMs",
@@ -218,14 +186,6 @@
       "duration": 262,
       "views": 191044,
       "url": "https://www.youtube.com/watch?v=9CGOu8Jyi_g"
-    },
-    {
-      "title": "나는 살아서도 죽어서도",
-      "artist": "노래해주리",
-      "videoId": "LQ16b6ys1Bs",
-      "duration": 263,
-      "views": 144250,
-      "url": "https://www.youtube.com/watch?v=LQ16b6ys1Bs"
     },
     {
       "title": "소명",
@@ -287,8 +247,8 @@
       "title": "복음의 기쁨",
       "artist": "열일곱이다",
       "videoId": "NVRTyuaLfng",
-      "duration": 312,
-      "views": 50956,
+      "duration": 311,
+      "views": 51004,
       "url": "https://www.youtube.com/watch?v=NVRTyuaLfng"
     },
     {
@@ -314,6 +274,14 @@
       "duration": 201,
       "views": 45954,
       "url": "https://www.youtube.com/watch?v=cTAzOPI63OQ"
+    },
+    {
+      "title": "이는 내 사랑하는 아들이니",
+      "artist": "이노주사",
+      "videoId": "rIVt0rfz64w",
+      "duration": 297,
+      "views": 44336,
+      "url": "https://www.youtube.com/watch?v=rIVt0rfz64w"
     },
     {
       "title": "영원히 너의 곁에",
@@ -364,11 +332,19 @@
       "url": "https://www.youtube.com/watch?v=p8ZaiMR-d68"
     },
     {
+      "title": "얻어먹을 수 있는 힘만 있어도",
+      "artist": "꽃동네 수도자 찬미단",
+      "videoId": "p6CoTUUb3Ws",
+      "duration": 180,
+      "views": 26605,
+      "url": "https://www.youtube.com/watch?v=p6CoTUUb3Ws"
+    },
+    {
       "title": "수도 삶",
       "artist": "꽃동네 수도자 찬미단",
       "videoId": "FgRdkckXMjc",
-      "duration": 246,
-      "views": 13449,
+      "duration": 245,
+      "views": 13453,
       "url": "https://www.youtube.com/watch?v=FgRdkckXMjc"
     },
     {

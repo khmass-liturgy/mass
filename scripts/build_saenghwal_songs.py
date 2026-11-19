@@ -45,19 +45,14 @@ HEADERS = {
 
 # (영상 id, 곡명, 부른 이)
 PICKS = [
-    ("7Xwlt-2JUak", "성모님께 바치는 노래", "기도를 켜다"),
-    ("M_TiaOBeCzw", "주님의 기도", "기도를 켜다"),
     ("pxrMdVsw6E0", "아무것도 너를", "열일곱이다"),
     ("DUiuHoBmm1k", "난 네가 좋다", "열일곱이다"),
     ("pewjD1abYXg", "사랑하는 그대에게", "열일곱이다"),
-    ("U2eD-vxLDdU", "그 길", "기도를 켜다"),
     ("-WbbwEyJ3KQ", "하느님 당신은 나의 모든 것", "노래해주리"),
-    ("FcMqITwuI5Y", "꽃", "기도를 켜다"),
     ("DLL3RDUfyXg", "구원자 예수 너의 사랑", "열일곱이다"),
     ("mnGc9Pf_8S4", "고백 - 하늘바라기", "열일곱이다"),
     ("KA0D0IfVFvg", "소중한 사람을 위한 기도", "열일곱이다"),
     ("pz2Fw-j8V60", "아버지", "열일곱이다"),
-    ("Bg5GECvt7nE", "기대", "기도를 켜다"),
     ("rIVt0rfz64w", "이는 내 사랑하는 아들이니", "이노주사"),
     ("Ir1BMC6V8NU", "사랑의 송가", "열일곱이다"),
     ("RA4QJ9usUOk", "하늘의 태양은 못 되더라도", "권용석 아마데오"),
@@ -67,7 +62,6 @@ PICKS = [
     ("2k2AdSMlESA", "갈림 없는 마음", "열일곱이다"),
     ("aQvYvTjCflg", "처음과 같이 끝에서도", "열일곱이다"),
     ("DhCrO_hoWfs", "예수 내 작은 기쁨", "열일곱이다"),
-    ("6Ujog13ouMs", "삼위일체", "기도를 켜다"),
     ("9CGOu8Jyi_g", "풀꽃의 노래", "잔꽃송이(예수성심시녀회)"),
     ("pXeSg6f5mpI", "소명", "열일곱이다"),
     ("XTm4Wa1scmI", "힘을 내라", "한덕훈 신부"),
@@ -77,7 +71,6 @@ PICKS = [
     ("8X3VIPS4j_I", "귀천 (순교자의 기도)", "열일곱이다"),
     ("6VbwrLAGINI", "당신만으로 충분합니다", "열일곱이다"),
     ("NVRTyuaLfng", "복음의 기쁨", "열일곱이다"),
-    ("OIP0iN9EXd4", "참 아름다운 그대", "기도를 켜다"),
     ("vDbgMVR0r8s", "축제", "제이팸"),
     ("cTAzOPI63OQ", "로고스 찬가", "윤요셉 신부"),
     ("KSSzGK0mWBA", "영원히 너의 곁에", "바오로딸"),
@@ -99,6 +92,11 @@ EXCLUDED = {
     "하느님은 너를 지키시는 분": "개신교 찬양 '하나님은 너를 지키시는 자'를 바꿔 부른 곡",
     "임마누엘": "가톨릭 곡인지 확인되지 않음 (커버 채널 영상)",
     "나는 살아서도 죽어서도": "가톨릭 곡인지 확인되지 않음 (커버 채널 영상)",
+}
+
+# 넣지 않기로 한 채널(부른 이) — 이 채널 영상은 곡과 상관없이 넣지 않는다.
+EXCLUDED_ARTISTS = {
+    "기도를 켜다": "운영자 요청으로 제외 (2026-11)",
 }
 
 
@@ -151,6 +149,9 @@ def main():
     for vid, title, artist in PICKS:
         if title in EXCLUDED:                    # 넣지 않기로 한 곡이 다시 들어오면 막는다
             skipped.append(f"{vid} {title} (제외 목록: {EXCLUDED[title]})")
+            continue
+        if artist in EXCLUDED_ARTISTS:           # 넣지 않기로 한 채널
+            skipped.append(f"{vid} {title} (제외 채널: {artist})")
             continue
         alive = oembed_alive(vid)
         if alive is False:

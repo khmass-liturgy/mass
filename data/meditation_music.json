@@ -271,7 +271,7 @@
       "videoId": "T8osmOCdiOE",
       "title": "가톨릭부활성가 모음곡 - 룩스챔버콰이어 Lux Chamber Choir",
       "seasons": [
-        "general"
+        "easter"
       ]
     },
     {
@@ -399,13 +399,14 @@
       "videoId": "z15-o0QanmQ",
       "title": "가톨릭 부활성가 1시간 모음 - 룩스챔버콰이어 Lux Chamber Choir",
       "seasons": [
-        "general"
+        "easter"
       ]
     },
     {
       "videoId": "Tpwp1OZEoZY",
       "title": "묵상하며 듣는 가톨릭 성체성가 1시간 모음  - 룩스챔버콰이어 Lux Chamber Choir",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -498,7 +499,7 @@
       "videoId": "kPoZRB3mDdE",
       "title": "성탄시기를 맞이하여 기쁜 마음으로 듣는 가톨릭성가 1시간 듣기 - 룩스챔버콰이어 Lux chamber choir",
       "seasons": [
-        "general"
+        "christmas"
       ]
     },
     {
@@ -751,6 +752,7 @@
       "videoId": "657PR2-DPBU",
       "title": "[가톨릭 성가 506번] 사랑으로 오신 주여 /칸디도 보칼레 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -793,6 +795,7 @@
       "videoId": "YE2_5hezwY8",
       "title": "[가톨릭 성가 507번] 나의 주 예수여 / 칸디도 보칼레 / 성체 / 미국성가 / SATB 앙상블 / Catholic Hymn",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -905,6 +908,7 @@
       "videoId": "PrCUg_wewAU",
       "title": "[가톨릭 성가 501번] 받으소서 우리 마음 / 칸디도 보칼레 / 성체 / Joseph Wise / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -912,6 +916,7 @@
       "videoId": "Lb6x98C65eA",
       "title": "[가톨릭 성가 499번] 만찬의 신비 / 칸디도 보칼레 / 성체 / Robert L. Pearsall / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1010,6 +1015,7 @@
       "videoId": "237tIO06owc",
       "title": "[가톨릭 성가 500번] 전능하신 주의 사랑 / 칸디도 보칼레 / 성체 / 독일성가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1045,6 +1051,7 @@
       "videoId": "y5fu1wDULu4",
       "title": "[가톨릭 성가 186번] 구원을 위한 희생 O Salutaris Hostia / 칸디도 보칼레 / 성체 / Alajos Wemer / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1157,6 +1164,7 @@
       "videoId": "e3KudmLo0Sg",
       "title": "[가톨릭 성가 161번] 성체를 찬송하세 / 칸디도 보칼레 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1164,6 +1172,7 @@
       "videoId": "GlBTI63A5EQ",
       "title": "[가톨릭 성가 155번] 우리 주 예수 / 칸디도 보칼레 / 성체 / Franz B. Bihlers / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1213,6 +1222,7 @@
       "videoId": "LTvLwiV6NuQ",
       "title": "[가톨릭 성가 160번] 하느님의 어린양 / 칸디도 보칼레 / Demore / 이문근 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1227,6 +1237,7 @@
       "videoId": "k5Mr8us7QxM",
       "title": "[가톨릭 성가 165번] 주의 잔치 / 칸디도 보칼레 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1269,6 +1280,7 @@
       "videoId": "YXXrw1vf3Qo",
       "title": "[가톨릭 성가 175번] 이보다 더 큰 은혜와 / 칸디도 보칼레 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1311,6 +1323,7 @@
       "videoId": "lmvT6sgW6tc",
       "title": "[가톨릭 성가 183번] 구원을 위한 희생 O Salutaris Hostia / 칸디도 보칼레, 첼리스트 임은열 안나 / 첼로의 선율과 함께하는 4성부 앙상블 / 성체",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1318,6 +1331,7 @@
       "videoId": "rOR2oTvrtAc",
       "title": "[가톨릭 성가 197번] 나그네 양식이요 O Esca Viatorum / 첼로의 선율과 함께하는 4성부 앙상블 / 칸디도 보칼레, 첼리스트 임은열 안나 / 성체",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1374,6 +1388,7 @@
       "videoId": "fPvZWVabjw0",
       "title": "[가톨릭 성가 169번] 사랑의 성사 / 칸디도 보칼레 / 성체 / Heinrich Isaac 곡 / Catholic Hymn / SATB 앙상블 / 4성부",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1381,6 +1396,7 @@
       "videoId": "WE6dH5AbAp8",
       "title": "[가톨릭 성가 171번] 오 거룩한 생명의 샘 / 칸디도 보칼레 / 성체 / 정인상 곡 /   Catholic Hymn / SATB 앙상블 / 4성부",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1388,6 +1404,7 @@
       "videoId": "dH0kyGBxnVk",
       "title": "[가톨릭 성가 170번] 자애로운 예수 / 칸디도 보칼레 / 성체 / 김영선 곡 / Catholic Hymn / SATB 앙상블 / 4성부",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1395,6 +1412,7 @@
       "videoId": "kv3mXe3IBAM",
       "title": "[가톨릭 성가 182번] 신묘하온 이 영적 / 칸디도 보칼레 / 성체 / Trad. Melody / Catholic Hymn / SATB 앙상블 / 4성부",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1402,6 +1420,7 @@
       "videoId": "9LzQw37tQ24",
       "title": "[가톨릭 성가 187번] 천사의 양식 Panis Angelicus / 칸디도 보칼레 / 성체 / J. Mohr 곡 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1416,6 +1435,7 @@
       "videoId": "Xh1ieINP620",
       "title": "[가톨릭 성가 172번] 그리스도의 영혼 / 칸디도 보칼레 / 성체 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1430,6 +1450,7 @@
       "videoId": "h3Kp_TLyiqM",
       "title": "[가톨릭 성가 158번] 구세주 예수 그리스도 / 칸디도 보칼레 / 성체 / Felix Mendelssohn 곡 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1437,6 +1458,7 @@
       "videoId": "1ATO5I4V9C0",
       "title": "[가톨릭 성가 177번] 만나를 먹은 이스라엘 백성 / 칸디도 보칼레 / 성체 / Dea Ton 곡 / Catholic hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1458,6 +1480,7 @@
       "videoId": "hWgiyTItuec",
       "title": "[가톨릭 성가 176번] 믿음 소망 사랑 / 칸디도 보칼레 / 성체 / 프랑스 성가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1472,6 +1495,7 @@
       "videoId": "xd3KZgKUcOk",
       "title": "[가톨릭 성가 496번] 주님은 우리 사랑하셨네 / 칸디도 보칼레 / 성체 / 흑인영가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1535,6 +1559,7 @@
       "videoId": "sWj8FmiY4M0",
       "title": "[가톨릭 성가 196번] 오 착한 예수 O Bone Jesu / 칸디도 보칼레 / 성체 / G.P. da Palestrina / SATB 앙상블 / Catholic Hymn",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1675,6 +1700,7 @@
       "videoId": "iiBATxku0-0",
       "title": "[구독자 1000명 달성 기념 / 가톨릭 성가 503번] 생명의 양식 Panis Angelicus / 칸디도보칼레 / 성체성가 / Cesar Franck / 가톨릭성가",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1780,6 +1806,7 @@
       "videoId": "etygM_EGTlU",
       "title": "[가톨릭 성가 166번] 생명의 양식  I Am the bread of life - 칸디도 보칼레, Clara Kim/성체성가/Suzanne Toolan/가톨릭성가/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1871,6 +1898,7 @@
       "videoId": "BM_-m8O1N-w",
       "title": "[가톨릭 성가 180번] 주님의 작은 그릇 Jesus bleibet meine Freude / 칸디도 보칼레 / 성체성가  / J.S.Bach / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1878,6 +1906,7 @@
       "videoId": "GLTU5moSoF0",
       "title": "[가톨릭 성가 185번] 구원의 희생자 O Salutaris Hostia /칸디도보칼레/Lorenzo Perosi/성체성가",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1927,6 +1956,7 @@
       "videoId": "oVsJJ3xdPBc",
       "title": "[가톨릭 성가 179번] 주의 사랑 전하리 - 칸디도 보칼레 /성체성가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1990,6 +2020,7 @@
       "videoId": "OuinB7heTIQ",
       "title": "[가톨릭 성가 151번] 주여 임하소서 Nearer, my God, to Thee / 칸디도보칼레/성체성가/가톨릭성가/Lowell Mason/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -1997,6 +2028,7 @@
       "videoId": "wXXZscacHww",
       "title": "[가톨릭 성가 498번] 예수여 기리리다 - 칸디도보칼레 / 성체성가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2018,6 +2050,7 @@
       "videoId": "FgDnOsjhcGg",
       "title": "[가톨릭 성가 174번] 사랑의 신비 - 칸디도보칼레/성체성가/가톨릭성가/성가",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2032,6 +2065,7 @@
       "videoId": "su5kbsGzbGU",
       "title": "[가톨릭 성가 188번]  천사의 양식 Panis Angelicus - Fr. Lambillotte / 칸디도 보칼레 / 성체 성가 / Catholic Hymn / SATB 앙상블",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2046,6 +2080,7 @@
       "videoId": "bDWjkYLwKSA",
       "title": "[가톨릭 성가 156번] 한 말씀만 하소서 /칸디도 보칼레/가톨릭성가/성체성가/성가",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2060,6 +2095,7 @@
       "videoId": "CVVUa6rCmvA",
       "title": "[가톨릭 성가 164번] 떡과 술의 형상에 - 칸디도 보칼레/비대면성가/성체성가/가톨릭성가/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2165,6 +2201,7 @@
       "videoId": "piBOAdaYdnY",
       "title": "[가톨릭 성가 334번] 미사곡 여섯 '사랑의 성체성사' - 칸디도 보칼레",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2256,6 +2293,7 @@
       "videoId": "wmtlBFksZIs",
       "title": "[가톨릭 성가 344번] 하이든 미사곡( Michael Haydn - Deutsche Messe-Zur Kommunion) 영성체 - 칸디도 보칼레/성체성가/Haydn/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2333,6 +2371,7 @@
       "videoId": "VKHyFAiX5tE",
       "title": "[가톨릭 성가 190번] Tantum Ergo '지존하신 성체 - 칸디도 보칼레/Tantum ergo/Minard/가톨릭성가/지존하신성체/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },
@@ -2347,6 +2386,7 @@
       "videoId": "2Bz6bcozShc",
       "title": "[가톨릭 성가 194번] Ave Verum Corpus '성체 안에 계신 예수' - 칸디도 보칼레/모차르트/아베베룸/가톨릭성가/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },

@@ -2574,7 +2574,8 @@ window.WeatherFx = (function(){
     // 오늘의 묵상성가 — 지금 시기에 어울리는 성가 영상을 날마다(한국 시간) 한 곡씩 돌려 보여 준다.
     // 같은 성가가 자주 되풀이되지 않도록
     //   · 번호가 같은 성가(합창단만 다른 영상)는 한 곡으로 묶어, 돌아올 때마다 다른 합창단 영상을 번갈아 낸다.
-    //   · 대림·성탄·사순·부활 시기와 성체 성혈 대축일 주간에는 그 시기 성가를 날마다 낸다.
+    //   · 성체성가는 일 년 내내 사흘에 한 번씩 낸다 (성체 성혈 대축일 주간에는 날마다).
+    //   · 대림·성탄·사순·부활 시기에는 나머지 날에 그 시기 성가를 낸다.
     //   · 연중 시기의 성월 성가가 15곡보다 적으면(예: 11월 위령 성가) 성월 성가와 일반 묵상성가를 하루씩 번갈아 낸다.
     //   · 목록은 떼제 카드처럼 섞어서 돌리고, 한 바퀴를 다 돌기 전에는 같은 곡이 다시 나오지 않는다.
     // 곡 목록과 시기 분류는 data/meditation_music.json (scripts/fetch_meditation_music.py 가 갱신).
@@ -2686,20 +2687,32 @@ window.WeatherFx = (function(){
           }
 
           var keys = seasonKeys();
-          var seasonal = keys.length ? groupSongs(pool(keys)) : [];
-          var seasonalKeys = {};
-          seasonal.forEach(function(g){ seasonalKeys[songKey(g[0])] = true; });
-          var general = groupSongs(pool(['general']), seasonalKeys);
+          var corpusWeek = keys[0] === 'eucharist';          // 성체 성혈 대축일 주간
+          // 성체성가는 일 년 내내 사흘에 한 번씩 따로 낸다 — 시기·일반 목록에서는 빼서 겹치지 않게.
+          var eucharist = groupSongs(pool(['eucharist']));
+          var euchKeys = {};
+          eucharist.forEach(function(g){ euchKeys[songKey(g[0])] = true; });
+          var seasonal = keys.length ? groupSongs(pool(keys), corpusWeek ? null : euchKeys) : [];
+          var skip = {};
+          Object.keys(euchKeys).forEach(function(k){ skip[k] = true; });
+          seasonal.forEach(function(g){ skip[songKey(g[0])] = true; });
+          var general = groupSongs(pool(['general']), skip);
           if (!general.length) general = groupSongs(all);
           var day = kstDayNumber();
           var it;
-          // 전례 시기·성체 성혈 대축일 주간이거나 시기 성가가 넉넉하면 날마다 시기 성가
-          if (seasonal.length && (inLiturgicalSeason() || keys[0] === 'eucharist' || seasonal.length >= 15)) {
-            it = pick(seasonal, day, 1);
-          } else if (seasonal.length && day % 2 === 0) {
-            it = pick(seasonal, Math.floor(day / 2), 1);       // 적으면 짝수 날은 시기 성가
+          if (!corpusWeek && eucharist.length && day % 3 === 0) {
+            it = pick(eucharist, day / 3, 3);                  // 사흘에 한 번은 성체성가
           } else {
-            it = pick(general, seasonal.length ? Math.floor(day / 2) : day, 2);   // 나머지 날은 일반 묵상성가
+            // 나머지 날만 세는 번호 — 성체성가 날을 건너뛰어도 아래 목록이 끊김 없이 이어진다.
+            var n = corpusWeek ? day : day - Math.floor(day / 3) - 1;
+            // 전례 시기·성체 성혈 대축일 주간이거나 시기 성가가 넉넉하면 날마다 시기 성가
+            if (seasonal.length && (inLiturgicalSeason() || corpusWeek || seasonal.length >= 15)) {
+              it = pick(seasonal, n, 1);
+            } else if (seasonal.length && n % 2 === 0) {
+              it = pick(seasonal, Math.floor(n / 2), 1);       // 적으면 시기 성가와 일반 묵상성가를 번갈아
+            } else {
+              it = pick(general, seasonal.length ? Math.floor(n / 2) : n, 2);
+            }
           }
           card.href = 'https://youtu.be/' + it.videoId;
           desc.textContent = cleanTitle(it.title) || '오늘의 묵상성가';

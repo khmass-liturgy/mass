@@ -123,6 +123,31 @@ SEASON_BY_CATEGORY = {
     "대림": "advent", "성탄": "christmas", "사순": "lent", "부활": "easter",
     "성모": "marian", "성심": "sacredheart", "위령": "souls",
 }
+# 성체성가는 화면에서 사흘에 한 번씩 따로 낸다. 성가집 분류나 제목에 '성체'가 있으면 이렇게 붙인다.
+EUCHARIST = ["eucharist", "general"]
+# 번호가 없는 모음 영상('가톨릭 부활성가 1시간 모음' 등)은 제목의 말로 시기를 정한다.
+TITLE_SEASON_WORDS = [
+    (re.compile(r"대림"), "advent"),
+    (re.compile(r"성탄|크리스마스|캐럴|Christmas", re.I), "christmas"),
+    (re.compile(r"사순|성주간|수난"), "lent"),
+    (re.compile(r"부활"), "easter"),
+    (re.compile(r"위령"), "souls"),
+    (re.compile(r"성모\s*성가|성모\s*찬송"), "marian"),
+]
+
+
+def title_seasons(title: str, has_number: bool):
+    """제목 꼬리표로 정할 수 있으면 시기 목록을, 아니면 None.
+    '성체'는 번호가 있어도 따른다(칸디도 보칼레 영상은 제목에 '/ 성체 /'가 붙는다).
+    다른 시기 말은 번호가 없는 모음 영상에만 쓴다 — 번호가 있으면 성가집 분류가 더 정확하다."""
+    if "성체" in title:
+        return list(EUCHARIST)
+    if has_number:
+        return None
+    for pat, season in TITLE_SEASON_WORDS:
+        if pat.search(title):
+            return [season]
+    return None
 # 분류만으로는 못 정하는 곡을 직접 적는다. 성가 번호 → 시기 목록.
 SEASON_OVERRIDES = {
     271: ["rosary", "marian"],   # 로사리오 기도 드릴 때 — 10월 묵주기도성월
@@ -145,12 +170,17 @@ def classify(title: str) -> list:
     if "성모성월" in title:
         return ["marianmonth"]   # 5월 성모성월에만 쓴다. 10월 등 그냥 성모 주제 달에는 안 나온다.
     m = HYMN_NO_RE.search(title)
+    by_title = title_seasons(title, bool(m))
+    if by_title:
+        return by_title
     if not m:
         return ["general"]
     no = int(m.group(1))
     if no in SEASON_OVERRIDES:
         return SEASON_OVERRIDES[no]
     cat = hymn_category(no)
+    if cat == "성체":
+        return list(EUCHARIST)
     if cat == "성인":
         return ["martyrs"] if "순교" in title else ["general"]
     return [SEASON_BY_CATEGORY.get(cat, "general")]

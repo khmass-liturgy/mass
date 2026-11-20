@@ -377,6 +377,10 @@
   .dday-list{margin-top:8px;background:var(--card,#fff);border-radius:6px;padding:4px 14px;box-shadow:0 8px 30px rgba(26,39,68,.12);}
   .dday-row{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line,#E3DCCD);font-size:.86rem;color:var(--ink,#22303F);}
   .dday-row:last-child{border-bottom:none;}
+  a.dday-row{text-decoration:none;cursor:pointer;border-radius:4px;transition:background .15s;}
+  a.dday-row:hover{background:rgba(201,168,76,.12);}
+  .dday-row .dday-row-main{flex:1;min-width:0;}
+  .dday-row .dday-row-go{flex:none;align-self:center;font-size:.72rem;font-weight:700;color:var(--gold,#B98A2F);white-space:nowrap;}
   .dday-row .dday-when{flex:none;min-width:84px;font-weight:700;color:var(--navy,#1A2744);}
   .dday-row.is-next{color:var(--navy,#1A2744);font-weight:700;}
   .dday-empty{font-size:.86rem;color:var(--muted,#6B7A8C);padding:10px 0;}
@@ -3717,8 +3721,13 @@ window.WeatherFx = (function(){
       listEl.innerHTML = list.map(function(x, i){
         var cls = 'dday-row' + (i === 0 ? ' is-next' : '');
         var info = SOLEMNITY_INFO[x.name];
-        return '<div class="' + cls + '"><span class="dday-when">' + fmt(x.date) + '</span><span>' + x.name
-          + (info ? '<span class="dday-row-info">' + info + '</span>' : '') + '</span></div>';
+        // 줄을 누르면 그날의 매일미사(한국천주교주교회의)로 바로 간다.
+        var ymd = x.date.getFullYear() + ('0' + (x.date.getMonth() + 1)).slice(-2) + ('0' + x.date.getDate()).slice(-2);
+        return '<a class="' + cls + '" href="https://missa.cbck.or.kr/DailyMissa/' + ymd + '" target="_blank" rel="noopener"'
+          + ' title="' + x.name + ' 매일미사 보기">'
+          + '<span class="dday-when">' + fmt(x.date) + '</span><span class="dday-row-main">' + x.name
+          + (info ? '<span class="dday-row-info">' + info + '</span>' : '') + '</span>'
+          + '<span class="dday-row-go">미사 →</span></a>';
       }).join('');
     }
   }

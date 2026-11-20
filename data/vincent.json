@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-20 11:17",
+  "updated": "2026-11-21 02:46",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "YR6nTZzLGEg",
+      "date": "2026-11-21",
+      "title": "토요일 복되신 동정 마리아의 자헌 기념일",
+      "url": "https://www.youtube.com/watch?v=YR6nTZzLGEg"
+    },
     {
       "videoId": "DiehMaTYf2Q",
       "date": "2026-11-20",
@@ -57,12 +63,6 @@
       "date": "2026-11-12",
       "title": "성 요사팟 주교 순교자 기념일",
       "url": "https://www.youtube.com/watch?v=T2VBQnf3_CE"
-    },
-    {
-      "videoId": "VMijmLOtoG4",
-      "date": "2026-11-11",
-      "title": "투르의 성 마르티노 주교 기념일",
-      "url": "https://www.youtube.com/watch?v=VMijmLOtoG4"
     }
   ]
 }

@@ -3793,8 +3793,13 @@ window.WeatherFx = (function(){
       }
       listEl.innerHTML = rows.length
         ? rows.map(function(x, i){
-            return '<div class="dday-row' + (i === 0 ? ' is-next' : '') + '"><span class="dday-when">'
-              + korDate(x.start) + '</span><span>' + x.name + ' · 전례색 ' + x.color + '</span></div>';
+            // 줄을 누르면 그 시기가 시작하는 날의 매일미사(한국천주교주교회의)로 바로 간다.
+            var d = x.start;
+            var ymd = d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2);
+            return '<a class="dday-row' + (i === 0 ? ' is-next' : '') + '" href="https://missa.cbck.or.kr/DailyMissa/' + ymd
+              + '" target="_blank" rel="noopener" title="' + x.name + ' 첫날 매일미사 보기"><span class="dday-when">'
+              + korDate(x.start) + '</span><span class="dday-row-main">' + x.name + ' · 전례색 ' + x.color + '</span>'
+              + '<span class="dday-row-go">미사 →</span></a>';
           }).join('')
         : '<div class="dday-empty">1년 안에 시작하는 전례 시기가 없습니다</div>';
     }

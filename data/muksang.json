@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-20 20:15",
-  "cutoff": "2026-11-19",
+  "updated": "2026-11-21 04:56",
+  "cutoff": "2026-11-20",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,28 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 8,
   "posts": [
+    {
+      "id": "daum_bbadaking_8001",
+      "title": "2026년 11월 21일 복되신 동정 마리아의 자헌 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-11-20",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8001",
+      "mass_date": "2026-11-21",
+      "priest": "조명연",
+      "excerpt": "우리는 하느님의 특별한 존재라는 점에 이견이 없습니다."
+    },
+    {
+      "id": "daum_bbadaking_2277",
+      "title": "2026년 11월 21일 복되신 동정 마리아의 자헌 기념일",
+      "author": "박 베로니카",
+      "date": "2026-11-20",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2277",
+      "mass_date": "2026-11-21",
+      "priest": "양승국",
+      "excerpt": "극단의 추함은 극단의 깨끗함으로 정복됩니다!"
+    },
     {
       "id": "daum_catholicsb_7465",
       "title": "전삼용 요셉 신부 / 복되신 동정 마리아의 자헌 기념일 - 누군가를 내 뜻 안에 머물게 하려면",
@@ -76,56 +96,6 @@
       "date": "2026-11-20",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140589&menu=4770",
       "mass_date": "2026-11-20",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7463",
-      "title": "전삼용 요셉 신부 / 연중 제33주간 목요일 - 그리스도를 알아보는 눈, ‘나는 누구인가?’",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-18",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7463",
-      "mass_date": "2026-11-19",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 목요일 복음: 루카 19,41-44…"
-    },
-    {
-      "id": "daum_bbadaking_7999",
-      "title": "2026년 11월 19일 연중 제33주간 목요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-18",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/7999",
-      "mass_date": "2026-11-19",
-      "priest": "조명연",
-      "excerpt": "책에서 윌리엄 골딩의 ‘파리 대왕’을 이야기하는 글을 읽었습니다."
-    },
-    {
-      "id": "daum_bbadaking_2275",
-      "title": "2026년 11월 19일 연중 제33주간 목요일",
-      "author": "박 베로니카",
-      "date": "2026-11-19",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2275",
-      "mass_date": "2026-11-19",
-      "priest": "양승국",
-      "excerpt": "오늘도 우리때문에 우시는 하느님!"
-    },
-    {
-      "id": "daum_bbadaking_220",
-      "title": "우리가 만나고 싶어 하는 하느님은 과연 어떤 모습으로 우리에게 찾아오실까요…",
-      "author": "환희 평화",
-      "date": "2026-11-19",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/220",
-      "mass_date": "2026-11-19",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140542",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |2|",
-      "author": "최원석",
-      "date": "2026-11-19",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140542&menu=4770",
-      "mass_date": "2026-11-19",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

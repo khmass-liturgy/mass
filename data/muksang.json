@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-21 19:51",
-  "cutoff": "2026-11-20",
+  "updated": "2026-11-22 04:01",
+  "cutoff": "2026-11-21",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 11,
+  "count": 6,
   "posts": [
+    {
+      "id": "daum_bbadaking_8002",
+      "title": "2026년 11월 22일 온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
+      "author": "빠다킹신부",
+      "date": "2026-11-21",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8002",
+      "mass_date": "2026-11-22",
+      "priest": "조명연",
+      "excerpt": "아름다운 저녁노을을 보면 사람들은 열심히 사진을 찍습니다."
+    },
     {
       "id": "daum_catholicsb_7466",
       "title": "전삼용 요셉 신부 / 그리스도왕 대축일 - 중요한 건 ‘자기 정체성’이지 바보야!",
@@ -66,66 +76,6 @@
       "date": "2026-11-21",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140643&menu=4770",
       "mass_date": "2026-11-21",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7465",
-      "title": "전삼용 요셉 신부 / 복되신 동정 마리아의 자헌 기념일 - 누군가를 내 뜻 안에 머물게 하려면",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-20",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7465",
-      "mass_date": "2026-11-20",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 복되신 동정 마리아의 자헌 기념일 복음 : 마태오…"
-    },
-    {
-      "id": "daum_catholicsb_7464",
-      "title": "전삼용 요셉 신부 / 연중 제33주간 금요일 - 성전은 언제 강도들의 소굴이 되는가?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-19",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7464",
-      "mass_date": "2026-11-20",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제33주간 금요일 복음: 루카 19,45-48…"
-    },
-    {
-      "id": "daum_bbadaking_8000",
-      "title": "2026년 11월 20일 연중 제33주간 금요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-19",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8000",
-      "mass_date": "2026-11-20",
-      "priest": "조명연",
-      "excerpt": "신경과학에 따르면 인간이 위험에 직면하거나 스트레스받으면 두뇌에서 감정 조절…"
-    },
-    {
-      "id": "daum_bbadaking_2276",
-      "title": "2026년 11월 20일 연중 제33주간 금요일",
-      "author": "박 베로니카",
-      "date": "2026-11-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2276",
-      "mass_date": "2026-11-20",
-      "priest": "양승국",
-      "excerpt": "오늘 이 시대에도 절실히 필요한 성전 정화 작업!"
-    },
-    {
-      "id": "daum_bbadaking_221",
-      "title": "겉으로 치장하는 성전 정화가 아니라 내면을 거룩하게 하는 성전 정화가 우선인…",
-      "author": "환희 평화",
-      "date": "2026-11-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/221",
-      "mass_date": "2026-11-20",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140589",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
-      "author": "최원석",
-      "date": "2026-11-20",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140589&menu=4770",
-      "mass_date": "2026-11-20",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

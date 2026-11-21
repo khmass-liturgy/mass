@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-21 02:47",
+  "updated": "2026-11-21 11:14",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "kHArz1fZG6c",
+      "date": "2026-11-21",
+      "liturgy": "복되신 동정 마리아의 자헌 기념일",
+      "priest": "김승연 프란치스코 신부",
+      "url": "https://www.youtube.com/watch?v=kHArz1fZG6c&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "YKOWaa6jcpk",
       "date": "2026-11-20",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제32주일",
       "priest": "이승화 시몬 신부",
       "url": "https://www.youtube.com/watch?v=iJW8ipxRZqw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "OeDkZWHGIr0",
-      "date": "2026-11-07",
-      "liturgy": "연중 제31주간 토요일",
-      "priest": "이상진 아모스 신부",
-      "url": "https://www.youtube.com/watch?v=OeDkZWHGIr0&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

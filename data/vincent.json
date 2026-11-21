@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-21 11:11",
+  "updated": "2026-11-22 01:46",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "eS568KJdHYk",
+      "date": "2026-11-22",
+      "title": "온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
+      "url": "https://www.youtube.com/watch?v=eS568KJdHYk"
+    },
     {
       "videoId": "YR6nTZzLGEg",
       "date": "2026-11-21",
@@ -57,12 +63,6 @@
       "date": "2026-11-13",
       "title": "연중 제32주간 금요일",
       "url": "https://www.youtube.com/watch?v=DQJQlH1VTSY"
-    },
-    {
-      "videoId": "T2VBQnf3_CE",
-      "date": "2026-11-12",
-      "title": "성 요사팟 주교 순교자 기념일",
-      "url": "https://www.youtube.com/watch?v=T2VBQnf3_CE"
     }
   ]
 }

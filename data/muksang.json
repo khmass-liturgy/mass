@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-22 20:00",
-  "cutoff": "2026-11-21",
+  "updated": "2026-11-23 04:25",
+  "cutoff": "2026-11-22",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 9,
+  "count": 6,
   "posts": [
     {
       "id": "daum_catholicsb_7467",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-23",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 월요일 복음: 루카 21,1-4 죽…"
+    },
+    {
+      "id": "daum_bbadaking_8003",
+      "title": "2026년 11월 23일 연중 제34주간 월요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-22",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8003",
+      "mass_date": "2026-11-23",
+      "priest": "조명연",
+      "excerpt": "사람들은 여행을 좋아합니다."
+    },
+    {
+      "id": "daum_bbadaking_2279",
+      "title": "2026년 11월 23일 연중 제34주간 월요일",
+      "author": "박 베로니카",
+      "date": "2026-11-23",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2279",
+      "mass_date": "2026-11-23",
+      "priest": "양승국",
+      "excerpt": "단 한 명도 당신 구원 계획에서 제외시키지 않으시는 주님!"
     },
     {
       "id": "daum_bbadaking_8002",
@@ -56,56 +76,6 @@
       "date": "2026-11-22",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140700&menu=4770",
       "mass_date": "2026-11-22",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7466",
-      "title": "전삼용 요셉 신부 / 그리스도왕 대축일 - 중요한 건 ‘자기 정체성’이지 바보야!",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-21",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7466",
-      "mass_date": "2026-11-21",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 그리스도왕 대축일 복음: 마태오 25,31-46 중…"
-    },
-    {
-      "id": "daum_bbadaking_8001",
-      "title": "2026년 11월 21일 복되신 동정 마리아의 자헌 기념일",
-      "author": "빠다킹신부",
-      "date": "2026-11-20",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8001",
-      "mass_date": "2026-11-21",
-      "priest": "조명연",
-      "excerpt": "우리는 하느님의 특별한 존재라는 점에 이견이 없습니다."
-    },
-    {
-      "id": "daum_bbadaking_2277",
-      "title": "2026년 11월 21일 복되신 동정 마리아의 자헌 기념일",
-      "author": "박 베로니카",
-      "date": "2026-11-20",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2277",
-      "mass_date": "2026-11-21",
-      "priest": "양승국",
-      "excerpt": "극단의 추함은 극단의 깨끗함으로 정복됩니다!"
-    },
-    {
-      "id": "daum_bbadaking_222",
-      "title": "형제요 자매요 말하지만 속과 겉이 다른 이들이 있습니다. 그리스도인이지만 그…",
-      "author": "환희 평화",
-      "date": "2026-11-21",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/222",
-      "mass_date": "2026-11-21",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140643",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-21",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140643&menu=4770",
-      "mass_date": "2026-11-21",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

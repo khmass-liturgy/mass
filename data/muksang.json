@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 10:07",
+  "updated": "2026-11-22 20:00",
   "cutoff": "2026-11-21",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 7,
+  "count": 9,
   "posts": [
+    {
+      "id": "daum_catholicsb_7467",
+      "title": "전삼용 요셉 신부 / 연중 제34주간 월요일 - 죽지 않으려는 사람에게 믿음이란?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-22",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7467",
+      "mass_date": "2026-11-23",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 월요일 복음: 루카 21,1-4 죽…"
+    },
     {
       "id": "daum_bbadaking_8002",
       "title": "2026년 11월 22일 온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
@@ -38,6 +48,16 @@
       "mass_date": "2026-11-22",
       "priest": "양승국",
       "excerpt": "작은 이들을 환대합시다!"
+    },
+    {
+      "id": "2140700",
+      "title": "김건태 신부님_조욱현 신부님 묵상 |1|",
+      "author": "최원석",
+      "date": "2026-11-22",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140700&menu=4770",
+      "mass_date": "2026-11-22",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7466",

@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-22 01:46",
+  "updated": "2026-11-22 10:18",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "Vxi5Q-_SbxY",
+      "date": "2026-11-22",
+      "liturgy": "온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
+      "priest": "이영제 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=Vxi5Q-_SbxY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "kHArz1fZG6c",
       "date": "2026-11-21",
@@ -95,13 +102,6 @@
       "liturgy": "라테라노 대성전 봉헌 축일",
       "priest": "응웬 반 호아",
       "url": "https://www.youtube.com/watch?v=vmMOcrg9SPI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "iJW8ipxRZqw",
-      "date": "2026-11-08",
-      "liturgy": "연중 제32주일",
-      "priest": "이승화 시몬 신부",
-      "url": "https://www.youtube.com/watch?v=iJW8ipxRZqw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22 04:01",
+  "updated": "2026-11-22 10:07",
   "cutoff": "2026-11-21",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 7,
   "posts": [
     {
       "id": "daum_bbadaking_8002",
@@ -28,6 +28,16 @@
       "mass_date": "2026-11-22",
       "priest": "조명연",
       "excerpt": "아름다운 저녁노을을 보면 사람들은 열심히 사진을 찍습니다."
+    },
+    {
+      "id": "daum_bbadaking_2278",
+      "title": "2026년 11월 22일 온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
+      "author": "박 베로니카",
+      "date": "2026-11-22",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2278",
+      "mass_date": "2026-11-22",
+      "priest": "양승국",
+      "excerpt": "작은 이들을 환대합시다!"
     },
     {
       "id": "daum_catholicsb_7466",

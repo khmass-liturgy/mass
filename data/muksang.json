@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23 04:25",
+  "updated": "2026-11-23 10:30",
   "cutoff": "2026-11-22",
   "days": 2,
   "names": [
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 6,
+  "count": 8,
   "posts": [
     {
       "id": "daum_catholicsb_7467",
@@ -48,6 +48,26 @@
       "mass_date": "2026-11-23",
       "priest": "양승국",
       "excerpt": "단 한 명도 당신 구원 계획에서 제외시키지 않으시는 주님!"
+    },
+    {
+      "id": "daum_bbadaking_223",
+      "title": "이천 년 전 예수님께서는 허름한 외모를 가진 과부의 모습보다 진실로 하느님의…",
+      "author": "환희 평화",
+      "date": "2026-11-23",
+      "url": "https://m.cafe.daum.net/bbadaking/LxKw/223",
+      "mass_date": "2026-11-23",
+      "priest": "김경진",
+      "excerpt": ""
+    },
+    {
+      "id": "2140736",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-23",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140736&menu=4770",
+      "mass_date": "2026-11-23",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_bbadaking_8002",

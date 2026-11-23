@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-23 02:09",
+  "updated": "2026-11-23 10:42",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "ebJHY50wtiY",
+      "date": "2026-11-23",
+      "liturgy": "연중 제34주간 월요일",
+      "priest": "김승연 프란치스코 신부",
+      "url": "https://www.youtube.com/watch?v=ebJHY50wtiY&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "Vxi5Q-_SbxY",
       "date": "2026-11-22",
@@ -95,13 +102,6 @@
       "liturgy": "성 대 레오 교황 학자 기념일",
       "priest": "이상진 아모스 신부",
       "url": "https://www.youtube.com/watch?v=N9NnsmbqpUM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "vmMOcrg9SPI",
-      "date": "2026-11-09",
-      "liturgy": "라테라노 대성전 봉헌 축일",
-      "priest": "응웬 반 호아",
-      "url": "https://www.youtube.com/watch?v=vmMOcrg9SPI&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

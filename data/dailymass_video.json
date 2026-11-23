@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-23 10:42",
+  "updated": "2026-11-24 06:24",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "-nOqrWSKTtU",
+      "date": "2026-11-24",
+      "liturgy": "성 안드레아 둥락 사제와 동료 순교자들 기념일",
+      "priest": "임현호 도미니코 신부",
+      "url": "https://www.youtube.com/watch?v=-nOqrWSKTtU&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "ebJHY50wtiY",
       "date": "2026-11-23",
@@ -95,13 +102,6 @@
       "liturgy": "투르의 성 마르티노 주교 기념일",
       "priest": "이정훈 사도요한 신부",
       "url": "https://www.youtube.com/watch?v=5p-Vb2V2aIw&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "N9NnsmbqpUM",
-      "date": "2026-11-10",
-      "liturgy": "성 대 레오 교황 학자 기념일",
-      "priest": "이상진 아모스 신부",
-      "url": "https://www.youtube.com/watch?v=N9NnsmbqpUM&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

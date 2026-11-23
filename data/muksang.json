@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23 10:30",
+  "updated": "2026-11-23 21:10",
   "cutoff": "2026-11-22",
   "days": 2,
   "names": [
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 11,
   "posts": [
+    {
+      "id": "daum_catholicsb_7468",
+      "title": "전삼용 요셉 신부 / 연중 제34주간 화요일 - 죽지 않으려는 사람에게 믿음이란?",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-23",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7468",
+      "mass_date": "2026-11-24",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 월요일 복음: 루카 21,1-4 죽…"
+    },
+    {
+      "id": "daum_bbadaking_8004",
+      "title": "2026년 11월 24일 성 안드레아 둥락 사제와 동료 순교자들 기념일",
+      "author": "빠다킹신부",
+      "date": "2026-11-23",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8004",
+      "mass_date": "2026-11-24",
+      "priest": "조명연",
+      "excerpt": "어렸을 때, 소중하게 여겼던 것을 생각해 봅니다."
+    },
+    {
+      "id": "daum_catholicsb_7469",
+      "title": "묵상말씀 중복",
+      "author": "암블러",
+      "date": "2026-11-23",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7469",
+      "mass_date": "2026-11-23",
+      "priest": "전삼용",
+      "excerpt": "연중 제34주간 화요일 묵상말씀과 월요일 묵상말씀이 동일해서 조심스럽게 말씀…"
+    },
     {
       "id": "daum_catholicsb_7467",
       "title": "전삼용 요셉 신부 / 연중 제34주간 월요일 - 죽지 않으려는 사람에게 믿음이란?",

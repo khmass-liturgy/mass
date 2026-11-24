@@ -1,7 +1,7 @@
 {
-  "updated": "2026-11-20 06:50",
+  "updated": "2026-11-24 10:15",
   "source": "https://www.youtube.com/@luxchamberchoir7964/videos",
-  "count": 335,
+  "count": 336,
   "items": [
     {
       "videoId": "F-ZktWCXWGE",
@@ -592,6 +592,13 @@
       "title": "가톨릭성가 25번 사랑의 하느님 - 룩스챔버콰이어 Lux chamber choir",
       "seasons": [
         "general"
+      ]
+    },
+    {
+      "videoId": "fLCKfxOqNOM",
+      "title": "[가톨릭 성가 482번] 일월성신을 내시고 / 칸디도 보칼레 / 대림 / D. Thermignon / SATB 앙상블 / Catholic Hymn",
+      "seasons": [
+        "advent"
       ]
     },
     {
@@ -2379,6 +2386,7 @@
       "videoId": "ZTKuWrd_V9o",
       "title": "[가톨릭 성가 173번] Veni Jesu Amor Mi '사랑의 주여 오소서' - 칸디도 보칼레/가톨릭성가/케루비니/",
       "seasons": [
+        "eucharist",
         "general"
       ]
     },

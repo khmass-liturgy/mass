@@ -1,9 +1,15 @@
 {
-  "updated": "2026-11-25 13:10",
+  "updated": "2026-11-26 04:13",
   "channelId": "UC-0yMi0sXeG2HYmKCzwM7sQ",
   "channelUrl": "https://www.youtube.com/channel/UC-0yMi0sXeG2HYmKCzwM7sQ",
   "count": 10,
   "videos": [
+    {
+      "videoId": "s-5G8jyKwm4",
+      "date": "2026-11-26",
+      "title": "연중 제34주간 목요일",
+      "url": "https://www.youtube.com/watch?v=s-5G8jyKwm4"
+    },
     {
       "videoId": "x20OXujR2XI",
       "date": "2026-11-25",
@@ -57,12 +63,6 @@
       "date": "2026-11-17",
       "title": "화요일 헝가리의 성녀 엘리사벳 수도자 기념일",
       "url": "https://www.youtube.com/watch?v=5sLq5MMTFNE"
-    },
-    {
-      "videoId": "dsMdQ5uZHa8",
-      "date": "2026-11-16",
-      "title": "연중 제33주간 월요일",
-      "url": "https://www.youtube.com/watch?v=dsMdQ5uZHa8"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26 08:05",
+  "updated": "2026-11-26 21:30",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "5lX1GP8edOo",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=5lX1GP8edOo",
   "count": 10,
   "videos": [
+    {
+      "videoId": "dUrIQEzCR1M",
+      "date": "2026-11-27",
+      "label": "2026년 11월 27일연중 제34주간 금요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 27일 연중 제34주간 금요일](김상태 사도 요한 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=dUrIQEzCR1M"
+    },
     {
       "videoId": "5lX1GP8edOo",
       "date": "2026-11-26",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 11월 18일 연중 제33주간 수요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=Nd4gsqgwDaA"
-    },
-    {
-      "videoId": "GFgmI5g5A7U",
-      "date": "2026-11-17",
-      "label": "2026년 11월 17일헝가리의 성녀 엘리사벳 수도자 기념일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 11월 17일 헝가리의 성녀 엘리사벳 수도자 기념일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=GFgmI5g5A7U"
     }
   ]
 }

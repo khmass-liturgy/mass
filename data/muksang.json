@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-26 12:28",
-  "cutoff": "2026-11-25",
+  "updated": "2026-11-27 06:20",
+  "cutoff": "2026-11-26",
   "days": 2,
   "names": [
     "김건태",
@@ -17,8 +17,38 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 8,
   "posts": [
+    {
+      "id": "daum_catholicsb_7474",
+      "title": "전삼용 요셉 신부 / 연중 제34주간 금요일 - 세상과 싸워 이긴 멘토가 필요한 이유",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-26",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7474",
+      "mass_date": "2026-11-27",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 금요일 복음: 루카 21,29-33…"
+    },
+    {
+      "id": "daum_bbadaking_8007",
+      "title": "2026년 11월 27일 연중 제34주간 금요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-26",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8007",
+      "mass_date": "2026-11-27",
+      "priest": "조명연",
+      "excerpt": "아버지의 갑작스러운 죽음으로 큰 슬픔에 빠진 분이 있습니다."
+    },
+    {
+      "id": "daum_bbadaking_2283",
+      "title": "2026년 11월 27일 연중 제34주간 금요일",
+      "author": "박 베로니카",
+      "date": "2026-11-27",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2283",
+      "mass_date": "2026-11-27",
+      "priest": "양승국",
+      "excerpt": "내 인생의 겨울 앞에서..."
+    },
     {
       "id": "daum_catholicsb_7473",
       "title": "전삼용 요셉 신부 / 연중 제34주간 목요일 - 주위에 나에게 도움이 되는 사람이 없다면?",
@@ -61,61 +91,11 @@
     },
     {
       "id": "2140864",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "title": "김건태 신부님_조욱현 신부님 묵상 |2|",
       "author": "최원석",
       "date": "2026-11-26",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140864&menu=4770",
       "mass_date": "2026-11-26",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7472",
-      "title": "전삼용 요셉 신부 / 연중 제34주간 수요일 - 내가 말 실수를 자주 한다면?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-24",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7472",
-      "mass_date": "2026-11-25",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 수요일 복음: 루카 21,12-19…"
-    },
-    {
-      "id": "daum_bbadaking_8005",
-      "title": "2026년 11월 25일 연중 제34주간 수요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-24",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8005",
-      "mass_date": "2026-11-25",
-      "priest": "조명연",
-      "excerpt": "세계 최대의 사막은 어디일까요?"
-    },
-    {
-      "id": "daum_bbadaking_2281",
-      "title": "2026년 11월 25일 연중 제34주간 수요일",
-      "author": "박 베로니카",
-      "date": "2026-11-25",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2281",
-      "mass_date": "2026-11-25",
-      "priest": "양승국",
-      "excerpt": "고통 속에서도 이웃을 축복해주십시오!"
-    },
-    {
-      "id": "daum_bbadaking_225",
-      "title": "신앙을 위협하는 현실들과 불쑥불쑥 불현듯 떠오르는 어두움 남모를 아픔과 슬픔…",
-      "author": "환희 평화",
-      "date": "2026-11-25",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/225",
-      "mass_date": "2026-11-25",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140829",
-      "title": "김건태 신부님_조욱현 신부님 묵상",
-      "author": "최원석",
-      "date": "2026-11-25",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140829&menu=4770",
-      "mass_date": "2026-11-25",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

@@ -35,6 +35,25 @@ main{max-width:720px;margin:0 auto;padding:18px 16px}
 .lang{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--wine);border-radius:10px;padding:0 8px;margin-left:6px;vertical-align:middle;font-family:var(--sans)}
 .ko{text-align:center;font-family:var(--serif);font-size:17px;font-weight:700;margin-top:6px;word-break:keep-all}
 
+/* 쓰는 순서 */
+.he span{display:inline-block;transition:opacity .35s, transform .35s}
+.he span.hide{opacity:0;transform:translateY(-6px)}
+.he span.now{color:var(--teal)}
+.he span.sp{width:.4em}
+.write-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:16px 0 7px}
+.write-head .sec-title{margin:0}
+.write-btn{white-space:nowrap;appearance:none;border:1px solid #B9D3CF;background:#F2F6F3;color:var(--teal);border-radius:16px;padding:3px 12px;font-family:var(--sans);font-size:12.5px;font-weight:700;cursor:pointer}
+.write-btn:hover{background:#E4EFEC}
+.steps{display:flex;flex-wrap:wrap;gap:6px;direction:rtl}
+.step{direction:ltr;position:relative;width:76px;background:#F7F9F6;border:1px solid var(--line);border-radius:10px;padding:16px 4px 6px;text-align:center;transition:background .2s,border-color .2s}
+.step.now{background:#E4EFEC;border-color:var(--teal)}
+.step .no{position:absolute;top:4px;right:6px;font-size:10.5px;font-weight:700;color:#fff;background:var(--teal);border-radius:8px;padding:0 5px;line-height:15px}
+.step .g{display:block;font-family:var(--hebrew);font-size:30px;font-weight:700;line-height:1.15;color:var(--navy)}
+.step .nm{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-top:2px}
+.step .sd{display:block;font-size:11px;color:var(--muted);line-height:1.35}
+.step .fin{display:block;font-size:10px;font-weight:700;color:var(--wine);margin-top:2px}
+.step.gap{width:22px;background:none;border:0;padding:0}
+.write-note{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.6}
 .sec-title{font-size:12px;font-weight:700;color:var(--muted);margin:16px 0 7px;letter-spacing:.02em}
 .root{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,#16334A,#1F5C5A);color:#fff;border-radius:12px;padding:12px 14px}
 .root .rh{flex:0 0 auto;font-family:var(--hebrew);font-size:26px;font-weight:700;color:var(--gold-soft);direction:rtl;unicode-bidi:isolate;min-width:84px;text-align:center}
@@ -92,6 +111,13 @@ h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:4
     <div class="read" id="read"></div>
     <div class="ko" id="ko"></div>
 
+    <div class="write-head">
+      <div class="sec-title">쓰는 순서 (오른쪽부터 ←)</div>
+      <button type="button" class="write-btn" id="writeBtn">▶ 써 보기</button>
+    </div>
+    <div class="steps" id="steps"></div>
+    <p class="write-note">숫자 순서대로, 오른쪽에서 왼쪽으로 씁니다. 모음은 쓰지 않았으니 소리는 위의 발음을 함께 보세요.</p>
+
     <div class="sec-title">뿌리(어근) — 세 글자에 담긴 뜻</div>
     <div class="root">
       <div class="rh" id="rootHe" lang="he" dir="rtl"></div>
@@ -122,7 +148,9 @@ h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:4
   <div class="guide">
     <h3>히브리어 알아 두기</h3>
     <ul>
-      <li>히브리어는 <b>오른쪽에서 왼쪽으로</b> 씁니다.</li>
+      <li>히브리어는 <b>오른쪽에서 왼쪽으로</b> 씁니다. 책도 우리 책과 반대쪽에서부터 넘깁니다.</li>
+      <li>글자 하나를 쓸 때도 대개 <b>위 가로획을 오른쪽에서 왼쪽으로</b> 먼저 긋고, 그다음 세로획을 위에서 아래로 내립니다. 글자들이 윗줄에 '매달리듯' 위를 가지런히 맞춥니다.</li>
+      <li>다섯 글자 <b>כ מ נ פ צ</b>는 낱말 끝에 오면 모양이 바뀝니다(<b>ך ם ן ף ץ</b>, '끝글자'). 대부분 아래로 길게 내려 씁니다.</li>
       <li>글자는 자음 <b>22개</b>뿐이고, 모음은 글자 아래위의 작은 점으로 나타내거나 아예 쓰지 않습니다. 이 코너도 자음만 적었습니다.</li>
       <li>낱말 대부분은 <b>세 글자 뿌리(어근)</b>에서 나옵니다. 예를 들어 ש-ל-ם(온전하다)에서 '샬롬(평화)', '예루살렘'이 나왔습니다. 뿌리를 알면 뜻이 이어져 보입니다.</li>
       <li>예수님께서는 히브리어와 가까운 <b>아람어</b>로 말씀하셨습니다. '아람어' 표시가 붙은 말은 복음서가 예수님의 말씀을 그대로 옮겨 적은 것입니다.</li>
@@ -136,6 +164,17 @@ h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:4
   var BIBLE = 'https://bible.cbck.or.kr/Knb/';
   var EPOCH = Date.UTC(2026, 10, 27) / 86400000;   // 2026-11-27(한국 날짜)이 첫 낱말
   var items = [], todayIdx = 0, cur = 0;
+  // 히브리 글자 이름과 소리 (끝글자 표시 포함)
+  var LETTERS = {
+    'א':['알레프','소리 없음 (모음 받침)'], 'ב':['베트','ㅂ / v'], 'ג':['기멜','ㄱ'], 'ד':['달레트','ㄷ'],
+    'ה':['헤','ㅎ'], 'ו':['바브','v / 오·우'], 'ז':['자인','z'], 'ח':['헤트','목에서 긁는 ㅎ'],
+    'ט':['테트','ㅌ'], 'י':['요드','y / 이'], 'כ':['카프','ㅋ / kh'], 'ך':['카프','ㅋ / kh','끝글자'],
+    'ל':['라메드','ㄹ (l)'], 'מ':['멤','ㅁ'], 'ם':['멤','ㅁ','끝글자'], 'נ':['눈','ㄴ'], 'ן':['눈','ㄴ','끝글자'],
+    'ס':['사메크','ㅅ'], 'ע':['아인','목에서 내는 소리'], 'פ':['페','ㅍ / f'], 'ף':['페','f','끝글자'],
+    'צ':['차데','ㅊ (ts)'], 'ץ':['차데','ㅊ (ts)','끝글자'], 'ק':['코프','ㅋ (깊은 소리)'], 'ר':['레시','ㄹ (r)'],
+    'ש':['신','ㅅ / sh'], 'ת':['타브','ㅌ']
+  };
+  var writeTimer = null;
 
   function kstDay(){
     var p = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }).split('-');
@@ -150,7 +189,18 @@ h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:4
     var it = items[cur];
     $('dayLabel').textContent = cur === todayIdx ? '오늘의 낱말' : (cur === (todayIdx + 1) % n ? '내일의 낱말' : (cur === (todayIdx - 1 + n) % n ? '어제의 낱말' : '히브리어 낱말'));
     $('numLabel').textContent = (cur + 1) + ' / ' + n;
-    $('he').textContent = it.he;
+    stopWrite();
+    var chars = Array.from(it.he);
+    $('he').innerHTML = chars.map(function(c){ return c === ' ' ? '<span class="sp"></span>' : '<span>' + esc(c) + '</span>'; }).join('');
+    var n0 = 0;
+    $('steps').innerHTML = chars.map(function(c){
+      if (c === ' ') return '<div class="step gap" aria-label="띄어 쓰기"></div>';
+      var L = LETTERS[c] || ['', ''];
+      n0++;
+      return '<div class="step" data-k="' + n0 + '"><span class="no">' + n0 + '</span><span class="g" lang="he">' + esc(c) + '</span>'
+        + '<span class="nm">' + esc(L[0]) + '</span><span class="sd">' + esc(L[1]) + '</span>'
+        + (L[2] ? '<span class="fin">' + esc(L[2]) + '</span>' : '') + '</div>';
+    }).join('');
     $('tr').textContent = it.tr;
     $('read').innerHTML = esc(it.read) + (it.lang ? '<span class="lang">' + esc(it.lang) + '</span>' : '');
     $('ko').textContent = it.ko;
@@ -181,6 +231,29 @@ h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:4
         + '</button>';
     }).join('') : '<div class="empty">찾는 낱말이 없습니다.</div>';
   }
+
+  // 한 글자씩 써 보기: 큰 낱말을 지운 뒤 오른쪽 첫 글자부터 하나씩 나타나게 한다.
+  function stopWrite(){
+    if (writeTimer) { clearInterval(writeTimer); writeTimer = null; }
+    Array.prototype.forEach.call(document.querySelectorAll('#he span'), function(sp){ sp.classList.remove('hide', 'now'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.step'), function(st){ st.classList.remove('now'); });
+    $('writeBtn').textContent = '▶ 써 보기';
+  }
+  $('writeBtn').addEventListener('click', function(){
+    if (writeTimer) { stopWrite(); return; }
+    var spans = Array.prototype.slice.call(document.querySelectorAll('#he span')).filter(function(sp){ return sp.textContent.trim(); });
+    var steps = document.querySelectorAll('.step:not(.gap)');
+    spans.forEach(function(sp){ sp.classList.add('hide'); sp.classList.remove('now'); });
+    var k = 0;
+    $('writeBtn').textContent = '■ 멈추기';
+    writeTimer = setInterval(function(){
+      if (k > 0) { spans[k - 1].classList.remove('now'); if (steps[k - 1]) steps[k - 1].classList.remove('now'); }
+      if (k >= spans.length) { stopWrite(); return; }
+      spans[k].classList.remove('hide'); spans[k].classList.add('now');
+      if (steps[k]) steps[k].classList.add('now');
+      k++;
+    }, 900);
+  });
 
   $('prev').addEventListener('click', function(){ show(cur - 1, true); });
   $('next').addEventListener('click', function(){ show(cur + 1, true); });

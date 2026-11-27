@@ -1,8 +1,14 @@
 {
-  "updated": "2026-11-22 16:02",
+  "updated": "2026-11-27 17:45",
   "source": "https://www.catholictimes.org/list/96",
   "count": 10,
   "items": [
+    {
+      "title": "대림 제1주일",
+      "url": "https://www.catholictimes.org/article/20261118500030",
+      "date": "2026-11-29",
+      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/11/18/.cache/512/20261118500026.png"
+    },
     {
       "title": "온 누리의 임금이신 우리 주 예수 그리스도 왕 대축일",
       "url": "https://www.catholictimes.org/article/20261112500001",
@@ -56,12 +62,6 @@
       "url": "https://www.catholictimes.org/article/20260910500024",
       "date": "2026-09-20",
       "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/09/10/.cache/512/20260910500022.png"
-    },
-    {
-      "title": "연중 제24주일",
-      "url": "https://www.catholictimes.org/article/20260903500048",
-      "date": "2026-09-13",
-      "image": "https://www.catholictimes.org/-/raw/srv-catholictimes/data2/content/image/2026/09/03/.cache/512/20260903500047.png"
     }
   ]
 }

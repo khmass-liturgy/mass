@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 06:20",
+  "updated": "2026-11-27 20:58",
   "cutoff": "2026-11-26",
   "days": 2,
   "names": [
@@ -17,8 +17,18 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 8,
+  "count": 10,
   "posts": [
+    {
+      "id": "daum_catholicsb_7477",
+      "title": "전삼용 요셉 신부 / 가해 연중 제34주간 토요일 - 기도하지 않는 하루는 몽유병 환자의 밤과 같습니다",
+      "author": "효재마리아(수풀)",
+      "date": "2026-11-27",
+      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7477",
+      "mass_date": "2026-11-28",
+      "priest": "전삼용",
+      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 토요일 복음: 루카 21,34-36…"
+    },
     {
       "id": "daum_catholicsb_7474",
       "title": "전삼용 요셉 신부 / 연중 제34주간 금요일 - 세상과 싸워 이긴 멘토가 필요한 이유",
@@ -48,6 +58,16 @@
       "mass_date": "2026-11-27",
       "priest": "양승국",
       "excerpt": "내 인생의 겨울 앞에서..."
+    },
+    {
+      "id": "2140907",
+      "title": "김건태 신부님_조욱현 신부님 묵상",
+      "author": "최원석",
+      "date": "2026-11-27",
+      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140907&menu=4770",
+      "mass_date": "2026-11-27",
+      "priest": "김건태",
+      "excerpt": "안녕하세요."
     },
     {
       "id": "daum_catholicsb_7473",

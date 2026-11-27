@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 라틴어</title>
+<meta name="description" content="성경에 나오는 라틴어 단어로 짧은 성경 구절을 쉽게 풀어 주는 코너">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2744; --gold:#B98A2F; --gold-soft:#E4CE96; --wine:#8A2E3B;
+  --ink:#22303F; --muted:#6B7A8C; --bg:#F7F4EE; --card:#FFFFFF; --line:#E3DCCD;
+  --serif:'Noto Serif KR', serif; --sans:'Noto Sans KR', -apple-system, sans-serif;
+  --latin:'Cormorant Garamond', 'Noto Serif KR', serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;padding:0 0 40px}
+a{color:var(--navy)}
+header{background:linear-gradient(160deg,#1A2744,#3A2A4E);color:#fff;padding:26px 18px 22px;text-align:center;position:relative}
+header h1{font-family:var(--serif);font-size:21px;font-weight:700}
+header p{font-size:12.5px;color:#D6CDE4;margin-top:4px}
+header .back{position:absolute;top:14px;left:14px;font-size:12px;color:#D6CDE4;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 12px}
+main{max-width:720px;margin:0 auto;padding:18px 16px}
+
+/* 오늘의 구절 */
+.today{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:16px;padding:18px 18px 16px;box-shadow:0 4px 16px rgba(30,53,87,.07)}
+.eyebrow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:8px}
+.eyebrow .day{font-weight:700;color:var(--gold)}
+.eyebrow .num{font-variant-numeric:tabular-nums}
+.la{font-family:var(--latin);font-size:30px;font-weight:600;line-height:1.25;color:var(--navy);word-break:keep-all}
+.read{font-size:13.5px;color:var(--wine);margin-top:4px}
+.ko{font-family:var(--serif);font-size:17px;font-weight:700;margin-top:10px;word-break:keep-all}
+.ref{display:inline-block;margin-top:6px;font-size:12.5px;font-weight:700;color:var(--gold);text-decoration:none;border:1px solid var(--gold-soft);border-radius:14px;padding:1px 10px}
+.ref:hover{background:#FBF5E6}
+
+.sec-title{font-size:12px;font-weight:700;color:var(--muted);margin:16px 0 7px;letter-spacing:.02em}
+.parts{display:flex;flex-wrap:wrap;gap:6px}
+.part{background:#F6F1E6;border-radius:10px;padding:5px 10px 4px;text-align:center;min-width:54px}
+.part b{display:block;font-family:var(--latin);font-size:17px;font-weight:600;color:var(--navy);line-height:1.2}
+.part span{display:block;font-size:11.5px;color:var(--muted);line-height:1.35}
+
+.word{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(135deg,#1A2744,#2E3F6B);color:#fff;border-radius:12px;padding:12px 14px}
+.word .w{flex:0 0 auto;text-align:center;min-width:84px}
+.word .w b{display:block;font-family:var(--latin);font-size:24px;font-weight:600;color:var(--gold-soft);line-height:1.1}
+.word .w small{display:block;font-size:11.5px;color:#C7D4E4;margin-top:3px}
+.word .wk{font-family:var(--serif);font-weight:700;font-size:15px}
+.word .wn{font-size:13px;color:#DCE4F0;margin-top:3px;line-height:1.6}
+
+.note{font-size:14.5px;line-height:1.8;margin-top:2px;word-break:keep-all}
+.use{margin-top:10px;font-size:13px;background:#FBF7EC;border:1px dashed var(--gold-soft);border-radius:10px;padding:7px 11px}
+.use b{color:var(--gold)}
+
+.nav{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;margin-top:14px}
+.nav button{appearance:none;border:1px solid var(--line);background:var(--card);border-radius:20px;padding:7px 10px;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--navy);cursor:pointer}
+.nav button:hover{border-color:var(--gold)}
+.nav #goToday{background:var(--gold);border-color:var(--gold);color:#fff;padding:7px 16px}
+
+/* 전체 목록 */
+h2{font-family:var(--serif);font-size:17px;color:var(--navy);margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--gold-soft);display:flex;justify-content:space-between;align-items:baseline}
+h2 small{font-family:var(--sans);font-size:12px;color:var(--muted);font-weight:400}
+.search{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;font-family:var(--sans);background:var(--card);margin-bottom:10px}
+.search:focus{outline:2px solid var(--gold-soft);border-color:var(--gold)}
+.list{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:flex;gap:10px;align-items:baseline;width:100%;text-align:left;appearance:none;border:0;background:none;border-bottom:1px dashed var(--line);padding:10px 14px;cursor:pointer;font-family:var(--sans);color:inherit}
+.row:last-child{border-bottom:0}
+.row:hover{background:#FBF7EC}
+.row.on{background:#F6EEDB}
+.row .rn{flex:0 0 26px;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .rm{flex:1;min-width:0}
+.row .rl{display:block;font-family:var(--latin);font-size:17px;font-weight:600;color:var(--navy);line-height:1.3}
+.row .rk{display:block;font-size:12.5px;color:var(--muted);line-height:1.5}
+.row .rr{flex:0 0 auto;font-size:11.5px;color:var(--gold);font-weight:700}
+.empty{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+
+.guide{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:13px;color:var(--ink);line-height:1.8}
+.guide h3{font-family:var(--serif);font-size:14px;color:var(--navy);margin-bottom:4px}
+.guide ul{padding-left:18px}
+.note-foot{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.7}
+@media (max-width:420px){ .la{font-size:26px} .word .w{min-width:70px} }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← 홈</a>
+  <h1>🏛️ 오늘의 라틴어</h1>
+  <p>성경 속 라틴어 한 단어로 짧은 말씀을 쉽게</p>
+</header>
+
+<main>
+  <section class="today" id="today" aria-live="polite">
+    <div class="eyebrow"><span class="day" id="dayLabel">오늘의 구절</span><span class="num" id="numLabel"></span></div>
+    <div class="la" id="la">…</div>
+    <div class="read" id="read"></div>
+    <div class="ko" id="ko"></div>
+    <a class="ref" id="ref" target="_blank" rel="noopener"></a>
+
+    <div class="sec-title">단어 하나하나</div>
+    <div class="parts" id="parts"></div>
+
+    <div class="sec-title">오늘의 단어</div>
+    <div class="word">
+      <div class="w"><b id="wLa"></b><small id="wRead"></small></div>
+      <div><div class="wk" id="wKo"></div><div class="wn" id="wNote"></div></div>
+    </div>
+
+    <div class="sec-title">쉽게 풀어 보면</div>
+    <p class="note" id="note"></p>
+    <div class="use" id="use" hidden><b>이 말을 듣는 곳</b> · <span id="useText"></span></div>
+
+    <div class="nav">
+      <button type="button" id="prev">◀ 이전</button>
+      <button type="button" id="goToday">오늘</button>
+      <button type="button" id="next">다음 ▶</button>
+    </div>
+  </section>
+
+  <h2>전체 구절 <small id="countLabel"></small></h2>
+  <input class="search" id="search" type="search" placeholder="라틴어나 우리말로 찾기 (예: lux, 사랑, 요한)" autocomplete="off">
+  <div class="list" id="list"></div>
+
+  <div class="guide">
+    <h3>읽는 법 (교회 라틴어)</h3>
+    <ul>
+      <li><b>c</b>는 e·i 앞에서 'ㅊ' — <i>caelis</i> 첼리스, <i>Ecce</i> 엑체</li>
+      <li><b>g</b>는 e·i 앞에서 'ㅈ' — <i>gentes</i> 젠테스</li>
+      <li><b>gn</b>은 '니' — <i>Agnus</i> 아뉴스, <i>dignus</i> 디뉴스</li>
+      <li><b>ae·oe</b>는 '에' — <i>caelum</i> 첼룸</li>
+      <li><b>ti</b> 뒤에 모음이 오면 '치' — <i>gratia</i> 그라치아</li>
+      <li><b>qu</b>는 '쿠' — <i>quo vadis</i> 쿠오 바디스</li>
+    </ul>
+  </div>
+  <p class="note-foot">※ 라틴어 본문은 교회의 라틴어 성경 불가타(Vulgata)에서, 시편 등 일부는 새 불가타(Nova Vulgata)에서 가져왔습니다. 우리말 뜻은 이해하기 쉽게 풀어 옮겼으니, 정확한 본문은 성경 위치를 눌러 『성경』(한국천주교주교회의)에서 확인하세요.</p>
+</main>
+
+<script>
+(function(){
+  var BIBLE = 'https://bible.cbck.or.kr/Knb/';
+  var EPOCH = Date.UTC(2026, 10, 27) / 86400000;   // 2026-11-27(한국 날짜)이 첫 구절
+  var items = [], todayIdx = 0, cur = 0;
+
+  function kstDay(){
+    var p = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' }).split('-');
+    return Math.round(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000);
+  }
+  function esc(t){ return String(t == null ? '' : t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function $(id){ return document.getElementById(id); }
+
+  function show(i, push){
+    var n = items.length;
+    cur = ((i % n) + n) % n;
+    var it = items[cur];
+    $('dayLabel').textContent = cur === todayIdx ? '오늘의 구절' : (cur === (todayIdx + 1) % n ? '내일의 구절' : (cur === (todayIdx - 1 + n) % n ? '어제의 구절' : '라틴어 구절'));
+    $('numLabel').textContent = (cur + 1) + ' / ' + n;
+    $('la').textContent = it.la;
+    $('read').textContent = '[' + it.read + ']';
+    $('ko').textContent = it.ko;
+    $('ref').textContent = '📖 ' + it.ref + ' — 성경에서 보기';
+    $('ref').href = BIBLE + it.book + '/' + it.ch;
+    $('parts').innerHTML = it.parts.map(function(p){ return '<div class="part"><b>' + esc(p[0]) + '</b><span>' + esc(p[1]) + '</span></div>'; }).join('');
+    $('wLa').textContent = it.word.la;
+    $('wRead').textContent = it.word.read;
+    $('wKo').textContent = it.word.ko;
+    $('wNote').textContent = it.word.note;
+    $('note').textContent = it.note;
+    if (it.use) { $('useText').textContent = it.use; $('use').hidden = false; } else { $('use').hidden = true; }
+    Array.prototype.forEach.call(document.querySelectorAll('.row'), function(r){ r.classList.toggle('on', +r.dataset.i === cur); });
+    if (push && history.replaceState) history.replaceState(null, '', cur === todayIdx ? location.pathname : '#' + (cur + 1));
+  }
+
+  function renderList(q){
+    q = (q || '').trim().toLowerCase();
+    var rows = items.map(function(it, i){ return [it, i]; }).filter(function(x){
+      if (!q) return true;
+      var it = x[0];
+      return (it.la + ' ' + it.ko + ' ' + it.ref + ' ' + it.word.la + ' ' + it.word.ko + ' ' + it.read).toLowerCase().indexOf(q) >= 0;
+    });
+    $('list').innerHTML = rows.length ? rows.map(function(x){
+      var it = x[0], i = x[1];
+      return '<button type="button" class="row' + (i === cur ? ' on' : '') + '" data-i="' + i + '">'
+        + '<span class="rn">' + (i + 1) + '</span>'
+        + '<span class="rm"><span class="rl">' + esc(it.la) + '</span><span class="rk">' + esc(it.ko) + '</span></span>'
+        + '<span class="rr">' + esc(it.ref) + '</span></button>';
+    }).join('') : '<div class="empty">찾는 구절이 없습니다.</div>';
+  }
+
+  $('prev').addEventListener('click', function(){ show(cur - 1, true); });
+  $('next').addEventListener('click', function(){ show(cur + 1, true); });
+  $('goToday').addEventListener('click', function(){ show(todayIdx, true); });
+  $('list').addEventListener('click', function(e){
+    var b = e.target.closest('.row'); if (!b) return;
+    show(+b.dataset.i, true);
+    $('today').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  $('search').addEventListener('input', function(){ renderList(this.value); });
+
+  fetch('data/latin.json', { cache: 'no-store' })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      items = (d && d.items) || [];
+      if (!items.length) return;
+      todayIdx = (((kstDay() - EPOCH) % items.length) + items.length) % items.length;
+      $('countLabel').textContent = items.length + '구절';
+      var h = parseInt((location.hash || '').slice(1), 10);
+      cur = (h >= 1 && h <= items.length) ? h - 1 : todayIdx;
+      renderList('');
+      show(cur, false);
+    })
+    .catch(function(){ $('la').textContent = '구절을 불러오지 못했습니다.'; });
+})();
+</script>
+</body>
+</html>

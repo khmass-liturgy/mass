@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-27 20:58",
-  "cutoff": "2026-11-26",
+  "updated": "2026-11-28 06:01",
+  "cutoff": "2026-11-27",
   "days": 2,
   "names": [
     "김건태",
@@ -17,7 +17,7 @@
     "https://m.cafe.daum.net/bbadaking/LgBn",
     "https://m.cafe.daum.net/catholicsb/Iir1"
   ],
-  "count": 10,
+  "count": 7,
   "posts": [
     {
       "id": "daum_catholicsb_7477",
@@ -28,6 +28,26 @@
       "mass_date": "2026-11-28",
       "priest": "전삼용",
       "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 토요일 복음: 루카 21,34-36…"
+    },
+    {
+      "id": "daum_bbadaking_8008",
+      "title": "2026년 11월 28일 연중 제34주간 토요일",
+      "author": "빠다킹신부",
+      "date": "2026-11-27",
+      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8008",
+      "mass_date": "2026-11-28",
+      "priest": "조명연",
+      "excerpt": "미국 역사 안에서 과학계가 가장 힘들었던 시기가 있었다고 합니다."
+    },
+    {
+      "id": "daum_bbadaking_2284",
+      "title": "2026년 11월 28일 연중 제34주간 토요일",
+      "author": "박 베로니카",
+      "date": "2026-11-28",
+      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2284",
+      "mass_date": "2026-11-28",
+      "priest": "양승국",
+      "excerpt": "진정으로 깨어있다는 것은..."
     },
     {
       "id": "daum_catholicsb_7474",
@@ -66,56 +86,6 @@
       "date": "2026-11-27",
       "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140907&menu=4770",
       "mass_date": "2026-11-27",
-      "priest": "김건태",
-      "excerpt": "안녕하세요."
-    },
-    {
-      "id": "daum_catholicsb_7473",
-      "title": "전삼용 요셉 신부 / 연중 제34주간 목요일 - 주위에 나에게 도움이 되는 사람이 없다면?",
-      "author": "효재마리아(수풀)",
-      "date": "2026-11-25",
-      "url": "https://m.cafe.daum.net/catholicsb/Iir1/7473",
-      "mass_date": "2026-11-26",
-      "priest": "전삼용",
-      "excerpt": "전삼용 요셉 신부님 가해 연중 제34주간 목요일 복음: 루카 21,20-28…"
-    },
-    {
-      "id": "daum_bbadaking_8006",
-      "title": "2026년 11월 26일 연중 제34주간 목요일",
-      "author": "빠다킹신부",
-      "date": "2026-11-25",
-      "url": "https://m.cafe.daum.net/bbadaking/4Zol/8006",
-      "mass_date": "2026-11-26",
-      "priest": "조명연",
-      "excerpt": "샌프란시스코 현대 미술관의 한 갤러리에서 있었던 일입니다."
-    },
-    {
-      "id": "daum_bbadaking_2282",
-      "title": "2026년 11월 26일 연중 제34주간 목요일",
-      "author": "박 베로니카",
-      "date": "2026-11-26",
-      "url": "https://m.cafe.daum.net/bbadaking/LgBn/2282",
-      "mass_date": "2026-11-26",
-      "priest": "양승국",
-      "excerpt": "고개를 쳐들고 허리를 쭉 펴십시오!"
-    },
-    {
-      "id": "daum_bbadaking_226",
-      "title": "저의 시선은 예루살렘으로 올라가시는 예수님의 발걸음을 따라갑니다. 예루살렘…",
-      "author": "환희 평화",
-      "date": "2026-11-26",
-      "url": "https://m.cafe.daum.net/bbadaking/LxKw/226",
-      "mass_date": "2026-11-26",
-      "priest": "김경진",
-      "excerpt": ""
-    },
-    {
-      "id": "2140864",
-      "title": "김건태 신부님_조욱현 신부님 묵상 |2|",
-      "author": "최원석",
-      "date": "2026-11-26",
-      "url": "https://bbs.catholic.or.kr/bbsm/bbs_view.asp?id=2140864&menu=4770",
-      "mass_date": "2026-11-26",
       "priest": "김건태",
       "excerpt": "안녕하세요."
     }

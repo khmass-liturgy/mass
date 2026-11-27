@@ -1,10 +1,17 @@
 {
-  "updated": "2026-11-27 03:59",
+  "updated": "2026-11-27 12:38",
   "channel": "cpbc TV · 가톨릭평화방송",
   "playlistId": "PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C",
   "count": 14,
   "videos": [
+    {
+      "videoId": "hJz9puFBkTE",
+      "date": "2026-11-27",
+      "liturgy": "연중 제34주간 금요일",
+      "priest": "장용석 요셉 신부",
+      "url": "https://www.youtube.com/watch?v=hJz9puFBkTE&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
+    },
     {
       "videoId": "4u6SeGbQ1A4",
       "date": "2026-11-26",
@@ -95,13 +102,6 @@
       "liturgy": "연중 제32주간 토요일",
       "priest": "최두헌 요한 요셉 신부",
       "url": "https://www.youtube.com/watch?v=NQFVOrXfE7U&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
-    },
-    {
-      "videoId": "DJRmdOfVhKQ",
-      "date": "2026-11-13",
-      "liturgy": "연중 제32주간 금요일",
-      "priest": "이정훈 사도요한 신부",
-      "url": "https://www.youtube.com/watch?v=DJRmdOfVhKQ&list=PLpB9z9SOeZQfGRsNAtfExml1MP8zwjc0C"
     }
   ]
 }

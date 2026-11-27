@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27 07:58",
+  "updated": "2026-11-27 21:16",
   "channelId": "UCYqj-Z1LhisC9nAXMv-ZBWw",
   "channelUrl": "https://www.youtube.com/channel/UCYqj-Z1LhisC9nAXMv-ZBWw",
   "videoId": "dUrIQEzCR1M",
@@ -10,6 +10,14 @@
   "url": "https://www.youtube.com/watch?v=dUrIQEzCR1M",
   "count": 10,
   "videos": [
+    {
+      "videoId": "0VFLdRty2sI",
+      "date": "2026-11-28",
+      "label": "2026년 11월 28일연중 제34주간 토요일",
+      "title": "생활성서 듣는 #소금항아리 [2026년 11월 28일 연중 제34주간 토요일](김상태 사도 요한 신부) #매일미사#복음묵상#Gospel#Korean",
+      "published": "",
+      "url": "https://www.youtube.com/watch?v=0VFLdRty2sI"
+    },
     {
       "videoId": "dUrIQEzCR1M",
       "date": "2026-11-27",
@@ -81,14 +89,6 @@
       "title": "생활성서 듣는 #소금항아리 [2026년 11월 19일 연중 제33주간 목요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
       "published": "",
       "url": "https://www.youtube.com/watch?v=s49LU-VlpiI"
-    },
-    {
-      "videoId": "Nd4gsqgwDaA",
-      "date": "2026-11-18",
-      "label": "2026년 11월 18일연중 제33주간 수요일",
-      "title": "생활성서 듣는 #소금항아리 [2026년 11월 18일 연중 제33주간 수요일](박유민 세례자요한 신부) #매일미사#복음묵상#Gospel#Korean",
-      "published": "",
-      "url": "https://www.youtube.com/watch?v=Nd4gsqgwDaA"
     }
   ]
 }
